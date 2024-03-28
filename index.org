@@ -1,0 +1,9 @@
+#+title: Index
+
+* 0 bitches
+
+Welcome to my corner of the internet. Here you can find done, not-done and orphaned projects.
+
+** Predmeti
+
+-[[file:mafija/overview_mafija.html][Matematična fizika 1]]  pri prof. Čoparju

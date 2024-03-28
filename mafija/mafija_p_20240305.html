@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-03-21 Thu 21:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mafija P 20240305</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  pre.src-C\+\+:before { content: 'C++'; }
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mafija P 20240305</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org01b538f">1. Fourierova analiza in Diracova delta</a>
+<ul>
+<li><a href="#orgc0ef9fe">1.1. Diracova \( \delta \) funkcija</a></li>
+<li><a href="#org6596a24">1.2. Druga definicija \( \delta u \)</a></li>
+<li><a href="#orgeeb4dc9">1.3. Primer več ničel</a></li>
+<li><a href="#org4b7e77f">1.4. \( \delta \) funkcija znižuje dimenzije</a>
+<ul>
+<li><a href="#orgd9c7c5e">1.4.1. Točkasti naboj</a></li>
+<li><a href="#org6d5a43d">1.4.2. Površinski naboj</a></li>
+<li><a href="#orgcd94add">1.4.3. Fizika osnovnih delcev (delo z ravnimi valovi).</a></li>
+</ul>
+</li>
+<li><a href="#org25c0596">1.5. Integrali in odvodi</a>
+<ul>
+<li><a href="#orga203d32">1.5.1. Odvod</a></li>
+</ul>
+</li>
+<li><a href="#org0b505fa">1.6. Fourierova analiza</a>
+<ul>
+<li><a href="#orgf75e206">1.6.1. Primer: Spekter z eno valovno dolžino</a></li>
+<li><a href="#org142262e">1.6.2. Primer: Diskretni spekter</a></li>
+<li><a href="#org61b73b4">1.6.3. Vsota ravnih valov</a></li>
+<li><a href="#orgb277cb4">1.6.4. Diracov glavnik (ang. Dirac comb)</a></li>
+<li><a href="#orgca24249">1.6.5. Fourierova vrste, transformacije</a></li>
+</ul>
+</li>
+<li><a href="#orga3f9ada">1.7. Konvolucija</a>
+<ul>
+<li><a href="#orgb52cef7">1.7.1. Diskretna konvolucija</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org01b538f" class="outline-2">
+<h2 id="org01b538f"><span class="section-number-2">1.</span> Fourierova analiza in Diracova delta</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+V fiziki imamo dve pomembno idealizaciji: točkaste delce in pa ravne valove.
+</p>
+
+<p>
+Ravni val lahko zapišemo z enačbo
+</p>
+
+\begin{align*}
+f(t) &= e^{i\omega t} \\
+g(\vec{r}) &= e^{i(\vec{k} \cdot \vec{r} - \omega t)} \\
+h(x_{\mu}) &= e^{ik^{\mu}x_{\mu}}
+\end{align*}
+
+<p>
+V zgornjih enačbah so prikazani trije različni zapisi za funkcijo ravnega vala. Te funkcije znamo odvajati in nastale linearne diferencialne enačbe znamo enostavno rešiti.
+</p>
+
+<p>
+Funkcijo ravnega vala uporabljamo kvantni mehaniki, valovanju in nihanju, v elektronskih vezjih, itd.
+</p>
+
+<p>
+Funkcija ravnih valov tvorijo ortogonalno bazo na \( L ^2 [\mathbb{R}] \), kjer je \( L \) kvadrat integrabilne funkcije.
+</p>
+
+
+\begin{equation}
+\label{eq:13}
+\int\limits_{-\infty}^{\infty} e^{i\omega t} e^{-i \omega' t} \, dt \begin{cases}
+0; \omega \not = \omega'  \\
+??; \omega = \omega'
+\end{cases}
+\end{equation}
+
+<p>
+Če sta krožni frekvenci \( \omega = \omega'  \) enaki, potem integral \( \int\limits_{-\infty}^{\infty} 1 \, dt \) formalno ne konvergira. Kar lahko naredimo pa je, da ga regulariziramo kot limito.
+</p>
+
+\begin{align*}
+\lim_{\beta \to 0} \left( \int\limits_{-\infty}^{\infty} e^{-\beta |t|} e^{i\omega t} e^{-i\omega' t} \,dt \right) &= \lim_{\beta \to 0} \left[ \left. \frac{e^{-\beta t} e^{i\omega t} e^{-i\omega' t}}{i\omega - i\omega' - \beta} \right|_0^{\infty} + \left. \frac{e^{\beta t} e^{i\omega t}e^{-i\omega' t}}{i\omega -i \omega' + \beta} \right|_{-\infty}^0 \right] \\
+&= \lim_{\beta \to 0} \left[ - \frac{1}{i\omega - i\omega' - \beta} + \frac{1}{i\omega - i\omega' + \beta} \right] \\
+&= \lim_{\beta \to 0} \frac{-2\beta}{(i\omega - i\omega') ^2 - \beta ^2} \\
+&= \lim_{\beta \to 0} \frac{2\beta}{(\omega - \omega' )^2 + \beta ^2}
+\end{align*}
+
+<p>
+Poglejmo sedaj primere izračunane limite
+</p>
+
+\begin{equation}
+\label{eq:14}
+ \lim_{\beta \to 0} \frac{2\beta}{(\omega - \omega' )^2 + \beta ^2} = \begin{cases}
+0; \omega-\omega' > 0 \\
+\frac{1}{0}; \omega - \omega' = 0
+\end{cases}
+\end{equation}
+
+<p>
+Očitno to ni prava funkcija, saj imamo deljenje z 0. Kako pa se obnaša integral te funkcije?
+</p>
+
+<p>
+Definiramo \( \omega - \omega' = u \)
+</p>
+
+\begin{equation}
+\label{eq:15}
+\int\limits_{-\infty}^{\infty} \frac{2\beta}{u ^2 + \beta ^2} \, du = 2\beta \frac{1}{\beta} \left. \arctan \frac{u}{\beta} \right|_{-\infty}^{\infty} = 2\pi
+\end{equation}
+
+<p>
+Vidimo, da je integral neodvisen od \( \beta \) in če to kvazi-funkcijo uporabimo v integralu, je v redu, tudi ko \( \beta \to 0 \).
+</p>
+</div>
+<div id="outline-container-orgc0ef9fe" class="outline-3">
+<h3 id="orgc0ef9fe"><span class="section-number-3">1.1.</span> Diracova \( \delta \) funkcija</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Funkcija poimenovana po Paulu Diracu, za katero je značilno, da je neskončno visoka, neskončno ozka špica z integralom 1.
+</p>
+
+<p>
+<b>vstavi sliko diracove funkcije (skica)</b>
+</p>
+
+<p>
+Matematično to ni funkcija, ampak porazdelitev/distribucija.
+Fizikalno, Diracova \( \delta \) funkcija predstavlja impulz kot so npr. pulz, udarec ali hipni prenos gibalne količine in predtavlja vez med diskretnim ter zveznim svetom.
+</p>
+
+<p>
+S pomočjo te funkcije formalno zapišemo točkaste izvore in robne pogoje.
+</p>
+
+<p>
+Če želimo želimo odčitati vrednost integrala v neki točko \( x_0 \) to naredimo s pomočjo
+</p>
+
+\begin{equation}
+\label{eq:16}
+f(x_0) = \int f(x) \delta(x - x_0) \, dx
+\end{equation}
+
+<p>
+Matematično predstavlja to Lebesgueov integral.
+</p>
+
+<p>
+Spodnji primer nam pokaže, kaj se zgodi, če imamo kompozitum funkcij \( t \circ u \).
+</p>
+
+\begin{align}
+\label{eq:1}
+f(x) &= \int\limits_{-\infty}^{\infty} \delta(x - t) f(t) \, dx \\
+&= \int\limits_{-\infty}^{\infty} f(u) \delta(x - t(u)) \left| \frac{dt}{du} \right| \, du
+\end{align}
+
+<p>
+Zadnji kurčič palčič je Jacobian. Pomembna lastnost je to, da \( \delta \) funkcija ima enote (in jih nosi s seboj).
+</p>
+
+<p>
+Druge lastnosti funkcije so še
+</p>
+
+\begin{align*}
+\delta(u) &= \delta(x) \left| \frac{dx}{du} \right| = \delta(x) \left| \frac{dx}{du} \right|^{-1} \\
+\delta(ku) &= \frac{1}{k} \delta(u)
+\end{align*}
+
+<p>
+Poleg tega naj omenimo, da ima v zgornjem primeru \( \delta(u) \) enote \( \left[ \frac{1}{u} \right] \), saj \( \delta(u) du \) nima enot.
+</p>
+
+<p>
+Če ima funkcija \( u(x) \) več ničel, to potem pomeni, da imamo več \( \delta \).
+</p>
+</div>
+</div>
+<div id="outline-container-org6596a24" class="outline-3">
+<h3 id="org6596a24"><span class="section-number-3">1.2.</span> Druga definicija \( \delta u \)</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Vsako funkcijo \( \int f(u) = 1 \) lahko stisnemo v x in raztegnemo v \( y \rightarrow \delta(u) \).
+</p>
+
+<p>
+Vzemimo za primer funkcijo od prejšnjega predavanja:
+</p>
+
+\begin{equation}
+\label{eq:17}
+\lim_{q \to \infty} e^{iq(x-x_0) ^2} = \sqrt{\frac{\pi}{qi}} \delta(x-x_0)
+\end{equation}
+
+\begin{equation}
+\label{eq:18}
+f(u) = \lim_{w \to 0} \frac{rect(\frac{u}{w})}{2w}
+\end{equation}
+
+<p>
+Funkcija \( rect(\frac{u}{w}) \) predstavlja pravokotnike.
+</p>
+
+
+<div id="org2ef06fc" class="figure">
+<p><img src="figures/rect.png" alt="rect.png" />
+</p>
+</div>
+
+<p>
+Kaj pa Gaussova funkcijo, ko gre \( \sigma \to 0 \)?
+</p>
+
+\begin{equation}
+\label{eq:19}
+\delta(u) = \lim_{\sigma \to 0}  \frac{1}{\sqrt{2\pi\sigma}} e^{\frac{u ^2}{2\sigma ^2}}
+\end{equation}
+
+
+<div id="org77c2f68" class="figure">
+<p><img src="figures/gauss.png" alt="gauss.png" />
+</p>
+</div>
+
+
+<p>
+Poglejmo še en primer, tokrat s funkcijo \( \sin \).
+</p>
+
+\begin{equation}
+\delta(u) = \lim_{\epsilon \to 0} \frac{\sin \left( \frac{u}{\epsilon} \right)}{\pi u}
+\end{equation}
+
+
+<div id="org27c8343" class="figure">
+<p><img src="figures/sineps.png" alt="sineps.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeeb4dc9" class="outline-3">
+<h3 id="orgeeb4dc9"><span class="section-number-3">1.3.</span> Primer več ničel</h3>
+<div class="outline-text-3" id="text-1-3">
+\begin{align*}
+\delta(x ^2 - x_0 ^2) &= \frac{\delta(x- x_0)}{\left| 2x_0 \right|} + \frac{\delta (x + x_0)}{\left| 2x_0 \right|}
+\end{align*}
+
+<p>
+Razliko kvadratov smo razcepili na ničle in imamo tako \( \delta \) funkcijo, ki ima 2 ničli, tj. eno pri \( x = x_0 \) in drugo pri \( x = -x_0 \).
+</p>
+</div>
+</div>
+<div id="outline-container-org4b7e77f" class="outline-3">
+<h3 id="org4b7e77f"><span class="section-number-3">1.4.</span> \( \delta \) funkcija znižuje dimenzije</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orgd9c7c5e" class="outline-4">
+<h4 id="orgd9c7c5e"><span class="section-number-4">1.4.1.</span> Točkasti naboj</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+Za točkasti naboj imamo sledečo enačbo za gostoto električnega polja.
+</p>
+
+\begin{align*}
+\rho_e (\vec{r})dV &= e_0 \delta(x-x_0)dx \, \delta(y-y_0)dy \, \delta(z-z_0) dz \\
+\rho_e (\vec{r}) &= e_0 \delta(\vec{r} - \vec{r_0})
+\end{align*}
+
+<p>
+\( \rho_e \) je gostota naboja in \( e_0 \) je naboj.
+</p>
+</div>
+</div>
+<div id="outline-container-org6d5a43d" class="outline-4">
+<h4 id="org6d5a43d"><span class="section-number-4">1.4.2.</span> Površinski naboj</h4>
+<div class="outline-text-4" id="text-1-4-2">
+\begin{align*}
+\rho_e (\vec{r}) &= \sigma(x, y) \delta(z-z_0)
+\rho_e (\vec{r}) dV &= \sigma(x,y) dx dy \delta(z-z_0)dz \\
+\end{align*}
+
+<p>
+\( \sigma(x,y) \) je ploskovni naboj. Vidimo lahko, da smo se s pomočjo \( \delta \) funkcije rešili dimenzije \( z \), saj je sedaj predstavljena kot skok naboja v dani koordinati.
+</p>
+</div>
+</div>
+<div id="outline-container-orgcd94add" class="outline-4">
+<h4 id="orgcd94add"><span class="section-number-4">1.4.3.</span> Fizika osnovnih delcev (delo z ravnimi valovi).</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+V fiziki osnovnih delcev imamo integral (oz. vsoto verjetnosti) po vseh možnih izidih (tj. po vseh gibalnih količinah in energijah izmenjanjega delca).
+</p>
+
+
+\begin{equation}
+\label{eq:2}
+\iiiint \limits_{-\infty}^{\infty} \alpha \, d^4 p H(E) \delta(E ^2 - p ^2 - m ^2)
+\end{equation}
+
+<p>
+\( \alpha \) je stvar, ki jo integriramo. \( d^4 \) je integral po \( E \), \( p_x \), \( p_y \) in \( p_z \). Velja tudi \( (mc ^2)^2 = E ^2 - p ^2 c ^2 \), ki služi kot pogoj, da je masa delca prava. Heavisideova funkcija (ki je stopnica) zahteva \( E>0 \). Energijo v \( \delta \) funkciji lahko zapišemo kot \( E ^2 - E_p ^2\). \( E_p = p ^2 - m ^2\) je energija delca z gibalno koliċino \( p \).
+</p>
+
+\begin{align*}
+d^3p\, dE H(E) \left[ \frac{\delta(E- E_p)}{\left| 2E_p \right|} + \frac{\delta(E+ E_p)}{\left| 2E_p \right|} \right] = d^3 p \int dE \frac{\delta(E-E_p)}{\left| 2E_p \right|} = \frac{d^3p}{\left| 2E_p \right|} \alpha
+\end{align*}
+
+<p>
+S pomočjo \( \delta \) funkcije smo se rešili ene dimenzije in ostane nam samo integral po gibalnih količinah. Po integraciji, utežimo z \( \frac{1}{2E} \).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org25c0596" class="outline-3">
+<h3 id="org25c0596"><span class="section-number-3">1.5.</span> Integrali in odvodi</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Heavisidova stopnica (Heaviside step function)
+</p>
+
+\begin{equation}
+\label{eq:3}
+\int\limits_{-\infty}^x \delta(t) \, dt = H(x)
+\end{equation}
+
+
+<div id="org0d3b819" class="figure">
+<p><img src="figures/heaviside.png" alt="heaviside.png" />
+</p>
+</div>
+
+\begin{align*}
+\int\limits_{-\infty}^{\infty} f(x) H(x -x_0) \, dx &= \int\limits_{x_0}^{\infty} f(x) \, dx
+\end{align*}
+
+<p>
+S pomočjo te funkcije zlahkoto opišemo zlepke dveh (ali več) funkcij. Vzemimo za primer, da želimo graf funkcije
+</p>
+
+\begin{equation}
+\label{eq:20}
+h(x) = \begin{cases}
+f(x) = \sqrt{x}; & x>0  \\
+g(x) = x ^2; & x < 0
+\end{cases}
+\end{equation}
+
+<p>
+Funkcijo tako predstavimo s pomočjo Heaviseove funkcije z \( f(x) H(x) + g(x) H(-x) \)
+</p>
+
+<p>
+in sam graf funkcije izgleda kot
+</p>
+
+
+<div id="org3e7af68" class="figure">
+<p><img src="figures/zlepekfunkcij.png" alt="zlepekfunkcij.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-orga203d32" class="outline-4">
+<h4 id="orga203d32"><span class="section-number-4">1.5.1.</span> Odvod</h4>
+<div class="outline-text-4" id="text-1-5-1">
+\begin{align*}
+f(x) &= \int\limits_{-\infty}^\infty \delta(t-x) f(t) \,dt && /\frac{\partial }{\partial x} \\
+f' (x) &= - \int\limits_{-\infty}^{\infty} \delta' (t-x) f(t) \,dt \\
+&= \left. \delta(t - x)f(t) \right|_{-\infty}^{\infty} + \int \delta(t - x) f' (t) \, dt \\
+&=  \int \delta(t - x) f' (t) \, dt = - f'(x)
+\end{align*}
+
+<p>
+Funkcijo v prvi vrstici smo odvajali po \( x \) in potem s pomočjo <i>per partes</i> dobili 3. vrstico. Člen \( \left. \delta(t-x) f(t) \right|_{-\infty}^{\infty} \) gre proti nič, drugi pa ostaja.
+</p>
+
+<p>
+Splošna formula za odvod je tako
+</p>
+
+\begin{equation}
+\label{eq:21}
+\int\limits_D f(x) \delta^{[n]} (x - a) \,dx = (-1)^n f^{[n]}(a)
+\end{equation}
+
+<p>
+Odvod \( \delta' (t-x) \approx f(x-\epsilon)-f(x+\epsilon) \). Poleg tega \( \delta' (u) \) odčita odvod \( f \) v točki 0. Preko <i>per partesa</i> dobimo iz zgornjega integrala
+</p>
+
+
+<div id="org5b4c3d5" class="figure">
+<p><img src="figures/gaussodvodi.png" alt="gaussodvodi.png" />
+</p>
+</div>
+
+<p>
+Fizikalno sta 2., 4. in ostali sodi višji odvodi točkasti dipoli - dva točkasta naboja, ki sta nasprotno nabita in neskončno skupaj, kar poda končni produkt.
+</p>
+
+<p>
+Sedaj lahko precej lažje zapišemo energijo, če imamo podano gostoto naboja \( \rho_e = e \delta(x - x_0)  \)
+</p>
+
+\begin{equation}
+\label{eq:22}
+W = \int \rho_e U \, dV = e \int \delta(x - x_0)U \, dV = e U(x_0)
+\end{equation}
+
+<p>
+oz. v primeru ploskovnega naboja \( \rho_e = p_e \delta' (x - x_0) \) je potem energija
+</p>
+
+\begin{equation}
+\label{eq:23}
+W = \int \rho_e U \,dV = p_e \int \delta' (x - x_0) U(x) \, dx = - p_e \left. \frac{\partial U}{\partial x} \right|_{x= x_0}  = \vec{p} \cdot \vec{E}
+\end{equation}
+
+<p>
+kjer smo \( \vec{E} \) definirali kot \( \vec{E} = - \nabla U = - \frac{\partial U}{\partial x}  \)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0b505fa" class="outline-3">
+<h3 id="org0b505fa"><span class="section-number-3">1.6.</span> Fourierova analiza</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Fourierova analiza ima fizikalno velik pomen, saj lahko z njo splošno zapišemo diskretno superpozicijo ravnih valov
+</p>
+
+\begin{equation}
+\label{eq:26}
+\psi (x) = \sum\limits_n A_n \psi_{n} = \sum\limits_n A_n e^{ik_n x}
+\end{equation}
+
+<p>
+lahko pa tudi zapišemo zvezno superpozicijo ravnih valov
+</p>
+
+\begin{equation}
+\label{eq:27}
+\psi(x) = \frac{1}{2\pi}\int\limits_{-\infty}^{\infty} A(k) e^{ikx} \,dk
+\end{equation}
+
+<p>
+kjer je \( A(k) \) spektralna gostota.
+</p>
+</div>
+<div id="outline-container-orgf75e206" class="outline-4">
+<h4 id="orgf75e206"><span class="section-number-4">1.6.1.</span> Primer: Spekter z eno valovno dolžino</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<p>
+Velja, da je \( A(k)\not = 0 \) in \( k = k \).
+</p>
+
+<p>
+Rešitev valovne enačbe je ravni val, ki ga potem zapišemo kot
+</p>
+
+\begin{equation}
+\label{eq:24}
+A(k) = 2\pi \delta(k - \kappa)
+\end{equation}
+
+<p>
+Valovna funkcija je tako
+</p>
+
+\begin{equation}
+\label{eq:25}
+\psi (x) = \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} 2\pi \delta(k - \kappa) e^{ikx} \,dk = e^{i\kappa x}
+\end{equation}
+
+
+<div id="org64f6b99" class="figure">
+<p><img src="figures/zvezvaldolz.png" alt="zvezvaldolz.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org142262e" class="outline-4">
+<h4 id="org142262e"><span class="section-number-4">1.6.2.</span> Primer: Diskretni spekter</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<p>
+Za \( A(k) = \sum\limits_n A_n (2 \pi )\delta(k - k_n) \) je valovna funkcija
+</p>
+
+\begin{equation}
+\label{eq:28}
+\psi(x) = \sum\limits_n A_n e^{ik_n x}
+\end{equation}
+
+
+<div id="org4768939" class="figure">
+<p><img src="figures/diskrvalspektr.png" alt="diskrvalspektr.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org61b73b4" class="outline-4">
+<h4 id="org61b73b4"><span class="section-number-4">1.6.3.</span> Vsota ravnih valov</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<p>
+S podano ortogonalnostno relacijo lahko sedaj zapišemo funkcijo kot vsoto ravnih valov
+</p>
+
+\begin{equation}
+\label{eq:4}
+S(\omega - \omega ') = \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} e^{i\omega t} e^{-i \omega'  t}
+\end{equation}
+
+<p>
+Drugačen zapis
+</p>
+
+\begin{equation}
+\label{eq:5}
+f(t) = \int\limits_{-\infty}^{\infty} F(\omega) e^{i\omega t} d\omega
+\end{equation}
+
+<p>
+\( F(\omega) \) je spekter, kar je Fourierova transformacije funkcije \( f(t) \). Ta enačba je primer lanskoletnih kompleksnih impedanc. Vendar smo lansko leto pri predmetu Klasična fizika večinoma delali s sinusnimi napetostmi? Kaj pa se zgodi, če imamo škatlasto?
+</p>
+
+<p>
+Obe strani enačbe pomnožimo z \( \int e^{-\omega t} \left\langle  \right\rangle \,dt\)
+</p>
+
+\begin{align*}
+\int\limits_{-\infty}^\infty f(t) e^{-i \omega t} \, dt &= \iint\limits_{-\infty}^{\infty} F(\omega) e^{i\omega t} e^{-i\omega t}\, d\omega dt \\
+&= 2\pi \int\limits_{-\infty}^{\infty} F(\omega) \delta(\omega - \omega ' ) d\omega = 2\pi F(\omega' ) \\
+F(\omega' ) &= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} f(t) e^{i\omega t} \, dt
+\end{align*}
+
+<p>
+Let&rsquo;s make a table!
+</p>
+
+
+\begin{tabular}{|c|c|c|}
+Časovna funkcija & Frekvenčna funkcija & Opombe \\
+\( f(t) \) & \( F(\omega) \)  & \\
+\( f' (t) \) & \( i\omega F(\omega) \) & \\
+\( e^{i\omega t} \) & \( \delta(\omega - \omega_0) \)  & En ravni val je en diskretni del spektra/ \\
+\( \delta(t - t_0) \) & \( \frac{1}{2\pi} e ^{-\omega t_0} \) &  \\
+\( \frac{1}{\sqrt{2\pi \sigma ^2}} \exp(- \frac{t ^2}{2 \sigma ^2}) \) & \( \frac{1}{2\pi} \exp{- \frac{\sigma ^2 \omega ^2}{2}} \)  & Načelo nedoločenosti \\
+\( \int\limits_{-\infty}^{\infty}f(t) \,dt\) & \( 2\pi F(0) \) & \\
+\( \sum\limits_{n=-\infty}^{\infty} \delta(n\tau) \) & \( \frac{1}{2\pi} \sum\limits_{n=-\infty}^{\infty} \cos(n \omega \tau) \) & \text{Diracov glavnik} \\
+Soda realna funkcija & Realna \( F(-\omega) = F^* (\omega) \) & * označuje kompleksno konjugacijo
+\end{tabular}
+</div>
+</div>
+<div id="outline-container-orgb277cb4" class="outline-4">
+<h4 id="orgb277cb4"><span class="section-number-4">1.6.4.</span> Diracov glavnik (ang. Dirac comb)</h4>
+<div class="outline-text-4" id="text-1-6-4">
+<p>
+Kakor smo lahko videli v zgornji tabeli, je definiran kot neskončna vsota \( \delta \) funkcij, ki so na konstatnem razmaku.
+</p>
+
+<p>
+Diracov glavnik je zelo uporaben pri vzorčenju.
+</p>
+
+<p>
+Vzemimo za primer
+</p>
+
+\begin{equation}
+\label{eq:29}
+W_\tau (t) = \sum\limits_{n=-\infty}^{\infty} \delta(t - n\tau)
+\end{equation}
+
+<p>
+kjer je \( \tau \) perioda. Graf Diracovega glavnika izgleda
+</p>
+
+
+<div id="orgfd08a21" class="figure">
+<p><img src="figures/diraccomb.png" alt="diraccomb.png" />
+</p>
+</div>
+
+<p>
+Diracov glavnik ima določene lastnosti, ki nam lahko olajšajo življenje.
+</p>
+
+\begin{equation}
+\label{eq:30}
+W_{\tau}(t) = \frac{1}{T} W_{\tau} (\frac{t}{\tau})
+\end{equation}
+
+<p>
+Ta lastnost velja zaradi lastnosti \( \delta \) funkcije.
+</p>
+
+<p>
+Pri vzorčenju velja
+</p>
+
+\begin{equation}
+\label{eq:31}
+\int\limits_{-\infty}^{\infty} f(t) W_{\tau}(t) \,dt = \sum\limits_{n=-\infty}^{\infty} f(n\tau)
+\end{equation}
+
+<p>
+kjer so \( t_n = n\tau \) signali zajeti ob času \( t_n \).
+</p>
+
+<p>
+Ter periodičnost Fourierove transformacije
+</p>
+
+\begin{equation}
+\label{eq:32}
+W_{\tau}(t+ \tau) = W_{\tau}(t)
+\end{equation}
+
+<p>
+Slednje lahko zapišemo s Fourierovo vrsto
+</p>
+
+\begin{align*}
+W_{\tau} (t) &= \frac{1}{\tau} \sum\limits_{k = -\infty}^{\infty} e ^{i2\pi k \frac{t}{\tau}} \\
+&= \frac{1}{\tau} \sum\limits_{k = -\infty}^{\infty} e ^{i k \omega_0 t}
+\end{align*}
+
+<p>
+kjer zapišemo \( \omega_k = \omega_0 k\) in \( \omega_0 = \frac{2\pi}{\tau} \)
+</p>
+
+<p>
+Tako velja
+</p>
+
+\begin{equation}
+\label{eq:33}
+W_{\tau}(t) \leftrightarrow \frac{1}{\tau} W_{\frac{1}{\tau}} (\nu) = \sum\limits_{k=-\infty}^{\infty} e^{i2k\tau \nu}
+\end{equation}
+</div>
+</div>
+<div id="outline-container-orgca24249" class="outline-4">
+<h4 id="orgca24249"><span class="section-number-4">1.6.5.</span> Fourierova vrste, transformacije</h4>
+<div class="outline-text-4" id="text-1-6-5">
+</div>
+<ol class="org-ol">
+<li><a id="org4d00c8c"></a>Fourierova vrsta<br />
+<div class="outline-text-5" id="text-1-6-5-1">
+<p>
+Vsako periodično funkcijo \( f(t) \) z neko periodo \( T \) oz. krožno frekvenco \( \omega = \frac{2\pi}{T} \) se da zapisati v Fourierovo vrsto. Zapisov vrste je več in bomo omenili samo ključnega, omenjenega tudi na predavanjih.
+</p>
+
+\begin{equation}
+\label{eq:35}
+f(t) = \sum\limits_{k=-\infty}^{\infty} c_n e^{-i\omega nt}
+\end{equation}
+
+<p>
+Koeficiente vrste \( c_n \) zapišemo kot
+</p>
+
+\begin{equation}
+\label{eq:36}
+c_n = \frac{1}{2\pi} \int\limits_{0}^{T} f(t) e^{int} \, dt
+\end{equation}
+
+<p>
+Ker je funkcija periodična ni važno, kakšne so meje, dokler obe integracijski meji premaknemo za enako vrednost (npr. \( [-\frac{T}{2}, \frac{T}{2}] \)). Če ima vrste simetrične lastnosti, lahko dolžino intervala še skrajšamo bodisi na polovico ali četrtino podanega intervala.
+</p>
+
+<p>
+Pri Fourierovi vrsti imamo na časovni strani omejeno območje \( [-\pi, \pi] \), na frekvenčni strani pa kot rezultat dobimo diskretno.
+</p>
+
+<p>
+Fourierovi integrali so integralska transformacija, ki pretvori funkcijo v obliko, ki opiše frekvence, ki so se pojavile v originalni funkciji. Rezultat integrala je kompleksen. Splošnejši zapis Fourierovih integralov, ki nima nujno opravka s spektri, se imenuje <i>Fourierova transformacija</i>.
+</p>
+</div>
+</li>
+<li><a id="org0b44d1f"></a>Fourierovi integrali<br />
+<div class="outline-text-5" id="text-1-6-5-2">
+\begin{align*}
+F(\omega) &= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} f(t) e^{-i\omega t} \,dt \\
+f(t) &= \int\limits_{-\infty}^{\infty} F(\omega) e^{i\omega t} \, d\omega
+\end{align*}
+</div>
+</li>
+<li><a id="orged99525"></a>Fourierova transformacija<br />
+<div class="outline-text-5" id="text-1-6-5-3">
+\begin{align*}
+Y(k) &= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} y(x) e^{-ikx} \,dx \\
+y(x) &= \int\limits_{-\infty}^{\infty} Y(k)e^{ikx} \,dk
+\end{align*}
+
+<p>
+S pomočjo teh enačb si lahko olajšamo reševanje določenih diferencialnih enačb. Za primer je v <i>Matematika v fiziki in tehniki</i> na str. 41, enačba 2.42.
+</p>
+</div>
+</li>
+<li><a id="orgbc3a61e"></a>Fourierova transformacija zaporedja<br />
+<div class="outline-text-5" id="text-1-6-5-4">
+\begin{align*}
+F(\omega) &= \sum f_n e^{-in\omega} \\
+f_n &= \int F(\omega) e^{in\omega} \, d\omega\\
+\end{align*}
+
+<p>
+Pri transformaciji zaporedja iz diskretne območja pri časovni funkciji preidemo v omejemo območje.
+</p>
+</div>
+</li>
+<li><a id="org8d9f251"></a>Diskretna Fourierova transformacija <i>DFT</i><br />
+<div class="outline-text-5" id="text-1-6-5-5">
+<p>
+Diskretna Fourierova transformacija (ang. <i>Discrete Fourier Transform</i> or <i>DFT</i> for short) je ekvivalentna zvezni Fourierovi transformaciji, vendar samo za signale, ki jih poznamo ob trenutkih \( N \), ki so si narazen za čas \( T \).
+</p>
+
+<p>
+Če imamo zvezno funkcijo signala \( f(t) \), je potem \( N \) rezultatov predstavljeno kot \( f_0, f_1, f_2, \ldots, f_{N-1} \).
+</p>
+
+<p>
+Definicijo Fourierove transformacije, ki obstaja samo v prej omenjenih točkah lahko torej zapišemo kot vsoto
+</p>
+
+\begin{equation}
+\label{eq:34}
+F(i\omega) = \sum\limits_{k = 0}^{N-1} f_k e^{-i\omega kt}
+\end{equation}
+
+<p>
+Prvotna Fourierova transformacija ima meje od \( (-\infty, \infty) \), vendar lahko tako prvotno, kakor DF transformacijo zapišemo v končnem intervalu, če je funkcija <i>periodična</i>.
+</p>
+
+<p>
+Pri iskanju izračunamo vrednosti <i>DFT</i> pri ničti resonančni frekvenci in njenih vzbujenih stanjih, \( \omega_0 = \frac{2\pi}{NT} \)
+</p>
+
+\begin{equation}
+\label{eq:37}
+F[n] = \sum\limits_{k = 0}^{N - 1} f[k] e^{-i \frac{2\pi}{NT} nk}; \, (n = 0: N-1)
+\end{equation}
+
+<p>
+Definiramo \( W = e^{-i \frac{2\pi}{NT} nk} \) Tako dobimo enačbo v obliki matrike
+</p>
+
+\begin{equation}
+\label{eq:38}
+\begin{bmatrix} F[0] \\ F[1] \\ F[2] \\ \ldots \\ F[N-1]  \end{bmatrix} =
+\begin{bmatrix} 1 & 1 & 1 & 1 & \ldots & 1 \\
+1 & W & W^2 & W^3 & \ldots & W^{N-1} \\
+1 & W^2 & W^4 & W^6 & \ldots & W^{N-2} \\
+1 & W^3 & W^6 & W^9 & \ldots & W^{N-3} \\
+\ldots & & & & & \\
+1 & W^{N-1} & W^{N-2} & W^{N-3} & \ldots & W \\ \end{bmatrix}
+\begin{bmatrix} f[0] \\ f[1] \\ f[2] \\ \ldots \\ f[N]  \end{bmatrix}
+\end{equation}
+
+
+\begin{align*}
+c_n &= \frac{1}{N}\sum\limits_k f_k e^{-i \frac{2\pi k n}{N}} \\
+f_n &= \sum\limits_k c_k e^{+i \frac{2\pi k n}{N}}
+\end{align*}
+
+<p>
+Pri <i>FFT</i> transformacija slika iz diskretnega območja v diskretno.
+</p>
+
+<p>
+\( \mathbb{Z}_N \) je končen cikličen del celih števil (npr. ura ima \( \mathbb{Z}_{12} \)).
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orga3f9ada" class="outline-3">
+<h3 id="orga3f9ada"><span class="section-number-3">1.7.</span> Konvolucija</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Operacija na dveh funkcija, označena z *. Definicija
+</p>
+
+\begin{equation}
+\label{eq:6}
+f*g = \int\limits_{-\infty}^{\infty} f(x-t) g(t) \, dt = \int\limits_{-\infty}^{\infty} f(t) g(x-t) \, dt
+\end{equation}
+
+<p>
+S3.5 (po zamenjavi)
+</p>
+
+<p>
+Če vzamemo \( f(x) = \delta(x) \). To nam potem da
+</p>
+
+\begin{equation}
+\label{eq:7}
+\delta * g = \int\limits_{-\infty}^{\infty} \delta(x-t) g(t) \, dt = g(x)
+\end{equation}
+<p>
+S3.6 (pred zamenjavo)
+</p>
+
+<p>
+Našo funkcijo smo razbili na vsoto špičk. Konvolucija zamenja vsako točko funkcije z jedrom konvolucije \( f \). Funkciji \( f \) lahko v tem primeru rečemo impulzni odziv, Greenova funkcja, point spread function, prenosna funkcija.
+</p>
+
+<p>
+Jedro je lahko različnih oblik: Gaussian blur, RC člen (počasno praznjenje), drseče povprečje (škatla), leaky integrator, odmev. S3.7
+</p>
+
+<p>
+Lastnost konvolucje pod Fourierovo transformacijo:
+</p>
+
+\begin{equation}
+\label{eq:8}
+f*g = h
+\end{equation}
+
+<p>
+Če zgornja enačba drži, potem velja sledeči produkt.
+</p>
+
+\begin{equation}
+\label{eq:9}
+F(\omega) \cdot G(\omega) = H(\omega)
+\end{equation}
+
+<p>
+Dokazič
+</p>
+
+\begin{align*}
+\iiint F(\omega) e^{i\omega ' (x-t)} d\omega G(\omega) e^{i\omega t} d\omega '  \,dt &= \iint e^{i\omega t} F(\omega) G(\omega) \int e^{i(\omega'  - \omega)} \, dt d\omega d\omega' \\
+&= 2\pi \iint e^{i\omega x}F(\omega)G(\omega)d\omega
+\end{align*}
+
+<p>
+Konvolucija nam ustreza, ker ima FFT časovno zahtevnost \( O(n \log n) \). S3.8
+</p>
+</div>
+<div id="outline-container-orgb52cef7" class="outline-4">
+<h4 id="orgb52cef7"><span class="section-number-4">1.7.1.</span> Diskretna konvolucija</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<p>
+Definicija je
+</p>
+
+\begin{equation}
+\label{eq:10}
+c_n = \sum\limits_k a_{n-k} b_k
+\end{equation}
+
+<p>
+oz.
+</p>
+
+\begin{equation}
+\label{eq:11}
+[c] = [a] * [b]
+\end{equation}
+
+<p>
+To nas spominja na množenje polinomov.
+Dejanska useful case
+</p>
+
+\begin{equation}
+\label{eq:12}
+\overline{a_2 a_1 a_0} = a_0 + 10 a_1 + 10 ^2 a_2
+\end{equation}
+
+<p>
+Polinom pri x: baza je razvoj po x-tiškem sistemu in FFT nam pohitri pomnoži števila z visoko natančnostjo.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2024-03-21 Thu 21:45</p>
+</div>
+</body>
+</html>

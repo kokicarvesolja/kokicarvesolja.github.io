@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-03-28 Thu 20:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mafija</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  pre.src-C\+\+:before { content: 'C++'; }
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mafija</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga3285f1">1. Specialne funkcije</a></li>
+<li><a href="#orgc1409e0">2. Rešitve pogostih D.E.</a>
+<ul>
+<li><a href="#orgd177b41">2.1. Besslova funkcija (diferencialna enačba)</a></li>
+<li><a href="#org4735a94">2.2. Airyjevi funkciji S2.3</a></li>
+</ul>
+</li>
+<li><a href="#org72cc3a6">3. Rešitve pogostih transcendentnih enačb</a>
+<ul>
+<li><a href="#org17ca874">3.1. Lambertova funkcija W</a></li>
+<li><a href="#orgc6115e6">3.2. \( \Gamma \) funkcija</a>
+<ul>
+<li><a href="#org687137c">3.2.1. Povprečje</a></li>
+<li><a href="#org3253abc">3.2.2. Maksimum</a></li>
+</ul>
+</li>
+<li><a href="#org1534f20">3.3. Normalizacija Gaussove funkcije</a></li>
+<li><a href="#org7196739">3.4. Riemannova \( \zeta \) funkcija</a></li>
+<li><a href="#orga052850">3.5. Asimptotske vrste</a>
+<ul>
+<li><a href="#org75448d2">3.5.1. \( erf \) funkcija</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9415faf">4. Eliptični integrali</a>
+<ul>
+<li><a href="#orgc9539d3">4.1. Eliptični integrali kot vrsta</a></li>
+<li><a href="#org4980018">4.2. Nepopolni eliptični integral</a></li>
+</ul>
+</li>
+<li><a href="#org4335608">5. Metoda stacionarne faze</a>
+<ul>
+<li><a href="#orgaa9fe86">5.1. Zgled metode stacionarne faze</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga3285f1" class="outline-2">
+<h2 id="orga3285f1"><span class="section-number-2">1.</span> Specialne funkcije</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Elementarne funkcije, zgodovinsko določene. &ldquo;Lepo&rdquo; se obnašajo. Specialne funkcije so tiste, &ldquo;katerih ne najdeš na kalkulatorju&rdquo;.
+</p>
+
+<p>
+Integrali, ki niso izrazljivi z elementarnimi funkcijami (integrali).
+</p>
+
+<p>
+Integralski sinus in cosinus
+</p>
+
+\begin{align*}
+\label{eq:2}
+Si (x) &= \int\limits _0 ^x \frac{\sin (t)}{t} \, dt \\
+Ci (x) &= \int\limits _x ^{\infty} \frac{\cos (t)}{t} \, dt  \\
+Li (x) &= \int\limits _0 ^x \frac{1}{\ln (t)} \, dt \\
+Ei (x) &= \int\limits _{-\infty} ^x \frac{e^{t}}{t} \, dt \\
+S(x) &= \int\limits _0 ^x \sin(t^2) \, dt \\
+C(x) &= \int\limits _0 ^x \cos(t^2) \, dt \\
+Erf(x) &= \frac{2}{\sqrt{\pi}} \int\limits _{-\infty} ^x e ^{-t ^2} \, dt \\
+\end{align*}
+</div>
+</div>
+<div id="outline-container-orgc1409e0" class="outline-2">
+<h2 id="orgc1409e0"><span class="section-number-2">2.</span> Rešitve pogostih D.E.</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgd177b41" class="outline-3">
+<h3 id="orgd177b41"><span class="section-number-3">2.1.</span> Besslova funkcija (diferencialna enačba)</h3>
+<div class="outline-text-3" id="text-2-1">
+\begin{equation}
+\label{eq:3}
+x^2 \ddot{y} + y (x^2 - \alpha^2) = 0
+\end{equation}
+
+<p>
+Besslova funkcija prvega reda \( J_{\alpha} (x) \)
+<img src="figures/Bessel_J.svg" alt="Bessel_J.svg" class="org-svg" />
+Besslova funkcija drugega reda \( Y_{\alpha} (x) \)
+<img src="figures/Bessel_Y.svg" alt="Bessel_Y.svg" class="org-svg" />
+</p>
+</div>
+</div>
+<div id="outline-container-org4735a94" class="outline-3">
+<h3 id="org4735a94"><span class="section-number-3">2.2.</span> Airyjevi funkciji S2.3</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Airyjevi funkciji, prvega reda \( Ai (x) \) in drugega reda \( Bi(x) \), sta funkciji, ki rešita diferencialno enačbo:
+</p>
+
+\begin{equation}
+\label{eq:4}
+\ddot{y} - xy = 0
+\end{equation}
+
+
+<div id="orgf1e6492" class="figure">
+<p><img src="figures/AiryFunctions.png" alt="AiryFunctions.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org72cc3a6" class="outline-2">
+<h2 id="org72cc3a6"><span class="section-number-2">3.</span> Rešitve pogostih transcendentnih enačb</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Najprej definirajmo transcendentne funkcije. To so funkcije, ki jih ne moremo zapisati v polinomski obliki. Te funkcije &ldquo;transcend&rdquo; algebro in nosijo zato tako ime. Protipomenka transcendentnih enačb so algebraične enačbe.
+</p>
+
+\begin{align*}
+\label{eq:1}
+x &= e^{-x};  && \text{primer transcendentne enačbe} \\
+x^5 - 3x + 1 &= 0;  &&\text{primer algebraične enačbe}
+\end{align*}
+</div>
+<div id="outline-container-org17ca874" class="outline-3">
+<h3 id="org17ca874"><span class="section-number-3">3.1.</span> Lambertova funkcija W</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Lambertova funkcija W (tudi funkcija \( \omega \)) oz. na kalkulatorju se jo tudi najde pod imenom <i>product log(arithm)</i> je obratna funkcija \( f(w) = w e^w \), kjer je \( w \) kompleksno število in \( e^w \) naravna eksponenta funkcija.
+</p>
+\begin{equation}
+\label{eq:5}
+y e^y = x
+\end{equation}
+
+<p>
+Za vsak število \( k \) obstaja ena veja, označena z \( W_k (x) \), ki je kompleksna funkcija. Enačba \ref{eq:5} velja natanko tedaj, ko velja
+</p>
+
+\begin{equation}
+\label{eq:13}
+y = W_k (x)
+\end{equation}
+
+<p>
+Če se ukvarjamo samo z realnimi števili, zadoščata veji \( W_0 \) in \( W_{-1} \).
+<img src="figures/Lamber_W.svg" alt="Lamber_W.svg" class="org-svg" />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc6115e6" class="outline-3">
+<h3 id="orgc6115e6"><span class="section-number-3">3.2.</span> \( \Gamma \) funkcija</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Za več splošnih informacij \( \Gamma \) funkcije, glej skripto Mat3, Bukovšek.
+</p>
+
+\begin{equation}
+\label{eq:6}
+\Gamma (n) = \int\limits _0 ^{\infty} t^{n-1} e ^{-t} \,dt
+\end{equation}
+<p>
+velja \( n! = \Gamma (n + 1)\), in \( n! = \int\limits _0 ^{\infty} t^n e^{-t}\).
+</p>
+
+<p>
+Lahko reproduciramo <b>Stirlingovo aproksimacijo</b>?
+</p>
+
+<p>
+\( \Gamma \) funkcijo in Stirlingovo aproksimacijo zapišemo kot
+</p>
+
+\begin{align}
+n! &\approx \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \\
+\Gamma (n) &\approx \sqrt{\frac{2\pi}{n}} \left( \frac{n}{e} \right) ^n
+\end{align}
+
+<p>
+Opazimo lahko, da sta aproksimaciji različni.
+</p>
+
+<p>
+Poskusili bomo zamenjati vsoto z integralom logaritma \( n! \)
+</p>
+\begin{align}
+\label{eq:7}
+\ln(n!) &= \sum\limits _{k=1} ^n \ln(k) = \int\limits _1 ^n \ln(x) \, dx = n \ln (n) - n + 1\\
+n! &\approx n^n e^{-n} e = e \cdot \left( \frac{n}{e} \right) ^n
+\end{align}
+<p>
+Zmoti nas spodnja meja integrala, ki je \( 1 \) in ne 0. Sama aproksimacija je v redu, saj je vrednost \( e \approx 2.718 \), vrednost v Stirlingovi aproksimaciji pa je \( \sqrt{2 \pi} \approx 2.507 \). Zmanjka nam z našo aproksimacijo samo člen \( n \).
+</p>
+</div>
+<div id="outline-container-org687137c" class="outline-4">
+<h4 id="org687137c"><span class="section-number-4">3.2.1.</span> Povprečje</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+Integrand \( n! \) bomo aproksimirali z Gaussovo porazdelitvijo  \( f(t) = t^n e^{-t} \approx A e^{- \frac{(t - \bar{t}) ^2}{2 \sigma ^2}} \), kjer je \( \bar{t} \) povprečje in \( \sigma \) standardna deviacija, ki ju znamu izračunati iz predmeta Verjetnost v fiziki.
+</p>
+
+\begin{align}
+\label{eq:8}
+<t> &= \frac{\int\limits_0^{\infty} t \cdot t^{n} e^{-t} \,dt}{\int\limits_0^{\infty} t^n e^{-t}\,dt} = \frac{(n-1)!}{n!} = n+1 \\
+<t^2> &= \frac{\int\limits_0^{\infty} t ^2 \cdot t^n e^{-t} \, dt}{\int\limits_0^{\infty} t^n e^{-t} \,dt} = (n+1)(n+2)\\
+\sigma ^2 &= <t^2> - <t>^2 = n+1 \\
+A &= <t> ^n e ^{-<t>}
+\end{align}
+
+<p>
+Vrednost integrala je potem
+</p>
+
+\begin{align*}
+\int\limits_0^{\infty} t^n e^{-t} \, dt &\approx A \cdot \int\limits_{-\infty}^{\infty} e^{-\frac{(t - (n+1))^2}{2(n+1)^2}} && \text{Vrednost integrala je } \sqrt{2 \pi} \sigma \\
+&= \sqrt{2 \pi} A \sigma = \sqrt{2 \pi} (n + 1) ^n e^{-(n+1)} \sqrt{(n + 1)} \\
+&= \sqrt{\frac{2 \pi}{n+1}} (n+1)^{n+1} e^{-(n+1)}
+\end{align*}
+<p>
+Če uvedemo novo spremenljivko \( u = n + 1 \), je enaka aproksimaciji kakor za \( \Gamma \) v \ref{}.
+</p>
+</div>
+</div>
+<div id="outline-container-org3253abc" class="outline-4">
+<h4 id="org3253abc"><span class="section-number-4">3.2.2.</span> Maksimum</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<p>
+Sedaj poskusimo vzeti maksimalno vrednost Gaussove funkcije in ne povprečja. Za ekstrem odvajamo in je vrednost v maksimumu
+</p>
+
+\begin{equation}
+\label{eq:33}
+\frac{\partial t^n e^t}{\partial t} = 0 \implies t_0 = n
+\end{equation}
+
+\begin{align*}
+e^{- \frac{(t - \bar{t}) ^2}{2 \sigma ^2}} &\approx f(t) && /\ln \\
+{- \frac{(t - \bar{t}) ^2}{2 \sigma ^2}} &\approx n \ln(t) - t && / \frac{\partial ^2 }{\partial t ^2} \\
+-\frac{1}{\sigma ^2} &= \left. -\frac{n}{t ^2} \right |_{t = t_0}   \\
+\sigma ^2 = n
+\end{align*}
+<p>
+Sedaj, ko vstavimo izračunane vrednosti, dobimo
+</p>
+
+\begin{equation}
+\label{eq:34}
+\sqrt{2 \pi}A \sigma = \sqrt{2\pi n} \left( \frac{n}{e} \right)^{-n}
+\end{equation}
+
+<p>
+Z dvema različnima postopkoma smo sedaj dobili tako aproksimacijo za \( \Gamma \) kakor za \( n! \).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1534f20" class="outline-3">
+<h3 id="org1534f20"><span class="section-number-3">3.3.</span> Normalizacija Gaussove funkcije</h3>
+<div class="outline-text-3" id="text-3-3">
+\begin{align*}
+\left( \int\limits_{-\infty}^{\infty} e^{\frac{u ^2}{2}} \, du \right) ^2 &= \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty} e^{- \frac{x ^2}{2} - \frac{y ^2}{2}} \, dxdy \\
+&= 2 \pi \int\limits_0^{\infty} e ^{-\frac{r ^2}{2}} r \, dr \\
+&= 2 \pi
+\end{align*}
+
+<p>
+Iz 2. v 3. vrstico smo nadomestili kartezične koordinate s polarnimi koordinatami.
+</p>
+
+<p>
+Vrednost sedaj korenimo in s tem dobimo normalizirano vrednost Gaussove funkcije. Če jo primerjamo z \( \Gamma \), kjer upoštevamo substitucijo \( t = \frac{u ^2}{2} \), je
+</p>
+
+\begin{equation}
+\label{eq:35}
+2\int\limits_{0}^{\infty} e^{-t} \frac{dt}{\sqrt{2t}} = \sqrt{2} \Gamma (\frac{1}{2}) = \sqrt{2 \pi}
+\end{equation}
+
+<p>
+Tako je vrednost \( \Gamma (\frac{1}{2}) = \sqrt{\pi} \).
+</p>
+
+
+<p>
+Normalizacija Gaussove funkcije (\(N \text{ in } N^2\))
+</p>
+</div>
+</div>
+<div id="outline-container-org7196739" class="outline-3">
+<h3 id="org7196739"><span class="section-number-3">3.4.</span> Riemannova \( \zeta \) funkcija</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Riemannova \( \zeta \) funkcija je verjetno ena bolj slavnih funkcij. Iz nje izhaja tudi Riemannova domena, da imajo vse netrivialne ničle funkcije realni del enak \( \frac{1}{2} \).
+</p>
+
+<p>
+Sama funkcija je za nas, fizike, zanimiva v kvantni teoriji polja in kvantni statistiki, kjer pogosto preko Riemannove \( \zeta \) funkcije pretvorimo izlimitirane integrale, v vrednosti, ki so nam obvladljive.
+</p>
+
+\begin{equation}
+\label{eq:9}
+\zeta (s) = \sum\limits _{n=1} ^{\infty} n^{-s}; \, \Re(s) > 1
+\end{equation}
+
+<p>
+Nekatere vrednosti te funkcije so
+</p>
+
+\begin{align*}
+\zeta (2) &= \frac{\pi ^2}{6} \\
+\zeta (4) &= \frac{\pi ^4}{90} \\
+\zeta (6) &= \frac{\pi ^6}{945}
+\end{align*}
+
+<p>
+\( \zeta \) lahko zapišemo tudi v drugi obliki:
+</p>
+
+\begin{equation}
+\label{eq:10}
+\zeta (s) = \prod_{\text{praštevila}}  \frac{1}{1 - p^{-s}}
+\end{equation}
+</div>
+</div>
+<div id="outline-container-orga052850" class="outline-3">
+<h3 id="orga052850"><span class="section-number-3">3.5.</span> Asimptotske vrste</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+Asimptotske vrste je razvoj funkcije v vrsto, ki lahko divergira ali pa konvergira. V naših primerih pogosto divergirajo. Navkljub divergenci so lahko delne vsote relativno dobra aproksimacija funkcije ob dovolj velikem \( x \).
+Primer divergence, kjer se nekaj členov bliža podani funkciji, potem pa divergira, lahko vidimo na sliki.
+</p>
+
+
+<div id="org5f0549a" class="figure">
+<p><img src="figures/O_36.png" alt="O_36.png" />
+</p>
+</div>
+
+<p>
+Na grafu, kjer je minimum funkcije, je idealno število upoštevanih členov za najboljšo aproksimacijo \( \Gamma \) funkcije. Rdeče pike so za \( x = 2 \), kjer je najmanjša napaka za 14 členov, modre pike pa za \( x = 3 \), kjer je najmanjša napaka pri 20 členih.
+</p>
+
+
+<div id="orgc4e7a33" class="figure">
+<p><img src="figures/gamma_funkcija_aproksimacija.png" alt="gamma_funkcija_aproksimacija.png" />
+</p>
+</div>
+
+<p>
+Večina funkcij, na katere bi lahko tekom naše fizikalne kariere naleteli, so že poknjižene, v primeru pa, da slučajno naletimo na funkcijo, ki še ni, sami napišemo asimptotsko vrsto za dano funkcijo.
+Napaka za isto število členov se manjša s tem, ko gre \( x \) proti \( \infty \). Členi v aproksimaciji rastejo \( \approx \frac{n!}{x^n}\).
+</p>
+</div>
+<div id="outline-container-org75448d2" class="outline-4">
+<h4 id="org75448d2"><span class="section-number-4">3.5.1.</span> \( erf \) funkcija</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<p>
+Vzemimo za primer \( erf \) funkcijo za \( \left| x \right| < 1\), ki je definirana kot
+</p>
+\begin{equation}
+\label{eq:11}
+erf(x) = \frac{2}{\sqrt{\pi}} \int\limits _0 ^x e^{-t^2} \, dt
+\end{equation}
+
+<p>
+Funkcijo aproksimiramo z vrsto
+</p>
+
+\begin{equation}
+\label{eq:36}
+erf(x) = \frac{2}{\sqrt{\pi}} \sum\limits _{n=0} ^{\infty} \frac{x^{2n +1}}{2n + 1} \frac{(-1)^n}{n!}
+\end{equation}
+
+<p>
+Definiramo komplementarno funkcijo funkciji \( erf \) z oznako \( erfc \).
+</p>
+
+
+<div id="orgf2e0648" class="figure">
+<p><img src="figures/poskus.png" alt="poskus.png" />
+</p>
+</div>
+
+<p>
+Vidimo lahko, kako vrsta začne divergirati, vendar je okoli 0 precej natačna.
+</p>
+
+\begin{align}
+\label{eq:12}
+erfc(x) &= 1-erf(x) \\
+erfc(x) &= \frac{2}{\sqrt{\pi}} \int\limits _x ^{-\infty} e^{-t^2} \, dt
+\end{align}
+
+<p>
+Funkcijo premaknemo tako, da velja \( t - x = u \)
+</p>
+\begin{align}
+\label{eq:14}
+&= \frac{2}{\sqrt{\pi}} e^{-x^2} \int\limits _0 ^{\infty} e^{-u^2} e^{-2ux};\, \text {nova spremenljivka } w = -2ux \\
+&=  \frac{2}{\sqrt{\pi}} e^{-x^2} \int\limits _0 ^{\infty} e^{w} \sum\limits _n \frac{(-u)^2}{n!} \, du, \, u = \frac{w}{2x} \\
+&=  \frac{2}{\sqrt{\pi}} e^{-x^2} \sum\limits _{n=0} ^{\infty} \frac{(2n)!(-1)^n}{(2x) ^{2n+1} n!}
+\end{align}
+
+<p>
+člen \( e^{-x^2}\) je ovojnica, medtem ko iz prve vrstice v drugo vrstico razvijemo člen \( e^{-u^2}\).
+</p>
+
+<p>
+V fiziki je to uporabno tako, da multipolno razvijemo. Potencial (porazdelitve naboja) \( \approx \frac{e}{r} + \frac{3p^2 r^2 - (pr)^2}{r^{3} + ... + r^5} \).
+</p>
+
+\begin{equation}
+\label{eq:15}
+\int\limits _{-\infty} ^{\infty} \frac{\rho}{\left| r + x \right|} \, dx = \int\limits _{-\infty} ^{\infty} \frac{\rho}{r(1+ \frac{x}{r})} = \int\limits _{-\infty} ^{\infty}(\frac{1}{r} + \frac{x}{r^3}...) \, dx
+\end{equation}
+
+<p>
+Pogoje razvoja, narediš asimptotsko vrsto pri integraciji in ne pri razvoju vrste - pri razvoju vrste upoštevaš za majhne \(x\), pri integraciji pa \( x \to \infty \).
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9415faf" class="outline-2">
+<h2 id="org9415faf"><span class="section-number-2">4.</span> Eliptični integrali</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Eliptični integrali so v splošnem integrali oblike
+</p>
+
+\begin{equation}
+\label{eq:37}
+\int \frac{A(x) + B(x) \sqrt{S(x)}}{C(x) + D(x) \sqrt{S(x)}} \, dx
+\end{equation}
+
+<p>
+kjer so \( A(x), B(x), C(x), D(x) \) polinomi in \( S(x) \) je polinom 3 ali 4 potence. Bolj enostavneje se to zapiše kot
+</p>
+
+\begin{equation}
+\label{eq:38}
+\int R(w, x) \, dx
+\end{equation}
+
+<p>
+kjer je \( R(w, x) \) racionalna funkcija odvisna od \( x \) in \( w \). \( w ^2 \) je funkcija odvisna od \( x \) in je kubična ali <i>quartic</i>. Funkcija \( R \) vsebuje vsaj eno liho potenco \( w \) in \( w ^2 \) nima ponovoljenih faktorjev.
+</p>
+
+<p>
+Eliptični integrali nam ponudijo širšo paleto problemov, ki jih lahko rešimo, začenši z dolžino krivulje integrala, ki ni tako trivialna, kakor je pri krožnici. Kakor bomo videli v nadaljevanju nam eliptični integrali ponudijo tudi rešitev za matematična nihala odmikov za nemajhne kote. Problemi v elektromagnetizmu in gravitaciji se tudi opirajo na eliptične integrale za rešitve.
+</p>
+
+<p>
+Povedali smo eliptična popolna (določena) integrala I. in II. vrste.
+</p>
+
+\begin{align}
+\label{eq:16}
+K(k) &= \int\limits_0^{\frac{\pi}{2}} \frac{1}{\sqrt{1 - k^2 \sin^2(\vartheta)}} \,d\vartheta  && \text{Eli. integral I. vrste} \\
+E(k) &= \int\limits_0^{\frac{\pi}{2}} \sqrt{1 - k^2 \sin^2(\vartheta)} \,d\vartheta && \text{Eli. integral II. vrste}
+\end{align}
+
+<p>
+Kakor smo že prej omenili, je eden od primerov matematično nihalo za nemajhne odmike.
+</p>
+
+<p>
+Začnemo z enačbo za gibanje, iz katere sledi energijska enačba in nato krožna frekvenca.
+</p>
+
+
+\begin{align*}
+ml ^2 \ddot{\vartheta} = - mgl \sin(\vartheta) \\
+\frac{ml ^2 \dot{\vartheta}}{2} + mgl(1 - \cos(\vartheta)) = mgl (1 - \cos(\vartheta_0))
+\end{align*}
+
+<p>
+kjer je \( \vartheta_0 \) amplituda. Krožna frekvenca je tako
+</p>
+
+\begin{equation}
+\label{eq:40}
+\dot{\vartheta} = \sqrt{\frac{2g}{l} (\cos(\vartheta) - \cos(\vartheta_0))}
+\end{equation}
+
+<p>
+Z upoštevanjem, da je \( \cos (\vartheta) = 1 - 2 \sin ^2 \left( \frac{\vartheta}{2} \right) \) dobimo enačbo
+</p>
+
+\begin{equation}
+\label{eq:41}
+\dot{\vartheta}  = 2 \omega_0 \sin \left( \frac{\vartheta_0}{2}  \right) \sqrt{1 - \frac{\sin ^2 \left( \frac{\vartheta}{2} \right)}{\sin ^2 \left( \frac{\vartheta_0}{2} \right)}}
+\end{equation}
+
+<p>
+Sedaj imamo podan sledeč integral za četrt periode.
+</p>
+
+\begin{align*}
+\int\limits_{\vartheta_0}^0 \frac{1}{\sqrt{1 - \frac{\sin ^2 \left( \frac{\vartheta}{2} \right)}{\sin ^2 \left( \frac{\vartheta_0}{2} \right)}}} &= \frac{t_0}{4} (2\omega_0 \sin \left( \frac{\vartheta_0}{2} \right)) && \sin(u) = \frac{\sin ^2 \left( \frac{\vartheta}{2} \right)}{\sin ^2 \left( \frac{\vartheta_0}{2} \right)} \\
+&= \int\limits_{\frac{\pi}{2}}^0 \frac{du}{\sqrt{1 - \sin ^2 (u) \sin ^2 (\frac{\vartheta_0}{2}) }} = \frac{t_0}{4} \omega_0 && k = \sin ^2 \left( \frac{\vartheta_0}{2} \right)
+\end{align*}
+
+<p>
+Vrednost integrala \( K \) je torej
+</p>
+
+\begin{equation}
+\label{eq:42}
+K(\sin \left( \frac{\vartheta_0}{2} \right)) = \frac{t_0 w_0}{4}
+\end{equation}
+
+<p>
+Vidimo lahko, da je eliptični integral I. vrste kar \( 1/4 \) nihajnega časa v odvisnosti od amplitude. Preverimo robne pogoje:
+</p>
+
+\begin{align*}
+K(0) = \frac{\pi}{2} && \text{za majhne odmike mora biti } t_0 w_0 = 2\pi \\
+K(1) \to \infty
+\end{align*}
+
+<p>
+Na sliki \ref-to-be-made lahko vidimo grafa funkcij \( K(k) \) in \( E(k) \). Funkcija \( K(k) \) gre v \( \infty \), ko \( k \to 1 \).
+<img src="figures/ellipeellipk.png" alt="ellipeellipk.png" />
+<b>Opomba</b>: Za računanje in risanje funkcij s pomočjo <code>Pythona</code>, uporabimo knjižnico <code>scipy.special</code> in njena operatorja <code>ellipk</code> za popolni eliptični integral I. vrste in <code>ellipe</code> za popolni eliptični integral II. vrste.
+</p>
+</div>
+<div id="outline-container-orgc9539d3" class="outline-3">
+<h3 id="orgc9539d3"><span class="section-number-3">4.1.</span> Eliptični integrali kot vrsta</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Eliptična integrala lahko zapišemo tudi kot vrsto.
+</p>
+
+\begin{equation}
+\label{eq:19}
+K(k) = \sum\limits _{n=0} ^{\infty} {-\frac{1}{2} \choose n} \frac{\sqrt{\pi}\Gamma(n+1/2)}{n!} (-k^2)^{n} = \frac{\Gamma}{2} \sum\limits_{n=0}^{\infty} \left( \frac{(2n)!}{(n!) ^2 2 ^{2n}} \right) ^2 k^{2n}
+\end{equation}
+
+<p>
+Za hitro uporabo lahko izkoristimo tudi
+</p>
+
+\begin{equation}
+\label{eq:17}
+K(k) = \frac{\pi}{2 agm(1, \sqrt{1-k ^2})}
+\end{equation}
+
+<p>
+kjer je \( agm \) aritmetično-geometrijska sredina. Ta formula nam omogočna hiter in enostaven postopek. Aritmetično in geometrijsko povprečje tuka izračunamo s pomočjo iteracije.
+</p>
+</div>
+</div>
+<div id="outline-container-org4980018" class="outline-3">
+<h3 id="org4980018"><span class="section-number-3">4.2.</span> Nepopolni eliptični integral</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Vrnimo se k primeru matematičnega nihala.
+</p>
+
+<p>
+Za majhne odmike velja
+</p>
+
+\begin{equation}
+\label{eq:18}
+\omega_0 t = \int\limits_0^{\varphi} \frac{du}{\sqrt{1-u ^2}} = \arcsin (\varphi)
+\end{equation}
+
+<p>
+Za velike odmike velja
+</p>
+
+\begin{equation}
+\label{eq:39}
+\omega_0 t = \int\limits_0^z \frac{du}{\sqrt{1 - k ^2 \sin ^2 (u)}}
+\end{equation}
+
+<p>
+kjer velja, da je \( \sin (z) = \frac{\sin \left( \frac{\vartheta}{2} \right)}{\sin(\frac{\vartheta_0}{2})} \).
+</p>
+
+<p>
+Izrazu za velike odmike se reče tudi <i>nepopolni eliptični integral I. vrste</i>. Označimo ga z \( F(z, k) \).
+</p>
+
+\begin{equation}
+\label{eq:43}
+F(z, k) = \int\limits_0^z \frac{du}{\sqrt{1-k ^2 \sin ^2 (u)}}
+\end{equation}
+
+<p>
+Njegov inverz je
+</p>
+
+\begin{equation}
+\label{eq:44}
+z = am(\omega_0t, k) \iff \omega_0t = F(z, k)
+\end{equation}
+
+<p>
+kjer je \( am \) /Jakobijeva amplituda.
+</p>
+
+<p>
+Graf funkcije \( F \) izgleda
+</p>
+
+
+<div id="org85adb25" class="figure">
+<p><img src="figures/F(z,k).gif" alt="F(z,k).gif" />
+</p>
+</div>
+
+<p>
+Iz te funkcije tako priredimo posplošitve \( \sin \) in \( \cos \) funkcij, ki se jima reče <i>sinus amplitudinis</i> (s periodo \( 4K(k) \)) in <i>kosinus amplitudinis</i> (z enako periodo). Poleg pa obstaja še <i>delta amplitudinis</i> (s periodo \( 2K(k) \)).
+</p>
+
+\begin{align}
+\label{eq:21}
+sn(\omega_0t, k) &= \sin(am(\omega_0t, k))\\
+cn(\omega_0t, k) &= \cos(am (\omega_0t, k))
+dn(\omega_0t, k) &= \left. \frac{d}{du} am(n, k) \right|_{u = \omega_0 t}
+\end{align}
+
+<p>
+Podane funkcije spadajo v skupino Jakobijevih eliptičnih funkcij.
+</p>
+
+<p>
+Nihalo z velikimi odmiki ima v maksimalni amplitudo bolj položno funkcijo. Graf nam kaže, kako bolj položen je <i>sinus amplitudinis</i> napram sinusu.
+</p>
+
+
+<div id="orge6ff6fd" class="figure">
+<p><img src="figures/sinsn.png" alt="sinsn.png" />
+</p>
+</div>
+
+<p>
+<b>Opomba</b>: Funkcija <code>scipy.special.ellipj(u, m)</code> sprejme parameter <code>m</code>, kar je array (na sliki je interval [0,10]), in <code>u</code> je argument, na grafu ima vrednost \( 0.7 \). Funkcija vrne funkcije v naslednjem vrstnem redu: <code>sn(u, m), cn(u, m), dn(u, m)</code>.
+</p>
+
+<p>
+Preglejmo še limite
+</p>
+
+\begin{align*}
+sn(u, 0) &= \sin(u) \\
+sn(u, 1) &= \tanh(u) \\
+cn(u, 0) &= \cos(u) \\
+cn(u, 0) &= \frac{1}{\cosh(u)} \\
+dn(u, 0) &= 1
+\end{align*}
+</div>
+</div>
+</div>
+<div id="outline-container-org4335608" class="outline-2">
+<h2 id="org4335608"><span class="section-number-2">5.</span> Metoda stacionarne faze</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Metoda stacionarne faze je osnovnih približkov asimptotske analize. Glavna ideja je, da se sinusoidni valovni izničijo zaradi hitro spreminjajoče faze. Sama metoda je aktualna v valovni optiki, kvantni mehaniki, Fourirerovih transformacijah in oscilatornih funkcijah.
+</p>
+
+
+<div id="org3bd18c5" class="figure">
+<p><img src="figures/metodastacfaz.jpg" alt="metodastacfaz.jpg" />
+</p>
+</div>
+
+<p>
+Leva in desna stran, kjer so valovi gostejši, se izpovpreči v 0, medtem ko se nam faza v sredini faza ustavi in dopušča neničeln integral.
+</p>
+
+<p>
+Integrali so oblike
+</p>
+
+\begin{equation}
+\label{eq:22}
+\int g(z) e^{i\varphi(z)} \, dz
+\end{equation}
+<p>
+\( \varphi(z) \) je hitra funkcija (faza), \(g(z)\) počasna funkcija (amplituda). Njun produkt nam da tisto, kar kaže slika. Integral je različen od nič samo tam, kjer ima funkcija \( \varphi (z) \) ekstrem, torej velja \( \frac{\partial \varphi}{\partial z}  = 0 \).
+</p>
+
+<p>
+Po Taylorju razvijemo okoli ekstrema \( \varphi_0 \).
+</p>
+
+\begin{equation}
+\label{eq:23}
+\varphi \approx \varphi_0 + \frac{1}{2} \frac{\partial^2 \varphi}{\partial z^2} (z - z_0)^2
+\end{equation}
+
+<p>
+Predpostavimo, da je funkcija okoli točke \( z_0 \) stacionarna in se ne spremeni veliko. Tako veljaj \( g(z) \approx g(z_0) \).
+</p>
+
+\begin{align*}
+\label{eq:24}
+f &\approx \int\limits _{-\infty} ^{\infty} g(z_0) e^{i\varphi_0}e^{iq(z-z_0)^2} \, dz; &&  \text{kompleksen gauss}\\
+&= \frac{e^{i\varphi_0} g(z_0)}{\sqrt{-2i q}} \int\limits _{-\infty} ^{\infty} e^{\frac{-u^2}{2}}\, du \\
+&= \sqrt{\frac{\pi i}{q}} e^{i\varphi_0}g(z_0)
+\end{align*}
+
+<p>
+Imamo kompleksno različico Gaussove funkcije, kjer je \( \frac{1}{2\sigma ^2} = iq \)
+</p>
+
+<p>
+V primeru, da bi imeli več stacionarnih točk, kakor samo eno, lahko okrog vseh naredimo razvoj, vendar ima vsaka funkcija svoje vrednosti \( q_i \) in \( g(z_i) \), kjer je \( i \) število stacionarnih točk.
+</p>
+</div>
+<div id="outline-container-orgaa9fe86" class="outline-3">
+<h3 id="orgaa9fe86"><span class="section-number-3">5.1.</span> Zgled metode stacionarne faze</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Za zgled uporabimo
+</p>
+
+\begin{equation}
+\label{eq:25}
+J_n (x) = \frac{1}{2\pi} \int\limits _{-\pi} ^{\pi} e^{i(nt - x\sin(t))} \,dt
+\end{equation}
+
+<p>
+torej sta vrednost \( g(t) = 1 \) in \( \varphi(t) = nt - x\sin(t)\).
+</p>
+
+<p>
+Pri velikih \( x \) imamo hitre oscilacije razen v stacionarni fazi.
+</p>
+
+\begin{equation}
+\label{eq:26}
+\varphi ' (t) = 0 = n - x\cos(t) \implies \cos(t_0) = \frac{n}{x}
+\end{equation}
+
+<p>
+Prvi odvod nam poda ekstreme in vidimo, da imamo simetrično 2 ničli, saj mora biti ulomek na desni strani enak \( \pm \frac{\pi}{2} \).
+</p>
+
+<p>
+\(q\) ima potem vrednost
+</p>
+
+\begin{equation}
+\label{eq:27}
+2q = \varphi ''(t_0) = x\sin(t_0) = x \sqrt{1 - \left( \frac{n}{x} \right)^2} \approx x
+\end{equation}
+
+<p>
+Koren zanemarimo, saj vsebuje \( x \) drugega reda.
+</p>
+
+<p>
+Vrednost integrala \(J\) je potem:
+</p>
+
+\begin{align}
+\label{eq:28}
+J_n (x) &= \frac{1}{2\pi} \sqrt{\frac{\pi i}{q}} e^{i\varphi_0} g(t_0) \\
+&= \frac{1}{2\pi} \sqrt{\frac{\pi}{x/2}} e^{i \pi/4} e^{i(nt_0 -x)} \\
+&= \frac{1}{\pi}  \Re(e^{i(nt_0 - x \sin(t_0) + \frac{\pi}{4})}) \cdot \sqrt{\frac{2\pi}{x}} \approx \sqrt{\frac{2}{\pi x}} \cos(x - n \frac{\pi}{2} - \frac{\pi}{4})
+\end{align}
+
+<p>
+Poglejmo si še bolj konkreten primer v optiki.
+</p>
+
+
+<div id="org93c3506" class="figure">
+<p><img src="figures/S210.svg" alt="S210.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Imamo dve fazi. Prvo povzroči leča
+</p>
+\begin{equation}
+\label{eq:20}
+\varphi_{\text{leča}} = k(n-1) (- \frac{x^2}{2R})
+\end{equation}
+
+<p>
+, kjer je \( R \)  krivinski radij, \( k = \frac{2\pi}{\lambda} \) valovno število.
+</p>
+
+<p>
+Vzrok druge faze pa je razdalja od leče.
+</p>
+
+\begin{equation}
+\label{eq:29}
+\varphi_{\text{potovanje}} = k \left| r-r_0 \right| = kd \left(1 + \frac{(x -x_{0}) ^2}{2d^2} \right)
+\end{equation}
+
+<p>
+S2.10
+Električno polje svetlobe na mestu \(x_0\) je vsota prispevkov po leči.
+</p>
+
+\begin{align*}
+E(x_0) &= E_0 \int g(x) e^{i(\varphi_{\text{leče}} + \varphi_{\text{potovanja}})} \, dx \\
+&= E_0 \int g(x) e^{ik\left((n-1)\frac{x ^2}{2R} + l \left( 1 + \frac{(x - x_0) ^2}{2l ^2} \right)\right)} \, dx
+\end{align*}
+
+<p>
+\(g(x)\) je svetlobni profil, ki je odvisen od oblike leče in vhodne slike. Za valovno število velja \( k << 1 \), kar pmeni, da imamo kratko žarkovno limito.
+</p>
+
+<p>
+\(\varphi \approx \varphi_0 - 2x \frac{x_0}{2d} + x^2(\frac{1}{2d} - \frac{(n-1)}{2R})\)
+</p>
+
+<p>
+Stacionarna točka \(x_{max}\) je potem takem
+</p>
+
+\begin{equation}
+\label{eq:31}
+x_{max} = \frac{x_0}{1 - (n-1)/R} = \frac{x_0}{1 - \frac{d}{f}}; \,  f = \frac{R}{n-1}
+\end{equation}
+<p>
+, kjer je \(f\) goriščna razdalja.
+</p>
+
+<p>
+\(x_0 = x_{max} (1 - \frac{l}{f}) \)
+</p>
+
+<p>
+Potem znaša
+</p>
+
+\begin{equation}
+\label{eq:32}
+E = E_0 e^{i\varphi_0} g(x_{max})\sqrt{\frac{2\pi i}{k(1/d - (n-1)/R)}}
+\end{equation}
+
+<p>
+\(g_{max}\) je vhodna slika, medtem ko je oklepaj v imenovalcu korena intenziteta narašča in divergira z bližanjem v gorišče. Zdi se nam, da \( x_{max} \) je izvor žarka, ne glede na to, katero točko preslika.
+</p>
+
+<p>
+Obravnavani primer je primer stacionarne faze in je žarkovna limita v optiki.
+</p>
+
+<p>
+S2.11
+Aragojeva pega, vzorci na dnu bazena so ekstremi faze (različni svetlobni žarki pridejo na isto točko in interferirajo).
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2024-03-28 Thu 20:53</p>
+</div>
+</body>
+</html>
