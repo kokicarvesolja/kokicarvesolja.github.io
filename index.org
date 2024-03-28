@@ -6,4 +6,5 @@ Welcome to my corner of the internet. Here you can find done, not-done and orpha
 
 ** Predmeti
 
--[[file:mafija/overview_mafija.html][Matematična fizika 1]]  pri prof. Čoparju
+- [[file:astro2/astro-zapiski.html][Astronomija 2]] pri prof. Fabjan
+- [[file:mafija/overview_mafija.html][Matematična fizika 1]] pri prof. Čoparju
