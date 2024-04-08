@@ -1,4 +1,6 @@
 #+title: mf2_p7_20240408
+#+startup: entitiespretty nil
+#+startup: nolatexpreview
 
 Lastna energija jedra
 
@@ -65,7 +67,7 @@ Tretji člen je posledica Coulombski odboj protonov. Pogledamo povprečje Coulum
 
 \begin{equation}
 \label{eq:55}
-V_c \alpha \frac{Z ^2e ^2}{R_j}
+V_c \propto \frac{Z ^2e ^2}{R_j}
 \end{equation}
 
 Večji \( R_j \) bo pomenilo večja razdalja, ampak hkrati tudi več protonov. \( Z ^2 \) je na kvadrat, ker je brez samo za en proton, imamo pa \( Z \) protonov. Tretji člen se da zelo dobro numerično izračunati.
@@ -74,7 +76,7 @@ Večji \( R_j \) bo pomenilo večja razdalja, ampak hkrati tudi več protonov. \
 
 \begin{equation}
 \label{eq:56}
- \frac{(1 - \frac{Z}{N})^2}{(1 + \frac{Z}{N}) ^2} A \alpha \frac{(A - 2Z)^2}{A}
+ \frac{(1 - \frac{Z}{N})^2}{(1 + \frac{Z}{N}) ^2} A \propto \frac{(A - 2Z)^2}{A}
 \end{equation}
 
 Delci v energijskih nivojih imajo tudi spin. Ceneje je dodati proton v nivo, kjer je samo en proton s spinom gor, kakor pa nevtron v nov energijski nivo. Tako ločimo med sodo-sodo, sodo-liho in liho-liho številom nukleonov v jedru
@@ -161,7 +163,7 @@ Podobno kot pri atomu je efektivni magnetni moment s komponento v smeri magnetne
 
 To je projekcija na z-os.
 
-\( g \) je efektivno giromagnetno razmerje jedra, medtem ko nam \( M_J \) meri komponente v smeri z. Možne vrednosti so \( -J, -J + 1, \ldots, J \). Tako imamo \( 2J +1 stanj \).
+\( g \) je efektivno giromagnetno razmerje jedra, medtem ko nam \( M_J \) meri komponente v smeri z. Možne vrednosti so \( -J, -J + 1, \ldots, J \). Tako imamo \( 2J +1 \) stanj.
 
 Klasično jedra začnejo precesirati, kvantno preskakujejo med stanji j.
 
