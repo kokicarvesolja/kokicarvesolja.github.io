@@ -2,8 +2,11 @@
 
 #+begin_quote
 Layla,
-I'm begging, darling please,
+
+I'm begging, darling, please,
+
 Layla,
+
 darling, won't you ease my worried mind
 #+end_quote
 
