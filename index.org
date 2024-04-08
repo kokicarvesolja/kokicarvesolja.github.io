@@ -1,5 +1,14 @@
 #+title: Index
 
+#+begin_quote
+Layla,
+I'm begging, darling please,
+Layla,
+darling, won't you ease my worried mind
+#+end_quote
+
+[[https://music.youtube.com/watch?v=TngViNw2pOo][Layla - Derek & The Dominos]]
+
 * 0 bitches
 
 Welcome to my corner of the internet. Here you can find done, not-done and orphaned projects.
