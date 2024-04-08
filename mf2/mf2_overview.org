@@ -2,6 +2,7 @@
 
 
 * Predavanja
+** [[file:20240408/mf2_p_7_20240408.html][predavanje 2024/04/08]]
 * Vaje
 Vaje v študijskem letu 2023/24 je predaval Klemen Kovač
 - [[file:vaje/MF2_V_6_20240326.pdf][vaje 20240326]] - na vajah sem manjkal in se zahvaljujem Martinu Kerinu, ki mi je zapiske vaj poslal.

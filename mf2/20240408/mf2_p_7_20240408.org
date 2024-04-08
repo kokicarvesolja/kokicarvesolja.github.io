@@ -1,0 +1,219 @@
+#+title: mf2_p7_20240408
+
+Lastna energija jedra
+
+\begin{equation}
+\label{eq:48}
+m(A, Z)c ^2 = Z m_p c ^2 + N m_n c ^2 + W_V(A,Z)
+\end{equation}
+
+kjer je \( W_V(A,Z) \) vezavna energija jedra. Enačbo lahko obrnemo in izrazimo vezavno energijo
+
+\begin{equation}
+\label{eq:49}
+W_V(A,Z) = (m(A, Z)  - Z m_p - N m_n) c ^2 = c ^2 ((m(A,Z) + Zm_e) - Z(m_p + m_e) - Nm_n)  = m(^A_Z X) c ^2 - Z m(H) c ^2 - Nm_n c ^2
+\end{equation}
+
+kjer sta \( X \) in \( m(H) \) atomski masi (vezani na vodik)
+
+* Specifična vezavna energija
+
+je enaka vezavni energiji na nukleon in jo označujemo z \( w_v \), definirana pa je kot
+
+\begin{equation}
+\label{eq:50}
+w_v = \frac{W_V}{A}
+\end{equation}
+
+Numerično se da pokazati, da je \( w_V \approx [-7,4M; -8.7]MeV \) za težja jedra. \( w_V \) je neodvisna od velikosti jedra in to nam pove, da jedrska sila pada zelo hitro z razdaljo.
+
+Semiempirična masna formula (Weis...)
+
+\begin{equation}
+\label{eq:51}
+W_V(A, Z) = - w_0 A + w_1 A^{\frac{2}{3}} + w_2 \frac{Z ^2}{A ^{\frac{1}{3}}} + w_3 \frac{(A - 2Z) ^2}{A} + w_4 \frac{\delta_{ZN}}{A ^{\frac{3}{4}}}
+\end{equation}
+
+Členi so razporejeni po pomembnosti.
+
+Ni striktno res, da je \( w_v \) konstantna. Prvi člen izhaja iz skoraj konstantnosti \( w_V \), drugi člen pa je popravek zaradi končne površine (robni nukleoni imajo nukleone samo na eni strani).
+
+Gostota nukleonov \( \rho \) (masna/številska) je
+
+\begin{equation}
+\label{eq:52}
+\rho \approx = \frac{m_n A}{R_j ^3} \frac{3}{4 \pi} \approx = const
+\end{equation}
+
+Iz tega lahko ugotovimo, da
+
+\begin{equation}
+\label{eq:53}
+R_j = A ^{\frac{1}{3}}
+\end{equation}
+
+kar pomeni, da je površina jedra
+
+\begin{equation}
+\label{eq:54}
+S_j = A^{\frac{2}{3}}
+\end{equation}
+
+In robni nukleoni so manj vezani napram ostalim nukleonov.
+
+Tretji člen je posledica Coulombski odboj protonov. Pogledamo povprečje Coulumbskega odboja preko celotnega jedra in potem dobimo odvisnost
+
+\begin{equation}
+\label{eq:55}
+V_c \alpha \frac{Z ^2e ^2}{R_j}
+\end{equation}
+
+Večji \( R_j \) bo pomenilo večja razdalja, ampak hkrati tudi več protonov. \( Z ^2 \) je na kvadrat, ker je brez samo za en proton, imamo pa \( Z \) protonov. Tretji člen se da zelo dobro numerično izračunati.
+
+Četrti člen izhaja iz opažanj, da so najbolj vezana jedra pri \( N \approxeq Z \). Proporcionalno je s sodo potenco in ni potrebe po kvadratu (lahko je tudi na 4). Potem normiramo z imenovalcem in ker je vrednost ulomka samo za en nukleon, moramo pomnožiti še z \( A \), da dobimo vrednost za vse nukleonov. Ta popravek je posledica Paulijevega izključitvenega principa in končne zasedenosti št. stanj (protoni in nevtroni so tudi na nekih energijskih stanjih (ki pa jih ne poznamo)).
+
+\begin{equation}
+\label{eq:56}
+ \frac{(1 - \frac{Z}{N})^2}{(1 + \frac{Z}{N}) ^2} A \alpha \frac{(A - 2Z)^2}{A}
+\end{equation}
+
+Delci v energijskih nivojih imajo tudi spin. Ceneje je dodati proton v nivo, kjer je samo en proton s spinom gor, kakor pa nevtron v nov energijski nivo. Tako ločimo med sodo-sodo, sodo-liho in liho-liho številom nukleonov v jedru
+
+| nivo | p         | n         |
+|    3 | up & 0    | 0 & 0     |
+|    2 | up & down | up & down |
+|    1 | up & down | up & down |
+
+Tako pridemo do 4. popravnega člena, ki se mu reče tudi /paritveni člen/, kjer velja
+
+\begin{equation}
+\label{eq:57}
+\delta_{ZN} = \begin{cases}
+-1 & \text{za Z sodo- N sodo jedra} \\
+0 & \text{za Z sodo/liho - N liho/sodo jedra}\\
+1 & \text{za Z liho- N liho jedra}
+\end{cases}
+\end{equation}
+
+Približki teh členov so v vrstnem redu \( 15.6 MeV, 17.3 MeV, 0.7MeV, 23.3 MeV, 33.5 MeV \).
+
+Masa atoma je
+
+\begin{equation}
+\label{eq:58}
+M(^A_ZX) = Z m_H + Nm_N + W_V (A,Z) \frac{1}{c ^2}
+\end{equation}
+
+Takemu modelu brez 4. člena se reče tudi /kapljični model jedra/, iz katerega potem izpeljemo še /lupinasti model/.
+
+** Spin in magnetni dipolni moment jedra
+
+Proton in nevtron imata spin \( \frac{1}{2} \). Spinu jedra prispevajo spini nukleonov in tirne vrtilne količine nukleonov.
+
+Iz zgoraj naštetih dejstev že vemo nekaj dejstev:
+
+- če imamo sodo-sodo št. jeder je spin približno 0 (imamo poparjene spine in nasprotne tirne vrtilne količine).
+- uganemo tudi za sodo-liha jedra: prispevek spina ima \( \pm \frac{1}{2} \) in pa še tirna vrtilna količina nesparjenega nukleona), kar pomeni da je spin pol-celoštevilčen
+- liha jedra: zagotovo lahko rečemo, da je spin celoštevilčen (ostane na neki kvalitativni ravni razumevanja).
+*** Magnetni moment elektrona
+
+\( s = \frac{1}{2} \) v stanju \( n = \frac{1}{2} \) v smeri mag. polja. \( Q_e = -e_0 \text{ in } m = m_e \).
+
+\begin{equation}
+\label{eq:59}
+\mu_e = - \mu_B = - \frac{1}{2} \frac{e_0 \hbar}{m_e} g_e
+\end{equation}
+
+kjer je \( \mu_B \) Bohrov magneton. V primerjavi s klasičnim je premajhen \( \mu = \frac{QL}{2m}g \) in zato dodamo \( g_e \) giroskopkso en. Po Diracovi enačbi določimo \( g_e = 2 \).
+
+*** Magnetni dipolni moment protona je:
+  Spin je še zmeraj \( s = \frac{1}{2} \), \( Q_p = e_0 \) in \( m = m_p \). To potem pomeni, da je jedrski magneton
+
+  \begin{equation}
+  \label{eq:60}
+  \mu_j = \frac{e_0 \hbar}{2 m_p} = \frac{m_e}{m_p} \mu_B = 5 \times 10^{-27} Am ^2
+  \end{equation}
+
+  Protonov magneton je
+
+  \begin{equation}
+  \label{eq:61}
+  \mu_p = 2.79 \mu_j \implies g_p \approxeq 5.6
+  \end{equation}
+
+  iz česar sledi, da ima proton podstrukturo.
+
+*** Magnetni moment nevtrona je:
+  Naboj \( Q_n = 0 \) in če bi bil točkast bi pričakovali \( \mu_n = 0 \), vendar je v praksi \( \mu_n = -1.91 \mu_j \implies g_n = -3.8 \)
+
+*** Magnetni moment jedra
+
+K temu prispevajo obhodni in spinski magentni momenti (vsi spinski momenti vseh nukleonov ter obhodni momenti elektronov).
+
+Ponovitev nomenklature iz MF1:
+
+Podobno kot pri atomu je efektivni magnetni moment s komponento v smeri magnetnega polja \( \vec{B} \parallel \vec{e}_{+} \)
+
+\begin{equation}
+\label{eq:62}
+(\mu_z)_{M_J} = g \mu_j M_J
+\end{equation}
+
+To je projekcija na z-os.
+
+\( g \) je efektivno giromagnetno razmerje jedra, medtem ko nam \( M_J \) meri komponente v smeri z. Možne vrednosti so \( -J, -J + 1, \ldots, J \). Tako imamo \( 2J +1 stanj \).
+
+Klasično jedra začnejo precesirati, kvantno preskakujejo med stanji j.
+
+Definiramo energijo magnetnega dipola v zunanjem magnetnem polju je
+
+\begin{equation}
+\label{eq:63}
+W_{n_j} = - (\mu_z)_{M_J} B = - g M_J \mu_j B
+\end{equation}
+
+Veliki \( J \) označuje celotno moment jedra (in je različen od \( j \)).
+
+Pri prehodu med sosednjima stanjema se izseva/absorbira foton in frekvenca \( \nu \):
+
+\begin{equation}
+\label{eq:64}
+h \nu = \Delta W_{M_J} = W_{M_J} - W_{M_J \pm 1} = \pm g \mu_j B
+\end{equation}
+
+Eksperimentalno lahko variiramo bodisi \( B \) ali pa \( \nu \), s katero vzbujamo ta jedra.
+
+Enačba \ref{eq:64}  se imenuje resonančni pogoj in raziskavi, kjer iščemo to se imenuje /magnetna jedrska resonanca/. Uporablja se v raziskavi snovi (ker so za jedra že znani podatki) in tako spada bolj v domeno trde snovi kakor pa jedrske zizike.
+
+Konvencija za definicije magnetnih momentov je, da vzamemo magnetni moment jedra v maksimalni projekciji \( M_J = J \).
+
+\begin{equation}
+\label{eq:65}
+(\mu_z)_{M_J = J} = g J \mu_j = \frac{h\nu}{B} J
+\end{equation}
+
+**** Delovanje jedrske magnetne resonance
+
+S7.1
+
+Snov postavimo v magnetno polje, ko se spini uredijo v smeri, pošljemo prečno EM valovanje s frekvenco \( \nu \). Tako dobimo resonanco na grafu S7.2
+
+Drugi način je pulzni način (ang. /nuclear magnetic resonance or (NMR)/) in se ekstenzivno uporablja pri preiskavah materialov. Opazuje se kemijski premik ali razcep absorpcijskih vrhov.
+
+Pulzno dovajamo frekvenco in po prenehanju bo snov z enako frekvenco sevalo nazaj. Kemijski premik je to, da se resonančni vrh premakne (bodisi v levo ali desno), pri razcepu pa dobimo več le-teh. To se zgodi zaradi variacije magnetnega polja znotraj kristala in molekul.
+
+Primer:
+
+- proton (== vodik)
+
+  Pri \( B = 1T \) dobimo magnetno resonanco pri frekvenci \( \nu = 42.6 MHz \) (radiofrekvenčni spekter).
+
+  \begin{equation}
+  \label{eq:66}
+  \nu = \frac{g \mu_j}{h}B
+  \end{equation}
+
+  Vrednosti \( g \) in \( \mu_j \) so bile prej podane.
+** Zgradba jeder
+*** Transcending kapljični model
+Vstavi skico \( |w_v(A)| \), ki jo bo prof. dal na spletno učilnico. Gladka krivulja z vrhovi, ki izstopajo tekom nje (pri določenih vrednosti A (oz. Z in N)), kar pomeni, da so bolj vezana kot ponavadi. Vrednosti so pri \( Z, N = 28 \), \( Z, N = 50 \), \( Z, N = 82 \), itd. Temu pravimo /magična števila/.
