@@ -1,0 +1,8 @@
+#+title: Racunalnistvo Overview
+
+
+* Predavanja
+Predaval nam je letos Žunkovič.
+* Vaje
+Vaje nas je imel Osojnik.
+- [[file:rac_vaje_240410.html][vaje 2024/04/10]]
