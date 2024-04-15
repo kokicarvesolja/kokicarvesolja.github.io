@@ -1,0 +1,55 @@
+#+title: Rac 2024/04/15
+* 20240415 predavanje no. 7 - objektno programiranje
+
+Razlaga kode od prejšnjič, ker Žunkovič nej več zaspan.
+
+Če imamo večje število, npr. študentov, jih lahko dam v tabelo, kar ni dobro, saj če je tabela dolga 10k znakov, ga je potrebno najprej najti.
+
+Objekt definiramo z razredi, vsaka instanca razreda pa je objekt. Obstaja tudi /funkcijsko programiranje/. Objekti imajo dedovanje, kjer lahko objekte nižjega reda uporabimo za definicijo objektov višjega reda.
+
+Določeni programerski jeziki kot npr. Java ali C++ imajo tudi uporabniku skrite atribute, medtem ko ima Python javno dostopne vse atribute (glej Medusa HybridFill class).
+
+Funkcije znotraj razreda se imenujejo metode in  prvi parameter te funkcije je instanca objekta, ki se bo kreiral, označimo ga s ~self~.
+
+/Posebne metode/ imajo ime oblike /__ime__/ in so vnaprej določene, kaj pa metoda naredi, pa določi uporabnik (npr. ~__repr__, __str__, __init__~). Funkcija ~__init__~ vrne objekt, ki ga kreira in ne potrebuje return stavka (vrne pa ~self~).
+
+Če želimo v uporabniku povedati, da je atribut skrit, pred ime atributa dodamo podčrtaj ~self._stevilo = 4~.
+
+Poleg posebnih, imamo še navadne metode, potem imamo še statično metodo označeno z ~@staticmethod~, kjer je metoda enaka kakor zunaj razreda in ne sprejme self parametra.
+
+Četrta posebna metoda je metoda razreda, ki se nanaša na razred sam (in ne na specifične instance).
+
+Definiramo pomnilnik na začetku in ga potem dodamo v ~__init__~ metodi v pomnilnik. Razredno metodo definiramo z ~@classmethod~.
+
+** Imenovani nabori
+
+Če želimo ustvariti objekt brez da bi sami definirali posebne metode, kličemo funkcijo ~.namedtuple(*args)~, ki ustvari const tuple (torej ne morejo biti spremenjeni).
+
+~super()~ se uporabi namesto tega, da bi klicali ime nadrazreda, ki pa ni na voljo v razrednih metodah tako kot ni na voljo ~~self~~.
+** Abstraktne metode
+
+Z abstraknimi metodami poskrbimo, da imajo vsi podrazredi enake metode.
+** Enkapsulacija
+
+Do skritih atributov dostopamo s setterjem in getterjem
+
+#+begin_src python
+
+class House:
+    def __init__(self, price):
+        self._price = price
+@property
+def price(self):
+    return self.price
+
+@price.setter
+def price(self, new_price):
+    if new_price > 0 and isinstance(new_price, float):
+        self._price = new_price
+    #else
+
+@price.deleter
+def price(self):
+    del self._price
+
+#+end_src

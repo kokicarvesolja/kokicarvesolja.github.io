@@ -2,7 +2,16 @@
 
 
 * Predavanja
-** [[file:20240408/mf2_p_7_20240408.html][predavanje 2024/04/08]]
+Predavanja smo imeli v študijskem letu 2023/2024 je predavala prof. Kamenik.
+- Predavanje #7 [[file:20240408/mf2_p_7_20240408.html][2024/04/08]]
+- Predavanje #8 [[file:20240415/zapiski_mf2_20240415.html][2024/04/15]]
 * Vaje
-Vaje v študijskem letu 2023/24 je predaval Klemen Kovač
-- [[file:vaje/MF2_V_6_20240326.pdf][vaje 20240326]] - na vajah sem manjkal in se zahvaljujem Martinu Kerinu, ki mi je zapiske vaj poslal.
+Vaje v študijskem letu 2023/24 je predaval Klemen Kovač (Daddy).
+- Vaje #1 [[file:vaje/MF2_V_1_20240220.pdf][2024/02/20]]
+- Vaje #2 [[file:vaje/MF2_V_2_20240226.pdf][2024/02/26]]
+- Vaje #3 [[file:vaje/MF2_V_3_20240304.pdf][2024/03/04]]
+- Vaje #4 [[file:vaje/MF2_V_4_20240311.pdf][2024/03/11]]
+- Vaje #5 [[file:vaje/MF2_V_5_20240318.pdf][2024/03/18]]
+- Vaje #6 [[file:vaje/MF2_V_6_20240326.pdf][2024/03/26]] - na vajah sem manjkal in se zahvaljujem Martinu Kerinu, ki mi je zapiske vaj poslal.
+- Vaje #7 [[file:vaje/MF2_V_7_20240408.pdf][2024/04/08]]
+- Vaje #8 [[file:vaje/MF2_V_8_20240415.pdf][2024/04/15]]

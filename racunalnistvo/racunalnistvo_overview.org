@@ -3,6 +3,7 @@
 
 * Predavanja
 Predaval nam je letos Žunkovič.
+- Predavanje #8 [[file:predavanja/zapiski_rac_P_8_20240415.html][2024/04/15]]
 * Vaje
 Vaje nas je imel Osojnik.
 - [[file:rac_vaje_240410.html][vaje 2024/04/10]]
