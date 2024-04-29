@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-04-29 Mon 20:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MF2 - predavanje 2024/04/29</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  pre.src-C\+\+:before { content: 'C++'; }
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">MF2 - predavanje 2024/04/29</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5fface4">1. Jedrski razpad</a>
+<ul>
+<li><a href="#orgd7d9edc">1.1. Posplošitev \( \alpha \) razpadov - spontani razcep</a></li>
+</ul>
+</li>
+<li><a href="#orgf955aac">2. Jedrske reakcije</a>
+<ul>
+<li><a href="#org01dc3c3">2.1. Inducirani jedrski razcep (fizija)</a>
+<ul>
+<li><a href="#orgb560a7e">2.1.1. Primer</a></li>
+</ul>
+</li>
+<li><a href="#org3ed9035">2.2. Zlivanje jedra (fuzija)</a>
+<ul>
+<li><a href="#orgd446474">2.2.1. Primer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5fface4" class="outline-2">
+<h2 id="org5fface4"><span class="section-number-2">1.</span> Jedrski razpad</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+&#x2026; od zadnjič
+</p>
+</div>
+<div id="outline-container-orgd7d9edc" class="outline-3">
+<h3 id="orgd7d9edc"><span class="section-number-3">1.1.</span> Posplošitev \( \alpha \) razpadov - spontani razcep</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Imamo jedro elementa \( X \), ki spontano razpade v dve lažji jedri
+</p>
+
+\begin{equation}
+\label{eq:90}
+X \to Y + Y'
+\end{equation}
+
+<p>
+Za razliko od prej obravnavanih razpad, kjer smo imeli eno masivno jedro in nek lahek delcev, tukaj temu ni več tako. Razpad se lahko zgodi tudi v dve jedri primerljivih mas.
+</p>
+
+<p>
+Ohranitev kvantnih števil
+</p>
+
+\begin{equation}
+\label{eq:93}
+^A_Z X \to ^{A'}_{Z'}Y' + ^{A - A'}_{Z - Z'}Y
+\end{equation}
+
+<p>
+Ker ničesar ne trkamo v jedro, mora biti reakcija eksotermna. Sproščena energija je tako
+</p>
+
+\begin{equation}
+\label{eq:94}
+- Q = E_V(A, Z) - E_V(A', Z') - E_V(A- A', Z - Z') > 0
+\end{equation}
+
+<p>
+Za kvalitativno razumevanje ne potrebujemo znanja lupinastega modela jedra (kapljični model zadošča). Zaradi premikanja delcev v jedru, se oblika jedra deformira in ko je ta dovolj velika (odbojna sila med protoni se veča in manjša z deformiranjem). V nekem trenutku odbojna sila prevlada in jedro razpade.
+</p>
+
+<p>
+Na kako velikih jedrih se to začne dogajati?
+</p>
+
+<p>
+\( \beta^+ \) razpad se zgodi pri delcih, ki so tik pod črto stabilnosti, \( \beta^- \) razpad je nad črto stabilnosti in \( \alpha \) razpad se dogajajo po diagonali.
+</p>
+
+
+<div id="org2adbffc" class="figure">
+<p><img src="stabilna_nestabilna_jedra.png" alt="stabilna_nestabilna_jedra.png" />
+</p>
+</div>
+
+<p>
+Zelo daleč stran od diagonale je tudi pod diagonalo izsevanje protona, nad diagonalo pa izsevanje nevtrona.
+</p>
+
+<p>
+Tipično prevladujejo \( \alpha \) razpadi.
+</p>
+
+<p>
+Tehnološka uporaba razpadov - najbolj uporabljen je razcep, vendar nima smisla čakati na spontan razcep.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf955aac" class="outline-2">
+<h2 id="orgf955aac"><span class="section-number-2">2.</span> Jedrske reakcije</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Za razliko od jedrskih razpadov sedaj nimamo več samostojnega jedra, ampak imamo pomoč.
+</p>
+
+<p>
+Imamo jedro \( X \) in nek projektil z oznako \( a \). Ta projekti pospešimo in usmerimo, da trči v jedro. V končnem stanju dobimo končno jedro ter enega ali več delcev, ki odletijo iz jedra (po reakciji).
+</p>
+
+<p>
+Ločimo tri tipe jedrskih reakcij
+</p>
+
+<ul class="org-ul">
+<li><p>
+elastično sipanje (prožno sipanje)
+</p>
+
+\begin{equation}
+\label{eq:95}
+a + X \to a + X
+\end{equation}
+
+<p>
+Pri tem sipanju se kinetična energija projektila se ohranja (v težiščnem sistemu).
+</p></li>
+
+<li><p>
+neelastično sipanje
+</p>
+
+\begin{equation}
+\label{eq:96}
+a + ^A_ZX \to a' + ^A_ZX^{*}
+\end{equation}
+
+<p>
+Nukleoni se ohranjajo. \( a' \not = a \), ampak v resnici ne. Del kinetične energije projektila vzbudi jedro.
+</p></li>
+
+<li><p>
+&ldquo;prave&rdquo; jedrska reakcija
+</p>
+
+\begin{equation}
+\label{eq:97}
+a + X \to b + Y
+\end{equation}
+
+<p>
+Velja, da je \( X \not = Y \) in \( a \not = b \).
+</p></li>
+</ul>
+
+<p>
+Kaj je zanimivo pri nas za meriti pri jedrskih reakcij? (Pri razpadu je bilo št. razpadov) Tukaj nas zanima verjetnost za reakcijo (sipanje) na časovno enoto (katerokoli od prej naštetih 3 reakcij).
+</p>
+
+<p>
+Označimo \( N_{\kappa} \) število reakcij.
+</p>
+
+<p>
+Imamo tarčo, ki vsebuje \( N_J \) število jeder znotraj preseka \( S \), ki je presek curka in v to tarčo usmerimo curek projektilov s številom \( N_I \). Če imamo konstanten tok projektilov je bolje uporabiti zapis \( \frac{\mathrm{d}N_I}{\mathrm{dt}} \).
+</p>
+
+\begin{equation}
+\label{eq:98}
+\frac{\mathrm{d}N_{\kappa}}{\mathrm{dt}} = \frac{N_J}{S} \frac{\mathrm{d}N_i}{\mathrm{dt}}
+\end{equation}
+
+<p>
+S10.2
+</p>
+
+<p>
+Za konec dodamo še sipalni presek \( \sigma_{\kappa} [m ^2] \). Tipična enota je \( 1 barn = 10^{-23} m ^2  (b) \) (ang. <i>barn</i> pomeni skedenj). Sipalni presek je odvisen od energije projektila in pa sipalnega kota.
+</p>
+
+<p>
+Definiramo
+</p>
+
+\begin{equation}
+\label{eq:99}
+\frac{1}{S} \frac{\mathrm{d}N_I}{\mathrm{dt}} = j_I
+\end{equation}
+
+<p>
+kar je gostota toka projektilov.
+</p>
+
+<p>
+S10.3 prikazuje definicijo sipalnega kota.
+</p>
+</div>
+<div id="outline-container-org01dc3c3" class="outline-3">
+<h3 id="org01dc3c3"><span class="section-number-3">2.1.</span> Inducirani jedrski razcep (fizija)</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Spontani razcep je počasen proces (prej razpadejo kot \( \alpha \) kot pa spontano). Vzbudimo jedro preko sipanja (bodisi s fotoni \( \gamma \), \( e^- \), \( p^{+} \), ali nevtroni \( n \)). Problem fotonov je, da imajo premalo energije, proton in elektronov je, da so nabiti delci (in ukrivljajo svojo tirnico gibanja). Nevtroni so idealni, saj ne čutijo Coulumbovega odboja.
+</p>
+
+<p>
+Kaj je bolje? Visokoenergijski nevtron, ki lahko privede več energije, ali nizkoenergijski nevtron?
+</p>
+
+<p>
+Izkaže se, da energija ni pomembna (saj je razpad eksotermna reakcija). Naš delec potrebujemo zgolj in izključno, da jedro porinemo čez rob in razpade. Tako so najboljša izbira nizkoenergijski nevtroni(počasni, termični), ki jih dobro ciljamo. Počasni nevtroni se dolgo časa zadržujejo v okolici jedra in imajo velik sipalni presek.
+</p>
+</div>
+<div id="outline-container-orgb560a7e" class="outline-4">
+<h4 id="orgb560a7e"><span class="section-number-4">2.1.1.</span> Primer</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Sipanje nevtronov na jedrih urana \( ^{235}U \).
+</p>
+
+\begin{equation}
+\label{eq:100}
+^{235}_{92}U_{143} + ^1_0n_1 \rightarrow ^A_Z X_N + ^{236 - A- \mathcal{N}}_{92 - Z}Y_{144 - \mathcal{N}} + \mathcal{N} ^1_0z_1
+\end{equation}
+
+<p>
+Jedroma \( X \) in \( Y \) se reče <i>razcepka</i> in sta lahko stabilna ali pa razpadata dalje.
+</p>
+
+<p>
+Zadnji člen so sproščeni nevtroni, ki lahko sprožijo nove razcepe - <i>verižne reakcije</i>.
+</p>
+
+<p>
+Povprečna vrednost za \( \left\langle \mathcal{N} \right\rangle = 2.47 \).
+</p>
+
+<p>
+V nuklearki se uranove sredice obdajajo z nekim mehkim materialom (saj večino kinetične energije pri razpadu odnese lažje jedro). Te snovi (tipično voda, grafit) se reče moderator.
+</p>
+
+<p>
+Na PSE se najde \( ^{238}_{92}U \) se raje ne razcepi. Urana \( ^{235}_{92}U \) je v naravi zgolj \( 0.72\% \). Potrebno je ločiti izotopa s centrifugo. Uporabimo plin mešanico urana in fluora \( UF \). Uporabimo difuzijo tega plina skozi luknjičaste opne in v večih ciklih, ker je statistično proces. S centrifugo povzročimo tlak, ki sili te delce skozi opno (lažje delce odnesejo).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3ed9035" class="outline-3">
+<h3 id="org3ed9035"><span class="section-number-3">2.2.</span> Zlivanje jedra (fuzija)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Vodilna jedrska reakcija v zvezdah. Zvezda se zaradi gravitacije želi sesesti, s tem se v središču naredi ogromen tlak.
+</p>
+
+<p>
+Imenujemo jo termična reakcija. Najbolj pogosta reakcija v zvezdah je zlivanje vodika
+</p>
+
+\begin{equation}
+\label{eq:101}
+^1_0 H_{0} + ^1_1H_0 \rightarrow ^2_1H_1 + e^+ \nu_e (+ 0.42 MeV = - Q)
+\end{equation}
+
+<p>
+\( ^2_1H_1 \) je devterij. Za zlivanje jedra je potrebno premagati Coulumbski odboj - potrebni so visokoenergijski delci.
+</p>
+
+<p>
+Reakcija poteče samo, če je \( E_k \ge 1 keV \), kar ustreza temperaturi \( T \ge 10^8 K \)
+</p>
+
+<p>
+V 2. koraku te reakcije
+</p>
+
+\begin{align}
+\label{eq:102}
+^2_1 H_1 &+ ^1_0H_0 \rightarrow ^3_2He_1 + \gamma (+ 5.5 MeV ) \\
+^3_2He &+ ^3_2He \rightarrow ^4_2He + 2 ^1_1H_0 (+12.8 MeV) \label{al:1}
+\end{align}
+
+<p>
+Začeli smo z dvema vodikoma, potem smo uporabili še tretji vodik za tvorjenje helija (za vsake 3 vodikova jedra nastane 1 foton in pol jedra helija). Ko vodika zmanjka, kar pomeni, da ni več dovolj termičnega tlaka, ki bi se upiral gravitacijskemu, se zvezda sesede, in posledično se sredica segreje.
+</p>
+
+<p>
+Pri višjih temperaturah (tlakih) se zlivajo tudi težja jedra (začenši z \( He, \, ^8Be, \, ^{12}C, \ldots \)) (cikli)
+</p>
+
+<p>
+Lahko formuliramo pogoje za (termične) verižne reakcije. Relavantna količina, ki jo merimo, je število reakcij na časovno enoto \( \frac{1}{V} \frac{\mathrm{d}N_{\kappa}}{\mathrm{dt}} \). Imamo plin jeder (in ne atomov), ki jo imenujemo plazma in ima \( N \) delcev.
+</p>
+
+\begin{equation}
+\label{eq:103}
+\frac{1}{V} \frac{\mathrm{d}N_{\kappa}}{\mathrm{dt}} = \frac{N_1}{V} \frac{N_2}{V} \left\langle v_{12}\sigma_{\kappa} \right\rangle
+\end{equation}
+
+<p>
+Tukaj moramo povprečiti čez vse možne medsebojne hitrosti in ker je \( \sigma_{\kappa} = \sigma_{\kappa}(v) \), se to vključi v povprečje.
+</p>
+
+<p>
+Želimo imeti reakcijo, ki samo sebe poganja, kar pomeni, da mora biti reakcija sposobna segrevati samo sebe. Definiramo sproščeno energijo na enoto volumna \( V \) v časovni enoti \( \tau \), ki segreva plazmo.
+</p>
+
+<p>
+Primer za \( n_1 = n_2 \), kar je \ref{eq:101} in \ref{al:1}. Velja, da je \( n = \frac{N}{V} \).
+</p>
+
+\begin{equation}
+\label{eq:104}
+2\frac{3}{2}n k_BT < n ^2 \left\langle v_{12} \sigma_{\kappa} \right\rangle \left| Q \right|\tau
+\end{equation}
+
+<p>
+Času \( \tau \) rečemo tudi <i>čas ujetja plazme</i>. Neenakost je zato, ker ne moremo zagotoviti, da se bo vsa sproščena energija porabila za segrevanje plazme.
+</p>
+
+<p>
+Neenakost \ref{eq:104} lahko zapišemo tudi drugače:
+</p>
+
+\begin{equation}
+\label{eq:105}
+n \tau > \frac{3k_BT}{\left\langle v_{12}\sigma_{\kappa} \right\rangle \left| Q \right|}
+\end{equation}
+
+<p>
+kjer je \( n \) gostota plazme. Ta enačba se imenujo <i>Lawsonov pogoj</i> za vzdrževanje plazme (in ne za sproščanje uporabne energije).
+</p>
+</div>
+<div id="outline-container-orgd446474" class="outline-4">
+<h4 id="orgd446474"><span class="section-number-4">2.2.1.</span> Primer</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Na Zemlji poskušamo raje cikel zlivanja devterija in tritija, ker je možno pri manjših temperatura
+</p>
+
+\begin{equation}
+\label{eq:106}
+^2_1H_1 + ^3_1H_1 \rightarrow ^4_2He_2 + ^1_0n_1 + \left| Q \right| = 17.6MeV
+\end{equation}
+
+<p>
+Za zvezde, kjer je \( T = 10^8K \) in \( \left\langle v_{12} \sigma \right\rangle  = 10^{-22} m ^2/s \) iz česar sledi, da je \( n \tau > 10^{20} s/ m ^2 \)
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2024-04-29 Mon 20:18</p>
+</div>
+</body>
+</html>
