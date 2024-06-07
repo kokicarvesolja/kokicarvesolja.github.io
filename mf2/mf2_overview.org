@@ -7,6 +7,7 @@ Predavanja smo imeli v študijskem letu 2023/2024 je predavala prof. Kamenik.
 - Predavanje #7 [[file:20240408/mf2_p_7_20240408.html][2024/04/08]]
 - Predavanje #8 [[file:20240415/zapiski_mf2_20240415.html][2024/04/15]]
 - Predavanje #10 [[file:20240429/mf2_P_10_20240429.html][2024/04/29]]
+- Preostanek, vendar ne vsa predavanja [[file:preostanek/mf2_preostanek.html][preostanek predavanj]]
 * Vaje
 Vaje v študijskem letu 2023/24 je predaval Klemen Kovač (Daddy).
 - Vaje #1 [[file:vaje/MF2_V_1_20240220.pdf][2024/02/20]]
@@ -20,3 +21,7 @@ Vaje v študijskem letu 2023/24 je predaval Klemen Kovač (Daddy).
 - Vaje #9 [[file:vaje/MF2_V_9_20240422.pdf][2024/04/22]]
   Opomba: Čisto na koncu, ko delamo razvoj za člen \( w_{3} \), lahko namesto celotnega ulomka \( \frac{(A - 2Z)^2}{A} \), ga kvadriramo in razvijemo po delih \( \frac{A ^2 - 4 AZ + Z ^2}{A} = A - 4Z + \frac{Z}{A ^2} \)
 - Vaje #10 [[file:vaje/MF2_V_10_20240429.pdf][2024/04/29]]
+- Vaje #11 [[file:vaje/MF2_V_11_20240505.pdf][2024/05/05]] - zahvala Martinu Kerinu za zapiske
+- Vaje #12 [[file:vaje/MF2_V_12_20240514.pdf][2024/05/14]] - zahvala Martinu Kerinu za zapiske
+- Vaje #13 [[file:vaje/MF2_V_13_20240520.pdf][2024/05/20]]
+- Vaje #14 [[file:vaje/MF2_V_14_20240603.pdf][2024/06/03]] - zahvala Martinu Kerinu za zapiske
