@@ -1,0 +1,316 @@
+#+title: Ustni Izpit
+#+startup: nolatexpreview
+#+startup: entitiespretty nil
+#+LATEX_HEADER: \usepackage{amsmath}
+
+* Funkcije višjega reda
+
+V programiranju so funkcije višjega reda funkcije, ki sprejmejo neko drugo funkcijo kot argument in/ali vrnejo funkcijo kot rezultat. Primeri takih funkcijo so funkcije ~map, filter~.
+
+Primer uporabe bi bil
+
+#+begin_src python
+map(lambda x: x**2, [1, 2, 3])
+#+end_src
+
+Funkcija ~map~ sprejme funkcijo (v našem primeru \( x^{2} \))
+
+Primeri funckije višjega so tudi dekoratorji - to so funckije, ki zaobjamejo druge funckije.
+
+#+begin_src python
+
+def home_decorator(fja):
+
+        def notranja_fja():
+                print("Pred funkcijo")
+                fja()
+                print("Po funkciji")
+
+        return notranja_fja
+
+def uporabljena_fja():
+        print("znotraj fja")
+
+uporabljena_fja = home_decorator(uporabljena_fja)
+
+#oz. drugače
+
+@home_decorator
+uporabljena_fja()
+
+#+end_src
+* Rekurzija
+
+Rekurzivna funkcija je funkcija, ki kliče samo sebe. Ključen je robni pogoj.
+
+Tako npr. se obračanje seznama /s/ v /os/ dogaja, dokler je ~len(s)~ < 1.
+
+Poznamo dve možni rekurziji: glava - rep ali pa bisekcija. Glava rep je ima zahtevnost \( O(n ^2) \), saj vsakič ustvarimo nov seznam (\( O(n) \)) in to naredimo \( n \)-krat.
+* Preiskovanje
+
+Pri preiskovanju naletimo na urejeno četverico /(S, s, G, \( \sigma \))/.
+
+/S/ je množica vseh rešitev (tudi delnih), te rešitve imenujemo tudi stanja. \( s \in S \) je začetno stanje, \( G \subset S \) je množica vseh končnih stanje, tj. pravih rešitev.
+
+\( \sigma: S \to P(S) \) je funkcija, ki tvori množico naslednikov \( \theta \subset S \) za podano stanje \( q \in S \). Funkcija \( \sigma \) ima nekatere lastnosti:
+
+- z njenim iteriranjem na začetnem stanju \( s \) dobimo vsa stanja iz \( S \) in
+- stanja se nikoli ne ponovijo: vsako stanje se pojavi le enkrat.
+
+Funkcija \( \sigma \) ustvari t.i. preiskovalno drevo. Notranja vozlišča so tista, ki so že razvejana s to funkcijo, medtem ko so končna vozlišča tista, ki še niso razvejana. Množici končni vozlišč rečemo /preiskovalna fronta/ oz. /odprti seznam/.
+
+Če smo neinformirani of preiskovalnem drevesu lahko iščemo ali v globino ali pa v širino.
+
+Ko ugotovimo, da naša vaje drevesa, več ne reši danega problema, prekinemo preiskovanje dane veje in se reče, da /sestopimo/.
+** Primer: vsota podmnožice
+
+Imamo podana seznam \( x \in \mathbb{N} \) in zaželno vsoto \( v \in \mathbb{N} \). Najti moramo \( y \subset x \) in \( sum(y) = v \).
+
+Na začetku imamo seznam \( x_1 \), ki je seznam neuporabljenih števil, \( u \) je vsota, ki jo moramo še dobiti in \( x_2 \) je delna rešitev.
+
+S pomočjo \( \sigma \) razvejamo naše preiskovalno drevo, imamo pa dve možnosti:
+1) stanje je rešitev, ki vsebuje podan element
+2) stanje je rešitev, ki ne vsebuje podanega elementa
+* Bisekcija
+
+je iskanje števila v urejenem seznamu.
+
+Pri bisekciji imamo urejen seznam \( x \) in pa poizvedbo \( e \), ki je potencialno element seznama \( x \). To sta vhoda, potem pa imamo 2 možna rezultata: indeks \( e \) v \( x \), ali pa ~None~, če \( e \not \in x \).
+* Računska zahtevnost algoritma
+
+Poznamo več vrst zahtevnosti, ki nam pove, koliko virov je potrebnih za njegovo izvedbo: časovno, prostorsko in drugo (komunikacija, naključnost ali energija).
+
+/Računska zahtevnost algoritma/ nam pove najmanjšo računsko zahtevnost za njegovo reševanje (torej je lahko tudi več kot izračun).
+
+Zahtevnost je odvisna od velikost vhodnih podatkov (npr. pri seznamu imamo dolžino \( n \) seznama \( x \)).
+
+Definiramo funkcijo \( T: \mathbb{N} \to \mathbb{R}^+_0 \), kjer je \( T(n) \) čas potreben za izvedbo logaritma.
+
+Ker se računalniki množično razlikujejo med sabo, za čas lažje definirati število ključnih operacij, kako definirati čas (procesorki, realen, itd) in zato razbijemo \( T(n) = C \cdot t(n) \), kjer je \( C > 0 \) odvisna od strojne opreme in \( t(n) \), ki je odvisna od algoritma.
+
+Pogosto se ukvarjamo z /asimptotično zahtevnostjo/, ki opisuje porabo virov algoritma pri zelo velikih \( n \), saj je za majhne \( n \) rešitev trivialna.
+
+Zgornjo mejo asimptotične zahtevnosti opisujemo s t.i. notacijo z velikim O-jem.
+
+Notacija z velikim O je definirana kot: naj bosta \( T(n), f(n) > 0 \). Rečemo, da ima \( T(n) \) kompleksnost reda \( f(n) \), če \( T(n) \) raste počasneje kot \( cf(n) \) za \( c > 0 \) in \( n > n_0 \, n_0 \in \mathbb{N} \) oz.
+
+\[ T(n) \in O(f(n)) \iff \exists n_0 \in \mathbb{N}, c >0 \forall n \in \mathbb{N}, n \ge n_0: T(n) \le c f(n)
+\]
+** Primer: Neurejen seznam
+
+Imamo seznam \( x \) z \( n \) elementi in enota zahtevnosti je število primerjav.
+
+\begin{align*}
+T(n) &= T(n - 1) + 1 \\
+&= T(n - 2) + 2 \\
+&\vdots
+&= T(n - (n - 1)) + n - 1
+\end{align*}
+
+Tako vidimo, da je časovna zahtevnost \( O(n) \).
+** Primer: bisekcija
+
+Enaki pogoji kot prej, vendar imam sedaj na vsakem koraku dve primerjavi (levi in desni del seznama).
+
+\begin{align*}
+T(n) &= T(\frac{n}{2}) + 2 \\
+&= T( \frac{n}{2 ^2} ) + 2 \cdot 2 \\
+&\vdots
+&= T(\frac{n}{2^k}) + 2k
+\end{align*}
+
+Upoštevamo \( k = \log_2 n \) in \( T(1) = 1 \) in dobimo
+
+\begin{equation}
+\label{eq:1}
+T(n) = 1 + 2 \log_2 n \in O(\log n)
+\end{equation}
+* Urejanje seznamov
+
+Pri kakršnem koli urejanju je vhod seznam dolžine \( n \) x, ki je neurejen in rezultat je seznam y z elementi seznama \( x \), ki so urejeni v naraščajočem vrstnem redu.
+
+** Urejanje z izbiranjem (ang. /selection sort/)
+
+Ne potrebujemo dveh seznamov, ampak samo enega - taki vrsti urejanja se reče urejanje na mestu. Seznam razdelimo na urejeno polovico, ki je na začetku prazna in neurejeno polovico, ki je na začetku \( x \). Najdemo najmanjši element \( m \) v neurejenem seznamu in zamenjamo prvi element neurejenega seznama.  S tem smo podaljšali urejeni del seznama in skrajšali neurejeni del seznama.
+
+Časovna zahtevnost: \( O(n ^2) \).
+
+Zanko ponovimo za vsako vrednost /meje/, ki loči med urejenim in neurejenim. Na začetku je \( m = 0 \) in na koncu je \( m = n - 2 \).
+
+V vsaki ponovitvi pa naredimo za eno manj primerjav kot je dolžina neurejenega seznama ~len(x[m:])~, kar pomeni, da naredimo \( x - m - 1 \) primerjav.
+
+\begin{align*}
+T(n) &= \sum_{m = 0}^{n - 2} (n - m - 1) \\
+&= \sum_{i = 1}^{n - 1} i && \text{nova spremenljivka i = n - m - 1} \\
+&= \frac{n(n-1)}{2} \in O(n ^2)
+\end{align*}
+
+** Urejanje z zlivanjem (ang. /merge sort/)
+
+Seznam bisekcijsko razdelimo na levo in desno polovico in vsako posebej uredimo.
+
+Upoštevati moramo, da zlivamo dva urejena seznama v enega, in da prazen seznam in seznam z enim elementov velja za urejenega.
+
+Pri zlivanju dveh urejenih seznamov ~x~ in ~y~ vzamemo manjši element med ~x(i)~ in ~y(j)~ in ga damo v urejen seznam. Temu primerno povečamo ~i~ ali ~j~.
+
+Časovna zahtevnost zlivanja je
+
+\begin{align*}
+T(n) &= 2 T(\frac{n}{2}) + n \\
+&= 2 (2 T(\frac{n}{2 ^2}) + \frac{n}{2}) + n = 2 ^2 T(\frac{n}{2 ^2}) + 2n \\
+&=2 ^3 T(\frac{n}{2 ^3}) + 3n \\
+&= 2 ^k T(\frac{n}{2 ^k}) + kn
+\end{align*}
+
+Upoštevamo \( T(1) = 1  \)in \( k = \log_2 n \) in dobimo
+
+\begin{equation}
+\label{eq:2}
+T(n) = n + n \log_2 n \in O(n \log n)
+\end{equation}
+** Urejanje z vstavljanjem (ang. /insertion sort/)
+
+Iz vhodnega zaporedja jemljemo elemente po vrsti in vsakega posebej vstavimo v novo urejeno zaporedje. Prav tako je možno delati na mestu in ima prav tako \( O(n ^2) \).
+** Hitro urejanje (ang. /quicksort/)
+
+Seznam uredimo tako, da ga razdelimo na dva seznama - na seznam z manjšimi elementi in seznam z večjimi elementi. Kateri so manjši in kateri so večji elementi določimo z izbiro pivota (naključno število, lahko je prvi element seznama). Razdeljene sezname ponovno uredimo na enak način.
+
+Za zahtevnost lahko predpostavimo, da seznam razdelimo na polovico, kar potem pomeni zahtevnost enaki zlivanju \( O(n \log n) \), najslabša pa je \( O(n ^2) \).
+** Mehurčno urejanje (ang. /bubble sort/)
+
+oz. urejanje z zamenjavami. Izberemo par sosednjih elementov in če je neurejen, ju zamenjamo, da je urejen. Za večjo sistematičnost bomo enkrat šli čez celoten seznam in ponovno se vrnili na začetek ter začeli znova (torej največ \( n - 1 \) prehodov po n). Zahtevnost je tako \( O(n ^2) \), najboljša pa \( O(n) \).
+* Memoizacija
+
+Če računamo Fibonaccijevo zaporedje rekurzivno, imamo funkcijo, ki za vsak naslednji člen izračuna od začetka (torej do 1). Namesto tega lahko uporabimo memoizacijo, pri kateri s pomočjo slovarja shranimo pretekle vrednosti funkcije. To ponavadi naredimo s slovarji.
+
+Možnost 1 je, da definiramo funkcijo višjega reda, ki shrani vrednosti funkcije f v cache, vendar namesto nove funkcije g, ki ne prestreže rekurzivnih klicev f, naredimo ~f = memo(f)~.
+
+Lepša rešitev je z dekoratorjem, ki obleče našo funkcijo s funkcijo ~memo~.
+* Dinamično programiranje
+Dinamično programiranje je optimizacijski algoritem, ki uporablja memoizacijo ter deli in vladaj, da najdemo optimalno rešitev problema.
+
+Torej ponavljajočih problemov ne rešujemo znova, ampak jih memoiziramo.
+
+Velja načelo optimalnosti: optimalna rešitev je sestavljena iz optimalnih rešitev podproblemov.
+
+Recept za sestavljanje rešitev imenujemo /Bellmanova enačba/.
+** Nahrbtnik 0 - 1
+
+Imamo seznam x izdelkov označenih z \( x_i \), vsak izdelek ima velikost \( s_i \) in vrednost \( v_i \). Nahrbtnik ima kapaciteto \( c_i \).
+
+Izračunati moramo izbor izdelkov za nahrbtnik \( y \in {0, 1, \ldots, n -1} \), ki imajo največjo vrednost \( v = \sum_{i \in y} v_i \) in upoštevamo omejitev \( \sum_{i\in y} s_i \le c \).
+
+Optimalni izbor označimo z \( v(i,c) \), in robni so \( c = 0 \), da ni več prostora in je rešitev \( y = [] \) ali pa \( i = n \), ni več izdelkov na voljo, enaka rešitev.
+
+Problem razdelimo na dva podproblema:
+
+1) \( s_i > c \), problem rešimo V(i + 1, c) ali
+2) \( s_i < c \), izdelek \( x_i \) lahko zapakiramo in
+   a) če \( x_i \) zapakiramo, rešujem V(i + 1, c - s_i)
+   b) če \( x_i \) ne izberemo, rešujemo V(i + 1, c )
+      in izberemo tisto, ki ima boljšo rešitev.
+
+Bellmanova enačba je tako
+
+\[
+v(i, c) = \begin{cases}
+0 & i \ge n - 1 \forall c \\
+v(i + 1, c) & s_i > c \\
+max\{v(i + 1, c - s_i), v(i + 1, c)\} & s_i \le c
+\end{cases}
+\]
+** Najcenejša pot v tabeli
+* Regularni izrazi
+
+Niz znakov, ki določa iskalni vzorec.
+
+Sestavljeni so iz črk podane abecede ter treh regularnih operatorjev: stik (ab), unija ( a ali b ) in iteracija (ponovitve a).
+* Hevristično programiranje
+
+Hevristično programiranje je programiranje, ki se ne osredotoča na racionalno, logično, optimalno rešitev, ampak rešitev, ki je "good enough" in zadosti hiter.
+
+Prostor možnih rešitev delimo na usmerjene/informirane, ki upoštevajo cene rešitev in pa neusmerjene/neinformirane, ki tega ne naredijo.
+
+Preiskovalne strategije primerjamo s kriteriji: popolnost (ang. /completeness/) - vedno najde rešitev, optimalnost (ang. /optimality/) - vedno najde optimalno rešitev ter časovna/prostorska zahtevnost.
+
+Parametri prostora stanj, ki vplivajo na zahtevnost so:
+1) velikost prostora stanj
+2) b, stopnja razvejanosti
+3) d, najmanjša razdalja med začetnim stanje in rešitvijo
+4) m, dolžina najdaljše poti v prostoru stanj
+
+Če imamo problem P, lahko uporabimo različne pristope za preiskovanje možnih rešitev. Najpogostejši so iskanje v globino, širino, iterativno poglabljanje, najprej najboljši, A*
+
+Pri hevristiki imamo pogled naprej. Če imamo trenutno ceno \( g(s) = c(s_0, s) \), kjer je \( s_0 \) začetno stanje in c je razdalja med \( s \) in \( s_0 \).
+
+Hevristika je funkcija \( h: S \to \mathbb{R} \), ki oceni dolžino(ceno) poti do cilja: \( h(s) \approx c(s, s_{G}) \), kjer je S prostor stanj in G rešitev.
+
+Pri hevristiki imamo dve komponenti: znano ceno delne rešitve do trenutne točke \( g(s) \) in ceno rešitve \( h(s) \) od trenutnega do končnega stanja.
+
+Hevristika je sprejemljiva, če velja \( h(s) \le c(s, s_G) \). Ekstremna primera sta \( h(s) = 0 \) je neuporabna hevristika, A* postane najprej najboljši, \( h(s) = c(s, S_G) \), ki je super, vendar predraga za izračunati. Dobra hevristika je tista, kjer je razlika \( c(s, S_G) - h(s) \) čim manjša.
+** Preiskovanje v globino (ang. /Depth-First Search or SDF/)
+
+Algoritem začne na eni veji grafa in se premika po veji do konca, pred prehodom na drugo vejo. Primeren za labirint/ šah. Nima popolnosti ali optimalnosti in zahtevnost je prostorska linearna, časovnost eksponentna \( O(b ^d) \) LIFO
+** Preiskovanje v širino (ang. /Bread-First Search or BFS)
+Algoritem začne na začetku in preiskuje vse točke, ki so na istem lvl. Uporabno je pri iskanju najkrajših poti pri neuteženih grafih ter iskanju rešitve blizu začetnega stanja. Ima popolnost, vendar ne optimalnosti, obe zahtevnosti eksponentni.
+
+** Najprej najboljši
+Iz naslednjih vozlišč izbere tisti z najboljšo oceno za nadaljne raziskovanje, ki je pridobljena na podlagi znanih/preteklih podatko.
+
+Je boljša od BFS alid DFS, ker uporabi sedanjo ceno, in ima popolnost ter optimalnost, sta pa obe zahtevnosti eksponentni.
+** A*
+
+Razvejamo najprej tisto stanje, ki vodi k najbolj obetavni rešitvi - minimalni vrednosti vsote komponent.
+
+Ima popolnost in optimalnost pod pogojem sprejemljivosti, nižja prostorska in časovna zahtevnost za dobro hevristiko in visoka za slabo
+* Vrsta
+Je podatkovna struktura, kar je format za organiziranje, upravljanje in shranjevanje podatkov. Prav tako podatkovna struktura omogoča učinkovit dostop do podatkov ter njihovo učinkovito spreminjanje.
+
+Funkcija doda podatek na konec vrste in jemlje podatek iz začetka vrsta ai. queue FIFO in je uporabna pri iskanju v širino ali kot medpomnilnik.
+
+Primer s seznamom \( s \) dolžine \( l \). Imamo tri podatkovne elemente: seznam \( s \), \( z \) je indeks prvega elementa v vrsti in \( k \) je prvi indeks prve proste lokacije.
+
+Dodamo element preko ~s[k] = x~ in \( k = k+1 \). Če je bil \( k = l -1  \), je \( k=0 \) in računamo po modulu \( l \).
+
+Vzamemo element ~s[z]~ in \( z = z+1 \) in spet računamo po modulu \( l \).
+
+Če je \( z = k \) imamo prazen seznam in če \( (k + 1) - z = 0 \) imamo poln seznam, vendar če imamo krožen seznam veljata neenakosti \( z > k, \, z < k \)
+* Kopica
+Ali prioritetna vrsta (ang. /priority queue/). Dodamo podatek s pridruženo numerično prioriteto, in jemljemo podatek z najvišjo prioriteto. Uporabno je pri računanju minimuma, maksimuma, mediane ali drugih kvartilov.
+
+Če imamo urejen seznam po padajoči prioriteti, je jemanje elementa z najvišjo prioriteto \( O(1) \) in dodamo element z bisekcijo \( O(\log n) \) ali vrivanje \( O(n) \).
+
+Če imamo neurejen seznam je jemanje elementa z najvišjo prioriteto \( O(n) \) in dodamo vedno na konec seznam \( O(1) \).
+
+Kopica je dvojiško drevo in element v korenu ima najvišjo prioriteto. Če vzamemo element z najvišjo prioriteto, vzamemo koren, zahtevnost \( O(1) \), če dodamo element, ga dodamo v prvo prosto vozlišče in popravimo kopico.
+
+Če damo drevo v seznam, je koren prvi element seznama ~s[0]~, levi potomec je ~s[2i + 1]~ in desni potomec ~s[2i + 2]~. Prednik vozlišča ~s[i]~ je ~s[(i - 1)//2]~
+Zahtevnost časovna je \( O(\log n) \)
+* Iskalna drevesa
+Iskalno drevo shranjuje iskalne ključe. Mora biti zmožen dodati nov ključ in iskat ključ ter ugotoviti ali je v drevesu.
+
+Drevo je lahko globine \( \log_2 n < d < n \), kjer je \( n \) število vozlišč. Če je \( d = n \) je izrojeno.
+
+Glavna lastnost iskalnega dvojiškega drevesa je to, da so vsi potomci na levi manjši od prednika in vsi potomci na desni večji od prednika.
+
+časovne zahtevnosti:
+| prazno drevo   | O(1) |
+| poišči element | O(d) |
+| vstavi element | O(d) |
+| zbriši element | O(d) |
+** AVL drevesa
+
+Želimo imeti \( d = \log_2 n \) in odgovor na to je uravnovešeno drevo. Dvojiško drevo je uravnovešeno, če \( \forall \) vozlišču \( n \in T \) velja, da \( \left| h_A - h_B \right|  \le 1 \).
+
+Drevo AVL (Adelson-Velsky in Landis) je uravnovešeno.
+
+Časovne zahtevnosti so
+
+| Iskalno drevo  | O(1)        |
+| poišči element | O(\log_2 n) |
+| vstavi element | isto        |
+| zbriši element | isto        |
+
+Drevo uravnovesimo s pivotiranjem. Element vstavimo kot list, na veji od lista do korena popravimo zapisane globine vozlišč, preverimo uravnoteženost in neuravnotežena popravimo. Enako pri brisanju.
+
+Pivotiranje leva in desna rotacija.

@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-13 Fri 00:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ustni Izpit</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  pre.src-C\+\+:before { content: 'C++'; }
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Ustni Izpit</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge9a37de">1. Funkcije višjega reda</a></li>
+<li><a href="#org9ef4d41">2. Rekurzija</a></li>
+<li><a href="#org43f214a">3. Preiskovanje</a>
+<ul>
+<li><a href="#orgd44343c">3.1. Primer: vsota podmnožice</a></li>
+</ul>
+</li>
+<li><a href="#orgad050b4">4. Bisekcija</a></li>
+<li><a href="#org2eea6fb">5. Računska zahtevnost algoritma</a>
+<ul>
+<li><a href="#orge083fd1">5.1. Primer: Neurejen seznam</a></li>
+<li><a href="#org85cb4bc">5.2. Primer: bisekcija</a></li>
+</ul>
+</li>
+<li><a href="#org63328fe">6. Urejanje seznamov</a>
+<ul>
+<li><a href="#orga848736">6.1. Urejanje z izbiranjem (ang. <i>selection sort</i>)</a></li>
+<li><a href="#org79658c9">6.2. Urejanje z zlivanjem (ang. <i>merge sort</i>)</a></li>
+<li><a href="#org9cda5dd">6.3. Urejanje z vstavljanjem (ang. <i>insertion sort</i>)</a></li>
+<li><a href="#orgedfeb25">6.4. Hitro urejanje (ang. <i>quicksort</i>)</a></li>
+<li><a href="#orgbac17d4">6.5. Mehurčno urejanje (ang. <i>bubble sort</i>)</a></li>
+</ul>
+</li>
+<li><a href="#orgd208151">7. Memoizacija</a></li>
+<li><a href="#orgacf4517">8. Dinamično programiranje</a>
+<ul>
+<li><a href="#orgcc7a64c">8.1. Nahrbtnik 0 - 1</a></li>
+<li><a href="#org4f11fce">8.2. Najcenejša pot v tabeli</a></li>
+</ul>
+</li>
+<li><a href="#org1247516">9. Regularni izrazi</a></li>
+<li><a href="#org1ef7310">10. Hevristično programiranje</a>
+<ul>
+<li><a href="#org84c99b0">10.1. Preiskovanje v globino (ang. <i>Depth-First Search or SDF</i>)</a></li>
+<li><a href="#org8945281">10.2. Preiskovanje v širino (ang. /Bread-First Search or BFS)</a></li>
+<li><a href="#org30b4ea1">10.3. Najprej najboljši</a></li>
+<li><a href="#orgdbd9f57">10.4. A*</a></li>
+</ul>
+</li>
+<li><a href="#org39c0e7c">11. Vrsta</a></li>
+<li><a href="#org9299fa4">12. Kopica</a></li>
+<li><a href="#org4bb8635">13. Iskalna drevesa</a>
+<ul>
+<li><a href="#org780ed79">13.1. AVL drevesa</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge9a37de" class="outline-2">
+<h2 id="orge9a37de"><span class="section-number-2">1.</span> Funkcije višjega reda</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+V programiranju so funkcije višjega reda funkcije, ki sprejmejo neko drugo funkcijo kot argument in/ali vrnejo funkcijo kot rezultat. Primeri takih funkcijo so funkcije <code>map, filter</code>.
+</p>
+
+<p>
+Primer uporabe bi bil
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #c678dd;">map</span>(<span style="color: #51afef;">lambda</span> x: x**<span style="color: #da8548; font-weight: bold;">2</span>, [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #da8548; font-weight: bold;">3</span>])
+</pre>
+</div>
+
+<p>
+Funkcija <code>map</code> sprejme funkcijo (v našem primeru \( x^{2} \))
+</p>
+
+<p>
+Primeri funckije višjega so tudi dekoratorji - to so funckije, ki zaobjamejo druge funckije.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">
+<span style="color: #51afef;">def</span> <span style="color: #c678dd;">home_decorator</span>(fja):
+
+        <span style="color: #51afef;">def</span> <span style="color: #c678dd;">notranja_fja</span>():
+                <span style="color: #c678dd;">print</span>(<span style="color: #98be65;">"Pred funkcijo"</span>)
+                fja()
+                <span style="color: #c678dd;">print</span>(<span style="color: #98be65;">"Po funkciji"</span>)
+
+        <span style="color: #51afef;">return</span> notranja_fja
+
+<span style="color: #51afef;">def</span> <span style="color: #c678dd;">uporabljena_fja</span>():
+        <span style="color: #c678dd;">print</span>(<span style="color: #98be65;">"znotraj fja"</span>)
+
+<span style="color: #dcaeea;">uporabljena_fja</span> = home_decorator(uporabljena_fja)
+
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">oz. druga&#269;e</span>
+
+<span style="color: #ECBE7B;">@home_decorator</span>
+uporabljena_fja()
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9ef4d41" class="outline-2">
+<h2 id="org9ef4d41"><span class="section-number-2">2.</span> Rekurzija</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Rekurzivna funkcija je funkcija, ki kliče samo sebe. Ključen je robni pogoj.
+</p>
+
+<p>
+Tako npr. se obračanje seznama <i>s</i> v <i>os</i> dogaja, dokler je <code>len(s)</code> &lt; 1.
+</p>
+
+<p>
+Poznamo dve možni rekurziji: glava - rep ali pa bisekcija. Glava rep je ima zahtevnost \( O(n ^2) \), saj vsakič ustvarimo nov seznam (\( O(n) \)) in to naredimo \( n \)-krat.
+</p>
+</div>
+</div>
+<div id="outline-container-org43f214a" class="outline-2">
+<h2 id="org43f214a"><span class="section-number-2">3.</span> Preiskovanje</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Pri preiskovanju naletimo na urejeno četverico <i>(S, s, G, \( \sigma \))</i>.
+</p>
+
+<p>
+<i>S</i> je množica vseh rešitev (tudi delnih), te rešitve imenujemo tudi stanja. \( s \in S \) je začetno stanje, \( G \subset S \) je množica vseh končnih stanje, tj. pravih rešitev.
+</p>
+
+<p>
+\( \sigma: S \to P(S) \) je funkcija, ki tvori množico naslednikov \( \theta \subset S \) za podano stanje \( q \in S \). Funkcija \( \sigma \) ima nekatere lastnosti:
+</p>
+
+<ul class="org-ul">
+<li>z njenim iteriranjem na začetnem stanju \( s \) dobimo vsa stanja iz \( S \) in</li>
+<li>stanja se nikoli ne ponovijo: vsako stanje se pojavi le enkrat.</li>
+</ul>
+
+<p>
+Funkcija \( \sigma \) ustvari t.i. preiskovalno drevo. Notranja vozlišča so tista, ki so že razvejana s to funkcijo, medtem ko so končna vozlišča tista, ki še niso razvejana. Množici končni vozlišč rečemo <i>preiskovalna fronta</i> oz. <i>odprti seznam</i>.
+</p>
+
+<p>
+Če smo neinformirani of preiskovalnem drevesu lahko iščemo ali v globino ali pa v širino.
+</p>
+
+<p>
+Ko ugotovimo, da naša vaje drevesa, več ne reši danega problema, prekinemo preiskovanje dane veje in se reče, da <i>sestopimo</i>.
+</p>
+</div>
+<div id="outline-container-orgd44343c" class="outline-3">
+<h3 id="orgd44343c"><span class="section-number-3">3.1.</span> Primer: vsota podmnožice</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Imamo podana seznam \( x \in \mathbb{N} \) in zaželno vsoto \( v \in \mathbb{N} \). Najti moramo \( y \subset x \) in \( sum(y) = v \).
+</p>
+
+<p>
+Na začetku imamo seznam \( x_1 \), ki je seznam neuporabljenih števil, \( u \) je vsota, ki jo moramo še dobiti in \( x_2 \) je delna rešitev.
+</p>
+
+<p>
+S pomočjo \( \sigma \) razvejamo naše preiskovalno drevo, imamo pa dve možnosti:
+</p>
+<ol class="org-ol">
+<li>stanje je rešitev, ki vsebuje podan element</li>
+<li>stanje je rešitev, ki ne vsebuje podanega elementa</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgad050b4" class="outline-2">
+<h2 id="orgad050b4"><span class="section-number-2">4.</span> Bisekcija</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+je iskanje števila v urejenem seznamu.
+</p>
+
+<p>
+Pri bisekciji imamo urejen seznam \( x \) in pa poizvedbo \( e \), ki je potencialno element seznama \( x \). To sta vhoda, potem pa imamo 2 možna rezultata: indeks \( e \) v \( x \), ali pa <code>None</code>, če \( e \not \in x \).
+</p>
+</div>
+</div>
+<div id="outline-container-org2eea6fb" class="outline-2">
+<h2 id="org2eea6fb"><span class="section-number-2">5.</span> Računska zahtevnost algoritma</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Poznamo več vrst zahtevnosti, ki nam pove, koliko virov je potrebnih za njegovo izvedbo: časovno, prostorsko in drugo (komunikacija, naključnost ali energija).
+</p>
+
+<p>
+<i>Računska zahtevnost algoritma</i> nam pove najmanjšo računsko zahtevnost za njegovo reševanje (torej je lahko tudi več kot izračun).
+</p>
+
+<p>
+Zahtevnost je odvisna od velikost vhodnih podatkov (npr. pri seznamu imamo dolžino \( n \) seznama \( x \)).
+</p>
+
+<p>
+Definiramo funkcijo \( T: \mathbb{N} \to \mathbb{R}^+_0 \), kjer je \( T(n) \) čas potreben za izvedbo logaritma.
+</p>
+
+<p>
+Ker se računalniki množično razlikujejo med sabo, za čas lažje definirati število ključnih operacij, kako definirati čas (procesorki, realen, itd) in zato razbijemo \( T(n) = C \cdot t(n) \), kjer je \( C > 0 \) odvisna od strojne opreme in \( t(n) \), ki je odvisna od algoritma.
+</p>
+
+<p>
+Pogosto se ukvarjamo z <i>asimptotično zahtevnostjo</i>, ki opisuje porabo virov algoritma pri zelo velikih \( n \), saj je za majhne \( n \) rešitev trivialna.
+</p>
+
+<p>
+Zgornjo mejo asimptotične zahtevnosti opisujemo s t.i. notacijo z velikim O-jem.
+</p>
+
+<p>
+Notacija z velikim O je definirana kot: naj bosta \( T(n), f(n) > 0 \). Rečemo, da ima \( T(n) \) kompleksnost reda \( f(n) \), če \( T(n) \) raste počasneje kot \( cf(n) \) za \( c > 0 \) in \( n > n_0 \, n_0 \in \mathbb{N} \) oz.
+</p>
+
+<p>
+\[ T(n) \in O(f(n)) \iff \exists n_0 \in \mathbb{N}, c >0 \forall n \in \mathbb{N}, n \ge n_0: T(n) \le c f(n)
+\]
+</p>
+</div>
+<div id="outline-container-orge083fd1" class="outline-3">
+<h3 id="orge083fd1"><span class="section-number-3">5.1.</span> Primer: Neurejen seznam</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Imamo seznam \( x \) z \( n \) elementi in enota zahtevnosti je število primerjav.
+</p>
+
+\begin{align*}
+T(n) &= T(n - 1) + 1 \\
+&= T(n - 2) + 2 \\
+&\vdots
+&= T(n - (n - 1)) + n - 1
+\end{align*}
+
+<p>
+Tako vidimo, da je časovna zahtevnost \( O(n) \).
+</p>
+</div>
+</div>
+<div id="outline-container-org85cb4bc" class="outline-3">
+<h3 id="org85cb4bc"><span class="section-number-3">5.2.</span> Primer: bisekcija</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Enaki pogoji kot prej, vendar imam sedaj na vsakem koraku dve primerjavi (levi in desni del seznama).
+</p>
+
+\begin{align*}
+T(n) &= T(\frac{n}{2}) + 2 \\
+&= T( \frac{n}{2 ^2} ) + 2 \cdot 2 \\
+&\vdots
+&= T(\frac{n}{2^k}) + 2k
+\end{align*}
+
+<p>
+Upoštevamo \( k = \log_2 n \) in \( T(1) = 1 \) in dobimo
+</p>
+
+\begin{equation}
+\label{eq:1}
+T(n) = 1 + 2 \log_2 n \in O(\log n)
+\end{equation}
+</div>
+</div>
+</div>
+<div id="outline-container-org63328fe" class="outline-2">
+<h2 id="org63328fe"><span class="section-number-2">6.</span> Urejanje seznamov</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Pri kakršnem koli urejanju je vhod seznam dolžine \( n \) x, ki je neurejen in rezultat je seznam y z elementi seznama \( x \), ki so urejeni v naraščajočem vrstnem redu.
+</p>
+</div>
+<div id="outline-container-orga848736" class="outline-3">
+<h3 id="orga848736"><span class="section-number-3">6.1.</span> Urejanje z izbiranjem (ang. <i>selection sort</i>)</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Ne potrebujemo dveh seznamov, ampak samo enega - taki vrsti urejanja se reče urejanje na mestu. Seznam razdelimo na urejeno polovico, ki je na začetku prazna in neurejeno polovico, ki je na začetku \( x \). Najdemo najmanjši element \( m \) v neurejenem seznamu in zamenjamo prvi element neurejenega seznama.  S tem smo podaljšali urejeni del seznama in skrajšali neurejeni del seznama.
+</p>
+
+<p>
+Časovna zahtevnost: \( O(n ^2) \).
+</p>
+
+<p>
+Zanko ponovimo za vsako vrednost <i>meje</i>, ki loči med urejenim in neurejenim. Na začetku je \( m = 0 \) in na koncu je \( m = n - 2 \).
+</p>
+
+<p>
+V vsaki ponovitvi pa naredimo za eno manj primerjav kot je dolžina neurejenega seznama <code>len(x[m:])</code>, kar pomeni, da naredimo \( x - m - 1 \) primerjav.
+</p>
+
+\begin{align*}
+T(n) &= \sum_{m = 0}^{n - 2} (n - m - 1) \\
+&= \sum_{i = 1}^{n - 1} i && \text{nova spremenljivka i = n - m - 1} \\
+&= \frac{n(n-1)}{2} \in O(n ^2)
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org79658c9" class="outline-3">
+<h3 id="org79658c9"><span class="section-number-3">6.2.</span> Urejanje z zlivanjem (ang. <i>merge sort</i>)</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Seznam bisekcijsko razdelimo na levo in desno polovico in vsako posebej uredimo.
+</p>
+
+<p>
+Upoštevati moramo, da zlivamo dva urejena seznama v enega, in da prazen seznam in seznam z enim elementov velja za urejenega.
+</p>
+
+<p>
+Pri zlivanju dveh urejenih seznamov <code>x</code> in <code>y</code> vzamemo manjši element med <code>x(i)</code> in <code>y(j)</code> in ga damo v urejen seznam. Temu primerno povečamo <code>i</code> ali <code>j</code>.
+</p>
+
+<p>
+Časovna zahtevnost zlivanja je
+</p>
+
+\begin{align*}
+T(n) &= 2 T(\frac{n}{2}) + n \\
+&= 2 (2 T(\frac{n}{2 ^2}) + \frac{n}{2}) + n = 2 ^2 T(\frac{n}{2 ^2}) + 2n \\
+&=2 ^3 T(\frac{n}{2 ^3}) + 3n \\
+&= 2 ^k T(\frac{n}{2 ^k}) + kn
+\end{align*}
+
+<p>
+Upoštevamo \( T(1) = 1  \)in \( k = \log_2 n \) in dobimo
+</p>
+
+\begin{equation}
+\label{eq:2}
+T(n) = n + n \log_2 n \in O(n \log n)
+\end{equation}
+</div>
+</div>
+<div id="outline-container-org9cda5dd" class="outline-3">
+<h3 id="org9cda5dd"><span class="section-number-3">6.3.</span> Urejanje z vstavljanjem (ang. <i>insertion sort</i>)</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Iz vhodnega zaporedja jemljemo elemente po vrsti in vsakega posebej vstavimo v novo urejeno zaporedje. Prav tako je možno delati na mestu in ima prav tako \( O(n ^2) \).
+</p>
+</div>
+</div>
+<div id="outline-container-orgedfeb25" class="outline-3">
+<h3 id="orgedfeb25"><span class="section-number-3">6.4.</span> Hitro urejanje (ang. <i>quicksort</i>)</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+Seznam uredimo tako, da ga razdelimo na dva seznama - na seznam z manjšimi elementi in seznam z večjimi elementi. Kateri so manjši in kateri so večji elementi določimo z izbiro pivota (naključno število, lahko je prvi element seznama). Razdeljene sezname ponovno uredimo na enak način.
+</p>
+
+<p>
+Za zahtevnost lahko predpostavimo, da seznam razdelimo na polovico, kar potem pomeni zahtevnost enaki zlivanju \( O(n \log n) \), najslabša pa je \( O(n ^2) \).
+</p>
+</div>
+</div>
+<div id="outline-container-orgbac17d4" class="outline-3">
+<h3 id="orgbac17d4"><span class="section-number-3">6.5.</span> Mehurčno urejanje (ang. <i>bubble sort</i>)</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+oz. urejanje z zamenjavami. Izberemo par sosednjih elementov in če je neurejen, ju zamenjamo, da je urejen. Za večjo sistematičnost bomo enkrat šli čez celoten seznam in ponovno se vrnili na začetek ter začeli znova (torej največ \( n - 1 \) prehodov po n). Zahtevnost je tako \( O(n ^2) \), najboljša pa \( O(n) \).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd208151" class="outline-2">
+<h2 id="orgd208151"><span class="section-number-2">7.</span> Memoizacija</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Če računamo Fibonaccijevo zaporedje rekurzivno, imamo funkcijo, ki za vsak naslednji člen izračuna od začetka (torej do 1). Namesto tega lahko uporabimo memoizacijo, pri kateri s pomočjo slovarja shranimo pretekle vrednosti funkcije. To ponavadi naredimo s slovarji.
+</p>
+
+<p>
+Možnost 1 je, da definiramo funkcijo višjega reda, ki shrani vrednosti funkcije f v cache, vendar namesto nove funkcije g, ki ne prestreže rekurzivnih klicev f, naredimo <code>f = memo(f)</code>.
+</p>
+
+<p>
+Lepša rešitev je z dekoratorjem, ki obleče našo funkcijo s funkcijo <code>memo</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgacf4517" class="outline-2">
+<h2 id="orgacf4517"><span class="section-number-2">8.</span> Dinamično programiranje</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Dinamično programiranje je optimizacijski algoritem, ki uporablja memoizacijo ter deli in vladaj, da najdemo optimalno rešitev problema.
+</p>
+
+<p>
+Torej ponavljajočih problemov ne rešujemo znova, ampak jih memoiziramo.
+</p>
+
+<p>
+Velja načelo optimalnosti: optimalna rešitev je sestavljena iz optimalnih rešitev podproblemov.
+</p>
+
+<p>
+Recept za sestavljanje rešitev imenujemo <i>Bellmanova enačba</i>.
+</p>
+</div>
+<div id="outline-container-orgcc7a64c" class="outline-3">
+<h3 id="orgcc7a64c"><span class="section-number-3">8.1.</span> Nahrbtnik 0 - 1</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+Imamo seznam x izdelkov označenih z \( x_i \), vsak izdelek ima velikost \( s_i \) in vrednost \( v_i \). Nahrbtnik ima kapaciteto \( c_i \).
+</p>
+
+<p>
+Izračunati moramo izbor izdelkov za nahrbtnik \( y \in {0, 1, \ldots, n -1} \), ki imajo največjo vrednost \( v = \sum_{i \in y} v_i \) in upoštevamo omejitev \( \sum_{i\in y} s_i \le c \).
+</p>
+
+<p>
+Optimalni izbor označimo z \( v(i,c) \), in robni so \( c = 0 \), da ni več prostora in je rešitev \( y = [] \) ali pa \( i = n \), ni več izdelkov na voljo, enaka rešitev.
+</p>
+
+<p>
+Problem razdelimo na dva podproblema:
+</p>
+
+<ol class="org-ol">
+<li>\( s_i > c \), problem rešimo V(i + 1, c) ali</li>
+<li>\( s_i < c \), izdelek \( x_i \) lahko zapakiramo in
+<ol class="org-ol">
+<li>če \( x_i \) zapakiramo, rešujem V(i + 1, c - s<sub>i</sub>)</li>
+<li>če \( x_i \) ne izberemo, rešujemo V(i + 1, c )
+in izberemo tisto, ki ima boljšo rešitev.</li>
+</ol></li>
+</ol>
+
+<p>
+Bellmanova enačba je tako
+</p>
+
+<p>
+\[
+v(i, c) = \begin{cases}
+0 & i \ge n - 1 \forall c \\
+v(i + 1, c) & s_i > c \\
+max\{v(i + 1, c - s_i), v(i + 1, c)\} & s_i \le c
+\end{cases}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org4f11fce" class="outline-3">
+<h3 id="org4f11fce"><span class="section-number-3">8.2.</span> Najcenejša pot v tabeli</h3>
+</div>
+</div>
+<div id="outline-container-org1247516" class="outline-2">
+<h2 id="org1247516"><span class="section-number-2">9.</span> Regularni izrazi</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Niz znakov, ki določa iskalni vzorec.
+</p>
+
+<p>
+Sestavljeni so iz črk podane abecede ter treh regularnih operatorjev: stik (ab), unija ( a ali b ) in iteracija (ponovitve a).
+</p>
+</div>
+</div>
+<div id="outline-container-org1ef7310" class="outline-2">
+<h2 id="org1ef7310"><span class="section-number-2">10.</span> Hevristično programiranje</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+Hevristično programiranje je programiranje, ki se ne osredotoča na racionalno, logično, optimalno rešitev, ampak rešitev, ki je &ldquo;good enough&rdquo; in zadosti hiter.
+</p>
+
+<p>
+Prostor možnih rešitev delimo na usmerjene/informirane, ki upoštevajo cene rešitev in pa neusmerjene/neinformirane, ki tega ne naredijo.
+</p>
+
+<p>
+Preiskovalne strategije primerjamo s kriteriji: popolnost (ang. <i>completeness</i>) - vedno najde rešitev, optimalnost (ang. <i>optimality</i>) - vedno najde optimalno rešitev ter časovna/prostorska zahtevnost.
+</p>
+
+<p>
+Parametri prostora stanj, ki vplivajo na zahtevnost so:
+</p>
+<ol class="org-ol">
+<li>velikost prostora stanj</li>
+<li>b, stopnja razvejanosti</li>
+<li>d, najmanjša razdalja med začetnim stanje in rešitvijo</li>
+<li>m, dolžina najdaljše poti v prostoru stanj</li>
+</ol>
+
+<p>
+Če imamo problem P, lahko uporabimo različne pristope za preiskovanje možnih rešitev. Najpogostejši so iskanje v globino, širino, iterativno poglabljanje, najprej najboljši, A*
+</p>
+
+<p>
+Pri hevristiki imamo pogled naprej. Če imamo trenutno ceno \( g(s) = c(s_0, s) \), kjer je \( s_0 \) začetno stanje in c je razdalja med \( s \) in \( s_0 \).
+</p>
+
+<p>
+Hevristika je funkcija \( h: S \to \mathbb{R} \), ki oceni dolžino(ceno) poti do cilja: \( h(s) \approx c(s, s_{G}) \), kjer je S prostor stanj in G rešitev.
+</p>
+
+<p>
+Pri hevristiki imamo dve komponenti: znano ceno delne rešitve do trenutne točke \( g(s) \) in ceno rešitve \( h(s) \) od trenutnega do končnega stanja.
+</p>
+
+<p>
+Hevristika je sprejemljiva, če velja \( h(s) \le c(s, s_G) \). Ekstremna primera sta \( h(s) = 0 \) je neuporabna hevristika, A* postane najprej najboljši, \( h(s) = c(s, S_G) \), ki je super, vendar predraga za izračunati. Dobra hevristika je tista, kjer je razlika \( c(s, S_G) - h(s) \) čim manjša.
+</p>
+</div>
+<div id="outline-container-org84c99b0" class="outline-3">
+<h3 id="org84c99b0"><span class="section-number-3">10.1.</span> Preiskovanje v globino (ang. <i>Depth-First Search or SDF</i>)</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+Algoritem začne na eni veji grafa in se premika po veji do konca, pred prehodom na drugo vejo. Primeren za labirint/ šah. Nima popolnosti ali optimalnosti in zahtevnost je prostorska linearna, časovnost eksponentna \( O(b ^d) \) LIFO
+</p>
+</div>
+</div>
+<div id="outline-container-org8945281" class="outline-3">
+<h3 id="org8945281"><span class="section-number-3">10.2.</span> Preiskovanje v širino (ang. /Bread-First Search or BFS)</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+Algoritem začne na začetku in preiskuje vse točke, ki so na istem lvl. Uporabno je pri iskanju najkrajših poti pri neuteženih grafih ter iskanju rešitve blizu začetnega stanja. Ima popolnost, vendar ne optimalnosti, obe zahtevnosti eksponentni.
+</p>
+</div>
+</div>
+<div id="outline-container-org30b4ea1" class="outline-3">
+<h3 id="org30b4ea1"><span class="section-number-3">10.3.</span> Najprej najboljši</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+Iz naslednjih vozlišč izbere tisti z najboljšo oceno za nadaljne raziskovanje, ki je pridobljena na podlagi znanih/preteklih podatko.
+</p>
+
+<p>
+Je boljša od BFS alid DFS, ker uporabi sedanjo ceno, in ima popolnost ter optimalnost, sta pa obe zahtevnosti eksponentni.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdbd9f57" class="outline-3">
+<h3 id="orgdbd9f57"><span class="section-number-3">10.4.</span> A*</h3>
+<div class="outline-text-3" id="text-10-4">
+<p>
+Razvejamo najprej tisto stanje, ki vodi k najbolj obetavni rešitvi - minimalni vrednosti vsote komponent.
+</p>
+
+<p>
+Ima popolnost in optimalnost pod pogojem sprejemljivosti, nižja prostorska in časovna zahtevnost za dobro hevristiko in visoka za slabo
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org39c0e7c" class="outline-2">
+<h2 id="org39c0e7c"><span class="section-number-2">11.</span> Vrsta</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Je podatkovna struktura, kar je format za organiziranje, upravljanje in shranjevanje podatkov. Prav tako podatkovna struktura omogoča učinkovit dostop do podatkov ter njihovo učinkovito spreminjanje.
+</p>
+
+<p>
+Funkcija doda podatek na konec vrste in jemlje podatek iz začetka vrsta ai. queue FIFO in je uporabna pri iskanju v širino ali kot medpomnilnik.
+</p>
+
+<p>
+Primer s seznamom \( s \) dolžine \( l \). Imamo tri podatkovne elemente: seznam \( s \), \( z \) je indeks prvega elementa v vrsti in \( k \) je prvi indeks prve proste lokacije.
+</p>
+
+<p>
+Dodamo element preko <code>s[k] = x</code> in \( k = k+1 \). Če je bil \( k = l -1  \), je \( k=0 \) in računamo po modulu \( l \).
+</p>
+
+<p>
+Vzamemo element <code>s[z]</code> in \( z = z+1 \) in spet računamo po modulu \( l \).
+</p>
+
+<p>
+Če je \( z = k \) imamo prazen seznam in če \( (k + 1) - z = 0 \) imamo poln seznam, vendar če imamo krožen seznam veljata neenakosti \( z > k, \, z < k \)
+</p>
+</div>
+</div>
+<div id="outline-container-org9299fa4" class="outline-2">
+<h2 id="org9299fa4"><span class="section-number-2">12.</span> Kopica</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+Ali prioritetna vrsta (ang. <i>priority queue</i>). Dodamo podatek s pridruženo numerično prioriteto, in jemljemo podatek z najvišjo prioriteto. Uporabno je pri računanju minimuma, maksimuma, mediane ali drugih kvartilov.
+</p>
+
+<p>
+Če imamo urejen seznam po padajoči prioriteti, je jemanje elementa z najvišjo prioriteto \( O(1) \) in dodamo element z bisekcijo \( O(\log n) \) ali vrivanje \( O(n) \).
+</p>
+
+<p>
+Če imamo neurejen seznam je jemanje elementa z najvišjo prioriteto \( O(n) \) in dodamo vedno na konec seznam \( O(1) \).
+</p>
+
+<p>
+Kopica je dvojiško drevo in element v korenu ima najvišjo prioriteto. Če vzamemo element z najvišjo prioriteto, vzamemo koren, zahtevnost \( O(1) \), če dodamo element, ga dodamo v prvo prosto vozlišče in popravimo kopico.
+</p>
+
+<p>
+Če damo drevo v seznam, je koren prvi element seznama <code>s[0]</code>, levi potomec je <code>s[2i + 1]</code> in desni potomec <code>s[2i + 2]</code>. Prednik vozlišča <code>s[i]</code> je <code>s[(i - 1)//2]</code>
+Zahtevnost časovna je \( O(\log n) \)
+</p>
+</div>
+</div>
+<div id="outline-container-org4bb8635" class="outline-2">
+<h2 id="org4bb8635"><span class="section-number-2">13.</span> Iskalna drevesa</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Iskalno drevo shranjuje iskalne ključe. Mora biti zmožen dodati nov ključ in iskat ključ ter ugotoviti ali je v drevesu.
+</p>
+
+<p>
+Drevo je lahko globine \( \log_2 n < d < n \), kjer je \( n \) število vozlišč. Če je \( d = n \) je izrojeno.
+</p>
+
+<p>
+Glavna lastnost iskalnega dvojiškega drevesa je to, da so vsi potomci na levi manjši od prednika in vsi potomci na desni večji od prednika.
+</p>
+
+<p>
+časovne zahtevnosti:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">prazno drevo</td>
+<td class="org-left">O(1)</td>
+</tr>
+
+<tr>
+<td class="org-left">poišči element</td>
+<td class="org-left">O(d)</td>
+</tr>
+
+<tr>
+<td class="org-left">vstavi element</td>
+<td class="org-left">O(d)</td>
+</tr>
+
+<tr>
+<td class="org-left">zbriši element</td>
+<td class="org-left">O(d)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="outline-container-org780ed79" class="outline-3">
+<h3 id="org780ed79"><span class="section-number-3">13.1.</span> AVL drevesa</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+Želimo imeti \( d = \log_2 n \) in odgovor na to je uravnovešeno drevo. Dvojiško drevo je uravnovešeno, če \( \forall \) vozlišču \( n \in T \) velja, da \( \left| h_A - h_B \right|  \le 1 \).
+</p>
+
+<p>
+Drevo AVL (Adelson-Velsky in Landis) je uravnovešeno.
+</p>
+
+<p>
+Časovne zahtevnosti so
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Iskalno drevo</td>
+<td class="org-left">O(1)</td>
+</tr>
+
+<tr>
+<td class="org-left">poišči element</td>
+<td class="org-left">O(log<sub>2</sub> n)</td>
+</tr>
+
+<tr>
+<td class="org-left">vstavi element</td>
+<td class="org-left">isto</td>
+</tr>
+
+<tr>
+<td class="org-left">zbriši element</td>
+<td class="org-left">isto</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Drevo uravnovesimo s pivotiranjem. Element vstavimo kot list, na veji od lista do korena popravimo zapisane globine vozlišč, preverimo uravnoteženost in neuravnotežena popravimo. Enako pri brisanju.
+</p>
+
+<p>
+Pivotiranje leva in desna rotacija.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2024-09-13 Fri 00:01</p>
+</div>
+</body>
+</html>
