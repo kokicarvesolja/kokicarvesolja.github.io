@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-10-02 Wed 12:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden1</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden1</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9551a22">1. Integrali s parametrom</a>
+<ul>
+<li><a href="#org9378028">1.1. Trditev 1.2 (po Simonu)</a></li>
+<li><a href="#org2a08e49">1.2. Trditev 1.3. (p.S.)</a></li>
+<li><a href="#org7fda226">1.3. Posledica 1.4. (p.S.)</a></li>
+<li><a href="#orgcd7c715">1.4. Izrek 1.5 (Fubini, p.S.) 2024/10/02</a></li>
+<li><a href="#org8b9112b">1.5. Definicija 1.3 (p. S.)</a></li>
+<li><a href="#orgfd7abc9">1.6. Trditev 1.6 (p. S.)</a></li>
+<li><a href="#org3fb57e4">1.7. Zgled (ne vem, če je p. S.)</a></li>
+<li><a href="#orge828b21">1.8. Trditev 1.7 (p.S.)</a></li>
+<li><a href="#orgaf54054">1.9. Trditev 1.8 (Fubini, p.S.)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+2024/10/01
+</p>
+<div id="outline-container-org9551a22" class="outline-2">
+<h2 id="org9551a22"><span class="section-number-2">1.</span> Integrali s parametrom</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Integrali s parametrom: integracija družine funkcij, obravamo dinamiko teh integralov. Integrali s paramaterom so funkcije oblike \( F(t) = \int\limits_{\alpha (t)}^{\beta(t)} f(x, t) \,dx \), kjer je \( t \) parameter. Zanimajo nas lastnosti \( F \): zveznost, odvedvljivost, integrabilnost, &#x2026;
+</p>
+
+<p>
+\( F \) zgradimo iz \( \alpha, \beta \text{ in } f \) s pomočjo integracije.
+</p>
+</div>
+<div id="outline-container-org9378028" class="outline-3">
+<h3 id="org9378028"><span class="section-number-3">1.1.</span> Trditev 1.2 (po Simonu)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Naj bodo \( a, b, c, d \in \mathbb{R} \) in \( f:[a, b] \times [c, d] \to \mathbb{R} \) zvezna. Tedaj je \( F:[c, d] \to \mathbb{R} \) definirana s predpisom \( F(t) = \int\limits_a^b f(x, t) \, dx \) zvezna.
+</p>
+
+<p>
+Sledi dokaz.
+</p>
+</div>
+</div>
+<div id="outline-container-org2a08e49" class="outline-3">
+<h3 id="org2a08e49"><span class="section-number-3">1.2.</span> Trditev 1.3. (p.S.)</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Naj bo
+\( f=f(x, t): P = [a, b] \times [c, d] \to \mathbb{R} \). Privzemimo, da je
+</p>
+<ul class="org-ul">
+<li>\( f \) zvezna na \( P \)</li>
+<li><p>
+\( \frac{\partial f}{\partial t} \exists \) in je zvezna na \( P \)
+</p>
+
+<p>
+Tedaj je
+</p>
+
+\begin{equation}
+\label{eq:1}
+F(t) := \int\limits_a^b f(x, t) \,dx
+\end{equation}
+
+<p>
+odvedljiva na \( [c, d] \) in velja
+</p>
+
+\begin{equation}
+\label{eq:2}
+F'(t) = \int\limits_a^b \frac{\partial f }{\partial t} (x, t) \,dx
+\end{equation}</li>
+</ul>
+
+<p>
+Sledi dokaz.
+</p>
+</div>
+</div>
+<div id="outline-container-org7fda226" class="outline-3">
+<h3 id="org7fda226"><span class="section-number-3">1.3.</span> Posledica 1.4. (p.S.)</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Naj bo \( P = [a, b] \times [c, d] \). Naj bo \( f(x, t): P \to \mathbb{R}\). Privzemimo, da
+</p>
+
+<ul class="org-ul">
+<li>je \( f\) zvezna na \( P \)</li>
+<li>\( \frac{\partial f }{\partial t} \exists \) in je zvezna na \( P \)</li>
+<li><p>
+imejmo še odvedljivi funkciji \( \alpha, \beta: [c, d] \to [a, b] \). Tedaj je
+</p>
+
+\begin{equation}
+\label{eq:3}
+F(t) = \int\limits_{\alpha(t)}^{\beta(t)}f(x, t)\,dx
+\end{equation}
+
+<p>
+odvedljiva na \( [c, d] \) in velja
+</p>
+
+\begin{equation}
+\label{eq:4}
+F'(t) = \int\limits_{\alpha(t)}^{\beta(t)} \frac{\partial f}{\partial t} (x, t) \,dx +f(\beta(t), t) \cdot \beta'(t) - f(\alpha(t), t) \cdot \alpha'(t)
+\end{equation}</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcd7c715" class="outline-3">
+<h3 id="orgcd7c715"><span class="section-number-3">1.4.</span> Izrek 1.5 (Fubini, p.S.) 2024/10/02</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Naj bo \(  f:[a, b] \times [c, d] \to \mathbb{R} \) zvezna. Tedaj velja
+</p>
+
+\begin{equation}
+\label{eq:5}
+\int\limits_a^b \left( \int\limits_c^d f(x, t) \,dt \right)\,dx = \int\limits_c^d \left( \int\limits_a^b f(x, t) \,dx \right)\,dt
+\end{equation}
+
+<p>
+<b><b>Dokaz</b></b>:
+Definiramo \(  G(y) := \int\limits_a^b \int\limits_c^y f(s, t) \,dt \,ds \). Integral \(  \psi (s, y) = \int\limits_c^y f(s, t)\,dt \exists \), ker je zvezna v spremenljivki in to pomeni, da \(  G(y) \exists \).
+</p>
+
+<p>
+Prav tako definiramo \(  H(y) := \int\limits_c^y \int\limits_a^b f(s, t) \,ds \,dt \). Integral \(  \varphi (t) = \int\limits_a^b f(s, t) \,ds \).
+</p>
+
+<p>
+Ker je \(  G(c) = 0 = H(c) \) zadošča preveriti, da \(  G' = H' \).
+</p>
+
+<p>
+Velja
+</p>
+
+\begin{align*}
+  H'(y) &= \frac{\mathrm{d}}{\mathrm{dy}} \int\limits_c^y \varphi (t)\,dt \\
+&= \varphi(y) = \int\limits_a^b f(s, y) \,ds \\
+G'(y) &= \frac{\mathrm{d}}{\mathrm{dy}} \int\limits_a^b \psi (s, y) \,ds \\
+&= \int\limits_a^b \frac{\partial }{\partial y} \psi (s, y) \,ds
+\end{align*}
+
+<p>
+Da gre lahko iz totalnega odvoda dobimo parcialni odvod znotraj integrala, upoštevamo trditev 1.3.
+</p>
+
+<p>
+Če je \(  \psi \) zvezna, zvezno odvedljiva na \(  y \) preveri za DN.
+</p>
+</div>
+</div>
+<div id="outline-container-org8b9112b" class="outline-3">
+<h3 id="org8b9112b"><span class="section-number-3">1.5.</span> Definicija 1.3 (p. S.)</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Naj bo \(  f: [a, \infty) \times [c, d] \to \mathbb{R} \) zvezna. Integrali \(  \left\{ I(t) = \int\limits_a^\infty f(x, t) \,dx, t \in [c, d]\right\} \) so enakomerno konvergentni (na \(  [c, d] \)), če
+</p>
+
+<p>
+~ ponovi se enakomerna konvergentnost funkcije iz matematike 1 ~
+</p>
+
+<p>
+\(  \forall \varepsilon > 0 \exists M > a \ni:  \)
+</p>
+
+<p>
+\[ \left| I(t) - \int\limits_a^N f(x, t) \,dx \right| < \varepsilon \, \forall N \ge M \text{ in } \forall t \in [c, d]
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgfd7abc9" class="outline-3">
+<h3 id="orgfd7abc9"><span class="section-number-3">1.6.</span> Trditev 1.6 (p. S.)</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Naj bo \(  f:[a, \infty) \times [c, d] \to \mathbb{R} \) zvezna. Privzamemo, da \(  \exists \) integrabilna funkcija \(  \Phi: [a, \infty) \to [0, \infty) \ni: \)
+</p>
+
+<p>
+\[ \forall x \ge a \, , \forall t \in [c, d]: ,\ \left| f(x, t) \right| \le \Phi(x)
+\]
+</p>
+
+<p>
+Tedaj
+</p>
+
+\begin{equation}
+\label{eq:6}
+F(t) = \int\limits_a^{\infty} f(x, t) \,dx
+\end{equation}
+
+<p>
+konvergira enakomerno na \(  [c, d] \).
+</p>
+
+<p>
+<b><b>Dokaz</b></b>
+</p>
+
+\begin{align*}
+  \left| F(t) - \int\limits_a^M f(x, t) \,dx \right| &= \left| \int\limits_M^{\infty} f(x, t) \,dx \right| \\
+& \le \int\limits_M^{\infty}\left| f(x, t) \right| \,dx \le \int\limits_M^{\infty} \Phi(x)\,dx && \forall t
+\end{align*}
+
+<p>
+Ker je \(  \Phi \) integrabilna \(  \forall \varepsilon > 0 \exists M_0 > a \ni \):
+\[ M \ge M_0  \implies \int\limits_M^{\infty} \Phi \,dx < \varepsilon \implies \left| F(t) - \int\limits_a^M f(x, t) \,dx \right| <\varepsilon \, \forall M \ge M_0 \, \forall t \in [c, d]
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org3fb57e4" class="outline-3">
+<h3 id="org3fb57e4"><span class="section-number-3">1.7.</span> Zgled (ne vem, če je p. S.)</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Vzamemo  \(  0 < c < d \), \(  F(t) := \int\limits_0^{\infty} e^{-tx}\,dx; \, t \in [c, d] \).
+</p>
+
+<p>
+Ali so \(  F(t) \) enakomerno konvergentne?
+</p>
+
+<p>
+Dovolj je, da najdemo \(  \Phi = \Phi(x) : [0, \infty) \to [0, \infty) \ni \)
+</p>
+<ol class="org-ol">
+<li>\(  e^{-tx} \le \Phi(x) \, \forall x \, \forall t \)</li>
+<li>\(  \int\limits_0^{\infty} \Phi(x) \,dx < \infty \)</li>
+</ol>
+
+<p>
+Definiramo \(  \Phi(x) := e^{-cx}, \, tx \ge cx \, \forall t, \, \forall x \), potem sledi \(  e^{-tx} \le e^{-cx} \).
+</p>
+
+\begin{align*}
+  \int\limits_0^{\infty} \Phi(x) \,dx &= \frac{e^{-cx}}{-c} \left. \right|_{x=0}^{x = \infty} \\
+&= \frac{1}{c} < \infty
+\end{align*}
+
+<p>
+Vidimo, da \(  F(t) \) enakomerno konvergentna celo na \(  [c,\infty) \)
+</p>
+</div>
+</div>
+<div id="outline-container-orge828b21" class="outline-3">
+<h3 id="orge828b21"><span class="section-number-3">1.8.</span> Trditev 1.7 (p.S.)</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+Če je \(  f:[a,\infty) \times [c, d] \to \mathbb{R} \) zvezna in \(  F(t) := \int\limits_a^{\infty} f(x, t) \,dx \) enakomerno konvergentna na \(  [c, d] \), tedaj je \(  F \) zvezna na \(  [c, d] \).
+</p>
+
+<p>
+<b><b>Dokaz</b></b>:
+</p>
+
+<p>
+Za \(  t, t_0 \in [c, d] \) je
+</p>
+
+\begin{align*}
+  \left| F(t) - F(t_0) \right| &= \left| \int\limits_a^{\infty} \left[ f(x, t) - f(x, t_0) \right] \,dx \right| \\
+&= \left| \int\limits_a^M \left[ f(x, t) - f(x, t_0) \right]\,dx + \int\limits_M^{\infty} f(x, t)\,dx - \int\limits_M^{\infty} f(x, t_0) \,dx \right| \\
+& \le \int\limits_a^M \left| f(x, t) - f(x, t_0) \right|\,dx + \left| \int\limits_M^{\infty}f(x, t)\,dx \right| + \left| \int\limits_M^{\infty} f(x, t_{0)}\,dx \right|
+\end{align*}
+
+<p>
+Funkcija je neomejena, ergo nekompaktna in nam trditev 1.2 ne pomaga več.
+</p>
+
+<p>
+Vzamemo \(  \varepsilon > 0 \). Ker \(  F(t) \) konvergira enakomerno, \(  \exists M_0 \ge a \ni: \, \left| \int\limits_M^{\infty}f(x, u)\,dx \right| < \frac{\varepsilon}{3} \) \(  \forall M \ge M_0 \text{ in } \forall u \in [c, d] \).
+</p>
+
+<p>
+Za tak \(  M \) sta zadnja dva integrala \(  < \frac{\varepsilon}{3} \). Za ta (fiksirani) \(  M \ge M_0 \) je \(  f:[a, M] \times [c, d] \to \mathbb{R} \) enakomerno zvezna, zato (kot včeraj) \(  \exists \delta > 0 \ni \)
+</p>
+
+<p>
+\[ t, t_0 \in [c, d], \, \left| t - t_0 \right| < \delta \implies \left| f(x, t) - f(x, t_0) \right| < \frac{\varepsilon}{3(M - a)}
+\]
+</p>
+
+<p>
+Torej je \(  F \) zvezna.
+</p>
+</div>
+</div>
+<div id="outline-container-orgaf54054" class="outline-3">
+<h3 id="orgaf54054"><span class="section-number-3">1.9.</span> Trditev 1.8 (Fubini, p.S.)</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Če je \(  f:[a, \infty) \times [c, d] \to \mathbb{R} \) zvezna, \(  F(t) = \int\limits_a^{\infty} f(x, t) \,dx \) enakomerno konvergentna na \(  [c, d] \). Tedaj je \(  F \) integrabilna in velja
+</p>
+
+\begin{equation}
+\label{eq:7}
+\int\limits_c^d \left( \int\limits_a^{\infty} f(x, t) \,dx \right)\,dt = \int\limits_a^{\infty} \left( \int\limits_c^d f(x, t) \,dt \right)\,dx
+\end{equation}
+
+<p>
+<b><b>Dokaz</b></b>:
+</p>
+
+<p>
+Vemo, da je \(  F \) zvezna, zato je integrabilna na \(  [c, d] \). Vemo, da velja
+</p>
+
+<p>
+\[ \int\limits_c^d \left( \int\limits_a^b f(x, t) \,dx \right)\,dt = \int\limits_a^b \left( \int\limits_c^d f(x, t) \,dt \right)\,dx
+\]
+</p>
+
+<p>
+Označimo \(  F_b(t) = \int\limits_a^b f(,x t) \,dx \). Želimo poslati \(  b \rightarrow \infty \).
+</p>
+
+<p>
+Velja, da je \(  \lim_{b \to \infty} F_b(t) = F(t)  \) enakomerna na \(  [c, d] \):
+</p>
+
+<p>
+\[ \left| F(t) - F_b(t) \right| = \left| \int\limits_b^{\infty}f(x, t) \,dx \right| \rightarrow_{b \to 0} 0
+\]
+enakomerno v \(  t \).
+</p>
+
+<p>
+Sledi (iz mat1):
+</p>
+
+<p>
+\[ \lim_{b \to \infty} \int\limits_c^d F_b (t) \,dt = \int\limits_c^d F(t) \,dt
+\]
+</p>
+
+<p>
+Torej leva stran (LS) ima limito za \(  b \rightarrow \infty \) in sicer
+</p>
+
+<p>
+\[ \int\limits_c^d \int\limits_a^{\infty}...\,dx\,dt
+\]
+</p>
+
+<p>
+Torej jo ima tudi desna stran (DS), ta limita pa je po definiciji
+</p>
+
+<p>
+\[ \int\limits_a^{\infty}\int\limits_c^d f(x, t)\,dt\,dx
+\]
+</p>
+
+<p>
+Q.E.D
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-10-02 Wed 12:31</p>
+</div>
+</body>
+</html>

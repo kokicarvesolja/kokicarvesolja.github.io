@@ -23,3 +23,4 @@ Welcome to my corner of the internet. Here you can find done, not-done and orpha
 - [[file:mat4/overview_mat4.html][Matematika 4]] pri prof. Kandiču
 - [[file:mf2/mf2_overview.html][Moderna fizika 2]] pri prof. Feselu Kameniku
 - [[file:racunalnistvo/racunalnistvo_overview.html][Računalništvo]] pri prof. Žunkoviču
+- [[file:mat3/mat3indeks.html][Matematika 3]] pri prof. Dragičeviću
