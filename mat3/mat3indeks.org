@@ -6,3 +6,4 @@ Tukaj se nahajajo zapiski predavanj (in mogoče vaj) za predmet Matematike 3 pri
 - 1. teden [[file:zapiski_predavanj/Mat3Teden1.html][predavanj Mat3]] [2024/09/30--2024/10/04]
 - 2. teden predavanj Mat3 [manjka because bed was more comfortable]
 - 3. teden [[file:zapiski_predavanj/Mat3Teden3.html][predavanj Mat3]] [2024/10/14 -- 2024/10/18] - ponedeljkovo predavanje manjka
+- 4. teden [[file:zapiski_predavanj/Mat3Teden4.html][predavanj Mat3]] [2024//10/21 -- 2024/10/25]

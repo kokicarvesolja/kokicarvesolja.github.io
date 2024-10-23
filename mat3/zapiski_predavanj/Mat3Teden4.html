@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-10-23 Wed 18:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden4</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden4</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org35ecf74">1. Riemann-Darbouxov integral</a>
+<ul>
+<li><a href="#org70ec2f6">1.1. Integracija po omejenih množicav v \( \mathbb{R}^{n} \)</a>
+<ul>
+<li><a href="#org527b347">1.1.1. Definicija 2.11. (p.S.)</a></li>
+<li><a href="#org4e13bd3">1.1.2. Izrek (Lebesque)</a></li>
+<li><a href="#org3fcc105">1.1.3. Posledica</a></li>
+<li><a href="#org54eab4c">1.1.4. Trditev</a></li>
+<li><a href="#orga93c1a3">1.1.5. Lastnosti integrabilnih funkcij</a></li>
+<li><a href="#org9775b44">1.1.6. Trditev</a></li>
+</ul>
+</li>
+<li><a href="#org81460f0">1.2. Izračunavanje integralov</a>
+<ul>
+<li><a href="#orgbcecbac">1.2.1. Izrek (Fubini-Tonelli) 2.20 (p.S.)</a></li>
+<li><a href="#orga6965a3">1.2.2. Posledica 2.21 (p.S.)</a></li>
+<li><a href="#org0aa47d7">1.2.3. Primer 2.6 (p.S.)</a></li>
+<li><a href="#org2376ecf">1.2.4. Trditev 2.23 (p.S.)</a></li>
+<li><a href="#org28dde55">1.2.5. Primer 2.7 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#orgcf14854">1.3. Posplošitev na višje dimenzije</a>
+<ul>
+<li><a href="#orgc024736">1.3.1. Izrek 2.24 (p.S.)</a></li>
+<li><a href="#org4ac0340">1.3.2. Trojni integral</a></li>
+<li><a href="#org38adc9a">1.3.3. Trditev</a></li>
+<li><a href="#org6fac953">1.3.4. Primer 2.8 (p.S.) <i>-ish</i></a></li>
+</ul>
+</li>
+<li><a href="#org8009e92">1.4. Uvedba nove spremenljivke 2024/10/23</a>
+<ul>
+<li><a href="#orgf936a03">1.4.1. Definicija 2.15 (p.S.)</a></li>
+<li><a href="#org35f01de">1.4.2. Primeri za \(  m = n \)</a></li>
+<li><a href="#orgbc5648c">1.4.3. Polarne koordinate v \(  \mathbb{R} ^2 \)</a></li>
+<li><a href="#org31eaf27">1.4.4. Izrek 2.28 (p.S.)</a></li>
+<li><a href="#org5565cc7">1.4.5. Primer</a></li>
+<li><a href="#orgbf7b7e0">1.4.6. Primer - ploščina enotskega kroga</a></li>
+<li><a href="#orgb001155">1.4.7. Cilindrične koordinate v \(  \mathbb{R}^3 \)</a></li>
+<li><a href="#orgedfb811">1.4.8. Primer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Dokaz trditve where Dragi tells a joke.
+</p>
+
+<p>
+\(  V(B) = 0 \iff S(\chi_B) = 0 \)
+</p>
+
+<p>
+Definicija \(  S(\chi_B) = \inf_D S(\chi_B, D) \) \( \iff \) \(  \forall \varepsilon > 0 \ \exists D \) nekega kvadra \(  K \supset B \ \ni: \)
+</p>
+
+\begin{align*}
+  S(\chi_B, D) & < \varepsilon \\
+\sum\limits_{Q \in D} \left| Q \right| \sup_Q \chi_B &= \sum\limits_{Q\in D} \left| Q \right|
+\end{align*}
+
+<p>
+saj je \(  S(\chi_B)i \in {0, 1} \) in \(  Q \) seka \(  B \).
+</p>
+
+<p>
+\[ {K_1, \ldots K_m} := \bigcup {Q \in D, Q \text{ seka } B} \supset B
+\]
+</p>
+<div id="outline-container-org35ecf74" class="outline-2">
+<h2 id="org35ecf74"><span class="section-number-2">1.</span> Riemann-Darbouxov integral</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org70ec2f6" class="outline-3">
+<h3 id="org70ec2f6"><span class="section-number-3">1.1.</span> Integracija po omejenih množicav v \( \mathbb{R}^{n} \)</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org527b347" class="outline-4">
+<h4 id="org527b347"><span class="section-number-4">1.1.1.</span> Definicija 2.11. (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Pravimo, da lastnost \(  L \) velja <i>skoraj povsod</i> na množici \(  X \in \mathbb{R}^n \), če velja povsod razen morda na množici z mero 0. To je, če je
+</p>
+
+<p>
+\[ m(\{x \in X, L \text{ v točki } x \text{ ne velja }\})
+\]
+</p>
+
+<p>
+Primeri so:
+</p>
+<ol class="org-ol">
+<li>\(  f = g \text{ s.p. } x \in X: \quad m (\{x \in X, f(x) \not = g(x) \}) = 0 \)</li>
+<li>\(  X_{\mathbb{Q}} = 0 \text{ s. p. } \mathbb{R} \)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org4e13bd3" class="outline-4">
+<h4 id="org4e13bd3"><span class="section-number-4">1.1.2.</span> Izrek (Lebesque)</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Naj bo \(  f: K \to \mathbb{R} \) omejena. Tedaj je \(  f \) integrabilna \(  \iff \) množica nezveznosti \(  f \) ima mero 0.
+</p>
+
+<p>
+Error 404: dokaz not found
+</p>
+</div>
+</div>
+<div id="outline-container-org3fcc105" class="outline-4">
+<h4 id="org3fcc105"><span class="section-number-4">1.1.3.</span> Posledica</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Če je \(  A \subset \mathbb{R}^n \) omejena, tedaj
+</p>
+
+<p>
+\[ V(A) = \int\limits \chi_A\,dx \ \exists \ \iff \chi_A \text{ zvezna s. p. } \iff m(\partial A) = 0 \text{ množica nezveznosti } \chi_A
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org54eab4c" class="outline-4">
+<h4 id="org54eab4c"><span class="section-number-4">1.1.4.</span> Trditev</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Če je \(  A \) kompaktna, tedaj
+</p>
+
+<p>
+\[ V(A) = 0 \ \iff \ m(A) = 0
+\]
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+\(  \Leftarrow \) velja že brez kompaktnosti
+</p>
+
+<p>
+Domača naloga je dokaz!
+</p>
+</div>
+</div>
+<div id="outline-container-orga93c1a3" class="outline-4">
+<h4 id="orga93c1a3"><span class="section-number-4">1.1.5.</span> Lastnosti integrabilnih funkcij</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+Oznaka za \(  A \subset \mathbb{R}^n \) omejena, pišimo \(  I(A) = \{ f:A \to \mathbb{R}, f \text{ integrabilna na } A \} \)
+</p>
+
+<ol class="org-ol">
+<li><p>
+\(  f, g \in I(A) \implies f + g \in I(A) \) in \(  \int\limits_A (f+g) \,dx  = \int\limits_A f\,dx + \int\limits_A g\,dx\)
+</p>
+
+<p>
+in
+</p>
+
+<p>
+\(  c\in \mathbb{R} \implies \ cf \in I(A)  \) in \(  \int\limits_A cf \,dx =c \int\limits_A f\,dx\)
+</p></li>
+
+<li>\(  f, g \in I(A), \ f \le g \text{ na } A  \implies \int\limits_A f \,dx \le \int\limits_A g\,dx\)</li>
+
+<li>\(  f\in I(A) \implies \left| f \right|  \in I(A) \) in \(  \left| \int\limits_A f\,dx \right| \le \int\limits_A \left| f \right|\,dx \)</li>
+
+<li>\(  f\in I(A) \text{ in } V(A) \exists \implies \ \int\limits_A \left| f \right|\,dx \le \sup_A \left| f \right| \cdot V(A) \)</li>
+
+<li><p>
+\(  A_1, A_2 \subset \mathbb{R}^n \) omejena s predpostavkami
+</p>
+
+<p>
+\(  V(A_1 \cap A_2) = 0 \) in \(  f: A_1 \cup A_2 \to \mathbb{R} \) omejena in \(  f\in I(A_1) \cap I(A_2) \) iz česar sledi
+</p>
+
+<p>
+\(  f\in I(A_1 \cup A_2) \text{ in } \int\limits_{A_1 \cup A_2} f \,dx = \int\limits_{A_1} f \,dx + \int\limits_{A_2} f\,dx\)
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9775b44" class="outline-4">
+<h4 id="org9775b44"><span class="section-number-4">1.1.6.</span> Trditev</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<p>
+Naj bo \(  K \subset \mathbb{R}^n \) kvader in \(  f: K \to [0, \infty) \) omejena. Tedaj velja
+</p>
+
+<p>
+\[ \int\limits_K f \,dx = 0 \ \implies \  f = 0 \text{ s.p. } K
+\]
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Za \(  n \in N \) definiramo
+</p>
+
+<p>
+\[ K_n := \{ x\in K; \ f(x) \ge \frac{1}{n} \}  = f^{-1} ([\frac{1}{n}, \infty ])
+\]
+</p>
+
+<p>
+Velja \(  0 \le \chi_{K_n} \le nf \) povsod na \(  K \), saj je \(  f \ge 0 \) . Sledi
+</p>
+
+<p>
+\[ 0 \le S(\chi_{K_n}, D) \le S(nf, D) = n S(f, D) \ \forall \text{ delitev } D \text{ kvadra } K
+\]
+</p>
+
+<p>
+iz tega sledi
+</p>
+
+<p>
+\[ 0 \le S(\chi_{K_n})  \le n \cdot S(f) = 0
+\]
+</p>
+
+<p>
+kjer smo privzeli, da \(  \int\limits_K f\,dx  = 0\).
+</p>
+
+<p>
+Sledi \(  S(\chi_{K_n}) = 0 \)
+</p>
+
+<p>
+Od prej že vemo \(  \int\limits_K \chi_{K_n} \,dx  = \int\limits_{K_n} 1 \,dx = 0 \)
+</p>
+
+<p>
+Sledi \(  V(K_n) \ \exists  \) in je enako 0, kar potem pomeni \(  m(K_n) = 0\  \forall n\in \mathbb{N}\) in še dodatno \(  m(\{f \not = 0\}) = m(\bigcup_{n \in \mathbb{N}} K_n) = 0 \)
+</p>
+
+<p>
+Q.E.D.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org81460f0" class="outline-3">
+<h3 id="org81460f0"><span class="section-number-3">1.2.</span> Izračunavanje integralov</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Prehajamo iz vprašanj, ali integrali obstajajo, na to, kako jih izračunamo.
+</p>
+
+<p>
+A user may note, da se veliko sprašujemo, ali integrali obstajajo, ali so definirani, in kako jih izračunati. Nikoli pa se ne vprašamo <i>kako</i> so integrali.
+</p>
+</div>
+<div id="outline-container-orgbcecbac" class="outline-4">
+<h4 id="orgbcecbac"><span class="section-number-4">1.2.1.</span> Izrek (Fubini-Tonelli) 2.20 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Tukaj že prej omenjeni Fubini-Tonelli povežemo z večdimenzijskimi prostori.
+</p>
+
+<p>
+Naj bo \(  f: [a, b] \times [c, d] \to \mathbb{R} \) integrabilna. Privzamemo, da je \(  \forall x \in [a, b] \) funkcija \(  f(x, \cdot ): [c, d] \to \mathbb{R}, \  y \mapsto f(x, y) \) (torej \(  x \)  je fiksen, druga spremenljivka pa ni) definirana kot integrabilna na \(  [c, d] \). Tedaj je
+</p>
+
+<p>
+\[ \iint\limits_{[a, b] \times [c, d] } f(x, y) \,dx dy = \int\limits_a^b \int\limits_c^d f(x, y) \,dy\,dx
+\]
+</p>
+
+<p>
+Integral na levi strani je <i>dvojni integral</i> (Riemann-Darbouxov integral funkcije dveh spremenljivk), integral na desni pa je <i>iterirani integral</i> (tudi dvakratni) in je &ldquo;zaporedje&rdquo; dveh integralov ene spremenljivke.
+</p>
+</div>
+</div>
+<div id="outline-container-orga6965a3" class="outline-4">
+<h4 id="orga6965a3"><span class="section-number-4">1.2.2.</span> Posledica 2.21 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Če je \(  f:[a,b]\times [c, d] \to \mathbb{R} \) zvezna. Tedaj je
+</p>
+
+<p>
+\[ \iint\limits_{[a, b] \times [c, d]} f(x, y) \,dx dy = \int\limits_a^b \int\limits_c^d f(x, y) \,dy\,dx = \int\limits_c^d \int\limits_a^b f(x, y)\,dx\,dy
+\]
+</p>
+
+<p>
+<b>Dokaz Fubinijevega izreka</b>:
+</p>
+
+<p>
+Za integrabilno \(  f(x, \cdot) \) definiramo \(  g:[a, b] \to \mathbb{R} \) s predpisom
+</p>
+
+<p>
+\[ g(x)  \int\limits_c^d  f(x, y)\,dy
+\]
+, ki obstaja, ker je \(  f \) integrabilna. Označimo \(  I = [a, b], \ J = [c, d] \). želimo
+</p>
+
+<p>
+\[ \iint\limits_{I \times J} f(x, y)\,dx dy = \int\limits_I g(x)\,dx
+\]
+</p>
+
+<p>
+Izberemo delitvi
+</p>
+
+\begin{align*}
+  D_1 &= \{ I_i = [x_{i-1}, x_i]; \ i = 1, \ldots m\} && \text{ za } I \\
+D_2 &= \{J_j = [y_{j - 1}, y_j]; \ j = 1, \ldots n \} && \text{ za } J
+\end{align*}
+
+<p>
+\(  D_1 \) je projekcija na \(  I \) in \(  D_2 \) je projekcija na \(  J \).
+</p>
+
+<p>
+Tedaj je \(  D_1 \times D_2 \) delitev za \(  I \times  J \). Označimo za \(  P_{ij} = I_i \times J_j \)
+</p>
+
+\begin{align*}
+  m_{ij}(f) &= \inf_{P_{ij}} f \\
+M_{ij}(f) &= \sup_{P_{ij}} f
+\end{align*}
+
+<p>
+Velja
+</p>
+
+\begin{equation}
+\label{eq:1}
+ s(f, D) = \sum\limits_{i, j} m_{ij}(f) \left| P_{ij} \right| = \sum\limits_i \left( \sum\limits_j m_{ij}(f) \left| J_j \right| \right) \left| I_i \right|
+\end{equation}
+
+<p>
+saj je \(  \left| P_{ij} \right| = \left| I_i \right| \cdot \left| J_j \right|  \). Zadnjo vsoto želimo povezati z Darbouxovo vsoto funkcije \(  g \).
+</p>
+
+<p>
+Izberemo \(  i \in \{i, \ldots, m\} \) in \(  x \in I_i \). Tedaj je
+</p>
+
+<p>
+\[ m_{ij}(f) = \inf_{\xi \in I_i, \ y_j \in J_j} f(\xi, y) \le \sup_{y\in J_j} f(x, y)
+\]
+</p>
+
+<p>
+Sledi iz \ref{eq:1}
+</p>
+
+\begin{align*}
+  &= \sum\limits_j m_{ij}(f) \left| J_j \right| \le \sum\limits_j m_{ij}(f(x, \cdot)) \left| J_j \right| = s(f(x, \dot), D_2)\\
+& \le \int\limits_c^d f(x, y)\,dy
+\end{align*}
+
+<p>
+Iz tega potem sledi, da je
+</p>
+
+<p>
+\[ \iint_{I \times J} f(x, y) \, dx dy = \int\limits_I g(x)\,dx  = g(x) \quad \forall i, \ \forall x \in I_i
+\]
+</p>
+
+<p>
+Nadaljno
+</p>
+
+<p>
+je vsota iz \ref{eq:1}
+</p>
+
+<p>
+\[ \sum\limits_j m_{ij}(f) \left| J_j \right|  \le \inf_{x\in I_i} \forall i
+\]
+</p>
+
+<p>
+in tako dobimo neenakost Darbouxovih vsot
+</p>
+
+<p>
+\[ s(f, D) \le s(g, D_1)
+\]
+</p>
+
+<p>
+Potrebno za zgornjo vsote. Torej
+</p>
+
+<p>
+\[ s(f, D) \le s(g, D_1) \le S(g, D_1) \le S(f, D)
+\]
+</p>
+
+<p>
+Ker je \(  f \) integrabilna, \(  \forall \varepsilon > 0 \ \exists D \ni \):
+</p>
+
+<p>
+\[ S(f, D) - s(f, D) < \varepsilon
+\]
+</p>
+
+<p>
+Torej za njuno projekcijo na 1. komponento \(  (D_1) \) velja
+</p>
+
+<p>
+\[ S(g, D_1) - s(g, D_1) < \varepsilon
+\]
+</p>
+
+<p>
+Vidimo, da je torej
+</p>
+
+<p>
+\[ s(f) = S(f) = s(g) = S(g)
+\]
+</p>
+
+<p>
+Q.E.D.
+<b>*</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org0aa47d7" class="outline-4">
+<h4 id="org0aa47d7"><span class="section-number-4">1.2.3.</span> Primer 2.6 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ol class="org-ol">
+<li><p>
+\(  P = [-1, 1] \times [-2, 2] \in \mathbb{R} ^2 \) in \(  f(x, y) = 1 - \frac{x}{3} - \frac{x}{4} \)
+</p>
+
+<p>
+\(  I = \iint\limits _P f(x, y) \, dx dy \)
+</p>
+
+<p>
+Ker je \(  f \) zvezna, rečemo, da \(  I \ \exists \). Uporabimo Fubinijev izrek, da ga izračunamo.
+</p></li>
+
+<li>\(  P = [0, 1] \times [0, 1] \) in
+\(  A = P \cup \{(x, y) \in \mathbb{R} ^2, \ y \le x\} \) za funkcijo \(  g(x, y) = x \)</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2376ecf" class="outline-4">
+<h4 id="org2376ecf"><span class="section-number-4">1.2.4.</span> Trditev 2.23 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+Naj bodo
+</p>
+
+<ul class="org-ul">
+<li>\(  I = [a, b] \)</li>
+<li>\(  \alpha, \beta: I \to \mathbb{R} \) zvezne in \(  \alpha \le \beta \)</li>
+<li>\(  A := \{(x, y) \in \mathbb{R} ^2, \ x \in I, \ y \in [\alpha(x), \beta(x)]\} \)</li>
+<li>\(  f: A \to \mathbb{R} \) zvezna</li>
+</ul>
+
+<p>
+Tedaj je
+</p>
+
+<p>
+\[ \iint\limits_{A} f(x, y) \, dx dy = \int\limits_a^b \int\limits_{\alpha(x)}^{\beta(x)} f(x, y) \,dy\,dx
+\]
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Ker sta \(  \alpha, \beta \) zvezni, sta na \(  [a, b] \) omejeni, zato obstaja pravokotnik \(  P \subset \mathbb{R}^2 \ \ni: \ A \subset P \). Definiramo \(  \tilde{f}: A \to \mathbb{R} \ \ni \)
+</p>
+
+<p>
+\[ \tilde{f} (x, y) = \begin{cases}
+f(x, y); (x, y) \in A \\
+0; \text{ sicer }
+\end{cases}
+\]
+</p>
+
+<p>
+oz. \(  \tilde{f} = f \chi_{A} \)
+</p>
+
+<p>
+Točke nezveznosti funkcije \(  \tilde{f} \) so vsebovane v grafih funkcije \(  \alpha \) in \(  \beta \): \(  \Gamma_{\alpha} \cup \Gamma_{\beta} \). Vemo, da imata grafa prostornino 0 v \(  \mathbb{R}^2 \)torej jo ima tudi unija teh dveh grafov. Poslediċno je \(  \tilde{f} \) zvezna s.p. \(  P \), zato je integrabilna na \(  P \).
+</p>
+
+<p>
+( \(  \{\text{ nezveznosti } \tilde{f} \} \subset \Gamma_{\alpha} \cup \Gamma_{\beta} \) in ima prostornino 0)
+</p>
+
+
+
+\begin{align*}
+  \iint\limits_A f(x, y) \, dx \, dy &= \iint\limits_P \tilde{f}(x, y) \, dx  \,dy \\
+&\stackrel{F.T.}{=} \int\limits_{a}^{b} \left( \int\limits_c^d \tilde{f} (x, y)\,dy \right) = \int\limits_a^b \int\limits_{\alpha(x)}^{\beta(x)}f(x, y) \,dy\,dx
+\end{align*}
+
+<p>
+Upoštevamo \(  \forall x \in [a, b] \) je \(  \tilde{f}(x, \cdot) \)  odsekoma zvezna na \(  [c, d] \), zato je integrabilna.
+</p>
+
+<p>
+\[ \int\limits_c^d \tilde{f} (x, \cdot) \,dx  = \int\limits_c^{\alpha(x)} 0 \,dx + \int\limits_{\alpha(x)}^{\beta(x)}\,dx = \int\limits_{\beta(x)}^{d} 0 \,dx
+\]
+</p>
+
+<p>
+Q.E.D.
+</p>
+</div>
+</div>
+<div id="outline-container-org28dde55" class="outline-4">
+<h4 id="org28dde55"><span class="section-number-4">1.2.5.</span> Primer 2.7 (p.S.)</h4>
+</div>
+</div>
+<div id="outline-container-orgcf14854" class="outline-3">
+<h3 id="orgcf14854"><span class="section-number-3">1.3.</span> Posplošitev na višje dimenzije</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgc024736" class="outline-4">
+<h4 id="orgc024736"><span class="section-number-4">1.3.1.</span> Izrek 2.24 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>\(  A \subset \mathbb{R}^n, \ B \subset \mathbb{R}^n \) kvadra</li>
+<li>\(  f:A \times B  \to \mathbb{R} \) integrabilna</li>
+<li><p>
+\(  f(x, \cdot) \) integrabilna na \(  B \ \forall x \in A\)
+</p>
+
+<p>
+iz  česar sledi
+</p></li>
+</ul>
+
+<p>
+\[  \iint\limits_{A\times B} f \, dx \, dy = \int\limits_A \left( \int\limits_B f(x, y) \,dx \right)\,dx
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org4ac0340" class="outline-4">
+<h4 id="org4ac0340"><span class="section-number-4">1.3.2.</span> Trojni integral</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+\(  F: K = [a, b] \times [c, d] \times [e, f] \to \mathbb{R}] \) zvezna
+</p>
+
+<p>
+\[ \iiint\limits_K F(x, y, z) = \iint\limits_{[a, b] \times [c, d]} \left( \int\limits_e^f\,dx( F(x, y, z) \, dz \right) \, dx \, dy = \int\limits_a^b \left( \int\limits_c^d \left( \int\limits_e^f F(x, y, z) \,dz \right)\,dy \right)\,dx
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org38adc9a" class="outline-4">
+<h4 id="org38adc9a"><span class="section-number-4">1.3.3.</span> Trditev</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li>\(  A\subset \mathbb{R} ^2 \) ima ploščino</li>
+<li>\(  \alpha, \beta: A \to \mathbb{R} \) zvezna in \(  \alpha < \beta \)</li>
+<li>\(  B := \{(x, y, z), \in A \times \mathbb{R}, \alpha(x, y) \le y \le \beta(x, y) \} \)</li>
+<li>\(  f: B \to \mathbb{R} \) je zvezna</li>
+</ul>
+
+<p>
+\[ \iiint\limits_B f(x, y, z) \, dV = \iint\limits_A \left( \int_{\alpha(x, y)}^{\beta(x, y)} f(x, y, z) \, dz  \right) \, dy \, dx
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org6fac953" class="outline-4">
+<h4 id="org6fac953"><span class="section-number-4">1.3.4.</span> Primer 2.8 (p.S.) <i>-ish</i></h4>
+<div class="outline-text-4" id="text-1-3-4">
+<ol class="org-ol">
+<li>\(  \iiint_{[0, 1] \times [-1, 1] \times [2, 5]} (x + y + z) \, dx \, dy \, dz = \int\limits_0^1 \int\limits_{-1}^1 \int\limits_2^5 (x + y + z)\,dz\,dy\,dx \)
+Dragi je vzel primer 2.8 (p.S.) in ker so mu bile dane številke dolgočasne, jih je spremenil. Izračunaj sam.</li>
+<li><p>
+Naj bo \(  T \) tetraeder z oglišči \(  (0, 0, 0), \ (1, 0, 0), \ (0, 1, 0), \ (0, 0, 1) \).
+\[ \iiint\limits_T f(x, y, z) \, dV  = \iint\limits_A \left( \int\limits_0^{1 - x - y} f(x, y, z) \,dz \right) \, dx \, dy
+   \]
+</p>
+
+<p>
+Za razliko o navadnih stvari, je tokrat funkcija \(  f(x, y, z) \) prepuščena bralcu in ne dokaz.
+</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org8009e92" class="outline-3">
+<h3 id="org8009e92"><span class="section-number-3">1.4.</span> Uvedba nove spremenljivke 2024/10/23</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+v 1D integralu.
+</p>
+
+<p>
+Spomnimo se, da se nova spremenljivka uvede kot
+</p>
+
+<p>
+\[ \int\limits_a^b f(x) \,dx  = \int\limits_{\varphi^{-1} (a)}^{ \varphi^{-1}(b)} f(\varphi(t)) \cdot \varphi' (t)\,dt
+\]
+</p>
+
+<p>
+Vidimo, da se integracijsko območje in ostale stvari spremenijo
+</p>
+
+\begin{align*}
+  I = [a, b] &\rightarrow [\varphi^{-1} (a),  \varphi^{-1} (b)] \\
+f &\rightarrow f \circ \varphi \cdot \varphi ' = g \\
+\int\limits_I f(x) \,dx = \int\limits_J g(t)\,dt
+\end{align*}
+</div>
+<div id="outline-container-orgf936a03" class="outline-4">
+<h4 id="orgf936a03"><span class="section-number-4">1.4.1.</span> Definicija 2.15 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+Naj bo \(  U^{\text{odp}} \subset \mathbb{R}^n \) in \(  \varphi_1, \ldots \varphi_m: U \to \mathbb{R} \) parcialno odvedljiva na vse spremenljivke. <i>Jacobijevo matriko</i> za \(  \varphi := (\varphi_1, \ldots \varphi_m) \) definiramo kot
+</p>
+
+<p>
+\[ J\varphi = \begin{bmatrix}
+\frac{\partial \varphi_1 }{\partial x_1}  & \ldots  & \frac{\partial \varphi_1 }{\partial x_m}  \\
+\vdots  & \ddots  & \vdots  \\
+\frac{\partial \varphi_m }{\partial x_1}  & \ldots  & \frac{\partial \varphi_m }{\partial x_m}
+\end{bmatrix}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org35f01de" class="outline-4">
+<h4 id="org35f01de"><span class="section-number-4">1.4.2.</span> Primeri za \(  m = n \)</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+Za \(  n = 1 \) in \(  n = 2 \)
+</p>
+</div>
+</div>
+<div id="outline-container-orgbc5648c" class="outline-4">
+<h4 id="orgbc5648c"><span class="section-number-4">1.4.3.</span> Polarne koordinate v \(  \mathbb{R} ^2 \)</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+Definicija in Jakobijeva matrika.
+</p>
+</div>
+</div>
+<div id="outline-container-org31eaf27" class="outline-4">
+<h4 id="org31eaf27"><span class="section-number-4">1.4.4.</span> Izrek 2.28 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<p>
+Naj bo
+</p>
+
+<ul class="org-ul">
+<li>\(  A \subset \mathbb{R}^n \) omejena množica s prostornino</li>
+<li>\(  \varphi: A \to \mathbb{R}^n \) injektivna in razreda \(  C^1 \)</li>
+<li>\(  \det J\varphi (x) \not = 0 \ \forall x \in A \)</li>
+<li>\(  x \mapsto \det J\varphi (x)  \) omejena in različna od 0</li>
+<li>\(  \varphi(A) \) je odprta v \(  \mathbb{R}^n \) s prostornino</li>
+<li>\(  f \varphi(A) \to \mathbb{R} \) integrabilna</li>
+</ul>
+
+<p>
+Tedaj je tudi \(  x \mapsto f(\varphi(x)) \left| \det J\varphi(x) \right| \) integrabilna na \(  A \) in velja
+</p>
+
+<p>
+\[ \int\limits_{\varphi(A)} \,dx  = \int\limits_A f(\varphi(x))  \left| \det J\varphi(x) \right|\,dx
+\]
+</p>
+
+<p>
+To je formula za uvedbo nove spremenljivke v večkratnih integralih.
+</p>
+
+<p>
+(Skica) <b>Dokaz</b> (a):
+</p>
+
+<p>
+Obravnavamo primer, ko je \(  n = 2 \) in je \(  A \) pravokotnik in \(  f \) naj bo zvezna. Naj bo \(  \{P_j\} \) neka delitev za naš pravokotnik \(  A \). Velja
+</p>
+
+<p>
+\[ \iint\limits_{\varphi(A)} f(x, y) \, dx \, dy  = \sum\limits_j \iint\limits_{\varphi(P_j)}
+\]
+</p>
+
+<p>
+Pri tej enakosti upoštevamo injektivnost.
+</p>
+
+<p>
+Nadalje lahko zapišemo kot
+</p>
+
+\begin{align*}
+  &= \sum\limits_j \left\langle f \right\rangle_{\varphi(P_j)} \left| \varphi(P_j) \right|
+\end{align*}
+
+<p>
+kjer je \(  \left\langle f \right\rangle_Q = \frac{1}{\left| Q \right|} \int\limits_Q f\,dx\) povprečje med \(  f \) in \(  Q \).
+</p>
+
+<p>
+Velja prva ugotovitev:
+</p>
+
+<p>
+\[ \left\langle f \right\rangle _{\varphi(P_j} = f(\varphi(u_j, v_j))
+\]
+</p>
+
+<p>
+za neke \(  (u_j, v_j) \in P_j \)
+</p>
+
+<p>
+in druga ugotovitev:
+</p>
+
+
+<div id="orgdba98b2" class="figure">
+<p><img src="jacobi_dokaz.svg" alt="jacobi_dokaz.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Naš pravokotnik se, ko je dovolj majhno slika v paralelogram.
+</p>
+
+<p>
+Velja, da je \(  \left| \varphi(P_j) \right| \approx \left| \text{ paralelograma } \right|\).
+</p>
+
+\begin{align*}
+  = \left| (\varphi(u + \Delta u, v) - \varphi(u, v)) \times (\varphi(u, v + \Delta v) - \varphi(u, v)) \right| &= \frac{\partial \varphi}{\partial u} (u, v) \Delta u \times \frac{\partial \varphi}{\partial v} (u, v) \Delta v \\
+&= \left| \varphi_u \times \varphi_v \right| \Delta u \Delta v \\
+&= \begin{vmatrix}
+(\varphi_1)_u & (\varphi_1)_v \\
+(\varphi_2)_u & (\varphi_2)_v
+ \end{vmatrix} = \left| \det J \varphi \right|
+\end{align*}
+
+<p>
+Iz tega potem sledi, da je
+</p>
+
+<p>
+\[ \iint\limits_{\varphi(A)} f(x, y) \, dx \, dy = \sum\limits_j f(\varphi(x, y)) \left| \det J \varphi(x, y) \right| \Delta u \Delta v
+\]
+</p>
+
+<p>
+To je Riemannova vsota za funkcijo \(  f \circ \varphi \left| \det J \varphi \right| \). \(  \Delta u \Delta v \) je velikost delilnega pravokotnika za \(  A \). Posledično v limiti dobimo
+</p>
+
+<p>
+\[ \int\limits_A f \circ \varphi \left| \det J \varphi \right|\,dx = \int\limits_A f(\varphi(\xi, \eta)) \left| \det J \varphi (\xi, \eta) \right| \,d\xi \, d\eta
+\]
+</p>
+
+<p>
+Q.E.D. -ish
+</p>
+
+<p>
+Opomba:
+</p>
+
+<p>
+\(  \Lambda : \mathbb{R}^n \to \mathbb{R}^n  \) linearna, kaj je potem \(  J\Lambda = ? \).
+</p>
+
+<p>
+Potem je definirana Jacobijeva matrika kot
+</p>
+
+<p>
+\[ J \Lambda = \left[ \frac{\partial \Lambda_j}{\partial k}  \right]
+\]
+</p>
+
+<p>
+za \(  \Lambda_j: \mathbb{R}^n \to \mathbb{R} \) linearna. \(  \Lambda_j (x_1, \ldots x_n) = c_1^j x_1 + \ldots c_n^j x_k \) in to pomeni, da je odvod enak
+</p>
+
+<p>
+\[ \frac{\partial \Lambda_j}{\partial x_k} = c_k^i
+\]
+</p>
+
+<p>
+Kar pomeni, da je Jacobijeva matrika enaka \(  J\Lambda = \left[ c_k^j \right] = \Lambda \).
+</p>
+</div>
+</div>
+<div id="outline-container-org5565cc7" class="outline-4">
+<h4 id="org5565cc7"><span class="section-number-4">1.4.5.</span> Primer</h4>
+<div class="outline-text-4" id="text-1-4-5">
+<p>
+Imamo vektorje
+</p>
+
+\begin{align*}
+  v_1 &= (1, 1, 1) \\
+v_2 &= (2, 3, 1) \\
+v_3 &= (0, 1, 1)
+\end{align*}
+
+<p>
+Volumen paralelipeda, ki ga natejujejo vektorji \(  v_1, v_2, v_3 \).
+</p>
+
+<p>
+Naj bodo \(  v_1, v_2, v_3 \) standardni bazni vektorji. Velja \(  T \hat{e}_j = \mathbf{v}_j \), če je
+</p>
+
+<p>
+\[ T = \begin{bmatrix}
+1 & 2 & 0 \\
+1 & 3 & 1 \\
+1 & 1 & 1
+       \end{bmatrix}
+\]
+</p>
+
+<p>
+in \(  P = T(K); \ K = [0,1] \times [0,1] \times [0, 1] \).
+</p>
+
+<p>
+Definiramo \(  P \) kot \(  P = \{\sum\limits_{j = 1}^3 \lambda_j \mathbf{v}_j; \ \lambda_j \in [0, 1] \} \)
+</p>
+
+<p>
+Ker velja \(  T \hat{e}_j = \mathbf{v}_j \) je potem vsota v množici P enaka
+</p>
+
+<p>
+\[ T(\sum\limits_j \lambda_j \hat{e}_j)  = T (\{\sum\limits_{j = 1}^3\lambda_j \hat{e}_j; \ \lambda_j \in [0,1] \})= K
+\]
+</p>
+
+<p>
+To pomeni, da je prostornina enaka
+</p>
+
+\begin{align*}
+  V(P) &= \iiint\limits_P 1 \, \mathrm{dV} = \iiint\limits_{T(K)} 1 \, \mathrm{dV} \\
+&= \iiint\limits_K 1 \left| \det JT \right| = \left| \det (T) \right| \iiint\limits_K 1 = \left| \det T \right| = 2
+\end{align*}
+
+<p>
+ker je \(  V(K) = 1 \)
+</p>
+</div>
+</div>
+<div id="outline-container-orgbf7b7e0" class="outline-4">
+<h4 id="orgbf7b7e0"><span class="section-number-4">1.4.6.</span> Primer - ploščina enotskega kroga</h4>
+<div class="outline-text-4" id="text-1-4-6">
+\begin{align*}
+  \iint\limits_{\{x ^2 + y ^2 \le 1\}} 1 \, \mathrm{dx} \mathrm{dy} &= \int\limits_0^{2 \pi} \int\limits_0^1 1 \cdot r \,dr\,d\varphi \\
+&= 2 \pi \cdot \frac{1}{2} = \pi
+\end{align*}
+</div>
+</div>
+<div id="outline-container-orgb001155" class="outline-4">
+<h4 id="orgb001155"><span class="section-number-4">1.4.7.</span> Cilindrične koordinate v \(  \mathbb{R}^3 \)</h4>
+<div class="outline-text-4" id="text-1-4-7">
+<p>
+V grobem: polarne koordinate v \(  \mathbb{R} ^2 \times (\text{ kartezične v } \mathbb{R}) \).
+</p>
+
+
+\begin{align*}
+  x &= r \cos \varphi \\
+y &= r \sin \varphi \\
+z &= z
+\end{align*}
+
+<blockquote>
+<p>
+Zakaj so cilindrične? Ker se bolje sliši kot polravninske. To je moj ad hoc odgovor na to vprašanje.
+</p>
+</blockquote>
+<p>
+Lp in lep pozdrav, Dragi.
+</p>
+
+<p>
+Jacobijeva matrika je \(  \left| \det J \varphi \right|  = r\)
+</p>
+</div>
+</div>
+<div id="outline-container-orgedfb811" class="outline-4">
+<h4 id="orgedfb811"><span class="section-number-4">1.4.8.</span> Primer</h4>
+<div class="outline-text-4" id="text-1-4-8">
+<p>
+Vzamemo \(  0 < \rho \le R \). Naj bo \(  \Omega \subset \mathbb{R}^3 \) območje omejeno z
+</p>
+
+\begin{align*}
+  x ^2 + y ^2 + z ^2 &= R ^2 \\
+x ^2 + y ^2 &= \rho ^2
+\end{align*}
+
+<p>
+Natančneje leži znotraj krogle in valja.
+</p>
+
+<p>
+Zanima nas \(  V (\Omega) \), kar je presek krogle z radijem R in cilindra z radijem \(  \rho \)
+</p>
+
+\begin{align*}
+  V(\Omega) &= \iiint\limits_{\Omega} 1 \, \mathrm{dx} \, \mathrm{dy}\, \mathrm{dz} \\
+&\stackrel{\text{cilindrične}}{=} \int\limits_0^{\pi} \int\limits_0^{\rho} \int\limits_{-\sqrt{R ^2 - r ^2}}^{\sqrt{R ^2 - r ^2}}r \, \mathrm{dz}\, \mathrm{dr}\, \mathrm{d}\varphi \\
+&= \ldots = \frac{4 \pi R ^3}{3} \left( 1 - \left[ 1 - (\frac{\rho}{R}) ^2 \right] ^{\frac{3}{2}} \right))
+\end{align*}
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-10-23 Wed 18:32</p>
+</div>
+</body>
+</html>
