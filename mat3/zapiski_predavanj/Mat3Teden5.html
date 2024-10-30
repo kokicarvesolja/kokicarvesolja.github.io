@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-10-30 Wed 21:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden5</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      macros:{
+            odv: ["\\dot{\\vec{#1}}", 1],
+            oddv: ["\\ddot{\\vec{#1}}", 1],
+            epsilon: "\\varepsilon",
+            theta: "\\vartheta",
+            phi: "\\varphi"
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.2,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.2,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden5</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge69a87c">1. Riemann-Darbouxov integral</a>
+<ul>
+<li><a href="#orge0923cb">1.1. Uvedba nove spremenljivke 2024/10/28</a>
+<ul>
+<li><a href="#org64af194">1.1.1. Sferične koordinate v \(  \mathbb{R}^3 \)</a></li>
+<li><a href="#org3fa3790">1.1.2. Primer od zadnjič (valj v sferi)  2.10 (p.S. )</a></li>
+<li><a href="#org95b8f77">1.1.3. Definicija 2.16 (p.S.)</a></li>
+<li><a href="#org55bab4a">1.1.4. Definicija 2.17 (p.S.)</a></li>
+<li><a href="#orgb9907ce">1.1.5. Definicja 2.18 (p.S.) 2024/10/29</a></li>
+<li><a href="#org8da3dac">1.1.6. Torus v \(  \mathbb{R}^3 \)</a></li>
+</ul>
+</li>
+<li><a href="#orgf237260">1.2. Izlimitirani Riemann-Darbouxovi integrali</a></li>
+<li><a href="#org81a3884">1.3. Primer</a></li>
+</ul>
+</li>
+<li><a href="#orgeb71bd4">2. Krivulje v \(  \mathbb{R} ^3 \)</a>
+<ul>
+<li>
+<ul>
+<li><a href="#org616420e">2.0.1. Zgled 3.1 (p.S.)</a></li>
+<li><a href="#org5875a53">2.0.2. Definicija 3.7 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#org47a9b86">2.1. Pritisnjena ravnina 2024/10/30</a>
+<ul>
+<li><a href="#org804a812">2.1.1. Izrek 3.3 (p.S.)</a></li>
+<li><a href="#orgb27bbe8">2.1.2. Something I don&rsquo;t know how to call thingy.</a></li>
+<li><a href="#orgf0f0f93">2.1.3. Izrek 3.4 (p.S.)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge69a87c" class="outline-2">
+<h2 id="orge69a87c"><span class="section-number-2">1.</span> Riemann-Darbouxov integral</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orge0923cb" class="outline-3">
+<h3 id="orge0923cb"><span class="section-number-3">1.1.</span> Uvedba nove spremenljivke 2024/10/28</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org64af194" class="outline-4">
+<h4 id="org64af194"><span class="section-number-4">1.1.1.</span> Sferične koordinate v \(  \mathbb{R}^3 \)</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Velja
+</p>
+
+
+\begin{align*}
+  x &= r \sin \vartheta \cos \varphi \\
+y &= r \sin \vartheta \sin \varphi \\
+z &= r \cos \vartheta
+\end{align*}
+
+<p>
+kjer so \(  r \in (0, \infty) \), \(  \varphi \in [0, 2 \pi) \) ter \(  \vartheta \in [0, \pi] \) določajo \( \Phi  \)
+</p>
+
+<p>
+Jacobijeva matrika je tako oblike
+</p>
+
+<p>
+\[ \left| J \Phi \right|= \begin{vmatrix}
+\sin \theta \cos \phi & \ldots & \ldots\\
+\sin \theta \sin \phi & \ldots &  \ldots \\
+\cos \theta& \ldots & \ldots
+   \end{vmatrix} = r ^2 \sin \theta
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org3fa3790" class="outline-4">
+<h4 id="org3fa3790"><span class="section-number-4">1.1.2.</span> Primer od zadnjič (valj v sferi)  2.10 (p.S. )</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<div id="org2b20d1d" class="figure">
+<p><img src="figures/sphere_cylinder.svg" alt="sphere_cylinder.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Izračunamo \(  V(\Omega) \) v sferičnih koordinatah. Spomnimo se, da imamo
+</p>
+
+<p>
+\[ V(\Omega) = \int\limits_0^{2 \pi} \int\limits_0^{\pi} \int\limits_0^R  1 \cdot r ^2 \sin \theta\,\mathrm{dr}\,\mathrm{d} \phi \,\mathrm{d} \theta
+\]
+</p>
+
+<p>
+Težava z mejami je tam, kjer kot \(  \phi \) preide iz plašča valja na osnovno ploskev tako, da prilagodimo z uvedbo nove spremenljivke \(  \theta_0 = \arcsin (\rho/ R) \)
+</p>
+
+<p>
+\[ V(\Omega) = \int\limits_0^{2\pi}\,\mathrm{d} \phi \left[\left( \int\limits_0^{\theta_0}\,\mathrm{d}\theta + \int\limits_{\pi - \theta_0}^{\pi}\,\mathrm{d}\theta \right) \int\limits_0^R r ^2 \sin \theta\,\mathrm{dx} + \int\limits_{\theta_0}^{\pi - \theta_0} \,\mathrm{d} \theta \int\limits_0^{\rho/\sin \theta} r ^2 \sin \theta \,\mathrm{dr} \right] \]
+</p>
+
+<p>
+Pri drugem integralu je meja 3. integrala odvisna od izstopnega kota.
+</p>
+
+<p>
+Za domačo nalogo imaš drugačen vrstni red integracije (\(  \phi \) ne igra nobene vloge in zamenjaš ga z \(  \theta \) - fiksiraš \(  \phi \)).
+</p>
+</div>
+</div>
+<div id="outline-container-org95b8f77" class="outline-4">
+<h4 id="org95b8f77"><span class="section-number-4">1.1.3.</span> Definicija 2.16 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Naj ima telo \(  T \subset \mathbb{R}^3 \) gostoto \(  \rho = \rho(x, y, z) \). Če je \(  \rho = \text{ konst. } \) je telo homogeno.
+</p>
+
+<p>
+Masa telesa \(  T \) je definirana kot
+</p>
+
+<p>
+\[ m(T) = \iiint\limits_T \rho(x, y, z) \, \mathrm{dV}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org55bab4a" class="outline-4">
+<h4 id="org55bab4a"><span class="section-number-4">1.1.4.</span> Definicija 2.17 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Težišče telesa \(  T \) je točka \(  (x_t, y_t, z_t) \subset \mathbb{R} ^3 \) za katero velja
+</p>
+
+\begin{align*}
+  x_t &= \frac{1}{m(T)} \iiint\limits_T x \rho(x, y, z) \, \mathrm{dV} \\
+  y_t &= \frac{1}{m(T)} \iiint\limits_T y \rho(x, y, z) \, \mathrm{dV}\\
+  z_t &= \frac{1}{m(T)} \iiint\limits_T z \rho(x, y, z) \, \mathrm{dV}
+\end{align*}
+
+<p>
+Kompaktneje se to zapiše kot
+</p>
+
+<p>
+\[ \mathbf{x}_t = \frac{1}{m(T)} \int\limits_T (x, y, z) \rho \,\mathrm{dx} = \frac{1}{m(T)} \int\limits_T \vec{\xi} \rho\,\mathrm{dV}
+\]
+</p>
+
+<p>
+kjer je \(  \vec{\xi} = (x, y, z) \) vektorska funkcija. Težišče nam pove povprečje položajev glede na utež \(  \rho \)
+</p>
+</div>
+</div>
+<div id="outline-container-orgb9907ce" class="outline-4">
+<h4 id="orgb9907ce"><span class="section-number-4">1.1.5.</span> Definicja 2.18 (p.S.) 2024/10/29</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+Vztrajnostni moment telesa \(  T \subset \mathbb{R} ^3 \) pri vrtenju okoli osi \(  \gamma \subset \mathbb{R}^3 \) je enako
+</p/>
+
+<p>
+\[ J_{\gamma} = \int\limits_T d(\vec{x}, \gamma) ^2 \rho(\vec{x}) \,\mathrm{d\vec{x}}
+\]
+</p>
+
+<p>
+kjer je \(  d(\vec{x}, \gamma) \) oddaljenost točke \(  \vec{x} = (x, y, z) \) od osi \(  \gamma \).
+</p>
+
+<p>
+V posebnem primeru je to:
+</p>
+
+<p>
+\[ J_z = \iiint\limits_T (x ^2 + y ^2) \rho(x, y, z) \, \mathrm{dx}\, \mathrm{dy} \mathrm{dz}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org8da3dac" class="outline-4">
+<h4 id="org8da3dac"><span class="section-number-4">1.1.6.</span> Torus v \(  \mathbb{R}^3 \)</h4>
+<div class="outline-text-4" id="text-1-1-6">
+
+<div id="org56571f4" class="figure">
+<p><img src="figures/torus.png" alt="torus.png" />
+</p>
+</div>
+
+<p>
+Kako matematično opišemo torus? Začnemo v ravnini \(  xz \), kjer imamo krožnico, ki jo zarotiramo okoli \(  z \) osi za poljuben kot \(  \phi \). Torus je rotacijsko invarianten.
+</p>
+
+
+<div id="org1047773" class="figure">
+<p><img src="figures/xz_ravnina_torus.svg" alt="xz_ravnina_torus.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Parametri za plašč torusa so oddaljenost od koordinatnega izhodišča \(  a \) ter polmer krožnice \(  r \).
+</p>
+
+<p>
+Opišemo (enotsko) krožnico v \(  xz \) ravnini z
+</p>
+
+<p>
+\[ x = a + R  \cos \theta \quad z = \sin \theta
+\]
+</p>
+
+<p>
+za \(  \theta \in [0, 2\pi) \). S tem smo dobili geometrijski objekt.
+</p>
+
+<p>
+Sedaj bomo s transformacijo v \(  \mathbb{R} ^3 \) ustvarili torus. Ta transformacija je rotacija, ki je linearna operacija (\(  \mathbb{R} ^3 \to \mathbb{R}^3 \)), pripada pa ji matrika:
+</p>
+
+<p>
+\[ r_{\phi} = \begin{bmatrix}
+\cos \phi & - \sin \phi & 0\\
+\sin \phi & \cos \phi  & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\]
+</p>
+
+<p>
+Torus tako izgleda kot
+</p>
+
+<p>
+\[  T = \left\{ \begin{bmatrix}
+\cos \phi & - \sin \phi & 0 \\
+\\sin\phi & \cos \phi & 0\\
+0 & 0 & 1
+                \end{bmatrix}
+                \begin{bmatrix}
+                a + R \cos \theta \\
+                0 \\
+                R \sin \theta
+                \end{bmatrix}; \quad \theta \in \left[0, 2\pi \right), \ \phi \in \left[0, 2\pi \right)\right\}
+\]
+</p>
+
+<p>
+oz. poračunano kot
+</p>
+
+<p>
+\[ T = \left\{ \begin{bmatrix}
+(a + R \cos \theta) \cos \phi \\
+(a + R \cos \theta) \sin \phi \\
+R  \sin \phi
+\end{bmatrix}; \ \theta \in [0, 2\pi), \ \phi \in [0, 2\pi) \right\}
+\]
+</p>
+
+<p>
+To je plašč torusa. Parametrizacija polnega torusa pa je z dodatkom \(  r \in [0, R] \)
+</p>
+\begin{equation}
+\label{eq:1}
+ T = \left\{ \begin{bmatrix}
+(a + r \cos \theta) \cos \phi \\
+(a + r \cos \theta) \sin \phi \\
+r  \sin \phi
+\end{bmatrix}; \ r \in [0, R] \ \theta \in [0, 2\pi), \ \phi \in [0, 2\pi) \right\}
+\end{equation}
+
+<p>
+Jacobijeva determinanta torusa je \(  \left| JT \right| = \left| a + r \cos \theta \right|r \)
+</p>
+
+<p>
+Vztrajnostni moment polnega torusa okoli \(  z \) osi je
+</p>
+
+\begin{align*}
+  J_z &= \int\limits_0^{2 \pi} \int\limits_0^{2\pi} \int\limits_0^R (a + r \cos \theta) ^2 \left| a + r \cos \theta \right| r \,\mathrm{dr}\,\mathrm{d}\theta\,\mathrm{d}\phi \\
+&= \ldots \\
+&= \frac{\pi ^2 R ^2 a}{2} (3 R ^2 + 4 a ^2)
+\end{align*}
+
+<p>
+kjer smo vpeljali koordinate iz parametrizacije polnega torusa \ref{eq:1} iz splošne enačbe za vztrajnostni moment \(  J_z \) v kartezičnih koordinatah.
+</p>
+
+<p>
+Izračun je prepuščen bralcu za domačo nalogo.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf237260" class="outline-3">
+<h3 id="orgf237260"><span class="section-number-3">1.2.</span> Izlimitirani Riemann-Darbouxovi integrali</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Doslej smo imeli omejene funkcije na omejenh množicah. Ali lahko te predpostavke odstranimo in imamo RD integral na neomejenih funkcijah (pol).
+</p>
+
+<p>
+Naj bo \(  D \subset \mathbb{R}^n \), ki ni nujno omejena (neomejena).
+</p>
+
+<ol class="org-ol">
+<li><p>
+\(  f: D \to [0, \infty] \) omejena.
+</p>
+
+<p>
+\[ \int\limits_D f\,\mathrm{dV} := \lim_{a \to \infty} \int\limits_{D \cap [-a, a] ^n} f\,\mathrm{dV}
+   \]
+</p>
+
+<p>
+Če vsi izrazi na desni obstajajo.
+</p></li>
+
+<li><p>
+\(  f: D \to [0, \infty) \) neomejena. Tedaj definiramo
+</p>
+
+<p>
+\[ \int\limits_D f\,\mathrm{dV} := \lim_{M \to \infty} \int\limits_D \min \{f(x), M\}\,\mathrm{dx}
+   \]
+</p>
+
+<p>
+če vsi izrazi na desni obstajajo.
+</p></li>
+
+<li><p>
+\(  f:D \to \mathbb{R} \) (ni več pozitiven neskončen interval!)
+</p>
+
+<p>
+Poljubno funkcijo poskusimo izraziti s pomočjo pozitivnih funkcij (saj imam zanje že imamo definicijo).
+</p>
+
+<p>
+Definiramo
+</p>
+
+<p>
+\[ f_+ := \max \{f, 0\}
+   \]
+ Torej, če je funkcija pozitivna vzamemo njeno pozitivno vrednost, drugače je 0. Obratno velja za
+</p>
+
+<p>
+\[ f_- = \min\{-f, 0\}
+    \]
+</p>
+
+
+<div id="org932fbaf" class="figure">
+<p><img src="figures/izlimitirani_integral.svg" alt="izlimitirani_integral.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+In velja
+</p>
+
+<p>
+\[ f = f_+ - f_-, \quad f_{\pm} \ge 0
+    \]
+</p>
+
+<p>
+Iz česar sledi
+</p>
+
+<p>
+\[ \int\limits_D f\,\mathrm{dx} := \int\limits_D f_+\,\mathrm{dV} - \int\limits_D f_-\,\mathrm{dV}
+    \]
+</p>
+
+<p>
+Če oba integrala na desni obstaja in sta končna (nočemo razlike dveh neskončnosti).
+</p>
+
+<p>
+Poglejmo absolutno vrednost \(  \left| f \right|  = f_+ + f_-\), iz česar sledi, da je za definicijo \(  \int\limits_D f\,\mathrm{dV} \) pomembno, da obstaja \(  \int\limits_D \left| f \right| \,\mathrm{dV} \).
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org81a3884" class="outline-3">
+<h3 id="org81a3884"><span class="section-number-3">1.3.</span> Primer</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Za kakšne \(  s \in \mathbb{R} \) konvergira ( obstaja v \(  \mathbb{R} \))
+</p>
+
+<p>
+\[ I_n (s) = \int\limits_{K^n(0, 1)} \frac{1}{\left| x \right|^s}\,\mathrm{dx}, \quad n \in \mathbb{N}
+\]
+</p>
+
+<p>
+Za \(  n = 1 \):
+</p>
+
+\begin{align*}
+  I_1(s) &= \int\limits_{-1}^1 \frac{1}{\left| x \right|^s}\,\mathrm{dx} \\
+&= 2 \int\limits_0^1 \frac{1}{x ^s}\,\mathrm{dx} = \frac{2}{1- s}
+\end{align*}
+
+<p>
+kar \(  \exists \iff s < 1 \)
+</p>
+
+<p>
+Za \(  n = 2 \) je
+</p>
+
+\begin{align*}
+  I_2(s) &= \iint\limits_{\{x ^2 + y ^2 < 1\}} \frac{1}{(x ^2 + y ^2)^{\frac{s}{2}}} \, \mathrm{dx} \, \mathrm{dy} \\
+& \stackrel{\text{ polarne }}{=}  \int\limits_0^{2\pi} \int\limits_0^1 \frac{1}{r^s} r \,\mathrm{dr}\,\mathrm{d}\phi = 2\pi \int\limits_0^1 \frac{1}{r^{s -1}}\,\mathrm{dr}  \\
+&= \frac{2\pi}{2 - s}
+\end{align*}
+
+<p>
+Za \(  n = 3 \):
+</p>
+
+\begin{align*}
+  I_3(s) &= \iiint\limits_{K ^3 (0, 1)} \frac{1}{(x ^2 + y ^2 + z ^2) ^{\frac{s}{2}}} \\
+& \stackrel{\text{sfericne}}{=} \int\limits_0^{2\pi} \int\limits_0^{\pi} \int\limits_0^1 \frac{1}{r ^s} r ^2 \sin \theta\,\mathrm{dr}\,\mathrm{d}\theta\,\mathrm{d}\phi \\
+&= C \int\limits_0^1 \frac{1}{r^{s -2}}\,\mathrm{dr} =  \frac{1}{2} I_1(s -2) = \frac{2}{1 - (s -2)} \\
+&= \frac{8 \pi}{3 - s} && \text{ če } s < 3
+\end{align*}
+
+<p>
+če je \(  s - 2 < 1 \) oz. \(  s < 3 \). Za \(  s \ge 3 \) integral divergira.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeb71bd4" class="outline-2">
+<h2 id="orgeb71bd4"><span class="section-number-2">2.</span> Krivulje v \(  \mathbb{R} ^3 \)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<b>Del snovi je izpuščen, ker sta Mrčun in Dragičevič letos (2024) govorila in ugotovila, da se del snovi pokriva. Prejšnja leta vsebujejo polno snov.</b>
+</p>
+
+<p>
+Krivulja je gladka funkcija \(  I \subset \mathbb{R}, \ \gamma: I \to \mathbb{R}^3 \ \ni: \ \dot{\gamma}(t) \ne 0 \). Poznana pojma: parametrizacija in naravna parametrizacija (hitrost ves čas po absolutni vrednosti enaka 1).
+</p>
+
+<p>
+Dolžina krivulje \(  \Gamma = \{\vec{r}(t), \ t \in [a, b]\} \) je
+</p>
+
+<p>
+\[ l (\Gamma) = \int\limits_a^b \left| \dot{\vec{r}} \right|\,\mathrm{dt}
+\]
+</p>
+
+<p>
+Ta definicija je dobra (neodvisna od parametrizacije).
+</p>
+</div>
+<div id="outline-container-org616420e" class="outline-4">
+<h4 id="org616420e"><span class="section-number-4">2.0.1.</span> Zgled 3.1 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-0-1">
+<p>
+Vijačnica ima formulo \(  \vec{r}(t) = (a \cos t, a \sin t, bt), \ a, b > 0, \ t \in \mathbb{R} \).
+</p>
+</div>
+</div>
+<div id="outline-container-org5875a53" class="outline-4">
+<h4 id="org5875a53"><span class="section-number-4">2.0.2.</span> Definicija 3.7 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-0-2">
+<p>
+Enotski tangnenti vektor
+</p>
+
+<p>
+\[ \frac{\odv{r}(t) }{\left| \odv{r} (t) \right|}
+\]
+</p>
+
+<p>
+Tangenta v točki \(  \odv{r}(t_0) \) premica skozi \(  \vec{r}(t_0) \) v smeri tangentnega vektorja na \(  \Gamma \) v točki \(  \vec{r}(t_0) \).
+</p>
+
+<p>
+Enačba premice je
+</p>
+
+<p>
+\[ (x, y, z) = \vec{r}(t_0) + \lambda \odv{r}(t_0)
+\]
+</p>
+
+<p>
+Normalna ravnina na \(  \vec{r}(t_0) \) je ravnina skozi \(  \vec{r}(t) \) pravokotna na tangentni vektor.
+</p>
+</div>
+</div>
+<div id="outline-container-org47a9b86" class="outline-3">
+<h3 id="org47a9b86"><span class="section-number-3">2.1.</span> Pritisnjena ravnina 2024/10/30</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Ideja za pritisnjeno ravnino je:
+</p>
+
+<ol class="org-ol">
+<li>izberemo točki blizu \(  \vec{r}(t_0) \)</li>
+<li>Če so \(  \vec{r}(t_0, t_1, t_2) \) nekolinearne obstaja ravnina skozi dane točke.</li>
+<li>Izberemo normalo \(  \vec{n}(t_0, t_1, t_2) \in S ^2 \), kjer je \(  S ^2 \) enotska sfera v \(  \mathbb{R} ^3 \)</li>
+<li>Poskusimo z \(  \lim\limits_{t_1, t_2 \to t_0}\vec{n}(t_0, t_1, t_2)  \)</li>
+<li>Če ta limita obstaja, določa normalo pritisnjene ravnine.</li>
+</ol>
+
+<p>
+Dragi vpraša, ali je vse jasno kakšna umetniška zvrst je to.
+</p>
+
+<p>
+Sedaj nas zanima, ali se to da, kdaj (ne kot dan v tednu) ter kako.
+</p>
+</div>
+<div id="outline-container-org804a812" class="outline-4">
+<h4 id="org804a812"><span class="section-number-4">2.1.1.</span> Izrek 3.3 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Naj bo \(  \gamma \) regularna parametrizacije \(  C ^2 \) neke krivulje v \(  \mathbb{R} ^3 \). Za dani \(  t_0 \in \mathbb{R} \) privzamemeo, da je
+\[ \vec{v} _0 = ( \dot{\gamma} \times \ddot{\gamma} )(t_0) \ne 0
+\]
+</p>
+
+<p>
+Fizikalno to pomeni, da pospešek in hitrost nista usmerjena v smeri. Tedaj obstaja \(  \delta > 0 \) tako, da za poljubne točke \(  t_1, t_2 \in (t_0 - \delta, t_0 + \delta\) tako, da \(  t_1, t_2, t_0 \) so medsebojno različne, so točke \(  \gamma(t_0), \ \gamma(t_1), \ \gamma(t_2) \)
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Denimo, da so točke \(  t_0, \ t_1, \ t_2 \) kolinearne. Označimo z \(  l = l(t_1, t_2) \) premico, ki jih vsebuje, prestavljeno v izhodišču \(  (\cdot, \gamma(t_0)) \). Vzamemo \(  w \in l^{\perp} \). Recimo, da je \(  t_0 < t_1 < t_2 \) (alternativno lahko tudi \(  t_1 < t_0 < t_2 \)). Ker je \(  \gamma(t_j) - \gamma(t_0) \in l; \ j = 1, 2 \).
+</p>
+
+<p>
+Odtod sledi, da je
+</p>
+
+<p>
+\[ \left\langle \gamma(t_1) - \gamma(t_0), w \right\rangle = \left\langle \gamma(t_2) - \gamma(t_0), w \right\rangle = 0
+\]
+</p>
+
+<p>
+Definiramo \(  f(t) = \left\langle \gamma(t) - \gamma(t_0), w  \right\rangle . Sledi \( f(t_0), f(t_1), f(t_2) = 0 \)
+</p>
+
+<p>
+Po Rolleovem izreku \(  \exists \xi_1, \xi_2 \in \mathbb{R} \ni \)
+</p>
+
+<p>
+\[ t_0 < \xi_1 < t_1 < \xi_2 < t_2 \ni: \quad f'(\xi_1) = f'(\xi_2) = 0
+\]
+</p>
+
+<p>
+oziroma drugače zapisano
+</p>
+
+<ol class="org-ol">
+<li>\[ \left\langle \gamma'(\xi_1), w \right\rangle  = \left\langle \gamma'(\xi_2), w \right\rangle = 0
+   \]</li>
+<li>Spet po Rolleovem izreku sledi, da \(  \exists \xi_3 \in (\xi_1, \xi_2) \ni \ f''(\xi_3) = 0 \) oz, \(  \left\langle \ddot{\gamma}(\xi_3), w \right\rangle = 0 \)</li>
+</ol>
+
+<p>
+Če sta \(  t_1, t_2 \) blizu \(  t_0 \), sta zaradi \(  \gamma \in C ^2 \) tudi \(  \dot{\gamma}(\xi_1), \dot{\gamma(\xi_2)} \) blizu \(  \dot{\gamma}(t_0) \) in \(  \dot{\gamma}(\xi_3) \) blizu \(  \ddot{\gamma}(t_0) \).
+</p>
+
+<p>
+Iz prve in druge točke sledi, da je \(  w \) skoraj pravokoten na \(  \dot{\gamma}(t_0) \text{ in } \ddot{\gamma}(t_0) \). Posledično je \(  w \) skoraj vzporeden z \(  \dot{\gamma}(t_0) \times \ddot{\gamma}(t_0) \).
+</p>
+
+<p>
+Torej \(  w \) leži v ozkem stožcu okoli tega vektorja \(  \dot{\gamma}(t_0) \times \ddot{\gamma}(t_0) \), kar pa je protislovje, saj je \(  w \) poljuben element iz neke ravnine.
+</p>
+
+<p>
+Eksaktna izpeljava: Vzaemo \(  \epsilon > 0 \). Velja
+</p>
+
+\begin{align*}
+  v_0 \times w &= [ \dot{\gamma}(t_0) \times \ddot{\gamma}(t_0)] \times w \\
+&\stackrel{\text{lin. alg}}{=} \left\langle \dot{\gamma}(t_0), w \right\rangle \ddot{\gamma}(t_0) - \left\langle \ddot{\gamma}(t_0), w \right\rangle \dot{\gamma}(t_0) \\
+&\stackrel{1), 2)}{=} \left\langle \dot{\gamma}(t_0) - \dot{\gamma}(\xi_1), w \right\rangle \ddot{\gamma}(t_0) - \left\langle \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3), w \right\rangle \dot{\gamma}(t_0)
+\end{align*}
+
+<p>
+Katere črke nimam - Dragi
+A vsi poznate Cauchy-Schwartzovo neenakost? /~ The classroom is silent/~ Pričakoval sem večje navdušenje
+</p>
+
+<p>
+Cauchy-Schwartzova neenakost je \(  \left| \left\langle \vec{a}, \vec{b} \right\rangle \right| \le \left| \vec{a} \right| \cdot \left| \vec{b} \right|\)
+</p>
+
+
+<p>
+Iz tega potem sledi
+</p>
+
+<p>
+\[ \left| v_0 \times w \right| \le \left( \left| \dot{\gamma}(t_0) - \dot{\gamma}(\xi_1) \right| \left| \ddot{\gamma}(t_0) \right| - \left| \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3) \right| \left| \dot{\gamma}(t_0) \right|\right) \left| w \right|
+\]
+</p>
+
+<p>
+Definiramo
+</p>
+
+\begin{align*}
+ \alpha &=   \left|  \dot{\gamma}(t_0) - \dot{\gamma}(\xi_1) \right|\\
+\beta &=  \left| \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3) \right|
+\end{align*}
+
+<p>
+Ker sta \(  \dot{\gamma}, \ddot{\gamma} \) zvezna v točki \(  t_0 \), obstaja \(  \delta > 0 \)tako, da za poljubna \(  \xi_1, \xi_3  \in (t_0 - \delta, t_0 + \delta) \) velja \(  \alpha < \epsilon, \ \beta < \epsilon \). Pogoja za \(  \xi_1, \xi_3 \) sta gotovo izpolnjena, če je \(  t_1, t_2 \in (t_0, t_0 + \delta) \).
+</p>
+
+<p>
+Dokazali smo, da \(  \exists \delta > 0 \ni  \):
+</p>
+
+<p>
+\[ \frac{\left| v_0 \times w \right|}{\left| w \right|} \le \left( \left| \dot{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) \right|\right) \epsilon \quad \forall t_1, t_2 \in (t_0, t_0 + \delta), \ \forall w \in l(t_1, t_2)^{\perp} \setminus \left\{ 0 \right\}
+\]
+</p>
+
+<p>
+Tedaj
+</p>
+
+<p>
+\[ \frac{\left| v_0 \times w \right|}{\left| w \right|} = \left| v_0 \right| \sin \phi
+\]
+</p>
+
+<p>
+kjer je kot \(  \phi \) kot med vektorjema \(  v_0 \text{ in } w \).
+</p>
+
+<p>
+Odtod sledi, da je
+</p>
+
+<p>
+\[ \sin\phi \le \frac{\left| \dot{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) \right|}{\left| \dot{\gamma}(t_0) + \ddot{\gamma}(t_0) \right|} \epsilon
+\]
+</p>
+
+<p>
+Kot med \(  v_0 \) in poljubnim vektorjem iz \(  l(t_1, t_2)^{\perp} \) nujno majhen, če sta \(  t_1, t_2 \) blizu \(  t_0 \). Torej \(  l(t_1, t_2) \) res leži v majhnem ozkem stožcu okoli \(  v_0 \), kar je v protislovju (\(  l^{\perp} \) je ravnina). Torej poredpostavke na začetku (da so kolinearne), zato so \(  \gamma(t_0), \gamma(t_1), \gamma(t_2) \) nekolinearne za \(  t_1, t_2 \) blizu \(  t_0 \).
+</p>
+
+<p>
+Q.E.D.
+</p>
+
+
+<blockquote>
+<p>
+Triangulirajte svet okrog sebe. Ga boste bolje razumeli.
+</p>
+</blockquote>
+
+<p>
+Dragičevič be like.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb27bbe8" class="outline-4">
+<h4 id="orgb27bbe8"><span class="section-number-4">2.1.2.</span> Something I don&rsquo;t know how to call thingy.</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Naj bodo \(  \gamma, t_0, v_0, \delta, t_1, t_2 \) kot v izrek od prej. Naj bo \(  \Pi(t_1, t_2) \) ravnina skozi \(  \gamma(t_1), \gamma(t_2), \gamma(t_0) \). Želimo pokazati, da \(  \Pi(t_1, t_2) \) limitirajo, ko gresta \(  t_1, t_2 \to t_0 \). proti ravnini z normalo \(  v_0 \).
+</p>
+
+<p>
+Dovolj je pokazati, da enotske normale \(  n(t_1, t_2) \) na \(  \Pi(t_1, t_2) \) limitirajo k \(  \pm  \frac{v_0}{\left| v_0 \right|} \) za \(  t_1, t_2 \to t_0 \).
+</p>
+
+<p>
+Velja (do predznaka natančno)
+</p>
+
+<p>
+\[ n(t_1, t_2) = \frac{\left[ \gamma(t_1) - \gamma(t_2) \right] \times \left[ \gamma(t_2) - \gamma(t_1) \right]}{\left|{\left[ \gamma(t_1) - \gamma(t_2) \right] \times \left[ \gamma(t_2) - \gamma(t_1) \right]}\right|}
+\]
+</p>
+
+<p>
+Ker je \(  \gamma \) zvezna, je tudi \(  n(t_1, t_2) \) zvezna funkcija argumenta \(  t_1, t_2 \in \mathbb{R} ^2 \) definirana na \(  (t_0 - \delta, t_0 + \delta) \times (t_0 - \delta, t_0 + \delta) \setminus \left\{ \text{ diagonala } \right\} \)
+</p>
+
+<p>
+Vzemimo \(  \epsilon > 0 \) in definiramo
+</p>
+
+<p>
+\[ f(t) := \left\langle \gamma(t) - \gamma(t_0), n(t_1, t_2) \right\rangle
+\]
+ Velja \(  f(t_0) = f(t_1) = f(t_2) = 0 \). Ponovno po Rolleovem izreku \(  \exists t_0 < \xi_1 < t_1 \xi_2 < t_2 \ \ni \)
+</p>
+
+ \begin{align*}
+  0 &= f(\xi_1) = \left\langle \dot{\gamma}(\xi_1), n(t_1, t_2) \right\rangle \\
+  0 &= f(\xi_2) = \left\langle \dot{\gamma}(\xi_2), n(t_1, t_2) \right\rangle \\
+\end{align*}
+
+<p>
+Odtod sledi, da \(  \exists \xi_3 \in (\xi_1, \xi_2)\  \ni \)
+</p>
+
+<p>
+\[ - = f''(\xi_3) = \left\langle \dot{\gamma}(\xi_3), n(t_1, t_2) \right\rangle
+\]
+</p>
+
+<p>
+Naprej
+</p>
+\begin{align*}
+v_0 \times n(t_1, t_2) &=  \left[ \dot{\gamma}(t_0) \times \ddot{\gamma}(t_j) \right] \times n(t_1, t_2) \\
+&= \left\langle \gamma(t_0), n \right\rangle\dot{\gamma}(t_0) - \left\langle \ddot{\gamma}(t_0), n \right\rangle \dot{\gamma}(t_0)\\
+&= \left\langle \dot{\gamma}(t_0 - \dot{\gamma}(\xi_3)), n \right\rangle \ddot{\gamma}(t_0) - \left\langle \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3), n \right\rangle \dot{\gamma}(t_0)
+\end{align*}
+
+<p>
+Absolutna vrednost je tako
+</p>
+
+<p>
+\[ \left| v_0 \times n(t_1, t_2) \right| \le \left( \left| \dot{\gamma}(t_0) - \dot{\gamma}(\xi_3) \right| \left| \ddot{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3) \right| \dot{\gamma}(t_0) \right) \left| n \right|
+\]
+</p>
+
+<p>
+Absolutna vrednost \(  \left| n \right| \) je enaka 1.
+</p>
+
+<p>
+Obstaja \(  \delta > 0 \) tako, da za \(  \eta_1, \eta_2 \in (t_0 - \delta, t_0 + \delta) \) velja
+</p>
+
+\begin{align*}
+  \left| \dot{\gamma}(t_0) - \dot{\gamma}(\eta_1) \right| &< \epsilon \\
+\left| \ddot{\gamma}(t_0) - \ddot{\gamma}(\eta_2) \right| &< \epsilon
+\end{align*}
+
+<p>
+Za \(  t_1, t_2 \in (t_0 - \delta, t_0 + \delta) \) torej sledi
+</p>
+
+<p>
+\[ \left| v_0 \times n(t_1, t_2) \right|= \left| v_0 \right| \sin \psi \le \left( \left| \dot{\gamma}(t_0 ) \right| + \left| \ddot{\gamma}(t_0) \right| \right)
+\]
+</p>
+
+<p>
+kjer je \(  \psi \) ostri kot med \(  v_0 \) in \(  n(t_1, t_2) \)
+</p>
+
+<p>
+Dokazali smo, da je
+</p>
+
+<p>
+\[ \sin \psi (t_1, t_2) \le \frac{\left| \vec{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) \right|}{\left|{\left| \vec{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) \right|}\right|} \epsilon
+\]
+</p>
+
+<p>
+Definiramo \(  \tilde{v}_0 = \frac{v_0}{\left| v_0 \right|} \). Sledi
+</p>
+
+\begin{align*}
+\left| \tilde{v}_0  - n\right| ^2 &= \left\langle \tilde{v}_0 -n, \tilde{v}_0 - n \right\rangle \\
+&= \left| \tilde{v}_0 \right| ^2 + \left| n \right| ^2 - 2 \left\langle \tilde{v}_0, v \right\rangle = 1 + 1 - 2 \left| v_0 \right| \left| n \right| \cos \psi
+\end{align*}
+
+<p>
+Iz česar sledi, da je
+</p>
+
+<p>
+\[ \left| \tilde{v}_0 - n \right| ^2 = 2 (1 - \cos\psi)
+\]
+</p>
+
+<p>
+kar gre proti nič, ker je \(  \psi \) oster kot, ko gre \(  t_1, t_2 \to t_0 \).
+</p>
+
+<p>
+Dokazali so, da
+</p>
+
+<p>
+\[ \lim_{t_1, t_2 \to t_0} n(t_1, t_2) = \pm \frac{v_0}{\left| v_0 \right|}
+\]
+</p>
+
+<p>
+Ravnini skozi \(  T_0 = \gamma(t_0) \) in z normalo \(  v_0 \) pravimo pritisnjena ravnina na \(  \gamma \) v točki \(  t_0 \).
+</p>
+
+<p>
+To je najbližja lokalna 2 dimenzionalna aproksimacija za našo krivuljo.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0f0f93" class="outline-4">
+<h4 id="orgf0f0f93"><span class="section-number-4">2.1.3.</span> Izrek 3.4 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+Če je \(  \Pi = \Pi(t_0) \) pritisnjena ravnina za \(  \gamma \) v točki \(  \gamma(t_0) \) tedaj velja
+</p>
+
+<p>
+\[ d(\gamma(t_0 + h), \Pi) = o(h ^2), \ h \to 0
+\]
+</p>
+
+<p>
+Trdimo, da razdalja med funkcijo in ravnino padajo s kvadratom, ko se približujemo točki \(  \gamma(t_0) \)
+</p>
+
+<p>
+Oznaka \(  f(h) = o(g(h)), \ h \to a \) pomeni \(  \lim_{h \to 0} \frac{f(h)}{g(h)} = 0  \)
+ \(  h \) gre proti 0, ampak \(  \frac{h}{h ^2} \) pa ne gre proti nič, ampak proti neskončno.
+</p>
+
+
+<div id="org5828c32" class="figure">
+<p><img src="figures/izrek34.svg" alt="izrek34.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Naslednji teden nadomešča Govc.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-10-30 Wed 21:05</p>
+</div>
+</body>
+</html>
