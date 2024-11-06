@@ -1,0 +1,1251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-11-06 Wed 19:35 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden6</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      macros:{
+            odv: ["\\dot{\\vec{#1}}", 1],
+            oddv: ["\\ddot{\\vec{#1}}", 1],
+            epsilon: "\\varepsilon",
+            theta: "\\vartheta",
+            phi: "\\varphi"
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden6</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org402e2d9">1. Krivulje v \(  \mathbb{R} ^3 \)</a>
+<ul>
+<li><a href="#orgc159c49">1.1. Pritisnjena ravnina</a>
+<ul>
+<li><a href="#orgfccf097">1.1.1. Izrek 3.4 (p.S.)/ 3.17 po Dragiju (dokaz od 5. tedna)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1ab9c11">2. Ploskve v \(  \mathbb{R} ^3 \)</a>
+<ul>
+<li><a href="#org9b3b8f7">2.1. Definicija 4.1 (p.S.) /po Dragiju</a></li>
+<li><a href="#orgd705dd9">2.2. Tangentna ravnina</a>
+<ul>
+<li><a href="#org629b68b">2.2.1. Definicija 4.2</a></li>
+<li><a href="#org9d818f9">2.2.2. Primer 1 - ploskve podane kot graf (eksplicitna oblika)</a></li>
+<li><a href="#org71dc367">2.2.3. Zgled 4.1 (p. S.)</a></li>
+<li><a href="#org48f2bfd">2.2.4. Implicitno podane ploskve</a></li>
+<li><a href="#org2af7cd5">2.2.5. Rotacijsko invariantne ploskve (vrtenine)</a></li>
+<li><a href="#org80d6b62">2.2.6. Zgled 4.2 (p.S.)</a></li>
+<li><a href="#orgc8c2325">2.2.7. Zgled 4.3 (p.S.)</a></li>
+<li><a href="#orgcfb9749">2.2.8. Zgled 4.4 (p.S.)</a></li>
+<li><a href="#org9d874a3">2.2.9. Zgled 4.5 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#org42ba785">2.3. Površina ploskve</a>
+<ul>
+<li><a href="#org293bd1b">2.3.1. Definicja:</a></li>
+<li><a href="#org6369b05">2.3.2. Trditev 4.1 (p.S.)</a></li>
+<li><a href="#org8745e75">2.3.3. Površina ploskve podane z grafom (v Simonovih zapiski je malo daljši z \(  E, G, F \)</a></li>
+<li><a href="#orgffcd5a4">2.3.4. Zgled 4.6 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#org4e48d1a">2.4. Orientacija 4.3 (p.S.)</a>
+<ul>
+<li><a href="#org0fc14b7">2.4.1. Definicija 4.4 (p.S.)</a></li>
+<li><a href="#org73bd09b">2.4.2. Definicija 4.5 (p.S.)</a></li>
+<li><a href="#orgbc1f57c">2.4.3. Zgled 4.7 (p.S.)</a></li>
+<li><a href="#org1049acd">2.4.4. Inducirana orientacija</a></li>
+<li><a href="#org8f27f67">2.4.5. Definicija 4.6 (p.S.)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf4d6a39">3. Temeljni diferencialni operatorji na skalarnih in vektorskih polji</a>
+<ul>
+<li><a href="#orgad7e6ff">3.1. Definicija 5.1 (p.S.)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org402e2d9" class="outline-2">
+<h2 id="org402e2d9"><span class="section-number-2">1.</span> Krivulje v \(  \mathbb{R} ^3 \)</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgc159c49" class="outline-3">
+<h3 id="orgc159c49"><span class="section-number-3">1.1.</span> Pritisnjena ravnina</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orgfccf097" class="outline-4">
+<h4 id="orgfccf097"><span class="section-number-4">1.1.1.</span> Izrek 3.4 (p.S.)/ 3.17 po Dragiju (dokaz od 5. tedna)</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Primera sta npr.
+</p>
+
+<p>
+\(  x ^3 \) je \(  o(x ^2) \), ko gre \(  x \to 0 \)
+\(  x ^2 \) je \(  o(x ^2) \), ko gre \(  x \to 0 \)
+</p>
+
+<p>
+Ekvivalentno \(  f(h) = o(g(h)), \ h \to a \) je, da za vsak \(  \epsilon \) obstaja okolica \(  a \), kjer velja
+</p>
+
+<p>
+\[ \left| f(h) \right|  \le \epsilon \left| g(h) \right|
+\]
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Spomnimo se razdalje med točko in ravnino:
+</p>
+
+<p>
+\[ d(\vec{R}, \Pi) = \left\langle \vec{R} - \vec{r}, \frac{\vec{n}}{\left| \vec{n} \right|} \right\rangle
+\]
+</p>
+
+<p>
+za ravnino \(  \Pi \) in vektor \(  \vec{R} \), ki kaže iz ravnine.
+</p>
+
+<p>
+\[ d(\gamma(t_0 + h), \Pi) = \left\langle \gamma(t_0 + h) - \gamma(t_0), \frac{\dot{\gamma}(t_0) \times \ddot{\gamma} (t_0)}{{\dot{\gamma}(t_0) \times \ddot{\gamma} (t_0)}}\right\rangle
+\]
+</p>
+
+<p>
+Drugi člen tega skalarnega produkta je vektor normale \(  \vec{n} \) za ravnino \(  \Pi \).
+</p>
+
+<p>
+Prav tako pišimo \(  \gamma(t) = (\gamma_1(t), \gamma_2 (t), \gamma_3 (t)) \), kjer je \(  t = t_0 + h \).
+</p>
+
+<p>
+Taylorjev izrek pravi, da \(  \gamma_i(t) = \gamma_i(t_0) + \dot{\gamma_i}(t_0) \cdot h + \ddot{\gamma}_i(t_0) \frac{ h ^2}{2} + o(h ^2) \)
+</p>
+
+<p>
+Zapišimo \(  \vec{o}(h ^2) = (o(h ^2),o(h ^2),o(h ^2)) \)
+</p>
+
+<p>
+Če uporabimo Taylorjev razvoj
+</p>
+
+\begin{align*}
+  \left| \left\langle \dot{\gamma}(t_0) \cdot h ^2 + \ddot{\gamma}(t_0) \frac{h ^2}{2} + o ( h ^2 ), \vec{n} \right\rangle \right| &= \left| \vec{o}(h ^2), \vec{n} \right| \\
+& \le \left| o (h^2) \right| = o (h ^2)
+\end{align*}
+
+<p>
+<b>Frenet-Serretov trieder ni bil obdelan! Za vaje se bo še obvestilo, ali bo ali ne. Za teoretični izpit je potrebno vprašati profesorja.</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1ab9c11" class="outline-2">
+<h2 id="org1ab9c11"><span class="section-number-2">2.</span> Ploskve v \(  \mathbb{R} ^3 \)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Osnovni primer ploskve je graf funkcije:
+</p>
+
+<p>
+Imejmo \(  D \subseteq \mathbb{R} ^2 \) območje (odprta povezana množica). Graf  funkcije \(  f: D \to \mathbb{R} \) je množica
+</p>
+
+<p>
+\[ \Gamma_f = \left\{ (x, y, f(x, y)); \ (x, y) \in D \right\}
+\]
+</p>
+
+<p>
+Rečemo. da smo ploskev podali eksplicitno (kot graf). Še bolj pogosto bomo ploskve podajali parametrično.
+</p>
+</div>
+<div id="outline-container-org9b3b8f7" class="outline-3">
+<h3 id="org9b3b8f7"><span class="section-number-3">2.1.</span> Definicija 4.1 (p.S.) /po Dragiju</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+(Gladka) Ploskev v \(  \mathbb{R} ^3 \) je podana s parametrizacijo \(  \vec{r} = \vec{r}(u, v): D \to \mathbb{R}  \) pri čemer je \(  \vec{r}(u, v) = (X(u, v), Y(u, v), Z(u, v)) \) preslikava reda vsaj \(  \mathcal(C) ^1 \).
+</p>
+
+<p>
+Običajno privzamemo, še \(  \vec{r}_u \times \vec{r}_v \ne 0\). V tem primeru govorimo, da je parametrizacija regularna. Pravimo, da sta \(  u \) in \(  v \) krivočrtni koordinati na ploskvi
+</p>
+
+<p>
+Indeks \(  \vec{r}_u = \frac{\partial \vec{r}}{\partial u}  \).
+</p>
+
+<p>
+\[ M = \left\{ \vec{r}(u, v); \ (u, v) \in D \right\}
+\]
+</p>
+
+<p>
+Kaj nam pogoj \(  \vec{r}_u \times \vec{r}_v \ne 0\) pravzaprav da? Razmišljamo hevristično: matematično pogoj za vektor \(  \vec{r}= (x, y, z) \), ki da
+</p>
+
+<p>
+\[ \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\
+X_u & Y_u & Z_u \\
+X_v & Y_v & Z_v
+   \end{vmatrix} \ne 0
+\]
+</p>
+
+<p>
+ker je vektorski produkt \(  \ne 0 \) mora biti vsaj ena komponenta različna od 0. Brez izgube splošnosti(okrajšano BŠS) privzemimo, da je to tretja komponenta. Torej je poddeterminanta
+</p>
+
+\begin{equation}\label{mat:1}
+\begin{vmatrix}
+X_u & Y_u \\
+X_v & Y_v
+\end{vmatrix} \ne 0
+\end{equation}
+
+<p>
+Oglejmi so obnašanje funkcij \(  X \) in \(  Y \) v okolici \(  \vec{r}(u, v) \). Tukaj sedaj nastopi naše hevristično razmišljanje: (aka <b>neformalno</b>)
+</p>
+
+\begin{align}\label{al:1}
+  X (u + h, v+ k) & \approx = X(u, v) + h \cdot X_u(u, v) + k\cdot X_v(u, v) \\
+Y(u + h, v + k) & \approx = Y(u, v) + h \cdot Y_u(u, v) + k \cdot Y_v(u, v)
+\end{align}
+
+<p>
+Sedaj pa naredimo nekaj nelegitimnega, ki pa bo pripomoglo k razumevanju. Na to sedaj pogledamo kot na linearen sistem z neznankama \(  h \) in \(  k \).
+</p>
+
+<p>
+Zaradi tega \ref{mat:1}  lahko sistem rešimo:
+</p>
+\begin{align*}
+  h &= h(X, Y) \\
+k &= k(X, Y)
+\end{align*}
+
+<p>
+Torej velja
+</p>
+
+<p>
+\[ Z(u + h, v + k) = Y(u + h(X, Y), v + K(X, Y))
+\]
+</p>
+
+<p>
+v okolici \(  (u, v) \) smo \(  Z \) izrazili kot funkcijo \(  X, Y \).
+Torej se da vsako (regularno) parametrizirano ploskev lokalno zapisati kot graf neke funkcije.
+</p>
+
+<p>
+<b>Ponavljam, da te stvari niso formalne, ker niso vse parametrizacije regularne.</b>
+</p>
+
+<p>
+Opomba: Ta argument lahko tudi formaliziramo Na mestu \ref{al:1} uporabimo izrek o inverzni preslikavi.
+</p>
+
+<p>
+2024/11/05
+</p>
+
+<p>
+Pogoj \(  \vec{r}_u \times \vec{r}_v \) zagotavlja tudi, da ima ploskev vsaki točki dobro definirano tangentno ravnino.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd705dd9" class="outline-3">
+<h3 id="orgd705dd9"><span class="section-number-3">2.2.</span> Tangentna ravnina</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Imamo območje \(  D\subseteq \mathbb{R}^2 \), na katerem sparametriziramo ploskev \(  M = \left\{ \vec{r}(u, v);\ (u, v) \in D \right\} \)
+</p>
+
+\begin{align*}
+  \vec{r}: D &\to \mathbb{R} ^3\\
+(u, v) & \mapsto \vec{r}(u, v) = (X(u, v), Y(u, v), Z(u, v))
+\end{align*}
+
+<p>
+Zanima nas tangentna ravnina v točki \(  \vec{r}(u_0, v_0) \). Vzemimo krivuljo \(  \gamma: I \to D, \ \gamma(t_0) = (\alpha(t), \beta(t)) = (u_0, v_0) \).
+</p>
+
+<p>
+Krivuljo preslikamo na ploskev \(  \vec{r} \circ \gamma: I \to M \).
+</p>
+
+<p>
+/Odvajamo
+</p>
+
+<p>
+\[ \frac{\mathrm{d} \vec{r}(\gamma(t))}{\mathrm{d} t} = \vec{r}_u(\gamma(t)) \cdot \dot{\alpha}(t) + \vec{r}_v(\gamma(t)) \cdot \dot{\beta} (t)
+\]
+</p>
+
+<p>
+Pri \(  t_0 \) dobimo ravno tangentni vektor na krivuljo \(  \vec{r} \cdot \gamma \) v točki \(  (\vec{r} \cdot \gamma)(t_0) \) je
+</p>
+
+<p>
+\[ \vec{r}_u (\gamma(t_0)) \cdot \vec{\alpha}(t_0) + \vec{r}_v(\gamma(t_0)) \cdot \vec{\beta}(t_0)
+\]
+</p>
+
+<p>
+Torej je neodivsno od krivuljo, tangenten vektor oblike
+</p>
+
+<p>
+\[ a \cdot \vec{r}_u (u_0, v_0) + b\cdot \vec{r}_v(u_0, v_0)
+\]
+</p>
+
+<p>
+Torej sta \(  \vec{r}_u \) in \(  \vec{r}_v \) bazna vektorja tangentnega prostora.
+</p>
+</div>
+<div id="outline-container-org629b68b" class="outline-4">
+<h4 id="org629b68b"><span class="section-number-4">2.2.1.</span> Definicija 4.2</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+(Afina) Tangentna ravnina na ploskev \(  M \) skozi točko \(  m = \vec{r}(u, v) = (x_0, y_0, z_0) \) definiramo kot množico vseh tangnetnih vektorja krivulj skozi to točko. Eksplicitno je to ravnina (potrebujemo začetno točko in pa dva smerna vektorja, ki nam razpenjata ravnina/ normalni vektor)
+</p>
+
+<p>
+\[ m + \mathrm{Lin} \left\{ \vec{r}_u(u, v), \vec{r}_v(u, v) \right\}
+\]
+</p>
+
+<p>
+Enačba tangentne ravnine je torej
+</p>
+
+<p>
+\[ \left\langle (x, y, z) -  (x_0, y_0, z_0), (\vec{r}_u \times \vec{r}_v)(u_0, v_0) \right\rangle
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org9d818f9" class="outline-4">
+<h4 id="org9d818f9"><span class="section-number-4">2.2.2.</span> Primer 1 - ploskve podane kot graf (eksplicitna oblika)</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+Imejmo \(  f: D \to \mathbb{R}, \ D \subseteq \mathbb{R} ^2 \) območje, \(  f \) je gladka. Imamo graf funkcije
+</p>
+
+<p>
+\[ \Gamma_f = \left\{ (x, y, f(x, y)), \ (x, y) \in D \right\}
+\]
+</p>
+
+<p>
+V parametrični obliki graf zapišemo kot \(  \vec{r}: D \to \mathbb{R} ^3 \)
+</p>
+
+<p>
+\[ \vec{r} (x, y)  = \begin{bmatrix} x \\ y \\ f(x, y) \end{bmatrix}
+\]
+</p>
+
+<p>
+Odvajamo
+</p>
+
+<p>
+\[ \vec{r}_x =  \begin{bmatrix} 1 \\ 0 \\ f_x(x, y) \end{bmatrix} \quad  \vec{r}_y =  \begin{bmatrix} 0 \\ 1 \\ f_y(x, y) \end{bmatrix}
+\]
+</p>
+
+<p>
+Vektorski produkt teh vektorjev je
+</p>
+
+<p>
+\[ \vec{r}_x \times \vec{r}_y  = \begin{bmatrix} -f_x \\ -f_y \\ 1 \end{bmatrix}
+\]
+</p>
+
+<p>
+Enačba (česa? tangentne ravnine ali klobas?) je torej
+</p>
+
+<p>
+\[ \left\langle (x, y, z) - (x_0, y_0, z_0), (-f_x, -f_y, 1) \right\rangle = 0
+\]
+</p>
+
+<blockquote>
+<p>
+Pa jo mamo.
+</p>
+</blockquote>
+
+<p>
+Enačbo allegedely. Govc.
+</p>
+</div>
+</div>
+<div id="outline-container-org71dc367" class="outline-4">
+<h4 id="org71dc367"><span class="section-number-4">2.2.3.</span> Zgled 4.1 (p. S.)</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+Rotacijski paraboloid je podan z enačbo
+</p>
+
+<p>
+\[ f(x, y) = x ^2 + y ^2
+\]
+</p>
+
+<p>
+Poiščimo tangento ravnino v točki \(  (1, 3, 10) \).
+</p>
+
+<p>
+Parcialna odvoda sta
+</p>
+
+<p>
+\[ f_x = 2x \quad f_y = 2y
+\]
+</p>
+
+<p>
+Enačba ravnine pomnožena z \(  -1 \) je:
+</p>
+
+\begin{align*}
+  \left\langle (x, y, z) - (1, 3, 10), (-2, -6, 1) \right\rangle &= 0 && \left. \right/ \cdot(-1) \\
+\left\langle (x - 1, y - 3, z - 10), (2, 6, -1) \right\rangle &= 0 \\
+2(x - 1)  + 6(y - 3) - (z - 10) &= 0 \\
+2x + 6y - z &= 10
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org48f2bfd" class="outline-4">
+<h4 id="org48f2bfd"><span class="section-number-4">2.2.4.</span> Implicitno podane ploskve</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+Imejmo \(  F: \mathbb{R} ^3 \to \mathbb{R}\). Ploskev definiramo kot množico ničel oz. nivojnico:
+</p>
+
+<p>
+\[ M = \left\{ (x, y, z) \in \mathbb{R}^3; \ F(x, y, z) = 0 \right\}
+\]
+</p>
+
+<p>
+Če želimo res dobiti ploskev, moramo privzeti \(  \nabla F = (\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}) \ne 0 \), potem so namreč izpolnjene predpostavke izreka o implicitni funkciji (glej mat1).
+</p>
+
+<p>
+Opomba: To je analogno včerajšnjemu pogoju \(  \vec{r}_u \times \vec{r}_v \ne 0 \). Pa parametrizacija obstaja.
+</p>
+
+<p>
+Poskusimo izpeljati enačbo tangentne ravnine.
+</p>
+
+<p>
+Iščemo torej smerne vektorje vseh možnih krivulj na ploskvi:
+</p>
+
+<p>
+Naj bo torej \(  m = (x_0, y_0, z_0) \) točka na ploskvi in si oglejmo poljubno krivuljo skozi to točko:
+</p>
+
+<p>
+\[ \vec{r}(t) = (x(t), y(t), z(t))
+\]
+</p>
+
+<p>
+ker krivulja leži na ploskvi, velja
+</p>
+
+<p>
+\[ F(x(t), y(t), z(t) = 0
+\]
+</p>
+
+<p>
+Če enačbo odvajamo, dobimo
+</p>
+
+<p>
+\[ F_x \dot{x} + F_y \dot{y} + F_z \dot{z} = 0
+\]
+</p>
+
+<p>
+To v resnici pravi:
+</p>
+
+<p>
+\[ \left\langle (\nabla F)(m), \odv{r} (t_0) \right\rangle = 0
+\]
+</p>
+
+<p>
+Vsi smerni vektorji krivulj skozi na ploskvi \(  M \), ki gredo skozi točko \(  m \) so pravokotni na gradient \(  (\nabla F)(m) \).
+</p>
+
+<p>
+To je mogoče le, če je \(  (\nabla F)(m) \) normalni vektor tangentne ravnine skozi \(  m \). Enačba tangentne ravnine je torej:
+</p>
+
+<p>
+\[ \left\langle (x, y, z) - (x_0, y_0, z_0), (\nabla F)(x_0, y_0, z_0) \right\rangle = 0
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org2af7cd5" class="outline-4">
+<h4 id="org2af7cd5"><span class="section-number-4">2.2.5.</span> Rotacijsko invariantne ploskve (vrtenine)</h4>
+<div class="outline-text-4" id="text-2-2-5">
+<p>
+Ploskev v \(  \mathbb{R}^3 \) lahko podamo tudi tako, da krivuljo v \(  xz \) ravnini zavtrimo okrog \(  z \)-osi.
+</p>
+
+<p>
+Izhajamo iz parametrizacije krivulje:
+</p>
+
+<p>
+\[ \gamma(t) =  \begin{bmatrix} x(t) \\ 0 \\ z(t) \end{bmatrix}, \ t \in I
+\]
+</p>
+
+<p>
+Da jo pomnožimo z rotacijsko matriko:
+</p>
+
+<p>
+\[ \begin{bmatrix}
+\cos \phi & - \sin \phi & 0 \\
+\sin \phi & \cos \phi & 0 \\
+0 & 0 & 1
+\end{bmatrix} \begin{bmatrix} x(t)\\ 0\\ z(t) \end{bmatrix} = \begin{bmatrix} x(t) \cos \phi\\ x(t) \sin \phi\\ z(t) \end{bmatrix}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org80d6b62" class="outline-4">
+<h4 id="org80d6b62"><span class="section-number-4">2.2.6.</span> Zgled 4.2 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-2-6">
+<p>
+Za plašč valja vzamemo daljico za \(  \gamma \):
+</p>
+
+<p>
+\[ \gamma(t) = \begin{bmatrix} a\\ 0\\ t \end{bmatrix}, \ t \in I
+\]
+</p>
+
+<p>
+Parametrizacija valja je torej
+</p>
+
+<p>
+\[ \vec{r} (t, \phi): \begin{bmatrix} a \cos \phi \\ a \sin \phi \\ t \end{bmatrix}, \ t \in I, \ \phi \in [0, 2\pi]
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgc8c2325" class="outline-4">
+<h4 id="orgc8c2325"><span class="section-number-4">2.2.7.</span> Zgled 4.3 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-2-7">
+<p>
+Za stožec vzamemo za \(  \gamma \) premico skozi izhodišče
+</p>
+
+<p>
+\[ \gamma(t) = \begin{bmatrix} t\\ 0\\ at \end{bmatrix}, \ t \in [0, b]
+\]
+</p>
+
+<p>
+Parametrizacija stožca je
+</p>
+
+
+<p>
+\[ \vec{r} (t, \phi): \begin{bmatrix}  t\cos \phi \\ t \sin \phi \\ a \end{bmatrix}, \ t \in [0, b], \ \phi \in [0, 2\pi]
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgcfb9749" class="outline-4">
+<h4 id="orgcfb9749"><span class="section-number-4">2.2.8.</span> Zgled 4.4 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-2-8">
+<p>
+Za sfero vzamemo \(  \gamma \) polkrožnico:
+</p>
+
+<p>
+\[ \gamma(t) = \begin{bmatrix} \cos t\\ 0\\  \sin t \end{bmatrix}, \ t \in [- \frac{\pi}{2}, \frac{\pi}{2}]
+\]
+</p>
+
+<p>
+Parametrizacija enotske sfere je torej
+</p>
+
+<p>
+\[ \vec{r} (t, \phi): \begin{bmatrix}  \cos t\cos \phi \\ \cos t \sin \phi \\ \sin t \end{bmatrix}, \ t \in [- \frac{\pi}{2}, \frac{\pi}{2}], \ \phi \in [0, 2\pi]
+\]
+</p>
+
+<p>
+Te stvari so Govcu <i>ful</i> pri srcu, ker je topolog in ful uživa v risanju teh stvari. Although his drawing could, you know&#x2026;, get better.
+</p>
+</div>
+</div>
+<div id="outline-container-org9d874a3" class="outline-4">
+<h4 id="org9d874a3"><span class="section-number-4">2.2.9.</span> Zgled 4.5 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-2-9">
+<p>
+Parametrizacija krožnice je
+</p>
+
+<p>
+\[ \gamma(t) = \begin{bmatrix} a + r \cos t\\ 0\\ r \sin t\end{bmatrix}, \ t \in [0, 2\pi)
+\]
+</p>
+
+<p>
+Parametrizacija torusa je
+</p>
+
+
+<p>
+\[ \vec{r} (t, \phi): \begin{bmatrix}(a + r \cos t) \cos \phi \\ (a + r \cos t) \sin \phi \\ r \sin t \end{bmatrix}, \ t \in [0, 2\pi)
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org42ba785" class="outline-3">
+<h3 id="org42ba785"><span class="section-number-3">2.3.</span> Površina ploskve</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+True story, but sad, ker težko dobimo površino ploskve na enostaven način.
+</p>
+
+<p>
+\(  \vec{r}: D \to \mathbb{R} ^3 \) naj bo parametrizacija ploskve. Zanima nas, kako iz parametrizacije izračunati površino.
+</p>
+
+<p>
+Glej sliko 7 v Simonovi skripti (page 43).
+</p>
+
+<p>
+Vzemimo torej majhen pravokotnik \(  P \) z ogliščem v \(  (u, v) \) in stranicama \(  \Delta u \) in \(  \Delta v \) in ga preslikamo z \(  \vec{r} \). Če bo pravokotnik dovolj majhen, se bo preslikava \(  \vec{r} \) obnašala približno linearno in bomo zato površino &ldquo;krivočrtnega štirikotnika&rdquo; \(  \vec{r}(P) \) lahko aproksimirali s ploščino paralelograma z oglišči \(  \vec{r}(u, v), \ \vec{r}(u + \Delta u, v), \ \vec{r}(u, v + \Delta v) \) (četrto oglišče pa je enolično določeno s temi).
+</p>
+
+<p>
+Ploščina paralelograma:
+</p>
+
+<p>
+Stranici sta
+</p>
+
+\begin{align*}
+  \vec{r}(u + \Delta u, v) - \vec{r}(u, v) &= \vec{r}_u (u + \xi \Delta u, v) \Delta u && \xi \in (0, 1) \\
+\vec{r}(u, v + \Delta v) - \vec{r}(u, v) &= \vec{r}_v (u, v + \eta \Delta v) \Delta v
+\end{align*}
+
+<p>
+Dvakrat smo uporabili Lagrangeev izrek, če je pravokotnik dovolj majhen, velja \(  u + \xi \Delta u \approx u, \ v + \eta \Delta v \approx v \). Torej sta stranici paralelograma približno enaki \(  \vec{r}_u (u, v) \Delta u \quad \vec{r}_v(u, v) \Delta v \).
+</p>
+
+<p>
+Ploščina paralelograma je torej približno enaka
+</p>
+
+<p>
+\[ \left| \vec{r}_u(u, v), \times \vec{r}_v(u, v) \right| \Delta u \Delta v
+\]
+</p>
+
+<p>
+<b>hevristična izpeljava, ki pa vsebuje pravo intuicijo</b>
+Po drugi strani pa je ploščina paralelograma tudi približnoe naka \(  \vec{r}(P) \).
+</p>
+
+<p>
+S tem je motivirana definicija za površčino.
+</p>
+</div>
+<div id="outline-container-org293bd1b" class="outline-4">
+<h4 id="org293bd1b"><span class="section-number-4">2.3.1.</span> Definicja:</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Naj bo \(  D \subseteq \mathbb{R} ^2 \) območje in \(  \vec{r}: D \to \mathbb{R} ^3 \) parametrizirana ploskev \(  M = \left\{ \vec{r}(u, v); \ (u, v) \in D \right\} \). Njeno površino \(  P(M) \) izračunamo kot
+</p>
+
+<p>
+\[ P(M) = \iint\limits_D \left| \vec{r}_u \times \vec{r}_v \right| \, \mathrm{du} \, \mathrm{dv}
+\]
+</p>
+
+<p>
+Opomba:
+</p>
+
+<p>
+\[]  \lVert \vec{r}_u \times \vec{r}_v  \rVert = \lVert \vec{r}_u \rVert \lVert \vec{r}_v \rVert \sin \phi
+\]
+</p>
+
+<p>
+Oznaka \(  \lVert \cdot \rVert\) označuje normo.
+</p>
+
+\begin{align*}
+  \lVert \vec{r}_u \times \vec{r}_v \rVert &= \lVert \vec{r}_u \rVert ^2 \lVert \vec{r}_v \rVert ^2 \sin ^2 \phi \\
+&=  \lVert \vec{r}_u \rVert ^2 \lVert \vec{r}_v \rVert ^2 (1 - \cos ^2 \phi) \\
+&= \lVert \vec{r}_u \rVert ^2 \lVert \vec{r}_v \rVert ^2 - \left| \left\langle r_u, r_v \right\rangle \right| ^2
+\end{align*}
+
+<p>
+kjer je \(  \left\langle r_u, r_v \right\rangle = \lVert \vec{r}_u \rVert \lVert \vec{r}_v \rVert \cos \phi\)
+</p>
+
+<p>
+Če pišemo
+</p>
+
+<p>
+\[ \lVert \vec{r}_u \rVert ^2 = E; \quad \lVert \vec{r}_v \rVert ^2 = G; \quad \left\langle r_u, r_v \right\rangle = F
+\]
+</p>
+
+<p>
+Tako dobimo
+</p>
+
+<p>
+\[ \lVert \vec{r}_u \times \vec{r}_v \rVert = \sqrt{EG - F ^2}
+\]
+</p>
+
+<p>
+Iz česar sledi, da je ploščina ploskve \(  M \) tako enak
+</p>
+
+<p>
+\[ P(M) = \iint\limits_D \sqrt{EG -F ^2} \, \mathrm{du} \mathrm{dv}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org6369b05" class="outline-4">
+<h4 id="org6369b05"><span class="section-number-4">2.3.2.</span> Trditev 4.1 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+Definicija za površino ploskve je dobra (torej neodvisna od parametrizacije).
+</p>
+
+<p>
+<b>Dokaz</b>: Naj bosta \(  \vec{r}:D \to M \) in \(  \vec{\rho}: \Delta \to M \)  dve parametrizaciji ploskve \(  M \). Naj bo \( \Phi: \Delta \to D \ (x, y) \mapsto (u, v) \) gladka bijekcija:
+</p>
+
+<p>
+\[ \Phi(x, y) = (U(x, y), V(x, y)) 
+\]
+</p>
+
+<p>
+Privzemimo, da je to ravno bijekcija, ki podaja zvezo med obema parametrizacijama:
+</p>
+
+<p>
+\[ \vec{\rho} = \vec{r} \circ \Phi 
+\]
+</p>
+
+<p>
+Komentar: Zakaj \(  \Phi \) obstaja? Definiramo lahko \(  \Phi = \vec{r}^{-1} \circ \vec{\rho} \)
+</p>
+
+<p>
+Izračunajmo parcialna odvoda z uporabo verižnega pravila:
+</p>
+
+<p>
+\[ \vec{\rho}_x(x, y) = \vec{r}_u (U(x, y), V(x, y)) \cdot U_x(x, y) + \vec{r}_v(U(x, y), V(x, y)) \cdot V_x(x, y) 
+\]
+</p>
+
+<p>
+in tako dobimo
+</p>
+
+\begin{align*}
+  \vec{\rho}_x &= \vec{r}_x \cdot V_x + \vec{r}_v \cdot V_x \\
+\vec{\rho}_y &= \vec{r}_u \cdot U_y + \vec{r}_v \cdot V_y
+\end{align*}
+
+<p>
+Torej velja
+</p>
+
+\begin{align*}
+  \vec{\rho}_x \times \vec{\rho}_y &= U_x \cdot U_y \cdot \vec{r}_u \times \vec{r}_u + U_x \cdot V_y \cdot \vec{r}_u \times \vec{r}_v + V_x \cdot U_y \cdot \vec{r}_v \times \vec{r}_u + V_x \cdot V_y \cdot \vec{r}_v \times \vec{r}_v && \vec{r}_i \times \vec{r}_i = 0 \\
+&= (U_x\cdot V_y - V_x \cdot U_y) \vec{r}_u \times \vec{r}_v \\
+&= \begin{vmatrix}
+U_x & U_y \\
+V_x & V_y
+ \end{vmatrix} \vec{r}_u \times \vec{r}_v = \det(J\Phi) \vec{r}_u \times \vec{r}_v
+\end{align*}
+
+<p>
+Površina ploskve \(  M \)  je (glede na parametrizacijo \(  \vec{r} \)) enaka
+</p>
+
+\begin{align*}
+  P(M) &= \iint\limits_D \lVert ( \vec{r}_u \times \vec{r}_v)(u, v) \rVert \, \mathrm{du} \mathrm{dv} \\
+ & \underset{\text{izrek 2.51}}{\overset{\text{menjava spr.}}{=}}\iint\limits_{\Delta} \lVert (\vec{r}_u \times \vec{r}_v) (\Phi(x, y)) \rVert \left| \det (J\Phi) \right| \, \mathrm{dx} \mathrm{dy} \\
+&= \iint\limits_{\Delta} \lVert (\vec{\rho}_x \times \vec{\rho}_y) (x, y) \rVert \, \mathrm{dx} \mathrm{dy}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org8745e75" class="outline-4">
+<h4 id="org8745e75"><span class="section-number-4">2.3.3.</span> Površina ploskve podane z grafom (v Simonovih zapiski je malo daljši z \(  E, G, F \)</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<p>
+Imejmo ploskev \(  M \) podano kot graf funkcije \(  f:D \to \mathbb{R}, \ D \subset \mathbb{R}^2 \)
+</p>
+
+<p>
+\[ \Gamma_f = M = \left\{ (x, y, f(x, y); \ (x, y) \in D \right\} 
+\]
+</p>
+
+<p>
+Zanima nas \(  P(\Gamma_f \). Od prejšnjič poznamo parametrizacijo \(  M \):
+</p>
+
+<p>
+\[ \vec{r}(x, y) = \begin{bmatrix} x \\ y \\ f(x, y) \end{bmatrix}, \ (x, y) \in D 
+\]
+</p>
+
+<p>
+Vektorji so potem
+</p>
+
+<p>
+\( \vec{r}_x = \begin{bmatrix} 1 \\ 0 \\ f_x \end{bmatrix} \quad  r_y = \begin{bmatrix} 0 \\ 1 \\ f_y \end{bmatrix} \quad \vec{r}_x \times \vec{r}_y = \begin{bmatrix} -f_x \\ -f_y \\ 1 \end{bmatrix}  \)
+</p>
+
+<p>
+Iz česar potem sledi ploščina
+</p>
+
+<p>
+\[ P(\Gamma_f)  = \iint\limits_D \lVert \vec{r}_x \times \vec{r}_y \rVert\, \mathrm{dx} \mathrm{dy} = \iint\limits_D \sqrt{1 + f_x ^2 + f_y ^2} \, \mathrm{dy}\mathrm{dx}
+\]
+</p>
+
+<p>
+Opomba: Opazimo, da je formula povsem analogna formuli za dolžino krivulje podane z grafom.
+</p>
+</div>
+</div>
+<div id="outline-container-orgffcd5a4" class="outline-4">
+<h4 id="orgffcd5a4"><span class="section-number-4">2.3.4.</span> Zgled 4.6 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<p>
+Imejmo rotacijski paraboloid \(  M = \Gamma_f \) podan z \(  f(x, y) = \frac{x ^2 + y ^2}{2}; \ (x, y) \in K((0, 0), 1) \) (enotski krog)
+</p>
+
+<p>
+Odvoda sta \(  f_x = x \ f_y = y \)
+</p>
+
+\begin{align*}
+  P(\Gamma_f) &= \iint\limits_D \sqrt{1 + f_x ^2 + f_y ^2} \, \mathrm{dx} \mathrm{dy} \\
+&= \iint\limits_D \sqrt{1 + x ^2 + y ^2} \, \mathrm{dx} \mathrm{ dy} \\
+&= \int\limits_0^{2\pi} \int\limits_0^1 \sqrt{1 + r ^2} r\,\mathrm{dr}\,\mathrm{d}\phi \\
+&= \int\limits_0^{2 \pi}\,\mathrm{d} \phi \int\limits_0^1 \sqrt{1 + r ^2} r\,\mathrm{dr}  && t:= 1 + r ^2; \ dt = 2r \mathrm{dr} \\
+&= 2 \pi \frac{1}{2} \int\limits_1^2 \sqrt{t}\,\mathrm{dt}\\
+&= \pi \left. \frac{t^{\frac{3}{2}}}{\frac{3}{2}}  \right|_1^2 \\
+&= \pi \cdot \frac{2}{3} \cdot (2 \sqrt{2}  - 1) = \frac{2 \pi}{3} (2 \sqrt{2} - 1)
+\end{align*}
+</div>
+</div>
+</div>
+<div id="outline-container-org4e48d1a" class="outline-3">
+<h3 id="org4e48d1a"><span class="section-number-3">2.4.</span> Orientacija 4.3 (p.S.)</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-org0fc14b7" class="outline-4">
+<h4 id="org0fc14b7"><span class="section-number-4">2.4.1.</span> Definicija 4.4 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+Lokalna orientacija gladke regularne krivulje \(  \Gamma \) brez samopresečišč v točki \(  \gamma \in \Gamma \) je podana z izbiro enotskega tangentnega vektorja v tej točki (imamo samo dve možni izbiri).
+</p>
+
+<p>
+Globalna orientacija je podana z zvezno izbiro enotskih tangentnih vektorjev v vsaki točki \(  \gamma \in \Gamma \).
+</p>
+
+<p>
+<b>Opomba</b>: Vsaka regularna (povezana) krivulja (brez samopresečišč) ima natanko dve globalni orientaciji. To se še malenkost posploši: lahko imamo tudi odsekoma gladko krivuljo: \(  \Gamma \) unija krivulj \(  \Gamma_1, \ldots, \Gamma_n \) kjer je konec prejšnje krivulje enak začetku naslednju. V tem primeru orientacijo \(  \Gamma \) definiramo kot &ldquo;usklajeno izbiro orientacij \(  \Gamma_i, \ i = 1, \ldots, n \)&rdquo;
+</p>
+</div>
+</div>
+<div id="outline-container-org73bd09b" class="outline-4">
+<h4 id="org73bd09b"><span class="section-number-4">2.4.2.</span> Definicija 4.5 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<p>
+Lokalna orientacija gladke regularne ploskve \(  M \subseteq \mathbb{R} ^3 \) je izbira enotske normalne v točki \( m \in M \)
+</p>
+
+<p>
+Globalna orientacija ploskve \(  M \) je zvezna izbira enotskih normalnih vektorjev za vse \(  m \in M \):
+</p>
+
+
+\begin{align*}
+  \vec{n}:M &\to S ^2 \\
+m & \mapsto \vec{n}(m)
+\end{align*}
+
+<p>
+Kar je t.i. Gaussova preslikava, kjer je \(  S ^2 = \left\{ (x, y, z); \ x ^2 + y ^2 + z ^2 = 1 \right\} \), kar je množica enotskih vektorjev v \(  \mathbb{R} ^3 \) oz. enotska sfera.
+</p>
+
+<p>
+Če je ploskev \(  M \) povezana ima največ dve orientaciji \(  \vec{n} \) in \(  -\vec{n} \); lahko pa se zgodi, da nima nobene orientacije, lahko pa se zgodi, da nima nobene orientacije. Potem je \(  M \) neorientabilna ploskev.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbc1f57c" class="outline-4">
+<h4 id="orgbc1f57c"><span class="section-number-4">2.4.3.</span> Zgled 4.7 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<p>
+Kolobar, plašč valja sta orientabilna, medtem ko Möbiusov trak pa je neorientabilen.
+</p>
+</div>
+</div>
+<div id="outline-container-org1049acd" class="outline-4">
+<h4 id="org1049acd"><span class="section-number-4">2.4.4.</span> Inducirana orientacija</h4>
+<div class="outline-text-4" id="text-2-4-4">
+<p>
+Imejmo ploskev z robomo \(  \vec{r}: D \to M \) parametrizacija, kjer \(  D \) zaprto območje. Imamo dva tipa točk:
+</p>
+
+<ul class="org-ul">
+<li><i>notranje točke</i> na ploskvi: obstaja lokalna parametrizacija \(  K((0, 0), 1) \to M \) neke okolice te točke,</li>
+<li><i>robne točke</i> na ploskvi: obstaja lokalna parametrizacija \(  K((0,0), 1) \cap ([0, \infty) \times \mathbb{R} \to M \)</li>
+</ul>
+
+<p>
+<b>Opomba</b>: Robne točke ploskve z robom tvorijo krivuljo ozrioma disjunktno unijo krivulj.
+</p>
+
+<p>
+<b>Ideja</b> Orientacija ploskve (z robom) porodi orientacijo na robni krivulji. Če hodim po robu ploskve in moja glava kaže v smeri normalnega vektorja (npr. navzgor), moram videti ploskev na svoji levi.
+</p>
+</div>
+</div>
+<div id="outline-container-org8f27f67" class="outline-4">
+<h4 id="org8f27f67"><span class="section-number-4">2.4.5.</span> Definicija 4.6 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-4-5">
+<p>
+Naj bo \(  M \) orientabilna ploskev z robom \(  \partial M \). Za vsako točko \(  m \in \partial M \) naj bo \(  \vec{\mu} \) tisti enotski vektor iz tangentne ravnine \(  T_mM \), ki je pravokoten na \(  T_m\partial M \) (tangentno premico na \(  \partial \) v točki \(  m \)) in kaže ven iz \(  M \), in naj bo \(  \vec{n} \) enotski normalni vektor na \(  M \), podan z orientacijo.
+</p>
+
+<p>
+Potem vektor \(  \vec{n} \times \vec{\mu} \) določa inducirano orientacijo roba \(  \partial M \) v točki \(  m \in \partial M \).
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf4d6a39" class="outline-2">
+<h2 id="orgf4d6a39"><span class="section-number-2">3.</span> Temeljni diferencialni operatorji na skalarnih in vektorskih polji</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgad7e6ff" class="outline-3">
+<h3 id="orgad7e6ff"><span class="section-number-3">3.1.</span> Definicija 5.1 (p.S.)</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Naj bo \(  \Omega \subseteq \mathbb{R}^3 \), kjer je \(  \Omega \) območje. Skalarno polje na \(  \Omega \) je funkcija \(  f: \Omega \to \mathbb{R} \).
+</p>
+
+<p>
+Vektorsko polje na \( \Omega \) je funkcija \(  \vec{F}: \Omega \to \mathbb{R} ^3 \).
+</p>
+
+<p>
+\(  (x, y, z) \in \Omega \subseteq \mathbb{R} \)
+</p>
+
+<p>
+Skalaro polje je \(  u = f(x, y, z) \), medtem ko je vektorsko polje \(  \vec{F}(x, y, z) = (U(x, y, z), V(x, y, z), W(x, y, z)) \).
+</p>
+
+<p>
+Na \(  \mathbb{R}^3 \) znamo računati parcialne odvode definiramo simbol &ldquo;nabla&rdquo;:
+</p>
+
+<p>
+\[ \nabla = (\frac{\partial }{\partial x}, \frac{\partial }{\partial y}, \frac{\partial }{\partial z}   )
+\]
+</p>
+
+<p>
+Naslednjič se definira gradient, divergenca in rotor.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-11-06 Wed 19:35</p>
+</div>
+</body>
+</html>
