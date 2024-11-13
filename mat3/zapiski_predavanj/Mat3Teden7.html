@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-11-13 Wed 12:49 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden7</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      macros:{
+          odv: ["\\dot{\\vec{#1}}", 1],
+          oddv: ["\\ddot{\\vec{#1}}", 1],
+          epsilon: "\\varepsilon",
+          theta: "\\vartheta",
+          phi: "\\varphi",
+          rot: "\\mathrm{rot}",
+          dive: "\\mathrm{div}"
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden7</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb415ed5">1. Temeljni diferencialni operatorji na skalarnih in vektorskih poljih</a>
+<ul>
+<li><a href="#org0708054">1.1. Definicija 5.7</a></li>
+<li><a href="#org9398886">1.2. Diferencialni operatorji v (kartezičnih koordinatah)</a>
+<ul>
+<li><a href="#org837dfa9">1.2.1. Definicija 5.2 (gradient)</a></li>
+<li><a href="#org03bceb8">1.2.2. Definicija 5.3(divergenca)</a></li>
+<li><a href="#orgdf224cf">1.2.3. Definicija 5.4(rotor)</a></li>
+<li><a href="#org0e0de66">1.2.4. Definicija (Laplaceov operator)</a></li>
+<li><a href="#org53aa54e">1.2.5. Sth</a></li>
+<li><a href="#org0866094">1.2.6. Trditev 5.2</a></li>
+<li><a href="#org47a2ba6">1.2.7. Lema</a></li>
+<li><a href="#org1ad0089">1.2.8. Posledica</a></li>
+<li><a href="#org3caff3d">1.2.9. Posledica</a></li>
+<li><a href="#orgcec539b">1.2.10. Izrek</a></li>
+<li><a href="#orga1c9191">1.2.11. Primer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org78ba40f">2. Integracija po krivuljah in ploskvah v \(  \mathbb{R} ^3 \) 2024/11/13</a>
+<ul>
+<li><a href="#orgb6ef337">2.1. Krivuljni integral</a>
+<ul>
+<li><a href="#org9086f09">2.1.1. Definicija 6.1 (p.S.)</a></li>
+<li><a href="#orgcbd168b">2.1.2. Trditev 6.1 (p.S.)</a></li>
+<li><a href="#org0c4062b">2.1.3. Primer 6.1 (p.S.)</a></li>
+<li><a href="#org101f367">2.1.4. Definicija 6.2 (p.S.)</a></li>
+<li><a href="#org2a90048">2.1.5. Trditev 6.2 (p.S.)</a></li>
+<li><a href="#org44c05ae">2.1.6. Primer 6.2 (p.S.)</a></li>
+<li><a href="#orga1146eb">2.1.7. Primer 6.3 (p.S.)</a></li>
+<li><a href="#orga12be98">2.1.8. Definicija 6.3 (p.S.)</a></li>
+<li><a href="#org5ac186a">2.1.9. Trditev 6.3 (p.S.)</a></li>
+<li><a href="#org4d834fc">2.1.10. Trditev 6.4 (p.S.)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<b>Frenet-Serretovega triedra, ker je snov mat1 na teoretičnem izpitu ne bo!</b>
+</p>
+<div id="outline-container-orgb415ed5" class="outline-2">
+<h2 id="orgb415ed5"><span class="section-number-2">1.</span> Temeljni diferencialni operatorji na skalarnih in vektorskih poljih</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Vzamemo nabor koordinat \(  \xi = (\xi_1, \xi_2, \xi_3) \). Naj bo \(  \vec{r} = \vec{r}(\xi) \) parametrizacija prostora \(  \mathbb{R} ^3 \) (= izražava kartezičnih koordinat z \(  \xi_1, \xi_2, \xi_3 \)). Predpostavljamo, da so koordinate <i>ortogonalne</i>.
+</p>
+
+<p>
+Smerni odvodi kartezičnih koordinat so med seboj pravokotni v vsaki točki koordinatnega sistema.
+</p>
+
+<p>
+Za vsak  \(  \xi \) ter \(  \vec{r}_j := \vec{r}_j(\xi) = \frac{\partial \vec{r} }{\partial \xi_j}  \) zahtevamo
+</p>
+
+<p>
+\[ \left\langle \vec{r}_j, \vec{r}_k \right\rangle _{\mathbb{R}^3} = 0 \text{ za } j \ne k
+\]
+</p>
+</div>
+<div id="outline-container-org0708054" class="outline-3">
+<h3 id="org0708054"><span class="section-number-3">1.1.</span> Definicija 5.7</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Lamejévi koeficienti so
+</p>
+
+<p>
+\[ H_j := \left| \vec{r}_j \right|; \ j = 1, 2, 3
+\]
+</p>
+
+<p>
+Označimo še \(  H := H_1 H_2 H_3 \). Naj bo še
+</p>
+
+<p>
+\[ \vec{\eta}_j := \frac{\vec{r}_0}{\left| \vec{r}_j \right|}
+\]
+</p>
+
+<p>
+Te količine \( \vec{r}_j, H_j, \vec{\eta}_j \) so funkcije (argumenta \(  \xi \)).
+</p>
+
+<p>
+Označimo z \(  x = (x_1, x_2, x_3) \) standardne kartezične koordinate v \(  \mathbb{R}^3 \).
+</p>
+</div>
+</div>
+<div id="outline-container-org9398886" class="outline-3">
+<h3 id="org9398886"><span class="section-number-3">1.2.</span> Diferencialni operatorji v (kartezičnih koordinatah)</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org837dfa9" class="outline-4">
+<h4 id="org837dfa9"><span class="section-number-4">1.2.1.</span> Definicija 5.2 (gradient)</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+\[ \nabla_x u := (u_{x_1}, u_{x_2}, u_{x_3})
+\]
+</p>
+
+<p>
+za \(  u: \mathbb{R} ^3 \to \mathbb{R}^2\).
+</p>
+</div>
+</div>
+<div id="outline-container-org03bceb8" class="outline-4">
+<h4 id="org03bceb8"><span class="section-number-4">1.2.2.</span> Definicija 5.3(divergenca)</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+\[ \mathrm{div}(X, Y, Z) := X_{x_1} + Y_{x_2} + Z_{x_3}
+\]
+</p>
+
+<p>
+za \(  (X, Y, Z): \mathbb{R}^3 \to \mathbb{R}^3 \)
+</p>
+</div>
+</div>
+<div id="outline-container-orgdf224cf" class="outline-4">
+<h4 id="orgdf224cf"><span class="section-number-4">1.2.3.</span> Definicija 5.4(rotor)</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+\[ \mathrm{rot} (X, Y, Z) := \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\
+\frac{\partial }{\partial x_1}  & \frac{\partial }{\partial x_2}  & \frac{\partial }{\partial x_3}  \\
+X & Y & Z
+\end{vmatrix} = (Z_{x_2} - Y_{x_3}, X_{x_3}, Z_{x_1}, Y_{x_1} - X_{x_2})
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org0e0de66" class="outline-4">
+<h4 id="org0e0de66"><span class="section-number-4">1.2.4.</span> Definicija (Laplaceov operator)</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+\[ \Delta := \mathrm{div} \circ \nabla = \frac{\partial ^2 }{\partial x_1 ^2} + \frac{\partial ^2}{\partial x_2 ^2} + \frac{\partial ^2}{\partial x_3 ^2} 
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org53aa54e" class="outline-4">
+<h4 id="org53aa54e"><span class="section-number-4">1.2.5.</span> Sth</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<p>
+Vzamemo \(  u = u(x): \mathbb{R}^3 \to \mathbb{R} \). Naj bo \(  U \) njena izražava v koordinatah \(  \xi \), to pomeni, definirano s predpisom \(  u(x) = U(\xi) \). Torej
+</p>
+
+<p>
+\[ U(\xi) := u(\vec{r}(\xi))
+\]
+</p>
+
+<p>
+oz.
+</p>
+
+<p>
+\[ U = u \circ \vec{r} 
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org0866094" class="outline-4">
+<h4 id="org0866094"><span class="section-number-4">1.2.6.</span> Trditev 5.2</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<p>
+Privzemimo oznake od prej. Velja
+</p>
+
+<p>
+\[ (\nabla _x, u)(\vec{r}) = \left\langle \nabla_{\xi}U, \begin{bmatrix} \frac{\vec{\eta}_1}{H_1} \\ \frac{\vec{\eta}_2}{H_2} \\ \frac{\vec{\eta}_3}{H_3} \end{bmatrix} \right\rangle
+\]
+</p>
+
+<p>
+<b>Dokaz</b>: Po verižnem pravilu sledi za \(  j\in \left\{ 1, 2, 3 \right\} \).
+</p>
+
+<p>
+\(  U = u \circ \vec{r} \), kjer so \(  \vec{r} = (X, Y, Z) \),  \(  U = u(X, Y, Z) \) oz \(  U(\xi) = u(X(\xi), Y(\xi), Z(\xi)) = u(\vec{r}(\xi)) \)
+</p>
+
+<p>
+\[ \frac{\partial U}{\partial \xi_j} = \frac{\partial u}{\partial x} (\vec{r}(\xi)) \cdot \frac{\partial X}{\partial \xi_j}  (\xi) + \frac{\partial u}{\partial y}(\vec{r}(\xi)) \cdot \frac{\partial Y}{\partial \xi_j}(\xi) + \frac{\partial u}{\partial z} \cdot \frac{\partial Z}{\partial \xi_j} (\xi) = \left\langle (\nabla_x u)(\vec{r}(\xi)), \frac{\partial \vec{r}}{\partial \xi_j}(\xi)  \right\rangle_{\mathbb{R}^3}
+\]
+</p>
+
+<p>
+Vemo, da je po naših oznakah \(  \vec{r}_j = H_j \vec{\eta}_j \) iz česar potem sledi
+</p>
+
+<p>
+\[ = H_j (\left\langle (\nabla_x u(\vec{r}), \vec{\eta}_j \right\rangle 
+\]
+</p>
+
+<p>
+Ker so \( \eta_1, \eta_2, \eta_3 \) ortonormirani (predpostavili smo ortogonalnost, saj so normirani že bili) sistem v \(  \mathbb{R}^3 \) (predpostavke!). Sledi
+</p>
+
+<p>
+\[ \vec{v} = \sum\limits_1^3 \left\langle v,  \vec{\eta}_j \right\rangle \vec{\eta}_j
+\]
+</p>
+
+<p>
+za vsak \(  \vec{v} \in \mathbb{R} ^3 \).
+</p>
+
+<p>
+Za \(  \vec{v} = \nabla_x u(\vec{r}) \) velja
+</p>
+
+\begin{align*}
+(\nabla_x u)(\vec{r}) &= \sum\limits_{j = 1}^3 \left\langle (\nabla_x u) (\vec{r}), \vec{\eta}_j\right\rangle \vec{\eta}_j \\
+&= \sum\limits_{j=1}^3 \frac{1}{H_j} \cdot \frac{\partial U}{\partial \xi_j} \vec{\eta}_j  \\
+&= \sum\limits_{j = 1}^3 \frac{\partial U}{\partial \xi_j} \frac{\vec{\eta}_j}{H_j} \\
+&= \left\langle \begin{bmatrix} \frac{\partial U}{\partial \xi_1} \\ \frac{\partial U}{\partial \xi_2} \\ \frac{\partial U}{\partial \xi_3} \end{bmatrix}, \begin{bmatrix} \frac{\vec{\eta}_1}{H_1} \\ \frac{\vec{\eta}_2}{H_2} \\ \frac{\vec{\eta}_3}{H_3} \end{bmatrix} \right\rangle _{\mathbb{R}^3}
+\end{align*}
+
+<p>
+Q.E.D.
+</p>
+
+<p>
+Naj bo \(  \vec{R} \) lokalni inverz k \(  \vec{r} \).
+</p>
+
+<p>
+Domača naloga: izrazi kartezični koordinatni sistem v \(  \mathbb{R}^2 \) s polarnimi povsod. 
+</p>
+</div>
+</div>
+<div id="outline-container-org47a2ba6" class="outline-4">
+<h4 id="org47a2ba6"><span class="section-number-4">1.2.7.</span> Lema</h4>
+<div class="outline-text-4" id="text-1-2-7">
+<p>
+Definiramo inverz \(  \vec{R} = \vec{r}^{-1} \), kjer velja \(  x = \vec{r}(\xi) \ \iff \ \xi = \vec{R}(x) \)
+</p>
+
+<blockquote>
+<p>
+Izrek je VIP v matematiki, whereas lema pa je tisto, kar te pripelje do VIP lože.
+</p>
+</blockquote>
+
+<p>
+Dragi on the difference between izrek in lema.
+</p>
+
+<p>
+\[ \rot_x \left( \frac{\vec{\eta}_k}{H_k} \circ \vec{R} \right)
+\]
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Vzemimo \(  k = 1, 2, 3 \). Velja, za \(  U_k(\xi) := \xi_k \), tedaj
+</p>
+
+<p>
+\[ \frac{\partial U_K}{\partial \xi_j} = \delta_{jk} = \begin{cases}
+1; \ k = 1\\
+0; \ k \ne j
+\end{cases}
+\]
+</p>
+
+<p>
+(Diracov delta).
+</p>
+
+<p>
+Vemo, da je \(  \rot \circ \nabla = 0 \). Sledi, za \(  u_k(x) = U_k(\xi) \)
+</p>
+
+\begin{align*}
+  0 &= \rot \nabla u_K(\vec{r})= \sum\limits_{j=1}^3\rot \left[ \left( \frac{\partial U}{\partial \xi_j} \frac{\vec{\eta}_j}{ H_j}   \right) \circ \vec{R} \right] \\
+&= \rot(\frac{\vec{\eta}_K}{H_K} \circ \vec{R})
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org1ad0089" class="outline-4">
+<h4 id="org1ad0089"><span class="section-number-4">1.2.8.</span> Posledica</h4>
+<div class="outline-text-4" id="text-1-2-8">
+<p>
+\[ \dive\left(\frac{\vec{r}_j}{H} \circ \vec{R}\right) = 0 \ \forall j
+\]
+</p>
+
+<p>
+To pomeni:
+</p>
+
+<p>
+\[ \dive \left( \frac{\vec{\eta}_{j}}{H_2 H_3} \circ \vec{R} \right) = \dive \left(\frac{\vec{\eta}_2}{H_1 H_3} \circ \vec{R}\right) = \dive\left(\frac{\vec{\eta}_3}{H_1 H_2} \circ \vec{R}\right)
+\]
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Velja \(  \vec{\eta}_1 = \pm \vec{\eta}_2 \times \vec{\eta}_3 \) (saj so \(  \left\{ \vec{\eta}_j \right\} \) ortonormirana baza za \(  \mathbb{R} ^3 \)).
+</p>
+
+<p>
+Velja še \(  \dive(\vec{F} \times \vec{G}) = \left\langle \rot \vec{F}, \vec{G} \right\rangle - \left\langle \vec{F}, \rot \vec{G} \right\rangle\)
+</p>
+
+<p>
+Sledi
+</p>
+
+\begin{align*}
+  \dive \frac{\vec{\eta}_1}{H_2 H_3} &= \pm \div \left( \frac{\vec{\eta}_2}{H_2} \times \frac{\vec{\eta}_3}{H_3} \right) \\
+&= \left\langle \rot \frac{\vec{\eta}_2}{H_2}, \frac{\vec{\eta}_3}{H_3} \right\rangle - \left\langle \rot \frac{\vec{\eta}_3}{H_3}, \frac{\vec{\eta}_2}{H_2} \right\rangle \\
+&\overset{\text{zg. lema}}{=}  0
+\end{align*}
+
+<blockquote>
+<p>
+Divergence, rotorja in &#x2026; se ni potrebno bati, so samo okrajšave za določene matematične operacije. Nekateri moji kolegi bi temu rekli še kultne.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org3caff3d" class="outline-4">
+<h4 id="org3caff3d"><span class="section-number-4">1.2.9.</span> Posledica</h4>
+<div class="outline-text-4" id="text-1-2-9">
+<p>
+Za \(  A_j := \frac{1}{H_j} \frac{\partial U}{\partial \xi_j}  \) imamo
+</p>
+
+<p>
+\[ \dive(A_j \vec{\eta}_j) = \frac{1}{H_j} \frac{\partial }{\partial \xi_j} (\frac{H}{H_j ^2} \frac{\partial U}{\partial \xi_j} )
+\]
+</p>
+
+<p>
+To je
+</p>
+
+<p>
+\[ \dive \left[ (A_j \vec{\eta}_j ) \circ \vec{R}\right] = \left[ \frac{1}{H} \frac{\partial }{\partial \xi_j} \left( \frac{H}{H_j ^2} \frac{\partial U}{\partial \xi_j}  \right)  \right] \circ \vec{R}
+\]
+</p>
+
+<p>
+<b>Dokaz</b>
+</p>
+
+<p>
+Vzamemo \(  j = 1 \). Vemo
+</p>
+
+<p>
+\[ \dive (\phi \vec{F}) = \left\langle \nabla \phi, \vec{F} \right\rangle _{\mathbb{R} ^3} + \phi \dive \vec{F}
+\]
+</p>
+
+<p>
+Zato je
+</p>
+
+\begin{align*}
+  \dive (A_1 \vec{\eta}_1) &= \dive \left(A_1 H_2 H_3 \cdot \frac{\vec{\eta}_1}{H_2 H_3}\right) \\
+&= \left\langle  \nabla(A_1 H_2 H_3), \frac{\vec{\eta}_1}{H_2 H_3} \right\rangle + A_1 H_2 H_3 \cdot \dive \left( \frac{\vec{\eta}_1}{H_2 H_3} \right) \\
+&= \left\langle \nabla \left( \frac{H_2 H_3}{H_1}\right), \frac{\vec{\eta}_1}{H_2 H_3} \right\rangle \\
+&= \frac{1}{H} \left\langle \nabla \left( \frac{H}{H_1 ^2} \frac{\partial U}{\partial \xi_1}  \right), \frac{\partial \vec{r}}{\partial \xi_1}  \right\rangle
+\end{align*}
+
+<p>
+kjer so \(  \vec{\eta}_1 = \frac{\vec{r}_1}{\left| \vec{r}_1 \right|} = \frac{\vec{r}_1}{H_1} \) in \(  \frac{\vec{\eta}_1}{H_2 H_3} = \frac{\vec{r}_1}{H_1 H_2 H_3} = \frac{\vec{r}_1}{H} \)
+</p>
+
+<p>
+Iz verižnega pravila sledi, da je skalarni produkt enak
+</p>
+
+<p>
+\[ \frac{\partial }{\partial \xi_1} \left( \frac{H}{H_1 ^2} \frac{\partial U}{\partial \xi_1}  \right) \circ \vec{R}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgcec539b" class="outline-4">
+<h4 id="orgcec539b"><span class="section-number-4">1.2.10.</span> Izrek</h4>
+<div class="outline-text-4" id="text-1-2-10">
+<p>
+Velja
+</p>
+
+<p>
+\[ \Delta u = \frac{1}{H} \sum\limits_{j=1}^3 \frac{\partial }{\partial \xi_j} \left( \frac{H}{H_j ^2} \cdot \frac{\partial U}{\partial \xi_j} \right) \circ \vec{R}
+\]
+</p>
+
+<p>
+<b>Dokaz</b>
+</p>
+
+<p>
+\[ \Delta u = \dive \nabla u = \sum\limits_{j=1}^3 \dive \left[ A_j \vec{\eta}_j \circ \vec{R} \right]
+\]
+</p>
+
+<p>
+Sedaj uporabimo zadnjo posledico.
+</p>
+</div>
+</div>
+<div id="outline-container-orga1c9191" class="outline-4">
+<h4 id="orga1c9191"><span class="section-number-4">1.2.11.</span> Primer</h4>
+<div class="outline-text-4" id="text-1-2-11">
+</div>
+<ol class="org-ol">
+<li><a id="orgc29704e"></a>Cilindrične koordinate<br />
+<div class="outline-text-5" id="text-1-2-11-1">
+<p>
+Imamo \(  \xi = (\xi_1, \xi_2, \xi_3) (\rho, \phi, z) \) za \(  \rho \in [0, \infty), \ \phi \in [0, 2\pi), \ z  \in \mathbb{R} \).
+</p>
+
+<p>
+\[ (x, y, z) = \vec{r}(\rho, \phi, z) = (\rho \cos \phi, \rho \sin \phi, z)
+\]
+</p>
+
+<p>
+\(  \rho \) ima samo presečišče, \(  \phi \) ga nima.
+</p>
+
+<p>
+Ali je ortogonalnost koordinat?
+</p>
+
+\begin{align*}
+  \vec{r}_1 &= \frac{\partial \vec{r}}{\partial \rho} = (\cos \phi, \sin \phi, 0) \\
+\vec{r}_2 &= \frac{\partial \vec{r}}{\partial \phi} = \rho(-\sin \phi, \cos \phi, 0) \\
+\vec{r}_3 &= \frac{\partial \vec{r}}{\partial z} = (0, 0, 1)
+\end{align*}
+
+<p>
+Vidimo, da so koordinate ortogonalne.
+</p>
+
+<p>
+Laméjevi koeficienti so:
+</p>
+
+\begin{align*}
+  H_1 &= \left| \vec{r}_1 \right| = 1 \\
+H_2 &= \left| \vec{r}_2 \right| = \rho \\
+H_3 &= \left| \vec{r}_3 \right| = 1
+\end{align*}
+
+\begin{align*}
+  \vec{\eta}_1 &= \frac{\vec{r}_1}{H_1} = (\cos \phi, \sin \phi, 0) \\
+  \vec{\eta}_2 &= \frac{\vec{r}_2}{H_2} = (-\sin \phi, \cos \phi, 0) \\
+  \vec{\eta}_3 &= \frac{\vec{r}_3}{H_3} = (0, 0, 1) \\
+\end{align*}
+
+<p>
+Uporabimo trditev od včeraj za gradient
+</p>
+
+\begin{align*}
+ (\nabla_x u) (\vec{r}) &= \frac{\partial U}{\partial \xi_1} \frac{\vec{\eta}_1}{H_1}  +  \frac{\partial U}{\partial \xi_2} \frac{\vec{\eta}_2}{H_2}  +  \frac{\partial U}{\partial \xi_3} \frac{\vec{\eta}_3}{H_3} \\
+&= \frac{\partial U}{\partial \rho} (\cos \phi, \sin \phi, 0) + \frac{\partial U}{\partial \phi} \frac{(- \sin \phi,\cos \phi, 0)}{\rho} + \frac{\partial U}{\partial z} (0, 0, 1)
+\end{align*}
+
+<p>
+Laplaceov operator je (uporabimo izrek od danes)
+</p>
+
+\begin{align*}
+  (\Delta u) (x) &= \frac{1}{\rho} \left[ \frac{\partial }{\partial \rho} \left( \rho \frac{\partial U}{\partial \rho}  \right) + \frac{\partial }{\partial \phi} \left( \frac{1}{\rho} \frac{\partial U}{\partial \phi}  \right) + \frac{\partial }{\partial z} \left( \rho \frac{\partial U}{\partial z}  \right)    \right] \\
+(\Delta u) (x) &= \frac{1}{\rho} \frac{\partial }{\partial \rho} \left( \rho \frac{\partial U}{\partial \rho}  \right) + \frac{1}{\rho ^2} \frac{\partial ^2 U}{\partial \phi ^2} + \frac{\partial ^2 U }{\partial z ^2}
+\end{align*}
+</div>
+<ol class="org-ol">
+<li><a id="org62fc292"></a>Primer<br />
+<div class="outline-text-6" id="text-1-2-11-1-1">
+<p>
+Vzamemo \(  U = U(\rho, \phi, z) = \rho ^2 + z ^2 \) oz. \(  u = u(x, y, z) = x ^2 + y ^2 + z ^2 \) in zanima nas Laplace.
+</p>
+
+<p>
+Pri direktnem je
+</p>
+
+<p>
+\[ \nabla u = (2x, 2y, 2z)
+\]
+</p>
+
+<p>
+Pri posrednem pa
+</p>
+
+<p>
+\[ \nabla "U" = 2\rho (\cos \phi, \sin \phi, 0) + 0 \cdot \frac{(- \sin \phi, \cos \phi, 0)}{\rho} + 2 z (0, 0, 1) = (2\rho \cos \phi, 2 \rho \sin \phi, 2 z)
+\]
+</p>
+
+<p>
+kar je enako direktnemu.
+</p>
+
+<p>
+Laplace pa je direktno
+</p>
+
+<p>
+\[ \Delta u = 2 + 2 + 2 = 6
+\]
+</p>
+
+<p>
+Laplace posredno pa je
+</p>
+
+<p>
+\[ \Delta u = \frac{1}{\rho} \frac{\partial }{\partial \rho} (\rho 2 \rho) + \frac{1}{\rho ^2} \cdot 0 + 2 = 4 + 0 + 2 = 6
+\]
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgd9afa03"></a>Sferične koordinat<br />
+<div class="outline-text-5" id="text-1-2-11-2">
+<p>
+\( \xi = (\xi_1, \xi_2, \xi_3) (\rho, \phi, \theta) \) za \(  \rho \in [0, \infty), \ \phi \in [0, 2\pi), \ \theta \in [0, \pi] \)
+</p>
+
+<p>
+Koordinate so tako
+</p>
+
+<p>
+\[ (x, y, z) = \vec{r}(\rho, \phi, \theta) = (\rho \cos \phi \sin \theta, \rho \sin \phi \sin \theta, \rho \cos \theta)
+  \]
+</p>
+
+<p>
+Poglejmo odvode
+</p>
+
+\begin{align*}
+\vec{r}_1 &= \frac{\partial \vec{r}}{\partial \rho} = (\cos \phi \sin\theta, \sin \phi \sin \theta, \cos \theta) \\
+\vec{r}_2  &= \frac{\partial \vec{r} }{\partial \phi}  \rho \sin \theta(- \sin \phi, \cos \phi, 0) \\
+\vec{r}_3 &= \frac{\partial \vec{r}}{\partial \theta} = \rho(\cos\phi \cos \theta, \sin\phi \cos \theta, - \sin \theta)
+\end{align*}
+
+<p>
+Ali so vektorji \(  \vec{r}_j \) ortogonalni?
+</p>
+
+  \begin{align*}
+    \left\langle \vec{r}_1, \vec{r}_3 \right\rangle &= (\cos \phi \sin \theta)(\cos \phi \cos\theta) + (\sin \phi \sin\theta)(\sin\phi \cos\theta) + \cos\theta(-\sin \theta) \\
+&= \sin \theta \cos\theta = 0
+  \end{align*}
+
+<p>
+Laméjevi koeficienti so
+</p>
+
+  \begin{align*}
+  H_1 &= 1 \\
+H_2 &= \rho \sin \theta \\
+H_3 &= \rho
+\end{align*}
+
+<p>
+Gradient je
+</p>
+\begin{align*}
+ \nabla u_x (\vec{r}) &= \frac{\partial U}{\partial \xi_1} \frac{\vec{\eta}_1}{H_1} + \frac{\partial U}{\partial \xi_2} \frac{\vec{\eta}_2}{H_2} + \frac{\partial U}{\partial \xi_3} \frac{\vec{\eta}_3}{H_3}  \\
+&= \frac{\partial U}{\partial \rho} (\cos \phi \sin \theta, \sin \phi \sin \theta, \cos\theta) + \frac{\partial U}{\partial \phi} \frac{(-\sin \phi, \cos \phi, 0)}{\rho \sin \theta)}  + \frac{\partial U}{\partial \theta} \frac{(\cos \phi \cos \theta, \sin \phi \cos \theta, - \sin \theta)}{\theta}
+\end{align*}
+
+<p>
+Laplace pa je
+</p>
+
+\begin{align*}
+  (\Delta u)(x) &= \frac{1}{\rho ^2 \sin \theta} \left[ \frac{\partial }{\partial \rho} \left( \rho ^2 \sin \theta \frac{\partial U}{\partial \rho} \right) + \frac{\partial }{\partial \phi} \left( \frac{1}{\sin \theta} \frac{\partial U}{\partial \phi}  \right) + \frac{\partial }{\partial \theta} \left( \sin \theta \frac{\partial U}{\partial \theta}  \right) \right] \\
+&= \frac{1}{\rho ^2} \left[ \frac{\partial }{\partial \rho} \left( \rho ^2 \frac{\partial U}{\partial \rho}  \right) + \frac{1}{\sin ^2 \theta } \frac{\partial ^2 U}{\partial \phi ^2} + \frac{1}{\sin \theta} \frac{\partial }{\partial \theta} \left(\sin \theta \cdot \frac{\partial U}{\partial \theta} \right) \right]
+\end{align*}
+</div>
+<ol class="org-ol">
+<li><a id="org09ecc14"></a>Primer<br />
+<div class="outline-text-6" id="text-1-2-11-2-1">
+<p>
+Imamo \(  u(x, y, z) = x ^2 + y ^2 + z ^2 \) oz. v sferičnih koordinatah \(  U(\rho, \phi, \theta) = \rho ^2 \).
+</p>
+
+<p>
+Gradient direktno je \(  \nabla u = (2x, 2y, 2z) \), posredno pa \(  \nabla U = \text{ isto } \). Laplace je pa je direktno \(  \Delta u = 6 \), posredno pa \(  \Delta u = 6 \)
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org78ba40f" class="outline-2">
+<h2 id="org78ba40f"><span class="section-number-2">2.</span> Integracija po krivuljah in ploskvah v \(  \mathbb{R} ^3 \) 2024/11/13</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgb6ef337" class="outline-3">
+<h3 id="orgb6ef337"><span class="section-number-3">2.1.</span> Krivuljni integral</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org9086f09" class="outline-4">
+<h4 id="org9086f09"><span class="section-number-4">2.1.1.</span> Definicija 6.1 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Naj bo \(  \vec{r}: I \to \mathbb{R} ^3 \) regularna parametrizacija neke krivulje \(  \Gamma \) in \(  u: \Gamma \to \mathbb{R} \) zvezna. Integral (skalarnega) polja \(  u \) po \(  \Gamma \) definiramo kot
+</p>
+
+<p>
+\[ \int\limits_{\Gamma}u\,\mathrm{ds} = \int\limits_I u(\vec{r}(t)) \left| \odv{r} (t) \right|\,\mathrm{dt}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgcbd168b" class="outline-4">
+<h4 id="orgcbd168b"><span class="section-number-4">2.1.2.</span> Trditev 6.1 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Zgornja definicija 6.1 je dobra (neodvisna od parametrizacije).
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Naj bosta \(  I = [a, b] \in \mathbb{R} \) in \(  J = [\alpha, \beta] \in \mathbb{R} \).
+Naj bo \(  \vec{R}: J \to \mathbb{R} ^3 \) neka druga parametrizacija in \(  \phi \) bijekcija med domenama.
+</p>
+
+
+<div id="orgd69db6b" class="figure">
+<p><img src="figures/bijekcijaPhi.svg" alt="bijekcijaPhi.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Velja
+</p>
+
+\begin{equation}
+\label{eq:1}
+\vec{R}= \vec{r} \circ \phi
+\end{equation}
+
+<p>
+oz. \(  \phi = \vec{r}^{-1} \circ \vec{R} \)
+</p>
+
+\begin{align*}
+\int\limits_{\alpha}^{\beta} u(\vec{r}(s)) \left| \odv{R}(s) \right|\,\mathrm{ds} &\overset{\ref{eq:1}}{=} \int\limits_{\alpha}^{\beta}u (\vec{r}(\phi(s))) \cdot \left| \left( \vec{r} \circ \phi \right)^{\cdot} (s) \right|\,\mathrm{ds} &&  w = \phi(s)\\
+&= \int\limits_{\alpha}^{\beta}u(\vec{r}(w)) \left| \odv{r}(w) \cdot \dot{\phi}(s) \right| \,\mathrm{dw} \\
+&= \int\limits_a^b u(\vec{r}(w)) \cdot \left| \odv{r}(w) \right|\,\mathrm{dw}
+\end{align*}
+
+<p>
+Imamo dve možnosti. Prva je, da je \(  \dot{\phi} > 0 \) povsod in \(  (\alpha, \beta) \mapsto (a, b) \). Druga pa je \(  \dot{\phi} < 0 \) povsod in \(  (\alpha, \beta) \mapsto (b, a), \ \alpha \mapsto b, \ \beta \mapsto a \)
+</p>
+
+<p>
+QED.
+</p>
+</div>
+</div>
+<div id="outline-container-org0c4062b" class="outline-4">
+<h4 id="org0c4062b"><span class="section-number-4">2.1.3.</span> Primer 6.1 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+Naj bo \(  \Gamma \) homogena polkrožna žica s polmerom \(  q \). Kako izračunamo težišče \(  (x_T, y_T) \)?
+</p>
+
+
+<div id="org6f4b030" class="figure">
+<p><img src="figures/polkrozna_zica.svg" alt="polkrozna_zica.svg" class="org-svg" />
+</p>
+</div>
+
+\begin{align*}
+  x_T &= \frac{1}{m(\Gamma)} \int\limits_{\Gamma} x \rho \,\mathrm{ds}
+  y_T &= \frac{1}{m(\Gamma)} \int\limits_{\Gamma} y \rho \,\mathrm{ds}
+\end{align*}
+
+<p>
+kjer je \(  \rho \) gostota.
+</p>
+
+<p>
+Masa je tako \(  m(\Gamma) = \rho \pi q) \).
+</p>
+
+<p>
+Definiramo \(  \Gamma: \vec{r}(t) = q (\cos (t), \sin (t)), \ t  \in [0, \pi] \). Odvod je \(  \odv{r} = q (-\sin t, \cos  t) \) in \(  \left| \odv{r}(t) \right| = a\)
+</p>
+
+\begin{align*}
+  x_T &= \frac{\rho}{\rho \pi q} \int\limits_{\Gamma} x\,\mathrm{ds} = \frac{1}{\pi a} \int\limits_0^{\pi} q \cos(t) q\,\mathrm{dt} = 0 \\
+y_T &= \frac{q}{\pi} \int\limits_0^{\pi} \sin t \,\mathrm{dt} = \frac{2}{\pi}a
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org101f367" class="outline-4">
+<h4 id="org101f367"><span class="section-number-4">2.1.4.</span> Definicija 6.2 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+Naj bo \(  \vec{F}: \Gamma \to \mathbb{R} ^3 \) zvezna. Integral vektorskega polja \(  \vec{F} \) po \(  \Gamma \) definiramo kot
+</p>
+
+<p>
+\[ \int\limits_{\Gamma} \vec{F}\,\mathrm{d} \vec{r} := \int\limits_a^b \left\langle \vec{F}(\vec{r}(t)), \odv{r}(t) \right\rangle\,\mathrm{dt}
+\]
+</p>
+
+<p>
+Naj bo \(  \vec{F}= (X, Y, Z), \ \vec{r}=(x, y, z); \ x = x(t), \ y = y(t), \ z = z(t) \).
+</p>
+
+<p>
+Iz tega sledi, da je
+</p>
+
+<p>
+\[ \left\langle \vec{F}, \odv{r} \right\rangle = X \cdot \frac{\mathrm{d}x }{\mathrm{d} t} + Y \cdot \frac{\mathrm{d} y}{\mathrm{d} t} + Z \cdot \frac{\mathrm{d} z}{\mathrm{d} t}
+\]
+</p>
+
+<p>
+Za definicijo to potem pomeni, da je integral oblike
+</p>
+
+<p>
+\[ \int \left\langle \vec{F}, \odv{r} \right\rangle \, \mathrm{dt} = \int (X \mathrm{dx} + Y \mathrm{dy} + Z \mathrm{dz})
+\]
+</p>
+
+<p>
+S tem &ldquo;kvazi&rdquo; računom utemeljimo oznako
+</p>
+
+<p>
+\[ \int\limits_{\Gamma} \vec{F} \,\mathrm{d} \vec{r} = \int\limits_{\Gamma} X\,\mathrm{dx} + Y \, \mathrm{dy} + Z \, \mathrm{dz} 
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org2a90048" class="outline-4">
+<h4 id="org2a90048"><span class="section-number-4">2.1.5.</span> Trditev 6.2 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<p>
+Če v definiciji nadomestimo \(  \vec{r} \) z drugo parametrizacijo \(  \vec{R} \) iste krivulje, tedaj je novi izraz
+</p>
+
+<p>
+\[ \int\limits_{\Gamma} \left\langle \vec{F} \circ \vec{R}, \odv{R}  \right\rangle\,\mathrm{dx} 
+\]
+</p>
+
+<ul class="org-ul">
+<li>enak, če \(  \vec{R} \) ohranja orientacijo</li>
+<li><p>
+nasprotno enak, če \(  \vec{R} \) obrne orientacijo.
+</p>
+
+<p>
+<b>Dokaz</b>: Prepuščen za domačo nalogo, ker je zelo podoben trditvi 6.1
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org44c05ae" class="outline-4">
+<h4 id="org44c05ae"><span class="section-number-4">2.1.6.</span> Primer 6.2 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-6">
+<p>
+Zanima nas integral
+</p>
+
+<p>
+\[ I = \int\limits_{\Gamma} x \,\mathrm{dx} + (x + z) \, \mathrm{dy} + z ^2 \, \mathrm{dz} 
+\]
+</p>
+
+<p>
+za \(  \Gamma : \vec{r}(t) = (t, t ^2, t ^3); \ t \in [0, 1] \).
+Naše skalarno polje je \(  \vec{F}=(x, x+z, z ^2) \).
+</p>
+
+\begin{align*}
+  I &= \int\limits_0^1 \left\langle \vec{F}(\vec{r}(t)), \odv{r} \right\rangle\,\mathrm{dt} = \int\limits_0^1 \left\langle (t, t + t ^3, t ^6), (1 2t, 3t ^2)\right\rangle\,\mathrm{dt} \\
+&= \int\limits_0^1 (t \cdot 1 + (t + t ^3) \cdot 2t + t ^6 \cdot 3 t ^2)\,\mathrm{dt}\\
+&= \frac{19}{10}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-orga1146eb" class="outline-4">
+<h4 id="orga1146eb"><span class="section-number-4">2.1.7.</span> Primer 6.3 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-7">
+<p>
+Izračunajmo integral
+</p>
+
+<p>
+\[ \int\limits_{\Gamma} (x ^2 - y ^2) \, \mathrm{dx} - 2xy \,\mathrm{dy} 
+\]
+</p>
+
+<p>
+kjer je \(  \Gamma = \Gamma_1 \cup \Gamma_2 \cup \Gamma_3 \):
+</p>
+
+\begin{align*}
+  \Gamma_1 &= (t, 0), \ t\in [0,1] \\
+\Gamma_2 &= (1 -t, t), \ t \in [0, 1]\\
+\Gamma_3 &= (0, 1 -t ), \ t \in [0, 1]
+\end{align*}
+
+<p>
+[skica]
+Bodi pozoren na orientacijo (podaj primera za \(  (t, t - 1) \), ki je narobe obrnjena in \(  -(t, t - 1) \), ki je v 3. kvadrantu. 
+</p>
+
+<p>
+Opombi:
+</p>
+<ol class="org-ol">
+<li>To je krivulja v \(  \mathbb{R} ^2 \)</li>
+<li>Krivulja ni gladka, je pa (končna) unija gladkih.</li>
+</ol>
+
+<p>
+Podobno naredmo za \(  \Gamma_2, \Gamma_3 \). Dobimo
+</p>
+
+<p>
+\[ \int\limits_{\Gamma} \text{sth}\,\mathrm{dx} = \ldots = 0 
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orga12be98" class="outline-4">
+<h4 id="orga12be98"><span class="section-number-4">2.1.8.</span> Definicija 6.3 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-8">
+<p>
+Vektorsko polje \(  \vec{F}: \Omega \to \mathbb{R} ^3 \) je <i>potencialno</i>, če obstaja funkcija \(  u: \Omega \to \mathbb{R} \) za katero je \(  \vec{F} = \nabla u \ (= \mathrm{grad} u \). Funkciji \(  u \) pravimo <i>potencial polja</i> \(  \vec{F} \)
+</p>
+
+<p>
+Če je \(  \vec{F} = (X, Y, Z) \), potem je
+</p>
+
+\begin{align*}
+  X &= \frac{\partial u}{\partial x} \\
+Y &= \frac{\partial u}{\partial y} \\
+Z &= \frac{\partial u}{\partial z}   
+\end{align*}
+
+<p>
+Za <b>isti</b> \(  u \).
+</p>
+
+<p>
+Ali je vsako polje potencialno? Če bi bila vsa polja potencialna,x bi to poimenovanje brezpredmetno. Spomnimo se včerajšnjega \(  \rot \nabla u = 0 \). Če je \(  \vec{F} \) potencialno, mora biti \(  \rot \vec{F} = \rot \nabla u = 0 \)
+</p>
+</div>
+</div>
+<div id="outline-container-org5ac186a" class="outline-4">
+<h4 id="org5ac186a"><span class="section-number-4">2.1.9.</span> Trditev 6.3 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-9">
+<p>
+Naj bo \(  \Gamma \) regularna krivulja med točkama \(  A \) in \(  B \in \mathbb{R} ^3 \) in \(  \vec{F} = \nabla u \). Tedaj je
+</p>
+
+<p>
+\[ \int\limits_{\Gamma} \vec{F}\,\mathrm{d} \vec{r} = u(B) - u(A) 
+\]
+</p>
+
+<p>
+Vidimo, da je integral po potencialnem polju neodvisen od poti, ki jo izberemo, da pridemo iz točke \(  A \) do točke \(  B \). 
+</p>
+
+<p>
+Ta trditev je v eni dimenziji ekvivalentna osnovnemu izreku analize in vemo v \(  \mathbb{R} \):
+</p>
+
+<p>
+\[ \int\limits_{\alpha}^{\beta} v' (t)\,\mathrm{t}  = v(\beta) - v(\alpha)
+\]
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+\(  \vec{r}:[\alpha, \beta] \to \Gamma \)
+</p>
+
+\begin{align*}
+  \int\limits_{\Gamma}\vec{F}\,\mathrm{d} \vec{r} &= \int\limits_{\Gamma} \nabla u\,\mathrm{d} \vec{r} = \int\limits_{\alpha}^{\beta} \left\langle (\nabla u) \circ \vec{r}, \odv{r} \right\rangle _{\mathbb{R}^3}\,\mathrm{dt} \\
+&= \int\limits_{\alpha}^{\beta} \frac{\mathrm{d} }{\mathrm{d} t} \left( u \circ \vec{r} \right)\,\mathrm{dx} && \text{uporabili verižno pravilo} \\
+&\overset{*}{=} \left( u \circ \vec{r} \right)(\beta) - (u \circ \vec{r})(\alpha) \\
+&= u(B) - u(A)
+\end{align*}
+
+<p>
+kjer je \(  * \) uporaba osnovnega izreka analize. 
+</p>
+
+<p>
+Q.E.D.
+</p>
+</div>
+</div>
+<div id="outline-container-org4d834fc" class="outline-4">
+<h4 id="org4d834fc"><span class="section-number-4">2.1.10.</span> Trditev 6.4 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-1-10">
+<p>
+Naj bo \(  \Omega \subset \mathbb{R} ^3 \) povezana odprta množica in \(  \vec{F}: \Omega \to \mathbb{R} ^3 \) zvezno vektorsko polje. Naslednje trditve so ekvivalentne:
+</p>
+<ol class="org-ol">
+<li>\(  \vec{F} \) je potencialno</li>
+<li><p>
+integral \(  \vec{F} \) po vsaki sklenjeni krivulji je enak 0 
+</p>
+
+<blockquote>
+<p>
+Glede na to, da ste uporabljali to že pred tem izrekom, to doživljam kot izdajo zakona, odredbe o legalizaciji črne gradnje. 
+</p>
+</blockquote></li>
+<li>za vsak \(  A, \ B \subset \Omega \) je integral \(  \vec{F} \) od \(  A \) do \(  B \) neodvisno od izbire poti med točkama</li>
+</ol>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+\(  1 \Rightarrow 2 \)
+</p>
+
+<p>
+Naj bo \(  \Gamma \) sklenjena krivulja v \(  \Omega \), ki vsebuje točko \(  A \) (= od \(  A \) do A).
+Po prejšnji trditvi je
+</p>
+
+<p>
+\[ \oint\limits_{\Gamma} \vec{F} \, \mathrm{d} \vec{r} = u(A) - u(A) = 0
+\] 
+</p>
+
+<p>
+\(  2 \Rightarrow 3 \)
+</p>
+
+<p>
+Definiramo \(  \Gamma = \Gamma_1 \cup (- \Gamma_2)\), kjer je \(  - \Gamma_2 \) \(  \Gamma_2 \) z nasprotno orientacijo. Vemo, da je
+</p>
+
+<p>
+\[ \int\limits_{\Gamma} \vec{F} \,\mathrm{d} \vec{r} \overset{2}{=} 0 
+\]
+</p>
+
+<p>
+Hkrati velja po trditvi od prej
+</p>
+
+<p>
+\[ \int\limits_{\Gamma_1} \,\mathrm{dx} + \int\limits_{- \Gamma_2}^{}\,\mathrm{dx} = \int\limits_{\Gamma_1} \,\mathrm{dx} - \int\limits_{\Gamma_2}\,\mathrm{dx} 
+\]
+</p>
+
+<p>
+Iz česar sledi, da je \(  \int\limits_{\Gamma_1} \,\mathrm{dx} = \int\limits_{\Gamma_2}^{}\,\mathrm{dx} \)
+</p>
+
+<p>
+Trditev 3 dokažemo prihodnji teden. 
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-11-13 Wed 12:49</p>
+</div>
+</body>
+</html>
