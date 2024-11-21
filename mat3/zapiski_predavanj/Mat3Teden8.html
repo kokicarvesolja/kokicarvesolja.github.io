@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-11-21 Thu 14:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden8</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      macros:{
+          odv: ["\\dot{\\vec{#1}}", 1],
+          oddv: ["\\ddot{\\vec{#1}}", 1],
+          epsilon: "\\varepsilon",
+          theta: "\\vartheta",
+          phi: "\\varphi",
+          rot: "\\mathrm{rot}",
+          dive: "\\mathrm{div}"
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden8</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge75c871">1. Integracija po krivulja in ploskvah v \(  \mathbb{R} ^3 \)</a>
+<ul>
+<li><a href="#org014072b">1.1. Krivuljni integral</a>
+<ul>
+<li><a href="#org9b993c5">1.1.1. Zgled 6.4 (p.S.)</a></li>
+<li><a href="#org412728f">1.1.2. (Fizikalni) izrek 6.5 (p.S.)</a></li>
+<li><a href="#org4ff34c5">1.1.3. Definicija 6.4 (p.S.)</a></li>
+<li><a href="#orgf64d23f">1.1.4. Izrek 6.6</a></li>
+</ul>
+</li>
+<li><a href="#orgc6c4799">1.2. Ploskovni integral</a>
+<ul>
+<li><a href="#orgd23eddf">1.2.1. Definicija 6.5 (p.S.)</a></li>
+<li><a href="#orgced62f0">1.2.2. Zgled 6.6 (p.S.)</a></li>
+<li><a href="#org50f4de6">1.2.3. Definicija 6.6 (p.S.)</a></li>
+<li><a href="#org96f0646">1.2.4. Integracija po delih (<i>per partes</i>)</a></li>
+<li><a href="#orgd9c3df7">1.2.5. Gaussov izrek (6.8)</a></li>
+<li><a href="#orge13a824">1.2.6. Sestavljanje območij</a></li>
+<li><a href="#orga364a4e">1.2.7. Primer 6.7 (p.S.)</a></li>
+<li><a href="#org81330fb">1.2.8. Primer 6.8 (p.S.)</a></li>
+<li><a href="#org029e36d">1.2.9. Primer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<b>Manjka ponedeljkovo predavanje, ker FP5 gre brrrr</b>. Allegedly se je celo uro
+delalo dokaz Trditve 6.4 (p.S.) ter pripadajoč zgled
+</p>
+<div id="outline-container-orge75c871" class="outline-2">
+<h2 id="orge75c871"><span class="section-number-2">1.</span> Integracija po krivulja in ploskvah v \(  \mathbb{R} ^3 \)</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org014072b" class="outline-3">
+<h3 id="org014072b"><span class="section-number-3">1.1.</span> Krivuljni integral</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org9b993c5" class="outline-4">
+<h4 id="org9b993c5"><span class="section-number-4">1.1.1.</span> Zgled 6.4 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Delec z maso \(  m \) se giblje vzdolž poti \(  \gamma \) po površju Zemlje.
+Položaj Zemlje označimo z \(  \vec{r} \), kjer je izhodišče koordinatnega
+sistema v središču Zemlje. 
+Na delec deluje gravitacijska sila
+</p>
+
+<p>
+\[ \vec{F}_g = - G \frac{M m}{r ^2} \cdot \frac{\vec{r}}{r}
+\] 
+</p>
+
+<p>
+kjer je \(  r = \left| \vec{r} \right| = (x, y, z) \) in \(  G / \kappa \) gravitacijska
+konstanta. Prav tako je \(  M \) masa zemlje. 
+</p>
+
+<blockquote>
+<p>
+Gledamo fiksiran delec. Ni delec fiksiran, če se giblje, ampak gledamo
+en določen delec. 
+</p>
+</blockquote>
+
+<p>
+Opazimo
+</p>
+
+<p>
+\[ \vec{F}_g = \nabla (\frac{G M m}{r}) 
+\]
+</p>
+
+<p>
+Odvod po \(  x \)-u je
+</p>
+
+\begin{align*}
+  (\frac{1}{r})_x &= (x ^2 + y ^2 + z ^2)^{-\frac{1}{2}} \\
+&= - \frac{1}{2} (x ^2 + y ^2 + z ^2) ^{- \frac{3}{2}} \cdot 2x \\
+&= - \frac{x}{(x ^2 + y ^2 + z ^2) ^{\frac{3}{2}}} = - \frac{x}{r ^3}\\
+\implies \nabla (\frac{1}{r}) &= - \frac{(x, y, z)}{r ^3} = - \frac{\vec{r}}{r ^3}
+\end{align*}
+
+<p>
+Delo, ki ga sila \(  \vec{F}_g \) opravi vzdolž poti \(  \gamma \)
+</p>
+
+\begin{align}\label{eq:delo}
+  A &= \int\limits_{\gamma} \vec{F}\,\mathrm{d } \vec{r} =
+\int\limits_{\gamma} \nabla (\frac{GMm}{r}\,\mathrm{d } \vec{r} \\
+&\overset{\text{trditev}}{=} \frac{GMm}{r_1} - \frac{GMm}{r_0}
+\end{align}
+
+<p>
+kjer sta \(  r_0 = \left| \vec{r}_0 \right| \) in \(  r_1 = \left| \vec{r}_1 \right| \).
+višini delčeve pozicije na začetku oz. koncu poti. Za \(  \Delta r = r_1 - r_0 \)
+(sprememba višine oddaljenosti od 0) dobimo
+</p>
+
+\begin{align*}
+  A &= GMm \left( \frac{1}{r_1} - \frac{1}{r_0} \right) = GM m \cdot \frac{r_0 - r_1}{r_0 \cdot r_1} \\
+&= GM m \frac{- \Delta r}{r_0 (r_0 + \Delta r}
+\end{align*}
+
+<p>
+Predpostavka o gibanju po površju Zemlje pomeni, da se \( r_1  \) ne
+razlikuje veliko od \(  r_0 \), oz. da \(  \left| \Delta r \right| \) majhen
+v primerjavi z \(  r_0 \), zato lahko aproksimiramo
+</p>
+
+<p>
+\[ r_0 - \Delta r = r_0 = R
+\] 
+</p>
+
+<p>
+kjer je \(  R \) srednji radij Zemlje. 
+</p>
+
+
+<blockquote>
+<p>
+Izrek je endemično matematična beseda. 
+</p>
+</blockquote>
+
+<p>
+Iz tega sledi, da približno velja
+</p>
+
+<p>
+\[ A = - \frac{GM}{R ^2} m \Delta r 
+\]
+</p>
+
+<p>
+kjer označimo \(  \frac{GM}{R ^2} = g \).
+</p>
+</div>
+</div>
+<div id="outline-container-org412728f" class="outline-4">
+<h4 id="org412728f"><span class="section-number-4">1.1.2.</span> (Fizikalni) izrek 6.5 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Delo rezultante sil (= vsote vseh sil), ki delujejo na delec, je enako
+spremembi kinetične enerije. Celotna energija je vsota kinetične in potencialne,
+je delo enako spremembi potencialne energije oz.
+</p>
+
+\begin{equation}
+\label{eq:1}
+ A = -\Delta U = U(r_0) - U(r_1)   
+\end{equation}
+
+<p>
+kjer sledeč \ref{eq:delo}, gravitacijski potencial \(  U \) definiramo kot
+</p>
+
+\begin{equation}
+\label{eq:2}
+U(r) = - \frac{GMm}{r}
+\end{equation}
+
+<p>
+Če v \ref{eq:1} in \ref{eq:2} vzamemo \(  r_1 = \infty \), je \(  U(r) \) delo,
+potrebno, da delec od razdalje \(  r \) spravimo do neskončnosti.
+</p>
+
+<p>
+Zadnjič
+</p>
+
+<p>
+\(  \vec{F} \) potencialno \(  \implies \ \rot \vec{F} = 0 \). V obratno smer
+\(  \Leftarrow \) pa ne velja. Sedaj se vprašamo, kdaj pa velja.
+</p>
+</div>
+</div>
+<div id="outline-container-org4ff34c5" class="outline-4">
+<h4 id="org4ff34c5"><span class="section-number-4">1.1.3.</span> Definicija 6.4 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Območje \(  \Omega \subset \mathbb{R} ^3 \) je <i>zvezdasto</i>, če obstaja \(  \omega_0 \in \Omega \)
+tako, da velja za vsak \(  \omega \in \Omega \) je daljica \(  [\omega_0, \omega] \)
+cela vsebovana v \(  \Omega \).
+</p>
+
+<p>
+Vemo:
+</p>
+
+<p>
+\[ [\omega_0, \omega] = \left\{ (1 - t)\omega_0 + t\omega; \ t \in [0, 1] \right\}
+\]
+</p>
+
+<p>
+Konveksna množica je zvezdasto območje, za katero je vsak element iz njega
+dober za vlogo \(  \omega_0 \).
+</p>
+
+<p>
+Npr. \(  K(0,1) \setminus \left\{ 0 \right\} \) ni zvezdasto območje.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf64d23f" class="outline-4">
+<h4 id="orgf64d23f"><span class="section-number-4">1.1.4.</span> Izrek 6.6</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Naj bo \(  \Omega \subset \mathbb{R} ^3 \) zvezdasto območje. in naj bo
+\(  \vec{F} \) gladko vektorsko polje na \(  \Omega \) tako, da velja
+\(  \rot \vec{F} = 0 \). Tedaj je \(  \vec{F} \) potencialno.
+</p>
+
+<p>
+<b>Dokaz</b>: Naj bo \(  \omega_{0} \) kot v definiciji zvezdnasto območje. Za
+poljuben \(  \omega \in \Omega \) definiramo
+</p>
+
+<p>
+\[ u(\omega) = \int\limits_{[\omega_0, \omega]} \vec{F}\,\mathrm{d s}
+\]
+</p>
+
+<p>
+Preverjamo \(  \nabla u = \vec{F} \). Parametriziramo \(  [\omega_0, \omega]
+= [(x_0, y_0, z_0), (x, y, z)]\),
+kjer je
+</p>
+
+<p>
+\[ \vec{r}(t) = \begin{bmatrix} (1 - t)x_0 + t x \\ (1 - t)y_0 + ty \\
+(1 - t)z_0 + tz \end{bmatrix} = \begin{bmatrix} r_{1}(t) \\ r_{2}(t) \\ r_{3}(t) \end{bmatrix}
+\]
+</p>
+
+<p>
+Vemo, da je
+</p>
+\begin{align*}
+\int\limits_{[\omega_0, \omega]} \vec{F} \,\mathrm{d s} &= \int\limits_0^1 \left\langle \vec{F}(\vec{r}(t)), \odv{r}(t) \right\rangle_{\mathbb{R} ^3}\,\mathrm{d t} \\
+&= \int\limits_0^1 \left\langle \vec{F}(\vec{r}(t)), \omega - \omega_0 \right\rangle_{\mathbb{R} ^3}\,\mathrm{d t}
+\end{align*}
+
+<p>
+Velja
+</p>
+
+<p>
+\[ (\nabla u)(\omega) = (u_x, u_y, u_z)(\omega)
+\]
+</p>
+
+<p>
+Poglejmo \(  (u_x)(\omega) \). Velja
+</p>
+
+\begin{align}\label{eq:rnd1}
+  (u_x)(\omega) &= \int\limits_0^1 \frac{\partial }{\partial x} \left\langle
+\vec{F}(\vec{r}(t)), \omega - \omega_0 \right\rangle \,\mathrm{d t} \\
+&=  \int\limits_0^1 \left( \left\langle \frac{\partial }{\partial x}
+\left[ \vec{F}(\vec{r}(t)) \right], \omega - \omega_0  \right\rangle +
+\left\langle \vec{F}(\vec{r}(t)), \frac{\partial }{\partial x} (\omega - \omega_{0})
+ \right\rangle \right)\,\mathrm{d t}
+\end{align}
+
+<p>
+Zanima nas, kaj je \( \frac{\partial }{\partial x} \left[ \vec{F}(\vec{r}(t)) \right]  \).
+kjer je \(  \vec{F} = (F_1, F_2, F_3) \). Velja
+</p>
+
+\begin{align*}
+\frac{\partial }{\partial x} \left[ \vec{F}(\vec{r}(t)) \right] &=
+\frac{\partial }{\partial x} (F_1(\vec{r}), F_2(\vec{r}), F_3(\vec{r})) \\
+&= \left( \frac{\partial }{\partial x} (F_1(\vec{r})), \frac{\partial }{\partial x}
+(F_2(\vec{r})), \frac{\partial }{\partial x} (F_3(\vec{r})) \right)
+\end{align*}
+
+<p>
+\(  F_1 \) je definiran kot \(  F_1 = F_1 (a, b, c) \). Na podoben način sta
+definirani \(  F_2 \) in \(  F_3 \).
+</p>
+
+<p>
+Pri odvajanju upoštevamo verižno pravilo in gledamo kot funkcijo
+\(  (x, y, z) \mapsto t(x, y, z) + (1 - t) \omega_{0} \)
+</p>
+
+<p>
+Za lažji prikaz:
+</p>
+
+<p>
+\(  \mathbb{R} ^3 \overset{\vec{r}}{\rightarrow} \mathbb{R} ^3 \overset{
+\vec{F}}{\rightarrow} \mathbb{R} ^3 \)
+</p>
+
+<p>
+oz. kot funkcija \(  x \)-a
+</p>
+
+<p>
+\[ \mathbb{R} \overset{\vec{r}}{\rightarrow} \mathbb{R} ^3 \overset{F_1}{
+\rightarrow} \mathbb{R}
+\]
+</p>
+
+<p>
+Torej je
+</p>
+
+\begin{align*}
+  \frac{\partial }{\partial x} \left( F_1 (\vec{r}) \right) &= \left( \frac{\partial F_1}{\partial a}  \right)
+(\vec{r}(t)) \frac{\partial }{\partial x} \left( r_1(t)) \right) +
+ \left( \frac{\partial F_1}{\partial b}  \right) (\vec{r}(t)) \frac{\partial }{\partial x} \left( r_2(t)) \right) +
+  \left( \frac{\partial F_1}{\partial c}  \right) (\vec{r}(t)) \frac{\partial }{\partial x} \left( r_3(t)) \right)
+\end{align*}
+
+<p>
+Odvod \(  \frac{\partial r_1(t)}{\partial x} = t  \), medtem ko sta odvoda
+\(  r_2 \) in \( r_3  \) enaka 0, ker nista odvisna od x. Glej definicijo
+\(  \vec{r} \).
+</p>
+
+<p>
+Iz tega potem sledi
+</p>
+
+\begin{align*}
+  \frac{\partial (F_1(\vec{r}))}{\partial x} &= t\left(\frac{\partial F_1}{\partial a}\right)
+(\vec{r}(t)) \\
+   \frac{\partial (F_2(\vec{r}))}{\partial x} &= t\left(\frac{\partial F_2}{\partial a}\right)
+(\vec{r}(t)) \\
+  \frac{\partial (F_3(\vec{r}))}{\partial x} &= t\left(\frac{\partial F_3}{\partial a}\right)
+(\vec{r}(t)) \\
+\end{align*}
+
+<p>
+Nadalje
+</p>
+
+\begin{align*}
+  \frac{\partial }{\partial x} \left[ \vec{F}(\vec{r}(t)) \right] &=
+t \left( \left( \frac{\partial F_1}{\partial a}  \right)(\vec{r}),
+ \left( \frac{\partial F_2}{\partial a}  \right)(\vec{r}),
+ \left( \frac{\partial F_3}{\partial a}  \right)(\vec{r})\right) \\
+&\overset{\text{predpostavka}}{=} t \left( \left( \frac{\partial F_1}{\partial a}  \right) (\vec{r}(t)),
+ \left( \frac{\partial F_1}{\partial b}  \right) (\vec{r}(t)),
+ \left( \frac{\partial F_1}{\partial c}  \right) (\vec{r}(t)),\right) \\
+&= t ( \tilde{\nabla} F_1) (\vec{r})
+\end{align*}
+
+<p>
+Kjer je predpostavka \(  \rot \vec{F} = 0 \), kar pomeni
+</p>
+
+<p>
+\[ \begin{vmatrix}
+i & j & k \\
+\partial_a & \partial_b & \partial_c \\
+F_1 & F_2 & F_3
+\end{vmatrix} = \left( \partial_b F_3 - \partial_c F_2, \partial_c F_1 - \partial_a
+F_3, \partial_a F_2 - \partial_b F_1 \right) = (\ldots, 0, 0)
+\]
+</p>
+
+<p>
+in je \(  \tilde{\nabla}  = (\partial_a, \partial_b, \partial_c) \)
+</p>
+
+<p>
+Če se tako vrnemo k prejšnjemo integralu \ref{eq:rnd1}
+</p>
+
+\begin{align*}
+  (\partial_x u)(\omega) &= \int\limits_0^1 \left[ \left\langle
+t (\tilde{\nabla}F_1)(\vec{r}), \omega - \omega_0 \right\rangle
++ F_1(\vec{r}) \right]\,\mathrm{d t} \\
+&= \int\limits_0^1 \left[ t \frac{\mathrm{d} (F_1 \circ \vec{r})}{\mathrm{dt}}
++ (F_1 \circ \vec{r}) \right] \,\mathrm{d t} \\
+&= \int\limits_0^1 \frac{\mathrm{d} t \cdot F_1(\vec{r}(t))}{\mathrm{d} t}
+\,\mathrm{d t } && \text{definiramo } t \cdot F_1(\vec{r}(t)) = G_1(t) \\
+&= G_1(1) - G_1(0) = 1\cdot F_{1(\vec{r}(1))} = F_1 (\omega)
+\end{align*}
+
+<p>
+S tem smo dokazali \(  \partial_x u = F_1 \) in iz tega sledi
+</p>
+
+<p>
+\[ \nabla u = \vec{F}
+\]
+</p>
+
+<p>
+Q.E.D
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc6c4799" class="outline-3">
+<h3 id="orgc6c4799"><span class="section-number-3">1.2.</span> Ploskovni integral</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-orgd23eddf" class="outline-4">
+<h4 id="orgd23eddf"><span class="section-number-4">1.2.1.</span> Definicija 6.5 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Naj bo \(  M \subset \mathbb{R} \) neka regularna ploskev in \(  f: M \to \mathbb{R} \)
+zvezna.
+</p>
+
+<p>
+Ploskovni integral skalarnega polja \(  f \) definiramo kot
+</p>
+
+<p>
+\[ \int\limits_M f \,\mathrm{d S}  = \iint\limits_D f(\vec{r}(u, v))
+\left| \vec{r}_u \times \vec{r}_v \right| \, \mathrm{d u} \, \mathrm{ dv}
+\]
+</p>
+
+<p>
+kjer je \(  \vec{r}: D \to M \) poljubna regularna parametrizacija za M.
+</p>
+
+<p>
+Opombi
+</p>
+
+<ol class="org-ol">
+<li>Za \(  f = 1 \) dobimo površino ploskve</li>
+<li>Definicija je neodvisna od izbire parametrizacije (je dobra).</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgced62f0" class="outline-4">
+<h4 id="orgced62f0"><span class="section-number-4">1.2.2.</span> Zgled 6.6 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Naj bo \(  M \) zgornja polovica homogene sfere (s središčem v \(  0 \))
+v \(  \mathbb{R} ^3 \) z radijem \(  a \). Iščemo njeno težišče
+\(  T = (x_T, y_T, z_T) \).
+</p>
+
+<p>
+Velja \(  x_T = y_T = 0 \).
+</p>
+
+\begin{align*}
+  z_T &= \frac{1}{m(M)} \iint\limits_M z \rho \, \mathrm{dS} \\
+&= \frac{\rho}{\rho \frac{4 \pi a}{2}} \iint\limits_M z \, \mathrm{ dS}  && f(x, y, z) = z\\
+&= \frac{\rho}{\rho \frac{4 \pi a}{2}} \iint\limits_M f(x, y, z) \, \mathrm{ dS} \\
+\end{align*}
+
+<p>
+Parametrizacija za \(  M \): uporabimo sferične koordinate, nivojnica
+\(  \left\{ r = a \right\} \).
+</p>
+
+<p>
+\[ \vec{r} = \vec{r}(\phi, \theta) = (x, y, z)
+\]
+</p>
+
+\begin{align*}
+  x &= a \sin \theta \cos \phi \\
+y &= a \sin \theta \sin\phi \\
+z &= a \cos \theta && \phi \in [0, 2\pi), \ \theta \in [0, \frac{\pi}{2}]
+\end{align*}
+
+<p>
+Iz tega potem sledi, da je
+</p>
+
+\begin{align*}
+  I &= \int\limits_0^{2\pi}\int\limits_0^{\frac{\pi}{2}} a \cos \theta
+\left| \vec{r}_{\phi} \times \vec{r}_{\theta} \right|\,\mathrm{d } \theta\,\mathrm{d } \phi \\
+&= \ldots = \pi a ^3
+\end{align*}
+
+<p>
+Iz tega sledi, da je \(  z_T = \frac{a}{2} \) in težišče je tako
+\(  T = (0, 0 , \frac{a}{2}) \)
+</p>
+</div>
+</div>
+<div id="outline-container-org50f4de6" class="outline-4">
+<h4 id="org50f4de6"><span class="section-number-4">1.2.3.</span> Definicija 6.6 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+Naj bo \(  M \) ploskev z orientacijo \(  \vec{N} \). Ploskovni integral zveznega vektorskega polja \(  \vec{F}:M \to \mathbb{R} ^3 \) je definirano s predpisom
+</p>
+
+<p>
+\[ \int\limits_M \vec{F} \,\mathrm{d S} = \int\limits_M^{} \left\langle \vec{F}, \vec{N} \right\rangle\,\mathrm{d S}
+\]
+</p>
+
+<p>
+<b>Enoličnost definicije</b>: Predznak integrala je odvisen od izbire ene izmed dveh orientacij \(  \vec{N} \).
+</p>
+
+<p>
+<b>Opomba</b>: Če je \(  \vec{r}=\vec{r}(u, v): D \to M, \ D \subset \mathbb{R} ^2 \) neka
+regularna parametrizacija za \(  M \), lahko vzamemo
+</p>
+
+<p>
+\[  \vec{N} = \frac{\vec{r}_u \times \vec{r}_v}{\left| {\vec{r}_u \times \vec{r}_v} \right|}
+\]
+</p>
+
+<p>
+Sledi, da je
+</p>
+
+\begin{align*}
+\int\limits_M^{}\vec{F}\,\mathrm{d S} &= \iint\limits_D^{} \left\langle
+\vec{F}(\vec{r}(u, v)), \vec{N}(u, v) \right\rangle \left|
+\vec{r}_u \times \vec{r}_v \right|\,\mathrm{d u} \, \mathrm{dv} \\
+\implies \int\limits_M^{} \vec{F} \,\mathrm{d S} &= \int\limits_D^{} \left\langle
+\vec{F}(\vec{r}), \vec{r}_u \times \vec{r}_v \right\rangle\,\mathrm{d u} \,
+\mathrm{dv}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org96f0646" class="outline-4">
+<h4 id="org96f0646"><span class="section-number-4">1.2.4.</span> Integracija po delih (<i>per partes</i>)</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+Za \(  n = 1 \) je integracija po delih
+</p>
+
+\begin{align*}
+  (uv)' &= u v' + u'v \\
+uv' &= (uv) ' - u' v && \mathrm{dx} \\
+\int\limits_a^bu\,\mathrm{d v} &= \left. (uv) \right|^{x = b}_{x = a}- \int\limits_a^b v \,\mathrm{d u}
+\end{align*}
+
+<p>
+Za enodimenzionalni primer imamo \(  \left\{ a, b \right\} = \partial \left[ a, b \right] \), če pa imamo območje \(  M \) pa je
+</p>
+
+<p>
+\[ \int\limits_M^{}\phi\,\mathrm{d V} \rightarrow \int\limits_{\partial M}^{}\tilde{\phi}\,\mathrm{d V}
+\]
+</p>
+
+<p>
+oz. integracija po delih je
+</p>
+
+<p>
+\[ \int\limits_{\partial M}^{}\psi \,\mathrm{d V} \overset{\text{lahko izrazimo kot}}{\rightarrow} \int\limits_M^{} D \psi\,\mathrm{d V}
+\]
+</p>
+
+<p>
+kjer je \(  D \) nek diferencialni operator.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd9c3df7" class="outline-4">
+<h4 id="orgd9c3df7"><span class="section-number-4">1.2.5.</span> Gaussov izrek (6.8)</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<p>
+Naj bo \(  \Omega \) odprta omejena množica v \(  \mathbb{R}^3 \) z (odsekoma) gladkim robom, \(  \vec{F} \) pa naj bo \(  C^1 \) vektorsko polje v okolici \(  \bar{\Omega} = \Omega \cup \partial \Omega \). Tedaj je
+</p>
+
+<p>
+\[ \iint\limits_{\partial \Omega}^{} \vec{F}\,\mathrm{d S} =  \iiint\limits_{\Omega}^{} \dive \vec{F} \,\mathrm{d V}
+\]
+</p>
+
+<p>
+<b>Opomba</b>: \(  \partial \Omega \) je ploskev z orientacijo \(  \vec{N} \), ki kaže ven iz \(  \Omega \), pravimo ji zunanja normala.
+</p>
+
+<p>
+<b>Dokaz</b>: Za primer, ko \(  \Omega \) lahko zapišemo kot območje md dvema grafoma, za vse tri koordinatne ravnine.
+</p>
+
+
+<div id="org49436de" class="figure">
+<p><img src="figures/GaussIzrek.svg" alt="GaussIzrek.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Označimo \(  \vec{F} = (X, Y, Z) \). Tedaj je
+</p>
+
+<p>
+\[ \dive \vec{F} = X_x + Y_y + Z_z
+\]
+</p>
+
+<p>
+Označimo z \(  \vec{N} = (N_1, N_2, N_3) \) zunanjo normalno. Želimo
+</p>
+
+<p>
+\[ \iint\limits_{\partial \mho} (XN_1 + YN_2 + ZN_3) \,\mathrm{d S} = \iiint\limits_{\Omega}(X_x + Y_y + Z_z) \,\mathrm{d V}
+\]
+</p>
+
+<p>
+Dovolj je dokazati samo za eno komponento, npr.
+</p>
+
+<p>
+\[ \iint\limits_{\partial \Omega}^{}  ZN_3 \,\mathrm{d S} = \iiint\limits_{\Omega} Z_z \,\mathrm{d V}
+\]
+</p>
+
+<p>
+Desno stran enačbe označimo z DS, in levo stran označimo z LS.
+</p>
+
+<p>
+Naj bo
+</p>
+
+<p>
+\[ \Omega = \left\{ (x, y, z) \in \mathbb{R} ^3 ; \ f(x, y) < z < g(x, y) \right\}
+\]
+</p>
+
+<p>
+Dokazali smo obstoj predpostavke \(  f, g \).
+</p>
+
+<p>
+Rob grafa je tako
+</p>
+
+<p>
+\[ \partial \Omega = \Gamma_f + \Gamma_g + \text{ "plašč "}
+\]
+</p>
+
+<p>
+Plašč je v narekovajih, ker je v našem primeru plašč valja, vendar v splošnem primeru, pa ni.
+</p>
+
+<p>
+Leva stran enačbe je tako oblike
+</p>
+
+<p>
+\[ \implies \mathrm{LS} = \iint\limits_{\Gamma_f} ZN_3 + \iint\limits_{\Gamma_g} ZN_3 + \iint\limits_{\text{plašč}} ZN_3
+\]
+</p>
+
+<p>
+Zadnji integral je enak nič, saj po definiciji naše normale, vektor normale na plašču z vrednostmi \(  \vec{N} = (\cdot, \cdot, 0) \)
+</p>
+
+<p>
+Parametrizacija grafa \(  \Gamma_f \) je: \(  \vec{r}(x, y) = (x, y, f(x, y)); \ (x, y) \in D \subset \mathbb{R} ^2 \)
+</p>
+
+
+<p>
+Izračunamo, da je \(  \left| \vec{r}_x \times \vec{r}_y \right|  = \sqrt{1 + f_x ^2 + f_y ^2}\) in iz tega, dobimo, da je normala in tretja komponenta normale enaka
+</p>
+
+<p>
+\[ \vec{N} = \frac{\vec{r}_x \times \vec{r}_y}{\left| \vec{r}_x \times \vec{r}_y \right|} \quad N_3 = \frac{- 1}{\sqrt{1 + f_x ^2 + f_y ^2}}
+\]
+</p>
+
+<p>
+\[ \implies \mathrm{LS} = \iint\limits_{D} Z(x, y, f(x, y)) \left( - \frac{1}{\sqrt{1 + f_x ^2 + f_y ^2}} \right) \sqrt{1 + f_x ^2 + f_y ^2} \,\mathrm{d x} \, \mathrm{dy} + \iint\limits_{D} Z(x, y, g(x, y)) \left( \frac{1}{\sqrt{1 + g_x ^2 + g_y ^2}} \right) \sqrt{1 + g_x ^2 + g_y ^2} \,\mathrm{d x} \, \mathrm{dy}
+\]
+</p>
+
+<p>
+Drugi člen produkta je \(  N_3(\vec{r}) \) in tretji člen \(  \left| \vec{r}_x \times \vec{r}_y \right| \)
+</p>
+
+<p>
+Iz tega nadalje sledi
+</p>
+
+\begin{align*}
+ \implies \mathrm{LS} &= \iint\limits_D \left[ Z(x, y, g(x, y)) - z(x, y, f(x, y)) \right]\,\mathrm{d x} \, \mathrm{dy} \\
+&= \iiint\limits_{f(x, y)}^{g(x, y)} Z_z (x, y, t) \,\mathrm{d t} \, \mathrm{dx dy}
+&= \iiint\limits_{\Omega} Z_z \,\mathrm{d V} = \mathrm{DS}
+\end{align*}
+
+<p>
+In s tem je glavnina dokaza enaka.
+</p>
+</div>
+</div>
+<div id="outline-container-orge13a824" class="outline-4">
+<h4 id="orge13a824"><span class="section-number-4">1.2.6.</span> Sestavljanje območij</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<blockquote>
+<p>
+Kot je značilno za knjige v zahodnem svetu dodamo podnaslov, ki je zmeraj daljši od naslova.
+</p>
+</blockquote>
+
+<p>
+Odpravljanje pogoja, da je \(  \Omega \) območje med dvema sferama.
+</p>
+
+
+<div id="orga28f51b" class="figure">
+<p><img src="figures/sestavljanje_obmocij.svg" alt="sestavljanje_obmocij.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+\[ \Omega = \Omega_1 \cup \Omega_2
+\]
+</p>
+
+<p>
+kjer \(  \Omega_1, \ \Omega_2 \) zadoščata pogoju, da sta med dvema grafoma. Iz tega sledi,
+</p>
+
+\begin{align*}
+  \iiint\limits_{\Omega}^{}\dive \vec{F} \,\mathrm{d V} &= \iiint\limits_{\Omega_1}^{} \dive \vec{F} \,\mathrm{d V} + \iiint\limits_{\Omega_2}^{} \dive \vec{F} \,\mathrm{d V} \\
+&\overset{\text{Gauss}}{=} \iint\limits_{\partial \Omega_1}^{}\vec{F} \,\mathrm{d S} + \iint\limits_{\partial \Omega_2}^{}\vec{F} \,\mathrm{d S}
+\end{align*}
+
+<p>
+vendar velja, da \(  \partial \Omega \ne \partial \Omega_1 \cup \partial \Omega_2 \).
+</p>
+
+<p>
+Integrala po \(  \Sigma \) se izničita, ker integriramo isto funkcijo, toda vsakič z nasprotno normalo.
+</p>
+</div>
+</div>
+<div id="outline-container-orga364a4e" class="outline-4">
+<h4 id="orga364a4e"><span class="section-number-4">1.2.7.</span> Primer 6.7 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-7">
+<p>
+Imamo \(  \Omega = K(0, 1) \) enotsko kroglo v \(  \mathbb{R} ^3 \) in vektorsko polje \(  \vec{F} = (x, y, z) \ (\vec{F} = \mathrm{id}) \)
+</p>
+
+\begin{align*}
+  \iint\limits_{\partial \Omega}^{} \vec{F} \,\mathrm{d }\vec{S} &\overset{\text{Gauss}}{=} \iiint\limits_{\Omega}^{} \dive \vec{F} \,\mathrm{d V} \\
+&= 3V(\Omega) = 4\pi
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org81330fb" class="outline-4">
+<h4 id="org81330fb"><span class="section-number-4">1.2.8.</span> Primer 6.8 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-8">
+<p>
+Imamo vektorsko polje \(  \vec{F} = (y ^2, z ^3, x ^2) \) in plašč stožca \(  M = \Sigma = \left\{ x ^2+ y ^2 \le z ^2 \text{ in } 0 \le z \le 1 \right\}\)
+</p>
+
+
+<div id="orgd118fde" class="figure">
+<p><img src="figures/stozec.svg" alt="stozec.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Zanima nas integral
+</p>
+
+<p>
+\[ I = \iint\limits_M^{} \vec{F} \,\mathrm{d }\vec{S}
+\]
+</p>
+
+<p>
+Območje lahko parametriziramo kot
+</p>
+
+<p>
+\[ \Sigma = \left\{ (r \cos \phi, r \sin \phi, z); r \le z \le 1 \right\}
+\]
+</p>
+
+<p>
+Želimo uporabiti Gaussov izrek. Poiščemo \(  \Omega \) tako, da je \(  M \) del \(  \partial \Omega \). Vzamemo \(  \Omega := \Sigma, \ \partial \Omega = M \cup K \), kjer je \(  K \) osnovna ploskev stožca. Tako je
+</p>
+
+\begin{align*}
+  \iint\limits_M^{} \vec{F} \,\mathrm{d }\vec{S} &= \iint\limits_{\partial \Omega}^{} \vec{F} \,\mathrm{d S} - \iint\limits_K^{} \vec{F} \,\mathrm{d }\vec{S} \\
+&\overset{\text{Gauss}}{=} \iiint\limits_{\Omega}^{} \dive \vec{F} \,\mathrm{d V} - \iint\limits_K^{} \vec{F} \,\mathrm{d } \vec{S} \\
+\dive \vec{F} &= 0 && \text{ glej definicijo divergence } \\
+&= - \iint\limits_K^{} \vec{F} \,\mathrm{d }S = \ldots = - \frac{\pi}{4}
+\end{align*}
+
+<p>
+kjer smo \(  K := \left\{ (r \cos \phi, r \sin \phi, 1); \ r \in [0, 1], \phi \in [0, 2\pi] \right\} \) parametrizirali.
+</p>
+
+<blockquote>
+<p>
+Biti ali ne biti konsistenten z vektorskimi oznakami. To je sedaj vprašanje.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org029e36d" class="outline-4">
+<h4 id="org029e36d"><span class="section-number-4">1.2.9.</span> Primer</h4>
+<div class="outline-text-4" id="text-1-2-9">
+<p>
+Naj bo \(  \vec{F} = (U, V, W) \) vektorsko polje definirano v okolici točke \(  \vec{r}_0 \in \mathbb{R} ^3 \).
+</p>
+
+<p>
+Tedaj je
+</p>
+
+<p>
+\[ (\dive \vec{F})(\vec{r}_0) = \left(\frac{\partial U}{\partial x} + \frac{\partial V}{\partial y} + \frac{\partial W}{\partial z} \right) (\vec{r}_0)
+\]
+</p>
+
+<p>
+Za divergenco potrebujemo (ortonormirani) koordinatni sistem, za \(  \vec{F} \) ga pa ne. Kaj se zgodi, če en ONS nadomestimo z drugim? Kako se to pozna na divergenci?
+</p>
+
+<p>
+Naj bo \(  \vec{F} \in C^1 \).
+</p>
+
+<p>
+\[  \left( \dive \vec{F} \right)(\vec{r}_0) = \lim_{\epsilon \searrow 0} \left\langle \dive \vec{F} \right\rangle_{K(\vec{r}_0, \epsilon)}
+\]
+</p>
+
+<p>
+Kjer je \(  (\dive \vec{F}) \) zvezna funkcija v okolici \(  \vec{r}_0 \) in pa \(  \left\langle \dive \vec{F} \right\rangle_{K(\vec{r}_0, \epsilon)}\) povprečje \(  \dive \vec{F} \) po krogli \(  K(\vec{r}_0, \epsilon) \).
+</p>
+
+<p>
+Oziroma drugače povedano
+</p>
+
+<p>
+\[ \frac{1}{V(K(\vec{r}_0, \epsilon))} \iiint\limits_K^{} \dive \vec{F} \,\mathrm{dV} \frac{3}{4\pi} \frac{1}{\epsilon ^3} \iint\limits_{S ^2 (\vec{r}_0, \epsilon)}^{} \vec{F} \,\mathrm{d }\vec{S}
+\]
+</p>
+
+<p>
+kar je neodvisno od izbire koordinat.
+</p>
+
+<p>
+In odgovor na zgornja vprašanja je, da se nič ne zgodi.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-11-21 Thu 14:45</p>
+</div>
+</body>
+</html>
