@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-11-21 Thu 14:45 -->
+<!-- 2024-11-21 Thu 15:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mat3teden8</title>
@@ -241,27 +241,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge75c871">1. Integracija po krivulja in ploskvah v \(  \mathbb{R} ^3 \)</a>
+<li><a href="#org9732141">1. Integracija po krivulja in ploskvah v \(  \mathbb{R} ^3 \)</a>
 <ul>
-<li><a href="#org014072b">1.1. Krivuljni integral</a>
+<li><a href="#org25f752f">1.1. Krivuljni integral</a>
 <ul>
-<li><a href="#org9b993c5">1.1.1. Zgled 6.4 (p.S.)</a></li>
-<li><a href="#org412728f">1.1.2. (Fizikalni) izrek 6.5 (p.S.)</a></li>
-<li><a href="#org4ff34c5">1.1.3. Definicija 6.4 (p.S.)</a></li>
-<li><a href="#orgf64d23f">1.1.4. Izrek 6.6</a></li>
+<li><a href="#org24f9888">1.1.1. Zgled 6.4 (p.S.)</a></li>
+<li><a href="#orgc18f34b">1.1.2. (Fizikalni) izrek 6.5 (p.S.)</a></li>
+<li><a href="#org28a7dc4">1.1.3. Definicija 6.4 (p.S.)</a></li>
+<li><a href="#org7ffec3a">1.1.4. Izrek 6.6</a></li>
 </ul>
 </li>
-<li><a href="#orgc6c4799">1.2. Ploskovni integral</a>
+<li><a href="#org66a7266">1.2. Ploskovni integral</a>
 <ul>
-<li><a href="#orgd23eddf">1.2.1. Definicija 6.5 (p.S.)</a></li>
-<li><a href="#orgced62f0">1.2.2. Zgled 6.6 (p.S.)</a></li>
-<li><a href="#org50f4de6">1.2.3. Definicija 6.6 (p.S.)</a></li>
-<li><a href="#org96f0646">1.2.4. Integracija po delih (<i>per partes</i>)</a></li>
-<li><a href="#orgd9c3df7">1.2.5. Gaussov izrek (6.8)</a></li>
-<li><a href="#orge13a824">1.2.6. Sestavljanje območij</a></li>
-<li><a href="#orga364a4e">1.2.7. Primer 6.7 (p.S.)</a></li>
-<li><a href="#org81330fb">1.2.8. Primer 6.8 (p.S.)</a></li>
-<li><a href="#org029e36d">1.2.9. Primer</a></li>
+<li><a href="#orgf9191db">1.2.1. Definicija 6.5 (p.S.)</a></li>
+<li><a href="#org30453c4">1.2.2. Zgled 6.6 (p.S.)</a></li>
+<li><a href="#orgf66dfea">1.2.3. Definicija 6.6 (p.S.)</a></li>
+<li><a href="#org023e1ed">1.2.4. Integracija po delih (<i>per partes</i>)</a></li>
+<li><a href="#org330857d">1.2.5. Gaussov izrek (6.8)</a></li>
+<li><a href="#org92499af">1.2.6. Sestavljanje območij</a></li>
+<li><a href="#orga460da0">1.2.7. Primer 6.7 (p.S.)</a></li>
+<li><a href="#org5ed3809">1.2.8. Primer 6.8 (p.S.)</a></li>
+<li><a href="#orgffc2eaa">1.2.9. Primer</a></li>
 </ul>
 </li>
 </ul>
@@ -273,16 +273,16 @@
 <b>Manjka ponedeljkovo predavanje, ker FP5 gre brrrr</b>. Allegedly se je celo uro
 delalo dokaz Trditve 6.4 (p.S.) ter pripadajoč zgled
 </p>
-<div id="outline-container-orge75c871" class="outline-2">
-<h2 id="orge75c871"><span class="section-number-2">1.</span> Integracija po krivulja in ploskvah v \(  \mathbb{R} ^3 \)</h2>
+<div id="outline-container-org9732141" class="outline-2">
+<h2 id="org9732141"><span class="section-number-2">1.</span> Integracija po krivulja in ploskvah v \(  \mathbb{R} ^3 \)</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org014072b" class="outline-3">
-<h3 id="org014072b"><span class="section-number-3">1.1.</span> Krivuljni integral</h3>
+<div id="outline-container-org25f752f" class="outline-3">
+<h3 id="org25f752f"><span class="section-number-3">1.1.</span> Krivuljni integral</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org9b993c5" class="outline-4">
-<h4 id="org9b993c5"><span class="section-number-4">1.1.1.</span> Zgled 6.4 (p.S.)</h4>
+<div id="outline-container-org24f9888" class="outline-4">
+<h4 id="org24f9888"><span class="section-number-4">1.1.1.</span> Zgled 6.4 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Delec z maso \(  m \) se giblje vzdolž poti \(  \gamma \) po površju Zemlje.
@@ -313,7 +313,7 @@ Opazimo
 </p>
 
 <p>
-\[ \vec{F}_g = \nabla (\frac{G M m}{r}) 
+\[ \vec{F}_g = \nabla \left(\frac{G M m}{r}\right)
 \]
 </p>
 
@@ -322,10 +322,10 @@ Odvod po \(  x \)-u je
 </p>
 
 \begin{align*}
-  (\frac{1}{r})_x &= (x ^2 + y ^2 + z ^2)^{-\frac{1}{2}} \\
+  \left(\frac{1}{r}\right)_x &= (x ^2 + y ^2 + z ^2)^{-\frac{1}{2}} \\
 &= - \frac{1}{2} (x ^2 + y ^2 + z ^2) ^{- \frac{3}{2}} \cdot 2x \\
 &= - \frac{x}{(x ^2 + y ^2 + z ^2) ^{\frac{3}{2}}} = - \frac{x}{r ^3}\\
-\implies \nabla (\frac{1}{r}) &= - \frac{(x, y, z)}{r ^3} = - \frac{\vec{r}}{r ^3}
+\implies \nabla \left(\frac{1}{r}\right) &= - \frac{(x, y, z)}{r ^3} = - \frac{\vec{r}}{r ^3}
 \end{align*}
 
 <p>
@@ -385,8 +385,8 @@ kjer označimo \(  \frac{GM}{R ^2} = g \).
 </p>
 </div>
 </div>
-<div id="outline-container-org412728f" class="outline-4">
-<h4 id="org412728f"><span class="section-number-4">1.1.2.</span> (Fizikalni) izrek 6.5 (p.S.)</h4>
+<div id="outline-container-orgc18f34b" class="outline-4">
+<h4 id="orgc18f34b"><span class="section-number-4">1.1.2.</span> (Fizikalni) izrek 6.5 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 Delo rezultante sil (= vsote vseh sil), ki delujejo na delec, je enako
@@ -423,8 +423,8 @@ Zadnjič
 </p>
 </div>
 </div>
-<div id="outline-container-org4ff34c5" class="outline-4">
-<h4 id="org4ff34c5"><span class="section-number-4">1.1.3.</span> Definicija 6.4 (p.S.)</h4>
+<div id="outline-container-org28a7dc4" class="outline-4">
+<h4 id="org28a7dc4"><span class="section-number-4">1.1.3.</span> Definicija 6.4 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 Območje \(  \Omega \subset \mathbb{R} ^3 \) je <i>zvezdasto</i>, če obstaja \(  \omega_0 \in \Omega \)
@@ -451,8 +451,8 @@ Npr. \(  K(0,1) \setminus \left\{ 0 \right\} \) ni zvezdasto območje.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf64d23f" class="outline-4">
-<h4 id="orgf64d23f"><span class="section-number-4">1.1.4.</span> Izrek 6.6</h4>
+<div id="outline-container-org7ffec3a" class="outline-4">
+<h4 id="org7ffec3a"><span class="section-number-4">1.1.4.</span> Izrek 6.6</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <p>
 Naj bo \(  \Omega \subset \mathbb{R} ^3 \) zvezdasto območje. in naj bo
@@ -646,12 +646,12 @@ Q.E.D
 </div>
 </div>
 </div>
-<div id="outline-container-orgc6c4799" class="outline-3">
-<h3 id="orgc6c4799"><span class="section-number-3">1.2.</span> Ploskovni integral</h3>
+<div id="outline-container-org66a7266" class="outline-3">
+<h3 id="org66a7266"><span class="section-number-3">1.2.</span> Ploskovni integral</h3>
 <div class="outline-text-3" id="text-1-2">
 </div>
-<div id="outline-container-orgd23eddf" class="outline-4">
-<h4 id="orgd23eddf"><span class="section-number-4">1.2.1.</span> Definicija 6.5 (p.S.)</h4>
+<div id="outline-container-orgf9191db" class="outline-4">
+<h4 id="orgf9191db"><span class="section-number-4">1.2.1.</span> Definicija 6.5 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 Naj bo \(  M \subset \mathbb{R} \) neka regularna ploskev in \(  f: M \to \mathbb{R} \)
@@ -682,8 +682,8 @@ Opombi
 </ol>
 </div>
 </div>
-<div id="outline-container-orgced62f0" class="outline-4">
-<h4 id="orgced62f0"><span class="section-number-4">1.2.2.</span> Zgled 6.6 (p.S.)</h4>
+<div id="outline-container-org30453c4" class="outline-4">
+<h4 id="org30453c4"><span class="section-number-4">1.2.2.</span> Zgled 6.6 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 Naj bo \(  M \) zgornja polovica homogene sfere (s središčem v \(  0 \))
@@ -733,8 +733,8 @@ Iz tega sledi, da je \(  z_T = \frac{a}{2} \) in težišče je tako
 </p>
 </div>
 </div>
-<div id="outline-container-org50f4de6" class="outline-4">
-<h4 id="org50f4de6"><span class="section-number-4">1.2.3.</span> Definicija 6.6 (p.S.)</h4>
+<div id="outline-container-orgf66dfea" class="outline-4">
+<h4 id="orgf66dfea"><span class="section-number-4">1.2.3.</span> Definicija 6.6 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <p>
 Naj bo \(  M \) ploskev z orientacijo \(  \vec{N} \). Ploskovni integral zveznega vektorskega polja \(  \vec{F}:M \to \mathbb{R} ^3 \) je definirano s predpisom
@@ -773,8 +773,8 @@ Sledi, da je
 \end{align*}
 </div>
 </div>
-<div id="outline-container-org96f0646" class="outline-4">
-<h4 id="org96f0646"><span class="section-number-4">1.2.4.</span> Integracija po delih (<i>per partes</i>)</h4>
+<div id="outline-container-org023e1ed" class="outline-4">
+<h4 id="org023e1ed"><span class="section-number-4">1.2.4.</span> Integracija po delih (<i>per partes</i>)</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <p>
 Za \(  n = 1 \) je integracija po delih
@@ -782,7 +782,7 @@ Za \(  n = 1 \) je integracija po delih
 
 \begin{align*}
   (uv)' &= u v' + u'v \\
-uv' &= (uv) ' - u' v && \mathrm{dx} \\
+uv' &= (uv) ' - u' v && \left. \right/ \mathrm{dx} \\
 \int\limits_a^bu\,\mathrm{d v} &= \left. (uv) \right|^{x = b}_{x = a}- \int\limits_a^b v \,\mathrm{d u}
 \end{align*}
 
@@ -800,7 +800,7 @@ oz. integracija po delih je
 </p>
 
 <p>
-\[ \int\limits_{\partial M}^{}\psi \,\mathrm{d V} \overset{\text{lahko izrazimo kot}}{\rightarrow} \int\limits_M^{} D \psi\,\mathrm{d V}
+\[ \int\limits_{\partial M}^{}\psi \,\mathrm{d V} \overset{\text{lahko izrazimo kot}}{\longrightarrow} \int\limits_M^{} D \psi\,\mathrm{d V}
 \]
 </p>
 
@@ -809,8 +809,8 @@ kjer je \(  D \) nek diferencialni operator.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd9c3df7" class="outline-4">
-<h4 id="orgd9c3df7"><span class="section-number-4">1.2.5.</span> Gaussov izrek (6.8)</h4>
+<div id="outline-container-org330857d" class="outline-4">
+<h4 id="org330857d"><span class="section-number-4">1.2.5.</span> Gaussov izrek (6.8)</h4>
 <div class="outline-text-4" id="text-1-2-5">
 <p>
 Naj bo \(  \Omega \) odprta omejena množica v \(  \mathbb{R}^3 \) z (odsekoma) gladkim robom, \(  \vec{F} \) pa naj bo \(  C^1 \) vektorsko polje v okolici \(  \bar{\Omega} = \Omega \cup \partial \Omega \). Tedaj je
@@ -830,7 +830,7 @@ Naj bo \(  \Omega \) odprta omejena množica v \(  \mathbb{R}^3 \) z (odsekoma) 
 </p>
 
 
-<div id="org49436de" class="figure">
+<div id="orga16a317" class="figure">
 <p><img src="figures/GaussIzrek.svg" alt="GaussIzrek.svg" class="org-svg" />
 </p>
 </div>
@@ -934,7 +934,7 @@ Iz tega nadalje sledi
 
 \begin{align*}
  \implies \mathrm{LS} &= \iint\limits_D \left[ Z(x, y, g(x, y)) - z(x, y, f(x, y)) \right]\,\mathrm{d x} \, \mathrm{dy} \\
-&= \iiint\limits_{f(x, y)}^{g(x, y)} Z_z (x, y, t) \,\mathrm{d t} \, \mathrm{dx dy}
+&= \iiint\limits_{f(x, y)}^{g(x, y)} Z_z (x, y, t) \,\mathrm{d t} \, \mathrm{dx dy} \\
 &= \iiint\limits_{\Omega} Z_z \,\mathrm{d V} = \mathrm{DS}
 \end{align*}
 
@@ -943,8 +943,8 @@ In s tem je glavnina dokaza enaka.
 </p>
 </div>
 </div>
-<div id="outline-container-orge13a824" class="outline-4">
-<h4 id="orge13a824"><span class="section-number-4">1.2.6.</span> Sestavljanje območij</h4>
+<div id="outline-container-org92499af" class="outline-4">
+<h4 id="org92499af"><span class="section-number-4">1.2.6.</span> Sestavljanje območij</h4>
 <div class="outline-text-4" id="text-1-2-6">
 <blockquote>
 <p>
@@ -957,7 +957,7 @@ Odpravljanje pogoja, da je \(  \Omega \) območje med dvema sferama.
 </p>
 
 
-<div id="orga28f51b" class="figure">
+<div id="org332bd7a" class="figure">
 <p><img src="figures/sestavljanje_obmocij.svg" alt="sestavljanje_obmocij.svg" class="org-svg" />
 </p>
 </div>
@@ -985,8 +985,8 @@ Integrala po \(  \Sigma \) se izničita, ker integriramo isto funkcijo, toda vsa
 </p>
 </div>
 </div>
-<div id="outline-container-orga364a4e" class="outline-4">
-<h4 id="orga364a4e"><span class="section-number-4">1.2.7.</span> Primer 6.7 (p.S.)</h4>
+<div id="outline-container-orga460da0" class="outline-4">
+<h4 id="orga460da0"><span class="section-number-4">1.2.7.</span> Primer 6.7 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-2-7">
 <p>
 Imamo \(  \Omega = K(0, 1) \) enotsko kroglo v \(  \mathbb{R} ^3 \) in vektorsko polje \(  \vec{F} = (x, y, z) \ (\vec{F} = \mathrm{id}) \)
@@ -998,15 +998,15 @@ Imamo \(  \Omega = K(0, 1) \) enotsko kroglo v \(  \mathbb{R} ^3 \) in vektorsko
 \end{align*}
 </div>
 </div>
-<div id="outline-container-org81330fb" class="outline-4">
-<h4 id="org81330fb"><span class="section-number-4">1.2.8.</span> Primer 6.8 (p.S.)</h4>
+<div id="outline-container-org5ed3809" class="outline-4">
+<h4 id="org5ed3809"><span class="section-number-4">1.2.8.</span> Primer 6.8 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-2-8">
 <p>
 Imamo vektorsko polje \(  \vec{F} = (y ^2, z ^3, x ^2) \) in plašč stožca \(  M = \Sigma = \left\{ x ^2+ y ^2 \le z ^2 \text{ in } 0 \le z \le 1 \right\}\)
 </p>
 
 
-<div id="orgd118fde" class="figure">
+<div id="org211ed06" class="figure">
 <p><img src="figures/stozec.svg" alt="stozec.svg" class="org-svg" />
 </p>
 </div>
@@ -1051,8 +1051,8 @@ Biti ali ne biti konsistenten z vektorskimi oznakami. To je sedaj vprašanje.
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org029e36d" class="outline-4">
-<h4 id="org029e36d"><span class="section-number-4">1.2.9.</span> Primer</h4>
+<div id="outline-container-orgffc2eaa" class="outline-4">
+<h4 id="orgffc2eaa"><span class="section-number-4">1.2.9.</span> Primer</h4>
 <div class="outline-text-4" id="text-1-2-9">
 <p>
 Naj bo \(  \vec{F} = (U, V, W) \) vektorsko polje definirano v okolici točke \(  \vec{r}_0 \in \mathbb{R} ^3 \).
@@ -1106,7 +1106,7 @@ In odgovor na zgornja vprašanja je, da se nič ne zgodi.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-11-21 Thu 14:45</p>
+<p class="date">Created: 2024-11-21 Thu 15:13</p>
 </div>
 </body>
 </html>
