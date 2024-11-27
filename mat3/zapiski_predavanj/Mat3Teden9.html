@@ -1,0 +1,1651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-11-27 Wed 19:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden9</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      macros:{
+        odv: ["\\dot{\\vec{#1}}", 1],
+        oddv: ["\\ddot{\\vec{#1}}", 1],
+        epsilon: "\\varepsilon",
+        theta: "\\vartheta",
+        phi: "\\varphi",
+        rot: "\\mathrm{rot}",
+        dive: "\\mathrm{div}",
+        undd: ["\\underline{\\underline #1}", 1]
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden9</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org563d3ed">1. Integracija po krivuljah in ploskvah v \(  \mathbb{R} ^3 \)</a>
+<ul>
+<li><a href="#orgdeb06ba">1.1. Ploskovni integral</a>
+<ul>
+<li><a href="#org03ae598">1.1.1. Izrek 6.10 - Greenova formula (p.S.)</a></li>
+<li><a href="#orgd3794d4">1.1.2. Izrek 6.11 - Stokesov izrek (p.S.)</a></li>
+<li><a href="#org736d7ee">1.1.3. Posledica (pri Simonu opomba)</a></li>
+<li><a href="#org7753655">1.1.4. Primer 6.9 (p.S.)</a></li>
+<li><a href="#org1e2e127">1.1.5. Izrek 6.12 - Greenovi identiteti (p.S.)</a></li>
+<li><a href="#org15c929f">1.1.6. Posledica 6.13 (p.S.)</a></li>
+<li><a href="#orgdad06e8">1.1.7. Preglednica definicij integralov</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf92ea48">2. Diferencialne enačba</a>
+<ul>
+<li><a href="#org09ad8be">2.1. Primeri</a></li>
+<li><a href="#orga8f356d">2.2. Načelo</a></li>
+<li><a href="#org77095ce">2.3. Cauchyjeva naloga</a></li>
+<li><a href="#org402492e">2.4. Polje smeri</a>
+<ul>
+<li><a href="#org8cb4527">2.4.1. Primer</a></li>
+</ul>
+</li>
+<li><a href="#org96ec178">2.5. Eulerjeva metoda</a>
+<ul>
+<li><a href="#org496353d">2.5.1. Primer 7.3 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#orgb9e630c">2.6. Reševanje nekaterih osnovnih tipov navadnih diferencialnih enačb</a>
+<ul>
+<li><a href="#orga17631f">2.6.1. Enačba z ločljivimi spremenljivkami</a></li>
+<li><a href="#org6361dd4">2.6.2. Linearna navadna diferencialna enačba prvega reda 7.2 (p.S.)</a></li>
+<li><a href="#orgf7f476d">2.6.3. Bernouliijeva diferencialna enačba 7.3 (p.S.)</a></li>
+<li><a href="#org22a608d">2.6.4. Riccatijeva diferencialna enačba 7.5 (p.S.)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org563d3ed" class="outline-2">
+<h2 id="org563d3ed"><span class="section-number-2">1.</span> Integracija po krivuljah in ploskvah v \(  \mathbb{R} ^3 \)</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgdeb06ba" class="outline-3">
+<h3 id="orgdeb06ba"><span class="section-number-3">1.1.</span> Ploskovni integral</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org03ae598" class="outline-4">
+<h4 id="org03ae598"><span class="section-number-4">1.1.1.</span> Izrek 6.10 - Greenova formula (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Naj bo \(  D \subset \mathbb{R} ^2 \) območje z (odsekoma) gladkim robom ( \(  \partial D \) je končna odsekoma gladka krivulja, orientariana skladno z normalo \(  (0, 0, + 1) \text{ na } D  \)).
+</p>
+
+<p>
+\(  \vec{F} = (X, Y) \) naj bo \(  C^1 \) vektorsko polje v okolici \(  \bar{D} \)
+</p>
+
+<p>
+Tedaj je
+</p>
+
+<p>
+\[ \int\limits_{\partial D}^{} X\,\mathrm{d x} + Y\, \mathrm{dy} = \iint\limits_D^{}(Y_x - X_y) \,\mathrm{d xdy}
+\]
+</p>
+
+<p>
+<b>Dokaz</b>: je podoben dokazu Gaussovega izreka. Že formulacija Greenovega izreka je &ldquo;dvodimenzionalna različica Gaussovega izreka&rdquo;.
+</p>
+
+<p>
+In to v smislu
+</p>
+
+\begin{equation}
+\label{eq:1}
+\iint\limits_{\partial D}^{} \left\langle \vec{G}, \vec{N} \right\rangle \,\mathrm{d s} = \iint\limits_D^{} \dive \vec{G} \,\mathrm{d S}
+\end{equation}
+
+<p>
+Če bi imeli v \ref{eq:1} \(  \vec{T} \) namesto \(  \vec{G} \), bi leva stran v \ref{eq:1} bila krivuljni integral polja \(  \vec{G} \) po (orient.) krivulji \(  \partial D \). Zato poiščemo polje \(  \vec{H} \), za katero je
+</p>
+
+<p>
+\[ \left\langle \vec{G}, \vec{N} \right\rangle  = \left\langle \vec{H}, \vec{T} \right\rangle
+\]
+</p>
+
+<p>
+Vemo,
+</p>
+
+<p>
+\[ \vec{T} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \vec{N} = \underline{R} N \] kjer matrika \(  \underline{R} \in \mathbb{R} ^2 \) rotira \(  \vec{N} \) za kot \(  \frac{\pi}{2} \).
+</p>
+
+<p>
+Velja torej \(  \vec{N} = \underline{R} ^{-1} \vec{T} \). Vemo, da je \(  \underline{R} \) ortogonalna matrika v \(  \mathbb{R} ^2 \), saj velja \( \left( \underline{R}^{-1} \right)^T = R \) oz. \(  \underline{R}^T = \underline{R}^{-1} \) oz. \(  \underline{R}^T \underline{R} = \underline{R} \underline{R}^T = I \)
+</p>
+
+
+\begin{align*}
+  \left\langle \vec{G}, \vec{N} \right\rangle &= \left\langle \vec{G}, \underline{R} \vec{T} \right\rangle \\
+&= \left\langle  \underline{R} \vec{G}, \vec{T}   \right\rangle \\
+&= \left\langle \vec{H}, \vec{T} \right\rangle
+\end{align*}
+
+<p>
+Iz tega tako sledi, da če smo označili \(  \vec{G} = (U, V) \), potem velja, da je \(  \vec{H}= (-V, U) \)
+</p>
+
+<p>
+Sledi
+</p>
+
+\begin{align*}
+  \int\limits_{\partial D}^{} \left\langle \vec{G}, \vec{N} \right\rangle\,\mathrm{d s} &= \int\limits_{\partial D}^{} \left\langle \vec{H}, \vec{T} \right\rangle\,\mathrm{d s} \\
+&= \int\limits_{\partial D}^{} \vec{H}\,\mathrm{d s} = \int\limits_{\partial D}^{} \left( -V \, \mathrm{dx} + U \, \mathrm{dy} \right)
+\end{align*}
+
+<p>
+Hkrati je
+\[ \iint\limits_D^{} \dive \vec{G} \,\mathrm{d S} = \iint\limits_D^{} U_x + V_y \,\mathrm{d x} \, \mathrm{ dy}
+\]
+</p>
+
+<p>
+In tako iz \ref{eq:1} sledi
+</p>
+
+<p>
+\[ \int\limits_{\partial D}^{} \left( -V \, \mathrm{dx} + U \, \mathrm{dy} \right) = \iint\limits_D^{} (U_x - V_y) \,\mathrm{d x} \mathrm{dy}
+\]
+</p>
+
+<p>
+Sedaj z izborom \(  (U, V)= (Y, -X) \) dobimo Greenovo formulo.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd3794d4" class="outline-4">
+<h4 id="orgd3794d4"><span class="section-number-4">1.1.2.</span> Izrek 6.11 - Stokesov izrek (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Naj bo
+</p>
+
+<ul class="org-ul">
+<li>\(  M \) omejena gladka orientirana ploskev v \(  \mathbb{R} ^3 \)</li>
+<li>\(  \vec{F} \) vektorsko polje, definirano v okolici \(  \bar{M} \).</li>
+</ul>
+
+<p>
+Tedaj je
+\[ \int\limits_{\partial M}^{} \vec{F} \,\mathrm{d }\vec{r}  = \iint\limits_M^{} \vec{F} \,\mathrm{d S}
+\]
+</p>
+
+<p>
+<b>Skica dokaza</b>: za primer, ko je \(  M = \Gamma_f = \left\{ \vec{r}(x, y) = (x, y, f(x, y)); \ (x, y) \in D \right\} \) za neko območje (basically parametrizacija za naš \(  M \)), \(  D \subset \mathbb{R} ^2 \) in gladko funkcijo \(  f: D \to \mathbb{R} \).
+</p>
+
+<p>
+Označimo \(  \vec{F} = (X, Y, Z), \ X, Y, Z: M \to \mathbb{R} \) gladke.
+</p>
+
+<p>
+Velja
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \int\limits_{\partial M}^{} \vec{F}\,\mathrm{d } \vec{r} = \int\limits_{\partial M}^{} X\,\mathrm{d x} + Y \, \mathrm{dy} + Z \, \mathrm{ dz}
+\end{equation}
+
+<p>
+Parametrizacija roba (\(  \partial M \)) je pogojena z zožitvijo \(  \vec{r} \) (podana za \(  M \)) na \(  \partial D \).
+</p>
+
+<p>
+Če nadaljujemo \ref{eq:2}
+</p>
+
+\begin{align*}
+  \int\limits_{\partial D}^{} X(\vec{r}) \,\mathrm{d x} + Y(\vec{r}) \, \mathrm{dy} + Z(\vec{r}) (f_x \, \mathrm{dx} + f_y \, \mathrm{dy}) &= \int\limits_{\partial D}^{} \left[ X(\vec{r}) + Z(\vec{r}) f_x \right]\,\mathrm{d x} + \left[ Y(\vec{r}) + Z(\vec{r}) f_y) \right]\, \mathrm{dy} && \text{ uporabimo Greenovo formulo } \\
+&= \iint\limits_D^{} \left[ Y_u (\vec{r}) \frac{\partial x}{\partial x} + Y_v(\vec{r}) \frac{\partial y}{\partial x} + Y_w (\vec{r}) \frac{\partial f(x, y)}{\partial x} + (Z_u + Z_w f_x) f_y + Z f_{xy} \right. \\
+& \left. -\left[ X_v + X_w \cdot f_y + (Z_v + Z_w f_y) f_x + Z f_{xy} \right]\right] \,\mathrm{d x dy} \\
+&= \iiint\limits_D^{} (-f_x)(Z_v - Y_w) + (-f_y)(X_w - Z_u) + (Y_u - X_v) \,\mathrm{dx dy } \\
+&= \iint\limits_D^{} \left\langle (\rot \vec{F})(\vec{r}), \vec{N} \right\rangle \sqrt{1 + f_x ^2 + f_y ^2} \,\mathrm{d x dy} \\
+&= \iint\limits_M^{} \rot \vec{F} \,\mathrm{d }\vec{S}
+\end{align*}
+
+<p>
+kjer smo upoštevali \(  \mathrm{dz} = d(d(x, y)) = (f_x \mathrm{dx} + f_y \mathrm{dy}) \) ter smo v drugi vrstici odvajali po verižnem pravilu \( X = X(u, v, w), \,Y= Y(u, v, w) \).
+</p>
+</div>
+</div>
+<div id="outline-container-org736d7ee" class="outline-4">
+<h4 id="org736d7ee"><span class="section-number-4">1.1.3.</span> Posledica (pri Simonu opomba)</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Tudi \(  \rot \) je neodvisna od izbire ONB (ortonormirane baze v \(  \mathbb{R}^3 \)).
+</p>
+
+<p>
+<b>Dokaz</b> Naj bo \(  \vec{r}_0 \in \mathbb{R} ^3 \) in \(  \vec{F} \) vektorsko polje, definirano v okolici točke \(  \vec{r}_0 \).
+</p>
+
+<p>
+Vzemimo vektor \(  \vec{n} \in \mathbb{R} ^3 \) in označimo s \(  \Pi_{\vec{n}} \) ravnino v \(  \mathbb{R} ^3 \) skozi točko \(  \vec{r}_0 \) in z normalo \(  \vec{n} \).
+</p>
+
+<p>
+Dodatne oznake:
+</p>
+<ul class="org-ul">
+<li>\(  K^2_{\vec{n}}(\vec{r}_0, \epsilon) \) je krog v \(  \Pi_{\vec{n}} \), s središčem v \(  \vec{r}_0 \) in radijem \(  \epsilon \).</li>
+<li>\(  S_{\vec{n}} ^1 (\vec{r}_0, \epsilon) \): krožnica</li>
+</ul>
+
+<p>
+Imamo
+</p>
+
+\begin{align*}
+  \left\langle \left( \rot \vec{F} \right)(\vec{r}_0), \vec{n} \right\rangle &= \lim_{\epsilon \to 0}  \frac{1}{\pi \epsilon ^2} \int\limits_{K^2_{\vec{n}}(\vec{r}_0, \epsilon)}^{}\left\langle \rot \vec{F}, \vec{n} \right\rangle\,\mathrm{d S} \\
+&\overset{\text{Stokes}}{=} \frac{1}{\pi} \lim_{\epsilon \to 0} \frac{1}{\epsilon ^2} \int\limits_{S_{\vec{n}}^{1}(\vec{r}_0, \epsilon)}^{} \vec{F} \,\mathrm{d }\vec{r} && S_{\vec{n}}^1(\vec{r}_0, \epsilon) \text{ neodvisen od izbire koordinat}
+\end{align*}
+
+<p>
+Opomba, da če je \(  f \) zvezna, potem je \(  f(s) = \lim_{\epsilon \to 0}  \) povprečje \(  f \) na \(  K(s, \epsilon) \)
+</p>
+
+<p>
+Pišimo \(  \vec{v} = \left( \rot \vec{F} \right)(\vec{r}_0) \). Videli smo, da je \(  \left\langle \vec{v}, \vec{n} \right\rangle \) neodvisen od izbire ONB \(  \forall \vec{n} \), iz česar sledi, da je \(  \vec{v} \) neodvisen od izbire baze.
+</p>
+
+<p>
+Naj bo \(  \left\{ e_1, e_2, e_3 \right\} \) ONB v \(  \mathbb{R}^3 \). Označimo za
+</p>
+
+\begin{align*}
+  a &= \sum\limits_1^3 \undd{a}_j e_j; && a_j = \left\langle a, e_j \right\rangle \\
+b &= \sum\limits_1^3 \undd{b} e_j \\
+\left\langle a, b \right\langle &= \sum\limits_{j=1}^3 a_j b_j
+\end{align*}
+
+<p>
+Naj bo \(  \left\{ f_1, f_2, f_3 \right\} \) neka druga ONB. Označimo
+</p>
+
+\begin{align*}
+  a &= \sum\limits_{j=1}^3 A_j f_j \\
+b &= \sum\limits_1^3 B_j f_j
+\end{align*}
+
+<p>
+Označimo \(  \left[ a, b \right] = \sum\limits_1^3 A_j, B_j \)
+</p>
+
+<p>
+Definiramo linearno preslikavo
+</p>
+
+\begin{align*}
+  \Lambda: \mathbb{R} ^3 &\to \mathbb{R} ^3 \\
+\Lambda: e_1 &\mapsto f_1 \\
+e_2 &\mapsto f_2 \\
+e_3 &\mapsto f_3
+\end{align*}
+
+<p>
+\(  \Lambda \) je ortogonalna transformacija, ker ohranja dolžine
+</p>
+
+\begin{align*}
+  \lVert \Lambda x \rVert ^2 &= \lVert x \rVert ^2 \\
+\left\langle \Lambda x, \Lambda x \right\rangle &= \left\langle x, x \right\rangle \\
+\left\langle \Lambda \Lambda^T x, x \right\rangle &= \left\langle x, x \right\rangle
+\end{align*}
+
+<p>
+\(  \square \)
+</p>
+</div>
+</div>
+<div id="outline-container-org7753655" class="outline-4">
+<h4 id="org7753655"><span class="section-number-4">1.1.4.</span> Primer 6.9 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Naj bo \(  M \)  zgornja polovica enotske sfere v \(  \mathbb{R} ^3 \), torej graf funkcije \(  f(x, y) = \sqrt{1 - x ^2 - y ^2}; \ (x, y) \in K^2(0, 1)  \).
+</p>
+
+<p>
+Vzamemo še \(  \vec{F} = \vec{F}(x, y, z) = (3yz, -xz, xy) \). Izračunajmo
+</p>
+
+<p>
+\[ I = \iint\limits_M^{} \rot \vec{F} \,\mathrm{d }\vec{S}
+\]
+</p>
+
+<ol class="org-ol">
+<li>direktno</li>
+</ol>
+
+<p>
+\[ \rot \vec{F} = \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\
+\partial_x & \partial_y & \partial_z \\
+3yz & -xz & xy
+\end{vmatrix} = (2x, 2y, -4z)
+\]
+</p>
+
+<p>
+Kar pomeni, da je naš integral enak
+</p>
+
+\begin{align}\label{ali:1}
+  I &= \iint\limits_{}^{} \left\langle (2x, 2y, -4z), (x, y, z) \right\rangle \,\mathrm{d x} \, \mathrm{dy} \\
+&= 2 \iint\limits_{}^{} (x ^2 + y ^2 -2z ^2) \,\mathrm{d x} \, \mathrm{dy} && z ^2 = 1 - (x ^2 + y ^2) \\
+&= 2 \iint\limits_{}^{} \left[ 3(x ^2 + y ^2) - 2 \right] \,\mathrm{d x} \, \mathrm{dy} \\
+&= 6 \iint\limits_{}^{} (x ^2 + y ^2) \,\mathrm{d x}\, \mathrm{dy} = 6 J = -4 (\text{ površina } M)
+\end{align}
+
+
+<p>
+Označili smo
+\[ J = \iint\limits_{}^{} (x ^2 + y ^2) \,\mathrm{d x} \, \mathrm{dy} = \int\limits_0^{2\pi} \int\limits_0^1 r ^2\,\mathrm{d r}\,\mathrm{d }\phi
+\]
+</p>
+
+<p>
+Parametrizacija za \(  M \) je
+</p>
+
+<p>
+\[ \vec{R} (r, \phi) = \left( r \cos \phi, r \sin \phi, \sqrt{1 - r ^2} \right);\ r\in [0, 1], \ \phi \in [0, 2\pi)
+\]
+</p>
+
+
+<p>
+To je parametrziacija &ldquo;polsfere&rdquo;  \(  M \).
+</p>
+
+<p>
+Velja
+</p>
+
+\begin{align*}
+  \vec{R}_r \times \vec{R}_{\phi} &= \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\
+\cos \phi & \sin \phi  & - \frac{r}{\sqrt{1 - r ^2}} \\
+-r \sin \phi & r \cos \phi & 0
+\end{vmatrix} \\
+&= \left( \frac{r ^2}{ \sqrt{1 - r ^2}} \cos \phi, \frac{r ^2}{ \sqrt{1 - r ^2}} \sin\phi, r \right)
+\end{align*}
+
+<p>
+Iz česar sledi, da je
+</p>
+
+\begin{align*}
+  \left| \vec{R}_r \times \vec{R}_{\phi} \right| &= \sqrt{\frac{r ^4}{1 - r ^2} + r ^2} \\
+&= \sqrt{\frac{r ^4 + r ^2 - r ^4}{ 1 - r ^2}} = \frac{r}{ \sqrt{1 - r ^2}}
+\end{align*}
+
+<p>
+To je neke vrste Jacobi
+</p>
+
+\begin{align*}
+  J &= 2 \pi \int\limits_0^1 \frac{r ^3}{\sqrt{1 - r ^2}}\,\mathrm{d r} && t = 1- r ^2 \\
+&= 2\pi \int\limits_0^1 \frac{r ^2}{\sqrt{1 -r ^2}} r\,\mathrm{d r} \\
+&= 2\pi \int\limits_{0 }^{1} \frac{1 - t}{\sqrt{t}} \left( - \frac{1}{2} \right)\,\mathrm{d t} \\
+&= \pi \int\limits_0^1 \frac{1 - t}{\sqrt{t}}\,\mathrm{d t} \\
+&= \pi \left( \int\limits_0^1 \left( t ^{- \frac{1}{2}} - t^{\frac{1}{2}} \right)\,\mathrm{d t} \right) = \ldots = \frac{4 \pi}{3}
+\end{align*}
+
+<p>
+Če nadaljujemo \ref{ali:1}, to pomeni, da je
+</p>
+
+<p>
+\[ I = 6J - 8 \pi = 0
+\]
+</p>
+
+<ol class="org-ol">
+<li>Stokesov izrek</li>
+</ol>
+
+<p>
+Na \(  \partial M  \) je \(  \vec{F}(x, y, z) = (0, 0, xy) \).
+</p>
+
+\begin{align*}
+  I &= \int\limits_{}^{} \vec{F}\,\mathrm{d } \vec{r} \\
+&= \int\limits_{\partial M}^{} \left\langle \vec{F}, \odv{r} \right\rangle\,\mathrm{d S} = 0 \quad \square
+\end{align*}
+
+<p>
+Saj je \(  \odv{r} \in \left\{ z = 0 \right\} \) in je posledično skalarni produkt enak 0.
+</p>
+
+<p>
+Spomnimo, če je
+</p>
+
+<ul class="org-ul">
+<li>\(  \vec{v} \in \mathbb{R} ^3 \)</li>
+<li>\(  u \) zvezna realna funkcija na okolici točke \(  \vec{v} \)</li>
+<li>\(  \vec{a} \in \mathbb{R} ^3;\, \left| \vec{a} \right| = 1\)</li>
+</ul>
+
+<p>
+Tedaj je smerni odvod funkcije \(  u \) v točki \(  \vec{v} \) in v smeri \(  \vec{a} \) definiran kot
+</p>
+
+
+<div id="org82c8e3d" class="figure">
+<p><img src="figures/smerni_odvod.svg" alt="smerni_odvod.svg" class="org-svg" />
+</p>
+</div>
+
+\begin{align*}
+  \frac{\partial u}{\partial \vec{a}} (\vec{v}) &= \phi' (0) && \phi(t) = u(\vec{v} + t \vec{a}) \\
+&= \lim_{h \to 0} \frac{\phi(h) - \phi(0)}{h} = \lim_{h \to 0} \frac{u(\vec{v} + h \vec{a}) - u (\vec{a})}{h}
+\end{align*}
+
+
+<p>
+Vemo:
+</p>
+
+<p>
+\[ \frac{\partial u}{\partial \vec{a}} (\vec{v}) = \left\langle \nabla u (\vec{v}), \vec{a} \right\rangle; \, \nabla = (\partial_x, \partial_y, \partial_z)
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org1e2e127" class="outline-4">
+<h4 id="org1e2e127"><span class="section-number-4">1.1.5.</span> Izrek 6.12 - Greenovi identiteti (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+Naj bo \(  \Omega \subset \mathbb{R} ^3 \) odprta množica z gladkim robom in \(  u, \, v \) gladki skalarni polji, definirani na neki okolici \(  \bar{\Omega} \).
+Tedaj velja
+</p>
+
+<ol class="org-ol">
+<li>Greenova identita</li>
+</ol>
+
+<p>
+\[ \iint\limits_{\partial \Omega}^{} u \frac{\partial v}{\partial \vec{n}} \, \mathrm{dS} = \iiint\limits_{\Omega}^{} (u \Delta v + \left\langle \nabla u, \nabla v \right\rangle) \,\mathrm{d V }
+\]
+</p>
+
+<p>
+kjer je \(  \vec{n} \) enotska zunanja normala na \(  \partial \Omega \) in je \(  \Delta = \frac{\partial ^2}{\partial x ^2} + \frac{\partial ^2}{\partial y ^2} + \frac{\partial ^2}{\partial z ^2}     \) Laplaceov operator.
+</p>
+<ol class="org-ol">
+<li>Greenova identiteta</li>
+</ol>
+
+<p>
+\[ \iint\limits_{\partial \Omega}^{} \left( u \frac{\partial v}{\partial \vec{n}} - v \frac{\partial u}{\partial \vec{n}}   \right) \,\mathrm{d S} =   \iiint\limits_{\Omega}^{} \left( u \Delta v - v \Delta u \right) \,\mathrm{d V}
+\]
+</p>
+
+<p>
+<b>Dokaz</b>: 2. Greenova identiteta sledi iz 1. z zamenjavo vlog \(  u \leftrightarrow v \) ter odštevanjem.
+</p>
+
+<p>
+*Dokaz 1. Greenove identitete: Uporabimo Gaussovo formulo za \(  \vec{F} = u \nabla v = u \left( v_x, v_y, v_z \right) \).
+</p>
+
+
+\begin{align*}
+ \iiint\limits_{\Omega}^{} \dive \vec{F} \,\mathrm{d V} &= \iiint\limits_{\Omega}^{} \left( u \Delta v + \left\langle \nabla u, \nabla v \right\rangle \right) \,\mathrm{d V}\\
+&\overset{\text{Gauss}}{=} \iint\limits_{\partial \Omega}^{} \vec{F} \,\mathrm{d } \vec{S} \overset{(1)}{=} \iint\limits_{\partial \Omega}^{} \left\langle \vec{F}, \vec{n} \right\rangle \,\mathrm{d S} \\
+&= \iint\limits_{\partial \Omega}^{} \left\langle u \nabla v, \vec{n} \right\rangle \,\mathrm{d S} \\
+&= \iint\limits_{}^{} u \left\langle \nabla u, \vec{n}  \right\rangle \,\mathrm{d S} \\
+&= \iint\limits_{}^{} u \frac{\partial v}{\partial \vec{n}}  \,\mathrm{d S} && \square
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org15c929f" class="outline-4">
+<h4 id="org15c929f"><span class="section-number-4">1.1.6.</span> Posledica 6.13 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<p>
+Za \(  u = 1 \) dobimo
+</p>
+
+<p>
+\[ \iint\limits_{\partial \Omega}^{} \frac{\partial v}{\partial \vec{n}}  \,\mathrm{d S} = \iiint\limits_{\Omega}^{} \Delta v  \,\mathrm{d V}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgdad06e8" class="outline-4">
+<h4 id="orgdad06e8"><span class="section-number-4">1.1.7.</span> Preglednica definicij integralov</h4>
+<div class="outline-text-4" id="text-1-1-7">
+\begin{array}{|c|c|c|} \hline
+\text{integralsko območje / polje} & \text{skalarno } (f) & \text{vektorsko } (\vec{F})\\ \hline
+\text{ krivulja } \vec{r}= \vec{r}(t); t \in J \subset \mathbb{R} & \int\limits_J^{} f(\vec{r}(t)) \left| \odv{r}(t) \right|\,\mathrm{d t} & \int\limits_J^{} \left\langle \vec{F}(\vec{r}(t)), \odv{r} (t) \right\rangle\,\mathrm{d t} \\ \hline
+\text{ploskev } \vec{r} = \vec{r} (u, v), \ (u, v) \in D \subset \mathbb{R} ^2 & \iint\limits_D^{} f(\vec{r}(u, v)) \left| \odv{r}_u \times \odv{r}_v \right| \,\mathrm{d u} \, \mathrm{dv} & \iint\limits_D^{} \left\langle \vec{F}(\vec{r}(u, v)), \odv{r}_u \times \odv{r}_v \right\rangle \,\mathrm{du}\,\mathrm{dv} \\\hline
+\end{array}
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf92ea48" class="outline-2">
+<h2 id="orgf92ea48"><span class="section-number-2">2.</span> Diferencialne enačba</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Razlika med enačbo in formulo:
+</p>
+
+<p>
+Formula je izraz, da se leva stran lahko izrazi kot desno.
+</p>
+
+<p>
+Enačba pa je naloga, iz katere moramo nekaj izračunati.
+</p>
+
+<p>
+Enačbe (naloge, problemi), v katerih nastopajo <i>odvodi funkcij</i>, ki jih <i>iščemo</i>.
+</p>
+
+<p>
+Temelj je \(  y' = f \), kjer je \(  f \) podana in iščemo \(  y \). Rešitev so &#x2026;, integrali, &#x2026; (Mat1).
+</p>
+
+<ul class="org-ul">
+<li>Navadne diferencialne enačbe: iščemo funkcijo <i>ene</i> spremenljivke, predvsem pa nastopajo odvodi po <i>eni</i> spremenljivki.</li>
+<li>Parcialne diferencialne enačbe: iščemo funkcijo <i>več</i> spremenljivke, predvsem pa</li>
+</ul>
+<p>
+nastopajo odvodi po <i>večih</i> spremenljivkah.
+</p>
+
+<p>
+S slednjimi se ne bomo ukvarjali.
+</p>
+
+<p>
+Splošna oblika navadne diferencialne enačbe (krajše NDE)
+</p>
+
+<p>
+\[ F(x, y, y', y'', \ldots, y^{(n)}) = 0
+\]
+</p>
+
+<p>
+kjer je \(  F \) podana, \(  y=y(x) \) pa iščemo.
+</p>
+
+<p>
+Temeljna vprašanja:
+</p>
+<ul class="org-ul">
+<li>obstoj (ali rešitev obstaja?)</li>
+<li>definicijsko območje (Kje je definirana, če ja, za katere \(  x \in \mathbb{R} \)?)</li>
+<li>enoličnost (Imamo eno rešitev, če ne, koliko jih je? Če jih je več ali so medseboj odvisne)</li>
+<li>eksplicitnost (ali znamo rešitev zapisati?)</li>
+<li>lastnosti rešitve (odvedljivost rešitve, v matematičnem smislu velika, stabilnost)</li>
+</ul>
+
+<p>
+<i>Primer</i> karbonične funkcije (PDE) in lastnosti rešitev:
+</p>
+
+<p>
+upoštevamo \(  \Delta = \partial ^2_x + \partial_y ^2 \) in rešujemo enačbo \(  \Delta u = 0; \, u: \mathbb{R} ^2 \to \mathbb{R} ^2 \).
+</p>
+
+<p>
+Pogoje je, da je \(  u \in C^2 \). Če naš \(  u \) reši Laplaceovo enačbo, potem sledi, da je \(  u \in C^{\infty} \) (ekstremno regularna funkcija).
+</p>
+
+<p>
+<i>Primer</i> stabilnosti pri enačbi z začetnimi pogoji (ang. <i>initial conditions</i>):
+</p>
+
+<p>
+Če imamo enačbo \(  F(x, y, y') = 0 \) z začetnimi pogoji \(  y(x_0) = y_0 \). Kako se majhna sprememba začetnega pogoja odraža na rešitvi enačbe.
+</p>
+
+<p>
+Francoz J. Hadamard je definiral pojem <i>dobro postavljene enačbe</i>.
+</p>
+
+<p>
+Red enačbe je najvišja stopnja odvoda, ki v enačbi nastopi. To pomeni, da je
+</p>
+
+<p>
+\[ y' = 3 \sin y + x ^5
+\]
+</p>
+
+<p>
+je enačba 1. reda in
+</p>
+
+<p>
+\[ y ^6 + y y ''' = -8 \log \left| x \right|
+\]
+</p>
+
+<p>
+je enačba 3. reda
+</p>
+
+<p>
+<b>Eksplicitne</b> enačbe prvega reda so oblike \(  y' = f(x, y) \) in implicitne enačbe prvega reda so oblike \(  F(x, y, y') = 0 \).
+</p>
+</div>
+<div id="outline-container-org09ad8be" class="outline-3">
+<h3 id="org09ad8be"><span class="section-number-3">2.1.</span> Primeri</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li>\(  y' = f(x) \)</li>
+</ol>
+
+<p>
+Rešitev je
+</p>
+
+<p>
+\[ y(\mathbf{x}) := \int\limits_{x_0}^{\mathbf{x}} f(\xi) \,\mathrm{d }\xi
+\]
+</p>
+
+<p>
+kar je /Riemann-Darbouxov določeni integrali funkcije \(  f \) po \(  [x_0, x] \) in velja \(  y(x_0) = 0 \)
+</p>
+
+<p>
+Splošna rešitev je
+</p>
+
+<p>
+\[ y(x) = \int\limits_{x_0}^x f(\xi) \,\mathrm{d }\xi + C, \, C = \text{konst} \in \mathbb{R}
+\]
+</p>
+<ol class="org-ol">
+<li>\(  y'' = f(x) \)</li>
+</ol>
+
+<p>
+To lahko prevedemo na primer 1), ker lahko zapišemo
+</p>
+
+<p>
+\[ (y')' = g'(x) = f(x)
+\]
+</p>
+
+<p>
+iz česar potem sledi splošna rešitev
+</p>
+
+<p>
+\[ y'(x) = \int\limits_{x_0}^x f(\xi) \,\mathrm{d }\xi + C = g(x)
+\]
+</p>
+
+<p>
+kjer je \(  y' = g \). Splošna rešitev je odvisna od dveh konstant \(  C, D \in \mathbb{R} \)
+</p>
+</div>
+</div>
+<div id="outline-container-orga8f356d" class="outline-3">
+<h3 id="orga8f356d"><span class="section-number-3">2.2.</span> Načelo</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Splošna rešitev enačbe n-tega reda bo odvisna od n konstant (nimamo še orodja, s katerim bi to dokazali).
+</p>
+</div>
+</div>
+<div id="outline-container-org77095ce" class="outline-3">
+<h3 id="org77095ce"><span class="section-number-3">2.3.</span> Cauchyjeva naloga</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Je enačba z začetnimi pogoji in je eksplicitna enačba 1. reda.
+</p>
+
+\begin{align*}
+  y' &= f(x, y) \\
+y(x_0) &= y_0
+\end{align*}
+
+<p>
+Tu je \(  f \) podana, \(  x_0, y_0 \in \mathbb{R} \) prav tako \(  y = y(x) \) pa iščemo
+</p>
+</div>
+</div>
+<div id="outline-container-org402492e" class="outline-3">
+<h3 id="org402492e"><span class="section-number-3">2.4.</span> Polje smeri</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Poglejmo
+</p>
+
+\begin{equation}
+\label{eq:3}
+y' = f(x, y)
+\end{equation}
+
+<p>
+Ocenimo\/predvidimo\/zaslutimo rešitev ne, da bi jo izračunali. Temelj je dejstvo, da je tangente na graf (= smer grafa) funkcije podana z odvodom.
+</p>
+
+<p>
+Enačba \ref{eq:1} nam pove, da če gre rešitev \(  y \) skozi točko \(  (x_0, y_0) \) mora biti njen naklon (smer!) enak \(  f(x_0, y_0) \), kar je enolično določena količina.
+</p>
+
+<p>
+Označimo/zabeležimo jo s kratko črtico skozi \(  (x_0, y_0) \) v smeri \(  f(x_0, y_0) \). Če to naredimo za dovolj gosto mrežo točk \(  (x_0, y_0) \) lahko zaslutimo dinamiko rešitev oz. obliko grafa \(  y \).
+</p>
+
+<blockquote>
+<p>
+Tako kot študentje včasih ne vedo, katera rešitev je prava in zapišejo obe, tudi jaz zapišem več samostalnikov/glagolov, da me bolje razumete.
+</p>
+</blockquote>
+</div>
+<div id="outline-container-org8cb4527" class="outline-4">
+<h4 id="org8cb4527"><span class="section-number-4">2.4.1.</span> Primer</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+Rešujemo enačbo
+</p>
+
+<p>
+\[ y' = - \frac{x}{y} = f(x, y)
+\]
+</p>
+
+<p>
+Vidimo, da \(  \forall k \in \mathbb{R} \) velja
+</p>
+
+\begin{align*}
+  y' = k & \iff - \frac{x}{y} = k \\
+& \iff y = - \frac{1}{k}x
+\end{align*}
+
+<p>
+V splošnem \(  (x, - \frac{1}{k} x) \) je točka na premici \(  N_k \). \(  (1, k) \) je tangentni vektor. Skalarni produkt teh dveh vektorjev je
+</p>
+
+<p>
+\[ \left\langle (x, - \frac{1}{k}, x), (1, k) \right\rangle  = 0
+\]
+</p>
+
+<p>
+iz česar sledi, da je vsaka točka pravokotna na tangentni vektor.
+</p>
+
+<p>
+Analitična rešitev diferencialne enačbe je
+</p>
+
+\begin{align*}
+  y ' &= - \frac{x}{y} && \left. \right/ \cdot y \\
+y y' + x &= 0 \left. \right/ \cdot 2 \\
+2y y' + 2x &= 0 \\
+(y ^2 + x ^2) ' &= 0 \\
+\end{align*}
+
+<p>
+Rešitev je torej enotska krožnica s središčem v 0:
+</p>
+
+<p>
+\[ x ^2 + y ^2 = C
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org96ec178" class="outline-3">
+<h3 id="org96ec178"><span class="section-number-3">2.5.</span> Eulerjeva metoda</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+za približno reševanje diferencialnih enačb. Imejmo Cauchyjevo nalogo \(  y' = f(x, y) \) in \(  y(x_0) = y_0 \).
+</p>
+
+<p>
+Izberemo \(  x \in \mathbb{R} \) in rečemo, da je \(  x > x_0 \). Interval \(  [x_0, x] \) razdelimo na \(  n \) enakih delov:
+</p>
+
+<p>
+\[ x_0 < x_1 <x_2 < \ldots < x_n = x
+\]
+</p>
+
+<p>
+Torej
+</p>
+
+<p>
+\[ x_j = x_0 + \frac{x - x_0}{n} j
+\]
+</p>
+
+<p>
+Definiramo \(  \frac{x - x_0}{n} = h \) in rečemo, da je \(  n \) velik, kar pomeni, da je \(  h  \) majhen.
+</p>
+
+<p>
+Izračunamo \(  y' (x_0)  \) tako, da vstavimo v \(  f(x_0, y_0) \). Upoštevamo, da je za vsako funkcijo tangenta najboljši linearni približek.
+</p>
+
+<p>
+Ker je \(  h = x_1 - x_0 \) majhen, je \(  x_1 \) blizu \(  x_0 \), zato je \(  y(x_1) \) blizu vrednosti tangente na \( \Gamma_y\), ki jo poznamo, v točki \(  (x_0, y_0) \), kar pa znamo izračunati. To vrednost označimo z \(  y_1 \). S postopkom nadaljujemo, v točki \(  x_1  \) rešujemo nov Cauchyjev problem
+</p>
+
+\begin{align*}
+  y ' &= f(x, y) \\
+y_1 &= y(x_1)
+\end{align*}
+
+<p>
+Po \(  n \) korakih se postopek ustavi in dobimo oceno za \(  y(x_n) = y(x) \).
+</p>
+
+<p>
+Tangenta skozi \(  (x_{j -1}, y_{j - 1}) \) z naklonom \(  f(x_{j -1}, y_{j - 1}): Y - y_{j-1} = f(x_{j-1}, y_{j-1} (X - x_{j-1}))  \), kjer smo označili \(  Y = y_j \text{ in } X = x_j \).
+</p>
+
+<blockquote>
+<p>
+Včasih me je prav sram, kako preproste stvari govorim&#x2026; pa še plačan sem.
+</p>
+</blockquote>
+
+<p>
+Imamo
+</p>
+
+\begin{align}\label{ali:2}
+  x_j &= x_{j - 1} + h \\
+y_j &= y_{j - 1} + f(x_{j -1}, y_{j - 1})h
+\end{align}
+</div>
+<div id="outline-container-org496353d" class="outline-4">
+<h4 id="org496353d"><span class="section-number-4">2.5.1.</span> Primer 7.3 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+Imamo problem \(  y' = y \) z začetnim pogojem \(  y(0) = 1 \).
+</p>
+
+<p>
+Vzamemo \(  x > 0 , \, n \in \mathbb{N} \). Po algoritmu \ref{ali:2} dobimo v splošnem
+\(  y_j = (1 + h) y_{j - 1} \)
+</p>
+
+\begin{align*}
+  y_0 &= 1 \\
+y_1 &= 1 + 1 \cdot h = 1 + h \\
+y_2 &= (1 + h ) ^2 \\
+&\vdots \\
+y_n &= (1 + h )^n = \left(1 + \frac{x}{n}\right)^n && \text{ ocena za } y(x)
+\end{align*}
+
+<p>
+Iz tega sledi, da je
+</p>
+
+<p>
+\[ y(x) \doteq  \left(1 + \frac{x}{n}\right) ^n
+\]
+</p>
+
+<p>
+Boljši približek dobimo z večanjem \(  n \). Torej pogledamo
+</p>
+
+<p>
+\[ \lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^n = e ^x
+\]
+</p>
+
+<p>
+Kar je pa eksaktna rešitev našega Cauchyjevega problema.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb9e630c" class="outline-3">
+<h3 id="orgb9e630c"><span class="section-number-3">2.6.</span> Reševanje nekaterih osnovnih tipov navadnih diferencialnih enačb</h3>
+<div class="outline-text-3" id="text-2-6">
+</div>
+<div id="outline-container-orga17631f" class="outline-4">
+<h4 id="orga17631f"><span class="section-number-4">2.6.1.</span> Enačba z ločljivimi spremenljivkami</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+To so enačbe z oblike
+</p>
+
+<p>
+\[ y ' = P(x) \cdot Q(y) \overset{\text{(2)}}{=} (P \otimes Q)(x, y)
+\]
+</p>
+
+<p>
+(2): matematiki temu jokingly rečejo tenzorski produkt
+</p>
+
+<p>
+za dani funkciji \(  P, \, Q \).
+</p>
+
+<p>
+Primer enačbe je \(  y' = e^{x + y} \). Primer enačb, ki to niso pa so \(  y' = \sin (xy) \) ali \(  y' = e^{xy} \).
+</p>
+
+<p>
+Funkcijo preoblikujemo
+</p>
+
+<p>
+\[ \frac{y'}{Q(y)} = P(x)
+\]
+</p>
+
+<p>
+in ker je definicija \(  y' = \frac{\mathrm{d} y}{\mathrm{d}x} \), iz česar potem sledi
+</p>
+
+\begin{align}
+  \int\limits_{}^{}\frac{1}{Q(y)}\,\mathrm{d y} &= \int\limits_{}^{}P(x)\,\mathrm{d x} \label{ali:3}\\
+F(y) &= G(x)
+\end{align}
+
+<p>
+Če dano odvajamo po \(  x \)-u, potem
+</p>
+
+\begin{align*}
+  F(y) &= G(x) && \left. \right/ \frac{\mathrm{d} }{\mathrm{d}x} \\
+F'(y) y' &= G'(x) && \text{ verižno pravilo } \\
+\frac{1}{Q(y)} &= P(x) \\
+\implies \frac{y'}{Q(y)} &= P(x) && \text{se ujema s čimer smo začeli }
+\end{align*}
+
+<p>
+Včasih dlje od integrala ne moremo priti in je integral rešitev (se moramo tudi to naučiti videti), npr. \(  y(x) = \int\limits_0^x e^{t ^2}\,\mathrm{d t} \)
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgadb1591"></a>Primer 7.4<br />
+<div class="outline-text-5" id="text-2-6-1-1">
+<p>
+Rešujemo enačbo \(  y' = y \), kjer sta \(  P(x) = 1 \) in \(  Q(y) = y \).
+</p>
+
+<p>
+Ob upoštevanju \ref{ali:3} dobimo
+</p>
+
+\begin{align*}
+  \int\limits_{}^{} \frac{1}{y}\,\mathrm{d y} &= \int\limits_{}^{}\,\mathrm{d x} \\
+\log \left| y \right| &= x + C  \\
+\left| y \right| &= e ^{x + C} = D e^x
+\end{align*}
+
+<p>
+Delimo na dva primera:
+</p>
+<ol class="org-ol">
+<li>za \(  D = 0  \) je \(  y = 0 \)</li>
+<li>za \(  D \ne 0 \) \(  y \) nima ničle in je \(  y \) enolično predznačen na \(  \mathbb{R} \).</li>
+</ol>
+<p>
+Rešitev je tako
+</p>
+
+<p>
+\[ y = \tilde{D} e^x
+\]
+</p>
+
+<p>
+za neki \(  \tilde{D} \in \mathbb{R} \)
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org6361dd4" class="outline-4">
+<h4 id="org6361dd4"><span class="section-number-4">2.6.2.</span> Linearna navadna diferencialna enačba prvega reda 7.2 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<p>
+To je enačba oblike
+</p>
+
+\begin{equation}
+\label{eq:4}
+ y' + py = q
+\end{equation}
+
+<p>
+kjer sta \(  p, q \) podani funkciji, \(  y \) pa iščemo. (torej linearna kombinacija \(  y, \, y' = q \)).
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgf1d9c42"></a>Trditev 7.1 (p.S.)<br />
+<div class="outline-text-5" id="text-2-6-2-1">
+<p>
+Rešitve za \(  y \) so <i>afin</i> prostor. (linearno premaknjene rešitve, Če je \(  y_0 \) (katerakoli) rešitev in je \(  R \) prostor vseh rešitev za \ref{eq:4}, tedaj je
+</p>
+
+<p>
+\[ R- y_0 = \left\{ y - y_0; \, y \in R \right\}
+\]
+**
+linearen (=vektorski) prostor.
+</p>
+
+<p>
+Torej se linearna struktua enačbe zrcali v linearno strukturo rešitve.
+</p>
+
+<p>
+<b>Dokaz</b>: Naj bo \(  \mathrm{L}y := y' + py \), kjer je \(  \mathrm{L} \) diferencialni operator: operator je funkcija, ki vzame funkcijo in jo pretvori v neko novo funkcijo, če pa to naredi na diferencialni enačbi, pa je to diferencialni operator.
+</p>
+
+<p>
+Rešujemo \(  \mathrm{L} y = q \).
+</p>
+
+<p>
+Vzamemo \(  y_1, y_2 \in R - y_0 \). Trdimo, da je \(  y_1 + y_2 \in R - y_0 \). Ekvivalentno je, da vemo, da sta
+</p>
+\begin{align}\label{ali:5}
+  y_1 &+ y_0 \\
+\label{ali:6}
+  y_2 &+ y_0
+\end{align}
+<p>
+rešitvi za \ref{eq:4}. Hočemo pa, da je \(  y_1 + y_2 + y_0 \) rešitev za \ref{eq:4}.
+</p>
+
+<p>
+Velja
+</p>
+
+\begin{align*}
+  \mathrm{L} (y_1 + y_2 + y_0) &= L((y_0 + y_1) + (y_0 + y_2) - y_0) \\
+&\overset{\text{ L linearen}}{=} L(y_0 + y_1) + L(y_0 + y_2) - Ly_0 \\
+&= q + q - q = q
+\end{align*}
+
+<p>
+kjer smo v drugi vrstici upoštevali po vrsti \ref{ali:5}, \ref{eq:6} ter predpostavko, da je \(  y_0 \) neka rešitev (kateratkoli).
+</p>
+
+<p>
+Podobo prevermo zaprtost za množenje s skalarji \(  \lambda y_1 \in R - y_0 \). \(  \square \)
+</p>
+
+<p>
+Opazimo
+</p>
+
+<p>
+\[ R- y_0 = \left\{ y;\, \mathrm{L} y = 0 \right\}
+\]
+</p>
+
+<p>
+Vzamemo \(  w \in R \). Tedaj \(  \mathrm{L} (w - y_0) = \mathrm{L} w - \mathrm{L} y_0 = q - q = 0 \), kjer je \(  w - y_0 \in R - y_0 \).
+</p>
+
+<p>
+Če je \(  \mathrm{L}z = 0 \), tedaj \(  \mathrm{L}(z + y_0) = \mathrm{L}z  \mathrm{L}y_0 + q \ \implies \ z + y_0 \in R \) oz.
+</p>
+
+<p>
+\[ R = y_0 + \left\{ y;\, \mathrm{L}y = 0 \right\}
+\]
+</p>
+
+<p>
+kjer je \(  y_0 \) partikularna rešitev, \(  \left\{ y;\, \mathrm{L}y = 0 \right\} \) prostor rešitev homogene enačbe \(  y' + py = 0 \), na kratko homogena rešitev.
+</p>
+
+<p>
+Rešitev je tako sestavljena iz
+</p>
+
+<p>
+\[ y_{\text{spl}} = y_{\text{part}} + y_{\text{hom}}
+\]
+</p>
+
+<p>
+<b>Reševanje</b>: Kako bi rešili \(  y' + py = q \), kjer bi želeli odvod produkta oblike
+</p>
+
+<p>
+\[ (yg) ' = y' g + g' y = q
+\]
+</p>
+
+<p>
+kjer \(  g \) ne poznamo.
+</p>
+
+<p>
+Tako našo \ref{eq:4} pomnožimo z \(  m \) in dobimo
+</p>
+
+\begin{align*}
+  my' + mpy &= qm \\
+(y g)' &= q && \text{ želimo }  \\
+my' + mpy &= gy' + g' y \\
+\implies m &= g \\
+\implies mpy &= m' y \\
+\implies mp &= m' \\
+\implies \frac{m'}{m} &= p \\
+\implies \left( \log \left| m \right| \right) &= p
+\end{align*}
+
+<p>
+Tako rešujemo RD integral
+</p>
+
+\begin{align}
+  \log \left| m(x) \right| &= \int\limits_{x_0}^x p(\xi) \,\mathrm{d }\xi \\
+m(x) &= e ^{\int\limits_{x_0}^x p(\xi) \,\mathrm{d }\xi} \label{ali:7}
+\end{align}
+
+<p>
+Iz enačbe
+</p>
+
+<p>
+\[ \left( y' m \right) = qm
+\]
+</p>
+
+<p>
+lahko izračunamo \(  y \)
+</p>
+
+\begin{align*}
+  (ym)(x) &= \int\limits_{x_0}^x q(\eta) m(\eta) \,\mathrm{d }\eta \\
+y(x) &= \frac{1}{m(x)} \int\limits_{x_0}^x q(\eta), m(\eta) \,\mathrm{d }\eta
+\end{align*}
+
+<p>
+kjer je \(  m \) podan s formulo \ref{ali:7}.
+</p>
+
+<p>
+\(  x_0 \) pri \ref{ali:7} in \(  y(x) \) nista nujno enaka. Če sta, moramo vpeljati konstanto \(  C \)
+</p>
+
+\begin{align*}
+  (ym)(x) &= \int\limits_{x_0}^x q(\eta) m(\eta) \,\mathrm{d }\eta + C \\
+y(x) &= \frac{1}{m(x)} \int\limits_{x_0}^x q(\eta), m(\eta) \,\mathrm{d }\eta + \frac{C}{m(x)}
+\end{align*}
+</div>
+</li>
+<li><a id="org1d65ec3"></a>Izrek<br />
+<div class="outline-text-5" id="text-2-6-2-2">
+<p>
+Splošna rešitev linearne diferencialne enačbe \ref{eq:4} se glasi
+</p>
+
+<p>
+\[ y(x) = Ce ^{- P(x)} + e^{-P(x)} \int\limits_{x_0}^x q(s) e^{P(s)}\,\mathrm{d s}; \quad C \in \mathbb{R}
+\]
+</p>
+
+<p>
+kjer je
+</p>
+
+\begin{equation}
+\label{eq:5}
+ P(x) = \int\limits_{x_0}^x p(\xi) \,\mathrm{d }\xi
+\end{equation}
+
+
+<p>
+in je \(  x_0 \) poljubna točka na intervalu, na katerem je \(  p \) definiran.
+</p>
+
+<p>
+Če potegnemo vzporednice, vidimo, da je rešitev res enoparametrična družina rešitev:
+</p>
+
+\begin{align*}
+  Ce^{-P(x)} &= y_{\text{hom}} \\
+e^{-P(x)} \int\limits_{x_0}^x q(s) e ^{P(s)}\,\mathrm{d s} &= y_{\text{par}}
+\end{align*}
+
+<p>
+Formula velja ṡe naprej, če \(  P \) iz zveze \ref{eq:5} nadomestimo s \(  P + D \) za neko konstanto \(  D \in \mathbb{R} \)
+</p>
+
+
+<div id="org9153d51" class="figure">
+<p><img src="figures/resitveLDE.svg" alt="resitveLDE.svg" class="org-svg" />
+</p>
+</div>
+</div>
+</li>
+<li><a id="org45f4e93"></a>Primer<br />
+<div class="outline-text-5" id="text-2-6-2-3">
+<p>
+Imamo enačbo
+\[ y' + \frac{y}{1 -x} = \frac{1}{1-x}
+\]
+</p>
+
+<p>
+Vpeljemo spremenljivko \(  z \) s predpisom
+</p>
+
+<p>
+\[ y(x) = z(1 - x) \text{ oz. } z(t) = y(1 - t); \quad t = 1 - x
+\]
+</p>
+
+<p>
+Iz tega sledi, da
+</p>
+
+<p>
+\[ y' (x) = - z' (x)
+\]
+</p>
+
+<p>
+Enačba se glasi:
+</p>
+
+<p>
+\[ - z (t) + \frac{z(t)}{t} = \frac{1}{t} \text{ oz. } z' - \frac{z}{t} = \frac{1}{t}
+\]
+</p>
+
+<p>
+To je linearna diferencialna enačba za \(  p(t) = q(t) = \frac{1}{t} \). Po izreku je rešitev
+</p>
+
+\begin{align*}
+  P(t) &= \int\limits_{t_0}^t p(\tau) \,\mathrm{d }\tau \\
+&= -\int\limits_{t_0}^t \frac{1}{\tau}\,\mathrm{d }\tau \\
+&= \log \left| t_0 \right| - \log \left| t \right|
+\end{align*}
+
+<p>
+Lahko vzamemo \(  P(t) = - \log \left| t \right| \). Konjugirani vrednosti konstante \(  \log \left| t_0 \right| \) se pri partikularni rešitvi izničita, pri homogeni rešitvi pa konstanto skrijemo v konstanto \(  C \).
+</p>
+
+<p>
+Sledi, da je
+</p>
+
+\begin{align*}
+  z(t) &= C e^{\log \left| t \right|} + e ^{\log \left| t \right|} \int\limits_{t_0}^t \left( -\frac{1}{s} \right) e^{- \log \left| s \right|}\,\mathrm{d s} \\
+&= C \left| t \right| - \left| t \right| \int\limits_{t_0}^t \frac{1}{s \left| s \right|}\,\mathrm{d s} && t \cdot t_0 > 0, \text{ enako predznačena } \\
+\int\limits_{t_0}^t \frac{1}{s \left| s \right|}\,\mathrm{d s} &= \begin{cases}
+- \frac{1}{t}; \ t > 0 \\
+\frac{1}{t}; \ t < 0
+\end{cases} + \tilde{C} \\
+&= \tilde{C} - \frac{1}{\left| t \right|}
+\end{align*}
+
+<p>
+\(  t, t_0 \) morata biti enako predznačena, drugače ima integral pol.
+</p>
+
+<p>
+Tako dobimo, da je rešitev
+</p>
+
+<p>
+\[ z(t) = C \left| t \right| - \left| t \right| \left( \tilde{C} - \frac{1}{\left| t \right|} \right) = (C - \tilde{C}) \left| t \right| + 1; \ t \ne 0
+\]
+</p>
+
+<p>
+Torej
+</p>
+
+<p>
+\[ z(t) = 1 + \begin{cases}
+At; \ t > 0\\
+Bt; \ t < 0
+\end{cases}
+\]
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgf7f476d" class="outline-4">
+<h4 id="orgf7f476d"><span class="section-number-4">2.6.3.</span> Bernouliijeva diferencialna enačba 7.3 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<p>
+Bernoullijeva diferencialna enačbe je oblike
+</p>
+
+<p>
+\[ y' + py = qy^{\alpha};
+\]
+</p>
+
+<p>
+kjer sta \(  p, q \) sta dani funkciji in \(  \alpha \in \mathbb{R} \) dan.
+</p>
+
+<p>
+Za \(  \alpha = 1 \) dobimo homogeno LDE, za \(  \alpha = 0 \) imamo LDE. Brez izgube za splošnost (BSŠ) rečemo \(  \alpha \ne 0, 1 \)
+</p>
+
+<p>
+Delimo z \(  y^{\alpha} \) in uvedemo novo spremenljivko \(  z = y ^{1 - \alpha} \) dobimo
+</p>
+
+\begin{align*}
+  y ^{-\alpha} y' + p y^{1-\alpha} &= q && z' = \frac{1}{1 - \alpha} y^{-\alpha} y' \\
+\frac{z'}{1 - \alpha} + p z &= q
+\end{align*}
+
+<p>
+Dobimo
+</p>
+
+<p>
+\[ z' + (1 - \alpha) pz = (1 - \alpha) q
+\]
+</p>
+
+<p>
+kar pa je LDE, kar že znamo rešiti.
+</p>
+</div>
+</div>
+<div id="outline-container-org22a608d" class="outline-4">
+<h4 id="org22a608d"><span class="section-number-4">2.6.4.</span> Riccatijeva diferencialna enačba 7.5 (p.S.)</h4>
+<div class="outline-text-4" id="text-2-6-4">
+<p>
+To je enačba oblike
+</p>
+
+<p>
+\[ y ' = ay ^2 + by + c
+\]
+</p>
+
+<p>
+kjer so \(  a, b, c \) podane funkcije in \(  a \ne 0 \). Če je \(  c = 0 \) dobimo Bernoullijevo enačbo.
+</p>
+
+<p>
+<b>Reševanje</b>: <i>Če</i> poznamo (uganemo, najdemo na cesti, vseeno) eno rešitev, označimo jo z \(  y_1 \), tedaj splošno rešitev dobimo s substitucijo \(  y = z + y_1 \)
+</p>
+
+<p>
+\[ z' + y'_1 = a (z ^2 + 2az y_1 + y_1 ^2) + b (z + y_1) + c
+\]
+</p>
+
+<p>
+ker poznamo \(  y_1 \), velja \(  y'_1 = ay_1 ^2 + b y_1 + c \) in tako dobimo
+</p>
+
+<p>
+\[ z' = a z ^2 + (2 a y_1 + b) z
+\]
+</p>
+
+<p>
+kjer količine \(  a, (2 a y_1 + b) \) poznamo. To je pa Bernoullijeva enačba, ki jo znamo rešiti.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-11-27 Wed 19:52</p>
+</div>
+</body>
+</html>
