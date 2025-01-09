@@ -1,0 +1,1351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-09 Thu 15:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden13</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden13</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1492204">1. Navadne diferencialne enačbe</a>
+<ul>
+<li><a href="#orgf4fb582">1.1. Linearne diferencialne enačbe višjega reda</a>
+<ul>
+<li><a href="#org8b5fc3a">1.1.1. Izrek 7.18 (p.S.)</a></li>
+<li><a href="#org4b9ec58">1.1.2. Primer 7.18</a></li>
+</ul>
+</li>
+<li><a href="#org0e56f0b">1.2. Iskanje rešitev homogene enačbe s konstantnimi koeficienti</a>
+<ul>
+<li><a href="#org58322e7">1.2.1. Definicija 7.11 (p.S.)</a></li>
+<li><a href="#org6d00dc3">1.2.2. Trditev 7.19 (p.S.)</a></li>
+<li><a href="#org8a1468c">1.2.3. Primer</a></li>
+<li><a href="#orgc078797">1.2.4. Trditev 7.20</a></li>
+<li><a href="#org2cfe56f">1.2.5. Zgled 7.19</a></li>
+</ul>
+</li>
+<li><a href="#orgff7d819">1.3. Eulerjeva diferencialna enačba</a>
+<ul>
+<li><a href="#org2b31f12">1.3.1. Trditev 7.21</a></li>
+<li><a href="#orgb8a191d">1.3.2. Posledica</a></li>
+<li><a href="#org3c0485a">1.3.3. Primer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb1bff25">2. Variacijski račun</a>
+<ul>
+<li><a href="#orged17e2c">2.1. Definicija 8.1</a></li>
+<li><a href="#orgeb1529d">2.2. (Variacijski) Lema 8.1</a></li>
+<li><a href="#org7c58912">2.3. Izrek 8.2</a></li>
+<li><a href="#org1e85774">2.4. Gibljiva krajišča</a></li>
+<li><a href="#orged5f7cc">2.5. Special Ed</a>
+<ul>
+<li><a href="#orga4b7bf0">2.5.1. Lagrangian oblike \(  L = L(x, y') \)</a></li>
+<li><a href="#org58c677e">2.5.2. Lagrangian oblike \(  L = L(y, y') \)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1492204" class="outline-2">
+<h2 id="org1492204"><span class="section-number-2">1.</span> Navadne diferencialne enačbe</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf4fb582" class="outline-3">
+<h3 id="orgf4fb582"><span class="section-number-3">1.1.</span> Linearne diferencialne enačbe višjega reda</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org8b5fc3a" class="outline-4">
+<h4 id="org8b5fc3a"><span class="section-number-4">1.1.1.</span> Izrek 7.18 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Če so \(  y_1, \ldots, y_n \) linearne neodvisne rešitve enačbe \(  \mathrm{L}y = 0 \), tedaj je partikularna rešitev (nehomogene) enačbe
+</p>
+
+<p>
+\[ a_n y^{(n)} + a_{n-1} y_{(n-1)} + \ldots a_1 y' + a_0 y = f
+\]
+</p>
+
+<p>
+podana z \(  c_1 y_1 + \ldots + c_n y_n \), kjer je
+</p>
+
+\begin{equation}
+\label{eq:1}
+ (c_1, \ldots, c_n)^T (x) = \int\limits_{x_0}^x \frac{f(\xi)}{a_n(\xi)} Y_n^{-1} (\xi) \,\mathrm{d }\xi
+\end{equation}
+
+<p>
+in je \(  Y_n^{-1} \) zadnji stolpec matrike \(  Y^{-1} \), pričeme jer
+</p>
+
+<p>
+\[ Y^{-1} = \begin{bmatrix}
+y_1 & \ldots & y_n \\
+\vdots & \ddots & \vdots \\
+y_1^{(n-1)} & \ldots & y_n^{(n-1)}
+\end{bmatrix}
+\]
+</p>
+
+<p>
+Za skalarno funkcijo \(  W(x) = \det Y(x) \) velja
+</p>
+
+<p>
+\[ W(x) = W(x_0) e^{-\int\limits_{x_0}^x \frac{a_{n-1}}{a_n} (\xi) \,\mathrm{d }\xi}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org4b9ec58" class="outline-4">
+<h4 id="org4b9ec58"><span class="section-number-4">1.1.2.</span> Primer 7.18</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Rešujemo enačbo
+</p>
+
+<p>
+\[ (1 - \log x) y'' + \frac{1}{x} y' - \frac{1}{x ^2} y = \frac{1}{x ^2} = a_2 y ''' + a_1 y' - a_0 y = b, \ x > 0
+\]
+</p>
+
+<p>
+Rešitev št. 1 je za domačo nalogo.
+Rešitev št. 2, sistematična:
+</p>
+
+<p>
+Imejmo (vnparej podani) rešitvi homogenega dela:
+</p>
+
+<p>
+\[ y_1 = x \quad y_2 = \log x
+\]
+</p>
+
+<p>
+Poiṡčimo partikularno rešitev \(  y_p \). Vzamemo nastavek \ref{eq:1}
+</p>
+
+<p>
+\[ y_p = c_1 y_1 + c_2 y_2
+\]
+</p>
+
+<p>
+kjer je
+</p>
+
+<p>
+\[ (c_1, c_2)^T (x) = \int\limits_{x_0}^x \frac{b(\xi)}{a_2 (\xi)}\,\mathrm{d }\xi
+\]
+</p>
+
+<p>
+kjer je \(  Y_2^{-1} \) drugi stolpec matrike
+</p>
+
+<p>
+\[ \begin{bmatrix}
+y_1 & y_2 \\
+y_1 ' & y_2 '
+\end{bmatrix} ^{-1} = \begin{bmatrix}
+x & \log x \\
+1 & \frac{1}{x}
+\end{bmatrix} ^{-1} = \frac{1}{1 - \log x} \begin{bmatrix}
+\frac{1}{x} & - \log x \\
+-1 &  x
+ \end{bmatrix}
+\]
+</p>
+
+<p>
+torej
+</p>
+
+<p>
+\[ Y_2 ^{-1} (x) = \frac{1}{1 - \log x } \begin{bmatrix} - \log x \\ x \end{bmatrix}
+\]
+</p>
+
+<p>
+Sledi
+</p>
+
+\begin{align*}
+  (c_1, c_2)^T (x) &= \int\limits_{x_0}^x \frac{\frac{1}{\xi ^2}}{1 - \log \xi} \cdot \frac{1}{1 - \log \xi} \begin{bmatrix} - \log \xi \\ \xi \end{bmatrix}\,\mathrm{d }\xi \\
+&= \int\limits_{x_0}^x \begin{bmatrix} \frac{- \log \xi }{\xi ^2 (1 - \log \xi) ^2} \\ \frac{1}{\xi (1 - \log \xi) ^2} \end{bmatrix}\,\mathrm{d } \xi \\
+&= \left. \begin{bmatrix} - \frac{1}{\xi (1 - \log \xi) }\\ \frac{1}{1 - \log \xi} \end{bmatrix} \right|_{\xi = x_0} ^{\xi= x}
+\end{align*}
+
+<p>
+Lahko vzamemo
+</p>
+
+\begin{align*}
+  y_p &= c_1 y_1 + c_2 y_2 \\
+&= - \frac{1}{x(1 - \log x)} \cdot x + \frac{1}{1 - \log x} \log x = -1
+\end{align*}
+
+<p>
+Denimo, da je podan le \(  y_1 = x \). Kako dobimo \(  y_2 \)?
+</p>
+
+<p>
+Odgovor:
+</p>
+
+\begin{align*}
+  W &= \begin{bmatrix}
+y_1 & y_2 \\
+y_1 ' & y_2 '
+ \end{bmatrix} \\
+&= \begin{bmatrix} x & y_2 \\ 1 & y_2' \end{bmatrix} = xy_2 ' - y_2 \\
+&= \left( \frac{y_2}{x} \right) ' \cdot x ^2
+\end{align*}
+
+<p>
+Hkrati je za \(  n = 2  \)
+</p>
+
+\begin{align*}
+  W(x) &= W(x_0) e^{- \int\limits_{x_0}^x \frac{a_1 (\xi) }{a_2 (\xi)}\,\mathrm{d } \xi} \\
+&= W(x_0) e^{- \int\limits_{x_0}^x \frac{1}{\xi(1 - \log \xi)}\,\mathrm{d }\xi} \\
+&= W(x_0) e^{ \left. \log \left| 1 - \log \xi \right| \right|_{\xi = x_0}^{\xi = x}} \\
+&= W(x_0) \frac{\left| 1 - \log x \right|}{ \left| 1 - \log x_0 \right|}
+\end{align*}
+
+<p>
+Iz česar sledi
+</p>
+
+<p>
+\[ W(x) = \frac{W(x_0)}{\left| 1 - \log x_0 \right|} \cdot \left| 1 - \log x \right|
+\]
+</p>
+
+<p>
+Lahko vzamemo \(  W = 1 - \log x \). Sledi
+</p>
+
+<p>
+\[ \left( \frac{y_2}{x} \right)' \cdot x ^2 = W = 1 - \log x
+\]
+</p>
+
+\begin{align*}
+  \left( \frac{y_2}{x} \right) ' &= \frac{1 - \log x}{x ^2} \\
+&= \left( \frac{\log x}{x} \right)'
+&\implies \frac{y_2}{x} = \frac{\log x}{x} + C
+\end{align*}
+
+<p>
+Če vzamemo \(  C = 0 \), dobimo prej dobljeni rezultat \(  y_2 = \log x \)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0e56f0b" class="outline-3">
+<h3 id="org0e56f0b"><span class="section-number-3">1.2.</span> Iskanje rešitev homogene enačbe s konstantnimi koeficienti</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Naj bo \(  n \in \mathbb{N} \), \(  a_1, \ldots, a_n \in \mathbb{R} \). Obravnavamo enačbe
+</p>
+
+\begin{equation}
+\label{eq:2}
+\sum\limits_{j=0}^n a_j y^{(j)} = 0
+\end{equation}
+</div>
+<div id="outline-container-org58322e7" class="outline-4">
+<h4 id="org58322e7"><span class="section-number-4">1.2.1.</span> Definicija 7.11 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Karakteristični polinom diferencialne enačbe \ref{eq:2} je definirana kot
+</p>
+
+<p>
+\[ p(\lambda) = \sum\limits_{j= 0 }^n a_j \lambda^j
+\]
+</p>
+
+<p>
+Karakteristična enačba za \ref{eq:2} pa je \(  p(\lambda) = 0 \)
+</p>
+</div>
+</div>
+<div id="outline-container-org6d00dc3" class="outline-4">
+<h4 id="org6d00dc3"><span class="section-number-4">1.2.2.</span> Trditev 7.19 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Če je \(  \lambda \) ničla karakterističnega polinoma \(  p \), tedaj je \(  y(x) = e^{\lambda x} \) rešitev diferencialne enačbe \ref{eq:2}.
+</p>
+
+<p>
+<b>Dokaz</b>: Uporabimo \(  y^{(j)} (x) = \lambda^j e^{\lambda x} \). Sledi
+</p>
+
+\begin{align*}
+  \sum\limits_{j=1}^n a_j y^{(j)}= p(\lambda) e^{\lambda x} = 0 \\
+p \left( \frac{\mathrm{d} }{\mathrm{d} x} \right) = 0
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org8a1468c" class="outline-4">
+<h4 id="org8a1468c"><span class="section-number-4">1.2.3.</span> Primer</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ol class="org-ol">
+<li>\(  y'' + 2y' + y = 0 \)</li>
+</ol>
+
+\begin{align*}
+  p(\lambda) &= \lambda ^2 + 2 \lambda + 1 \\
+&= (\lambda + 1) ^2
+\end{align*}
+
+<p>
+Iz tega sledi, da je \(  \lambda = -1 \) ničla za \(  p \) in \(  y(x) = e^{-x} \) je (ena) rešitev enačbe.
+</p>
+<ol class="org-ol">
+<li>\(  y'' + 3y ' + 2y = 0 \)</li>
+</ol>
+
+\begin{align*}
+  p(\lambda) &= \lambda ^2 + 3 \lambda + 2 = (\lambda + 1)(\lambda +2)
+\end{align*}
+
+<p>
+Ničli za polinomi \(  p \) sta \(  \lambda= -1, -2 \), kar pomeni, da sta rešitvi
+</p>
+
+<p>
+\(  y(x) = e^{-x}, \ y= e^{-2x} \)
+</p>
+
+<ol class="org-ol">
+<li><p>
+\(  y''' + 3y'' + 3y' + y = 0 \)
+</p>
+
+<p>
+Rešitve so \(  \lambda = -1 \) (trojna ničla), kar pomeni da je \(  y = e^{-x} \) ena rešitev.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc078797" class="outline-4">
+<h4 id="orgc078797"><span class="section-number-4">1.2.4.</span> Trditev 7.20</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+Imejmo enačbo
+</p>
+
+\begin{equation}
+\label{eq:3}
+ a_n y^{(n)} + \ldots + a_1 y' + a_0 y = 0
+\end{equation}
+
+<p>
+Če je pripradajoči karakteristični polinom enak
+</p>
+
+<p>
+\[ a_n (\lambda - \lambda_1)^{k_1} \ldots (\lambda - \lambda_m)^{k_m}
+\]
+</p>
+
+<p>
+tedaj bazo prostora rešitev enačbe \ref{eq:3} tvorijo funkcije
+</p>
+
+\begin{align*}
+  e^{\lambda_1 x}, \ xe^{\lambda_1 x}, &\ldots, \ x^{k_1 - 1}e^{\lambda_1 x} \\
+&\vdots \\
+e^{\lambda_m x}, \ x e^{\lambda_m x}, &\ldots, x^{k_m - 1} e^{\lambda_m x}
+\end{align*}
+
+<p>
+<b>Dokaz</b>: Izpuščen zaradi primanjkovanja časa, je pa na voljo v spletni učilnici.
+</p>
+</div>
+</div>
+<div id="outline-container-org2cfe56f" class="outline-4">
+<h4 id="org2cfe56f"><span class="section-number-4">1.2.5.</span> Zgled 7.19</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<p>
+Rešujemo problem
+</p>
+
+<p>
+\[ y'' + y = x
+\]
+</p>
+
+<p>
+Partikularna rešitev je \(  x \). Homogena enačba je
+</p>
+
+<p>
+\[ y' ' + y = 0
+\]
+</p>
+
+<p>
+Karakteristična enačba je
+</p>
+
+<p>
+\[ \lambda ^2 + 1 = (\lambda - i)(\lambda + i) = 0
+\]
+</p>
+
+<p>
+Iz česar sledi, da sta rešitvi
+</p>
+
+\begin{align*}
+  y_1 &= e^{ix}\\
+y_2 &= e^{-ix}
+\end{align*}
+
+<p>
+Ker imam enačba realne koeficiente, jo rešita tudi \(  \Re y_1, \Im y_1 \)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgff7d819" class="outline-3">
+<h3 id="orgff7d819"><span class="section-number-3">1.3.</span> Eulerjeva diferencialna enačba</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+To je problem primer linearne diferencialne enačbe višjega reda, in sicer
+</p>
+
+\begin{equation}
+\label{eq:4}
+\sum\limits_{j= 0}^n a_j x^j y^{(j)} (x) = b(x), \ b \in \mathbb{R}
+\end{equation}
+
+<p>
+Za \(  s = -x \) velja
+</p>
+
+<p>
+\[ \sum\limits_{j= 0}^n a_j s_j w^{(j)} (s) = \sum\limits_{j=0}^n a^j x^j y^{(j)} (x)
+\]
+</p>
+
+<p>
+če je \(  w(s) := y(-x) \). Torej lahko enačbo obravnavamo za \(  x > 0 \).
+</p>
+</div>
+<div id="outline-container-org2b31f12" class="outline-4">
+<h4 id="org2b31f12"><span class="section-number-4">1.3.1.</span> Trditev 7.21</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Naj bo \(  k \in \mathbb{N} \) in \(  y: (0, \infty) \to \mathbb{R} \) razreda \(  C^k \). Definiramo \(  z \in C^k (\mathbb{R}) \) kot
+</p>
+
+<p>
+\[ z(t) = y(e^t);\ t \in \mathbb{R}
+\]
+</p>
+
+<p>
+Označimo operator (funkcijo, ki operira s funkcijo)
+</p>
+
+<p>
+\[ D = \frac{\mathrm{d} }{\mathrm{d} t}
+\]
+</p>
+
+<p>
+torej \(  Dg = g' \). Tedaj velja, za vsak \(  x = e^t > 0 \),
+</p>
+
+<p>
+\[ x^k y^k (x) = \left[ D(D - I) (D - 2I) \ldots (D - (k-1)I) z \right](t) = p_k (D)
+\]
+</p>
+
+<p>
+kjer je \(  I \) identiteta (torej \(  Ig = g \))
+</p>
+
+<p>
+<i>Komentar</i>:
+</p>
+<ul class="org-ul">
+<li>\(  p_1 (D) z = D z = \dot{z} \)</li>
+<li>\(  p_2 (D) z = \left[ D (D- I) \right] z = \left[ D ^2 - D \right] z = \ddot{z} - \dot{z} \)</li>
+<li>\(  p_3 (D) = \left[ D (D-I)(D- 2I) \right]z = [D ^3 - 3D ^2 + 2D] z = \dot{\ddot{z}} - 3 \ddot{z} + 2 \dot{z} \)</li>
+</ul>
+<p>
+<b>Dokaz</b>: Pri dokazu uporabimo matematično indukcijo (na \(  k \)):
+</p>
+
+<p>
+Za \(  k = 1 \) je leva stran, ki jo označimo z \(  L \)
+</p>
+
+<p>
+\[ L = x y'(x) = e^t y'(e^t)
+\]
+</p>
+
+<p>
+Desna stran označena z \(  D \) pa je
+</p>
+
+<p>
+\[ D = \left[ p_1(D) z \right] (t) = \dot{z} (t) = \frac{\mathrm{d} }{\mathrm{d} t} z(t) = \frac{\mathrm{d} }{\mathrm{d} t} y(e^t) = y' \left( e^t \right) \cdot e^t
+\]
+</p>
+
+<p>
+Če velja za \(  k \), potem velja \(  k + 1 \). Denimo, da zveza velja za neki \(  k \in \mathbb{N} \). Nanjo deluje z operatorjem
+</p>
+
+<p>
+\[ D - Ik: \phi \mapsto \dot{\phi} - k\phi
+\]
+</p>
+
+<p>
+S tem desna stran postane to, kar si želimo \(  \left( \left[ p_{k + 1} (D) z \right](t) \right) \).
+</p>
+
+<p>
+<i>Razpiši \(  p_{k+1} (D) \) in primerjaj z \(  p_k \), da vidiš, kako smo dobili operator \(  D - Ik \)</i>
+</p>
+
+<p>
+Leva stran
+</p>
+
+\begin{align*}
+  \left[ e^{kt} y^{(k)} \left( e^t \right)\right] \dot{} - k \left[ e^{kt} y^{(k)} (e^t) \right] &= \left( e^{kt} \right) \dot{} y^{(k)} (e^t) - k e^{kt} y^{(k)} (e^t) + \left( e^{kt} \right) \left[ y^{(k)} \left( e^{(t)} \right) \right] \dot{} \\
+&= e^{kt} \cdot k y^{(k) (e^t)} - k e^{kt} y^{(k)} (e^t) + e^{kt} y^{(k+1)} \left( e^t \right) \cdot e^t \\
+&= 0 + \left( \left[ p_{k+1} (D) z \right] (t) \right)
+\end{align*}
+</div>
+</div>
+<div id="outline-container-orgb8a191d" class="outline-4">
+<h4 id="orgb8a191d"><span class="section-number-4">1.3.2.</span> Posledica</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Eulerjeva enačba
+</p>
+
+<p>
+\[ \sum\limits_{j=1}^n a_j x^j y^{(j)} (x) = b(x), \ x> 0
+\]
+</p>
+
+<p>
+ob substituciji \(  z(t) = y \left( e^t \right) \) postane linearna enačba
+</p>
+
+<p>
+\[ \left[ \sum\limits_{k=0}^n a_k p_k (D) \right] z(t) = b(e^t)
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org3c0485a" class="outline-4">
+<h4 id="org3c0485a"><span class="section-number-4">1.3.3.</span> Primer</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+Rešujemo primer
+</p>
+
+<p>
+\[ x ^2 y'' 0 3 xy' + 3y = 1
+\]
+</p>
+
+<p>
+Z \(  z(t) = y(e^t) \) dobimo
+</p>
+
+\begin{align*}
+  1 \cdot p_2 (D) z - 3 p_1 (D) z + 3z &= 1\\
+\ddot{z} - \dot{z} - 3 \dot{z} + 3z &= 1 \\
+\ddot{z} - 4 \dot{z} + 3z = 1
+\end{align*}
+
+<p>
+Karakteristični polinom je tako
+</p>
+
+<p>
+\[ \lambda ^2 - 4 \lambda + 3 = (\lambda - 1) (\lambda - 3)
+\]
+</p>
+
+<p>
+Iz tega sledi, da je homogena rešitev
+</p>
+
+<p>
+\[ z_h (t) = C e^t + D e^{3t}
+\]
+Partikularna rešitev je \(  z_p = \frac{1}{3} \)
+</p>
+
+<p>
+Torej splošna rešitev je
+</p>
+
+<p>
+\[ z(t) = y(e^t) = \frac{1}{3} + Ce^t + D e^{3t}
+\]
+</p>
+
+<p>
+in tako je rešitev za \(  y \) za
+</p>
+
+<p>
+\[ y(x) = \frac{1}{3} + Cx + Dx ^3
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb1bff25" class="outline-2">
+<h2 id="orgb1bff25"><span class="section-number-2">2.</span> Variacijski račun</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Prevedeno na analizo 1: iščemo kandidate/funkcije, ki ustrezajo pojmu stacionarnih točk, vendar ne na realnem prostoru, ampak na nekem prostoru funkcij.
+</p>
+
+<blockquote>
+<p>
+Od kje to izhaja? Kakor za večino stvari v matematiki, ste krivi vi, fiziki.
+</p>
+</blockquote>
+
+<p>
+Naj bo \(  L = L (u, v, w): \mathbb{R} ^3 \to \mathbb{R} \) dana funkcija. Obravnavamo funkcional (Dragi si to predstavlja kot funkcijo, ki slika iz nekega bolj kompleksnega prostora (vektorski prostor - prostor funkcij) v realna števila)
+</p>
+
+<p>
+\[ I: y \mapsto \int\limits_a^b L(x, y' (x), y'' (x)) \,\mathrm{d x}
+\]
+</p>
+
+<p>
+&ldquo;Zanima nas, kje doseže ekstreme&rdquo; (navednice v kontekstu mat3, ker ni najbolj korektno, kaj je to ekstrem, kje je ta ekstrem (pod kakšnimi pogoji, itd))
+</p>
+
+<p>
+Funkciji \(  L \) pravimo <i>Lagrangeovo jedro</i> oz. <i>Lagragian</i>. Želimo najti nek pogoj na \(  L \) in \(  y \), ki bo potreben pogoj za to, da ima \(  I  \) v \(  y \) ekstrem.
+</p>
+
+<p>
+(Za \(  f: [a, b] \to \mathbb{R} \) je to pogoj \(  f'(x) = 0 \).)
+</p>
+
+<p>
+Ponavadi \(  I \) definiramo na nekem podrazredu \(  X \) v \(  C^1 (J) \), kjer je \(  J = [a,b] \).
+</p>
+
+<p>
+Pogosto dodamo pogoj, da ima \(  y \in X \) v krajiščih \(  (a, b) \) predpisane vrednosti
+</p>
+
+<p>
+\[ X = \left\{ y \in C^1(J);, y(a) = \alpha, \ y(b) = \beta  \right\}
+\]
+</p>
+
+<p>
+V tem primeru rečemo, da gre za nalogo s fiksnimi krajišči (sicer je z gibljivimi).
+</p>
+
+<p>
+Definirati rabimo ekstrem funkcionala. Pri odvodu je ekstrem tam, kjer če gremo malo levo ali desno od ekstrema imajo točke enako ali večjo vrednost (za minimum). Pri funkcionalu pojmov levo/desno/gor/dol ne moremo iti (kako boš šel malo levo od \(  \sin x \)?).
+</p>
+
+<p>
+Pri definiciji odvoda, naredimo z \(  f(x_0 + h) \) variacijo točke \(  x_0 \):
+</p>
+
+<p>
+\[ \lim_{n \to 0} \frac{f(x_0 + h) - f(x_0)}{h}
+\]
+</p>
+
+<p>
+Če imamo funkcional \(  I: X \to \mathbb{R}, \ X \subset C^1(J) \), je variacija funkcije <b>oblike</b>
+</p>
+
+<p>
+\[ I(f_0 + h \epsilon ) - I(f_0)
+\]
+</p>
+</div>
+<div id="outline-container-orged17e2c" class="outline-3">
+<h3 id="orged17e2c"><span class="section-number-3">2.1.</span> Definicija 8.1</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Lokalni ekstrem oz. ekstremala funkcije \(  I \) definiramo kot funkcijo \(  y\in X \), v kateri ima ekstrem v <i>vsem smereh</i>. To pomeni, da ima za vsako gladko funkcijo \(  \eta \), za katero je \(  y + \epsilon \eta \in X \) za dovolj majhne \(  \epsilon \), na realnih številih (oz. na nekem odprtem intervalu v \(  \mathbb{R} \) ) definirana funkcija
+</p>
+
+<p>
+\[ \epsilon \mapsto I (y + \epsilon \eta)
+\]
+</p>
+
+<p>
+ekstrem v točki \(  0 \).
+</p>
+
+
+<div id="org7dfddba" class="figure">
+<p><img src="figures/funkcijskiProstor.png" alt="funkcijskiProstor.png" />
+</p>
+</div>
+
+<p>
+Stacionarna &ldquo;točka&rdquo; funkcionala \(  I \) je funkcija \(  y \in X \), za katero velja, da je
+</p>
+
+\begin{equation}
+\label{eq:5}
+\left. \frac{\mathrm{d} }{\mathrm{d} \epsilon} I (y + \epsilon \eta) \right|_{\epsilon = 0} = 0
+\end{equation}
+
+<p>
+Zožamo npr. na premico \(  \mathrm{exp} \) (glej sliko) in tam iščemo ekstrem (kar je pa je potem \(  \mathbb{R} \to \mathbb{R} \)) in to naredimo v vseh smereh.
+</p>
+
+<p>
+Želimo preprostejši pogoj za \(  L, \ y \), ki bo potrebej pogoj za \ref{eq:5}. Temu pogoju pravimo <i>Euler-Lagrangeov pogoj</i>. Naj bo \(  J \subset \mathbb{R} \) omejen zaprt interval. Označimo
+</p>
+
+
+<div id="orge39b964" class="figure">
+<p><img src="figures/C01Jmnozica.png" alt="C01Jmnozica.png" />
+</p>
+</div>
+
+<p>
+\[ C_0^1 (J) = \left\{ \eta \in C^1(J); \ \left. \eta \right|_{\delta J} = 0 \right\}
+\]
+</p>
+
+<p>
+Množici \(  C_0^1 \) pravimo testne funkcije. Ničla v indeksu pove, da ima funkcija v krajišču vrednost 0.
+</p>
+
+<p>
+[vstavi skico]
+</p>
+</div>
+</div>
+<div id="outline-container-orgeb1529d" class="outline-3">
+<h3 id="orgeb1529d"><span class="section-number-3">2.2.</span> (Variacijski) Lema 8.1</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Naj bo \(  J = [a, b] \) kot prej in \(  f \in C(J) \). Če velja
+</p>
+
+\begin{equation}
+\label{eq:7}
+ \int\limits_J^{} f \eta \,\mathrm{d } = 0, \ \forall \eta \in C_0^1 (J)
+\end{equation}
+
+
+<p>
+tedaj je \(  f \equiv 0 \) na \(  J \) oz. \(  \forall x \in J: \ f(x) = 0 \).
+</p>
+
+<p>
+<i>Opomba: brez zveznosti ta lema ne drži</i>
+</p>
+
+<p>
+<b>Dokaz</b>: Denimo, da sklep ne velja, torej \(  f \not \equiv 0 \), torej obstaja \(  x\in J \), v katerem \(  f(x) \ne 0 \).
+</p>
+
+
+<div id="orgf5ce3a5" class="figure">
+<p><img src="figures/variacijskaLema.png" alt="variacijskaLema.png" />
+</p>
+</div>
+
+<p>
+Privzemimo, da je \(  f(x) \gneqq 0 \). Ker je \(  f \) zvezna, obstaja \(  \delta > 0 \) tako, da velja na \(  (x - \delta, x + \delta) \cap J \) velja \(  f(t) \le \frac{f(x) }{2}; t \in (x - \delta, x + \delta) \cap J \).
+</p>
+
+<p>
+Sedaj definiramo
+</p>
+
+<p>
+\[ \eta = \begin{cases}
+\eta \le 0 \\
+\eta > 0; \ (x - \delta, x + \delta) \cap J \\
+\eta = 0, \text{ else}
+\end{cases}
+\]
+</p>
+
+<p>
+Sledi
+</p>
+
+<p>
+\[ \int\limits_J^{} f \eta\,\mathrm{dx} = \int\limits_{\left( x - \delta, x + \delta \right)\cap J}^{} f \eta \,\mathrm{d x} + \int\limits_{\text{else}}^{} f \eta\,\mathrm{dx} \lneq 0
+\]
+</p>
+
+<p>
+ker je prvi integral večji od 0, drugi pa je enak 0.
+</p>
+
+<p>
+Primer funkcije \(  \eta \) je
+</p>
+
+<p>
+\[ \eta = \begin{cases}
+0, \ x \le 0\\
+e^{- \frac{1}{x}}, \ x > 0
+\end{cases}
+\]
+</p>
+
+<p>
+Ki jo potem zrcalimo in množimo.
+</p>
+</div>
+</div>
+<div id="outline-container-org7c58912" class="outline-3">
+<h3 id="org7c58912"><span class="section-number-3">2.3.</span> Izrek 8.2</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Naj bo \(  J = [a, b] \subset \mathbb{R} \) in \(  L : J \times \mathbb{R} \times \mathbb{R} \to \mathbb{R} \) zvezno odvedljivana vse spremenljivke. Vzamemo še \(  X \subset C^1 (J) \) in naj bo \(  y \in X \) takšna, da je
+</p>
+
+<p>
+\[ y + C_0^1 (J) \subset X
+\]
+</p>
+
+<p>
+Opomba: če je \(  A \) množica in \(  f \) funkcija, potem je \(  f + A = \left\{ f + g, g \in A \right\} \)
+</p>
+
+<p>
+Če je \(  y \) stacionarna točka za funkcional \(  I: X \to \mathbb{R} \) definiran s predpisom
+</p>
+
+<p>
+\[ I(y) + \int\limits_a^b L(x, y, y') \,\mathrm{d x}
+\]
+</p>
+
+<p>
+tedaj \(  y \) ustreza Euler-Lagrangeovemu (oznaka za naprej EL) pogoju
+</p>
+
+<p>
+\[ L_y (x, y, y') = \frac{\mathrm{d} }{\mathrm{d} x} L_{y'} (x, y, y')
+\]
+</p>
+
+<p>
+<i>Interpretacija</i>: \(  L \) je funkcija treh spremenljivk \(  u \in J,\ v \in \mathbb{R},\ w \in \mathbb{R} \)
+</p>
+
+<p>
+\[ \frac{\partial L}{\partial v} L(x, y(x), y'(x)) = \frac{\mathrm{d} }{\mathrm{d} x} \left[ \frac{\partial L}{\partial w} (x, y(x), y'(x))  \right], \ x \in [a, b]
+\]
+</p>
+
+<p>
+Načeloma sta \(  y \) in \(  y' \) funkciji \(  x \), v tem daljšem zapisu, pa je v resnici odvod po drugi in tretji spremenljivki.
+</p>
+
+<p>
+S pomočjo EL se problem iskanja stacionarnih točk funkcionala \(  I \) &ldquo;prevede&rdquo; na reševanje diferencialne enačbe drugega reda. Ni pa integracije.
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Spomnimo: če je \(  y \) stacionarna točka za \(  I \) mora po definiciji veljati
+</p>
+
+\begin{equation}
+\label{eq:6}
+\left. \frac{\mathrm{d} }{\mathrm{d} \epsilon} I(y + \epsilon \eta)  \right|_{\epsilon=0} = 0, \ \eta \text{ (testno funkcijo)}
+\end{equation}
+
+
+
+<p>
+Vzamemo torej \(  \eta \in C_0^1 (J) \). Po privzetku je \(  y + \epsilon \eta \in X \ \forall \epsilon \in \mathbb{R} \). Definiramo funkcijo \(  F(I, y, \eta): \mathbb{R} \to \mathbb{R} \) s predpisom:
+</p>
+
+<p>
+\[ F(\epsilon) = I (y + \epsilon \eta)
+\]
+</p>
+
+<p>
+Funkcija \(  F \) nam je všeč, ker slika iz \(  \mathbb{R} \) v \(  \mathbb{R} \) in smo na &ldquo;domačem terenu analize 1&rdquo;.
+</p>
+
+\begin{align*}
+  F(\epsilon) &= I(y + \epsilon \eta) \\
+&= \int\limits_a^b L(x, y(x) + \epsilon \eta(x), y' + \epsilon \eta'(x) \,\mathrm{d x} \\
+\end{align*}
+
+<p>
+Ker smo privzeli, da je \(  y \) stacionarna točka za \(  I \), mora veljati \(  F'(0) = 0 \) (\ref{eq:6})
+</p>
+
+<p>
+Računamo torej
+</p>
+
+\begin{align*}
+  F'(\epsilon) &= \frac{\mathrm{d} }{\mathrm{d} \epsilon} \int\limits_a^b L(x, y + \epsilon \eta, y' + \epsilon \eta') \,\mathrm{d x} \\
+&= \int\limits_a^b \frac{\partial }{\partial \epsilon} L(x, y+\epsilon \eta, y' + \epsilon \eta')  \,\mathrm{d x} && \text{ definiramo } \omega_{\epsilon} (x) = (x, y + \epsilon \eta, y' + \epsilon \eta') \\
+&= \int\limits_a^b \left[ \frac{\partial L}{\partial u} \left( \omega_{\epsilon} (x) \right) \frac{\partial x}{\partial \epsilon} + \frac{\partial L}{\partial v} \left( \omega_{\epsilon} (x) \right) \frac{\partial \left( y + \epsilon \eta \right)}{\partial \epsilon} + \frac{\partial L}{\partial w} \left( \omega_{\epsilon} (x) \right) \frac{\partial \left( y' + \epsilon \eta' \right)}{\partial \epsilon}  \right]\,\mathrm{d x} \\
+&= \int\limits_a^b \left[ \frac{\partial L}{\partial v} (\omega_{\epsilon}) \cdot \eta   + \frac{\partial L}{\partial w} \left( \omega_{\epsilon} \right) \cdot \eta' \right] \,\mathrm{d x}
+\end{align*}
+
+<p>
+Uporabiti moramo pogoj \(  F'(0) \).
+</p>
+
+<p>
+Definiramo \(  \omega_0 = \omega_0 (x) = (x, y(x), y'(x)) \)
+</p>
+
+\begin{align*}
+F' (0) &= \int\limits_a^b \left[ \frac{\partial L}{\partial v} \left( \omega_0 \right) \cdot \eta + \frac{\partial L}{\partial w} \left( \omega_0 \right) \cdot \eta'   \right]\,\mathrm{d x}
+\end{align*}
+
+<p>
+Iz \ref{eq:6} torej dobimo
+</p>
+
+\begin{equation}
+\label{eq:8}
+ \int\limits_a^b \left[ \frac{\partial L}{\partial v} \left( \omega_0 \right) \cdot \eta + \frac{\partial L}{\partial w} \left( \omega_0 \right) \cdot \mathbf{\eta'} \right]\,\mathrm{d x}, \ \forall \eta
+\end{equation}
+
+
+<p>
+Če želimo pogoj oblike \ref{eq:7}, moramo integrirati po delih, da se znebimo \(  \eta ' \). Iz pogoja \ref{eq:8} z integracijo po delih (tako, da \(  \eta' \) integriramo in dobimo \(  \eta \)) dobimo
+</p>
+
+\begin{align*}
+  0 &= \int\limits_a^b \frac{\partial L}{\partial v} (\omega_0) \eta   \,\mathrm{d x} + \left. \eta \cdot \frac{\partial L}{\partial w} \right|_{x = a}^{x=b} - \int\limits_a^b \eta \frac{\mathrm{d} }{\mathrm{d}x} \left[ \frac{\partial L}{\partial w} (\omega_0) \right] \,\mathrm{d x} \\
+&=  \int\limits_a^b \left( \frac{\partial L}{\partial v} (\omega_0) - \frac{\mathrm{d} }{\mathrm{d} x} \left[ \frac{\partial L}{\partial w} (\omega_0)  \right]  \right) \eta\,\mathrm{d x} + \frac{\partial L}{\partial w} (\omega_0) \eta(b) - \frac{\partial L}{\partial w} (\omega_0)\eta(a) && \text{ predpostavka je } \eta \in C_0^1 (J) \land \eta(a) = \eta(b) = 0 \\
+&=  \int\limits_a^b \left( \frac{\partial L}{\partial v} (\omega_0) - \frac{\mathrm{d} }{\mathrm{d} x} \left[ \frac{\partial L}{\partial w} (\omega_0)  \right]  \right)\eta\,\mathrm{d x}
+\end{align*}
+
+<p>
+Dokazali smo, če je \(  y \) stacionarna točka za \(  I \), tedaj je
+</p>
+
+<p>
+\[ \int\limits_a^b \left( \frac{\partial L}{\partial v} (\omega_0) - \frac{\mathrm{d} }{\mathrm{d} x} \left[ \frac{\partial L}{\partial w} (\omega_0)  \right]  \right)\eta \,\mathrm{d x} = 0, \ \forall \eta \in C_0^1 (J)
+\]
+</p>
+
+<p>
+Uporabimo variacijsko lemo \ref{eq:7}  in dobimo
+</p>
+
+<p>
+\[ \frac{\partial L}{\partial v} (\omega_0) - \frac{\mathrm{d} }{\mathrm{d} x} \left[ \frac{\partial L}{\partial w} (\omega_0)  \right] = 0
+\]
+</p>
+
+<p>
+to pa je ravno (EL). QED.
+</p>
+</div>
+</div>
+<div id="outline-container-org1e85774" class="outline-3">
+<h3 id="org1e85774"><span class="section-number-3">2.4.</span> Gibljiva krajišča</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Spomnimo se: s fiksnimi krajišči mislimo
+</p>
+
+<p>
+\[ X \subset \left\{ f \in C^1 (J), \ f(a) = \alpha, f(b) = \beta  \right\}
+\]
+</p>
+
+<p>
+za neka vnaprej podana, predpisana \(  \alpha, \beta \).
+</p>
+
+<p>
+Gibljiva krajišča za \(  f \in X \), kjer \(  f \) na robu \(  J \) ni predpisan. Če imamo gibljiva krajišča, razmišljamo tako: še vedno dobimo
+</p>
+
+\begin{equation}
+\label{eq:9}
+ \int\limits_a^b \left( \frac{\partial L}{\partial v} (\omega_0) - \frac{\mathrm{d} }{\mathrm{d} x} \left[ \frac{\partial L}{\partial w} (\omega_0)  \right]  \right)\eta \,\mathrm{d x} + \eta(x) \left. \frac{\partial L}{\partial w} (\omega_0(x)) \right|_{x=a}^{x=b} = 0, \ \forall \eta \in C^1(J)
+\end{equation}
+
+
+<p>
+Ni nujno, da je \(  C_0^1(J) \)! Če pogoja, da so fiksna krajišča, ni več, ni potrebe več po tem, da bi predpisovali, kakšne vrednosti imajo različne funkcije \(  \eta \) v krajiščih.
+</p>
+
+<p>
+V posebnem velja \ref{eq:9} velja tudi za \(  \eta \in C_0^1 (J) \). Vemo, da to implicira (EL) pogoj, torej se \ref{eq:9} prevede na
+</p>
+
+<p>
+\[ \left. \eta(x) \cdot \frac{\partial L}{\partial w} \left( \omega_0 (x) \right) \right|_{x=a}^{x=b} = 0, \ \forall \eta \in C^1 (J)
+\]
+</p>
+
+<p>
+Če določimo določimo krajišča, se zgornja formula samo prevede na prejšnji problem s fiksnimi krajišči.
+</p>
+
+<p>
+Če imamo produkt \(  \eta(a) \cdot C = 0, \forall \eta \in C^1 (J) \implies C = 0 \). Iz tega sledi <i>transverzalni pogoj</i>
+</p>
+
+\begin{equation}
+\label{eq:10}
+\frac{\partial L}{\partial w} (\omega_0 (a)) = \frac{\partial L}{\partial w} (\omega_o (b)) = 0
+\end{equation}
+
+<p>
+To je v bistvu samo nadomestek za \(  y(a) = \alpha, \ y(b) = \beta \), ko imamo gibljiva krajišča.
+</p>
+</div>
+</div>
+<div id="outline-container-orged5f7cc" class="outline-3">
+<h3 id="orged5f7cc"><span class="section-number-3">2.5.</span> Special Ed</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-orga4b7bf0" class="outline-4">
+<h4 id="orga4b7bf0"><span class="section-number-4">2.5.1.</span> Lagrangian oblike \(  L = L(x, y') \)</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+EL pogoj je
+</p>
+
+<p>
+\[ L_y = \frac{\mathrm{d} }{\mathrm{d} x} \left( L_{y'} \right)
+\]
+</p>
+
+<p>
+Če \(  L \ne L(y) \), potem se (EL) prevede na
+</p>
+
+<p>
+\[ L_{y'} = C
+\]
+</p>
+
+<p>
+in dobimo diferencialno enačbo 1. reda.
+</p>
+</div>
+</div>
+<div id="outline-container-org58c677e" class="outline-4">
+<h4 id="org58c677e"><span class="section-number-4">2.5.2.</span> Lagrangian oblike \(  L = L(y, y') \)</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<p>
+Tedaj se EL prevede na <i>Beltramijevo identiteto</i>
+</p>
+
+\begin{equation}
+\label{eq:11}
+ L - y' L_{y'} = C
+\end{equation}
+
+<p>
+za neki \(  C \in \mathbb{R} \)
+</p>
+
+<p>
+Res, če \ref{eq:11} odvajamo po x, uporabimo verižno pravilo in dobimo
+</p>
+
+\begin{align*}
+  \left( L - y' L_{y'} \right) ' &= \left( L_x \cdot \frac{\partial x}{\partial x} + L_y \cdot \frac{\partial y}{\partial x} + L_{y'} \cdot \frac{\partial y'}{\partial x} \right) - \left( y'' L_{y'} + y' \frac{\mathrm{d} }{\mathrm{d} x} L_{y'} \right) \\
+&= \left( L_x + L_y \cdot y' + L_{y'} \cdot y'' \right) - \left( y'' L_{y'} + y' \cdot \frac{\mathrm{d} }{\mathrm{d} x} L_{y'} \right) && L \ne L(x) \implies L_x = 0 \\
+&= \left( L_y - \frac{\mathrm{d} }{\mathrm{d} x} L_{y'} \right) y'
+\end{align*}
+
+<p>
+Iz tega sledi, da je
+</p>
+
+<p>
+\[ \left( L - y' L_{y'} \right)' = \left( L_y - \frac{\mathrm{d} }{\mathrm{d} x} L_{y'} \right) \cdot y'
+\]
+</p>
+
+<p>
+Torej je (EL) ekvivalentno
+</p>
+
+<p>
+\[ L - y' L_{y'} \equiv C
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-09 Thu 15:44</p>
+</div>
+</body>
+</html>
