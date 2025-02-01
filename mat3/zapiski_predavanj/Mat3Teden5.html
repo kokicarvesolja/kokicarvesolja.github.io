@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-10-30 Wed 21:05 -->
+<!-- 2025-02-01 Sat 14:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mat3teden5</title>
@@ -210,12 +210,12 @@
       tagIndent: '.8em'
     },
     chtml: {
-      scale: 1.2,
+      scale: 1.0,
       displayAlign: 'center',
       displayIndent: '0em'
     },
     svg: {
-      scale: 1.2,
+      scale: 1.0,
       displayAlign: 'center',
       displayIndent: '0em'
     },
@@ -239,35 +239,35 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge69a87c">1. Riemann-Darbouxov integral</a>
+<li><a href="#org2032e9f">1. Riemann-Darbouxov integral</a>
 <ul>
-<li><a href="#orge0923cb">1.1. Uvedba nove spremenljivke 2024/10/28</a>
+<li><a href="#org364a7f2">1.1. Uvedba nove spremenljivke 2024/10/28</a>
 <ul>
-<li><a href="#org64af194">1.1.1. Sferične koordinate v \(  \mathbb{R}^3 \)</a></li>
-<li><a href="#org3fa3790">1.1.2. Primer od zadnjič (valj v sferi)  2.10 (p.S. )</a></li>
-<li><a href="#org95b8f77">1.1.3. Definicija 2.16 (p.S.)</a></li>
-<li><a href="#org55bab4a">1.1.4. Definicija 2.17 (p.S.)</a></li>
-<li><a href="#orgb9907ce">1.1.5. Definicja 2.18 (p.S.) 2024/10/29</a></li>
-<li><a href="#org8da3dac">1.1.6. Torus v \(  \mathbb{R}^3 \)</a></li>
+<li><a href="#orgf8022d3">1.1.1. Sferične koordinate v \(  \mathbb{R}^3 \)</a></li>
+<li><a href="#orga4b5540">1.1.2. Primer od zadnjič (valj v sferi)  2.10 (p.S. )</a></li>
+<li><a href="#org095222e">1.1.3. Definicija 2.16 (p.S.)</a></li>
+<li><a href="#orgbc99704">1.1.4. Definicija 2.17 (p.S.)</a></li>
+<li><a href="#org0f2cf16">1.1.5. Definicja 2.18 (p.S.) 2024/10/29</a></li>
+<li><a href="#org39e70f3">1.1.6. Torus v \(  \mathbb{R}^3 \)</a></li>
 </ul>
 </li>
-<li><a href="#orgf237260">1.2. Izlimitirani Riemann-Darbouxovi integrali</a></li>
-<li><a href="#org81a3884">1.3. Primer</a></li>
+<li><a href="#org4654899">1.2. Izlimitirani Riemann-Darbouxovi integrali</a></li>
+<li><a href="#org7c11389">1.3. Primer</a></li>
 </ul>
 </li>
-<li><a href="#orgeb71bd4">2. Krivulje v \(  \mathbb{R} ^3 \)</a>
+<li><a href="#org7bf7f85">2. Krivulje v \(  \mathbb{R} ^3 \)</a>
 <ul>
 <li>
 <ul>
-<li><a href="#org616420e">2.0.1. Zgled 3.1 (p.S.)</a></li>
-<li><a href="#org5875a53">2.0.2. Definicija 3.7 (p.S.)</a></li>
+<li><a href="#org40133b2">2.0.1. Zgled 3.1 (p.S.)</a></li>
+<li><a href="#orgb5d7352">2.0.2. Definicija 3.7 (p.S.)</a></li>
 </ul>
 </li>
-<li><a href="#org47a9b86">2.1. Pritisnjena ravnina 2024/10/30</a>
+<li><a href="#orge981bc7">2.1. Pritisnjena ravnina 2024/10/30</a>
 <ul>
-<li><a href="#org804a812">2.1.1. Izrek 3.3 (p.S.)</a></li>
-<li><a href="#orgb27bbe8">2.1.2. Something I don&rsquo;t know how to call thingy.</a></li>
-<li><a href="#orgf0f0f93">2.1.3. Izrek 3.4 (p.S.)</a></li>
+<li><a href="#org0359c8b">2.1.1. Izrek 3.15 (p.S.)</a></li>
+<li><a href="#orge0e5838">2.1.2. Izrek 3.15.1</a></li>
+<li><a href="#org8830ac0">2.1.3. Izrek 3.4 (p.S.)</a></li>
 </ul>
 </li>
 </ul>
@@ -275,16 +275,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orge69a87c" class="outline-2">
-<h2 id="orge69a87c"><span class="section-number-2">1.</span> Riemann-Darbouxov integral</h2>
+<div id="outline-container-org2032e9f" class="outline-2">
+<h2 id="org2032e9f"><span class="section-number-2">1.</span> Riemann-Darbouxov integral</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orge0923cb" class="outline-3">
-<h3 id="orge0923cb"><span class="section-number-3">1.1.</span> Uvedba nove spremenljivke 2024/10/28</h3>
+<div id="outline-container-org364a7f2" class="outline-3">
+<h3 id="org364a7f2"><span class="section-number-3">1.1.</span> Uvedba nove spremenljivke 2024/10/28</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org64af194" class="outline-4">
-<h4 id="org64af194"><span class="section-number-4">1.1.1.</span> Sferične koordinate v \(  \mathbb{R}^3 \)</h4>
+<div id="outline-container-orgf8022d3" class="outline-4">
+<h4 id="orgf8022d3"><span class="section-number-4">1.1.1.</span> Sferične koordinate v \(  \mathbb{R}^3 \)</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Velja
@@ -315,12 +315,12 @@ Jacobijeva matrika je tako oblike
 </p>
 </div>
 </div>
-<div id="outline-container-org3fa3790" class="outline-4">
-<h4 id="org3fa3790"><span class="section-number-4">1.1.2.</span> Primer od zadnjič (valj v sferi)  2.10 (p.S. )</h4>
+<div id="outline-container-orga4b5540" class="outline-4">
+<h4 id="orga4b5540"><span class="section-number-4">1.1.2.</span> Primer od zadnjič (valj v sferi)  2.10 (p.S. )</h4>
 <div class="outline-text-4" id="text-1-1-2">
 
-<div id="org2b20d1d" class="figure">
-<p><img src="figures/sphere_cylinder.svg" alt="sphere_cylinder.svg" class="org-svg" />
+<div id="org5108e93" class="figure">
+<p><img src="sphere_cylinder.svg" alt="sphere_cylinder.svg" class="org-svg" />
 </p>
 </div>
 
@@ -350,8 +350,8 @@ Za domačo nalogo imaš drugačen vrstni red integracije (\(  \phi \) ne igra no
 </p>
 </div>
 </div>
-<div id="outline-container-org95b8f77" class="outline-4">
-<h4 id="org95b8f77"><span class="section-number-4">1.1.3.</span> Definicija 2.16 (p.S.)</h4>
+<div id="outline-container-org095222e" class="outline-4">
+<h4 id="org095222e"><span class="section-number-4">1.1.3.</span> Definicija 2.16 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 Naj ima telo \(  T \subset \mathbb{R}^3 \) gostoto \(  \rho = \rho(x, y, z) \). Če je \(  \rho = \text{ konst. } \) je telo homogeno.
@@ -367,8 +367,8 @@ Masa telesa \(  T \) je definirana kot
 </p>
 </div>
 </div>
-<div id="outline-container-org55bab4a" class="outline-4">
-<h4 id="org55bab4a"><span class="section-number-4">1.1.4.</span> Definicija 2.17 (p.S.)</h4>
+<div id="outline-container-orgbc99704" class="outline-4">
+<h4 id="orgbc99704"><span class="section-number-4">1.1.4.</span> Definicija 2.17 (p.S.)</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <p>
 Težišče telesa \(  T \) je točka \(  (x_t, y_t, z_t) \subset \mathbb{R} ^3 \) za katero velja
@@ -394,12 +394,12 @@ kjer je \(  \vec{\xi} = (x, y, z) \) vektorska funkcija. Težišče nam pove pov
 </p>
 </div>
 </div>
-<div id="outline-container-orgb9907ce" class="outline-4">
-<h4 id="orgb9907ce"><span class="section-number-4">1.1.5.</span> Definicja 2.18 (p.S.) 2024/10/29</h4>
+<div id="outline-container-org0f2cf16" class="outline-4">
+<h4 id="org0f2cf16"><span class="section-number-4">1.1.5.</span> Definicja 2.18 (p.S.) 2024/10/29</h4>
 <div class="outline-text-4" id="text-1-1-5">
 <p>
 Vztrajnostni moment telesa \(  T \subset \mathbb{R} ^3 \) pri vrtenju okoli osi \(  \gamma \subset \mathbb{R}^3 \) je enako
-</p/>
+</p>
 
 <p>
 \[ J_{\gamma} = \int\limits_T d(\vec{x}, \gamma) ^2 \rho(\vec{x}) \,\mathrm{d\vec{x}}
@@ -420,11 +420,11 @@ V posebnem primeru je to:
 </p>
 </div>
 </div>
-<div id="outline-container-org8da3dac" class="outline-4">
-<h4 id="org8da3dac"><span class="section-number-4">1.1.6.</span> Torus v \(  \mathbb{R}^3 \)</h4>
+<div id="outline-container-org39e70f3" class="outline-4">
+<h4 id="org39e70f3"><span class="section-number-4">1.1.6.</span> Torus v \(  \mathbb{R}^3 \)</h4>
 <div class="outline-text-4" id="text-1-1-6">
 
-<div id="org56571f4" class="figure">
+<div id="org06a876c" class="figure">
 <p><img src="figures/torus.png" alt="torus.png" />
 </p>
 </div>
@@ -434,7 +434,7 @@ Kako matematično opišemo torus? Začnemo v ravnini \(  xz \), kjer imamo krož
 </p>
 
 
-<div id="org1047773" class="figure">
+<div id="orgc7b9e2f" class="figure">
 <p><img src="figures/xz_ravnina_torus.svg" alt="xz_ravnina_torus.svg" class="org-svg" />
 </p>
 </div>
@@ -536,8 +536,8 @@ Izračun je prepuščen bralcu za domačo nalogo.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf237260" class="outline-3">
-<h3 id="orgf237260"><span class="section-number-3">1.2.</span> Izlimitirani Riemann-Darbouxovi integrali</h3>
+<div id="outline-container-org4654899" class="outline-3">
+<h3 id="org4654899"><span class="section-number-3">1.2.</span> Izlimitirani Riemann-Darbouxovi integrali</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Doslej smo imeli omejene funkcije na omejenh množicah. Ali lahko te predpostavke odstranimo in imamo RD integral na neomejenih funkcijah (pol).
@@ -598,7 +598,7 @@ Definiramo
 </p>
 
 
-<div id="org932fbaf" class="figure">
+<div id="orgf7b2d0c" class="figure">
 <p><img src="figures/izlimitirani_integral.svg" alt="izlimitirani_integral.svg" class="org-svg" />
 </p>
 </div>
@@ -631,8 +631,8 @@ Poglejmo absolutno vrednost \(  \left| f \right|  = f_+ + f_-\), iz česar sledi
 </ol>
 </div>
 </div>
-<div id="outline-container-org81a3884" class="outline-3">
-<h3 id="org81a3884"><span class="section-number-3">1.3.</span> Primer</h3>
+<div id="outline-container-org7c11389" class="outline-3">
+<h3 id="org7c11389"><span class="section-number-3">1.3.</span> Primer</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Za kakšne \(  s \in \mathbb{R} \) konvergira ( obstaja v \(  \mathbb{R} \))
@@ -683,8 +683,8 @@ Za \(  n = 3 \):
 </div>
 </div>
 </div>
-<div id="outline-container-orgeb71bd4" class="outline-2">
-<h2 id="orgeb71bd4"><span class="section-number-2">2.</span> Krivulje v \(  \mathbb{R} ^3 \)</h2>
+<div id="outline-container-org7bf7f85" class="outline-2">
+<h2 id="org7bf7f85"><span class="section-number-2">2.</span> Krivulje v \(  \mathbb{R} ^3 \)</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <b>Del snovi je izpuščen, ker sta Mrčun in Dragičevič letos (2024) govorila in ugotovila, da se del snovi pokriva. Prejšnja leta vsebujejo polno snov.</b>
@@ -707,16 +707,16 @@ Dolžina krivulje \(  \Gamma = \{\vec{r}(t), \ t \in [a, b]\} \) je
 Ta definicija je dobra (neodvisna od parametrizacije).
 </p>
 </div>
-<div id="outline-container-org616420e" class="outline-4">
-<h4 id="org616420e"><span class="section-number-4">2.0.1.</span> Zgled 3.1 (p.S.)</h4>
+<div id="outline-container-org40133b2" class="outline-4">
+<h4 id="org40133b2"><span class="section-number-4">2.0.1.</span> Zgled 3.1 (p.S.)</h4>
 <div class="outline-text-4" id="text-2-0-1">
 <p>
 Vijačnica ima formulo \(  \vec{r}(t) = (a \cos t, a \sin t, bt), \ a, b > 0, \ t \in \mathbb{R} \).
 </p>
 </div>
 </div>
-<div id="outline-container-org5875a53" class="outline-4">
-<h4 id="org5875a53"><span class="section-number-4">2.0.2.</span> Definicija 3.7 (p.S.)</h4>
+<div id="outline-container-orgb5d7352" class="outline-4">
+<h4 id="orgb5d7352"><span class="section-number-4">2.0.2.</span> Definicija 3.7 (p.S.)</h4>
 <div class="outline-text-4" id="text-2-0-2">
 <p>
 Enotski tangnenti vektor
@@ -745,8 +745,8 @@ Normalna ravnina na \(  \vec{r}(t_0) \) je ravnina skozi \(  \vec{r}(t) \) pravo
 </p>
 </div>
 </div>
-<div id="outline-container-org47a9b86" class="outline-3">
-<h3 id="org47a9b86"><span class="section-number-3">2.1.</span> Pritisnjena ravnina 2024/10/30</h3>
+<div id="outline-container-orge981bc7" class="outline-3">
+<h3 id="orge981bc7"><span class="section-number-3">2.1.</span> Pritisnjena ravnina 2024/10/30</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Ideja za pritisnjeno ravnino je:
@@ -768,8 +768,8 @@ Dragi vpraša, ali je vse jasno kakšna umetniška zvrst je to.
 Sedaj nas zanima, ali se to da, kdaj (ne kot dan v tednu) ter kako.
 </p>
 </div>
-<div id="outline-container-org804a812" class="outline-4">
-<h4 id="org804a812"><span class="section-number-4">2.1.1.</span> Izrek 3.3 (p.S.)</h4>
+<div id="outline-container-org0359c8b" class="outline-4">
+<h4 id="org0359c8b"><span class="section-number-4">2.1.1.</span> Izrek 3.15 (p.S.)</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 Naj bo \(  \gamma \) regularna parametrizacije \(  C ^2 \) neke krivulje v \(  \mathbb{R} ^3 \). Za dani \(  t_0 \in \mathbb{R} \) privzamemeo, da je
@@ -799,7 +799,7 @@ Odtod sledi, da je
 </p>
 
 <p>
-Definiramo \(  f(t) = \left\langle \gamma(t) - \gamma(t_0), w  \right\rangle . Sledi \( f(t_0), f(t_1), f(t_2) = 0 \)
+Definiramo \(  f(t) = \left\langle \gamma(t) - \gamma(t_0), w  \right\rangle \) . Sledi \( f(t_0), f(t_1), f(t_2) = 0 \)
 </p>
 
 <p>
@@ -834,7 +834,7 @@ Torej \(  w \) leži v ozkem stožcu okoli tega vektorja \(  \dot{\gamma}(t_0) \
 </p>
 
 <p>
-Eksaktna izpeljava: Vzaemo \(  \epsilon > 0 \). Velja
+Eksaktna izpeljava: Vzamemo \(  \epsilon > 0 \). Velja
 </p>
 
 \begin{align*}
@@ -844,8 +844,8 @@ Eksaktna izpeljava: Vzaemo \(  \epsilon > 0 \). Velja
 \end{align*}
 
 <p>
-Katere črke nimam - Dragi
-A vsi poznate Cauchy-Schwartzovo neenakost? /~ The classroom is silent/~ Pričakoval sem večje navdušenje
+Katere črke nimam? - Dragi
+A vsi poznate Cauchy-Schwartzovo neenakost? /~ The classroom is silent/~ Pričakoval sem večje navdušenje.
 </p>
 
 <p>
@@ -914,7 +914,6 @@ Kot med \(  v_0 \) in poljubnim vektorjem iz \(  l(t_1, t_2)^{\perp} \) nujno ma
 Q.E.D.
 </p>
 
-
 <blockquote>
 <p>
 Triangulirajte svet okrog sebe. Ga boste bolje razumeli.
@@ -922,12 +921,12 @@ Triangulirajte svet okrog sebe. Ga boste bolje razumeli.
 </blockquote>
 
 <p>
-Dragičevič be like.
+Dragičevič
 </p>
 </div>
 </div>
-<div id="outline-container-orgb27bbe8" class="outline-4">
-<h4 id="orgb27bbe8"><span class="section-number-4">2.1.2.</span> Something I don&rsquo;t know how to call thingy.</h4>
+<div id="outline-container-orge0e5838" class="outline-4">
+<h4 id="orge0e5838"><span class="section-number-4">2.1.2.</span> Izrek 3.15.1</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 Naj bodo \(  \gamma, t_0, v_0, \delta, t_1, t_2 \) kot v izrek od prej. Naj bo \(  \Pi(t_1, t_2) \) ravnina skozi \(  \gamma(t_1), \gamma(t_2), \gamma(t_0) \). Želimo pokazati, da \(  \Pi(t_1, t_2) \) limitirajo, ko gresta \(  t_1, t_2 \to t_0 \). proti ravnini z normalo \(  v_0 \).
@@ -961,8 +960,8 @@ Vzemimo \(  \epsilon > 0 \) in definiramo
 </p>
 
  \begin{align*}
-  0 &= f(\xi_1) = \left\langle \dot{\gamma}(\xi_1), n(t_1, t_2) \right\rangle \\
-  0 &= f(\xi_2) = \left\langle \dot{\gamma}(\xi_2), n(t_1, t_2) \right\rangle \\
+  0 &= f'(\xi_1) = \left\langle \dot{\gamma}(\xi_1), n(t_1, t_2) \right\rangle \\
+  0 &= f'(\xi_2) = \left\langle \dot{\gamma}(\xi_2), n(t_1, t_2) \right\rangle \\
 \end{align*}
 
 <p>
@@ -970,7 +969,7 @@ Odtod sledi, da \(  \exists \xi_3 \in (\xi_1, \xi_2)\  \ni \)
 </p>
 
 <p>
-\[ - = f''(\xi_3) = \left\langle \dot{\gamma}(\xi_3), n(t_1, t_2) \right\rangle
+\[ 0 = f''(\xi_3) = \left\langle \ddot{\gamma}(\xi_3), n(t_1, t_2) \right\rangle
 \]
 </p>
 
@@ -978,9 +977,9 @@ Odtod sledi, da \(  \exists \xi_3 \in (\xi_1, \xi_2)\  \ni \)
 Naprej
 </p>
 \begin{align*}
-v_0 \times n(t_1, t_2) &=  \left[ \dot{\gamma}(t_0) \times \ddot{\gamma}(t_j) \right] \times n(t_1, t_2) \\
-&= \left\langle \gamma(t_0), n \right\rangle\dot{\gamma}(t_0) - \left\langle \ddot{\gamma}(t_0), n \right\rangle \dot{\gamma}(t_0)\\
-&= \left\langle \dot{\gamma}(t_0 - \dot{\gamma}(\xi_3)), n \right\rangle \ddot{\gamma}(t_0) - \left\langle \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3), n \right\rangle \dot{\gamma}(t_0)
+v_0 \times n(t_1, t_2) &=  \left[ \dot{\gamma}(t_0) \times \ddot{\gamma}(t_0) \right] \times n(t_1, t_2) \\
+&= \left\langle \dot{\gamma}(t_0), n \right\rangle \cdot \ddot{\gamma}(t_0) - \left\langle \ddot{\gamma}(t_0), n \right\rangle \cdot \dot{\gamma}(t_0)\\
+&= \left\langle \dot{\gamma}(t_0 - \dot{\gamma}(\xi_1)), n \right\rangle \ddot{\gamma}(t_0) - \left\langle \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3), n \right\rangle \dot{\gamma}(t_0)
 \end{align*}
 
 <p>
@@ -988,7 +987,7 @@ Absolutna vrednost je tako
 </p>
 
 <p>
-\[ \left| v_0 \times n(t_1, t_2) \right| \le \left( \left| \dot{\gamma}(t_0) - \dot{\gamma}(\xi_3) \right| \left| \ddot{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3) \right| \dot{\gamma}(t_0) \right) \left| n \right|
+\[ \left| v_0 \times n(t_1, t_2) \right| \le \left( \left| \dot{\gamma}(t_0) - \dot{\gamma}(\xi_1) \right| \left| \ddot{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) - \ddot{\gamma}(\xi_3) \right| \dot{\gamma}(t_0) \right) \left| n \right|
 \]
 </p>
 
@@ -1010,7 +1009,7 @@ Za \(  t_1, t_2 \in (t_0 - \delta, t_0 + \delta) \) torej sledi
 </p>
 
 <p>
-\[ \left| v_0 \times n(t_1, t_2) \right|= \left| v_0 \right| \sin \psi \le \left( \left| \dot{\gamma}(t_0 ) \right| + \left| \ddot{\gamma}(t_0) \right| \right)
+\[ \left| v_0 \times n(t_1, t_2) \right|= \left| v_0 \right| \sin \psi \le \left( \left| \dot{\gamma}(t_0 ) \right| + \left| \ddot{\gamma}(t_0) \right| \right) \epsilon
 \]
 </p>
 
@@ -1023,7 +1022,7 @@ Dokazali smo, da je
 </p>
 
 <p>
-\[ \sin \psi (t_1, t_2) \le \frac{\left| \vec{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) \right|}{\left|{\left| \vec{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) \right|}\right|} \epsilon
+\[ \sin \psi (t_1, t_2) \le \frac{\left| \dot{\gamma}(t_0) \right| + \left| \ddot{\gamma}(t_0) \right|}{\left|\dot{\gamma} \times \ddot{\gamma} \right| (t_0)} \epsilon
 \]
 </p>
 
@@ -1033,7 +1032,7 @@ Definiramo \(  \tilde{v}_0 = \frac{v_0}{\left| v_0 \right|} \). Sledi
 
 \begin{align*}
 \left| \tilde{v}_0  - n\right| ^2 &= \left\langle \tilde{v}_0 -n, \tilde{v}_0 - n \right\rangle \\
-&= \left| \tilde{v}_0 \right| ^2 + \left| n \right| ^2 - 2 \left\langle \tilde{v}_0, v \right\rangle = 1 + 1 - 2 \left| v_0 \right| \left| n \right| \cos \psi
+&= \left| \tilde{v}_0 \right| ^2 + \left| n \right| ^2 - 2 \left\langle \tilde{v}_0, n \right\rangle = 1 + 1 - 2 \left| \tilde{v}_0 \right| \left| n \right| \cos \psi
 \end{align*}
 
 <p>
@@ -1050,7 +1049,7 @@ kar gre proti nič, ker je \(  \psi \) oster kot, ko gre \(  t_1, t_2 \to t_0 \)
 </p>
 
 <p>
-Dokazali so, da
+Dokazali smo, da
 </p>
 
 <p>
@@ -1067,8 +1066,8 @@ To je najbližja lokalna 2 dimenzionalna aproksimacija za našo krivuljo.
 </p>
 </div>
 </div>
-<div id="outline-container-orgf0f0f93" class="outline-4">
-<h4 id="orgf0f0f93"><span class="section-number-4">2.1.3.</span> Izrek 3.4 (p.S.)</h4>
+<div id="outline-container-org8830ac0" class="outline-4">
+<h4 id="org8830ac0"><span class="section-number-4">2.1.3.</span> Izrek 3.4 (p.S.)</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 Če je \(  \Pi = \Pi(t_0) \) pritisnjena ravnina za \(  \gamma \) v točki \(  \gamma(t_0) \) tedaj velja
@@ -1084,12 +1083,12 @@ Trdimo, da razdalja med funkcijo in ravnino padajo s kvadratom, ko se približuj
 </p>
 
 <p>
-Oznaka \(  f(h) = o(g(h)), \ h \to a \) pomeni \(  \lim_{h \to 0} \frac{f(h)}{g(h)} = 0  \)
- \(  h \) gre proti 0, ampak \(  \frac{h}{h ^2} \) pa ne gre proti nič, ampak proti neskončno.
+Oznaka \(  f(h) = o(g(h)), \ h \to a \) pomeni \(  \lim_{h \to 0} \frac{f(h)}{g(h)} = 0  \), funkcija
+ \(  f(h) = h \) gre proti 0, ko \(  h \to 0  \), ampak \(  \frac{h}{h ^2} \) pa ne gre proti nič, ampak proti neskončno.
 </p>
 
 
-<div id="org5828c32" class="figure">
+<div id="org72bb9e0" class="figure">
 <p><img src="figures/izrek34.svg" alt="izrek34.svg" class="org-svg" />
 </p>
 </div>
@@ -1103,7 +1102,7 @@ Naslednji teden nadomešča Govc.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-10-30 Wed 21:05</p>
+<p class="date">Created: 2025-02-01 Sat 14:31</p>
 </div>
 </body>
 </html>
