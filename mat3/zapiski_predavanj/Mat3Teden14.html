@@ -1,0 +1,1732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-02-10 Mon 20:54 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden14</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden14</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga32bb45">1. Variacijski račun</a>
+<ul>
+<li><a href="#orgd7907b0">1.1. EL pogoj za sisteme funkcij</a>
+<ul>
+<li><a href="#org5f47b74">1.1.1. Definicija</a></li>
+<li><a href="#orgf58196f">1.1.2. Izrek</a></li>
+<li><a href="#org5e7f2a3">1.1.3. Zgled 8.1 - izoperimetrični problem</a></li>
+<li><a href="#org5e9314f">1.1.4. Definicija</a></li>
+<li><a href="#org679e21b">1.1.5. Izrek</a></li>
+<li><a href="#orgd1903e3">1.1.6. Prevod nazaj na zgled</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org448a01d">2. Hilbertovi prostori</a>
+<ul>
+<li><a href="#org1ad7823">2.1. Definicija</a></li>
+<li><a href="#orga4a310a">2.2. Definicija</a></li>
+<li><a href="#org2961f3f">2.3. Definicija</a></li>
+<li><a href="#org2221eb8">2.4. Trditev (Neenakost Cauchy-Schwarz-Bunjakovski - CSB)</a></li>
+<li><a href="#org4372b36">2.5. Definicija</a></li>
+<li><a href="#orgf8f7016">2.6. Primeri</a></li>
+<li><a href="#org5d40f28">2.7. Definicija</a></li>
+<li><a href="#org034a0e0">2.8. Izrek (Pitagorov)</a></li>
+<li><a href="#org8cff3e5">2.9. Definicija</a></li>
+<li><a href="#orgd12e593">2.10. Trditev</a></li>
+<li><a href="#org8a1f8f4">2.11. Definicija</a></li>
+<li><a href="#orgf869a24">2.12. Trditev</a></li>
+<li><a href="#org873c324">2.13. Primer</a></li>
+<li><a href="#org0401687">2.14. Trditev</a></li>
+<li><a href="#org117ce7a">2.15. Definicija</a></li>
+<li><a href="#org3687f5d">2.16. Izrek (Besselova neenakost)</a></li>
+<li><a href="#org1968184">2.17. Trditev</a></li>
+<li><a href="#org205ed0b">2.18. Posledica</a></li>
+<li><a href="#org9cb24e6">2.19. Definicija</a></li>
+<li><a href="#org16764ec">2.20. Definicija</a></li>
+<li><a href="#orgcc0d959">2.21. Izrek</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga32bb45" class="outline-2">
+<h2 id="orga32bb45"><span class="section-number-2">1.</span> Variacijski račun</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgd7907b0" class="outline-3">
+<h3 id="orgd7907b0"><span class="section-number-3">1.1.</span> EL pogoj za sisteme funkcij</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Označimo
+</p>
+
+<p>
+\[ C^1 (J \to \mathbb{R} ^2) = C^1(J) \times C^1(J) = \left\{ \left( y_1, y_2 \right); \ y_1, y_2 \in C^1 (J) \right\}
+\]
+</p>
+</div>
+<div id="outline-container-org5f47b74" class="outline-4">
+<h4 id="org5f47b74"><span class="section-number-4">1.1.1.</span> Definicija</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Naj bo \(  X \subset C^1(J \to \mathbb{R} ^2) \) in \(  I: X \to \mathbb{R} \). Pravimo, da je \(  y \in X \) lokalni ekstrem oz. ekstremala za \(  I \), če za vsak vektorsko funkcijo \(  \eta = (\eta_1, \eta_2) \in C^1 (J \to \mathbb{R} ^2) \) tako, da \(  y + \epsilon \eta \in X \) za majhne \(  \epsilon \in \mathbb{R} \), fukcional
+\[ \epsilon \to I(y \epsilon \eta)
+\]
+</p>
+
+<p>
+Doseže lokalni ekstrem v \(  \epsilon = 0 \).
+</p>
+
+<p>
+<i>Opomba</i>: Slika vektorskega prostora je še zmeraj enaka, kakor prej
+</p>
+</div>
+</div>
+<div id="outline-container-orgf58196f" class="outline-4">
+<h4 id="orgf58196f"><span class="section-number-4">1.1.2.</span> Izrek</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Naj bo \(  L = L (u, v_1, v_2, w_1, w_2): J \times \mathbb{R} \times \mathbb{R} \times \mathbb{R} \times \mathbb{R} \to \mathbb{R} \) parcialno odvedljiva na vse spremenljivke. Definiramo
+</p>
+
+<p>
+\[ I \left( y_1, y_2 \right) = \int\limits_a^b L(x, y_1, y_2, y_1 ', y_2')\,\mathrm{dx}
+\]
+</p>
+
+<p>
+<i>Opomba</i>: Tudi \(  y_1, y_2, y_1', y_2' \) so odvisne od \(  x \).
+</p>
+
+<p>
+Če je \(  y = \left( y_1, y_2 \right) \) ekstremala za \(  I \), tedaj \(  y \) reši sistem enaċb
+</p>
+
+\begin{align*}
+  L_{y_1} &= \frac{\mathrm{d} }{\mathrm{d} x} L_{y_1'} \\
+L_{y_2} &= \frac{\mathrm{d} }{\mathrm{d} x} L_{y_2'}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org5e7f2a3" class="outline-4">
+<h4 id="org5e7f2a3"><span class="section-number-4">1.1.3.</span> Zgled 8.1 - izoperimetrični problem</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Naj bodo \(  a, b, l \in \mathbb{R} \) tako, da velja \(  0 < b - a \le l \le \frac{\pi}{2} (b - a)  \).
+</p>
+
+<p>
+Označimo \(  J = [a, b] \). Med vsemi pozitivnimi funkciji \(  y \in C^1 (J) \), za katere velja
+</p>
+
+<ul class="org-ul">
+<li>\(  y(a) = y(b) = 0 \)</li>
+<li>dolžina loka grafa \(  y \) nad \(  J \) je \(  l \)</li>
+</ul>
+
+<p>
+iščemo takšno, da bo ploščina lika pod grafom največja.
+</p>
+
+
+<div id="orgf0b3213" class="figure">
+<p><img src="figures/izoperimetricni.svg" alt="izoperimetricni.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Analitična formulacija: Maksimiziramo
+</p>
+
+<p>
+\[ I (y) + \int\limits_a^b y\,\mathrm{d x}
+\]
+</p>
+
+<p>
+med \(  y \in C^1 (J) \) tako, da
+</p>
+<ul class="org-ul">
+<li>\(  y(a) = y(b) = 0 \)</li>
+<li>\(  \int\limits_a^b \sqrt{1 + y' ^2}\,\mathrm{d x} = l \)</li>
+</ul>
+
+<p>
+S temi pogoji je ploščina torej \(  I \), res omejena, kar preverimo s pomočjo <i>per partesa</i>.
+</p>
+
+\begin{align*}
+  \int\limits_a^b y \,\mathrm{d x} &= \left. xy \right|_{x=a}^{x=b} - \int\limits_a^b y' x \,\mathrm{d x} \\
+& \le \int\limits_a^b \left| x \right| \left| y'  \right|\,\mathrm{d x} \\
+&= \int\limits_a^b \left| x \right| \sqrt{y' ^2}\,\mathrm{d x} \le \int\limits_a^b \left| x \right| \sqrt{1 + y' ^2}\,\mathrm{d x}
+\end{align*}
+
+<p>
+Zaradi začetnih pogojev je \(  \left. xy \right|_{x = a}^{x = b} \) je to enako 0. Navzdol je omejeno, ker imamo pozitivne funkcije, medtem ko navzgor pa je omejena, kakor smo videli z nekim drugih funkcionalom (v našem primeru \(  \int\limits_a^b \sqrt{1 + y' ^2}\,\mathrm{d x} \)).
+</p>
+
+<p>
+Kar pomeni, da je za vsak \(  y \in X = \left\{ y \in C^1 (J), \ y(a) = y(b) = 0, \int\limits_a^b \sqrt{1 + y' ^2}\,\mathrm{d x} = l \right\} \) velja
+</p>
+
+<p>
+\[ 0 \le I(y) \le \max \left\{ \left| a \right|, \left| b \right|\right\} \cdot l
+\]
+</p>
+
+<p>
+Formulacija splošnega problema: Iščemo ekstremal za funkcional
+</p>
+
+<p>
+\[ I(y) + \int\limits_a^b L(x, y, y') \,\mathrm{d x}
+\]
+</p>
+
+<p>
+za \(  y \in X = \left\{ w \in C^1 (J); \ w(a) = \alpha, w(b) = \beta \right\} \), ki
+hkrati zadoščajo pogoju
+</p>
+\begin{equation}
+\label{eq:1}
+ \mathcal{I} (y) = C, \ C \in \mathbb{R} \text{ ki je podan in fiksen}
+\end{equation}
+
+
+<p>
+kjer je \(  \mathcal{I} \) nek drug funkcional, podan z
+</p>
+
+<p>
+\[ \mathcal{I} (y) = \int\limits_a^b \mathcal{L} (x, y, y') \,\mathrm{d x}
+\]
+</p>
+
+<p>
+za neki drugi Lagrangian \(  \mathcal{L} \)
+</p>
+
+<p>
+Back to the main problem: Poskusimo z variacijamo
+</p>
+
+<p>
+\[  \left. \frac{\mathrm{d} }{\mathrm{d} \epsilon} I (y + \epsilon \eta) \right|_{\epsilon=0} \text{ za } \eta
+\]
+</p>
+
+<p>
+[skica]
+</p>
+
+<p>
+Kakšen \(  \eta \) je vprašanje? Ker na skici se jasno vidi, da dolžina \(  y + \epsilon \eta \) je večja od \(  l \) - Dragi bi stavil na to <i>velik del svojega premoženja</i>.
+</p>
+
+<p>
+In other words:
+</p>
+
+<p>
+<i>Opomba</i>: Zahtevati zgolj \(  \eta \in C^1_0 (J) \) ne zadošča, saj v splošnem <b>ne</b> sledi, da \(  y + \epsilon \eta  \) še  vedno zadošča pogoju \ref{eq:1}, torej da velja \(  \mathcal{I} (y + \epsilon \eta) = \mathcal{I}(y)\ \forall y \forall \epsilon \)
+</p>
+
+<p>
+Namesto tega vpeljemo dva parametra (oz. dve testni funkciji): gledamo
+</p>
+
+<p>
+\[ F(\epsilon_1, \epsilon_2) = I(y + \epsilon_1 \eta_1 + \epsilon_2 \eta_2) = \int\limits_a^b L \left( x, y + \epsilon_1 \eta_1 + \epsilon_2 \eta_2, y' + \epsilon_1 \eta_1 ' + \epsilon_2 \eta_2' \right)\,\mathrm{d x}
+\]
+</p>
+
+<p>
+kjer parametra \(  \epsilon_1, \epsilon_2 \) povezuje zveza/zahteva
+</p>
+
+<p>
+Z drugo testno funkcijo skompenziramo, da pade dolžina loka, ki je bila več kot \(  l \) sedaj nazaj dol.
+</p>
+
+<p>
+\[ G(\epsilon_1, \epsilon_2) = \mathcal{I} (y + \epsilon_1 \eta_1 + \epsilon_2 \eta_2) = C
+\]
+</p>
+
+<p>
+Zahtevamo torej, da \(  y \) <b>ni</b> lokalni ekstrem za \(  \mathcal{I} \)
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgb3f3cb5"></a>Nadaljevanje 2025/01/14<br />
+<div class="outline-text-5" id="text-1-1-3-1">
+<p>
+Maksimiziramo
+</p>
+
+<p>
+\[ I (y) = \int\limits_a^b L(x, y, y') \,\mathrm{d x}
+\]
+</p>
+
+<p>
+ob pogoju
+</p>
+
+\begin{equation}
+\label{eq:2}
+\mathcal{I} (y) = \int\limits_a^b \mathcal{L} (x, y, y') \,\mathrm{d x}
+\end{equation}
+
+<p>
+in \(  y(a) = \alpha, \ y(b) = \beta \)
+</p>
+
+<p>
+Da ohranimo \ref{eq:1} vzamemo dve testni funkciji \(  \eta_1, \eta_2 \).
+</p>
+
+<p>
+Definiramo
+</p>
+
+<p>
+\[ G(\epsilon_1, \epsilon_2) = I(y + \epsilon_1 \eta_1 + \epsilon_2 \eta_2)
+\]
+</p>
+
+<p>
+kjer \(  y \) ni stacionarna točka za \(  \mathcal{I} \)
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org5e9314f" class="outline-4">
+<h4 id="org5e9314f"><span class="section-number-4">1.1.4.</span> Definicija</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+Naj bosta \(  I, \mathcal{I} \) kot prej in privzamemo, da \(  y \) ni lokalni ekstremal za \(  \mathcal{I} \). Funkcija \(  y \) je (lokalni) ekstrem za \(  I \), če ima za vsak par \(  \eta_1, \eta_2 \in C_0^1(J) \), za katerega pri nekih dovolj majhnih \(  \epsilon_1, \epsilon_2 \in \mathbb{R} \) velja
+</p>
+
+<ul class="org-ul">
+<li>\(  y + \epsilon_1 \eta_1 + \epsilon_2 \eta_2 \in X = \mathcal{D}(i) \)</li>
+<li><p>
+\(  \mathcal{I} \left( y + \epsilon_1 \eta_1 + \epsilon_2 \eta_2 \right) = C \)
+</p>
+
+<p>
+funkcija \(  F \left( \epsilon_1, \epsilon_2 \right) = \mathcal{I} (y + \epsilon_1 \eta_1 + \epsilon_2 \eta_2) \) lokalni ekstrem v točki \(  (0, 0) \).
+</p></li>
+</ul>
+
+
+<p>
+__
+</p>
+
+<p>
+Če naj bo \(  y \) ekstremala, mora \(  F \), zožena na krivuljo \(  G(\epsilon_1, \epsilon_2) = C \), doseči ekstrem v \(  \epsilon_1 = \epsilon_2 = 0 \). Krivulja \(  G(\epsilon_1, \epsilon_2) = C \) nivojnica funkcije \( G: \mathbb{R} ^2 \to \mathbb{R}  \), <i>ki gre skozi izhodišče \(  (0, 0) \).</i>
+</p>
+
+<p>
+S tem smo nalogo prevedli na na primer <i>vezanega ekstrema</i> (maksimiziramo \(  F \) ob pogoju \(  G = C \), glej Mat1) . Vemo, da za neki \(  \lambda \in \mathbb{R} \) velja
+</p>
+
+<p>
+\[ \frac{\partial \left( F + \lambda G \right)}{\partial \epsilon_1} (0, 0) = \frac{\partial \left( F + \lambda G \right)}{\partial \epsilon_2} (0, 0) = 0
+\]
+</p>
+
+<p>
+Kot prej dobimo za točko \(  v = (x, y(x), y'(x)) \):
+</p>
+
+\begin{align}\label{ali:vezekst}
+  \int\limits_a^b \left[ \left( L_y + \lambda \mathcal{L}_y \right) (v) \cdot \eta_1 + \left( L_{y'} + \lambda \mathcal{L}_{y'} \right) (v) \cdot \eta_1 ' \right]\,\mathrm{d x} &= 0 \\
+  \int\limits_a^b \left[ \left( L_y + \lambda \mathcal{L}_y \right) (v) \cdot \eta_2 + \left( L_{y'} + \lambda \mathcal{L}_{y'} \right) (v) \cdot \eta_2 ' \right]\,\mathrm{d x} &= 0 \\
+\end{align}
+
+<p>
+<i>Komentar</i>: \(  \lambda \), ki reši \ref{ali:vezekst} ni odvisna od \(  \eta_1, \eta_2 \). \ref{ali:vezekst}  je ekvivalenten
+</p>
+
+\begin{align*}
+\int\limits_a^b \left( L_y \cdot \eta_1 + L_{y'} \cdot \eta_1 ' \right)\,\mathrm{d x} + \lambda \int\limits_a^b \left( \mathcal{L}_y \eta_1 + \mathcal{L}_{y'} \cdot \eta_1 ' \right) \,\mathrm{d x} &= 0 \\
+&= A (\eta_1) + B(\eta_1)
+\int\limits_a^b \left( L_y \cdot \eta_2 + L_{y'} \cdot \eta_2 ' \right)\,\mathrm{d x} + \lambda \int\limits_a^b \left( \mathcal{L}_y \eta_2 + \mathcal{L}_{y'} \cdot \eta_2 ' \right) \,\mathrm{d x} &= 0 \\
+&= A (\eta_2) + B(\eta_2)
+\end{align*}
+
+<p>
+Velja, da \(  B(\eta_1) \ne ) \), ker \(  y \) ni ekstremala za \(  \mathcal{I} \).
+</p>
+
+<p>
+Sledi
+</p>
+
+<p>
+\[ \frac{A(\eta_1)}{B(\eta_1)} = - \lambda = \frac{A(\eta_2)}{B(\eta_2)}
+\]
+</p>
+
+<p>
+Leva stran nam pove, da \(  \lambda \ne \lambda (\eta_2) \) in desna stran nam pove, da \(  \lambda \ne \lambda(\eta_1) \).
+</p>
+
+<p>
+Ker je \(  \lambda \) neodvisen od \(  \eta_1, \eta_2 \), imamo situacijo od prej, le da namesto funkcionala \(  L \) vzamemo
+</p>
+
+<p>
+\[ L + \lambda \mathcal{L}
+\]
+</p>
+
+<p>
+\ref{ali:vezekst} lahko zapišemo kot
+</p>
+
+<p>
+\[ \int\limits_a^b \left[ \left( L + \lambda \mathcal{L} \right)_y (v) \eta_i + \left( L + \lambda \mathcal{L} \right)_{y'} (v) \eta_i \right]\,\mathrm{d x}
+\]
+</p>
+
+<p>
+za \(  i = 1, 2 \)
+</p>
+
+<p>
+To pa pomeni, da mora naša funkcija \(  y \) zadoščati EL enačbi za \(  L + \lambda \mathcal{L} \) (namesto \(  L \)).
+</p>
+</div>
+</div>
+<div id="outline-container-org679e21b" class="outline-4">
+<h4 id="org679e21b"><span class="section-number-4">1.1.5.</span> Izrek</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+Naj bosta
+</p>
+
+<p>
+\[ L, \mathcal{L}: [a, b] = J \times \mathbb{R} \times \mathbb{R} \to \mathbb{R}
+\]
+</p>
+
+<p>
+zvezno odvedljiva na vse spremenljivke. Definiramo
+</p>
+
+<p>
+\[ \mathcal{I} = \int\limits_a^b \mathcal{L} (x, y, y') \,\mathrm{d x}
+\]
+</p>
+
+<p>
+ter za izbrane \(  a, b, \alpha, \beta, C \in \mathbb{R} \)
+</p>
+
+<p>
+\[ Y = \left\{ \eta \in C^1_0 (J); \ y(a) = \alpha, y(b) = \beta, \mathcal{I}(y) = C \right\}
+\]
+</p>
+
+<p>
+Če je \(  y \) ekstremala za funkcional \(  I: Y \to \mathbb{R} \) definiran s predpisom
+</p>
+
+<p>
+\[ I(y) = \int\limits_a^b L(x, y, y') \,\mathrm{d x}
+\]
+</p>
+
+<p>
+in hkrati ni ekstremala za \(  \mathcal{I} \), tedaj obstaja \(  \lambda \in \mathbb{R} \) tako, da \(  y \) ustreza EL pogoju z \(  L + \lambda \mathcal{L} \)  v vlogi \(  L \).
+</p>
+</div>
+</div>
+<div id="outline-container-orgd1903e3" class="outline-4">
+<h4 id="orgd1903e3"><span class="section-number-4">1.1.6.</span> Prevod nazaj na zgled</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<p>
+Imamo
+</p>
+
+\begin{align*}
+  L &= y \\
+\mathcal{L} &= \sqrt{1 + y' ^2} \\
+L + \lambda \mathcal{L} &= y + \lambda \sqrt{1 + y' ^2} = K(\lambda) = K
+\end{align*}
+
+<p>
+Zadnji izraz je neposredno neodvisen od \(  x \), ker ne nastopa v enačbi - so pa \(  y = y(x) \), zato je (EL) za ekvivalenten Beltramijevi identiteti
+</p>
+
+<p>
+\[ L - y' L_{y'} = D \text{ oz. } \ K - y' K_{y'} = D
+\]
+</p>
+
+\begin{align*}
+  K - y' K_{y'} &= D\\
+y + \lambda \sqrt{1 + y' ^2} - y' \frac{\lambda \cdot y'}{\sqrt{1 + y' ^2}} &= D &&  \left/ \cdot \sqrt{1 + y' ^2} \right. \\
+y \sqrt{1 + y' ^2} + \lambda (1 + y' ^2) - \lambda y' ^2 &= D \sqrt{1 + y' ^2} \\
+\lambda + (y - D) \sqrt{1 + y' ^2} &= 0
+\end{align*}
+
+<p>
+za neki \(  D \in \mathbb{R} \). Pišimo \(  w = y - D \). Dobimo
+</p>
+
+<p>
+\[ \lambda + w \sqrt{1 + w ' ^2} = 0
+\]
+</p>
+
+<p>
+To je diferencialna enačba oblike \(  F(w, w') = 0 \), ki jo rešimo parametrično. Parametrično krivuljo \(  \left\{ F(u, v) = 0 \right\} \), kjer je \(  F(u, v) = \lambda + u \sqrt{1 + v ^2} \). Npr.
+</p>
+
+\begin{align*}
+  u &= - \lambda \cos t \\
+v &= \tan t, \ t \in  \left( \frac{- \pi}{2}, \frac{p}{2} \right)
+\end{align*}
+
+<p>
+Rešitev:
+</p>
+
+\begin{align*}
+  x &= \int\limits_{}^{} \frac{\dot{u}(t)}{v(t)}\,\mathrm{d t} \\
+w &= u(t)
+\end{align*}
+
+<p>
+Sledi, da je
+</p>
+
+\begin{align*}
+  x &= C + \lambda \sin t \\
+y &= C - \lambda \cos t
+\end{align*}
+
+<p>
+To je zgornja polovica krožnice, če je \(  \lambda < 0 \). \(  \lambda < 0 \) mora biti tak, ker naša naloga zahteva pozitivno funkcijo. Središče te krožnice je v \(  (C, D) \).
+</p>
+
+\begin{equation}
+\label{eq:3}
+ (x - C) ^2 + (y - D) ^2 = \rho ^2
+\end{equation}
+
+
+<p>
+za \(  \rho = - \lambda > 0 \). Kakšni so parametri \(  C, D, \rho \) te krožnice? Iz skice vidimo, da je \(  C = \frac{a + b }{2} \). Posledično vidimo, da je
+</p>
+
+<p>
+\[ D ^2 = \rho ^2 - \left( \frac{b - a}{2} \right) ^2
+\]
+</p>
+
+<p>
+To vidimo tako, da vstavimo v enačbo \ref{eq:3} \(  x = a, x = b, y = 0 \). Na skici vidimo, da mora \(  D < ) \), zato je
+</p>
+
+<p>
+\[ D = - \sqrt{\rho ^2 - \left( \frac{b - a}{2} \right)^2}
+\]
+</p>
+
+<p>
+Vemo, da je dolžina loka \(  l \) predpisana, ki je prav tako enaka \(  l = \phi r \).
+</p>
+
+<p>
+Torej na naši skici je \(  l = \phi \rho \), kjer je \(  \phi \) kot na sliki.
+</p>
+
+<p>
+\[ \phi = 2 \arcsin \frac{b - a}{2 \rho}
+\]
+</p>
+
+<p>
+iz česar sledi, da je
+</p>
+
+<p>
+\[ l = 2 \rho \arcsin \frac{b - a}{2 \rho} \text{ oz } l = (b - a) \frac{2 \rho}{b - a} \arcsin \frac{b - a}{2 \rho}
+\]
+</p>
+
+<p>
+Definiramo \(  \frac{2 \rho}{b - a} = t \), kar pomeni, da imamo funkcijo ene spremenljivk e
+</p>
+
+<p>
+\[ l = (b - a) \psi(t) = (b - a) = t \arcsin \frac{1}{t}
+\]
+</p>
+
+<p>
+Velja, da je \(  \psi \) strogo padajoča na intervalu \(  [1, \infty)  \), kar je za domačo nalogo (pogledaš odvod, če ima prav predznak).
+</p>
+
+<p>
+\[ \psi(t) \le \psi(1) = \frac{\pi}{2}
+\]
+</p>
+
+<p>
+Ko \(  t \to \infty \), vzamemo \(  \psi(t) = \frac{\arcsin \frac{1}{t}}{\frac{1}{t}} \) in definiramo \(  z = \arcsin \frac{1}{t} \), kar pomeni, da imamo \(  \psi(z) = \frac{z}{\sin (z)} \), kar gre v limiti \(  t \to \infty,\ z \to 0,\ \psi(z) \to 1 \). Obstaja \(  \psi^{-1} : \left( 1, \frac{\pi}{2}\right] \to [1, \infty) \).
+</p>
+
+<blockquote>
+<p>
+Papir ne bo kričal&#x2026; pravzaprav bo čez 10 let, vsaj tako kaže, kričal, ko nekaj narobe napišeš &#x2026; v bistvu ne bo, ker ne bo noben več na papir pisal.
+</p>
+</blockquote>
+
+<p>
+Papir ne bo kričal, ker ne bo več vedel, kaj je prav in kaj narobe. Did you know, da je FB ukinil independent fact checkerje, da preneha ta <i>censorship</i>? (besede Zuckerberga).
+</p>
+
+
+<p>
+Back to scheduled program: Po privzetku je \(  \frac{l}{b - a} \le \frac{\pi}{2} \) dobimo
+</p>
+
+<p>
+\[ \rho = \frac{b - a}{2} \psi^{-1} \left(  \frac{l}{ b - a} \right)
+\]
+</p>
+
+<p>
+Odtod izračunamo D in na koncu dobimo formulo za
+</p>
+
+<p>
+\[ y = \frac{b - a}{2} \left( \sqrt{\psi^{-1} \left( \frac{l}{b - a} \right)^2 - \left( \frac{b + a - 2x}{b - a} \right) ^2} - \sqrt{\psi^{-1} \left( \frac{l}{b - a} \right)^2 - 1} \right)
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org448a01d" class="outline-2">
+<h2 id="org448a01d"><span class="section-number-2">2.</span> Hilbertovi prostori</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Imamo množico \(  M \), ki ima lastnosti vektorskega prostora (torej znamo seštevati elemente množice \(  M \) ter množenje s skalarjem). Prav tako lahko na množici izmerimo oddaljenost s pomočjo metrike, ter merimo kote s skalarnim produktom.
+</p>
+
+<p>
+Vsakič, ko uvedemo neko novo strukturo (metriko), moramo najti neko razmerje (trikotniška neenakost), ki povezuje ostale strukture (seštevanje).
+</p>
+</div>
+<div id="outline-container-org1ad7823" class="outline-3">
+<h3 id="org1ad7823"><span class="section-number-3">2.1.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Prostor s skalarnim produktom je vektorski prostor \(  V \) nad \(  \mathbb{R} \) ali \(  \mathbb{C} \) na katerem obstaja preslikava
+</p>
+
+<p>
+\[ \left\langle \cdot, \cdot \right\rangle : V \times V \to \mathbb{C}
+\]
+</p>
+
+<p>
+tako, da velja
+</p>
+
+<ol class="org-ol">
+<li>\(  \left\langle x + y, z \right\rangle = \left\langle x, z \right\rangle + \left\langle y, z \right\rangle\)</li>
+<li>\(  \left\langle \lambda x, z \right\rangle = \lambda \left\langle x, z \right\rangle\), če je množenje s skalarjem v prvem faktorju</li>
+<li>\(  \left\langle z, x \right\rangle = \overline{\left\langle x, z \right\rangle} \) - s tem smo rešili problem množenja s skalarjem v drugem faktorju, torej \(  \left\langle x, z \right\rangle = \left\langle z, x \right\rangle\) če je prostor realen.</li>
+<li>\(  \left\langle x, x \right\rangle \le 0 \) in \(  \left\langle x, x \right\rangle  \iff x = 0 \)
+Vprašati se moramo, če imamo \(  0 \) v naši množici, na kar je odgovor, ja, ker smo v vektorskem prostoru.</li>
+</ol>
+<p>
+Operacija \(  \left\langle \cdot, \cdot \right\rangle \) se imenuje <i>skalarni produkt</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-orga4a310a" class="outline-3">
+<h3 id="orga4a310a"><span class="section-number-3">2.2.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Naj bo \(  V \) prostor s skalarnim produktom. Norma, ki izhaja iz skalarnega produkta, je definirana s predpisom
+</p>
+
+<p>
+\[ \left\lVert x \right\rVert = \sqrt{\left\langle x, x \right\rangle}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org2961f3f" class="outline-3">
+<h3 id="org2961f3f"><span class="section-number-3">2.3.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Naj bo \(  V \) vektorski prostor. Preslikava \(  \left\lVert \cdot \right\rVert: V \to [0, \infty) \) se imenuje norma, če velja
+</p>
+
+<ol class="org-ol">
+<li>\(  \left\lVert x \right\rVert \le 0 \ \forall x \in V \)</li>
+<li>\(  \left\lVert x \right\rVert = 0 \iff x = 0 \)</li>
+<li>\(  \left\lVert \lambda x \right\rVert = \left| \lambda \right| \left\lVert x \right\rVert, \ \forall x \in V, \ \lambda \in \mathbb{C} \text{ oz } \mathbb{R}\)</li>
+<li>\(  \left\lVert x + y \right\rVert \le \left\lVert x \right\rVert + \left\lVert y \right\rVert\)</li>
+</ol>
+
+<p>
+Če je \(  V \) prostor s skalarnim produktom, tedaj predpis
+</p>
+
+\begin{equation}
+\label{eq:5}
+\left\lVert x \right\rVert = \sqrt{\left\langle x, x \right\rangle}
+\end{equation}
+
+
+<p>
+res definiram normo na \(  V \).
+</p>
+
+<p>
+__
+</p>
+
+<p>
+Vemo, če je \(  M \) množica, je preslikava \(  d:M \times M \ to [0, \infty) \) metrika na \(  M \), če velja
+</p>
+
+<ul class="org-ul">
+<li>\(  d(x, y) \le 0 \ \forall x, y \in M \) in \(  d(x, y) = 0 \iff x = y \)</li>
+<li>\(  d(x, y) = d(y, x) \)</li>
+<li>\(  d(x, y) \le d(x, z) + d(z, y) \) kar je trikotniška neenakost</li>
+</ul>
+
+<p>
+Vemo, če je \(  \left\lVert \cdot \right\rVert \) norma na vektorskem prostoru \(  V \), tedaj
+</p>
+
+<p>
+\[ d(x, y) = \left\lVert x - y \right\rVert
+\]
+</p>
+
+<p>
+določa metriko na \(  V \).
+</p>
+
+<p>
+Torej velja
+</p>
+
+<p>
+\[ \left\{ \text{prostor s skalarnim produktom} \right\} \subsetneqq \left\{ \text{normirani prostori} \right\} \subsetneqq \left\{ \text{metrični prostori} \right\}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org2221eb8" class="outline-3">
+<h3 id="org2221eb8"><span class="section-number-3">2.4.</span> Trditev (Neenakost Cauchy-Schwarz-Bunjakovski - CSB)</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Za vsak \(  x, y \) iz prostora s skalarnim produktom \(  V \), velja
+</p>
+
+<p>
+\[ \left| \left\langle x, y \right\rangle \right|  \le \left\lVert x \right\rVert \left\lVert y \right\rVert
+\]
+</p>
+
+<p>
+<i>Opomba</i>: Ne mešaj in ne dokazuj trikotniške neenakosti na izpitu!
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Obravnavamo primer, ko je prostor skalarjev \(  \mathbb{K} \), enak \(  \mathbb{R} \). Za poljuben \(  \lambda \in \mathbb{R} \) velja
+</p>
+
+\begin{align*}
+ 0 &\overset{1)}{\le}  \left\langle x + \lambda y, x + \lambda y \right\rangle \\
+&\overset{2)}{=} \left\langle x, x + \lambda y \right\rangle + \left\langle \lambda y, x+ \lambda y \right\rangle \overset{3)}{=} \left\langle x, x + \lambda y \right\rangle \lambda \left\langle y, x + \lambda y \right\rangle \\
+&\overset{4)}{=} \left\langle x + \lambda y, x \right\rangle + \lambda \left\langle x + \lambda y, y \right\rangle \\
+&= \left\langle x, x \right\rangle + \lambda \left\langle y, x \right\rangle + \lambda \left\langle x, y \right\rangle + \lambda \cdot \lambda \left\langle y, y \right\rangle \\
+&= \left\lVert x \right\rVert ^2 + 2 \lambda \left\langle x, y \right\rangle +  \lambda ^2 \left\lVert y \right\rVert ^2 = f(\lambda) && \forall x, y \in V, \ \forall  \lambda \in \mathbb{R}
+\end{align*}
+
+<p>
+Imamo kvadratno funkcijo, ki je za vsako \(  \lambda \) iz \(  \mathbb{R} \) nenegativna z grafom nad absciso.
+</p>
+
+<p>
+To pomeni, da mora diskriminanta biti enaka
+</p>
+
+\begin{align*}
+  D &= b ^2 - 4ac \le 0  \\
+(2 \left\langle x, y \right\rangle) ^2 - 4 \left\lVert x \right\rVert ^2 \left\lVert x \right\rVert &\le 0 \\
+4 \left\langle x, y \right\rangle ^2 &\le 4 \left\lVert x \right\rVert ^2 \left\lVert y \right\rVert ^2 && \left/\sqrt{} \right. \\
+\left| \left\langle x, y \right\rangle \right| &\le  \left\lVert x \right\rVert \left\lVert y \right\rVert  && \square
+\end{align*}
+
+
+<p>
+__
+</p>
+
+<p>
+Velja
+</p>
+
+ \begin{align*}
+  \left\lVert x + y \right\rVert ^2 &= \left\langle x + y, x+ y \right\rangle \\
+&= \left\langle x, x \right\rangle + \left\langle x, y \right\rangle + \left\langle y, x \right\rangle + \left\langle y, y \right\rangle \\
+&= \left\lVert x \right\rVert ^2 + \left\langle x, y \right\rangle + \bar{\left\langle x, y\right\rangle} + \left\lVert y \right\rVert ^2 \\
+&= \left\lVert x \right\rVert ^2 + 2 \Re \left\langle x, y \right\rangle + \left\lVert y \right\rVert ^2 \\
+\end{align*}
+
+\begin{align*}
+\left\lVert x + y  \right\rVert ^2 & \overset{\mathbb{K} = \mathbb{R}}{=} \left\lVert x \right\rVert ^2 + 2 \left\langle x, y \right\rangle + \left\lVert y \right\rVert ^2\\
+\left\lVert x - y  \right\rVert ^2 &= \left\lVert x  \right\rVert ^2 - 2 \left\langle x, y \right\rangle + \left\lVert y \right\rVert ^2
+\end{align*}
+
+<p>
+To dvoje sedaj odštejemo in delimo s 4 in dobimo
+</p>
+
+\begin{equation}
+\label{eq:4}
+\left\langle x, y \right\rangle  = \frac{\left\lVert x + y \right\rVert ^2 - \left\lVert x - y \right\rVert ^2}{4}
+\end{equation}
+
+<p>
+Za \(  \mathbb{K} = \mathbb{C} \) izračunamo še \(  ix + y \).
+</p>
+
+<p>
+Formula \ref{eq:4} pove, kako skalarni produkt rekonstruiramo s pomočjo norme.
+</p>
+
+<p>
+<i>Opomba</i>: Ni vsaka norma na nekem vektorskem prostoru porojena s skalarnim produktom. Izkaže se, da  je norma porojena s skalarnim produktom \(  \iff \) velja paralelogramska identiteta
+</p>
+
+<p>
+\[ \left\lVert x + y \right\rVert  ^2 + \left\lVert x - y \right\rVert ^2 = 2 \left\lVert x \right\rVert ^2 + 2 \left\lVert y \right\rVert ^2
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org4372b36" class="outline-3">
+<h3 id="org4372b36"><span class="section-number-3">2.5.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+Prostor \(  V \) s skalarnim produktom je <i>Hilbertov</i>, če je v porojeni normi poln.
+</p>
+
+
+<p>
+Cauchyjevo zaporedje (razlika dveh poljubno velikih členov zaporedja je poljubno majhna): za vsak \(  \epsilon > 0  \) obstaja \(  n_0 \in \mathbb{N} \) (npr. 500 mio člen) tako, da
+</p>
+
+<p>
+\[ m, n \le n_0 \implies \left\lVert x_m - x_n \right\rVert < \epsilon
+\]
+</p>
+
+<p>
+kjer je \(  \left\lVert \cdot \right\rVert \) podan z \ref{eq:5}
+</p>
+
+<p>
+Polnost pomeni, če je zaporedje \(  \left( x_n \right)_n \subset V \) Cauchyjevo, tedaj je konvergentno (v \(  V \)) torej obstaja \(  x \in V \) tako, da \( x = \lim_{n \to \infty}  \) v \(  V \), to pomeni, da je
+</p>
+
+<p>
+\[ \lim_{n \to \infty}  \left\lVert x - x_n \right\rVert = 0
+\]
+</p>
+
+<p>
+kjer je \(  \left\lVert x - x_n \right\rVert \) realno zaporedje.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf8f7016" class="outline-3">
+<h3 id="orgf8f7016"><span class="section-number-3">2.6.</span> Primeri</h3>
+<div class="outline-text-3" id="text-2-6">
+<ol class="org-ol">
+<li><p>
+\(  \mathbb{R} ^n = \left\{ (x_1, \ldots, x_n); \ x_j \in \mathbb{R} \right\} \)
+Definiramo
+</p>
+
+<p>
+\[ \left\langle x, y \right\rangle = \sum\limits_{j = 1}^n x_j y_j
+   \]
+</p>
+
+<p>
+S tem \(  \mathbb{R} ^n \) postane realen Hilbertov prostor.
+</p></li>
+
+<li><p>
+\(  \mathbb{C} ^n = \left\{ z = \left( z_1, \ldots, z_n \right); z_j \in \mathbb{C} \right\} \)
+</p>
+
+<p>
+Definiramo
+</p>
+
+<p>
+\[ \left\langle z, w \right\rangle = \sum\limits_{j = 1}^n z_j \bar{w}_j
+   \]
+</p>
+
+<p>
+S tem \(  \mathbb{C} ^n \) postane kompleksen Hilbertov prostor. Opazimo
+</p>
+
+<p>
+\[ \Re \left\langle z, w \right\rangle _{\mathbb{C} ^n}  = \left\langle \tilde{z}, \tilde{w} \right\rangle_{\mathbb{R}^{2n}}
+   \]
+</p>
+
+<p>
+\(  z = a + bi \ \in \mathbb{C}, \ \ w = c + di \ \in \mathbb{C} \)
+</p>
+
+\begin{align*}
+\left\langle z, w \right\rangle_{\mathbb{C}} &= z \bar{w} \\
+&= \left( a + bi \right) \left( c - di \right) = (ac + bd) + i (bc - ad)
+\end{align*}
+
+<p>
+Iz tega sledi, da je
+</p>
+
+<p>
+\[ \Re \left\langle z, w \right\rangle = ac + bd = \left\langle \begin{bmatrix} a \\ b \end{bmatrix}, \begin{bmatrix} c \\ d \end{bmatrix} \right\rangle_{\mathbb{R} ^2}
+   \]
+</p>
+
+<p>
+\(  \mathbb{C} \ni \tilde{x + yi} = (x, y) \in \mathbb{R} ^2 \)
+</p></li>
+<li><p>
+\(  J: [a, b] \subset \mathbb{R} \) za \(  V = C(J) = \left\{ f: J \to \mathbb{C}, \ f \text{ zvezvne} \right\} \)
+</p>
+
+<p>
+Definiramo skalarni produkt na \(  V \).
+</p>
+
+\begin{align*}
+  \left\langle f, g \right\rangle &= \int\limits_J^{} f \bar{g}\,\mathrm{d x} \\
+&= \int\limits_a^b f(x) \bar{g}(x)\,\mathrm{d x}
+\end{align*}
+
+\begin{align*}
+  \left\lVert f \right\rVert ^2 _2 &= \left\langle f, f \right\rangle \\
+&= \int\limits_J^{} f \bar{f} \,\mathrm{d x} \\
+&= \int\limits_J^{} \left| f \right| ^2\,\mathrm{d x }
+\end{align*}
+
+<p>
+S tem \(  V \) postane prostor s skalarnim produktom (preveri za domačo nalogo). Ta prostor <b>ni</b> Hilbertov.
+</p>
+
+<p>
+Iščemo \(  \left( f_n \right)_n \subset V \) tako, da velja
+</p>
+
+<ol class="org-ol">
+<li><p>
+je Cauchyjevo v \(  V \)
+</p>
+
+\begin{align*}
+  \left\lVert f_n - f_m \right\rVert ^2 &= \left\langle f_n - f_m, f_n - f_m \right\rangle \\
+&= \int\limits_J^{} \left| f_n - f_m \right| ^2 \,\mathrm{d x} \underset{m, n \to \infty}{\longrightarrow} 0
+\end{align*}
+
+<p>
+I guess, da za primer \(  x^n \to 0 \) v \(  \left\lVert \cdot \right\rVert_2 \)na \(  [0, 1] \). Preveriti moramo
+</p>
+
+<p>
+\[ \int\limits_0^1 \left| x^n - x^m \right| ^2 \,\mathrm{d x} \underset{m, n \to \infty}{\longrightarrow}  0
+      \]
+</p></li>
+<li>nima limite v \(  V \)</li>
+</ol>
+
+<p>
+Če želimo iz \(  V = \left\{ C(J), \left\lVert \cdot \right\rVert ^2 \right\} \), narediti Hilbertov (= poln) prostor, ga moramo razširiti, vendar to presega Mat3.
+</p></li>
+
+<li><p>
+\(  l ^2 = \left\{ a = \left( x_n \right)_{n \in \mathbb{N}}; \ a_n \in \mathbb{C} \text{ in } \left\lVert a \right\rVert_{l ^2} = \sqrt{\sum\limits_{n = 1}^{\infty} \left| a_n \right| ^2} < \infty \right\} \)
+</p>
+
+<p>
+Imamo za \(  a, b \in l ^2 \)
+</p></li>
+</ol>
+
+<p>
+\[ \left\langle a, b \right\rangle_{l ^2 } = \sum\limits_{j = 1}^{\infty} a_j \bar{b}_j
+\]
+</p>
+
+<p>
+Množica je separabilna, ko je gosta (ang. <i>dense set</i> ) in ko je števna. Pomembna podmnožica &ldquo; končna zaporedja&rdquo;:  \(  \left( a_1, a_2, \ldots, a_n, 0, 0, \ldots \right) \)
+</p>
+
+<p>
+Če je \(  a = (a_1, a_2, \ldots, ) \in l ^2 \), tedaj za \(  a^{(N)} = \left( a_1, a_2, \ldots, a_n, 0, 0  \right) \in l ^2 \) velja \(  a^{(N)} \to a  \) v \(  l ^2 \)
+</p>
+</div>
+</div>
+<div id="outline-container-org5d40f28" class="outline-3">
+<h3 id="org5d40f28"><span class="section-number-3">2.7.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+\(  x, y \in U \) sta pravokotna (\(  x \perp y \)), če \(  \left\langle x, y \right\rangle = 0 \).
+</p>
+</div>
+</div>
+<div id="outline-container-org034a0e0" class="outline-3">
+<h3 id="org034a0e0"><span class="section-number-3">2.8.</span> Izrek (Pitagorov)</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+Če sta \(  x, y \) pravokotna, je
+</p>
+
+<p>
+\[ \left\lVert x + y  \right\rVert ^2 = \left\lVert x \right\rVert ^2 + \left\lVert y \right\rVert ^2
+\]
+</p>
+
+<p>
+<b>Dokaz</b>
+</p>
+
+<p>
+\[ \left\lVert x + y  \right\rVert ^2 = \left\lVert x \right\rVert ^2 + \left\lVert y \right\rVert ^2 + 2 \Re \left\langle x, y \right\rangle
+\]
+</p>
+
+<p>
+Zadnji člen je enak 0
+</p>
+</div>
+</div>
+<div id="outline-container-org8cff3e5" class="outline-3">
+<h3 id="org8cff3e5"><span class="section-number-3">2.9.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+Naj bo \(  A \subset X \) poljubna podmnožica, kjer je \(  X \) prostor s skalarnim produktom. Množica
+</p>
+
+<p>
+\[ A^{\perp}  = \left\{ y \in X; y \perp a \forall a \in A \right\}
+\]
+</p>
+
+<p>
+se imenuje ortogonalni komplement.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd12e593" class="outline-3">
+<h3 id="orgd12e593"><span class="section-number-3">2.10.</span> Trditev</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+Za vsak \(  A \subset X \) je \(  A^{\perp} \) zaprt vektorski prostor.
+</p>
+
+<p>
+<b>Dokaz</b>: Linearnost velja (množenje s skalarjem).
+</p>
+
+<p>
+Zaprtost (poglej definicijo odprte množice): če je \(  y_n \in A ^{\perp}; \ y_n \rightarrow x \in X \) (\(  y_n \) konvergira k \(  x \)) iz česar sledi \(  x \in A^{\perp}  \).
+</p>
+
+<p>
+Vzamemo poljuben \(  a \in A \). Želimo \(  x \perp a \). Vemo, da je \(  y_n \perp a \) za vsak \(  n \in \mathbb{N} \).
+</p>
+
+<p>
+Iz definicije pravokotnosti vemo, da je skalarni produkt enak 0.
+</p>
+
+<p>
+\(  \left\langle x, a \right\rangle = \lim_{n \to \infty} \left\langle y_n, a \right\rangle \) ali je to valid?
+</p>
+
+<p>
+Vemo
+</p>
+
+\begin{equation}
+\label{eq:7}
+y_n \to x
+\end{equation}
+
+<p>
+In hočemo:
+</p>
+
+\begin{equation}
+\label{eq:6}
+\left\langle y_n, a \right\rangle \rightarrow \left\langle x, a \right\rangle
+\end{equation}
+
+<p>
+\ref{eq:6}:
+</p>
+
+<p>
+\[ \lim_{n \to \infty} \left[ \left\langle y_n, a \right\rangle - \left\langle x, a \right\rangle\right] = 0
+\]
+</p>
+
+<p>
+\ref{eq:7}
+</p>
+
+<p>
+\[ \left\lVert y_n - x \right\rVert \underset{n \to \infty}{=} 0
+\]
+</p>
+
+<p>
+Velja
+</p>
+
+<p>
+\[ \left| \left\langle y_n, a \right\rangle - \left\langle x, a \right\rangle \right| = \left| \left\langle y_n, a \right\rangle \right| \underset{\text{CSB}}{\longrightarrow}\left\lVert y_n - x \right\rVert \left\lVert a \right\rVert \underset{\ref{eq:7}}{\longrightarrow} 0 \quad \square
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org8a1f8f4" class="outline-3">
+<h3 id="org8a1f8f4"><span class="section-number-3">2.11.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+Naj bo \(  Y \le X  \) (podprostor). Vzamemo \(  x \in X \). Pravimo, da je \(  Y \) ortogonalna (pravoktona) projekcija vektorja \(  x \) na podprostor \(  Y \), če je \(  x - y \perp Y \) oz. \(  x - y \in Y^{\perp} \).
+</p>
+
+<p>
+Oznake: \(  y = P_Y x \), preslikava \(  P_Y: X \to Y, \ x \mapsto y = P_Y x \)
+se imenuje ortogonalni projektor prostora \(  X \) na podprostor \(  Y \). Dokazati moramo obstoj in enoličnost.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf869a24" class="outline-3">
+<h3 id="orgf869a24"><span class="section-number-3">2.12.</span> Trditev</h3>
+<div class="outline-text-3" id="text-2-12">
+<p>
+Naj bo \(  X \) prostor s skalarnim produktom in \(  Y \subseteq X \) linearni podprostor. Denimo, da za vsak \(  x \in X \) obstaja neki \(  P_Y x \) kot iz prejšnje definicije. Tedaj
+</p>
+
+<ol class="org-ol">
+<li>\(  P_Y x \) je enolično določen</li>
+<li><p>
+\(  P_Y x \) je najboljši približek za \(  x \) v \(  Y \), v smilsu
+</p>
+
+<p>
+\[ \left\lVert x - P_Y x \right\rVert = \inf_{z \in Y} \left\lVert x - z \right\rVert = d(x, Y)
+   \]
+</p></li>
+<li>\(  P_Y \) je linearna</li>
+<li>Preslikava \(  P_Y \) je zvezna, celo skrčitev: \(  \left\lVert P_Y x \right\rVert \le \left\lVert x \right\rVert, \ \forall x \in X \)</li>
+<li>\(  Y \) je zaprt v \(  X \).</li>
+</ol>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<ol class="org-ol">
+<li>Denimo, da obstajata \(  y_1, y_2 \in Y \) tako, da velja \(  x - y_1 \perp Y \) in \(  x - y_2 \perp Y \). Odštejemo  in sledi \(  Y \ni y_1 - y_2 \perp Y \). Tako sledi, da je \(  y_1 - y_2 \perp y_1 - y_2 \) in to je možno samo, če je \(  y_1 - y_2 = 0 \).</li>
+<li><p>
+Vzemimo poljuben \(  z \in Y \). Tedaj je
+\[  x- z = \underbrace{\left( x - P_Y x \right)}_{\in Y^{\perp}} + \underbrace{\left( P_Y x - z \right)}_{\in Y} \]
+</p>
+
+<p>
+Z uporabo Pitagorovega izreka
+</p>
+
+\begin{align*}
+  \left\lVert x - z \right\rVert ^2 &= \left\lVert x - P_Y x \right\rVert ^2 + \left\lVert P_Y x - z \right\rVert ^2 & \\
+\ge \left\lVert x - P_Y x \right\rVert ^2
+\end{align*}
+
+<p>
+Za enakost vzamemo \(  z = P_Y x \)
+</p></li>
+<li><p>
+Vzamemo \(  x_1, x_2 \in X \) . Vemo \(  x_1 - P x_1, x_2 - Px_2 \in Y^{\perp} \). Iz tega sledi
+</p>
+
+<p>
+\[ \left( x_1 + x_2 \right) - \underbrace{\left( Px_1 - Px_2 \right)}_{\in Y} \in Y^{perp}\]
+</p>
+
+<p>
+Po enoličnosti a) sledi \(  Px_1 + Px_2 = P(x_1 + x_2) \)
+</p></li>
+<li><p>
+\(  x = (x - Px) + Px \) iz česar sledi
+</p>
+
+<p>
+\[ \left\lVert x \right\rVert ^2 = \underbrace{\left\lVert x - Px \right\rVert ^2}_{\le 0} \left\lVert Px \right\rVert ^2 \le \left\lVert Px \right\rVert ^2 \]
+</p></li>
+<li><p>
+Naj bo \(  (y_n)_n \subset Y \) tako, da \(  y_n \to x \) za neki \(  x \in X \). Dokazujemo \(  x \in Y \). Ker je \(  P \) zvezen, sledi \(  Py_n \to P_x \)
+</p>
+
+<p>
+\[ 0 \le \left\lVert Py_n - Px \right\rVert \overset{P \text{ lin. }}{=} \left\lVert P(y_n - x) \right\rVert \overset{d)}{\le} \left\lVert y_n - x \right\rVert \overset{n \to \infty}{\longrightarrow} 0
+   \]
+</p>
+
+<p>
+kar je \(  0 \) po privzetku. Hkrati pa velja \(  Py_n = y_n \), saj \(  y_n \in Y \). Sledi, da je \(  Px \leftarrow Py_n = y_n \rightarrow x \) iz česar sledi, da je \(  Px = x \) in to pomeni, da je \(  x \in Y \).
+</p>
+
+<p>
+QED
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org873c324" class="outline-3">
+<h3 id="org873c324"><span class="section-number-3">2.13.</span> Primer</h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+Podprostora \(  Y \subseteq X \), ki nima ortogonalne projekcije \(  Y^{\perp} \). Po e) \(  Y \) ne sme biti zaprt, kar pomeni, da ne sme biti končno dimenzionalen.
+</p>
+
+<p>
+Vzamemo \(  X = l ^2 = \left\{ (a_1, a_2, \ldots), \left\lVert x \right\rVert ^2 = \sum\limits_1^{\infty} \left| a_n \right| ^2 < \infty \right\} \) in \(  Y \) je končno zaporedje. Videli smo, da za vsak \(  a \in X \) obstaja zaporedje \(  \left( a^{(N)}\right)_{N \in \mathbb{N}} \subset Y \) tako, da
+</p>
+
+<p>
+\[ \left\lVert a^{(N)} - a \right\rVert _2 \underset{N \to \infty}{\longrightarrow} 0
+\]
+</p>
+
+<p>
+Torej \(  Y \) ni zaprt. Torej po e) ortogonalna projekcija \(  l ^2 \to Y \) ne obstaja.
+</p>
+
+<p>
+Kako to &ldquo;vidimo&rdquo;? Vzamemo \(  x \in l ^2 \setminus Y \), npr.
+</p>
+
+<p>
+\[ x = \left( 1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \ldots \right) = \left( \frac{1}{n} \right)_{n \in \mathbb{N}}
+\]
+</p>
+
+<p>
+To pomeni, da
+</p>
+
+<p>
+\[ \sum\limits_{n = 1}^{\infty } \frac{1}{n ^2} < \infty
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org0401687" class="outline-3">
+<h3 id="org0401687"><span class="section-number-3">2.14.</span> Trditev</h3>
+<div class="outline-text-3" id="text-2-14">
+<p>
+Naj bo \(  Y \subseteq X \) končno dimenzionalen prostor in \(  \left\{ e_1, \ldots e_n \right\} \) njegova baza sestavljena iz paroma ortogonalnih vektorjev z dolžino \(  1 \). To pomeni, da je
+</p>
+
+<p>
+\[ \left\langle e_j, e_k \right\rangle = \delta_{jk}
+\]
+</p>
+
+<p>
+Tedaj je
+</p>
+
+<p>
+\[ P_Y x = \sum\limits_{j = 1}^n \left\langle x, e_j \right\rangle e_j
+\]
+</p>
+
+<p>
+za domačo nalogo lahko pokažeš \(  x - P_Y x \perp e_k, \ \forall k \)
+</p>
+</div>
+</div>
+<div id="outline-container-org117ce7a" class="outline-3">
+<h3 id="org117ce7a"><span class="section-number-3">2.15.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-15">
+<p>
+Pravimo, da je družina \(  \left\{ e_j; \ j \in \mathbb{N} \right\} \) ortonormiran sistem (ONS), če velja
+</p>
+
+<p>
+\[ \left\langle e_j, e_k \right\rangle = \delta_{jk}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org3687f5d" class="outline-3">
+<h3 id="org3687f5d"><span class="section-number-3">2.16.</span> Izrek (Besselova neenakost)</h3>
+<div class="outline-text-3" id="text-2-16">
+<p>
+Naj bo \(  X \) vektorski prostor s skalarnim produktom in \(  \left\{ e_j, \ j \in \mathbb{N} \right\} \) ONS v \(  X \). Tedaj za vsak \(  x \in X \) velja
+</p>
+
+<p>
+\[ \sum\limits_{j = 1}^{\infty} \left| \left\langle x, e_j \right\rangle \right| ^2 \le \left\lVert x \right\rVert ^2
+\]
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Definiramo \(  Y_N = \mathrm{Lin} \left\{ e_1, \ldots, e_n \right\} \) (samo \(  n \) vektorjev). Vemo, da je \(  P_{Y_n} x = \sum\limits_{j = 1}^n \left\langle x, e_j \right\rangle e_j \) (opomba, da je to linearna kombinacija vektorjev). Velja
+</p>
+
+<p>
+\[ \left\lVert P_{Y_n} x  \right\rVert ^2 = \sum\limits_{j = 1}^n \left| \left\langle x, e_j \right\rangle \right| ^2
+\]
+</p>
+
+<p>
+po Pitagorovem izreku, kjer smo upoštevali, da so \(  e_j \) ortogonalni med sabo.
+</p>
+
+<p>
+Hkrati vemo, da je \(  \left\lVert P_{Y_n} x \right\rVert \le \left\lVert x \right\rVert\) iz česar sledi
+</p>
+
+<p>
+\[ \sum\limits_{j = 1}^n \left| \left\langle x, e_j \right\rangle \right| ^2 \le \left\lVert x \right\rVert ^2, \ \forall n \in \mathbb{N}
+\]
+</p>
+
+<p>
+Iz tega potem sledi
+</p>
+
+<p>
+\[ \sum\limits_{j = 1}^{ \infty } \left| \left\langle x, e_j \right\rangle \right|  ^2 \le \left\lVert x \right\rVert ^2 \quad \square
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org1968184" class="outline-3">
+<h3 id="org1968184"><span class="section-number-3">2.17.</span> Trditev</h3>
+<div class="outline-text-3" id="text-2-17">
+<p>
+Naj bo \(  X \) Hilbertov prostor \(  \left\{ e_j, j \in \mathbb{N} \right\} \) ONS in \(  \left( c_j \right)_{j \in \mathbb{N}} \in l ^2 \). Tedaj
+</p>
+
+<p>
+\[ \sum\limits_{j = 1}^{\infty}c_j e_j
+\]
+ obstaja v \(  X \).
+</p>
+
+<p>
+To pomeni, da zaporedje \(  \left( \sum\limits_{j = 1}^n c_j e_j \right)_{n \in \mathbb{N}} \) v X (opazi, da je na zgornji meji \(  n \) in ne \(  \infty \)).
+</p>
+
+<p>
+Če označimo
+</p>
+
+<p>
+\[ x = \sum\limits_{j = 1}^{\infty} c_j e_j
+ \]
+</p>
+
+<p>
+je \(  c_j = \left\langle x, e_j \right\rangle \)
+</p>
+</div>
+</div>
+<div id="outline-container-org205ed0b" class="outline-3">
+<h3 id="org205ed0b"><span class="section-number-3">2.18.</span> Posledica</h3>
+<div class="outline-text-3" id="text-2-18">
+<p>
+Če je \(  \left\{ e_j, \ j \in \mathbb{N} \right\} \) ONS v Hilbertovem prostoru \(  X \), tedaj
+</p>
+
+<p>
+\[ \sum\limits_{j = 1}^{\infty} c_j e_j
+\]
+</p>
+
+<p>
+konvergira \(  \iff \ \left( c_j \right)_{j \in \mathbb{N}} \in l ^2 \)
+</p>
+
+<p>
+<b>Dokaz</b>:
+</p>
+
+<p>
+Označimo
+</p>
+
+<p>
+\[ s_n = \sum\limits_{j = 1}^{n} c_j e_j
+\]
+</p>
+
+<p>
+Po Pitagorovem izrek je \(  \left( s_n \right)_n \) Cauchyjevo v \(  X \).
+</p>
+
+\begin{align*}
+  \left\lVert s_n - s_m \right\rVert ^2 &\overset{n > m}{=} \left\lVert \sum\limits_{j = m + 1}^n c_j e_j \right\rVert ^2 \\
+&= \sum\limits_{j = m + 1 }^n \left\lVert c_j e_j \right\rVert ^2 \\
+&= \sum\limits_{j = m + 1}^n \left| c_j  \right| ^2 \cdot \underbrace{\left\lVert e_j \right\rVert ^2}_{=1} \\
+&= \sum\limits_{j = m + 1 }^n \left| c_j \right| ^2 = \sum\limits_{j = 1}^n \left| c_j \right|^2 - \sum\limits_{j = 1}^m \left| c_j  \right| ^2
+\end{align*}
+
+<p>
+Razlika delnih vsot (konvergirajoče) vrste \(  \sum\limits_{j = 1}^{\infty} \left| c_j \right| ^2 \) gre proti 0, ko \(  m, n \to \infty \).
+</p>
+
+<p>
+Ker je \(  X \) poln, obstaja \(  \lim_{n \to \infty} s_n \in X  \). To je naš \(  x \). \(  \square \)
+</p>
+</div>
+</div>
+<div id="outline-container-org9cb24e6" class="outline-3">
+<h3 id="org9cb24e6"><span class="section-number-3">2.19.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-19">
+<p>
+Naj bo \(  X \) Hilbertov prostor in \(  \mathcal{E} = \left\{ e_j; \ j \in \mathbb{N} \right\} \) ONS v \(  X \). Vrsti
+</p>
+
+<p>
+\[ \sum\limits_{j = 1}^{\infty} \left\langle x, e_j \right\rangle e_j
+\]
+</p>
+
+<p>
+pravimo Fourierova vrsta za \(  x \) glede na \(  \mathcal{E} \), števila \(  \left\langle x, e_j \right\rangle \) pa so Fourierovi koeficienti.
+</p>
+
+<p>
+<i>Opomba</i>: Vrsta konvergira po prejšnjih spoznanjih.
+</p>
+
+<p>
+Ali je \(  \sum\limits_{j = 1}^{\infty} \left\langle x, e_j \right\rangle e_j = x \).
+</p>
+</div>
+</div>
+<div id="outline-container-org16764ec" class="outline-3">
+<h3 id="org16764ec"><span class="section-number-3">2.20.</span> Definicija</h3>
+<div class="outline-text-3" id="text-2-20">
+<p>
+Naj bo \(  X \) Hilbertov prostor. Pravimo, da je ONS \(  \mathcal{E} = \left\{ e_j; j \in \mathbb{N} \right\} \) kompleten (KONS), če za vsak \(  x \in X \) velja
+</p>
+
+<p>
+\[ x = \sum\limits_{j  =1}^{ \infty }\left\langle x, e_j \right\rangle e_j
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgcc0d959" class="outline-3">
+<h3 id="orgcc0d959"><span class="section-number-3">2.21.</span> Izrek</h3>
+<div class="outline-text-3" id="text-2-21">
+<p>
+\(  X \) je Hilbertov prostor, \(  \mathcal{E} \) je ONS. Naslednje izjave so ekvivalentne:
+</p>
+
+<ol class="org-ol">
+<li>\(  \mathcal{E} \) je KONS</li>
+<li><p>
+za vsak \(  x, y \in X \) je
+</p>
+
+<p>
+\[ \left\langle x, y \right\rangle  = \sum\limits_{j = 1}^{\infty} \left\langle x, e_j \right\rangle \bar{\left\langle y, e_j \right\rangle}
+   \]
+</p></li>
+<li><p>
+za vsak \(  x \in X \) je
+</p>
+
+<p>
+\[ \left\lVert x \right\rVert  ^2 = \sum\limits_{j = 1}^{\infty} \left| \left\langle x, e_j \right\rangle \right| ^2
+   \]
+</p>
+
+<p>
+čemur je Parsevalova indentitea
+</p></li>
+<li>\(  \mathcal{E} \) ni vsebovan v nobenem večjem ONS</li>
+<li>\(  \mathcal{E}^{\perp} = \left\{ 0 \right\}  \)</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2025-02-10 Mon 20:54</p>
+</div>
+</body>
+</html>

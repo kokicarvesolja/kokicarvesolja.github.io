@@ -1,0 +1,1613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-01-09 Thu 11:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mat3teden10</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      macros:{
+            odv: ["\\dot{\\vec{#1}}", 1],
+            oddv: ["\\ddot{\\vec{#1}}", 1],
+            epsilon: "\\varepsilon",
+            theta: "\\vartheta",
+            phi: "\\varphi"
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.5,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Mat3teden10</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgfc532ec">1. Navadne diferencialne enačbe</a>
+<ul>
+<li><a href="#org6f51d76">1.1. Singularne rešitve 2024/12/02</a>
+<ul>
+<li><a href="#org692d9e2">1.1.1. Primer 7.17 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#org9c6aa16">1.2. Clairautova diferencialna enačba</a>
+<ul>
+<li><a href="#orga51a041">1.2.1. Trditev 7.3. (p.S.)</a></li>
+<li><a href="#org69db314">1.2.2. Primer 7.11 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#orgd5005c2">1.3. Homogene nelinearne diferencialne enačbe 2024/12/03</a>
+<ul>
+<li><a href="#org523a686">1.3.1. Definicija 7.2 (p.S.)</a></li>
+<li><a href="#org84ebb4d">1.3.2. Definicija 7.3 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#org2dd7676">1.4. Prvi integral</a>
+<ul>
+<li><a href="#orge9660b2">1.4.1. Definicija 7.4 (p.S.)</a></li>
+<li><a href="#org357dd44">1.4.2. Definicija 7.5 (p.S.)</a></li>
+</ul>
+</li>
+<li><a href="#orgc3ecf2d">1.5. Implicitno podane diferencialne enačbe</a>
+<ul>
+<li><a href="#orga610e34">1.5.1. Primer 7.9 (p.S.)</a></li>
+<li><a href="#org79761c5">1.5.2. Primer 7.10</a></li>
+<li><a href="#org0676ada">1.5.3. Primer Clairautova diferencialna enačba</a></li>
+<li><a href="#org6897e4d">1.5.4. Primer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+Happy December everybody. Tukaj ne bo nobenih božičnih okraskov.
+Also joke of the week: Life is like polymer physics - just one way to be straight, and a lot of ways to be kinky.
+</p>
+<div id="outline-container-orgfc532ec" class="outline-2">
+<h2 id="orgfc532ec"><span class="section-number-2">1.</span> Navadne diferencialne enačbe</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org6f51d76" class="outline-3">
+<h3 id="org6f51d76"><span class="section-number-3">1.1.</span> Singularne rešitve 2024/12/02</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Obravnavamo enačbo \(  y' = f(x, y) \). Naj bo \(  y = \Psi (x, C) \) splošna rešitev. (Kandidata za) singularno rešitev iščemo s pomočjo enačbe
+</p>
+
+<p>
+\[ \frac{\partial \psi}{\partial v} (x, C) = 0
+\]
+</p>
+
+<p>
+oz poenostavljeno \(  \frac{\partial \psi}{\partial C} = 0  \)
+</p>
+</div>
+<div id="outline-container-org692d9e2" class="outline-4">
+<h4 id="org692d9e2"><span class="section-number-4">1.1.1.</span> Primer 7.17 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Rešujemo primer \(  y = \sqrt{1 + y' ^2} \). Zaradi korena velja, da je \(  y \ge 1 \).
+</p>
+
+<p>
+Enačba nas spominja na hiperbolične funkcije. Spomnimo se, da velja \(  \mathrm{ch} ^2 x = 1 + \mathrm{sh} ^2 x \). Poskusimo z nastavkom
+</p>
+
+<p>
+\[ y = \mathrm{ch} z
+\]
+</p>
+
+<p>
+Če odvajamo, dobimo \(  y' = \mathrm{sh}(z)\cdot z' \). Če dobljene enakosti vstavimo notri, dobimo
+</p>
+
+\begin{align*}
+  \mathrm{ch}^2 z &= 1 + z' ^2 \cdot \mathrm{sh} ^2 z \\
+1 + \mathrm{sh}^2 z &+ 1 + z' ^2 \cdot \mathrm{sh} ^2 z\\
+& \implies (z' ^2 - 1) \mathrm{sh} ^2 z =0
+\end{align*}
+
+<p>
+\(  \mathrm{ch}z \) ima  obliko-ish parabole, medtem ko ima \(  \mathrm{sh}z \) obliko kubične funkcije (again, -ish).
+</p>
+
+<ol class="org-ol">
+<li>\(  \mathrm{sh} z(x) = 0 \) iz česar potem sledi, da je \(  z(x) = 0 \) in potem \(  y(x) = 1 \).</li>
+<li>\(  z ^2 - 1 = 0 \), kar pomeni, da sta rešitvi \(  z' = 1 \) ali \(  z' = -1 \)</li>
+</ol>
+
+<p>
+Iz tega potem sledi izražava za \(  z \):
+</p>
+
+<p>
+\[ z(x) = \pm x + C
+\]
+</p>
+
+<p>
+in še izražava za \(  y \)
+</p>
+
+<p>
+\[ y(x) = \mathrm{ch} (\pm x + C) = \mathrm{ch} (x + C)
+\]
+</p>
+
+<p>
+Splošna rešitev je oblike
+</p>
+
+<p>
+\[ y (x) = ch(x - C); \ C \in \mathbb{R}
+\]
+</p>
+
+
+<div id="org0f06dd2" class="figure">
+<p><img src="figures/singularna.png" alt="singularna.png" />
+</p>
+</div>
+
+<p>
+Singularna rešitev je \(  y = 1 \), krivulja, ki ni del splošne rešitve, ampak se hkrati dotika vsake članice splošne rešitve.
+</p>
+
+<p>
+Velja:
+</p>
+
+<p>
+\[ \psi(x, C) = \mathrm{ch} (x - C)
+\]
+</p>
+
+<p>
+Po na začetku povedani trditvi je
+</p>
+
+\begin{align*}
+ \frac{\partial \psi}{\partial C} &= \frac{\partial }{\partial C} \mathrm{ch}(x - C)\\
+&= \mathrm{sh} (x - C) \cdot (-1) \\
+&= \mathrm{sh} (C - x)
+\end{align*}
+
+<p>
+Želimo zadostiti pogoju \(  \frac{\partial \psi}{\partial C} = 0  \), kar pomeni torej, da velja \(  \mathrm{sh}(C - x) = 0 \).
+</p>
+
+<p>
+Iz tega potem sledi
+</p>
+
+<p>
+\[ C - x = 0 \ \implies C = C(x) = x
+\]
+</p>
+
+<p>
+\(  y = \phi(x)  \) je singularna rešitev dobimo kot \(  y = \psi(x, C(x)) \), kjer \(  C(x) \) potem reši \(  \frac{\partial \psi}{\partial C} = 0  \)
+</p>
+
+<blockquote>
+<p>
+Ves čas se sprašujemo, kaj nam enačbe povedo. Kaj pomenijo. Kaj nam kričijo s papirja, pa mi tega ne slišimo.
+</p>
+</blockquote>
+
+<p>
+Tako dobimo rešitev singularne rešitve
+</p>
+
+\begin{align*}
+  y(x) &= \psi(x, C(x)) \\
+&= \mathrm{ch} (x - C(x)) \\
+&= \mathrm{ ch} (x - x) \\
+&=  1
+\end{align*}
+
+<p>
+<b>Pripomba</b>: Če gresta skozi eno točko dve rešitvi, potem morata biti tangentni, kar pa pri nas ni. Prav tako ni težave s tem, samo zanima nas, kaj nastane tam, kjer se grafi splošne rešitve sekajo, saj ima ista točka dva različna naklona. To izhaja iz definicije naše enačbe, tj. \(  y' = f(x, y) \).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9c6aa16" class="outline-3">
+<h3 id="org9c6aa16"><span class="section-number-3">1.2.</span> Clairautova diferencialna enačba</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+To je enačba oblike
+</p>
+
+<p>
+\[ y' = xy' + f(y')
+\]
+</p>
+
+<p>
+kjer je \(  f \) odvedljiva na \(  J^{odp} \subset \mathbb{R} \)
+</p>
+</div>
+<div id="outline-container-orga51a041" class="outline-4">
+<h4 id="orga51a041"><span class="section-number-4">1.2.1.</span> Trditev 7.3. (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Splošna rešitev Clairautove diferencialne enačbe je podana s formulo
+</p>
+
+\begin{equation}
+\label{eq:2}
+ y = Cx + f(C)
+\end{equation}
+
+<p>
+Singularna rešitev je podana z
+</p>
+
+\begin{align*}
+  x &= -f'(t) \\
+y &= - f'(t)t + f(t); t \in J
+\end{align*}
+
+<p>
+kar je parametrični zapis krivulje.
+</p>
+
+<p>
+<b>Dokaz za singularno rešitev</b>:
+</p>
+
+<p>
+Predpostavljamo, da je splošna rešitev:
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \psi(x, C) = Cx + f(C); \ C \in \mathbb{R}
+\end{equation}
+
+<p>
+Iz definicije singularne rešitve velja
+</p>
+
+\begin{align}\label{ali:clair}
+  0 &= \frac{\partial \psi}{\partial C} = x + f'(C) \\
+&\implies x = -f'(C) \\
+&\overset{\ref{eq:1}}{\implies} y = \psi(x, C) = - f'(C) C + f(C)
+\end{align}
+
+<blockquote>
+<p>
+To lahko rešimo tudi s pomočjo t.i. naivne metode: da malo pogledamo in vidimo, kaj lahko naredimo.
+</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-org69db314" class="outline-4">
+<h4 id="org69db314"><span class="section-number-4">1.2.2.</span> Primer 7.11 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Rešujemo enačbo \(  y = x y' + y' ^2 \). Iz \ref{eq:2} sledi, za \(  f(t) = t ^2 \) da je rešitev podana z \(  y = \psi(x, C) = Cx + C ^2 \). Singularna rešitev: iz \ref{ali:clair} sledi
+</p>
+
+\begin{align*}
+  x &= - 2t \\
+y&= -2t \cdot t + t ^2 = t ^2
+& \implies y = - \frac{x ^2}{4}
+\end{align*}
+
+<p>
+Dajmo narisati:
+</p>
+
+
+<div id="org2f17384" class="figure">
+<p><img src="figures/clair.png" alt="clair.png" />
+</p>
+</div>
+
+<p>
+Označimo \(  y_C = Cx + C ^2 = C(x + C) \). Opazimo, da velja \(  y_{-C}(x) = y_C(-x) \). Za rešitev \(  C=1 \), če imamo \(  C=-1 \), samo zrcalimo čez ordinato.
+</p>
+
+<p>
+Narišimo sedaj še našo ogrinjačo - singularno rešitev - naše družine.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd5005c2" class="outline-3">
+<h3 id="orgd5005c2"><span class="section-number-3">1.3.</span> Homogene nelinearne diferencialne enačbe 2024/12/03</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org523a686" class="outline-4">
+<h4 id="org523a686"><span class="section-number-4">1.3.1.</span> Definicija 7.2 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Naj bo \(  F: S \to \mathbb{R} \), kjer je \(  S \subset \mathbb{R} ^2 \) oz. v skrajnem primeru \(  \mathbb{R} \times \mathbb{R} \). podana in koeficient \(  \alpha \in \mathbb{R} \). Pravimo, da je \(  F \) homogena reda \(  \alpha \), če za vsak par \(  x, y \in S \) in \(  t> 0 \) velja
+</p>
+
+<p>
+\[ F(tx, ty) = t^{\alpha} F(x, y)
+\]
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org443471f"></a>Primer<br />
+<div class="outline-text-5" id="text-1-3-1-1">
+<p>
+Homogeni polinomi npr.
+</p>
+
+\begin{align*}
+  p_1 (x) &= 2x - 3y \\
+p_2 (x) &= 7 x ^2 - 4xy - 13 y ^2 \\
+p_3 (x) &= y ^3 - 12xy ^2 \mathbf{+ x ^5}
+\end{align*}
+
+<p>
+Z dodanim zadnjim <b>členom</b> v \(  p_3 \) ni več homogena.
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org84ebb4d" class="outline-4">
+<h4 id="org84ebb4d"><span class="section-number-4">1.3.2.</span> Definicija 7.3 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Homogena diferencialna enačba je enačba oblike
+</p>
+\begin{equation}
+\label{eq:3}
+y' = f(x, y)
+\end{equation}
+<p>
+, kjer je \(  f \) homogena funkcija reda 0, tj. \(  f(x, y) = f(1, \frac{y}{x}) \), če \(  x \ne 0 \).
+</p>
+
+<p>
+Če upoštevamo definicijo 7.2,
+</p>
+
+<p>
+\[ x(x, y) = x^{0} (1, \frac{y}{x})
+\]
+</p>
+
+<p>
+Reševanje vpeljemo z \(  z = \frac{y}{x} \) (oz. \(  y = zx \)). Tedaj \ref{eq:3} postane
+</p>
+
+\begin{align}
+ (zx) ' &= f(x, zx) \\
+z'x + z &= f(1, z) \\
+z'x &= f(1, z) - z && z' = \frac{\mathrm{d} z}{\mathrm{d} x} \\ \label{ali:hde}
+\int\limits_{}^{} \frac{1}{f(1, z)}\,\mathrm{d z} &= \int\limits_{}^{} \frac{1}{x}\,\mathrm{d x} = \log \left| x \right| \
+\end{align}
+
+<p>
+Iz tega sledi, da je rešitev homogene diferencialne enačbe
+</p>
+
+<p>
+\[ F(z) = \log \left| x \right| + C \implies \ F(\frac{y}{x}) - \left| x \right| = C
+\]
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgebcb786"></a>Primer 7.5<br />
+<div class="outline-text-5" id="text-1-3-2-1">
+<p>
+Rešujemo enačbo
+</p>
+
+<p>
+\[ y' = \frac{x + y}{x  y} = f(x, y)
+\]
+</p>
+
+<p>
+Vidimo, da je enačba homogena, saj
+</p>
+
+<p>
+\[ f(tx, ty) = f(x, y) \quad \forall x, y, t
+\]
+</p>
+
+<p>
+Torej iz \ref{ali:hde} dobimo
+</p>
+
+\begin{align*}
+  \int\limits_{}^{} \frac{1}{\frac{1 + z}{1 - z } - z}\,\mathrm{d z} &= \log \left| x \right|\\
+&= \int\limits_{}^{} \frac{1 - z }{1 + z - z (1 - z)}\,\mathrm{d z} \\
+&= \int\limits_{}^{} \frac{1 - z}{1 + z ^2}\,\mathrm{d z} \\
+&= \int\limits_{}^{} \frac{1}{1 + z ^2}\,\mathrm{d z } - \frac{1}{2} \int\limits_{}^{} \frac{2z }{1 + z ^2}\,\mathrm{d z} \\
+&= \arctan z - \frac{1}{2} \log (1 + z ^2) + C
+\end{align*}
+
+<p>
+Tako smo dobili
+</p>
+
+<p>
+\[ \arctan z - \frac{1}{2} (1 + z ^2) + C = \log \left| x \right|
+\]
+</p>
+
+<p>
+oz.
+</p>
+
+\begin{align*}
+\arctan \frac{y}{x} - \frac{1}{2} \log \left( 1 + \frac{y ^2}{x ^2} \right) + C &= \log \left| x \right| \\
+\arctan \frac{y}{x} - \frac{1}{2} \left( \log (x ^2 + y ^2) - \log (x ^2) \right)  + C &= \log \left| x \right| \\
+\arctan \frac{y}{x} - \frac{1}{2} \log (x ^2 + y ^2) + \frac{1}{2} \log (x ^2) &= \log \left| x \right| + C  && \text{ integrala se odštejeta}\\
+\arctan \frac{y}{x} - \log \sqrt{x ^2 + y ^2} &= C && \text{polarne} \\
+\phi - \log r &= C && \left. \right / \cdot e \\
+e ^{\phi - \log r} &= D \\
+e^{\frac{\phi}{r}} &= D
+\end{align*}
+
+<p>
+Iz tega sledi, da je rešitev
+</p>
+
+<p>
+\[ r = D e^{\phi}
+\]
+</p>
+
+
+<div id="org312ace9" class="figure">
+<p><img src="figures/eksp_spirala.png" alt="eksp_spirala.png" />
+</p>
+</div>
+
+<p>
+Dobimo eksponentno spiralo. Naša enačba nima rešitev za \(  x = y \), kar pomeni, da je rešitev sestavljena iz odprtih intervalov.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org2dd7676" class="outline-3">
+<h3 id="org2dd7676"><span class="section-number-3">1.4.</span> Prvi integral</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orge9660b2" class="outline-4">
+<h4 id="orge9660b2"><span class="section-number-4">1.4.1.</span> Definicija 7.4 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+Prvi integral diferencialn enačbe
+</p>
+\begin{equation}
+\label{eq:4}
+F(x, y, y') = 0
+\end{equation}
+<p>
+je takšna funkcija \(  u = u(x, y) \), da za vsako rešitev \(  y = y(x) \) enačbe \ref{eq:4} velja
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} x} u (x, (x)) = 0
+\]
+</p>
+
+<p>
+oz \(  u(x, y(x)) = C \) za neki \(  C \in \mathbb{R} \).
+</p>
+
+<p>
+To pa pomeni, da je graf \(  \left\{ (x, y(x)); \, x \in I \right\} \) funkcije (rešitve) \(  y \) vsebovan v nivojnici \(  \left\{ u = C \right\} \) funkcije \(  u \).
+</p>
+
+<p>
+<i>To pa pomeni, da je \(  \left\{u(x, y) \equiv C \right\} \) nivojnica funkcije \(  C \).</i>
+</p>
+
+<p>
+Enačba \(  u(x, y) = C \) je implicitni opis rešitve za \(  F = 0 \).
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org2fc72f6"></a>Primer 7.6<br />
+<div class="outline-text-5" id="text-1-4-1-1">
+<ol class="org-ol">
+<li><p>
+Imamo enačbo
+</p>
+
+<p>
+\[ y' = - \frac{x}{y}
+   \]
+</p>
+
+<p>
+Vemo, da ima rešitev
+</p>
+
+<p>
+\[ x ^2 + y ^2 = C
+   \]
+</p>
+
+<p>
+Iz česar sledi, da je prvi integral funkcije
+</p>
+
+<p>
+\[ u(x, y) = x ^2 + y ^2
+   \]
+</p></li>
+<li><p>
+Imamo enačbo
+\[ y = y'
+   \]
+</p>
+
+<p>
+Vemo, da ima rešitev
+</p>
+
+<p>
+\[ y = C e^x
+   \]
+</p>
+
+<p>
+iz česar sledi, da je prvi integral funkcije (izraziš C)
+</p>
+
+<p>
+\[ u(x, y) = y e^{-x}
+   \]
+</p></li>
+</ol>
+</div>
+</li>
+<li><a id="orgcf6af27"></a>Iskanje prvega integrala enačbe \(  y' = f(x, y) \)<br />
+<div class="outline-text-5" id="text-1-4-1-2">
+<p>
+Ideja: <b>Če</b> 1. integral \(  u \) že poznamo, tedaj \(  u(x y) = C \) odvajamo po \(  x \): če pišemo \(  u = u (\xi, \eta) \), tedaj dobimo
+</p>
+
+<p>
+\[ u_{\xi} (x, y) \cdot 1 + u_{\eta} (x, y) \cdot \frac{\partial y}{\partial x} = 0
+\]
+</p>
+
+<p>
+Torej želimo enačbo  \(  y' = f(x, y)  \) zapisati kot
+</p>
+
+<p>
+\[ P(x, y) + Q(x, y) y'
+\]
+</p>
+
+<p>
+kjer je polje \(  (P, Q) \) potencialno, tj. \(  (P, Q) = \nabla u \) za neki \(  u \).
+</p>
+
+<p>
+Tak \(  u \) bo 1. integral enačbe \(  y' = f(x, y) \).
+</p>
+
+<p>
+Vemo, da je
+</p>
+
+<p>
+\[ (P, Q) = \nabla u \implies \ P_y = Q_x
+\]
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org357dd44" class="outline-4">
+<h4 id="org357dd44"><span class="section-number-4">1.4.2.</span> Definicija 7.5 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+Enačbi
+</p>
+
+<p>
+\[ P \mathrm{dx} + Q \mathrm{dy} = 0
+\]
+</p>
+
+<p>
+kjer je \(  P_y = Q_x \) pravimo eksaktna.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org9241206"></a>Povzetek<br />
+<div class="outline-text-5" id="text-1-4-2-1">
+<p>
+Če je enačba ekstaktna, je (lokalno) njena rešitev \(  u(x, y) = C \), kjer je \( u \) potencial polja \(  (P, Q) \)
+</p>
+</div>
+</li>
+<li><a id="orgb52316d"></a>Primer 7.7 (p.S.)<br />
+<div class="outline-text-5" id="text-1-4-2-2">
+<p>
+Rešujemo enačbo
+</p>
+
+<p>
+\[ 2xy ^3 \mathrm{dx} + 3 x ^2 y ^2 \mathrm{dy} = 0
+\]
+</p>
+
+<p>
+\(  (P, Q) = \nabla (x ^2 y ^3) \), zato je \(  x ^2 y ^3 = C\) rešitev.
+</p>
+</div>
+</li>
+<li><a id="org37906e1"></a>Primer<br />
+<div class="outline-text-5" id="text-1-4-2-3">
+<p>
+Rešujemo enačbo
+</p>
+
+<p>
+\[ \left( y ^2 e ^{x y ^2} + 4 x ^3 \right)\mathrm{dx} + \left( 2xye^{xy ^2} - 3y ^2 \right) \mathrm{dy} = 0
+\]
+</p>
+
+<p>
+Velja \(  P_y = Q_x \implies (P, Q) \), podana in potencial \(  u \). Uganemo 1. integral
+</p>
+
+<p>
+\[ u(x, y) = e^{xy ^2} + x ^4 - y ^3
+\]
+</p>
+
+<p>
+iz česar potem sledi rešitev
+</p>
+
+<p>
+\[ e^{xy ^2} + x ^4 - y ^3 = C
+\]
+</p>
+
+<p>
+Izračunamo \(  P = u_x \):
+\[ u(x, y) = \int\limits_{}^{} P\,\mathrm{d x} = e^{x y ^2} + x ^4 + C(y)
+\]
+</p>
+
+<p>
+Sedaj odvajamo po \(  y \) in primerjamo strani
+</p>
+
+\begin{align*}
+  2xy e^{xy ^2} - 3y ^2 &= Q = u_y = 2xy e^{xy ^2} + 0 + C'(y) \\
+C'(y) &= -3y ^2
+\end{align*}
+
+<p>
+Iz česar potem sledi, da je
+</p>
+
+<p>
+\[ C(y) = - y ^3 + D
+\]
+</p>
+
+<p>
+kar nesemo v \(  u \) in dobimo
+</p>
+
+<p>
+\[ u(x, y) = e^{xy ^2} + x ^4  - y ^3+ D
+\]
+</p>
+</div>
+</li>
+<li><a id="orgfafb1d8"></a>Neeksaktne enačbe (\(  P_y \ne Q_x \))<br />
+<div class="outline-text-5" id="text-1-4-2-4">
+<p>
+Recimo, da je \(  P\mathrm{dx} + Q \mathrm{dy} = 0 \) ekstaktna (\(  P_y = Q_x \)). Pomnožimo jo z \(  \mu(x, y) \ne 0 \):
+</p>
+
+<p>
+\[ (P\mu) \mathrm{dx} + (Q\mu) \mathrm{dy} = 0
+\]
+</p>
+
+<p>
+Toda enačba ni več ekstaktna v splošnem
+</p>
+
+\begin{align*}
+  (P \mu )_y &= P_y \mu + P\mu_y \\
+(Q \mu) _x &= Q_x \mu + Q \mu_x
+\end{align*}
+
+<p>
+Miselnost obrnemo: iz neeksaktne enačbe lahko z množenjem dobimo ekstaktno.
+</p>
+
+<p>
+Taki funkciji \(  \mu \) rečemo integrirajoči množitelj. Poiščemo ga v posebnih primerih.
+</p>
+
+\begin{align}
+  P_y \mu + P\mu_y &= Q_x \mu + Q\mu_x  \\ \label{ali:pdemu}
+(P_y - Q_x)\mu - Q\mu_X + P\mu_y &= 0
+\end{align}
+
+<p>
+To je pa parcialna diferencialna enačba \(  \mu \), kar ne sodi v Mat3 in si zato zadevo poenostavimo.
+</p>
+
+<p>
+Enačbo \ref{ali:pdemu} rešujemo (le) v primerih, ko jo znamo enostavno zapisati kot navadno diferencialno enačbo.
+</p>
+
+<p>
+Npr. če lahko najdemo \(  \mu \), ki je odvisna le od ene spremenljivke.
+</p>
+
+\begin{align*}
+  \mu(x, y) &= \tilde{\mu}(x) \\
+&= \tilde{\mu}(y) \\
+&= \tilde{\mu}(xy)
+\end{align*}
+
+<p>
+Drug možen zapis eksaktne enačbe je
+</p>
+
+<p>
+\[ P (x, y) + Q(x, y) y' = 0
+\]
+</p>
+</div>
+</li>
+<li><a id="org91b6df0"></a>Primer<br />
+<div class="outline-text-5" id="text-1-4-2-5">
+<p>
+Imamo \(  \mu(x, y) = \tilde{\mu}(x) \) iz česar sledi, da je \(  \mu_x = \tilde{\mu}' \). \ref{ali:pdemu} se glasi
+</p>
+
+\begin{align}
+  (P_y - Q_x) \tilde{\mu} - Q \tilde{\mu}' + 0 &= 0 \\ \label{ali:mutilde}
+\frac{\tilde{\mu}}{\mu} = \frac{P_y - Q_x}{Q}
+\end{align}
+
+<p>
+To bo mogoče, če bo izražava na desni odvisna le od \(  x \).
+</p>
+
+<p>
+<b>Povzetek</b> Če je \(  \frac{P_y - Q_x}{Q} \) odvisna le od \(  x \), tedaj obstaja \(  \tilde{\mu} = \tilde{\mu}(x)  \) tako, da velja
+</p>
+
+<p>
+\[ (P \tilde{\mu}) + Q(\tilde{\mu}) y' = 0
+\]
+</p>
+
+<p>
+je ekstaktna, še več, \(  \tilde{\mu} \) dobimo iz navadne diferencialne enačbe \ref{ali:mutilde}
+</p>
+
+<p>
+\[ \frac{\tilde{\mu}' }{\tilde{\mu}} = \frac{P_y - Q_x}{Q}
+\]
+</p>
+
+<p>
+Podobno velja za \(  \tilde{\mu}(y), \, \tilde{\mu}(xy),\, \tilde{\mu}(x + y), \ldots \).
+</p>
+
+<p>
+Za \(  \tilde{\mu} = \tilde{\mu}(y) \) velja
+</p>
+
+<p>
+\[ \frac{\tilde{\mu}'}{\tilde{\mu}} = \frac{Q_x - P_y}{P}
+\]
+</p>
+</div>
+</li>
+<li><a id="orgf484aac"></a>Primer 7.8 (p.S.)<br />
+<div class="outline-text-5" id="text-1-4-2-6">
+<p>
+Rešujemo
+</p>
+
+<p>
+\[ (xy ^2 - 1) \mathrm{dx} - x ^2 y \mathrm{dy} = 0
+\]
+</p>
+
+<p>
+Pogledamo vrednost razlike
+</p>
+
+<p>
+\[ P_y - Q_x = 2xy - (-2xy) =4xy \ne 0
+\]
+</p>
+
+<p>
+Enačba ni eksaktna. Toda
+</p>
+
+<p>
+\[ \frac{P_y - Q_x}{Q} = \frac{4xy}{- x ^2 y} = - \frac{4}{x}
+\]
+</p>
+
+<p>
+kar je odvisen le od \(  x \). Vzamemo integrirajoči množitelj \(  \mu \) podan z enačbo \ref{ali:mutilde}
+</p>
+
+<p>
+Od tod sledi
+</p>
+
+\begin{align*}
+  \frac{\mu'}{\mu} (x) &= - \frac{4}{x} \\
+\implies \mu(x) &= x ^{-4}
+\end{align*}
+
+<p>
+Torej sedaj gledamo eksaktno enačbo
+</p>
+
+\begin{align*}
+  (P\mu)+ (Q\mu) y' &= 0 \\
+\frac{x y ^2 - 1}{x ^4} - \frac{x ^2 y}{x^4} y' &= 0
+\frac{x y ^2}{x ^4} - \frac{y y'}{x ^2} &= 0
+\end{align*}
+
+<p>
+Vemo, da obstaja \(  u = u(x, y)  \) tako, da velja
+</p>
+
+<p>
+\[ u_x = \frac{x y ^2 - 1}{x ^4} \quad u_y = \frac{- y}{x ^2}
+\]
+</p>
+
+<p>
+Integriramo po \(  y \) in dopolnimo, da velja za \(  u_x \)
+</p>
+
+<p>
+\[ u(x, y) = - \frac{y ^2}{2 x ^2} + \frac{1}{3 x ^3}
+\]
+</p>
+
+<p>
+Kar je rešitev naše enačbe.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgc3ecf2d" class="outline-3">
+<h3 id="orgc3ecf2d"><span class="section-number-3">1.5.</span> Implicitno podane diferencialne enačbe</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Obravnavamo (pod)primera:
+</p>
+<ol class="org-ol">
+<li>\(  F(x, y') = 0 \)</li>
+<li>\(  F(y, y') = 0 \)</li>
+</ol>
+
+<p>
+Rešitve poiščemo v parametrični obliki
+</p>
+
+\begin{align*}
+  x &= x(t) \\
+y &= y(t); \ t \in I
+\end{align*}
+
+<p>
+Imamo oznake
+</p>
+
+\begin{align*}
+  \dot{y} &= \frac{\mathrm{d} y}{\mathrm{d} t} \\
+\dot{x} &= \frac{\mathrm{d} x}{\mathrm{d} t} \\
+y' &= \frac{\mathrm{d} y}{\mathrm{d}x }
+\end{align*}
+
+<p>
+Po verižnem pravilu velja
+</p>
+
+\begin{equation}
+\label{eq:5}
+ y' = \frac{\dot{y}}{\dot{x}}
+\end{equation}
+
+<ol class="org-ol">
+<li><p>
+\(  F(x, y') = 0 \)
+Ekvivalentno: \(  (x, y') \) leži na nivojnici \(  \left\{ F = 0 \right\} = F^{-1} (0) \)
+</p>
+
+<p>
+Naj bo \(  (\psi(t), \theta(t)),\ t \in J \) parametrizacija nivojnice \(  \left\{ F = 0 \right\} \).
+</p>
+
+<p>
+Sledi
+</p>
+
+\begin{align*}
+  x &= \psi(t) \\
+y' &= \theta(t)
+\end{align*}
+
+<p>
+Iz \ref{eq:5} sledi
+</p>
+
+<p>
+\[ \dot{y} = y' \cdot \dot{x} = \theta(t) \cdot \dot{\psi}(t)
+   \]
+</p>
+
+<p>
+in posledično
+</p>
+
+<p>
+\[    y(t) = \int\limits_{}^{}\dot{\psi}(t), \theta(t) \,\mathrm{d t}
+   \]
+</p>
+
+<p>
+Povzetek: Če je \(  t \mapsto (\psi(t), \theta(t)) \)  parametrizacija krivulje \(  \left\{ F = 0 \right\} \), tedaj parametrizacijare rešitve za \(  F(x, y') = 0 \) dobimo z
+</p>
+
+\begin{align} \label{ali:fxy}
+  x &= \psi(t) \\
+ y &= \int\limits_{}^{}(\dot{\psi}\theta)(t)\,\mathrm{d t}
+\end{align}</li>
+
+<li><p>
+\(  F(y, y') = 0 \)
+</p>
+
+<p>
+Tokrat \(  (y, y') \) leži na nivojnici \(  \left\{ F = 0 \right\} \).
+</p>
+
+<p>
+Sledi
+</p>
+
+\begin{align*}
+  y &= \psi(t) \\
+y' &= \theta(t)
+\end{align*}
+
+<blockquote>
+<p>
+Matematika nas v tej fazi sama pelje naprej.
+</p>
+</blockquote>
+<p>
+Iščemo \(  x = x(t) \). Zadovoljni bomo z \(  \dot{x} = \dot{x}(t) \), saj potem lahko integriramo.
+</p>
+
+<p>
+Iz zveze \ref{eq:5} sledi
+</p>
+
+<p>
+\[ \dot{x} = \frac{\dot{y}}{y'} = \frac{\dot{\psi}(t)}{\theta(t)}
+   \]
+</p>
+
+<p>
+Povzetek: Če je \(  t \mapsto (\psi(t), \theta(t)) \) parametrizacija za \(  \left\{ F = 0 \right\} \), tedaj parametrična rešitev za \(  F(y, y') = 0 \) dobimo z
+</p>
+
+\begin{align}\label{ali:fyy}
+  x(t) &= \int\limits_{}^{} \left( \frac{\dot{\psi}}{\theta} \right)(t)\,\mathrm{d t} \\
+y(t) &= \psi(t)
+\end{align}</li>
+</ol>
+</div>
+<div id="outline-container-orga610e34" class="outline-4">
+<h4 id="orga610e34"><span class="section-number-4">1.5.1.</span> Primer 7.9 (p.S.)</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+Rešujemo enačbo
+</p>
+
+<p>
+\[ x = \frac{y'}{\sqrt{1 + y' ^2}}
+\]
+</p>
+
+<p>
+Ta enačba je oblike \(  F(x, y') = 0 \) za \(  F(u, v) = u - \frac{v}{\sqrt{1 + v ^2}} \).
+</p>
+
+<p>
+Iščemo parametrizacijo za krivuljo \(  \left\{ F = 0 \right\} \). Vzamemo
+</p>
+
+\begin{align*}
+v &= \mathrm{cotg} (s) = \theta(s) \\
+u &\overset{\left\{ F=0 \right\}}{=} \frac{v}{\sqrt{1 + v ^2}} = \frac{\mathrm{cotg} s}{\sqrt{1 + \mathrm{cotg} ^2 s}} = \mathrm{cotg} s \cdot \left| \sin s \right| = \cos  s \mathrm{sgn} (\sin s)
+\end{align*}
+
+<p>
+Iz tega potem sledi
+</p>
+
+\begin{align*}
+ u &= \begin{cases} - \cos s; \ s \in \left( - \pi, 0\right) \\ \cos s; \ s \in \left(0, \pi \right) \end{cases} = \psi(s) \\
+v &= \mathrm{cotg}s = \theta(s)
+\end{align*}
+
+<p>
+Sedaj rešitev diferencialne enačbe dobimo iz \ref{ali:fxy}:
+</p>
+
+<ol class="org-ol">
+<li><p>
+\(  s \in (0, \pi) \)
+</p>
+
+\begin{align*}
+  \psi(s) &= \cos s\\
+\theta(s) &= \mathrm{cotg}s
+\end{align*}
+
+<p>
+in iz \ref{ali:fxy} dobimo
+</p>
+
+\begin{align*}
+  x &= \cos s \\
+y &= \int\limits_{}^{} (- \sin s) \mathrm{cotg}s \,\mathrm{d s} = - \int\limits_{}^{} \cos s\,\mathrm{d s} = C - \sin s
+\end{align*}
+
+<p>
+Rešitev je potem
+</p>
+
+\begin{align*}
+  (x, y) &= (0, C) + (\cos s, - \sin s); \ s \in (0, \pi) \\\
+&\overset{t=-s}{=} (0, C) + (\cos t, \sin t); \ t \in (-\pi, 0) \forall C \in \mathbb{R}
+\end{align*}
+
+<p>
+Rešitev je torej spodnji del krožnice  s središčem po ordinatni osi (odvisno od izbranega C)
+</p></li>
+<li>\(  s \in (- \pi, 0) \) je isto in za domačo nalogo</li>
+</ol>
+
+
+<p>
+Alternativno lahko enačbo preoblikujemo
+</p>
+
+\begin{align*}
+  x ^2 &= \frac{y' ^2}{1 + y' ^2} \\
+x ^2 + x ^2 y' ^2 &= y ' ^2 \\
+y' ^2 ( 1 - x ^2 ) &= x ^2 \\
+y' ^2 &= \frac{x ^2}{(1 - x ^2)} \\
+y' &= \frac{x}{\sqrt{1 - x ^2}}; x \in \left( -1 , 1 \right) \\
+y &= \int\limits_{}^{} \frac{x}{\sqrt{1 - x ^2}}\,\mathrm{d x } = C - \sqrt{1 - x ^2}; \ C \in \mathbb{R}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org79761c5" class="outline-4">
+<h4 id="org79761c5"><span class="section-number-4">1.5.2.</span> Primer 7.10</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<p>
+Rešujemo primer
+\[ y = \sqrt{1 + y' ^2}
+\]
+</p>
+
+<p>
+Enačba je ekvivalentna \(  F(y, y') = 0 \), če vzamemo \(  F(u, v) = u - \sqrt{1 + v ^2} \). Krivuljo \(  \left\{ F = 0 \right\} \) parametrizirano kot
+</p>
+
+\begin{align*}
+  v &= \mathrm{sh} (t) = \theta(t) \\
+u &\overset{\left\{ F = 0 \right\}}{=} \mathrm{ch}t = \psi(t)
+\end{align*}
+
+<p>
+Spomnimo se hiperboličnih funkcij:
+</p>
+
+\begin{align*}
+  \mathrm{sh}t &= \frac{e ^t - e^{-t}}{2}  \\
+\mathrm{ch}t &= \frac{e^t + e^{-t}}{2} \\
+\mathrm{sh} t ' &= \mathrm{ch} t \\
+\mathrm{ch} t' &= \mathrm{ sh} t
+\end{align*}
+
+<blockquote>
+<p>
+Ko imamo take eksistencialne krize, ko ne vemo, ali sta \(  e^t \) in \(  e^{-t} \) zamenjana, si jaz narišem graf.
+</p>
+</blockquote>
+
+<p>
+Iz enačb \ref{ali:fyy} sledi
+</p>
+
+\begin{align*}
+  x(t) &= \int\limits_{}^{}1 \,\mathrm{d t} = t + C \\
+y &= \mathrm{ ch} t && \text{ sledi rešitev iz singularne rešitve} \\
+y &= \mathrm{ch} (x - C)
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org0676ada" class="outline-4">
+<h4 id="org0676ada"><span class="section-number-4">1.5.3.</span> Primer Clairautova diferencialna enačba</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<p>
+Spomnimo se, da je Clairautova diferencialna enačba enaka
+</p>
+\begin{align*}
+  y &= xy' + f(y') && \left.\right/ \frac{\mathrm{d} }{\mathrm{d} x} \\
+y'' (x + f'(y')) &= 0
+\end{align*}
+
+<p>
+Rešitvi sta dve
+</p>
+<ol class="org-ol">
+<li>\(  y'' = 0 \)</li>
+<li>\(  x + f'(y') = 0 \)</li>
+</ol>
+
+<p>
+Kar je enačba oblike \(  F(x, y') =0 \) za \(  F(u, v) = u + f'(v) \). Parametrizacija za \(  \left\{ F = 0 \right\} \) je
+</p>
+
+\begin{align*}
+  v &= t = \theta (t) \\
+u &= - f'(t) &= \psi(t)
+\end{align*}
+
+<p>
+Iz \ref{ali:fxy} sledi
+</p>
+
+\begin{align*}
+  x &= \psi(t) = - f'(t) \\
+y &= \int\limits_{}^{} (\dot{\psi} \theta) (t)\,\mathrm{d t} = \int\limits_{}^{}(- f''(t)) \cdot t\,\mathrm{d t} = -f'(t) t + f(t)
+&\implies x = - f'(t) \\
+y&= -f'(t) t + f(t)
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org6897e4d" class="outline-4">
+<h4 id="org6897e4d"><span class="section-number-4">1.5.4.</span> Primer</h4>
+<div class="outline-text-4" id="text-1-5-4">
+<p>
+Iščemo krivuljo \(  y = y(x) \) z lastnostjo, da za vsak \(  T(x_0, y_0) \) je razdalja med
+</p>
+
+<ul class="org-ul">
+<li>presečiščem tangente na krivuljo v točki \(  T \) z \(  x \) osjo konstantna</li>
+<li>presečiščem tangente na krivuljo v točki \(  T \) z \(  y \) osjo konstantna</li>
+</ul>
+
+
+<div id="org788f8a4" class="figure">
+<p><img src="figures/primer154.svg" alt="primer154.svg" class="org-svg" />
+</p>
+</div>
+
+<p>
+Tangenta na graf v točki \(  T \) je
+</p>
+
+<p>
+\[ y - y_0 = f'(x_0) (x - x_0)
+\]
+</p>
+
+<p>
+Funkcije \(  f \) še ne poznamo in jo iščemo. Z drugimi besedami
+</p>
+
+<blockquote>
+<p>
+Približuje se novo leto in si beležimo želje, ki bi veljale za to našo funkcijo \(  f \).
+</p>
+</blockquote>
+
+<p>
+Na našem grafu imamo dve točki, ki sta obe na tangenti
+</p>
+
+\begin{align*}
+ Y(x_0, y_0) &: x = 0: \ y = y_0 - x_0 f'(x_0)  \\
+X(x_0, y_0) &: y = 0: \ x = x_0 - \frac{y_0}{f'(x_0)}
+\end{align*}
+
+<p>
+Tako lahko zapišemo
+</p>
+
+\begin{align*}
+  X &= \left( x_0 - \frac{y_0}{f'(x_0)} \right)\\
+Y &= \left( 0, y_0 - x_0 f'(x_0) \right) \\
+\implies l &= \left| X - Y \right| = \left| \left( x_0 - \frac{y_0}{f'(x_0)}, x_0 f'(x_0) - y_0 \right) \right| \\
+X - Y  &= \left( x_0 - \frac{y_0}{f'(x_0)} \right) \cdot \left( 1, f'(x_0) \right) && \text{kjer sta oba člena } \in \mathbb{R} ^2 \\
+l ^2 &= \left| X - Y \right| ^2 = \left( x_0 - \frac{y_0}{f'(x_0)} \right) ^2 \left( 1 + f'(x_0) ^2 \right)
+\end{align*}
+
+<p>
+Sedaj pišimo
+</p>
+
+\begin{align*}
+  x_0 &\rightarrow x \\
+f(x_0) = y_0 &\rightarrow y \\
+f'(x_0) \rightarrow y'
+\end{align*}
+
+<p>
+Dobimo diferencialno enačbo
+</p>
+
+<p>
+\[ l = \left| x - \frac{y}{y'} \right| \sqrt{1 + y' ^2}
+\]
+</p>
+
+<p>
+Imamo dve možnosti
+</p>
+
+<ol class="org-ol">
+<li><p>
+\(  l = \left( x - \frac{y}{y'} \right) \sqrt{1 + y' ^2} \)
+</p>
+
+<p>
+Od tod sledi, da če zgornjo enakost pomnožimo z \(  y' \), dobimo
+</p>
+
+\begin{align*}
+  ly' &= (xy' - y) \sqrt{1 + y' ^2}  && \left. \right/ : \sqrt{1 + y' ^2} \\
+\frac{ly'}{\sqrt{1 + y' ^2}} &= xy' - y \\
+y &= xy' - \frac{ly'}{\sqrt{1 + y ' ^2}}
+\end{align*}
+
+<p>
+To je Clairautova diferencialna enačba za
+</p>
+
+\begin{equation}
+\label{eq:6}
+f(t) = - \frac{tl}{\sqrt{1 + t ^2}}
+\end{equation}
+
+<p>
+Splošna rešitev je
+</p>
+
+<p>
+\[ y = Cx - \frac{Cl}{\sqrt{1 + C ^2}}; \ C\in \mathbb{R}
+   \]
+</p>
+
+<p>
+Če pišemo \(  C = \mathrm{sh} D \), potem so to rešitve premice
+</p>
+
+<p>
+\[ y = (\mathrm{sh} D) \left( x - \frac{l}{\mathrm{ch} D} \right)
+   \]
+</p></li>
+
+<li><p>
+\(  l = - \left( x - \frac{y}{y'} \right) \sqrt{1 + y' ^2} \)
+</p>
+
+<p>
+Opazimo, da je to enako, kakor če bi dali \(  - \) iz desne strani na levo.
+</p></li>
+</ol>
+
+
+<p>
+Tako je splošna rešitev enaka
+</p>
+
+<p>
+\[ y = (\mathrm{sh}D) \left( x \pm \frac{l}{\mathrm{ch}D} \right); \ D \in \mathbb{R}
+\]
+Spreminja se tudi naklon premice, saj ko se \(  D \) veča, se večata \(  \mathrm{sh}D \) in \(  \mathrm{ch}D \), kar pomeni, da se pri približevanju koordinatnemu izhodišču naklon veča.
+</p>
+
+<p>
+<b>Singularne rešitve</b>: zahtevamo
+</p>
+
+\begin{align*}
+  x &= - f'(t) \overset{\ref{eq:6}}{=} \frac{l}{(1 + t ^2)^{\frac{3}{2}}} \\
+y &= -f'(t) t + f(t) = \left( \frac{t}{\sqrt{1 + t ^2}} \right)^3 l
+\end{align*}
+
+<p>
+Rešitev je potem
+</p>
+
+<p>
+\[ x^{\frac{2}{3}} + (- y) ^{\frac{2}{3}} = \left[ \frac{1}{1 + t ^2} + \frac{t ^2}{1 + t ^2} \right] = l^{\frac{2}{3}}
+\]
+</p>
+
+<p>
+oz.
+</p>
+
+<p>
+\[ \left| x \right| ^{\frac{2}{3}} + \left| y \right| ^{\frac{2}{3}} = l ^{\frac{2}{3}}
+\]
+</p>
+
+
+
+<div id="org0a25898" class="figure">
+<p><img src="figures/resitev_enacbe.png" alt="resitev_enacbe.png" />
+</p>
+</div>
+
+<p>
+Opomba: Rdeča črta je krivulja, ki bi se morala prilegati naši zvezdi, ampak se očitno ne. Razlog? Nimam pojma.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-01-09 Thu 11:32</p>
+</div>
+</body>
+</html>
