@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-23 Wed 20:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FJOD Vaje Teden06</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">FJOD Vaje Teden06</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc5a7580">1. Peti sklop nalog</a>
+<ul>
+<li><a href="#orgae25dc0">1.1. 2. naloga</a></li>
+</ul>
+</li>
+<li><a href="#org7fac633">2. Razpad \( \beta \)</a></li>
+<li><a href="#org32860bd">3. Šesti sklop nalog</a>
+<ul>
+<li><a href="#org2442886">3.1. 3. naloga</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+#+latex<sub>h</sub>
+</p>
+<div id="outline-container-orgc5a7580" class="outline-2">
+<h2 id="orgc5a7580"><span class="section-number-2">1.</span> Peti sklop nalog</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgae25dc0" class="outline-3">
+<h3 id="orgae25dc0"><span class="section-number-3">1.1.</span> 2. naloga</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="my_example" id="org9969f88">
+<p>
+\( ^{81} Br \) je eden od razpadnih produktov jedrske fisije; kot tak se tipično proizvede v vzbujenem stanju. V osnovno stanje se sprošča preko
+</p>
+
+<ol class="org-ol">
+<li>\( M2 \) razpada z \( E = 260 \mathrm{keV} \) (iz drugega v prvo vzbujeno stanje)</li>
+<li>\( M1 \), \( E2 \) razpada z \( E = 276 \mathrm{keV} \) (iz prvega vzbujenega v osnovno stanje)</li>
+</ol>
+
+<p>
+Določi mogoča \( J^P \) za osnovno in prvi dve vzbujeni stanji \( ^{81}Br \). Pomagaj si z lupinskim modelom in hierarhijo stanj v Sliki 3.
+</p>
+
+</div>
+
+<p>
+\( ^{81}_{33}Br _{48} \)
+</p>
+
+<p>
+Imamo samo <i>model</i> atoma, ki je nastal preko <i>modeliranja</i>. Kar pomeni, da ni samo tako stanje:
+</p>
+
+\begin{align*}
+  2p_{1/2} & \\
+1f_{5/2} & \quad 1 \\
+&- \\
+2p_{3/2} & \quad 4; \ \sum\limits_{}^{} 32
+\end{align*}
+
+<p>
+Za prehod iz \( N = 2 \) v \( N = 1 \), kar je prehod \( M2 \), velja
+</p>
+
+<p>
+\[ L_{\gamma} = 2; \ P_{\gamma} = \left( -1 \right)^{2-1} = -1
+\]
+</p>
+
+<p>
+Pri prehodu iz \( N = 1 \) do \( N = 0 \), kar je prehod \( M1, \ E2 \), velja
+</p>
+
+<p>
+\[ L_{\gamma} = 1, 2; \ P_{\gamma} (M1) = \left( -1 \right)^{1 - 1} = 1, P_{\gamma} (E2) = (-1) ^2 = 1
+\]
+</p>
+
+<p>
+Če je elektron v \( 2p_{1/2} \), potem je \( J_0 = \frac{1}{2}^- \). Iz tega potem sledi, da je v prvem vzbujenem stanju \( N = 1 \)
+</p>
+
+<p>
+\[ \vec{J}_1 = \vec{J}_0 + \vec{L}_{\Gamma} = \begin{cases}
+                                              \frac{3}{2}; \ L_{\gamma} = 1 \\
+                                              \frac{5}{2}; \ L_{\gamma} = 2
+\end{cases}
+\]
+ in parnost je v obeh primerih \( P = -1 \).
+</p>
+
+<p>
+Medtem ko drugo vzbujeno stanje \( N = 2 \), pa je
+</p>
+
+<p>
+\[ \vec{J}_2 = \vec{J}_1 + \vec{L}_{\gamma} = \begin{cases}
+                                             \frac{7}{2}, \ L_{\gamma} = 2 \\
+                                             \frac{9}{2}, \ L_{\gamma} = 2
+                                              \end{cases}
+\]
+</p>
+
+<p>
+Parnost je v obeh primerih \( P = +1 \).
+</p>
+
+<p>
+Ni nujno, da se lupine v našem modelu polnijo po vrstnem redu - takrat smo na <i>robu uporabe lupinskega modela</i>.
+</p>
+
+<p>
+Imamo dva možna scenarija
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">scenarij 1</td>
+<td class="org-left">scenarij 2</td>
+<td class="org-left">LM 1</td>
+<td class="org-left">LM 2</td>
+</tr>
+
+<tr>
+<td class="org-left">\(J_{2}^{P}\)</td>
+<td class="org-left">\(7/2 ^{+} \)</td>
+<td class="org-left">\( 9/ 2^{+ }\)</td>
+<td class="org-left">\(1f_{1/2}\)</td>
+<td class="org-left">\(2p_{3/2}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(J_{1}^{P}\)</td>
+<td class="org-left">\(3/2 ^{-} \)</td>
+<td class="org-left">\( 5/ 2^{- }\)</td>
+<td class="org-left">\(2p_{3/2}\)</td>
+<td class="org-left">\(1f_{5/2}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(J_{0}^{P}\)</td>
+<td class="org-left">\(1/2 ^{-} \)</td>
+<td class="org-left">\( 1/ 2^{- }\)</td>
+<td class="org-left">\(2p_{1/2}\)</td>
+<td class="org-left">\(2p_{1/2}\)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Modela se ne ujemata s scenarijema - scenarij 2, naj bi bil kul, not sure why. Lupinska modela ne bosta končala \( 2p_{1/2} \).
+</p>
+
+<p>
+Poglejmo si, kaj pa, če je
+</p>
+
+<p>
+\[ J_0 = \frac{3}{2}
+\]
+</p>
+
+<p>
+Iz tega sledi
+</p>
+
+<p>
+\[ J_1 = \left\{ 1/2, 3/2, 5/2 \right\} = \begin{cases}
+                                          \vec{J}_1 = \vec{3/2} + \vec{1} \\
+                                          J_1 = \left\{ 1/2, 3/2, 5/2 \right\} \\
+                                          \vec{J}_1 = \vec{3/2} + \vec{2} \\
+                                          J_1 = \left\{ 1/2, 3/2, 5/2, 7/2 \right\}
+                                          \end{cases}
+\]
+</p>
+
+<p>
+Kandidati so presek \( J_1 \) iz \( \vec{1} \) in \( \vec{2} \), kar odraža leva stran enakosti in vse imajo negativno parnost, kar smo gledali prej. Presek gledamo, ker mora hkrati biti možen prehod v osnovno stanje \( 3/2 \) iz \( M1, E2 \) in za \( M1 \) je \( L_{\gamma} = 1 \) in
+</p>
+
+<p>
+\[ 7/2 - 1 \ne 3/2
+\]
+</p>
+
+<p>
+In pa
+</p>
+
+<p>
+\[ \vec{J}_2 = \vec{J}_1 + \vec{L}_{\gamma} = \begin{cases}
+                                              \vec{1/2} + \vec{2} \\
+                                              \vec{3/2} + \vec{2} \\
+                                              \vec{5/2} + \vec{2}\end{cases} = \begin{cases}
+                                                                               J_2 = \left\{ 3/2, 5/2 \right\} \\
+                                                                               J_2 = \left\{ 1/2, 3/2, 5/2, 7/2 \right\} \\
+                                                                               J_2 = \left\{ 1/2, 3/2, 5/2, 7/2, 9/2 \right\}\end{cases}
+\]
+</p>
+
+<p>
+Iz česar sledi
+</p>
+
+<p>
+\[ J_2 = \left\{ 1/2, 3/2, 5/2, 7/2, 9/2 \right\}
+\]
+</p>
+
+<p>
+Tukaj ne gledamo preseka in pa vse imajo pozitivno parnost, kakor smo gledali prej.
+</p>
+
+<p>
+Postopek je sedaj sledeč. Dodamo še eno orbitalo
+</p>
+\begin{align*}
+1g_{9/2}^{+} & \\
+  2p_{1/2} & \\
+1f_{5/2} & \quad 1 \\
+&- \\
+2p_{3/2} & \quad 4; \ \sum\limits_{}^{} 32
+\end{align*}
+
+<p>
+Izbran \( J_0 = 3/2 ^- \)se ujema s spodnjo vrstico. Naslednji člen je \( 1f_{5/2} \), kar pomeni, da iz množice \( J_1 = \left\{ 1/2, 3/5, 5/2 \right\} \) izberemo \( 5/2 \). Potem pa pogledamo kombinacije, ki nam jih da \( J_1 = 5/2 \) za \( J_2 \), ki so \( J_2 = \left\{ 1/2, 3/2, 5/2, 7/2, 9/2 \right\} \). Lahko bi izbrali \( 2p_{1/2} \), ampak se parnost ne ujema, zato izberemo najvišjo orbitalo, kjer se tudi parnost ujema, in to je \( 1g_{9/2} \).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7fac633" class="outline-2">
+<h2 id="org7fac633"><span class="section-number-2">2.</span> Razpad \( \beta \)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Ohranja se energija:
+</p>
+
+<p>
+\[ Q = T_e + T_{\nu}
+\]
+</p>
+
+<p>
+Velja Sargentovo pravilo
+</p>
+
+<p>
+\[ p = \frac{\left| T_{ji} \right|^2}{60 \pi ^3} Q ^5
+\]
+</p>
+
+<p>
+Tretja stvar, ki velja
+</p>
+
+\begin{align*}
+  \vec{J}_i = \vec{J}_f + \vec{J}_{e\nu} \\
+\vec{J}_{e\nu} &= \vec{S}_{e\nu} + \vec{L} \\
+S_e &= 1/2 \\
+S_{\nu} &= 1/2 \\
+\vec{S}_{e\nu} &= 1/2 + 1/2 = \underbrace{\vec{0}}_{(1)} + \underbrace{\vec{1}}_{(2)}
+\end{align*}
+
+<p>
+kjer je (1) singlet, Fermi razpadi, ter (2) Gamow-Teller razpadi.
+</p>
+
+<p>
+<b>Pazi</b>, lahko &ldquo;kršijo&rdquo; parnost \( P_{e\nu} = \left( -1 \right)^{L_{e\nu}} \).
+</p>
+
+<p>
+Naboj se ohranja.
+</p>
+
+<p>
+Leptonsko število se ohranja
+</p>
+
+\begin{align*}
+  e^-: L_e &= 1 \\
+e^+: L_e &= -1 \\
+\nu_e: L_{\nu} &= 1 \\
+\bar{\nu}_e : L_{\nu} &= -1
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org32860bd" class="outline-2">
+<h2 id="org32860bd"><span class="section-number-2">3.</span> Šesti sklop nalog</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org2442886" class="outline-3">
+<h3 id="org2442886"><span class="section-number-3">3.1.</span> 3. naloga</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="my_example" id="org927bd56">
+<p>
+Kateri izmed spodnjih \( \beta \) razpadov so dovoljeni? Klasificiraj razpade. Za tiste, ki niso dovoljeni, razloži zakaj.
+</p>
+
+<p>
+\[ ^{115} In \left( 9/2 ^+ \right) \to ^{115} Sn \left( 1/2 ^+ \right) + e + \bar{\nu}
+\]
+</p>
+
+</div>
+
+<p>
+Preverimo energijsko bilanco.
+</p>
+
+<blockquote>
+<p>
+\( In \) vtakneš v SEMF, \( Sn \) vtakneš v SEMF in če imate enak odnos do SEMF-a kot jaz, bi na izpitih in na kolokvijih energijska bilanca štimala.
+</p>
+</blockquote>
+
+<p>
+Energijska bilanca štima.
+</p>
+
+<p>
+Preverimo parnost - elementa štimata, vendar ne vemo, dokler ne poračunamo.
+</p>
+
+<p>
+Začetno stanje je \( i: 9/2 ^+ \), končno stanje je \( f: 1/2^+ \)
+</p>
+
+\begin{align*}
+  \vec{J}_i &= \vec{J}_f + \vec{J}_{e\nu} \\
+\vec{J}_i &= \vec{J}_f + \vec{S}_{e\nu} + \vec{L} \\
+\vec{J}_i = \vec{J}_f + \left(  \vec{0} + \vec{1} \right) + \vec{L}
+\end{align*}
+
+<p>
+Če \( \vec{S}_{e\nu}  = \vec{0} \) velja:
+</p>
+
+<p>
+\[ \vec{J}_i = \vec{J}_f + \vec{L} \implies \vec{9/2} = \vec{1/2} + \vec{L}
+\]
+</p>
+
+<p>
+Iz česar sledi, da je
+</p>
+
+<p>
+\[ \vec{L} = \vec{9/2} + \vec{1/2} = \left\{ \left| 9/2 - 1/2 \right| \ldots \left| 9/2 + 1/2 \right|\right\} = \left\{ 4, 5 \right\}
+\]
+</p>
+
+<p>
+Za \( L = 4 \) je parnost
+</p>
+
+<p>
+\[ P_{e\nu} = \left( -1 \right)^4 = 1
+\]
+</p>
+
+<p>
+kar je kul, za \( L = 5 \), pa je \( P_{e\nu}= -1 \), kar pa ni kul, saj
+</p>
+
+<p>
+\[ P_i = P_f \cdot P_{e\nu}
+\]
+</p>
+
+<p>
+ne drži. Če \( S_{e\nu}= 0 \) potem je razpad dovoljen preko \( L = 4 \) in tip razpada je Fermi.
+</p>
+
+<p>
+Če \( \vec{S}_{e\nu}= 1 \) velja
+</p>
+
+<p>
+\[ L = \left\{ \left| 9/2 - 1/2 - 1 \right| \ldots \left| 9/2 + /1/2 + 1 \right|\right\} = \left\{ 3, 4, 5, 6 \right\}
+ \]
+</p>
+
+<p>
+In parnosti so
+</p>
+
+<p>
+\[ P = \left\{ -1,+1, -1, +1 \right\} 
+ \]
+</p>
+
+<p>
+Če je \( S_{e\nu}= 1 \), potem je razpad dovoljen preko \( L = 4, 6 \), tip razpadov pa je Gamow-Teller.
+</p>
+
+<p>
+Pri istih vrtilnih količinah, bo prevladoval Fermi, če ima Gamow-Teller več vrtilnih količin, pa prevladuje ta (glej c)) primer.
+</p>
+
+<div class="my_example" id="orgd7281f5">
+<ol class="org-ol">
+<li>\[  ^{141} Cs \left( \frac{7}{2}^+ \right) \to ^{141} Ba \left( \frac{3}{2}^- \right) + e + \bar{\nu}
+   \]</li>
+</ol>
+
+</div>
+
+<p>
+Za \( \vec{S}_{e\nu} = 0 \) sledi
+</p>
+
+<p>
+\[ \vec{L} = \left\{ \left| \frac{3}{2} - \frac{7}{2} \right| \ldots \left| \frac{3}{2} + \frac{7}{2} \right|\right\} = \left\{ \cancel{2}, 3, \cancel{4}, 5 \right\}; \ P_{e\nu} = \left\{ \cancel{+1}, -1, \cancel{+1}, -1  \right\}
+ \]
+</p>
+
+<p>
+in je prehod pri Fermiju prehod pri \( L = 3, 5 \).
+</p>
+
+<p>
+Medtem ko pri Gamow-Tellerju je
+</p>
+
+<p>
+\[ \vec{L} = \left\{ 1, \cancel{2}, 3, \cancel{4}, 5, \cancel{6} \right\}
+ \]
+</p>
+
+<p>
+in je prehod pri \( L = 1, 3, 5 \)
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2025-04-23 Wed 20:04</p>
+</div>
+</body>
+</html>

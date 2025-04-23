@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-23 Wed 20:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FJOD Vaje Teden01</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">FJOD Vaje Teden01</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org682f24a">1. Prvi sklop nalog</a>
+<ul>
+<li><a href="#org37be37d">1.1. 1. naloga</a></li>
+<li><a href="#org6ea459d">1.2. 4. naloga</a></li>
+<li><a href="#org9d7ce9e">1.3. 5. naloga</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+Na izpitih in kolokvijih imate lahko vse, razen pomivalnega stroja ne.
+</p>
+</blockquote>
+<div id="outline-container-org682f24a" class="outline-2">
+<h2 id="org682f24a"><span class="section-number-2">1.</span> Prvi sklop nalog</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org37be37d" class="outline-3">
+<h3 id="org37be37d"><span class="section-number-3">1.1.</span> 1. naloga</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="my_example" id="orgcedf84d">
+<p>
+V vsakodnevnem življenju v EU se srečujemo s SI enotami, kjer nastopa \(  \hbar = 1.546 10^{-34} \mathrm{Js}  \) in \(  c = 299792457 \frac{\mathrm{m}}{\mathrm{s}} \). V fiziki visokih energij pa se tipično uporabljajo t.i. naravne enote, kjer je \(  \hbar = 1 = c_0 \). Kako pretvarjamo iz SI v naravne?
+</p>
+
+</div>
+
+<p>
+Zmnožek \(  \hbar \) in \(  c \):
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \hbar c = 3.16 \cdot 10^{-26} \mathrm{Jm}
+\end{equation}
+
+<p>
+Spomnimo se definicije za \(  1 \mathrm{J} \), ki zmnožek naboja in napetosti, kar nam da \(  1 J = e_0 \cdot 1 \mathrm{V} = 1.6 \cdot 10^{19} \mathrm{As} \).
+</p>
+
+<p>
+Z upoštevanjem definicije za Joule, sedaj zmnožek \ref{eq:1} postane
+</p>
+
+<p>
+\[  \hbar c = 1.97 \cdot 10^{ -7} \mathrm{eVm}
+\]
+</p>
+
+<p>
+Elektroni so velikosti femtometrov, ki je \(  10^{-15}m \). Tako dobimo
+</p>
+
+\begin{align*}
+  \hbar c &= 197 10^6 \mathrm{eV m} \\
+\hbar c &= 197 \mathrm{MeVfm} && \text{v jedrski fiziki} \\
+\hbar c &= 0.197 \mathrm{GeVfm} && \text{v delčkarski fiziki} \\
+h c &= 1240 \mathrm{eVnm} && \text{v fiziki trdne snovi}
+\end{align*}
+
+<div class="my_example" id="orgbf2de7f">
+<p>
+Izrazi maso elektrona, \(  m_e = 9.1 \cdot 10^{-31} \mathrm{kg} \) z naravnimi enotami
+</p>
+
+</div>
+
+\begin{align*}
+  E &= mc ^2 = 9.1 \cdot 10^{-31} \mathrm{kg} \cdot \left( 3 \cdot 10^8 \frac{\mathrm{m}}{\mathrm{s}} \right) ^2 \\
+E &= m = 8.46 \cdot 10^{-14} \mathrm{kg} \frac{\mathrm{m} ^2}{\mathrm{s} ^2} && \mathrm{J} = \mathrm{kg} \frac{\mathrm{m} ^2}{\mathrm{s} ^2}  \\
+&= 8.46 \cdot 10^{-14} \cdot \frac{1}{1.6 10^{-19}} \mathrm{eV} = 525 000 \mathrm{eV} \approx 511 \mathrm{keV}
+\end{align*}
+
+<div class="my_example" id="org2f642be">
+<p>
+Zakaj imajo masa in energija enake enote?
+</p>
+
+</div>
+
+<p>
+Proton je sestavljen iz treh kvarkov: u, u, d in ima maso \(  E = 938 \mathrm{MeV} \). Vendar pa imajo kvarki maso samo \(  m_u = 7 \mathrm{MeV } \) ter \(  m_d = 10 \mathrm{MeV} \). To pomen, da je preostanek mase protona prispevajo gluoni kot vezi.
+</p>
+
+<div class="my_example" id="org299015f">
+<p>
+Kolikšen je tipičen radij nukleona (npr. protona), \(  r_0 = 1.2 \mathrm{fm}  \) v naravnih enotah?
+</p>
+
+</div>
+
+<p>
+Izrazimo femtometer iz \(  \hbar c \) in dobimo
+</p>
+
+\begin{align*}
+ 1 \mathrm{fm} &= \frac{\hbar c}{197 \mathrm{MeV }} = \frac{1}{ 197 \mathrm{MeV}} \\
+&= 0.005 \mathrm{MeV } ^{-1} \\
+\implies 1 \mathrm{fm} &= 5 \mathrm{GeV}^{-1}
+\end{align*}
+
+<p>
+Iz tega potem sledi, da je
+</p>
+
+<p>
+\[ R = 1.2 \cdot 1 \mathrm{fm} = 6 \mathrm{GeV } ^{-1}
+\]
+</p>
+
+<blockquote>
+<p>
+Koliko \(  \mathrm{GeV } \) traja ena ura?
+</p>
+</blockquote>
+
+<p>
+Če se spomnimo Heisenbergovega principa nedoločenosti velja:
+</p>
+
+\begin{align*}
+  \delta_p \delta_x &= 1 \\
+\delta_E \delta_{\tau} &= 1
+\end{align*}
+
+<p>
+\(  \delta_p \) ima enote \(  \mathrm{GeV } \), medtem ko \(  \delta_x \) pa kakor smo videli zgoraj ima \(  \mathrm{GeV }^{-1} \). Če opravimo dimenzijsko analizo, se nam izide:
+</p>
+
+<p>
+\[ \delta_p \delta_x = 1 \implies \left[ \mathrm{GeV} \right] \cdot \left[ \mathrm{GeV} ^{-1} \right] = 1
+\]
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">\(  e \)</td>
+<td class="org-left">\(  511 \mathrm{keV} \)</td>
+<td class="org-left">\(  \pi \)</td>
+<td class="org-left">\(  140 \mathrm{MeV} \)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(  \mu \)</td>
+<td class="org-left">\(  105 \mathrm{MeV} \)</td>
+<td class="org-left">\(  K \)</td>
+<td class="org-left">\(  500 \mathrm{MeV} \)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(  \tau \)</td>
+<td class="org-left">\(  1.75 \mathrm{GeV} \)</td>
+<td class="org-left">\(  D \)</td>
+<td class="org-left">\(  1869 \mathrm{MeV} \)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Vidimo, da so nam \(  \mathrm{eV} \) naravni za delce, s katerimi operariramo.
+</p>
+
+<p>
+Za naš svet pa so <i>naravne</i> enote \(  \mathrm{m}, \ \mathrm{kg}  \), itd
+</p>
+</div>
+</div>
+<div id="outline-container-org6ea459d" class="outline-3">
+<h3 id="org6ea459d"><span class="section-number-3">1.2.</span> 4. naloga</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="my_example" id="org1f3bacb">
+<p>
+Kako v kvantni mehaniki seštevamo kvantna števila? Kolikšna je lahko celotna vrtilna količina dveh delcev s spinom \(  \frac{1}{2} \), če je maksimalna vrtilna količina \(  \ell  2 \)? Razloži primere in argumentiraj.
+</p>
+
+</div>
+
+<p>
+Vrtilna količina je vsota
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \vec{J} = \underbrace{\vec{L}}_{\text{vrtilna}}  + \underbrace{\vec{S}_1}_{\text{spin 1}} + \underbrace{\vec{S}_1}_{\text{spin 2}
+\end{equation}
+
+
+<p>
+Osnovna ideja je trikotniška neenakost:
+</p>
+
+<p>
+\[ \vec{C} = \vec{A} + \vec{B} = \left\{ \ldots \right\}^{\left| A + B \right|}_{\left| A - B \right|} = \sum\limits_{j = \left| A - B \right|}^{\left| A + B \right|} \vec{j}
+\]
+</p>
+
+<p>
+Za \(  s_1 = \frac{1}{2} = s_2 \) uporabimo to idejo in dobimo:
+</p>
+
+<p>
+\[ \vec{S} = \vec{S}_1 + \vec{S}_2 = \sum\limits_{s = \left| S_1 - S_2 \right|}^{\left| S_1 + S_2 \right|} \vec{s} = \sum\limits_{j = 0}^{1}
+\]
+</p>
+
+<p>
+Drugače povedano:
+</p>
+
+<p>
+Imamo delec \(  \Psi_1 \) z lastnostjo \(  s_1 = \frac{1}{2} \) ter delec \(  \Psi_2 \) z lastnostjo \(  s_2 = \frac{1}{2} \).
+</p>
+
+<p>
+Imamo <i>os</i> za prvi delec: \(  \Psi_1 \to \left| S_1, S_1^z \right\rangle \) in os za drugi delec \(    \Psi_2 \to \left| S_2, S_2^z \right\rangle  \).
+</p>
+
+<p>
+Sedaj imamo kartezični produkt
+</p>
+
+\begin{align*}
+  \Psi &= \Psi_1 \times \Psi_2 = \Psi_S \\
+\Psi_S &= \sum\limits_{}^{} \underbrace{\Psi_1}_{\left| S_1, S_1^z \right\rangle } \underbrace{\Psi_2}_{\left| S_2, S_2^z \right\rangle } \left\langle \overbrace{S, S^z}^{S} | \overbrace{S_1, S_1^z}^{S_1}, \overbrace{S_2, S_2^z}^{S_2} \right\rangle
+\implies \vec{S} &= \vec{S}_1 + \vec{S}_2 == \vec{S} = \vec{S}_1 \times \vec{S}_2
+\end{align*}
+
+<p>
+Opomba, da je \(   \vec{S} = \vec{S}_1 \times \vec{S}_2 \) produkt Hilbertovih prostor, kar je še zmeraj Hilbertov prostor.
+</p>
+
+<p>
+Se pravi je vsota spinov enaka
+</p>
+
+\begin{align*}
+  \vec{\frac{1}{2}} + \vec{\frac{1}{2}} & \implies \left\{ \vec{0}, \vec{1} \right\} \\
+  \vec{\frac{1}{2}} + \vec{\frac{1}{2}} &= \vec{0} + \vec{1} && \text{fizikalni zapis} \\
+  \vec{\frac{1}{2}} + \vec{\frac{1}{2}} &= \vec{0} \oplus \vec{1} && \text{rigorozen zapis}
+\end{align*}
+
+<p>
+To pomeni, da imamo singlet \(  \vec{0} \to \left| 0, 0 \right \rangle \) ter triplet
+</p>
+
+\begin{align*}
+  \vec{1}  \to & \left| 1, 1\right\rangle \\
+& \left| 1, 0 \right\rangle \\
+& \left| 0, 1 \right\rangle
+\end{align*}
+
+<p>
+Z uporabo \ref{eq:2} dobimo dva scenarija:
+</p>
+
+<ul class="org-ul">
+<li>\(  \vec{S} = \vec{0} \) dobimo \(  \vec{J} = \vec{L} + \vec{0} = \vec{L} \) iz česar sledi \(  Y_{lm} \cdot \left| 0, 0 \right\rangle \)</li>
+<li>za \(  \vec{S} = \vec{1} \) dobimo \(  \vec{J} = \vec{L} + \vec{1} = \sum\limits_{\left| L - 1 \right|}^{\left| L + 1 \right|} \vec{\jmath} \). Za \(  \vec{L} = \vec{0} \) dobimo \(  \vec{J} = \vec{1} \), in za \(  \vec{L} = 1 \) dobimo \(  \vec{J} = \vec{0} \oplus \vec{1} \oplus \vec{2} \)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9d7ce9e" class="outline-3">
+<h3 id="org9d7ce9e"><span class="section-number-3">1.3.</span> 5. naloga</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="my_example" id="orge00578f">
+<p>
+Vzemimo proton in nevtron in iz njiju sestavimo devteronsko spinsko valovno funkcijo. Upoštevaj, da je spin protona \(  s^p = \frac{1}{2} \) in spin nevtron \(  s^n = 1/2  \) ter da ima devteron parnost \(  J^P = 1 ^{+} \)
+</p>
+
+</div>
+
+<p>
+Zanima nas \(  \left| J, M, L, S \right\rangle \). Valovna funkcija bo sestavljena iz radialne funkcije \(  R_{nl} \left( kr \right) \left| J, M, L, S \right\rangle \)
+</p>
+
+<p>
+Kako do \(  J^P = 1^{+} \)? \(  \vec{S} = \vec{S}_1 + \vec{S}_2 \)
+</p>
+
+<p>
+Za \(  \vec{S} = 0 \) sledi, da je \(  \vec{J} = \vec{L} \). Če je \(  L = 1 \), potem je \(  J = 1 \) in iz tega sledi, da je parnost definirana kot \(  P = \left( - 1 \right)^L = -1 \). Iz tega sledi, da ne gre s singletom.
+</p>
+
+<p>
+Kaj pa s \(  \vec{S} = \vec{1} \)?
+</p>
+
+<p>
+\[ \vec{J} = \vec{L} + \vec{1} = \begin{cases}
+                                 \vec{1}; \ L = 0 \to P = \left( -1 \right)^L = +1 \\
+                                 \vec{0}, \vec{1}, \vec{2}; \ L = 1 \to P = \left( -1 \right)^L = -1 \\
+                                 \vec{1}, \vec{2}, \vec{3}; \ L = 2 \to P = \left( -1 \right)^L = +1
+                                 \end{cases}
+\]
+</p>
+
+<p>
+Vidimo, da za \(  L = 0 \) in \(  L = 2 \) dobimo željeno parnost.
+</p>
+
+<p>
+Če je \(  L = 0 \), je S-val, če je 1, je P-val in če je 2, je D-val
+</p>
+
+<p>
+\[ \left| D \right\rangle = c_1 \left| 1, M, L = 0, S = 1 \right\rangle + c_2 \left| 1, M, L = 2, S = 1 \right\rangle
+\]
+</p>
+
+<p>
+\[ \left| 1, M, L = 0, S = 1 \right\rangle = \sum\limits_{m_s, m_L}^{} \left\langle 1, M | 0, m_L, 1, m_s \right\rangle Y_{L = 0M} \left( \theta, \phi \right) \left| 1, m_s \right\rangle
+\]
+</p>
+
+<p>
+Velja, da je \(  m_L = 0 \), saj je projekcija \(  m_L \le L \), kar pomeni, da je \(  M = m_S + m_L = m_S \).
+</p>
+
+<p>
+\[ \left| 1, M, L = 2, S = 1 \right\rangle = \sum\limits_{m_s, m_L}^{} \left\langle 1, M | 2, m_L, 1, m_s \right\rangle Y_{L = 2M} \left( \theta, \phi \right) \left| 1, m_s \right\rangle
+\]
+</p>
+
+<p>
+\(  L = 3 \to P = +1 \) in \(  L = 4 \to P = +1 \)
+</p>
+
+<p>
+\[ J = \vec{4} + \vec{1} = \begin{cases}
+                            3\\
+                            4\\
+                            5
+                           \end{cases}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2025-04-23 Wed 20:00</p>
+</div>
+</body>
+</html>

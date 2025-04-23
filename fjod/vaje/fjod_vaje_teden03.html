@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-23 Wed 20:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FJOD Vaje Teden03</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">FJOD Vaje Teden03</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org44e3bd3">1. Tretji sklop nalog</a>
+<ul>
+<li><a href="#orgce63836">1.1. 1. naloga</a></li>
+<li><a href="#orgc91f268">1.2. 2. naloga</a></li>
+<li><a href="#orgc49b6fd">1.3. 3. naloga</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org44e3bd3" class="outline-2">
+<h2 id="org44e3bd3"><span class="section-number-2">1.</span> Tretji sklop nalog</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgce63836" class="outline-3">
+<h3 id="orgce63836"><span class="section-number-3">1.1.</span> 1. naloga</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="my_example" id="org354eafc">
+<p>
+Izračunaj oblikovno funkcijo (faktor oblike) za sipanje na jedru, kjer privzameš točkasto porazdelitev naboja v jedru. Namig: pomagaj si z izpeljavo za Rutherfordovo sipanje.
+</p>
+
+</div>
+
+<p>
+Pri sipanju preko elektromagnetne interakcije lahko zapišemo matrični element \( \left\langle f \right| V \left| i \right\rangle\) kot integral
+</p>
+
+<p>
+\[ \left\langle f \right| V \left| i \right\rangle = \int\limits_{}^{} \Psi_f V \Psi^{*}_i \, \mathrm{d} \vec{r}
+\]
+</p>
+
+<p>
+kjer je \( \Psi_f \) končni izsevani foton, \( \Psi_i \) vpadni foton ter \( V \) potencial jedra.
+</p>
+
+<p>
+Potencial jedra je posledica naboj v jedru in ga znamo povezati z nabojem preko Poissonove enačbe
+</p>
+
+\begin{equation}
+\label{eq:1}
+\nabla ^2 V (x) = - \rho
+\end{equation}
+
+<p>
+kjer je \( \rho \) porazdelitev naboja v jedru. Prav tako je privzeto, da je \( \epsilon_0 = 1 \).
+</p>
+
+<p>
+Iz tega vidimo, da so valovne funkcije in naboj med seboj povezane.
+</p>
+
+<p>
+Valovno funkcijo lahko razvijemo po ravnih valovih (oz. se obnašamo kot da imamo samo ravni val).
+</p>
+
+<p>
+Valovni funkciji sta torej oblike
+</p>
+
+<p>
+\[ \Psi_j = e^{\iu \vec{k}_j \vec{x}}; \ j = i, f
+\]
+</p>
+
+\begin{equation}
+\label{eq:2}
+\begin{aligned}
+  \left\langle f \right| U \left| i \right\rangle &= \int\limits_{}^{} e^{\iu \vec{k}_f \vec{r}} V \left( \vec{r} \right) e^{- \iu \vec{k}_i \vec{r}}\, \mathrm{d} V && \vec{q} = \vec{k}_f - \vec{k}_i \\
+&= \int\limits_{}^{} e^{\iu \vec{q} \vec{r}} V (r) \, \mathrm{d} V
+\end{aligned}
+\end{equation}
+
+<p>
+Členi \ref{eq:2} rečemo <i>oblikovna funkcija</i> (ang. <i>form factor</i>).
+</p>
+
+<p>
+Upoštevamo, da morata biti valovna funkcija in potencial daleč stran enaka \( 0 \), potem velja preko 2. Greenove identitete velja
+</p>
+
+<p>
+\[ \int\limits_{}^{} f \nabla ^2 g \, \mathrm{d } V = \int\limits_{}^{} g \nabla ^2 f  \, \mathrm{d} V
+\]
+</p>
+
+<p>
+Naša funkcija \( f \) je potencial \( V(r) \) in naša funkcija \( g \) je \( e^{\iu \vec{q} \vec{x}} \).
+</p>
+
+<p>
+Iz enačbe \ref{eq:2} ter Greenove identitete tako sledi
+</p>
+
+\begin{align*}
+  \int\limits_{}^{} V \nabla ^2 e^{\iu \vec{q} \vec{x}} \, \mathrm{d} V &= \int\limits_{}^{} e^{\iu \vec{q} \vec{x}} \nabla ^2 V \, \mathrm{d} V \\
+-q ^2 \int\limits_{}^{} Ve^{\iu \vec{q} \vec{x}}\, \mathrm{d} V &= \int\limits_{}^{} e^{\iu \vec{q} \vec{x}} \nabla ^2 V \, \mathrm{d} V
+\end{align*}
+
+<p>
+Z upoštevanjem \ref{eq:1} nadalje dobimo
+</p>
+
+\begin{equation}
+\label{eq:3}
+\begin{aligned}
+  -q ^2 \left\langle f \right| V \left| i \right\rangle &= -\int\limits_{}^{} e^{\iu \vec{q} \vec{r}} \rho (r) \, \mathrm{d} V \\
+\left\langle f \right| V \left| i \right\rangle &= \frac{1}{q ^2} \underbrace{\int\limits_{}^{} \overbrace{e^{\iu \vec{q} \vec{r}}}^{\text{foton}} \overbrace{ \rho(r)}^{(1)} \, \mathrm{d} V}_{\text{oblikovni faktor}}
+\end{aligned}
+\end{equation}
+
+<p>
+Vidimo, da je matrični element, ki opiše interakcijo jedra s fotonom Fourierova transformacija naboja porazdeljena v jedru. Zato bomo tudi oblikovni faktor označili z velikim \(  F \).
+</p>
+
+<p>
+(1) interpretiram kot gostoto naboja v kompozitnem delcu.
+</p>
+
+<p>
+V navodilih naloge je predpostavljena točkasta porazdelitev naboja v jedru, kar pomeni, da definiramo gostoto kot
+</p>
+
+<p>
+\[ \rho (r) = \lambda \delta ^3 \left( \vec{r} \right)
+\]
+</p>
+
+<p>
+Iz \ref{eq:3} tako dobimo
+</p>
+
+\begin{align*}
+  F \left( q \right) &= \int\limits_{}^{} e^{\iu \vec{q} \vec{r}} \rho (r) \, \mathrm{d} V \\
+&= \lambda \int\limits_{}^{} e^{\iu \left( q_x x + q_y y + q_z z \right)} \delta (x - 0) \delta (y - 0) \delta (z - 0) \,\mathrm{dxdydz} \\
+&= \lambda
+\end{align*}
+
+<p>
+Hkrati pa je \( \lambda = \frac{1}{V} \), saj smo tako definirali našo gostoto. Kdaj smo jo tako definirali?
+</p>
+
+<p>
+Kaj nam matrični element sploh pove? Verjetnost, da se nek prehod zgodi?
+</p>
+
+<p>
+Po skripti na spletni učilnici je \( V_{fi} \) matrični element, ki je verjetnost, da je potencial povzročil sprememebo iz začetnega v končno stanje. V našem primeru je verjetnost odvisna samo od velikosti potenciala.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc91f268" class="outline-3">
+<h3 id="orgc91f268"><span class="section-number-3">1.2.</span> 2. naloga</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="my_example" id="org5d9268a">
+<p>
+Kako se poenostavi izraz za \( F \left( \vec{q} \right) \), če je porazdelitev naboja sferično simetrična?
+</p>
+
+</div>
+
+<p>
+Zapišemo definicijo in zamenjamo koordinate iz kartezičnih v sferične.
+</p>
+
+\begin{equation}
+\label{eq:4}
+F \left( q \right) = \int\limits_{}^{} e^{\iu \vec{q} \vec{r}} \rho \left( \vec{r} \right) \, \mathrm{d} V = \int\limits_{}^{} e^{\iu \vec{q} \vec{r}} \rho \left( \vec{r} \right) r ^2 \sin \theta \, \mathrm{d} \theta \, \mathrm{d} \phi \, \mathrm{d} r
+\end{equation}
+
+<p>
+Porazdelitev naboja je sferično simetrična, kar pomeni, da je \(  \rho \left( \vec{r} \right) = \rho \left( r, \theta, \phi \right) = \rho \left( r \right) \).
+</p>
+
+<p>
+Tako se enačba \ref{eq:4} pretvori v
+</p>
+
+\begin{equation}
+\label{eq:5}
+F \left( q \right) = \int\limits_{}^{} e^{\iu \vec{q} \vec{r}} \rho \left( r \right) r ^2 \sin \theta \, \mathrm{d} \theta \, \mathrm{d} \phi \, \mathrm{d} r
+\end{equation}
+
+<p>
+Skalarni produkt v eksponentu bomo zapisali kot
+</p>
+
+\begin{equation}
+\label{eq:6}
+\vec{q} \cdot \vec{r} = qr \cos \theta
+\end{equation}
+
+<p>
+saj je \(  \theta \) kot med vektorjem.
+</p>
+
+<p>
+Nadalje se enačba \ref{eq:5} pretvori v
+</p>
+
+\begin{equation}
+\label{eq:7}
+\begin{aligned}
+  F (q) &= \int\limits_{}^{} e^{\iu qr \cos \theta} \rho \left( r \right) \sin \theta r ^2 \, \mathrm{d} \theta \, \mathrm{d} \phi \, \mathrm{d} r \\
+&= \int\limits_0^{2 \pi} \, \mathrm{d} \phi \int\limits_0^{\pi} \sin \theta \, \mathrm{d} \theta \int\limits_0^R e^{\iu q r \cos \theta} \rho \left( r \right) r ^2 \, \mathrm{d } r\\
+&= 2 \pi \int\limits_0^{\pi} \sin \theta \, \mathrm{d} \theta \int\limits_0^{R} e^{\iu q r \cos \theta} \rho \left( r \right) r ^2 \\
+&= 2 \pi \int\limits_0^R r ^2 \rho \left( r \right) \, \mathrm{d} r \int\limits_0^{\pi} \sin \theta e^{\iu qr \cos \theta} \, \mathrm{d} \theta
+\end{aligned}
+\end{equation}
+
+<p>
+V zadnji vrstici \ref{eq:7} uporabimo sledečo substitucijo
+</p>
+
+\begin{align*}
+  u &= \iu q r \cos \theta \\
+\mathrm{d} u &= - \iu q r \sin \theta \, \mathrm{d} \theta
+\end{align*}
+
+<p>
+Kar pomeni, da se integral po \(  \theta  \) pretvori v
+</p>
+
+\begin{equation}
+\label{eq:8}
+\begin{aligned}
+\int\limits_0^{\pi} \sin \theta e^{\iu q r \cos \theta} &= - \int\limits_{- \iu q r}^{\iu q r} \frac{e^u}{\iu q r } \, \mathrm{d }u \\
+&= - \left. \frac{e^u}{\iu q r} \right|_{- \iu q r} ^{\iu q r} \\
+&= \left( e^{\iu q r} - e^{- \iu q r} \right) \frac{1}{ \iu q r} \\
+&= \left( \cos (qr) + \iu \sin (q r) - \cos (qr) + \iu \sin (qr) \right) \frac{1}{\iu q r} \\
+&= \frac{2 \sin (qr)}{qr}
+\end{aligned}
+\end{equation}
+
+<p>
+Naša oblikovna \ref{eq:7} tako postane
+</p>
+
+\begin{equation}
+\label{eq:9}
+\begin{aligned}
+  F (q) &= 4 \pi \int\limits_0^{\infty} \frac{\rho \left( r \right) \sin (qr) r ^2 \, \mathrm{d} r}{qr} \\
+&= \frac{4 \pi}{q} \int\limits_0^{\infty} \rho \left( r \right) \sin (qr) r \, \mathrm{d} r
+\end{aligned}
+\end{equation}
+</div>
+</div>
+<div id="outline-container-orgc49b6fd" class="outline-3">
+<h3 id="orgc49b6fd"><span class="section-number-3">1.3.</span> 3. naloga</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="my_example" id="orga989710">
+<p>
+Izpelji izraz za radij jedra iz oblikovne funkcije \(  F(q) \). Kdaj je ta izraz uporaben? Čemu služi? Izračunaj radij za porazdelitev naboja
+</p>
+
+<p>
+\[ \rho (r) = \frac{\lambda ^2}{4\pi} \frac{e^{- \lambda r}}{r}
+\]
+</p>
+
+</div>
+
+<p>
+Uporabili bomo \ref{eq:9}.
+</p>
+
+<p>
+Ker je limita gostota naboja enaka
+</p>
+
+<p>
+\[ \lim_{r \to \infty} \rho (r) = 0
+\]
+</p>
+
+<p>
+pomeni, da bomo uporabili majhne \(  r \) in majhne \(  q \). Posledično lahko sinusno funkcijo razvijemo do 3. reda
+</p>
+
+\begin{equation}
+\label{eq:10}
+\sin (qr) = qr - \frac{\left( qr \right)^3}{3!}
+\end{equation}
+
+<p>
+To sedaj vstavimo v izraz \ref{eq:9} in dobimo
+</p>
+
+\begin{equation}
+\label{eq:11}
+F(q) = \frac{4\pi}{q} \int\limits_0^{\infty} \rho (r) \left[ \underbrace{qr}_{\text{0. clen}} - \underbrace{\frac{\left( qr \right)^3}{6}}_{\text{1. clen} \right] r \, \mathrm{d} r
+\end{equation}
+
+<p>
+Iz enačbe \ref{eq:11} izračunajmo 0. člen
+</p>
+
+\begin{equation}
+\label{eq:12}
+\begin{aligned}
+  F(q)^{(0)} = \frac{4\pi}{q} \int\limits_0^{\infty} q \rho (r) r ^2 \, \mathrm{d } r &= 4\pi \int\limits_0^{\infty} \rho (r) r ^2 \, \mathrm{d} r \\
+&= e && \text{za pravilno izbran } q
+\end{aligned}
+\end{equation}
+
+<p>
+/1. člen pa je enak
+</p>
+
+\begin{equation}
+\label{eq:13}
+\begin{aligned}
+F (q) ^{(1)} &= - \frac{4\pi}{q} \int\limits_0^{\infty} \rho (r) \frac{q ^3 r ^4}{6} \, \mathrm{d} r &= - \frac{4\pi q ^2}{6} \int\limits_0^{\infty} \rho(r) r ^2 r ^2 \, \mathrm{d} r \\
+&= - \frac{q ^2 e}{6} \left\langle r ^2 \right\rangle
+\end{aligned}
+\end{equation}
+
+<p>
+Kjer smo z \(  \left\langle \cdot \right\rangle \) označili pričakovano vrednost radija.
+</p>
+
+<p>
+Za poljuben model za \(  \rho \) lahko potem preko enačbe \ref{eq:11} z vstavljenima člena \ref{eq:12} in \ref{eq:13} izračunamo radij, ki ga izbran model napove.
+</p>
+
+<p>
+Za primer vzemimo model iz navodil naloge.
+</p>
+
+<p>
+Naprej izračunajmo radij
+</p>
+
+\begin{align*}
+\left\langle  r ^2 \right\rangle &=\underbrace{ \frac{1}{4 \pi} \int\limits_0^{2 \pi}\, \mathrm{d} \phi \int\limits_{-1}^1 \, \mathrm{d} \cos \theta}_{=1} \int\limits_0^{\infty} \frac{e^{- \lambda r } \lambda ^2}{r} r ^2 r ^2 \, \mathrm{d }r \\
+&= \int\limits_{0}^{\infty} \frac{e^{- \lambda r}}{r} \lambda ^2 r ^4 \, \mathrm{d} r \\
+&= \frac{6}{\lambda ^2}
+\end{align*}
+
+<p>
+Kjer smo iz 2. vrstice v 3. vrstico trikrat uporabili integriranje per partes za
+</p>
+
+\begin{align*}
+u &= r ^3 \\
+\mathrm{d} v &= e^{- \lambda r} \, \mathrm{d} r
+\end{align*}
+
+<p>
+Po vsakem per partesu je prvi člen, brez integrala, enak \(  0 - 0 \) za dane meje.
+</p>
+
+<p>
+\[ r_E = \sqrt{\left\langle r ^2 \right\rangle} = \frac{\sqrt{6}}{\lambda}
+\]
+</p>
+
+<p>
+Izračunajmo še oblikovni integral.
+</p>
+
+\begin{equation}
+\label{eq:14}
+\begin{aligned}
+F(q) &= \frac{4\pi}{q} \int\limits_0^{\infty} \rho (r) \sin (qr) r \, \mathrm{d} r &= \frac{4 \pi \lambda ^2}{q 4 \pi } \int\limits_0^{\infty} \frac{e^{- \lambda r}}{r} \sin (qr) r \, \mathrm{d} r \\
+&= \frac{\lambda ^2}{q} \int\limits_0^{\infty} e^{- \lambda r} \sin (qr) \, \mathrm{d} r
+\end{aligned}
+\end{equation}
+
+<p>
+Za
+</p>
+
+\begin{align*}
+  u(r) &= \sin (qr) \\
+\mathrm{d} v &= e^{- \lambda r} \, \mathrm{d} r
+\end{align*}
+
+<p>
+lahko izvedemo tri iteracije integriranja per partes in tako dobimo
+</p>
+
+\begin{equation}
+\label{eq:15}
+\begin{aligned}
+I &= 0 + \frac{q}{\lambda ^2} - \frac{q ^2}{\lambda ^2} \cdot I \\
+I \left( 1 + \frac{q ^2}{\lambda ^2} \right) &= \frac{q}{\lambda ^2} \\
+I &= \frac{q}{\lambda ^2 + q ^2}
+\end{aligned}
+\end{equation}
+
+<p>
+To pomeni, da se naš integral \ref{eq:14} pretvori v
+</p>
+
+\begin{equation}
+\label{eq:16}
+F(q) = \frac{\lambda ^2}{q} \cdot \frac{q}{\lambda ^2 + q ^2} = \frac{\lambda ^2}{\lambda ^2 + q ^2}
+\end{equation}
+
+<p>
+Izračunan oblikovni faktor ima en pol (monopol) pri \(  \lambda ^2 = - q ^2 \)
+</p>
+
+<p>
+Virtualno sipanje fotona (ang. <i>time-like</i>) ima pol, če pa se sipa fotona na protonu pa bo pol pri \(  \omega (782) \).
+</p>
+
+
+<div id="org3e0f291" class="figure">
+<p><img src="figures/03vaje.png" alt="03vaje.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2025-04-23 Wed 20:03</p>
+</div>
+</body>
+</html>

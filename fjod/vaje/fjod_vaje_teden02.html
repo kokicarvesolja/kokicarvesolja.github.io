@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-04-23 Wed 20:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FJOD Vaje Teden 2</title>
+<meta name="author" content="Kristofer Robin" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">FJOD Vaje Teden 2</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd7cba08">1. Drugi sklop nalog</a>
+<ul>
+<li><a href="#org713526a">1.1. 2. naloga</a></li>
+<li><a href="#org7256036">1.2. 3. naloga</a></li>
+<li><a href="#org9707ca8">1.3. 1. naloga</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd7cba08" class="outline-2">
+<h2 id="orgd7cba08"><span class="section-number-2">1.</span> Drugi sklop nalog</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org713526a" class="outline-3">
+<h3 id="org713526a"><span class="section-number-3">1.1.</span> 2. naloga</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="my_example" id="org276745c">
+<p>
+Vzbujena stanja devterona lahko modeliramo z neskončno potencialno jamo v 3D. Zapiši nekaj rešitev in diskutiraj.
+</p>
+
+</div>
+
+<p>
+Devteron je sestavljen iz protona in nevtrona.
+Najprej določimo ali gre za (ne)relativistični sistem? V našem primeru gre za nerelativističen.
+</p>
+
+<p>
+Hamiltonian je potem
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2 \mu} + V
+\]
+</p>
+
+<p>
+kjer je \( \mu \) reducirana masa definirana kot
+</p>
+
+<p>
+\[ \frac{1}{\mu} = \frac{1}{m_p} + \frac{1}{m_n}
+\]
+</p>
+
+<p>
+Spomnimo se, da je \( \hat{p} \) operator definiran kot
+</p>
+
+<p>
+\[ \hat{p} = \iu \left( \partial_x, \partial_y, \partial_z  \right), \ \hat{p} ^2 = - \left( \partial_x ^2 + \partial_y ^2 + \partial_z ^2 \right)
+\]
+</p>
+
+<p>
+V sferičnih koordinatah je naš operator tako
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \hat{p} ^2 = - \left( \partial_r \left( r ^2 \partial_r \right) \underbrace{- \frac{1}{r ^2 \sin \theta} \partial_{\theta} \left( \sin \theta \partial_{\theta} \right) + \frac{1}{r ^2 \sin ^2 \theta} \partial_{\phi}}_{(1)} \right)
+\end{equation}
+
+
+<p>
+Če operator deluje na neko valovno funkcijo, potem dobimo
+</p>
+
+\begin{align*}
+ \Psi &= R_{nl} \left( r \right) Y_{lm } \left( \theta, \phi \right)  && \left| n, l, m \right\rangle\\
+\hat{p} ^2 \Psi (r, \theta, \phi) &= \left( \frac{1}{r ^2} \partial_r \left( r ^2 \partial_r R \right) + \underbrace{\frac{\hat{l} \left( \hat{l} + 1 \right)}{r ^2} R}_{(1)}  \right) Y_{lm} \left( \theta, \phi \right)
+\end{align*}
+
+<p>
+(1) rečemo potencialna bariera zaradi vrtilne količine in je ekvivalenten delu pri \ref{eq:1}.
+</p>
+
+<p>
+Prav tako
+</p>
+
+<p>
+\[ \hat{l} Y_{lm} \left( \theta \right) = \begin{bmatrix} l_{x} \\ l_{y} \\ l_{z} \end{bmatrix} Y_{lm} \left( \theta, \phi \right), \ \hat{l} (\hat{l} + 1) Y_{lm} \left( \theta, \phi \right) = l(l + 1) Y_{lm} \left( \theta, \phi \right)
+\]
+</p>
+
+<p>
+[skica potenciala]
+</p>
+</div>
+</div>
+<div id="outline-container-org7256036" class="outline-3">
+<h3 id="org7256036"><span class="section-number-3">1.2.</span> 3. naloga</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="my_example" id="org1509ead">
+<p>
+Poračunaj valovno funkcijo devterona v končni potencialni 3D jami s splošnim potencialom \( V \). Za začetni nastavek si pomagaj s spinsko valovno funkcijo iz 5. naloge 1. sklopa.
+</p>
+
+</div>
+
+<p>
+Valovna funkcija je
+</p>
+
+<p>
+\[ \left| D \right\rangle \to \Psi_0 = c_1 Y_{0 \underline{0}} \left( \theta, \phi \right) \left| 1,\underline{1} \right\rangle + c_2 \sqrt{\frac{3}{5}} Y_{2 \underline{2}} \left( \theta, \phi \right) \left| 1, \underline{-1} \right\rangle - c_2 \sqrt{\frac{3}{10}} Y_{2 \underline{1}} \left( \theta, \phi \right) \left| 1, \underline{0} \right\rangle + c_2 \sqrt{\frac{1}{10}} Y_{2 \underline{0}} \left( \theta, \phi \right) \left| 1, \underline{1} \right\rangle
+\]
+</p>
+
+<p>
+Fino je preveriti, če se 3. komponenta vrtilne količine ohranja \( \left| D, J_z =1\right\rangle \) - glej podčrtane stvari, katerih vsota mora biti enaka tisti na levi strani
+</p>
+
+<p>
+Z normalizacijo dobimo
+</p>
+
+\begin{align*}
+  c_1 ^2 + c_2 ^2 &= 1 \\
+\sin ^2 (\alpha) + \cos (\alpha) &= 1 \\
+c_1 &= \sin \alpha\\
+c_2 &= \cos \alpha
+\end{align*}
+
+<p>
+Prosto fazo damo na \( 0 \).
+</p>
+
+<p>
+Manjka nam še radialna odvisnost. Spoiler alert, za izbran \( n = 1 \), bo naša radialna funkcija enaka
+</p>
+
+<p>
+\[ R_{nl} (r) \approx \frac{u_l}{r}
+\]
+</p>
+
+<p>
+oz.
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \left| D \right\rangle \to \Psi_0 = c_1 Y_{0 \underline{0}} \left( \theta, \phi \right) \left| 1,\underline{1} \right\rangle \frac{u_0 (r)}{r} + c_2 \sqrt{\frac{3}{5}} Y_{2 \underline{2}} \left( \theta, \phi \right) \left| 1, \underline{-1} \right\rangle \frac{u_2(r)}{r} - c_2 \sqrt{\frac{3}{10}} Y_{2 \underline{1}} \left( \theta, \phi \right) \left| 1, \underline{0} \right\rangle \frac{u_2(r)}{r} + c_2 \sqrt{\frac{1}{10}} Y_{2 \underline{0}} \left( \theta, \phi \right) \left| 1, \underline{1} \right\rangle \frac{u_2 (r)}{r}
+\end{equation}
+
+
+<p>
+Za krajši zapis, saj je zgornji dolga kača, zapišemo posplošeni sferni harmonik
+</p>
+
+<p>
+\[ \mathcal{Y}_{JLS}^M = \sum\limits_{m_l, m_s}^{} \left\langle J, M | L, m_l S, m_s \right\rangle  Y_{LM} \left( \theta, \phi \right) \left| S, m_s \right\rangle
+\]
+</p>
+
+<p>
+ki nam \ref{eq:2} zapiše krajše kot
+</p>
+
+\begin{equation}
+\label{eq:3}
+\Psi_D = \sin \alpha \frac{u_0(r)}{r} \mathcal{Y}_{101}^1 \left( \theta, \phi \right) + \cos \alpha \frac{u_2 (r)}{r} \mathcal{Y}_{121}^1 \left( \theta, \phi \right)
+\end{equation}
+
+<p>
+Prav tako velja za posplošeni harmonik
+</p>
+
+<p>
+\[ \int\limits_{}^{} \mathrm{d} \Omega \mathcal{Y}_{JLS}^{M*} \left( \theta, \phi \right) \mathcal{Y}_{J'L'S'}^{M'} \left( \theta, \phi \right) = \delta_{JJ'} \delta_{MM'} \delta_{SS'} \delta_{LL'}
+\]
+</p>
+
+<p>
+V \( u_0 \) in \( u_2 \) imamo valovni vektor \( k \), ki ga -ish dobimo iz energije \( E = \frac{k ^2}{\mu 2} \) (saj je \( E \propto \alpha \)).
+</p>
+
+<p>
+Sedaj imamo vprašanje, kako dobimo energijo \( E \)? Hamiltonian.
+</p>
+
+\begin{align*}
+  H \Psi_D &= E \Psi_D \\
+ \left[-  \frac{1}{2\mu} \frac{\partial sr}{\partial r ^2}  \frac{l(l-1)}{2\mu r ^2} + V(r) \right] \sin \alpha u_0 \mathcal{Y}_{101}^1 + \left[ - \frac{1}{2\mu} \frac{\partial ^2}{\partial r ^2} + \frac{l(l - 1)}{2 \mu r ^2} + V(r)  \right] \cos \alpha u_2 \mathcal{Y}_{121}^1 &= E \left\{ \sin \alpha u_0 \mathcal{Y}_{101}^1 + \cos \alpha u_2 \mathcal{Y}_{121}^1 \right\} \\
+\left[ - \frac{1}{2\mu} \frac{\partial ^2 }{\partial r ^2} + 0 + V(r)  \right] \sin \alpha u_0 \mathcal{Y}_{101}^1 + \left[ - \frac{1}{2\mu} \frac{\partial ^2 }{\partial r ^2} + V(r)  \right] \cos \alpha u_2 \mathcal{Y}_{121}^1 &= E \Psi_{D}
+\end{align*}
+
+<p>
+Dobili smo sklopljeno diferencialno enačbo in želimo jo spraviti na sistem dveh enačb. \( \mathcal{Y} \) so med seboj ortogonalni, in skalarni produkt in BUM <b>magic</b>.
+</p>
+
+<p>
+Pomnožim enačbo z \( \int\limits_{}^\mathrm{d} \Omega Y_{101}^1 \left( \theta, \phi \right) \) in tako dobimo
+</p>
+
+\begin{align*}
+  \left[ - \frac{1}{2\mu} \frac{\partial ^2 }{\partial r ^2} + \underbrace{\int\limits_{}^{} \mathrm{d} \Omega \mathcal{Y}_{101}^1 \left( \theta, \phi \right) V(R) \mathcal{Y}_{101}^1 \left( \theta, \phi \right)}_{\left\langle 11, 01 \left| V \right| 11, 01 \right\rangle} \right] \sin (\alpha) u_0  + \left[ \int\limits_{}^{} \mathrm{d} \Omega \mathcal{Y}_{101}^1 \left( \theta, \phi \right) V(r) \mathcal{Y}_{121}^1 \left( \theta, \phi \right) \right] \cos (\alpha) u_2 &= E \sin (\alpha) u_0 (r)
+\end{align*}
+
+<p>
+Medtem ko da dobimo drugo enačbo, pomnožimo z \( \int\limits_{}^\mathrm{d} \Omega \mathcal{Y}_{121}^1 \left( \theta, \phi \right) \) in dobimo sledeč sistem enačb:
+</p>
+
+<p>
+\[ \begin{bmatrix}
+   \frac{1}{2\mu} \frac{\partial ^2 }{\partial r ^2} + \left\langle 11, 01 \left| V \right| 11, 01\right\rangle  & \left\langle 11, 01 \left| V \right| 11, 21\right\rangle \mathrm{cot } \alpha \\
+    \left\langle 11, 21 \left| V \right| 11, 01\right\rangle \tan \alpha & - \frac{1}{2 \mu} \frac{\partial ^2 }{\partial r ^2} + \frac{6}{2\mu r ^2} + \left\langle 11, 21 \left| V \right| 11, 21\right\rangle
+    \end{bmatrix} \begin{bmatrix} u_{0} \\ u_{1} \end{bmatrix} = E \begin{bmatrix} u_{0} \\ u_{1} \end{bmatrix}
+\]
+</p>
+
+<p>
+Tenzorska sila, kjer je \( \left\langle 11, 01 \left| V(\vec{r}) \right| 11, 21\right\rangle \ne 0 \) in iz tega dobimo tenzorski potencial, ki izvira iz izmenjave 1. piona
+</p>
+
+<p>
+\[ V(\vec{r}) \propto \left( 1 - \frac{g}{2} + \frac{g}{2} \vec{S}_1 \vec{S}_2 + \gamma \left( \frac{3 \vec{S}_1 \cdot \vec{r} \vec{S}_2 \cdot \vec{r}}{r ^2} - \vec{S}_1 \vec{S}_2 \right) \right)
+\]
+</p>
+
+<p>
+To je fizika 60. let (dani potencial je predstavljen leta 1955).
+</p>
+
+<p>
+Današnji čas je ANL 18 (ang. <i>argon national laboratory</i>) z 18 parametri - naš potencial ima 2 (\( g, \gamma \)). Za več glej spletno učilnico.
+</p>
+
+<p>
+Za \( k = \sqrt{2 \mu E} \) (navkljub temu da smo rekli, da ne velja) je
+</p>
+
+\begin{align*}
+  u_0(r) &= N_0 e^{- kr} \\
+u_2(r) &= N_2 \left( 1 + \frac{3}{kr } + \frac{3}{k ^2 r ^2} \right) e^{- kr}
+\end{align*}
+
+<p>
+kar velja za velike \( r \).
+</p>
+</div>
+</div>
+<div id="outline-container-org9707ca8" class="outline-3">
+<h3 id="org9707ca8"><span class="section-number-3">1.3.</span> 1. naloga</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="my_example" id="orgc65aa8b">
+<p>
+Modeliraj sipanje protoa in nevtrona (zanemari spin) v 1D s potencialno jamo globine \( V_0 = 370 \mathrm{MeV} \). Koliko vezanih stanj s \( P = +1 \) imamo, če je masa \( m_p = 938 \mathrm{MeV} \) in masa nevtrona \( m_n = 939 \mathrm{MeV} \), ter širina jame \( a = 2 \mathrm{fm} \)?
+</p>
+
+</div>
+
+<p>
+Glej prvo nalogo pri Kvantni mehaniki.
+Gledamo sipanje delcev: v 1D jami, vsak delec prihaja iz svoje strani in gledamo, kaj se zgodi, ko se srečata v jami - lahko letita drug mimo drugega ali pa se vežeta v sistem. Lahko pa na to gledamo tudi kot, da je en delec z danim potencialom in drug delec interagira z njim ter obratno.
+[skica jame]
+</p>
+
+<p>
+Valovna funkcija pri sipanju je
+</p>
+
+<p>
+\[ \Phi(x) = e^{\iu k_{CM} x_{CM}} \Phi(x) \implies \Phi(x)
+\]
+</p>
+
+<p>
+saj sta delca približno enako težka, kar pomeni, da je težišče (CM) približno na 0 in je eksponentna funkcija nezanimiva.
+</p>
+
+
+<p>
+Schrödingerjeva enačba
+</p>
+
+<p>
+\[ \Psi(x) = \begin{cases}
+              A_n \left( \begin{cases}
+                       \cos kx; n \text{ lih} \\
+                       \sin kx; n \text{ sod}
+                       \end{cases}
+                       \right); \ \left| x \right| < a, II \\
+                B_n e^{- \kappa \left| x \right|}; \ \left| x \right| > a, I, III
+             \end{cases}
+\]
+</p>
+
+<p>
+in \( \Psi(x) \in C ^2 \).
+</p>
+
+
+<p>
+Pri \( A_n \) odpade \( \sin kx \) zaradi parnost.
+</p>
+
+<p>
+Velja, da je
+</p>
+
+\begin{align}\label{ali:1}
+\Psi(a^+) &= \Psi(a^-) \\
+A_n \cos k_n a &= B_n e^{ -\kappa_n a} \\
+\implies B_n &= e^{\kappa_n a} \cos k_n a
+\end{align}
+
+<p>
+Odvod po \( x \) valovne funkcije je
+</p>
+
+<p>
+\[ \partial_x \Psi(x) = \begin{cases}
+                        -A_n k_n \sin k_n x; \left| x \right| < a\\
+                        -A_n \kappa_n \cos k_n a e^{\gamma_n \left( a - \left| x \right| \right)}; \left| x \right| > a
+                        \end{cases}
+\]
+</p>
+
+<p>
+kjer smo v drugi vrstici upoštevali enakost za \( B_n \) iz zgornje enakosti \ref{ali:1}.
+</p>
+
+<p>
+Velja, da sta odvoda funkcij enaka za
+</p>
+
+\begin{align}\label{ali:2}
+ \partial_x \Psi \left( a^+ \right) &= \partial_x \Psi \left( a^- \right) \\
+k_n \sin k_n a = \kappa_n \cos k_n a
+\end{align}
+
+<p>
+Hamiltonian je
+</p>
+
+\begin{align}\label{ali:3}
+  H &= - \frac{1}{2m} \partial_x ^2 + V \\
+E_n &= - \frac{\kappa_n ^2}{2m} = \frac{k_n ^2}{2m} - V_0 \\
+\kappa_n ^2 &= 2 m V_0 - k_n ^2
+\end{align}
+
+<p>
+Ko združimo \ref{ali:2} in \ref{ali:3} dobimo
+</p>
+
+\begin{align*}
+  \tan k_n \alpha &= \frac{\kappa_n a}{k_n a} \\
+&= \sqrt{\frac{\left( \kappa_n a \right) ^2}{\left( k_n a \right) ^2}} \\
+&= \sqrt{\frac{2m V_0 - k_n ^2}{k_n ^2}} \\
+&= \sqrt{\frac{2m V_0}{k_n ^2} - 1} \ge 0 \\
+\frac{2m V_0}{k_n ^2} - 1 & \ge 0 \\
+\frac{2m V_0}{k_n ^2} &\ge 1 \\
+k_n \le \sqrt{2mV_{0}}
+\end{align*}
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Kristofer Robin</p>
+<p class="date">Created: 2025-04-23 Wed 20:00</p>
+</div>
+</body>
+</html>
