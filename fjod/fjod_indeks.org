@@ -1,0 +1,17 @@
+#+title: FJOD Indeks
+* Predavanja
+
+Intentionally left blank as an excersize to the reader.
+
+** Zapiski za ustni izpit
+
+Nedokončani zapiski so na voljo [[file:pripravaUstni/fjod_priprava_ustni.html][tukaj]].
+
+* Vaje
+- Vaje, [[file:vaje/fjod_vaje_teden01.html][teden 1]]
+- Vaje, [[file:vaje/fjod_vaje_teden02.html][teden 2]]
+- Vaje, [[file:vaje/fjod_vaje_teden03.html][teden 3]]
+- Vaje, [[file:vaje/fjod_vaje_teden04.html][teden 4]]
+- Vaje, [[file:vaje/fjod_vaje_teden05.html][teden 5]]
+- Vaje, [[file:vaje/fjod_vaje_teden06.html][teden 6]]
+- Vaje, [[file:vaje/fjod_vaje_teden07.html][teden 7]]

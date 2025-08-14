@@ -1,0 +1,10 @@
+\documentclass[convert={density=1000,size=600, outext=.png}]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing}
+\begin{document}
+\begin{tikzpicture}[scale=3, >= Stealth]
+\filldraw [fill=white!50!black!] (0, 0) node {$M$} circle [radius=0.15];
+\draw [->] (0.15, 0) -- node [left=1pt] {1} (0.5, 0.25);
+\draw [->] (0.15, 0) -- node[left=1pt] {2} (0.5, -0.25);
+\end{tikzpicture}
+\end{document}

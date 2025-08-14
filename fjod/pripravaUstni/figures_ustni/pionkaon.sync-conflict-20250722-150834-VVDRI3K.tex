@@ -1,0 +1,8 @@
+\documentclass[convert={density=300,size=600}]{standalone}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\begin{document}
+\feynmandiagram[horizontal=a to b]{
+  i1 [particle=\(v_{R} \, e^{+}_{L}\)]--[anti fermion, momentum={[arrow style=red]}] a -- [anti fermion, momentum'={[arrow style=red]}] i2 [particle=\(u_{L} \, e_{L}^-\)],
+  a -- [photon, edge label=\(\gamma\)] b,
+};
+\end{document}

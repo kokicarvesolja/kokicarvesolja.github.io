@@ -1,0 +1,9 @@
+\documentclass[convert={density=300,size=600}]{standalone}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\begin{document}
+\feynmandiagram[vertical=a to b]{
+  i1 [particle=\( \pi^{+} \)] -- [fermion, momentum'=\(k_{1}\)] a -- [fermion, momentum'=\( p_{1} \)] i2 [particle=\( \pi ^{+} \)],
+  a -- [photon, edge label=\(\gamma \quad \frac{g^{\mu \nu}}{q^{2}}\)] b,
+  i3 [particle=\( K^{+}\)] -- [anti fermion, reversed momentum'=\(p_{2}\)] b -- [anti fermion, reversed momentum'=\(k_{2}\)] i4 [particle = \( K^{+} \)]
+};
+\end{document}

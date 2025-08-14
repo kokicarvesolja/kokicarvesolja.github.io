@@ -16,3 +16,9 @@ Tukaj se nahajajo zapiski predavanj (in mogoče vaj) za predmet Matematike 3 pri
 - 11. teden [2024/12/09 -- 2024/12/13] - v ponedeljek 2024/12/09 sem manjkal. Torek 2024/12/10 je odpadlo (obvestilo preko spletne učilnice). Sredo 2024/12/11 sem bojkotiral.
 - 12. teden [[file:zapiski_predavanj/Mat3Teden12.html][predavanj Mat3]] [2024/12/16 -- 2024/12/20] - pri doc. dr. Klemnu Šivicu
 - 13. teden [[file:zapiski_predavanj/Mat3Teden13.html][predavanj Mat3]] [2025/01/06 -- 2025/01/10]
+- 14. teden [[file:zapiski_predavanj/Mat3Teden14.html][predavanj Mat3]] [2025/01/13 -- 2025/01/18] - zadnje predavanje je bilo 4h.
+* Priprave na teoretični izpit
+
+Po priporočilu [[https://jmvidal.cse.sc.edu/library/lamport95a.pdf][Leslie Lamporta]] sem dokaze napisal, v meni bolj berljivem načinu. Dokazi so razčlenjeni in vsakič, ko narediš trditev, jo takoj dokažeš. Mogoče komu pride prav pri razumevanju.
+
+[[file:ankiDokazi.html][Dokazi]] so na volje na linku. Veselo učenje.
