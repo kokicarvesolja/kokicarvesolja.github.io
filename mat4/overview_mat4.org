@@ -2,6 +2,9 @@
 
 
 * Predavanja
+** Priprava na izpit
+
+[[file:priprava_teorija.html][Tukaj]] se nahajajo moji zapiski, ki so bili izhodišče za učenje za teoretični del izpita v letu 2024/2025.
 * Vaje
 
 Vaje so v študijskem letu 2023/2024 potekale pri the Dearmanu prof. Jelencu.
