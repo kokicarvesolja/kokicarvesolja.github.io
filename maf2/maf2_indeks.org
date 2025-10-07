@@ -1,0 +1,6 @@
+#+title: Matematična fizika 2
+* Predavanja
+
+Zapiski predavanj pri prof. Marku Žnidariču.
+
+- [[file:01predavanja_maf2/01mf2_p_20251006.html][predavanje 1 & 2, 2025/10/06 - 2025/10/07:]] PDE, vrste, PDE 1. reda, splošne PDE 1. reda, valovna enačba - izpeljava in energija

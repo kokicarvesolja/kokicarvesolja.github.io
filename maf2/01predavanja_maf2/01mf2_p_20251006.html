@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-10-07 Tue 14:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1. predavanje iz Matematične fizike 2</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">1. predavanje iz Matematične fizike 2</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org700c3d0">1. Uvod</a>
+<ul>
+<li><a href="#org701b053">1.1. Kakšne PDE rešujemo?</a></li>
+</ul>
+</li>
+<li><a href="#org346c1fd">2. PDE prvega reda (Kuščar, Kodre, poglavje 5.1, Haberman 12.2, Arfken 9.2)</a>
+<ul>
+<li><a href="#orgb9e9622">2.1. Hitrost udarnega vala</a></li>
+</ul>
+</li>
+<li><a href="#org7b90478">3. Splošna PDE 1. reda</a></li>
+<li><a href="#org5e0e419">4. Valovna enačba</a>
+<ul>
+<li><a href="#orgfc7294e">4.1. Izpeljava</a>
+<ul>
+<li><a href="#org6785f7b">4.1.1. Struna (Kuščar, Kodre 5.5, Haberman 4.2)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org700c3d0" class="outline-2">
+<h2 id="org700c3d0"><span class="section-number-2">1.</span> Uvod</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Zakaj, kje se pojavijo parcialne diferencialne enačbe? Gibanje enega delca opišemo z eno navadno difernencialno enačbo (ODE). Za opis gibanja dveh delcev imamo 2 sklopljeni ODE. Za opis gibanja neskončnega števila delcev imamo neskončno ODE. V kontinuumski limiti, ko iz diskretnih delcev preidemo na polje, dobimo PDE.
+</p>
+
+<p>
+Za dobro definirano in enolično rešljivo PDE potrebujemo enačbo in začetne pogoje (ang. <i>boundary conditions</i>, označim BC).
+</p>
+
+<p>
+Do PDE lahko pridemo tudi preko principa najmanjše akcije. Za 1 delec imamo Hamiltonian/Lagrangian, pri neskončnem številu delcev pa imamo integral po koordinatah. Pri Euler-Lagrangevih enačbah nimamo samo integrala po času, ampak tudi integral (lokalne) gostote. Tej lokalnosti pravimo fizikalno tudi kavzalnosti. E-L enačbe nam podajo PDE, ki so rešljive lokalno (?).
+</p>
+</div>
+<div id="outline-container-org701b053" class="outline-3">
+<h3 id="org701b053"><span class="section-number-3">1.1.</span> Kakšne PDE rešujemo?</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Tako kot ODE imajo tudi PDE rede, ki nakazuje stopnjo najvišjega odvoda. Najenostavnejša PDE je 1. reda.
+</p>
+
+<div class="my_example" id="org3195e58">
+\begin{equation}
+\label{eq:1}
+ \frac{\partial \rho}{\partial t} + \mathrm{div} \left( \rho \vec{v} \right) = 0
+\end{equation}
+
+<p>
+Kontinuitetna enačba, ki izraža nek ohranitveni zakon. Zanima nas, za katero količino je to diferencialna enačba - in zato potrebujemo zvezo med \( \rho \) in \( \vec{v} \).
+</p>
+
+<p>
+Predpostavimo, da je ta zveza enaka \( \vec{\jmath} \sim \nabla \rho \), npr.
+</p>
+
+\begin{equation}
+\label{eq:2}
+ j = - \frac{\partial \rho}{\partial x}
+\end{equation}
+
+<p>
+Z združitvijo enačb \ref{eq:1} in \ref{eq:2} dobimo PDE <b>2. reda</b>. Ciljali bomo na aproksimacijo, da so enačbe <b>linearne</b> (naravni zakoni, npr. Maxwellove enačbe, so eksaktno linearni). Prednost linearnosti je princip superpozicije.
+</p>
+
+</div>
+
+<p>
+Najpomembnejši primeri so:
+</p>
+
+<ul class="org-ul">
+<li><p>
+valovna enačba je hiperbolična
+</p>
+
+<p>
+\[ \nabla ^2 u = \frac{1}{c ^2} \frac{\partial ^2 }{\partial t ^2} u, \quad u \left( \vec{r}, t \right)
+  \]
+</p>
+
+<p>
+kjer je \( c \) hitrost valovanja.
+</p>
+
+<p>
+Valovna enačba opisuje zvok, svetlobo, in ostala nihanja.
+</p></li>
+
+<li><p>
+difuzijska enačba je parabolična
+</p>
+
+<p>
+\[ \nabla ^2 u = \frac{1}{D} \frac{\partial u}{\partial t}
+  \]
+</p>
+
+<p>
+kjer je \( D \) difuzijska enačba.
+</p></li>
+
+<li><p>
+Laplaceova enačba je eliptična
+</p>
+
+<p>
+\[ \nabla ^2 u = 0
+  \]
+</p>
+
+<p>
+Opazimo, da ne vsebuje odvoda po času.
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org346c1fd" class="outline-2">
+<h2 id="org346c1fd"><span class="section-number-2">2.</span> PDE prvega reda (Kuščar, Kodre, poglavje 5.1, Haberman 12.2, Arfken 9.2)</h2>
+<div class="outline-text-2" id="text-2">
+<div class="my_example" id="orgfe9c70c">
+<p>
+Kot primer bomo vzeli prometne zastoje. Operiramo v eni dimenziji, in kontinuitetna enačba je
+</p>
+
+\begin{equation}
+\label{eq:3}
+ \frac{\partial \rho}{\partial t} + \frac{\partial j}{\partial x}  = 0
+\end{equation}
+
+<p>
+Na določenem, zaprtem intervalu, bo količina avtov, ki vstopajo na začetku intervala, enaka količino avtov, ki interval zapuščajo. Tok avtomobilov zapišemo s funkcijo
+</p>
+
+\begin{equation}
+\label{eq:4}
+ j = f(\rho) = \rho v(\rho)
+\end{equation}
+
+<p>
+kjer je \( v \) hitrost avtomobilov.
+</p>
+
+<p>
+Odvod enačbe \ref{eq:4} po \( x \) zapišemo s posrednim odvajanjem
+</p>
+
+<p>
+\[ \frac{\partial j}{\partial x} = \frac{\partial j}{\partial \rho} \frac{\partial \rho}{\partial x} = c (\rho) \frac{\partial \rho}{\partial x}
+\]
+</p>
+
+<p>
+Količina \( c(\rho) \) je parameter, ki si ga izberemo. Upoštevajoč odvod \ref{eq:4} in \ref{eq:3} dobimo novo enačbo
+</p>
+
+<p>
+\[ \frac{\partial \rho}{\partial t} + c \frac{\partial \rho}{\partial x}  = 0
+\]
+</p>
+
+<p>
+Parameter \( c \) je hitrost premikanja razredčin in zgoščin, kar je lahko različno od hitrosti premikanja mikroskopskih delcev (avtov).
+</p>
+
+<p>
+Če je avtocesta prazna, bodo avtomobili vozili ob neki konstantni hitrosti \( v_0 \). Več je avtomobilov, počasneje bodo vozili, kar pomeni, da hitrost v odvisnosti od gostote zapišemo
+</p>
+
+<p>
+\[ v (\rho) = v_0 \left( 1 - \frac{\rho}{\rho_{max}} \right)
+\]
+</p>
+
+<p>
+Če je cesta popolnoma polna, je hitrost \( 0 \). Naš približek je semi-dober.
+</p>
+
+<p>
+Preko definicije \ref{eq:4} in definicije parametra \( c \), dobimo, da je hitrost motnje enaka
+</p>
+
+<p>
+\[ c (\rho) = v_0 \left( 1 - \frac{2 \rho}{\rho_{max}} \right)
+\]
+</p>
+
+<p>
+Upoštevajoč dobljen \( c \) enačba ni več linearna.
+</p>
+
+<p>
+Za začetek si bomo ogledali linearen problem, kjer je hitrost motnje \( c = v_0 = konst \). Rešujemo enačbo
+</p>
+
+<p>
+\[ \frac{\partial \rho}{\partial t}  + v_0 \frac{\partial \rho}{\partial x} = 0
+\]
+</p>
+
+<p>
+Iščemo funkcijo \( \rho(x, t) \), ki velja za mirujoč opazovalni sistem. Recimo, da smo na vlaku, ki se premika kot \( x(t) \). Predpostavimo, da je gibanje linearno, torej
+</p>
+
+\begin{equation}
+\label{eq:5}
+x(t) = x_0 + vt
+\end{equation}
+
+<p>
+Funkcija, ki jo sedaj iščemo, v premikajočem opazovalnem sistemu je \( \rho \left( x(t), t \right) \). Odvod po času je
+</p>
+
+<p>
+\[ \frac{\mathrm{d} \rho }{\mathrm{d} t} = \frac{\partial \rho}{\partial t}  + \frac{\partial \rho}{\partial x} \cdot \dot{x}
+\]
+</p>
+
+<p>
+saj iščemo sistem, kjer se gostota ne spreminja. Vidimo, da je to sistem, ki ima hitrost \( \dot{x} = v_0 \)
+</p>
+
+<p>
+\[ \frac{\mathrm{d} \rho}{\mathrm{d} t} = 0
+\]
+</p>
+
+<p>
+Z upoštevanjem začetnega pogoja \( \rho_0 (x) = \rho(x, t = 0) \) in transformacijo v prvotni koordinatni sistem preko \ref{eq:5} je gostota enaka
+</p>
+
+<p>
+\[ \rho(x, t) = \rho_0 (x_0) = \rho_0 (x - v_0 t)
+\]
+</p>
+
+</div>
+
+<div class="note" id="orge3fb711">
+<p>
+Uporabljali bomo sledečo notacijo. Totalni odvod po času bomo označili s piko, torej
+</p>
+
+<p>
+\[ \dot{x} = \frac{\mathrm{d} x}{\mathrm{d} t}
+\]
+</p>
+
+<p>
+Parcialni odvod po času bomo označili z indeksom \( t \), torej
+</p>
+
+<p>
+\[ \frac{\partial u}{\partial t}  = \partial_t u = u_t
+\]
+</p>
+
+<p>
+kjer je \( u \) funkcija večih spremenljivk, ena od njih je čas.
+</p>
+
+<p>
+Drugi odvod po kraju označimo z dvojnim \( x \), torej
+</p>
+
+<p>
+\[ \frac{\partial ^2 }{\partial x ^2} = u_{xx }
+\]
+</p>
+
+</div>
+
+<p>
+Definiramo diferencialno enačbo za karakteristiko
+</p>
+
+<p>
+\[ \frac{\mathrm{d} x}{\mathrm{d} t} = v_0
+\]
+</p>
+
+<div class="my_example" id="org1d45157">
+<p>
+Obravnavajmo zgornji primer, kjer je enačba nelinearna. Najlepšo linearnost bomo dosegli z \( c (\rho) = \rho \). Enačba, ki jo rešujemo je Burgerjeva enačba (ang. <i>Burger&rsquo;s equation</i>)
+</p>
+
+<p>
+\[ \frac{\partial \rho}{\partial t}  + \rho \frac{\partial \rho}{\partial x}  = 0
+\]
+</p>
+
+<p>
+Glej grafe: ob izbranem \( x_0 \) je gostota \( \rho_0 \), ki se iz časa \( t = 0 \) preslika v \( t = 1 \).
+</p>
+
+
+<div id="org5125c10" class="figure">
+<p><img src="figures/01PDE_udarni_val.jpg" alt="01PDE_udarni_val.jpg" />
+</p>
+</div>
+
+<p>
+Ena karakteristika je oblike
+</p>
+
+<p>
+\[ x = x_0 + \rho_0 (x_0) t
+\]
+</p>
+
+<p>
+Graf \( x (t) \) prikazuje karakteristike, ki ni počesan (nima vzporednic). Naklon premic \( \frac{\mathrm{d} x}{\mathrm{d} t} \) (pazi graf je zasukan!) prikazujejo hitrosti/gostote \( \rho \).
+</p>
+
+<p>
+Za dano začetno gostoto \( \rho_0 \) izrazimo karakteristiko \( x (x_0, t) \), katere izraz obrnemo, da dobimo odvisnost \( x_0 (x, t) \). Tako dobimo rešitev
+</p>
+
+<p>
+\[ \rho(x, t) = \rho_0 (x_0 (x, t))
+\]
+</p>
+
+<p>
+Ne vemo, kakšne oblike je \( \rho_0 \) in je možno, da je odvisnost \( x_0 (x, t) \) težko izraziti.
+</p>
+
+<p>
+Ob času na \( t = 2 \) oz. splošneje \( t > t_0 \) inverz \( x_0 (x, t) \) ni več enoličen in dobimo singularnost.
+</p>
+
+</div>
+</div>
+<div id="outline-container-orgb9e9622" class="outline-3">
+<h3 id="orgb9e9622"><span class="section-number-3">2.1.</span> Hitrost udarnega vala</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Naj bo udarni val imel hitrost \( w \). Avti pred udarnim valom naj imajo v mirujočem sistemu gostoto \( \rho_- \) in hitrost \( v_- \). Avti po udarnem valu pa imajo v istem sistemu gostoto \( \rho_+ \) ter \( v_+ \).
+</p>
+
+<p>
+Velja, da je količina avtomobilov pred udarnim valom enaka količini avtomobilov po udarnem valu
+</p>
+
+<p>
+\[ \tilde{\jmath}_- = \tilde{\jmath}_+
+\]
+</p>
+
+<p>
+v sistemu udarnega vala, ki se premika s hitrostjo \( w \). Naše hitrosti moramo preko Galilejeve transfomarcije pretvoriti v sistem udarnega vala
+</p>
+
+<p>
+\[ \rho_- \left( v_- - w \right) = \rho_+ \left( v_+ - w \right)
+\]
+</p>
+
+<p>
+iz česar izrazimo hitrost udarnega vala kot
+</p>
+
+<p>
+\[ w = \frac{j_+ - j_{-} }{\rho_+ - \rho_-} = \frac{\rho_+ v_+ - \rho_- v_-}{\rho_+ - \rho_-}
+\]
+</p>
+
+<div class="my_example" id="orgb8811c3">
+<p>
+Naj bo hitrost avtomobilov enaka odvisnosti kakor prej
+</p>
+
+<p>
+\[ v \left( \rho \right) = v_0 \left( 1 - \frac{\rho}{\rho_{max}} \right)
+\]
+</p>
+
+<p>
+Ob zastoju zaradi rdeče luči velja \( \rho_+ = \rho_{max} \) in \( v_+ = 0 \).
+</p>
+
+<p>
+Hitrost motnje je tako
+</p>
+
+<p>
+\[ w = - \frac{\rho_- v_0 \left( 1 - \frac{\rho_-}{\rho_{max}} \right)}{\rho_{max} - \rho_-}
+\]
+</p>
+
+<p>
+oziroma, če poenostavimo
+</p>
+
+<p>
+\[ w = - v_0 \frac{\rho_-}{\rho_{max}}
+\]
+</p>
+
+<p>
+Če se avtomobili premikajo s hitrostjo \( 40 \mathrm{km}/ \mathrm{h} \) na avtocesti in se nekje ustavijo, ter je gostota \( \rho_- \) približno enaka \( \rho_{max} \), potem to pomeni, da se bo udarni val širil nazaj s hitrostjo \( v_0 = 120 \frac{\mathrm{km}}{\mathrm{h}} \).
+</p>
+
+<p>
+To je tudi razlog, zakaj prihaja do naletov.
+</p>
+
+
+<div id="org05b6774" class="figure">
+<p><img src="figures/01PDE_hitrost_udarnega_vala.jpg" alt="01PDE_hitrost_udarnega_vala.jpg" />
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7b90478" class="outline-2">
+<h2 id="org7b90478"><span class="section-number-2">3.</span> Splošna PDE 1. reda</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Rešujemo enačbo oblike
+</p>
+
+\begin{equation}
+\label{eq:6}
+ a(x, y) u_x + b(x, y) u_y = \phi(x, y, u)
+\end{equation}
+
+<p>
+kjer je \( u = u(x, y) \).
+</p>
+
+<p>
+Enačba je nelinearna, saj je \( \phi \propto u \).
+</p>
+
+<p>
+Zapišemo vektorsko polje \( \vec{v} = (a, b) \) in tako lahko enačbo \ref{eq:6} zapišemo z vektorskim poljem
+</p>
+
+<p>
+\[ \left( \vec{v} \, \nabla \right) u = \phi
+\]
+</p>
+
+
+<div id="org4a5406d" class="figure">
+<p><img src="figures/01PDE_vektorsko_polje.jpg" alt="01PDE_vektorsko_polje.jpg" />
+</p>
+</div>
+
+<p>
+Podobno kot v prejšnjem poglavju poskušamo z metodo karakteristike - ali obstaja krivulja \( \left( x(s), y(s) \right) \), na kateri se PDE  poenostavi (na \( \phi = 9 \))?
+</p>
+
+<p>
+Če najdemo pravilen zapis odvod funkcije \( u \) po \( s \), bo to našo enačbo pretvorilo v iz PDE v NDE.
+</p>
+
+<p>
+Po definiciji verižnega pravila je odvod po \( s \) enak
+</p>
+
+\begin{equation}
+\label{eq:7}
+ \frac{\mathrm{d} u}{\mathrm{d} s} = u_x \frac{\mathrm{d} x}{\mathrm{d} s} + u_y \frac{\mathrm{d} y}{\mathrm{d} s}
+\end{equation}
+
+<p>
+\ref{eq:7} mora biti enak levi strani \ref{eq:6}, kar pomeni, da mora veljati
+</p>
+
+\begin{equation}
+\label{eq:8}
+ \frac{\mathrm{d} x}{\mathrm{d} s} = a \quad \text{in} \quad \frac{\mathrm{d} y}{\mathrm{d} s} = b
+\end{equation}
+
+<p>
+Enačba \ref{eq:8} je enačba za karakteristiko. Karakteristike kažejo v smeri vektorskega polja \( \vec{v} \), kar pomeni, da so črte vektorskega polje karakteristike. Za izbrano karakteristiko \( \Sigma \) PDE preide v
+</p>
+
+<p>
+\[ \frac{\mathrm{d} u}{\mathrm{d} s} = \phi (x, y, u) = \phi(s)
+\]
+</p>
+
+<p>
+kar pa je ODE. Rečemo, da PDE <i>propagira</i> rešitev vzdolž \( \Sigma \).
+</p>
+
+<p>
+Če je \( \phi = 0 \), to pomeni, da so posledično \( \Sigma \) izohipse.
+</p>
+
+<p>
+Predpostavimo, da imamo začetni pogoj \( \Gamma \). Za dober začetni pogoj mora sekati vse karakteristike in vsako karakteristiko samo enkrat (črtkana črta na sliki je slab začetni pogoj).
+</p>
+</div>
+</div>
+<div id="outline-container-org5e0e419" class="outline-2">
+<h2 id="org5e0e419"><span class="section-number-2">4.</span> Valovna enačba</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgfc7294e" class="outline-3">
+<h3 id="orgfc7294e"><span class="section-number-3">4.1.</span> Izpeljava</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-org6785f7b" class="outline-4">
+<h4 id="org6785f7b"><span class="section-number-4">4.1.1.</span> Struna (Kuščar, Kodre 5.5, Haberman 4.2)</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+Naj bo vrv težka in idealno gibka. Idealno gibka pomeni, da za zvijanje vrvi ne uporabimo nič energije. Gledamo košček vrvi dolžine \( \mathrm{d} s \).
+</p>
+
+
+<div id="org34fc8f4" class="figure">
+<p><img src="figures/02WE_izpeljava.jpg" alt="02WE_izpeljava.jpg" />
+</p>
+</div>
+
+<p>
+Definiramo dolžinsko gostoto zunanjih sil v \( x \) in \( y \) smeri kot
+</p>
+
+<p>
+\[ f_i = \frac{\mathrm{d} F_{i}}{\mathrm{d} s}
+\]
+</p>
+
+<p>
+kjer je \( i = x, y \). Dolžinska gostota mase pa je definirana kot
+</p>
+
+<p>
+\[ \mu = \frac{\mathrm{d} m}{\mathrm{d} s}
+\]
+</p>
+
+<p>
+Sila v vrvici \( F = F(s) \) (je odvisna od dolžine).
+</p>
+
+<p>
+Zapišimo Newtonove zakone v posameznih smereh. Glej sliko.
+</p>
+
+<p>
+Začetni del vrvi doživlja silo \( F(s) \), konec končka vrvi pa silo \( F(s + \mathrm{d} s) \). Na vrvico v smeri \( x \) deluje dolžinska gostota sile \( f_x \), hkrati pa še razlika \( F_x \), kar je razlika \( F(s + \mathrm{d} s) - F(s) \) projecirana na \( x \) os.
+</p>
+
+<p>
+\( \mathrm{d}s \) je hipotenuza, medtem ko sta \( \mathrm{d} x \) in \( \mathrm{d} y \) kateti. Silo \( F_x \) zapišemo s kosinusom kot
+</p>
+
+<p>
+\[ F_x = F \frac{\mathrm{d} x}{\mathrm{d} s}
+\]
+</p>
+
+<p>
+Projekcijo razlike sil pa izrazimo z odvodom kot
+</p>
+
+<p>
+\[ F(s + \mathrm{d} s) - F(s) = \frac{\partial }{\partial s}  \left( F_x \right) = \frac{\partial }{\partial s}  \left( F \frac{\mathrm{d} x}{\mathrm{d} s} \right)
+\]
+</p>
+
+<p>
+Drugi Newtonov zakon v \( x \) osi zapišemo kot
+</p>
+
+<p>
+\[ \mathrm{d} s \mu x_{tt } = f_x \mathrm{d} s ++ \mathrm{d} s  \frac{\partial }{\partial s}  \left( F \frac{\mathrm{d} x}{\mathrm{d} x} \right)
+\]
+</p>
+
+<p>
+V obeh smereh tako zapišemo
+</p>
+
+\begin{align*}
+  \mu x_{tt } &= \frac{\partial }{\partial s}  \left( F(s) \frac{\mathrm{d} x}{\mathrm{d} s} \right) + f_x \\
+\mu y_{tt } &= \frac{\partial }{\partial s} \left( F(s) \frac{\mathrm{d} y}{\mathrm{d} s} \right) + f_y
+\end{align*}
+
+<p>
+Manjka nam še pogoj, da je vrv neraztegljiva, ki ga opišemo z
+</p>
+
+<p>
+\[ \mathrm{d} x ^2 + \mathrm{d} y ^2 = \mathrm{d} s ^2 \quad \text{ali} \quad \left| \frac{\mathrm{d} \vec{r}}{\mathrm{d} s} \right| = 1
+\]
+</p>
+
+<p>
+Ta pogoj velja za \( F(s) \). Za raztegljivo vrv bo pogoj oblike.
+</p>
+
+<p>
+\[ F\sim k \left( \left| \frac{\mathrm{d} \vec{r}}{\mathrm{d} s} \right|  - 1\right)
+\]
+</p>
+
+<p>
+Obravnavamo posebni primer, ko imamo majhni odkloni, kar matematično zapišemo kot
+</p>
+
+<p>
+\[ \frac{\mathrm{d} y}{\mathrm{d} s} \ll 1 \quad \text{oz.}  \frac{\mathrm{d} x}{\mathrm{d} s} \approx 1
+\]
+</p>
+
+<p>
+Dodatno nimamo zunanjih sil \( f_x = 0 \) ter da vrv ne pospešuje v \( x \) smeri: \( x_{tt } = 0 \). Iz Newtonovega zakona v smeri \( x \) in zdajle povedanih pogojev sledi, da je \( F(s) = \mathrm{konst} \), saj
+</p>
+
+<p>
+\[ \frac{\partial F}{\partial s}  = 0
+\]
+</p>
+
+<p>
+Newtonov zakon v smeri \( y \) pa je tako
+</p>
+
+<p>
+\[ \mu y_{tt } = F \frac{\partial ^2 y }{\partial x ^2} + f_y
+\]
+</p>
+
+<p>
+kar zapišemo v valovno enačbo
+</p>
+
+\begin{equation}
+\label{eq:9}
+y_{tt } = c ^2 y_{xx } + \frac{f_y}{\mu}, \quad \frac{F}{\mu} = c ^2
+\end{equation}
+
+<p>
+Stacionarna rešitev parabole je aproksimacije verižnice \( \mathrm{ch} \).
+</p>
+
+<p>
+Pri mostu (npr. Golden Gate Bridge) je obremenitev konstanta na \( \mathrm{d}x \) in ne na \( \mathrm{d} s \).
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgc9c80e8"></a>Energija nihanja za \( y_{tt } = c ^2 y_{xx } \)<br />
+<div class="outline-text-5" id="text-4-1-1-1">
+<p>
+Funkcija \( y \) je funkcija \( x \) in \( t \). Zaradi pogoja \( \frac{\mathrm{d} y}{\mathrm{d} s} \ll 1 \) zapišemo maso kot
+</p>
+
+<p>
+\[ \mathrm{d} m = \mu \mathrm{d} s = \mu \mathrm{d} x
+\]
+</p>
+
+<p>
+Kinetični del energije zapišemo kot integral po dolžini vrvi
+</p>
+
+\begin{equation}
+\label{eq:10}
+T = \int\limits_{}^{} \mu \mathrm{d} x \, \frac{y_t ^2}{2}
+\end{equation}
+
+<p>
+Energiji dodamo tudi prožnostno energijo
+</p>
+
+\begin{equation}
+\label{eq:11}
+W_{Pr} = \frac{1}{2} \int\limits_{}^{} F y_x ^2 \, \mathrm{d} x
+\end{equation}
+
+<p>
+kjer smo \( y_x ^2 \) dobili iz Taylorjevega razvoja
+</p>
+
+\begin{align*}
+  \mathrm{d} s &= \sqrt{\mathrm{d} x ^2 + \mathrm{d} y ^2} \\
+&= \mathrm{d} x \sqrt{1 - \left( \frac{\mathrm{d} y}{\mathrm{d}x} \right) ^2} \\
+&= \mathrm{d} x \left( 1 + \frac{1}{2} \left( \frac{\mathrm{d} y}{\mathrm{d} x} \right) ^2 + \ldots \right)
+\end{align*}
+
+<p>
+Zanima nas tudi delo
+</p>
+
+\begin{equation}
+\label{eq:12}
+A = \int\limits_{}^{} \left( \frac{\mathrm{d} F_{y}}{\mathrm{d} x} \right) \, \mathrm{d} x \, \mathrm{d} u
+\end{equation}
+
+<p>
+kjer zapišemo \( u = \beta y \) za \( \beta \in (0, 1] \) obliko strune (od ravnovnesnega stanja do maksimalne lege). \( \beta \) je skalirni element. Majhni del oblike strune je \( \mathrm{d} u = y \mathrm{d} \beta \). Sila \( F_y \) je sila, ki sili vrv v ravnovesno lego. Zapišemo jo s pomočjo Newtonovega zakona
+</p>
+
+<p>
+\[ \mathrm{d} x \mu y_{tt } = \mathrm{d} F_y = \left( F y_{xx } + f_y \right) \, \mathrm{d} x
+\]
+</p>
+
+<p>
+kjer je \( f_y \) zunanja sila (sila teže).
+</p>
+
+<p>
+Integral \ref{eq:12} tako postane
+</p>
+
+\begin{align*}
+  A &= \int\limits_{}^{} \left( \frac{\mathrm{d} F_y}{\mathrm{d} x} \right) \, \mathrm{d} x \, \mathrm{d} u \\
+&= \iint\limits_0^1 \left( \beta F y_{xx } + f_y  \right)\, \mathrm{d} x \cdot y \, \mathrm{d} \beta \\
+&= \int\limits_{}^{} \, \mathrm{d} x \left[ \frac{1}{2} F y_{xx } + f_y \right] y
+\end{align*}
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-10-07 Tue 14:26</p>
+</div>
+</body>
+</html>

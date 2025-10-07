@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-10-07 Tue 14:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1. predavanje iz EMP</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">1. predavanje iz EMP</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc8c04cf">1. Elektrostatika</a>
+<ul>
+<li><a href="#org34c2f97">1.1. Coulumbova sila med naboji</a></li>
+<li><a href="#org1197ece">1.2. Velikost in enota eletričnega naboja</a></li>
+<li><a href="#org5d89419">1.3. Jakost električnega polja</a></li>
+<li><a href="#org9df3ba3">1.4. Električne silnice</a></li>
+<li><a href="#org0563a5e">1.5. Električna cirkulacija</a></li>
+<li><a href="#orgd356836">1.6. Električni pretok</a></li>
+<li><a href="#org0c8d66f">1.7. Električni potencial</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc8c04cf" class="outline-2">
+<h2 id="orgc8c04cf"><span class="section-number-2">1.</span> Elektrostatika</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org34c2f97" class="outline-3">
+<h3 id="org34c2f97"><span class="section-number-3">1.1.</span> Coulumbova sila med naboji</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Elektrostatika opisuje sile med <i>mirujočimi</i> električnimi naboji. Ker so mirujoči, pomeni, da nimamo nobenih magnetnih sil. Točkasta nabita telesa med seboj delujejo z električno silo. Sila je privlačna, če sta različno predznačena in odbojna, če sta enako predznačena. Sila je sorazmerna z velikostjo obeh nabojev
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \vec{F} = \frac{e_1 e_2}{4 \pi \epsilon_0 r ^2} \frac{\vec{r}}{r}
+\end{equation}
+
+<p>
+Enačba \ref{eq:1} opisuje silo, ki jo čuti naboj \( e_2 \) zaradi \( e_1 \). Konstanti \( \epsilon_0 = 8.85 \cdot 10^{-12} \frac{\mathrm{As}}{\mathrm{Vm}} \) rečemo indukcijska/influenčna konstanta (ang. <i>vacuum conductivity</i>). Izvor Coulumbove sile so bile meritve.
+</p>
+</div>
+</div>
+<div id="outline-container-org1197ece" class="outline-3">
+<h3 id="org1197ece"><span class="section-number-3">1.2.</span> Velikost in enota eletričnega naboja</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Naboj merimo v Coulumbih \( 1 \mathrm{C} = 1 \mathrm{As} \). Naboj je (praviloma) mnogokratnik osnovnega naboja \( e_0 = 1.6 \cdot 10^{-19} \mathrm{As} \). Najmanjši naboj v naravi je na kvarku in sicer \( \frac{1}{3} e_0 \).
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">thing of magic</td>
+<td class="org-left">naboj (e 0)</td>
+</tr>
+
+<tr>
+<td class="org-left">kvark</td>
+<td class="org-left">1/3</td>
+</tr>
+
+<tr>
+<td class="org-left">elektrona</td>
+<td class="org-left">1</td>
+</tr>
+
+<tr>
+<td class="org-left">kondenzator</td>
+<td class="org-left">\(1 \cdot 10^{-7} \mathrm{As }\)</td>
+</tr>
+
+<tr>
+<td class="org-left">blisk</td>
+<td class="org-left">1 - 100 C</td>
+</tr>
+
+<tr>
+<td class="org-left">avto akumulator</td>
+<td class="org-left">\( 10 \mathrm{Ah} = 36000 \mathrm{C} \)</td>
+</tr>
+
+<tr>
+<td class="org-left">Zemlja (brez atmosfere)</td>
+<td class="org-left">1 C</td>
+</tr>
+
+<tr>
+<td class="org-left">elektrarna (1 leto)</td>
+<td class="org-left">\( 3 \cdot 10^{11} \mathrm{C} \)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org5d89419" class="outline-3">
+<h3 id="org5d89419"><span class="section-number-3">1.3.</span> Jakost električnega polja</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+V Faradeyjevi in Maxwellovi sliki je električno polje posrednik interakcije (elektrostatske sile). Z uvedbo posrednika se s trenutnim znanjem izognemo veliki količini enačb, kasneje se izkaže, da sta v relativizmu magnetno in električno polje sklopljena in je najbolj naravno govoriti o tem.
+</p>
+
+<p>
+En (ali več) naboj električnega polja, ki pa potem deluje na drugi naboj. Električno silo zapišemo kot
+</p>
+
+<p>
+\[ \vec{F} = e  \vec{E} \quad \text{ali} F_{21} = e_1 \vec{E}_2
+\]
+</p>
+
+<p>
+Sila \( \vec{F}_{21} \) je sila, ki deluje na prvi naboj, ki pa jo ustvarja električno polje drugega naboja. Posledica uvedbe električnega polja \(  \vec{E} \) preko sile je to, da je smer \( \vec{E} \) sile na pozitiven točkast naboj.
+</p>
+
+<p>
+Električno polje točkastega naboja je enako
+</p>
+
+<p>
+\[ E = \frac{e_0}{4 \pi \epsilon_0} \frac{\vec{r}}{r ^3}
+\]
+</p>
+
+<p>
+ki ga izpeljemo preko primerjave s Coulumbovim zakonom (I presume).
+</p>
+
+<p>
+[skici el. polja + in - naboja]
+</p>
+
+<p>
+\[ \begin{array}{|c|c|} \hline \text{kozmicno sevanje} & 10 \mu \frac{\mathrm{V}}{ \mathrm{m}} \\ \text{polje znotraj bakrene zice} & 0.5 \frac{m \mathrm{V}}{m} \\ \text{polje v Zemljini atmosferi} & 100 - 300 \frac{\mathrm{V}}{\mathrm{m}} \\ \text{prebojna jakost v atmosferi} & 1 - 3 \frac{M \mathrm{V}}{m} \\ \text{polje preko bioloske membrane} & 10 \frac{M \mathrm{V}}{m} \\ \text{polje v mocnem laserskem pulzu} & 100 \frac{\mathrm{T V}}{\mathrm{m}}\\ \hline \end{array}
+\]
+</p>
+
+
+<div class="my_example" id="orgc5a713f">
+<p>
+Električno polje zaslona (LCD). Napetost približno \( 10 \mathrm{V} \). Debelina zaslonov je nekaj \( 10 \mu m \). Električno polje je tako
+</p>
+
+<p>
+\[ E \sim \frac{U}{d} \sim 10^6 \frac{V}{m}
+\]
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org9df3ba3" class="outline-3">
+<h3 id="org9df3ba3"><span class="section-number-3">1.4.</span> Električne silnice</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+[mreza nabojev 3 x 3]
+</p>
+
+<p>
+Lastnosti silnic so:
+</p>
+<ul class="org-ul">
+<li>silnice kažejo v smeri \( \vec{E} \) in se ne sekajo</li>
+<li>silnice se začnejo v pozitivnem naboju in končajo v negativnem naboju</li>
+<li>silnice niso zaključene</li>
+<li>gostota silnic ustreza jakosti polja</li>
+</ul>
+
+<p>
+Mreža, ki smo jo narisali, je Faradayjeva konstrukcija.
+</p>
+</div>
+</div>
+<div id="outline-container-org0563a5e" class="outline-3">
+<h3 id="org0563a5e"><span class="section-number-3">1.5.</span> Električna cirkulacija</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Cirkulacija se uvede kot integral skalarnega produkta
+</p>
+
+<p>
+\[ \Gamma_E = \oint\limits_{C}^{} \vec{E} \cdot \, \mathrm{d} \vec{r}
+\]
+</p>
+
+<p>
+po zaključeni zanki \( C \).
+</p>
+
+<div class="my_example" id="org8532cb2">
+<p>
+Imamo homogeno električno polje \( \vec{E} \). V njem tvorimo poljubno pravokotno zanko \( C \) tako, da sta dve stranici \( b \) pravokotni, dve stranici \( a \) pa vzporedni električnemu polju. Zanima nas \( \Gamma_E \), ki bo vsota skalarnih produktov posameznih stranic pravokotnika. Skalarni produkt stranic pravokotnih na električno polje je po definiciji skalarnega produkta enako 0. Stranici, ki sta vzporedni, pa je integral enak \( E\cdot a \).
+</p>
+
+<p>
+\[ \Gamma_E = E\cdot a + 0 - E \cdot a = 0 = 0
+\]
+</p>
+
+</div>
+
+<div class="theorem" id="org7c55cd7">
+<p>
+Za vsa statična električna polja velja \( \Gamma_E = 0 \).
+</p>
+
+</div>
+
+<p>
+Iz tega sledi z uporabo Stokesovega izreka
+</p>
+
+<p>
+\[ 0 = \oint\limits_C^{} \vec{E} \cdot \mathrm{d} \vec{r} = \iint\limits_{S}^{} \nabla \times \vec{E} \,\mathrm{d } \vec{S}
+\]
+</p>
+
+<p>
+kjer je \( C = \partial S \). Posledično sledi
+</p>
+
+<p>
+\[ \nabla \times \vec{E} = 0
+\]
+</p>
+
+<p>
+Statično električno polje je vedno brezvrtinčno (lastnost 3 naših silnic).
+</p>
+
+<div class="my_example" id="orgdae85fe">
+<p>
+Imamo dve polji. Glej slike.
+</p>
+
+<ol class="org-ol">
+<li><p>
+Polje opišemo z
+</p>
+
+<p>
+\[ \vec{E}_1 = E_0 \frac{\vec{r}}{r}
+   \]
+</p>
+
+<p>
+Rotor polja \( \vec{E}_1 \) je enak \( 0 \). Divergenca polja \( \vec{E}_1 \) je različna od \( 0 \).
+<i>Kuščar, Kodre imata identitete na koncu knjige.</i>
+</p>
+
+<p>
+Brezvrtinčno polje je izvorno.
+</p></li>
+
+<li><p>
+Električno polje je
+</p>
+
+<p>
+\[ \vec{E}_2 = E_2 \hat{e}_{\phi} = E_0 \left( - \sin \phi, \cos \phi \right)
+   \]
+</p>
+
+<p>
+Rotor polja \( \vec{E}_2 \) je različen od \( 0 \), divergenca pa enaka ničla.
+</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgd356836" class="outline-3">
+<h3 id="orgd356836"><span class="section-number-3">1.6.</span> Električni pretok</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Električni pretok je definiran kot integral električnega polja po površini
+</p>
+
+<p>
+\[ \Phi_E = \int\limits_S^{} \vec{E} \cdot \mathrm{d} \vec{S}
+\]
+</p>
+
+<p>
+Površina je poljubna, vendar ni nujno sklenjena. Če je, dobimo Gaussov zakon.
+</p>
+
+<p>
+<i>O njem bomo več povedali v prihodnosti. Tole sedaj je samo :sparkles: foreplay :sparkles:</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org0c8d66f" class="outline-3">
+<h3 id="org0c8d66f"><span class="section-number-3">1.7.</span> Električni potencial</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Uvedemo ga kot
+</p>
+
+<p>
+\[ \vec{E} \left( \vec{r} \right) = - \nabla \phi \left( \vec{r} \right)
+\]
+</p>
+
+<p>
+Negativen predznak je tam po dogovoru. Uvedemo električni potencial, zato da si olajšamo računanje, saj je skalarna količina.
+</p>
+
+<div class="my_example" id="org71d73e9">
+<p>
+Električni potencial točkastega naboja je po definiciji enak
+</p>
+
+<p>
+\[ \vec{E} = - \nabla \phi
+\]
+</p>
+
+<p>
+Električno polje je definirano iz sile.
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \frac{e}{4 \pi \epsilon_0} \frac{\vec{r}}{r ^3} = - \nabla \left( \frac{e}{4 \pi \epsilon_0} \frac{1}{r} + \phi_0 \right)
+\end{equation}
+
+<p>
+Za točkast naboj je potencial tako
+</p>
+
+<p>
+\[ \phi \left( \vec{r} \right) = \frac{e}{4 \pi \epsilon_0} \frac{1}{r} + \phi_0
+\]
+</p>
+
+</div>
+
+<p>
+Potencial v enačbi \ref{eq:2} lahko določimo do konstante natančno, kar dosežemo do \( \phi_0 \). Tej zadevi pravimo umeritev (ang. <i>gauge</i>).
+Izbira umeritve nima vpliva na makroskopsko dinamiko našega potenciala. Potencial sam na ne pove veliko - napetost je razlika potencialov in se umeritvi odštejeta. Poleg tega je sila povezana z električnim poljem, konstanto pa prvi odvod izniči.
+</p>
+
+<p>
+Za drugačna polja se lahko umerja tudi različne funkcije \( f \).
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-10-07 Tue 14:00</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-10-07 Tue 14:09 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1. predavanje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">1. predavanje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgad9f0da">1. Uvod</a>
+<ul>
+<li><a href="#orgdb49116">1.1. Valovanje</a></li>
+<li><a href="#org11ce76b">1.2. Lastnosti valovne funkcije</a>
+<ul>
+<li><a href="#orgd0e1c7f">1.2.1. Zveznost</a></li>
+</ul>
+</li>
+<li><a href="#orgf0a0ffc">1.3. Pričakovane vrednosti</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad9f0da" class="outline-2">
+<h2 id="orgad9f0da"><span class="section-number-2">1.</span> Uvod</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Pri klasični mehaniki nas zanima trajektorija delca \( \vec{r}(t) \). Z Newtonovim zakonom lahko izpeljemo pospešek, ki je funkcija časa, kraja in hitrosti. Če poznamo začetne pogoje, lahko določimo \( \vec{r} \) kjerkoli v prihodnosti.
+</p>
+
+<p>
+Potreba po kvantni mehaniki se je razvila zaradi Michelsonovega poskusa, ki je pokazal, da je hitrost svetlobe v vakuumu absolutna. Čez 1 mesec bo 100 let, odkar je Heisenberg izdal svoj članek, ki se smatra kot začetek kvantne mehanike. Pred letom 1925 so bila sledeča odkritja, ki so kazala na nekaj več od klasične mehanike
+</p>
+
+<ul class="org-ul">
+<li>Planck, Einstein leta 1905 razložita enačbo \( E = \hbar \omega \)</li>
+<li><p>
+1923 de Broglie opazi, da je hitrost elektrona obratno sorazmerna njegovi valovni dolžini
+</p>
+
+<p>
+\[ p = \frac{2 \pi \hbar}{\lambda} = m v
+  \]
+</p>
+<ul class="org-ul">
+<li>imamo valovanje pri masnih delcih \( \cos \left( k x - \omega t \right) \) in \( p = \hbar k \)</li>
+</ul></li>
+<li>energija elektrona je \( E = \frac{p ^2}{2m} \)</li>
+<li>spektri plinov so črtasti</li>
+<li><p>
+zanimala jih je stabilnost in sestava atoma - ta vprašanja je omogočala nova tehnologija
+</p>
+
+<p>
+Planetni model (pozitivno jedro - sonce, elektroni - planeti) pogojno razloži spekter vodikovega atom, vendar posplošitev ni bila mogoča. Ta razlaga tudi ne more razložiti spektra vodikovega atoma v električnem polju.
+</p></li>
+</ul>
+
+<p>
+Decembra 1925 Heisenberg objavi svoj članek o kvantni mehaniki. V začetku leta 1926 je Schrödinger objavil svoj članek, kjer uvede Schrödingerjevo enačbo. Želel je izpeljati relativistično invariantno enačbo, česar ni uspel (Dirac, 3 leta kasneje, glej FJOD), hkrati pa je želel, da veljajo prve tri alineje.
+</p>
+
+<p>
+Osnovna Schrödingerjeva enačba v eni dimenziji brez potenciala zapišemo kot
+</p>
+
+<p>
+\[ \mathrm{i} \hbar \frac{\partial \Psi}{\partial t} = - \frac{\hbar ^2}{2m} \frac{\partial ^2 }{\partial x ^2} \Psi
+\]
+</p>
+
+<p>
+Rešitev enačbe je valovanje \( \Psi = A e^{\mathrm{i} \left( kx - \omega t \right)} \). Ko rešitev vstavimo vanj, dobimo
+</p>
+
+\begin{align*}
+  \mathrm{i} \hbar \left( - \mathrm{i} \right) \omega &= - \frac{\hbar ^2}{2m} i ^2 k ^2 \\
+\hbar \omega = \frac{\hbar ^2 k ^2}{2m} &= \frac{p ^2}{2m}
+\end{align*}
+
+<p>
+Opazimo v zadnji vrstici vse tri alineje.
+</p>
+
+<p>
+Valovna enačba ne reši problema kvantne mehanike (vstavi \( \Psi \) vanjo). Difuzijska enačba
+</p>
+
+<p>
+\[ \frac{\partial T}{\partial t} = D \frac{\partial ^2 }{\partial x ^2} T
+\]
+</p>
+
+<p>
+je rešena s \( T (x, t) = \cos \left( kx - \omega t \right) \). Schrödingerjeva enačba je difuzijska enačba s kompleksno enačbo.
+</p>
+
+<p>
+Schrödingerjevi enačbi dodamo tudi potencial
+</p>
+
+\begin{equation}
+\label{eq:1}
+\mathrm{i} \hbar \frac{\partial \Psi}{\partial t}  = - \frac{\hbar ^2}{2m} \frac{\partial ^2 }{\partial x^2} \Psi + V \Psi
+\end{equation}
+
+<p>
+Newtonove enačbe so bile sprejete, saj je lahko prepričljivo izpeljal elipse planetov. Schrödinger se je na podoben način lotil Keplerjevega problema s potencialom \( V \left( \vec{r}, t \right) \propto \frac{1}{r} \). Z nekaj mučenja je izpeljal spekter vodika \( E_n \propto \frac{1}{n ^2} \), s še malo več mučenja je rešil tudi problem spektra vodikovega atoma v električnem polju \( E_n \left( \vec{E}, \vec{B} \right) \).
+</p>
+</div>
+<div id="outline-container-orgdb49116" class="outline-3">
+<h3 id="orgdb49116"><span class="section-number-3">1.1.</span> Valovanje</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Prišli smo do tega, da ja, je valovanje, vendar nas zanima, kaj valuje. Bornova interpretacija valovne funkcije definira verjetnost, da delec detektiramo na zaprtem intervalu \( [a, b] \) preko enačbe
+</p>
+
+\begin{equation}
+\label{eq:4}
+ P_{ab} = \int\limits_a^b \left| \Psi(x, t) \right| ^2 \, \mathrm{d} x
+\end{equation}
+
+<p>
+kjer je \( \rho (x, t) = \left| \Psi(x, t) \right| ^2\) verjetnostna gostota. Velja enakost
+</p>
+
+<p>
+\[ \frac{\mathrm{d} P}{\mathrm{d} x} = \rho
+\]
+</p>
+
+<p>
+Pri detekciji ne dobimo nobene druge informacije kot to ali je elektron bil na intervalu ali ne. Ob neskončnem številu ponovitev dobimo našo verjetnost
+</p>
+
+<p>
+\[ \lim_{n \to \infty}  \frac{N_{zaznan}}{N} = P_{ab }
+\]
+</p>
+
+<p>
+Mi bomo obravnavali minimalistično Kobenhavensko interpretacijo kvantne mehanike.
+</p>
+</div>
+</div>
+<div id="outline-container-org11ce76b" class="outline-3">
+<h3 id="org11ce76b"><span class="section-number-3">1.2.</span> Lastnosti valovne funkcije</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Pišemo lastnosti valovne funkcija v eni dimenziji. Velja, da je valovna funkcija normirana
+</p>
+
+<p>
+\[ \int\limits_{-\infty}^{\infty} \left| \Psi \right| ^2 \, \mathrm{d} x = 1
+\]
+</p>
+
+<p>
+Enačba, ki dokazuje, da nimamo izvorov, je
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \frac{\partial \rho}{\partial t} + \nabla \cdot \vec{\jmath} = q
+\end{equation}
+
+
+<p>
+Verjetnostno gostoto nadomestimo z definicijo in upoštevamo odvod produkta. \( \Psi^{\ast} \) je kompleksna konjugiranka valovne funkcije, ki jo dobimo s konjugiranjem Schrödingerjeve enačbe in izražavo odvoda po času.
+</p>
+
+\begin{align}\label{ali:ss}
+\frac{\partial \rho}{\partial t} &= \frac{\partial \Psi^{\ast} \Psi}{\partial t} \\
+&= \frac{\partial \Psi^{\ast}}{\partial t} \Psi + \frac{\partial \Psi}{\partial t} \Psi^{\ast} \\
+&=- \frac{\hbar ^2}{2m} \frac{1}{-\mathrm{i} \hbar} \frac{\partial ^2 }{\partial x ^2} \Psi^{\ast} \Psi + \frac{V^{\ast}}{- \mathrm{i} \hbar} \Psi^{\ast} \Psi + C. C.
+\end{align}
+
+<p>
+Odvod po kraju lahko razpišemo
+</p>
+
+<p>
+\[ \frac{\partial ^2 \Psi^{\ast} }{\partial x ^2} \Psi = \frac{\partial }{\partial x}  \left( \frac{\partial \Psi^{\ast}}{\partial x} \Psi \right) - \frac{\partial \Psi^{\ast}}{\partial x}  \frac{\partial \Psi}{\partial x}
+\]
+</p>
+
+<p>
+Enačba \ref{ali:ss} postane
+</p>
+
+\begin{equation}
+\label{eq:3}
+ \frac{\partial \rho}{\partial t} = - \frac{\partial }{\partial x} \left( \frac{\hbar}{2 \mathrm{i} m }\left( \Psi^{\ast} \frac{\partial \Psi}{\partial x}  - \Psi \frac{\partial \Psi^{\ast}}{\partial x}  \right) \right) - \frac{2}{\hbar} \mathrm{Im} \left( V \left| \Psi \right| ^2 \right)
+\end{equation}
+
+<p>
+Enačbo \ref{eq:2} zapišemo v eni dimenziji kot
+</p>
+
+<p>
+\[ \frac{\partial \rho}{\partial t}  + \frac{\partial }{\partial x} \vec{\jmath} = q = 0
+\]
+</p>
+
+<p>
+Verjetnostni tok v treh dimenzijah zapišemo kot
+</p>
+
+<p>
+\[ \vec{\jmath} = - \frac{\mathrm{i} \hbar}{2m} \left( \Psi^{\ast} \nabla \Psi - \Psi \nabla \Psi^{\ast} \right) = \vec{\jmath} \left( \vec{r}, t \right)
+\]
+</p>
+
+<p>
+Opazimo, da se verjetnostni tok pokrajša s prvim členom v enačbi \ref{eq:3} in nam tako ostane
+</p>
+
+<p>
+\[ q = - \frac{2}{\hbar} \mathrm{Im} V \left| \Psi \right| ^2
+\]
+</p>
+
+<p>
+Za realen potencial je imaginaren del enak \( 0 \), kar pomeni, da nimamo izvorov ali ponorov, saj \( q = 0 \).
+</p>
+
+<p>
+Preverimo še normiranost. Enačbo \ref{eq:4} odvajamo po času
+</p>
+
+<p>
+\[ \frac{\mathrm{d} P_{ab }}{\mathrm{d} t} = - \int\limits_a^b \frac{\partial }{\partial x} j_x \, \mathrm{d} x = j_x (a) - j_x(b)
+\]
+</p>
+
+<p>
+Za \( a \to - \infty \) in \( b \to \infty \) bo razlika \( 0 \). Za naše valovne funkcije velja, da so del Scwarzovega prostora, torej
+</p>
+
+<p>
+\[ \lim_{x \to \infty} x^n \left| \Psi \right|  = 0
+\]
+</p>
+
+<div class="my_example" id="orgfbc62db">
+<p>
+Primera taka funkcije sta \( e^{- \lambda x} \) ter \( e ^{- \mu x ^2} \).
+</p>
+
+</div>
+</div>
+<div id="outline-container-orgd0e1c7f" class="outline-4">
+<h4 id="orgd0e1c7f"><span class="section-number-4">1.2.1.</span> Zveznost</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Valovna funkcija \( \Psi \) je zvezna funkcija. Odvod \( \frac{\partial \Psi}{\partial x} \) je zvezna funkcija, če je \( V \) zvezna funkcija. Drugi odvod \( \frac{\partial ^2 }{\partial x ^2} \Psi  \) je zvezna, če je \( V \) zvezna.
+</p>
+
+<p>
+Pravokotna potencialna jama ima v jami kosinusno valovanje, izven jame pa potencialno pada, imamo prevoj v točki nezveznosti.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf0a0ffc" class="outline-3">
+<h3 id="orgf0a0ffc"><span class="section-number-3">1.3.</span> Pričakovane vrednosti</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Pričakovane vrednosti položaja izračunamo preko
+</p>
+
+<p>
+\[ \left\langle x \right\rangle  = \int\limits_{- \infty}^{\infty} x \rho (x, t) \, \mathrm{d} x
+\]
+</p>
+
+<p>
+Predpostavimo, da imamo dve različni funkciji. Zanima nas, kako se spreminja težišče v odvisnosti od časa:
+</p>
+
+\begin{align*}
+\frac{\mathrm{d} \left\langle x \right\rangle}{\mathrm{d} t} &= \int\limits_{- \infty}^{\infty} x \frac{\partial \rho}{\partial t} \, \mathrm{d} x \\
+&= - \int\limits_{- \infty}^{\infty} x \frac{\partial j}{\partial x}  \, \mathrm{d} x && \text{per partes} \\
+&=  \cancel{\left. x j \right|_{- \infty}^{\infty}} + \int\limits_{- \infty}^{\infty} j \, \mathrm{d} x \\
+&= \int\limits_{- \infty}^{\infty} j \, \mathrm{d} x \\
+&= - \frac{\mathrm{i} \hbar}{2m} \left( \int\limits_{-\infty}^{\infty} \Psi^{\ast} \frac{\partial \Psi}{\partial x}  \, \mathrm{d} x - \int\limits_{- \infty}^{\infty} \Psi \frac{\partial \Psi^{\ast}}{\partial x} \, \mathrm{d} x \right) && \text{per partes} \\
+&= \frac{1}{m} \int\limits_{- \infty}^{\infty} \Psi^{\ast} \left( - \mathrm{i} \hbar \frac{\partial }{\partial x}  \right) \Psi \\
+&= \frac{1}{m} \int\limits_{- \infty}^{\infty} \Psi^{\ast} \hat{p} \Psi \, \mathrm{d} x
+\end{align*}
+
+<p>
+Dobimo novo zvezo in sicer pričakovano gibalno količine
+</p>
+
+<p>
+\[ m \frac{\mathrm{d} \left\langle x \right\rangle}{\mathrm{d} t} = \left\langle \hat{p} \right\rangle
+\]
+</p>
+
+<p>
+kjer je \( \hat{p} = - \mathrm{i} \hbar \frac{\partial }{\partial x}  \) ali v treh dimenzijah \( \hat{\vec{p}} = - \mathrm{i} \hbar \nabla \).
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-10-07 Tue 14:09</p>
+</div>
+</body>
+</html>

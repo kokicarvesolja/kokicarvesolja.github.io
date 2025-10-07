@@ -25,3 +25,8 @@ Welcome to my corner of the internet. Here you can find done, not-done and orpha
 - [[file:racunalnistvo/racunalnistvo_overview.html][Računalništvo]] pri prof. Žunkoviču
 - [[file:mat3/mat3indeks.html][Matematika 3]] pri prof. Dragičeviću
 - [[file:fjod/fjod_indeks.html][Fizika jedra in osnovnih delcev]] pri prof. Kerševanu
+** 3. letnik
+
+- [[file:emp/emp_indeks.html][Elektromagnetno polje]] pri prof. dr. Ravniku
+- [[file:kvameh/kvameh_indeks.html][Kvantna mehanika]] pri prof. dr. Ramšaku
+- [[file:maf2/maf2_indeks.html][Matematična fizika 2]] pri prof. dr. Žnidariču

@@ -1,0 +1,9 @@
+#+title: Kvantna mehanika
+* Predavanja
+
+Tukaj so zbrani zapiski predavanj prof. dr. Antona Ramšaka.
+
+- [[file:01predavanja/01km_p_20251006.html][predavanje 1, 2025/10/06]]: Uvod v kvantno mehaniko, valovanje, Schrödingerjeva enačba, lastnosti valovanja, pričakovane vrednosti
+* Vaje
+
+Tukaj so zbrani zapiski vaj pri prof. dr. Tomažu Rejcu.
