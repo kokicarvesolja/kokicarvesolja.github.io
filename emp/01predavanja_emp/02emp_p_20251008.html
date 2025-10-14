@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-10-14 Tue 13:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2. predavanje iz EMP</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">2. predavanje iz EMP</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org12ab690">1. Elektrostatika</a>
+<ul>
+<li><a href="#org1e4ec99">1.1. Princip superpozicije</a></li>
+<li><a href="#org28b2a34">1.2. Gostota naboja</a></li>
+<li><a href="#orgbc8a146">1.3. Primeri gostote naboja</a></li>
+<li><a href="#orge9e5fe2">1.4. Integralna oblika Gaussovega izreka</a></li>
+<li><a href="#orgd6e203d">1.5. Poissonova in Laplaceova enačba</a>
+<ul>
+<li><a href="#org2e547fc">1.5.1. Greenova funkcija Poissonove enačbe</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org12ab690" class="outline-2">
+<h2 id="org12ab690"><span class="section-number-2">1.</span> Elektrostatika</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org1e4ec99" class="outline-3">
+<h3 id="org1e4ec99"><span class="section-number-3">1.1.</span> Princip superpozicije</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Obravnavamo 4 naboje \( e_1, e_2, e_3 \) in \( e_4 \) s svojimi radij vektorji \( \vec{r}_1, \vec{r}_2, \vec{r}_3 \) in \( \vec{r}_4 \). Če dodamo nov naboj \( e \) z radij vektorjem \( r \), bo sila nanjega vsota sil vseh ostalih nabojev
+</p>
+
+<p>
+\[ \vec{F} \left( \vec{r} \right) = \sum\limits_i^{} \frac{e e_i}{4 \pi \epsilon_0} \frac{\left( \vec{r} - \vec{r}_i \right)}{\left| \vec{r} - \vec{r}_i \right| ^3}
+\]
+</p>
+
+<p>
+Celotna elektrostatika je odvisna od zgolj parskih interakcij (interakcij dveh delcev) - ang. <i>two body interaction</i>. Obstaja, vendar ne pri elektrostatiki, tudi <i>multi-body interaction</i>.
+</p>
+
+<p>
+Celotna sila je kar vsota parskih prispevkov sil med posameznima dvema nabojema - temu, da je sila <i>vsota</i> <b>parskih</b> prispevkov sil, pravimo princip superpozicije. Enako velja za električno polje in potencial
+</p>
+
+<p>
+\[ \vec{E} \left( \vec{r} \right) = \sum\limits_i^{} \frac{e_i}{4 \pi \epsilon_0} \frac{\left( \vec{r} - \vec{r}_i \right)}{\left| \vec{r} - \vec{r}_i \right| ^3}, \quad \phi \left( \vec{r} \right) = \sum\limits_i^{} \frac{e}{4 \pi \epsilon_0} \frac{1}{\left| \vec{r} - \vec{r}_1 \right|}
+\]
+</p>
+
+<p>
+Električno polje in potencial sta aditivna.
+</p>
+</div>
+</div>
+<div id="outline-container-org28b2a34" class="outline-3">
+<h3 id="org28b2a34"><span class="section-number-3">1.2.</span> Gostota naboja</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Električni naboj je pogosto porazdeljen - bodisi površina, volumen, &#x2026; Pogosto je uporabno, da ga opišem z gostoto naboja \( \rho \left( \vec{r} \right) \).
+</p>
+
+<p>
+Gostoto naboja lahko opišemo diskretno z enačbo
+</p>
+
+<p>
+\[ \rho \left( \vec{r} \right) = \sum\limits_i^{} e_i \delta_i ^3 \left( \vec{r} - \vec{r}_i \right)
+\]
+</p>
+
+<p>
+Z \( \delta \) funkcijo opišemo lokalizacijo naboja \( e_i \). Enote nam ustrezajo, saj vemo, da je integral \( \delta \) funkcije enak
+</p>
+
+<p>
+\[ \int\limits_{}^{} \delta(x) \, \mathrm{d}x = 1
+\]
+</p>
+
+<p>
+kar pomeni, da če ima \( \mathrm{d} x \) enote \( \mathrm{m} \), potem ima \( \delta \) funkcija v tem primeru \( \frac{1}{\mathrm{m}} \).
+</p>
+
+
+<p>
+Gostoto naboja lahko opišemo tudi zvezno z enačbo
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \rho \left( \vec{r} \right) =  \frac{\mathrm{d} e}{\mathrm{d} V}
+\end{equation}
+
+<p>
+Preko integracije velja
+</p>
+
+<p>
+\[ e = \int\limits_{}^{} \rho \left( \vec{r} \right) \, \mathrm{d} V = \int\limits_{}^{} \sum\limits_i^{} e_i \delta ^3 \left( \vec{r} - \vec{r}_i \right) \, \mathrm{d}V = \sum\limits_i^{} e_i
+\]
+</p>
+
+<p>
+Z uporabo gostote lahko zapišemo električno silo \( \vec{F} \), električno polje \( \vec{E} \) ter električni potencial \( \phi \).
+</p>
+
+<p>
+Silo na celoten naboj v polju \( \vec{E} \left( \vec{r} \right) \) zapišemo z enačbo
+</p>
+
+<p>
+\[ \vec{F} = \int\limits_{}^{} \rho \left( \vec{r} \right) \vec{E} \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+Električno polje \( \vec{E} \) v integralu je zunanje električno polje.
+</p>
+
+<p>
+Električno polje pa zapišemo kot
+</p>
+
+<p>
+\[ \vec{E} \left( \vec{r} \right) = \int\limits_{}^{} \frac{\rho \left( \vec{r}\, ' \right)}{4 \pi \epsilon_0} \frac{\left( \vec{r} - \vec{r} \, ' \right)}{\left| \vec{r} - \vec{r} \, ' \right|} \, \mathrm{d} ^3 \vec{r} \, '
+\]
+</p>
+
+<p>
+Uvedli smo \( \vec{r}\, ' \), saj nas zanima električno polje v točki \( \vec{r} \), vendar se naboj nahaja v nenujno različni točki \( \vec{r}\, ' \).
+</p>
+</div>
+</div>
+<div id="outline-container-orgbc8a146" class="outline-3">
+<h3 id="orgbc8a146"><span class="section-number-3">1.3.</span> Primeri gostote naboja</h3>
+<div class="outline-text-3" id="text-1-3">
+<ol class="org-ol">
+<li><p>
+Točkast naboj ima gostoto naboja
+</p>
+
+<p>
+\[ \rho \left( \vec{r} \right) = e_0 \delta ^3 \left( \vec{r} - \vec{r} _0 \right)
+   \]
+</p>
+
+<p>
+kjer je \( \vec{r}_0 \) položaj naboja.
+</p></li>
+
+<li><p>
+Točkast dipol: naj bo razdalja med težiščema negativnega naboja \( e_- \) in pozitivnega naboja enaka \( d \). Radij vektor do prvega je \( \vec{r}_1 \) in do slednjega \( \vec{r}_2 \). Radij vektor do težišča točkastega dipola je \( \vec{r}_0 \).
+</p>
+
+<p>
+[vstavi skico]
+</p>
+
+<p>
+Gostoto naboja zapišemo
+</p>
+
+<p>
+\[ \rho \left( \vec{r}  \right) = e \delta ^3 \left( \vec{r} - \vec{r}_1 \right) - e \delta \cub \left( \vec{r} - \vec{r}_2 \right)
+   \]
+</p>
+
+<p>
+Označimo razdaljo med težiščem točkastega dipola in težiščem pozitivnega naboja z \( \delta \vec{r} \), analogno pa še z negativnim nabojem \( - \delta \vec{r} \)
+</p>
+
+<p>
+Gostoto naboja zapišemo kot
+</p>
+
+\begin{align*}
+  \rho \left( \vec{r} \right) &= e \delta ^3 \left( \vec{r} - \left( \vec{r}_0 + \delta \vec{r} \right) \right) - e \delta ^3 \left( \vec{r} - \left( \vec{r}_0 - \delta \vec{r} \right) \right) \\
+     &= e \delta ^3 \left( \vec{r} - \vec{r}_0 - \delta \vec{r} \right) - e \delta ^3 \left( \vec{r} - \vec{r}_0  + \delta \vec{r} \right)
+\end{align*}
+
+<p>
+Dano opazujemo v limiti \( \vec{r} - \vec{r}_0 \gg \delta \vec{r} \) in gostoto naboja razvijemo preko odvoda. Za skalarno količino bi to bilo enako
+</p>
+
+<p>
+\[ f \left( x + h \right) = f (x) + h f' (x),
+   \]
+</p>
+
+<p>
+vendar ker operiramo z vektorji, imamo
+</p>
+
+<p>
+\[ f \left( \vec{r} + \Delta \vec{r} \right) = f \left( \vec{r} \right) + \nabla f \left( \vec{r} \right) \cdot \Delta \vec{r}
+   \]
+</p>
+
+<p>
+Gostota naboja bo torej
+</p>
+
+\begin{align*}
+  \rho \left( \vec{r} \right) &= - e \delta \vec{r} \cdot \nabla \delta ^3 \left( \vec{r} - \vec{r}_0 \right) - e \delta \vec{r} \cdot \nabla \delta ^3 \left( \vec{r} - \vec{r}_0 \right) \\
+     &= -2 e \delta \vec{r} \cdot \nabla \delta ^3 \left( \vec{r} - \vec{r}_0 \right)
+\end{align*}
+
+<p>
+Prepoznamo dipolni moment
+</p>
+
+<p>
+\[ \vec{p} = - 2e \delta \vec{r}
+   \]
+</p>
+
+<p>
+Ne bomo računali gradienta \( \delta \) funkcije, ampak bomo pogledali v Kuščar, Kodre, kjer velja dobimo zvezo med divergenco (levo) in gradientom (najbolj desni člen).
+</p>
+
+\begin{equation}
+\label{eq:2}
+\nabla \cdot \left( \vec{p} \cdot \delta ^3 \left( \vec{r} - \vec{r} \right) \right) = \left( \nabla \cdot p \right) \delta ^3 \left( \vec{r} - \vec{r}_0 \right) + \vec{p} \cdot \nabla \left( \delta ^3 \left( \vec{r} - \vec{r}_0 \right) \right)
+\end{equation}
+
+<p>
+Divergence \( \nabla \cdot \vec{p} \) je zaradi konstantnosti \( \delta \vec{r} \) enaka \( 0 \).
+</p>
+
+<p>
+Dodatno preobrazimo gostoto naboja z zgornjo vezo
+</p>
+
+\begin{equation}
+\label{eq:3}
+\rho \left( \dot{r} \right) = - \nabla \cdot \left[ \vec{p} \cdot \delta ^3 \left( \vec{r} - \vec{r}_0 \right) \right]
+\end{equation}
+
+<p>
+kjer je količina \( \vec{p} \cdot \delta ^3 \left( \vec{r} - \vec{r}_0 \right) \) gostota dipolnega momenta ali <i>polarizacija</i> \( \vec{P} \).
+</p>
+
+<p>
+Enačbo \ref{eq:3} lahko zapišemo tudi kot
+</p>
+
+<p>
+\[ \rho \left( \dot{r} \right) = - \nabla \cdot \vec{P} \left( \vec{r} \right)
+   \]
+</p>
+
+<p>
+in s tem smo pridobili povezavo med gostoto naboja in polarizacijo.
+</p></li>
+
+<li><p>
+površinsko porazdeljen naboj: naboj je porazdeljen po tanki plasi - površini. Vpeljemo površinsko gostoto naboja
+</p>
+
+<p>
+\[ \rho \left( \vec{r} \right) = \sigma \left( \vec{u} \right) \delta \left( z - z_0 \right)
+   \]
+</p>
+
+<p>
+kjer je \( \vec{u} \) radij vektor v dveh dimenzijah, kjer je \( z_0 \) lega te površine.
+</p></li>
+
+<li><p>
+Volumsko porazdeljen naboj
+</p>
+
+<p>
+\[ \rho \left( \vec{r} \right) = \begin{cases}
+                                      \rho_{0}; & \left| \vec{r} \right| \le a \\
+                                      0 ; & \text{else }
+                                    \end{cases}
+   \]
+</p></li>
+
+<li><p>
+Volumsko porazdeljeni dipoli. Polarizacija je
+</p>
+
+<p>
+\[ \vec{P} = \begin{cases}
+                \vec{P}_0; & \vec{r} \le a \\
+                0, & \text{else}
+                \end{cases}
+   \]
+</p>
+
+<p>
+Gostota naboja \( \rho \left( \vec{r} \right) \) je
+</p>
+
+<p>
+\[ \rho \left( \vec{r} \right) = - \nabla \cdot \vec{P} = - \nabla\cdot \left( \vec{P}_0 H \left( a - r \right) \right)
+   \]
+</p>
+
+<p>
+kjer je \( H \) Heavisideova funkcija in je \( r \) skalar.
+</p>
+
+<p>
+Tako kot v pimeru točkastega dipola upoštevamo, da je divergenca produkta enaka
+</p>
+
+\begin{align*}
+  \rho \left( \vec{r} \right) &= - \nabla \cdot \left( \vec{P}_0 H \left( a - r \right) \right) \\
+     &= - \left( \nabla \cdot \vec{P}_0 \right) H \left( a - r \right) - \vec{P}_0 \nabla \cdot H \left( a - r \right) \\
+     &= \vec{P}_0 \cdot \frac{\vec{r}}{r} \delta \left( a - r \right)
+\end{align*}
+
+<p>
+Neničelna gostota električnega naboja je samo na robu površine, največja na vrhu in na dnu, ob strani manjša. To je zaradi tega, ker se naboji ne izničijo.
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orge9e5fe2" class="outline-3">
+<h3 id="orge9e5fe2"><span class="section-number-3">1.4.</span> Integralna oblika Gaussovega izreka</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Naj bodo naboji \( e_1, e_2, \ldots, e_i \) s pripadajočimi radij vektorji \( \vec{r}_1, \vec{r}_2, \ldots, \vec{r}_i \), ki jih zaobjamemo s sklenjeno sfero s površino \( S \). Zanima nas električni pretok skozi sklenjeno površino \( S \).
+</p>
+
+<p>
+Nakazali bomo, kako se to izpelje, ostalo prepustimo Gaussu, ki je to že naredil. Za točko na sferi kaže električno polje v specifično smer, ki jo določajo naboji. Diferencial površine \( \mathrm{d} \vec{S} \) bo kazal radialno navzven.
+</p>
+
+\begin{align*}
+  \oint\limits_S^{} \vec{E} \, \mathrm{d} \vec{S} &= \oint\limits_S^{} \left( \vec{E} \cdot \vec{n} \right) \, \mathrm{d} S \\
+&= \oint\limits_{}^{} E \cos \theta \, \mathrm{d} S \\
+&= \sum\limits_i^{} \frac{e_i}{4 \pi \epsilon_0} \oint\limits_{}^{} \frac{1}{\left| \vec{r} - \vec{r}_i \right| ^2} \cos \theta_i \left( \vec{r} \right) \, \mathrm{d} S
+\end{align*}
+
+<p>
+Ta integral znamo preprosto izračunati, ko \( \vec{r}_i = 0 \). Gauss je dokazal, da ta integral velja za poljubno površino.
+</p>
+
+<p>
+\[ \oint\limits_{}^{} \vec{E}_1 \, \mathrm{d} \vec{S} = \frac{e_1}{4 \pi \epsilon_0} \oint\limits_{}^{} \frac{1}{r ^2} \cdot 1 \cdot r ^2 \sin \theta \, \mathrm{d} \theta \, \mathrm{d} \phi = \frac{e_1}{\epsilon_0}
+\]
+</p>
+
+<p>
+To velja tudi za \( \vec{r}_i \ne 0 \). Iz tega sledi, da je
+</p>
+
+\begin{equation}
+\label{eq:4}
+ \oint\limits_{}^{} \vec{E} \, \mathrm{d} \vec{S} = \frac{\sum\limits_i^{} e_i}{\epsilon_0}
+\end{equation}
+
+<p>
+Enačbo \ref{eq:4} lahko pretvorimo tudi na zvezni naboj, ki nam poda Gaussov izrek
+</p>
+
+<p>
+\[ \oint\limits_{S = \partial V}^{} \vec{E} \, \mathrm{d} \vec{S} = \frac{1}{\epsilon_0} \int\limits_V^{} \rho \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+Pove nam, da je električni pretok skozi zaključeno površino enak zaobjetemu naboju.
+</p>
+
+<p>
+Uporabimo izrek Gauss-Ostrogradski:
+</p>
+
+\begin{equation}
+\label{eq:5}
+ \oint\limits_{S = \partial V}^{} \vec{A} \, \mathrm{d} \vec{S} = \int\limits_V^{} \nabla\cdot \vec{A} \, \mathrm{d} ^3 \vec{r}
+\end{equation}
+
+<p>
+Vzamemo Gaussov izrek
+</p>
+
+<p>
+\[ \oint\limits_{S = \partial V}^{} \vec{E} \, \mathrm{d} \vec{S}  = \frac{1}{\epsilon_0} \int\limits_V^{} \rho \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+in upoštevamo \ref{eq:5} dobimo diferencialno obliko Gaussovega izreka
+</p>
+
+\begin{equation}
+\label{eq:7}
+ \nabla \cdot \vec{E} = \frac{\rho \left( \vec{r} \right)}{\epsilon_0}
+\end{equation}
+
+<p>
+ki velja v vsaki točki.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd6e203d" class="outline-3">
+<h3 id="orgd6e203d"><span class="section-number-3">1.5.</span> Poissonova in Laplaceova enačba</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Poissonova enačba je osnovna enačba elektrostatike, ki določa elektrostatski potencial. Upoštevamo definicijo potenciala
+</p>
+
+\begin{equation}
+\label{eq:6}
+\vec{E} = - \nabla \phi
+\end{equation}
+
+<p>
+in jo upoštevamo v \ref{eq:7}, da dobimo Poissonovo enačbo
+</p>
+
+\begin{equation}
+\label{eq:8}
+ \nabla ^2 \phi \left( \vec{r} \right) = - \frac{\rho \left( \vec{r} \right)}{\epsilon_0}.
+\end{equation}
+
+<p>
+Imamo tudi poseben primer, ko je \( \rho = 0 \), potem imamo Laplaceovo enačbo
+</p>
+
+<p>
+\[ \nabla ^2 \phi \left( \vec{r} \right) = 0
+\]
+</p>
+
+<p>
+ki pa mora zadostiti robnim pogojem.
+</p>
+</div>
+<div id="outline-container-org2e547fc" class="outline-4">
+<h4 id="org2e547fc"><span class="section-number-4">1.5.1.</span> Greenova funkcija Poissonove enačbe</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+Metoda Greenove funkcije se uporablja za iskanje splošne rešitve, v našem primeru Poissonove enačbe \ref{eq:8}. Rešitev iščemo kot konvolucijo. Predpostavimo, da je potencial, ki ima kot razlog izvora električen naboj, povezan z gostoto naboja. Matematično zapisano
+</p>
+
+\begin{equation}
+\label{eq:9}
+ \phi \left( \vec{r} \right) = \int\limits_{}^{} G \left( \vec{r} - \vec{r} \, ' \right) \rho \left( \vec{r} \, ' \right) \, \mathrm{d} ^3 \vec{r} \, ',
+\end{equation}
+
+<p>
+kjer je \( G \left( \vec{r} - \vec{r} \, ' \right) \) Greenova funkcija in je \( \rho \left( \vec{r} \, ' \right) \) gostota naboja. Za nadaljevanje predpostavimo, da taka rešitev obstaja.
+</p>
+
+<p>
+Zanima nas, kaj je Greenova funkcija. Uporabimo nastavek \ref{eq:9}, da ga vstavimo v \ref{eq:8} in ker vpliva Laplace na \( \vec{r} \) in ne na \( \vec{r} \, ' \), ga lahko nesemo znotraj integrala, kjer vpliva zgolj na Greenovo funkcijo
+</p>
+
+\begin{align*}
+  \nabla ^2 \phi \left( \vec{r} \right) &= \nabla ^2 \left[ \int\limits_{}^{} G \left( \vec{r} - \vec{r} \, ' \right) \rho \left( \vec{r} \, ' \right) \, \mathrm{d} ^3 \vec{r} \, ' \right] \\
+&= \int\limits_{}^{} \nabla ^2 G \left( \vec{r} - \vec{r} \, ' \right) \rho \left( \vec{r} \, ' \right) \, \mathrm{d} ^3 \vec{r} \, ' = - \frac{\rho \left( \vec{r} \right)}{\epsilon_0}
+\end{align*}
+
+<p>
+Zadnji enačaj smo dobili iz Poissonove enačbe \ref{eq:8}. Če pa Poissonova enačba drži, potem mora veljati
+</p>
+
+\begin{equation}
+\label{eq:10}
+ \nabla ^2 G \left( \vec{r} - \vec{r} \, ' \right) = - \frac{\delta ^3 \left( \dot{r} - \vec{r} \, ' \right)}{\epsilon_0}
+\end{equation}
+
+<p>
+Enačbo \ref{eq:10} primerjamo po obliki z enačbo \ref{eq:8}, iz česar zaključimo, da je Greenova funkcija, kar rešitev Poissonove enačbe za točkast naboj, ki se nahaja pri \( \vec{r}\, ' \).
+</p>
+
+<p>
+Sedaj nas zanima, kakšna je Greenova funkcija, kar bomo naredili s prestopom v Fourierov prostor. Greenovo funkcijo zapišemo kot
+</p>
+
+<p>
+\[ G \left( \vec{r} \right) = \int\limits_{}^{} \frac{\mathrm{d} ^3 k}{\left( 2 \pi \right) ^3} e^{\mathrm{i} \vec{k} \left( \vec{r} - \vec{r} \, ' \right)}  G \left( \vec{k} \right)
+\]
+</p>
+
+<p>
+\( \delta \) funkcijo pa zapišemo kot
+</p>
+
+<p>
+\[ \delta ^3 \left( \vec{r} - \vec{r} \, ' \right) = \int\limits_{}^{} \frac{\mathrm{d} ^3 \vec{k}}{\left( 2 \pi \right) ^3} e ^{\mathrm{i}  \vec{k} \left( \vec{r} - \vec{r} \, ' \right)} \cdot 1
+\]
+</p>
+
+<p>
+Dobljena zapisa v Fourierovem prostoru nesecmo v \ref{eq:10} in dobimo
+</p>
+
+\begin{align*}
+  \nabla ^2 \left[ \int\limits_{}^{} \frac{\mathrm{d} ^3 \vec{k}}{\left( 2 \pi \right) ^3} e^{\mathrm{i} \vec{k} \left( \vec{r} - \vec{r} \, ' \right)} G \left( \vec{k} \right) \right] &= - \frac{1}{\epsilon_0} \int\limits_{}^{} \frac{\mathrm{d} ^3 \vec{k}}{\left( 2 \pi \right) ^3} e^{\mathrm{i} \vec{k} \left( \vec{r} - \vec{r} \, '  \right)} \\
+\int\limits_{}^{} \frac{\mathrm{d} ^3 \vec{k}}{ \left( 2 \pi  \right) ^3} \left[ \nabla ^2  \left\{e^{\mathrm{i} \vec{k} \left( \vec{r} - \vec{r} \, ' \right)} G \left( \vec{k} \right) \right\} + \frac{1}{\epsilon_0} e^{\mathrm{i} \vec{k} \left( \vec{r} - \vec{r} \, ' \right)} \right] &= 0 \\
+\int\limits_{}^{} \frac{\mathrm{d} ^3 \vec{k}}{\left( 2 \pi \right) ^3} \left[ - k ^2 G \left( \vec{k} \right) + \frac{1}{\epsilon_0}  \right]e^{\mathrm{i} \vec{k} \left( \vec{r} - \vec{r} \, ' \right)} &= 0
+\end{align*}
+
+<p>
+Zato, da je v splošnem enako nič, mora velja
+</p>
+
+<p>
+\[ G \left( \vec{k}  \right) = \frac{1}{\epsilon_0 k ^2}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-10-14 Tue 13:30</p>
+</div>
+</body>
+</html>

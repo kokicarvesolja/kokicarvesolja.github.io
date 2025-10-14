@@ -4,8 +4,11 @@
 Tukaj so zbrani zapiski predavanj, ki sem se jih udeležil pri prof. dr. Miha Ravniku.
 
 - [[file:01predavanja_emp/01emp_p_20251001.html][predavanje 1, 2025/10/01:]]  Elektrostatika; Coulumbova sila med naboji, velikost in enota električenga naboja, jakost električnega polja, električne silnice, električna cirkulacija, električni pretok, električni potencial
+- [[file:01predavanja_emp/02emp_p_20251008.html][predavanje 2, 2025/10/08:]] Princip superpozicije, gostota naboja, integralna oblika Gaussovega zakona, Poissonova in Laplaceova enačba; Greenova funkcija
+
 * Vaje
 
 Tukaj so zbrani zapiski vaj pri prof. Martinu Klanjšku.
 
 - [[file:02vaje_emp/01emp_v_20251007.html][vaje 1, 2025/10/07:]] Električno polje nabite okrogle plošče in električno polje ravne plošče z režo
+- [[file:02vaje_emp/02emp_v_20251014.html][vaje 2, 2025/10/14:]] Električno polje ravne plošče z režo (nadaljevanje), Poissonova enačba za točkast naboj, električno polje vodikovega atoma, ploščni kondenzator s prečnim trakom + teorija Fourierovega prostora
