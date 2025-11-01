@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 18:48 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4. predavanje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">4. predavanje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6a9efd0">1. Elektrostatika</a>
+<ul>
+<li><a href="#org70dcde7">1.1. Sila kot funkcional električnega polja</a></li>
+<li><a href="#org6a15a3f">1.2. Napetostni tenzor električnega polja</a></li>
+<li><a href="#org5a0d1d2">1.3. Multipolni razvoj električnega potenciala</a></li>
+<li><a href="#orga7abe74">1.4. Polje in potencial točkastega dipola</a></li>
+<li><a href="#orgd79e63d">1.5. Multipolni razvoj elektrostatske energije</a></li>
+<li><a href="#orgb2bc5d6">1.6. Sila in navor na multipole v zunanjem polju</a></li>
+</ul>
+</li>
+<li><a href="#org154844e">2. Magnetostatika</a>
+<ul>
+<li><a href="#orgf100b6f">2.1. Amperova sila med (ravnimi) električnimi vodniki</a></li>
+<li><a href="#orgaf42a0b">2.2. Sila med poljubnima vodnikoma</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6a9efd0" class="outline-2">
+<h2 id="org6a9efd0"><span class="section-number-2">1.</span> Elektrostatika</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org70dcde7" class="outline-3">
+<h3 id="org70dcde7"><span class="section-number-3">1.1.</span> Sila kot funkcional električnega polja</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Zanima nas sila, ki deluje na \( \rho \left( \vec{r} \right) \) v odvisnosti od celotnega \( E \left( \vec{r} \right) \). Sila na telo je volumnski integral
+</p>
+
+<p>
+\[ \vec{F} = \int\limits_V^{} \rho \left( \vec{r} \right) \vec{E}_{Z} \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+po volumnu telesa. \( \vec{E}_Z \) je zunanje električno polje. Preko Maxwellove enačbe nadomestimo \( \rho \left( \vec{r} \right) \) z
+</p>
+
+<p>
+\[ \nabla \cdot \vec{E}_L = \frac{\rho}{\epsilon_0}
+\]
+</p>
+
+<p>
+kjer je \( \vec{E}_L \) notranje električno polje. Sila je tako
+</p>
+
+<p>
+\[ \vec{F} \left( \vec{r} \right) = \epsilon_0 \int\limits_V^{} \left( \nabla \cdot \vec{E}_L \right) \vec{E}_{Z} \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+Opomba, da je integral produkta gostote električnega polja in lastnega električnega polja enak 0 (ne moreš sam sebe dvigniti):
+</p>
+
+<p>
+\[ \int\limits_V^{} \rho \left( \vec{r} \right) \vec{E}_L \, \mathrm{d} ^3 \vec{r} = 0
+\]
+</p>
+
+<p>
+Zapis sile lahko razširimo z \( \nabla \cdot \vec{E}_Z \). Ta člen je v našem integralu enak \( 0 \) (torej nismo nič spremenili, ko smo ga dodali), saj je integral po volumnu telesa, medtem ko so naboji zunanjega električnega polja neskončno oddaljeni.
+</p>
+
+<p>
+\[ \vec{F} \left( \vec{r} \right) = \epsilon_0 \int\limits_V^{} \left( \nabla \cdot \vec{E}_L + \nabla \cdot \vec{E}_Z \right) \vec{E}_Z \, \mathrm{d} ^3 \vec{r} = \epsilon_0   \int\limits_V^{} \left( \nabla \cdot \vec{E} \left( \vec{r} \right) \right) \vec{E}_Z \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+Vsota zunanjega in lastnega polja je pa ravno celotno električno polje - upoštevali smo linearno divergence.
+</p>
+
+<p>
+Naš volumnski integral bi radi zapisali v površinski integral, kar bomo naredili preko zveze s tenzorskim produktom
+</p>
+
+<p>
+\[ \nabla \cdot \left( \vec{E} \otimes \vec{E} \right) = \vec{E} \cdot \left( \nabla \cdot \vec{E} \right) + \left( \vec{E} \cdot \nabla  \right) \vec{E}
+\]
+</p>
+
+<p>
+ter Gaussovega izreka(?)
+</p>
+
+<p>
+\[ \int\limits_V^{} \nabla \cdot \vec{E} \, \mathrm{d} ^3 \vec{r} = \int\limits_{\partial V}^{} \vec{E} \, \mathrm{d} \vec{S}
+\]
+</p>
+
+<p>
+Tenzorski produkt za vektorja \( \vec{a} = (a_1, a_2, a_3) \) in \( \vec{b} = (b_1, b_2, b_3) \) je \( 3 \times 3 \) matrika, kjer je \( ij \)-ti element matrike
+</p>
+
+<p>
+\[ \left( \vec{a} \otimes \vec{b} \right)_{ij} = a_i \cdot b_j
+\]
+</p>
+
+<p>
+Integral se tako pretvori v
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \vec{F} = \epsilon_0 \int\limits_V^{} \left[ \nabla \cdot \left( \vec{E} \otimes \vec{E}\right) - \left( \vec{E} \cdot \nabla  \right) \vec{E} \right] \, \mathrm{d} ^3 \vec{r} = \epsilon_0 \int\limits_{\partial V}^{} \left( \vec{E} \otimes \vec{E}\right) \, \mathrm{d} \vec{S} - \epsilon_0 \int\limits_V^{} \left( \vec{E} \cdot \nabla \right) \vec{E} \, \mathrm{d} ^3 \vec{r}
+\end{equation}
+
+
+<p>
+Upoštevamo identiteto
+</p>
+
+<p>
+\[ \frac{1}{2} \nabla E ^2 = \left( \vec{E} \cdot \nabla \right) \vec{E} + \vec{E} \times \left( \nabla \times \vec{E} \right)
+\]
+</p>
+
+<p>
+Člen z vektorskim produktom je ničeln (zakaj?). Enačba \ref{eq:1} pa se pretvori v
+</p>
+
+<p>
+\[ \vec{F} = \epsilon_0 \int\limits_{\partial V}^{} \left( \vec{E} \otimes  \vec{E}\right) \, \mathrm{d} \vec{S} - \frac{\epsilon_0}{2} \int\limits_V^{} \nabla E ^2 \, \mathrm{d} ^3 \vec{r} = \epsilon_0 \int\limits_{\partial V}^{} \left[ \left( \vec{E} \otimes \vec{E}\right)- \frac{1}{2} E ^2 \right] \, \mathrm{d} \vec{S}
+\]
+</p>
+
+<p>
+Torej bo sila
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \vec{F} = \epsilon_0 \int\limits_{\partial V}^{} \left[ \left( \vec{E} \otimes  \vec{E}\right) - \frac{1}{2} E ^2 \cdot I \right] \vec{n} \, \mathrm{d} S
+\end{equation}
+
+<p>
+kjer je \( \vec{E} \) celotno električno polje, \( I \) identiteta in \( \vec{n} \) normala delca. Silo \( \vec{F} \) smo prav tako določili brez eksplicitne uporabe gostote električnega polja \( \rho \left( \vec{r} \right) \).
+</p>
+</div>
+</div>
+<div id="outline-container-org6a15a3f" class="outline-3">
+<h3 id="org6a15a3f"><span class="section-number-3">1.2.</span> Napetostni tenzor električnega polja</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Dobljen zapis silo v električnem polju \ref{eq:2} se lahko zapiše z uporabo napetostnega tenzorja električnega polja
+</p>
+
+<p>
+\[ F_i = \oint\limits_V^{} T_{ik} n_k \, \mathrm{d} S, \quad T_{ik} = \epsilon_0 \left( E_i \cdot E_k - \frac{1}{2} E ^2 \delta_{ik} \right)
+\]
+</p>
+
+<p>
+kjer je \( T_{ik} \) napetostni tenzor električnega polja.
+</p>
+
+<p>
+Velja tudi Gauss-Ostrogradski
+</p>
+
+\begin{equation}
+\label{eq:3}
+ F_i = \oint\limits_{\partial V}^{} T_{ik} \, \mathrm{d} S_k = \int\limits_V^{} \frac{\partial T_{ik}}{\partial x_{k}} \, \mathrm{d} ^3 \vec{r}
+\end{equation}
+
+<p>
+Zapišemo identiteto
+</p>
+
+<p>
+\[ a_{ik} b_k = \sum\limits_k^{} a_{ik} b_k.
+\]
+</p>
+
+<p>
+Iz \ref{eq:3} lahko prepoznamo oz. uvedemo volumsko gostoto sile
+</p>
+
+<p>
+\[ f_i = \frac{\partial T_{ik}}{\partial x_{k}}
+\]
+</p>
+
+<p>
+Zapis gostote sile kot divergence napetostnega tenzorja je splošen in se lahko uporablja tudi za druga polja.
+</p>
+</div>
+</div>
+<div id="outline-container-org5a0d1d2" class="outline-3">
+<h3 id="org5a0d1d2"><span class="section-number-3">1.3.</span> Multipolni razvoj električnega potenciala</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Imamo predmet, ki ima gostoto električnega polja \( \rho \left( \vec{r} \right) \). Ta predmet ustvarja potencial \( \phi \left( \vec{r} \right) \). Velja, kakor že mnogokrat povedano,
+</p>
+
+\begin{equation}
+\label{eq:4}
+ \phi \left( \vec{r} \right) = \int\limits_{}^{} \frac{\rho \left( \vec{r} \right)}{4 \pi \epsilon_0 \left| \vec{r} - \vec{r} \, ' \right|} \, \mathrm{d} ^3 \vec{r} \,'
+\end{equation}
+
+<p>
+Zanima nas električno polje &ldquo;daleč&rdquo; stran od same gostote naboje in to po vodilnih prispevkih - multipolih. Vektor \( \vec{r} \) je vektor znotraj telesa. Zanima nas režim \( \left| \vec{r} \right| \gg \left| \vec{r} \, ' \right|\).
+</p>
+
+<p>
+Ponovimo Taylorjev razvoj za vektorje
+</p>
+
+<p>
+\[ f \left( \vec{r} + \vec{h} \right) = f \left( \vec{r} \right) + \vec{h} \cdot \nabla f \left( \vec{r} \right) + \frac{1}{2} \vec{h} H \left( \left( \vec{r} \right) \right) \cdot \vec{h} + \ldots
+\]
+</p>
+
+<p>
+kjer je \( H \left( f \left( \vec{r} \right) \right) \) Hessejeva matrika. S pomočjo tega lahko razvijemo ulomek v potencialu kot
+</p>
+
+<p>
+\[ \frac{1}{\left| \vec{r} - \vec{r} \, ' \right|} = \frac{1}{r} - \vec{r} \, ' \cdot \nabla \frac{1}{\left| \vec{r} \right|}  + \ldots = \frac{1}{\vec{r}} + \vec{r} \, ' \frac{\vec{r}}{r ^3}
+\]
+</p>
+
+<p>
+Torej bo potencial potem
+</p>
+
+\begin{align*}
+  \phi \left( \vec{r} \right) &= \frac{1}{4 \pi \epsilon_0} \int\limits_{}^{} \frac{\rho \left( \vec{r} \, ' \right)}{r} \, \mathrm{d} ^3 \vec{r} \, ' + \frac{1}{4 \pi \epsilon_0} \int\limits_{}^{} \frac{\rho \left( \vec{r} \, ' \vec{r} \, ' \cdot \vec{r} \right)}{r ^3} \, \mathrm{d} ^3 \vec{r} \, ' \\
+&= \frac{1}{4 \pi \epsilon_0} \int\limits_{}^{} \rho \left( \vec{r} \,' \right) \, \mathrm{d} ^3 \vec{r} \,' + \frac{\vec{r}}{4 \pi \epsilon_0 r ^3} \int\limits_{}^{}\vec{r}\,' \rho \left( \vec{r} \, ' \right) \, \mathrm{d} ^3 \vec{r} \, ' + \ldots
+\end{align*}
+
+<p>
+Torej je potencial enak
+</p>
+
+<p>
+\[ \phi \left( \vec{r} \right) = \frac{e}{4 \pi \epsilon_0 r} + \frac{\vec{r} \cdot \vec{p}}{4 \pi \epsilon_0 r ^3}
+\]
+</p>
+
+\begin{align*}
+  \int\limits_{}^{} \rho \left( \vec{r} \, ' \right) \, \mathrm{d} ^3 \vec{r} \, ' = e && \text{ električni monopol } \\
+\int\limits_{}^{} \vec{r} \, ' \rho \left( \vec{r} \, ' \right) \, \mathrm{d} ^3 \vec{r} = \vec{p}  && \text{električni dipol}
+\end{align*}
+
+<p>
+Zgornji integralom pravimo elementi multipolni razvoj električnega potenciala. V splošnem velja v sferičnih koordinatah \( r, \phi, \theta \)
+</p>
+
+<p>
+\[ \phi \left( \vec{r} \right) = \frac{1}{4 \pi \epsilon_0} \sum\limits_{l = 0}^{\infty} \sum\limits_{m = - l}^l \frac{4 \pi}{2l + 1} \frac{q_{lm}}{r^{l + 1} } Y_{lm} \left( \theta, \phi \right)
+\]
+</p>
+
+<p>
+kjer so \( Y_{lm} \left( \theta, \phi \right) \) sferični harmoniki (krogelne funkcije), \( q_{lm} \) multipolni koeficienti
+</p>
+
+<p>
+\[ q_{lm} = \int\limits_{}^{} \rho(s) s^l Y_{lm} \left( \theta', \phi' \right) \, \mathrm{d} ^3 \vec{s}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orga7abe74" class="outline-3">
+<h3 id="orga7abe74"><span class="section-number-3">1.4.</span> Polje in potencial točkastega dipola</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Kakor smo že izračunali, velja
+</p>
+
+<p>
+\[ \phi \left( \vec{r} \right) = \frac{\vec{r} \cdot \vec{p}}{4 \pi \epsilon_0 r ^3}
+\]
+</p>
+
+<p>
+Električno polje pa je po definiciji
+</p>
+
+<p>
+\[ \vec{E} \left( \vec{r} \right) = - \nabla \phi \left( \vec{r} \right) = - \nabla \left( \frac{\vec{r} \cdot \vec{p}}{4 \pi \epsilon_0 r ^3} \right) = - \frac{\vec{p}}{4 \pi \epsilon_0 r ^3} + \frac{3 \left( \vec{r} \cdot \vec{p} \right) \vec{r}}{4 \pi \epsilon_0 r ^5}
+\]
+</p>
+
+<p>
+[slika električnega dipola]
+</p>
+</div>
+</div>
+<div id="outline-container-orgd79e63d" class="outline-3">
+<h3 id="orgd79e63d"><span class="section-number-3">1.5.</span> Multipolni razvoj elektrostatske energije</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Imamo predmet z gostoto električnega naboja \( \rho \left( \vec{r} \right) \) v zunanjem električnem polju \( \vec{E} \) oz. potencialu \( \phi \). Zanima nas elektrostatska energija multipolov v zunanjem električnem polju. Kakor je bilo izpeljano na prejšnji uri, je elektrostatska energija
+</p>
+
+\begin{equation}
+\label{eq:5}
+ W = \int\limits_V^{} \rho \left( \vec{r} \right) \phi \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r}
+\end{equation}
+
+<p>
+kjer je \( V \) volumen telesa.
+</p>
+
+<p>
+Predpostavimo, da je naboj zbran okrog točke \( \vec{r}_0 \) znotraj volumna. Potem je potencial
+</p>
+
+<p>
+\[ \phi \left( \vec{r} \right) = \phi \left( \vec{r}_0 \right) + \left( \vec{r} - \vec{r}_0 \right) \nabla \phi \left( \vec{r}_0 \right)
+\]
+</p>
+
+<p>
+Razvoj potenciala vstavimo v enačbo \ref{eq:5} za elektrostatsko energijo in ker je \( \vec{r}_0 \) neodvisen od \( \vec{r} \), lahko konstante postavimo pred integral
+</p>
+
+\begin{align*}
+  W &= \int\limits_V^{} \rho \left( \vec{r} \right) \left[ \phi \left( \vec{r}_0 \right) + \left( \vec{r} - \vec{r}_0 \right) \nabla \phi \left( \vec{r}_0 \right) \right] \, \mathrm{d} ^3 \vec{r} \\
+&= e \phi \left( \vec{r}_0 \right) + \nabla \phi \left( \vec{r}_0 \right) \int\limits_V^{} \rho \left( \vec{r} \right) \left( \vec{r} - \vec{r}_0 \right) \, \mathrm{d} ^3 \vec{r}
+\end{align*}
+
+<p>
+To pomeni, da je elektrostatska energije multipolnega razvoja enaka
+</p>
+
+\begin{equation}
+\label{eq:6}
+ W = e \phi - \vec{p} \cdot \vec{E}
+\end{equation}
+
+<p>
+kjer je prvi člen energija monopola zunanjega pola, drugi člen pa energija dipola v zunanjem polju.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2bc5d6" class="outline-3">
+<h3 id="orgb2bc5d6"><span class="section-number-3">1.6.</span> Sila in navor na multipole v zunanjem polju</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Za prej obravnavani predmet z gostoto električnega naboja \( \rho \left( \vec{r} \right) \) opisan z multipoli nas zanimata sila in navor.
+</p>
+
+<p>
+Začnimo s silo, kjer uporabimo definicijo
+</p>
+
+\begin{equation}
+\label{eq:7}
+ \mathrm{d} W = - \vec{F} \cdot \mathrm{d} \vec{r}
+\end{equation}
+
+<p>
+in je sila
+</p>
+
+\begin{equation}
+\label{eq:8}
+ F = - \nabla W
+\end{equation}
+
+<p>
+Z drugimi besedami nas zanima, za koliko se spremeni energija, če predmet z \( \rho \left( \vec{r} \right) \) premaknemo za \( \mathrm{d} \vec{r} \). V enačbo \ref{eq:7} vstavimo prej dobljeno enačbo \ref{eq:6} in dobimo
+</p>
+
+\begin{align*}
+  \mathrm{d} W &= \mathrm{d} \left( e \phi - \vec{p} \vec{E} \right) \\
+&= e \nabla \phi \left( \vec{r}_0 \right) \, \mathrm{d} \vec{r} -  \mathrm{d} \left( \vec{p} \cdot \vec{E} \right)\\
+&= e \nabla \phi \left( \vec{r}_0 \right) \, \mathrm{d} \vec{r} - \nabla \left( \vec{p} \cdot \vec{E}  \right) \, \mathrm{d} \vec{r}
+\end{align*}
+
+<p>
+Pred nadaljevanjem moramo omeniti identiteto
+</p>
+
+<p>
+\[ \nabla \left( \vec{p} \cdot \vec{E} \right) = p \times \left( \nabla \times \vec{E} \right) + \left( \vec{p}\cdot \nabla \right) \vec{E}
+\]
+</p>
+
+<p>
+Prvi člen z vektorskim produktom je ničeln.
+</p>
+
+<p>
+Delo se nadalje preobrazi v
+</p>
+
+\begin{align*}
+  \mathrm{d} W &= e \nabla \phi \left( \vec{r}_0 \right) \, \mathrm{d} \vec{r} - \left( \vec{p} \cdot \nabla \right) \vec{E} \, \mathrm{d} \vec{r}
+\end{align*}
+
+<p>
+iz česar sledi sila
+</p>
+
+<p>
+\[ \vec{F} = e \vec{E} + \left( \vec{p} \cdot \nabla \right) \vec{E}
+\]
+</p>
+
+<p>
+kjer je prvi člen sila na monopol, drugi člen pa sila na električni dipol. Drugi člen je tudi smerni odvod, definiciran kot
+</p>
+
+<p>
+\[ \left( \vec{p} \cdot \nabla \right) \vec{E} = \left( p_x \frac{\partial }{\partial x}  + p_y \frac{\partial }{\partial y}  + p_z \frac{\partial }{\partial z}  \right)\vec{E}
+\]
+</p>
+
+<p>
+<span class="underline">_</span>
+</p>
+
+<p>
+Za navor nas ponovno zanima sprememba energije ob zasuku za \( \mathrm{d} \vec{\phi} \). Poleg recikliranja enačb \ref{eq:7} in \ref{eq:8} dodamo še enačbe  za navor
+</p>
+
+<p>
+\[ \mathrm{d} W = - \vec{M} \cdot \mathrm{d} \vec{\phi} \implies \vec{M} = - \frac{\mathrm{d} W}{\mathrm{d} \phi}
+\]
+</p>
+
+<p>
+Ponovno upoštevamo še enačbo \ref{eq:6}
+</p>
+
+<p>
+\[ \mathrm{d} W = \mathrm{d} \left( e \phi - \vec{p} \cdot \vec{E} \right) = - \mathrm{d} \vec{p} \cdot \vec{E}
+\]
+</p>
+
+<p>
+kjer je \( \mathrm{d} \vec{p} = \mathrm{d} \vec{\phi} \times \vec{p} \) in se naše delo dodatno preobrazi v
+</p>
+
+<p>
+\[ \mathrm{d} W = - \left( \mathrm{d} \vec{\phi} \times \vec{p} \right) = - \mathrm{d} \vec{\phi} \cdot \left( \vec{p} \times \vec{E} \right)
+\]
+</p>
+
+<p>
+Navor je torej
+</p>
+
+<p>
+\[ M = \vec{p} \times \vec{E}.
+\]
+</p>
+
+<p>
+To je navor električnega dipola, da se zavrti v zunanjem električnem polju.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org154844e" class="outline-2">
+<h2 id="org154844e"><span class="section-number-2">2.</span> Magnetostatika</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgf100b6f" class="outline-3">
+<h3 id="orgf100b6f"><span class="section-number-3">2.1.</span> Amperova sila med (ravnimi) električnimi vodniki</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Imamo dva vzporedna vodnika, po katerih tečeta \( I_1 \) in \( I_2 \). Ker po njiju teče tok, bo vodnik s tokom \( I_1 \) na vodnik s tokom \( I_2 \) deloval s silo \( \vec{F} \). Drugi vodnik bo na drugega deloval z \( - \vec{F} \). Radij vektor v cilindričnih koordinatah vodnika s tokom \( I_1 \) je \( \rho_1 \), drugega vodnika pa \( \vec{\rho}_2 \). Sila na vodnik je
+</p>
+
+\begin{equation}
+\label{eq:9}
+ \vec{F} = \frac{\mu_0}{4 \pi} \frac{I_1 I_2 \cdot l}{\left| \vec{\rho}_2 - \vec{\rho}_1 \right|} \frac{\vec{\rho}_2 - \vec{\rho}_1}{\left| \vec{\rho}_2 - \vec{\rho}_1 \right|}
+\end{equation}
+
+<p>
+kjer je \( l \) dolžina žice.
+</p>
+
+<p>
+Sila je za istosmerna tokova privlačna, za različno smerna tokova pa odbojna. Sili \ref{eq:9} pravimo Amperova sila, ki je magnetni analog Coulombovi sili v elektrostatiki.
+</p>
+</div>
+</div>
+<div id="outline-container-orgaf42a0b" class="outline-3">
+<h3 id="orgaf42a0b"><span class="section-number-3">2.2.</span> Sila med poljubnima vodnikoma</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Gledamo dva splošna vodnika. Vodnika smo opisali kot parametrični krivulji \( \vec{r}_1 (l_1) \) in \( \vec{r}_2 (l_2)  \). Za začetek bomo najprej obravnavali silo med koščkama \( \mathrm{d} \vec{l}_1 \) in \( \mathrm{d} \vec{l}_2 \). Malo smo pogoljufali z zapisom, saj \( \mathrm{d} \vec{l}_1 = \vec{r}_1 \left( l_1 + \mathrm{d} l_1 \right) - \vec{r}_1 \left( l_1\right) \) in analogno za drugo žico. Sila na prvo žico je enaka
+</p>
+
+<p>
+\[ \mathrm{d} \vec{F} = \frac{\mu_0}{4 \pi} \frac{\left( I_1 \mathrm{d} \vec{l}_1 \right) \left( I_2 \mathrm{d} \vec{l}_2 \right)}{\left| \vec{r}_2 \left( l_2 \right) - \vec{r}_1 \left( l_1 \right) \right| ^2} \cdot \frac{\left( \vec{r}_2 \left( l_2 \right) - \vec{r}_1 \left( l_1 \right) \right)}{\left| \vec{r} _2 \left( l_2 \right) - \vec{r}_1 \left( l_1 \right) \right|}
+\]
+</p>
+
+<p>
+Smer \( \mathrm{d} \vec{l}_1 \) in \( \mathrm{d} \vec{l}_2 \) je določena s smerjo električnega toka
+</p>
+
+<p>
+\[ \vec{F} = \frac{\mu_0 I_1 I_2}{4 \pi} \int\limits_{c_1}^{c_2} \frac{\mathrm{d} \vec{l}_1 \mathrm{d} \vec{l}_2 }{\left| \vec{r}_2 \left( l_2 \right) - \vec{r}_1 \left( l_1 \right) \right| ^2} \cdot \frac{\left( \vec{r}_2 (l_2) - \vec{r} (l_1) \right)}{\left| \vec{r}_2 \left( l_2 \right) - \vec{r} \left( l_1 \right) \right|}
+\]
+</p>
+
+<p>
+kar lahko prepišemo v
+</p>
+
+<p>
+\[ \vec{F} = \frac{\mu_0 I_1 I_2}{4\pi} \int\limits_{c_1}^{} \int\limits_{c_2}^{} \frac{\mathrm{d} \vec{l}_1 \times \left( \mathrm{d} \vec{l}_2 \times \left( \vec{r}_{2} (l_2) - \vec{r} (l_1) \right) \right)}{\left| \vec{r}_2 (l_2) - \vec{r}(l_1) \right| ^3}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 18:48</p>
+</div>
+</body>
+</html>

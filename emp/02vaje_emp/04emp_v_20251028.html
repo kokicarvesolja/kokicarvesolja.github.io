@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 18:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4. vaje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">4. vaje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgecbef0c">1. Prepolovljena prevodna cev</a></li>
+<li><a href="#org9bd1d8a">2. Prevodna krogla v homogenem električnem polju</a>
+<ul>
+<li><a href="#org80d64f4">2.1. Točka b)</a></li>
+<li><a href="#orgb2953aa">2.2. Točka c)</a></li>
+</ul>
+</li>
+<li><a href="#org6d2eb96">3. Točkast električni dipol v središču prevodne sfere</a>
+<ul>
+<li><a href="#orgfbdd0b0">3.1. točka a)</a></li>
+<li><a href="#org9dc7646">3.2. točka b)</a></li>
+<li><a href="#org974a5da">3.3. točka c)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgecbef0c" class="outline-2">
+<h2 id="orgecbef0c"><span class="section-number-2">1.</span> Prepolovljena prevodna cev</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Nadaljujemo z b) točko, tj. računanje jakosti električnega polja v vodoravni simetrijski ravnini.
+</p>
+
+<p>
+Jakost električnega polja ima tri komponente tudi v cilindričnih koordinatah - \( E_r, E_{\phi} \) in \( E_z \).
+</p>
+
+<p>
+[slika polja]
+</p>
+
+<p>
+Na poljubni točki vodoravni osi simetrijske ravnine kaže električna jakost pravokotno navzdol (ali navzgor) - glej sliko. S premikanje po vodoravni osi je električna jakost vedno pravokotna na \( r \) in na \( z \), kar pomeni, da se te dve komponenti ne spreminjata (skalarni produkt vektorjev je vedno 0). Torej je edina spreminjajoča se komponenta \( E_{\phi} \).
+</p>
+
+<p>
+Potencial smo izračunali že na prejšnjih vajah in je enak
+</p>
+
+\begin{equation}
+\label{eq:1}
+U \left( r, \phi \right) = \sum\limits_{m = 1}^{\infty} \frac{U_0}{m \pi} \left( 1 - \left( -1 \right) ^n \right) \sin \left( n \phi \right) \left( \frac{r}{a} \right) ^m
+\end{equation}
+
+<p>
+Komponento \( \phi \) električnega polja bomo izračunali preko enačbe
+</p>
+
+\begin{equation}
+\label{eq:2}
+E_{\phi} = - \left. \frac{1}{r} \frac{\partial U}{\partial \phi} \right|_{\phi = 0}
+\end{equation}
+
+<p>
+Združimo \ref{eq:1} in \ref{eq:2}, da dobimo
+</p>
+
+<p>
+\[ E_{\phi} = \left. - \frac{1}{r} \sum\limits_{m = 1}^{\infty} \frac{U_0}{\mu} \left( \frac{r}{a} \right)^m \frac{1 - \left( -1 \right) ^m}{m} m \cos \left( m \phi \right)\right|_{\phi = 0}
+\]
+</p>
+
+<p>
+Vrsto razpišemo
+</p>
+
+<p>
+\[ E_{\phi} = - \frac{1}{r} \frac{U_0}{\pi} \sum\limits_{m = 1}^{\infty} \left( \frac{r}{a} \right) ^m \left[ 1 - \left( -1 \right) ^m \right] = - \frac{1}{r} \frac{U_0}{\pi} \left[ 2 \frac{r}{a} + 2 \left( \frac{r}{a} \right) ^3 + 2 \left( \frac{r}{a} \right) ^5 + \ldots \right]
+\]
+</p>
+
+<p>
+Izpostavimo faktor \( 2 \left( \frac{r}{a} \right) \) in vsoto v oklepaju prepoznamo kot geometrijsko vsoto s členom \( \left( \frac{r}{a} \right) ^2 \)
+</p>
+
+<p>
+\[ E_{\phi} = - \frac{2U_0}{\pi a} \frac{1}{1 - \left( \frac{r}{a} \right) ^2}
+\]
+</p>
+
+<p>
+Preverimo še limiti:
+</p>
+
+<ul class="org-ul">
+<li><p>
+pri \( r = 0 \) kaže električno polje v negativni smeri
+</p>
+
+<p>
+\[ E_{\phi} = \left( r = 0 \right) = - \frac{2 U_0}{\pi a}
+  \]
+</p></li>
+
+<li>pri \( r = a \) pa imamo divergenco, ki je posledica špranjice med poloblama</li>
+</ul>
+
+<p>
+Izračun električnega polje v navpični simetrijski ravnini je za domačo nalogo.
+</p>
+</div>
+</div>
+<div id="outline-container-org9bd1d8a" class="outline-2">
+<h2 id="org9bd1d8a"><span class="section-number-2">2.</span> Prevodna krogla v homogenem električnem polju</h2>
+<div class="outline-text-2" id="text-2">
+<div class="problem" id="org28a5cd9">
+<p>
+Prevodno kroglo s polmerom \( a \) postavimo v zunanje homogeno električno polje z jakostjo \( E_0 \), zaradi česar se polje popači.
+</p>
+
+<ol class="org-ol">
+<li>Izračunaj potencial nastalega električnega polja povsod v prostoru. Kvalitativno interpretiraj končni rezultat oziroma razloži obliko obeh dobljenih členov.</li>
+<li>Izračunaj površinsko gostoto naboja, ki se inducira na površini krogle, v odvisnosti od polarnega kota \( \theta \), merjenega od smeri zunanjega električnega polja.</li>
+<li>Izračunaj električni dipolni moment induciranega naboja. Rezultat preveri tako, da ga prebereš naravnost iz rešitve točke a)</li>
+</ol>
+
+</div>
+
+<p>
+Problem rešujemo v sferičnih koordinatah, saj nam je za problem to najbolj naravno. Prav tako lahko zaradi osne simetrije izvzamemo odvisnost od azimutnega kota \( \phi \). Zunaj krogle velja Laplaceova enačba
+</p>
+
+<p>
+\[ \nabla ^2 U \left( r, \theta \right) = 0
+\]
+</p>
+
+<p>
+Po separaciji spremenljivk in računanju, ki pritiče matematiki 4, dobimo rešitev potenciala
+</p>
+
+<p>
+\[ U \left( r, \theta \right) = \sum\limits_{l = 0}^{\infty} \left( A_l r^l + B_l r^{- (l + 1)} \right) P_l \left( \cos \theta \right),
+\]
+</p>
+
+<p>
+kjer so \( P_l \left( \cos \theta \right) \) Legendrovi polinomi.
+</p>
+
+<div class="note" id="org1473a3a">
+<p>
+Nekaj osnovnih Legendrovih polinomov je
+</p>
+
+\begin{align*}
+P_0 &= 1 \\
+P_1 &= x \\
+P_2 &= \frac{1}{2} \left( 3 x ^2 - 1 \right) \\
+P_3 &= \frac{1}{2} \left( 5 x ^3 - 3x \right) \\
+& \vdots
+\end{align*}
+
+<p>
+Legendrovi polinomi so tudi ortogonalni na \( L ^2 \left( [-1, 1] \right) \) (?)
+</p>
+
+<p>
+\[ \int\limits_{-1}^1 P_l(x) P_{l '}(x) \, \mathrm{d} x = \frac{2 \delta_{l l'}}{2l + 1}
+\]
+</p>
+
+<p>
+To nam tudi podaja faktor, da dobimo ortonormirane Legendrovi polinomi.
+</p>
+
+</div>
+
+<p>
+V električnem homogenem polju imamo dva robna pogoja:
+</p>
+
+<ul class="org-ul">
+<li>na površini krogle je potencial ničeln \( U (a, \theta) = 0 \) in je ekvipotencialna ploskev</li>
+<li><p>
+neskončno stran od krogle je polje normalno
+</p>
+
+<p>
+\[ U \left( r \to \infty, \theta \right) = - E_0 z = - E_0 r \cos \theta = - E_0 P_1 \left( \cos \theta \right)
+  \]
+</p></li>
+</ul>
+
+<p>
+Z upoštevanjem prvega robnega pogoja
+</p>
+
+<p>
+\[ -E_0 P_1 \left( \cos \theta \right) r = \sum\limits_{l = 0}^{\infty} A_l r^l P_l \left( \cos \theta \right) = A_1 r P_1 \left( \cos \theta \right)
+\]
+</p>
+
+<p>
+dobimo enakost \( A_1 = - E_0 \) in \( A_{l \ne 1} = 0 \).
+</p>
+
+<p>
+Vmesna rešitev je tako
+</p>
+
+\begin{equation}
+\label{eq:3}
+U (r, \theta) = - E_0 r P_1 \left( \cos \theta \right) + \sum\limits_{l = 0}^{\infty} B_l r^{- (l + 1)} P_l (\cos \theta)
+\end{equation}
+
+<p>
+Upoštevamo še drugi robni pogoj
+</p>
+
+<p>
+\[ 0 = U(0, \theta) = - E_0 a P_1 (\cos \theta) + \sum\limits_{l = 0}^{\infty} B_l a^{- (l + 1)} P_l (\cos \theta)
+\]
+</p>
+
+<p>
+Ortogonalnost Legendrovih polinomov za \( l = 1 \) nam potem poda enakost
+</p>
+
+<p>
+\[ B_1 = E_0 a ^3; \ B_{l \ne 1} = 0
+\]
+</p>
+
+<p>
+Končna rešitev je tako
+</p>
+
+<p>
+\[ U \left( r, \theta \right) = P_1 (\cos \theta) E_0 \left( \frac{a ^3}{r ^2} - r  \right) = \underbrace{-E_0 r \cos \theta}_{(1)} + \underbrace{E_0 a ^3 \frac{\cos \theta}{r ^2}}_{(2)}
+\]
+</p>
+
+<p>
+Člen (1) predstavlja potencial homogenega polja, medtem ko člen (2) je potencial, ki izvira iz induciranega naboj (točkastega dipola).
+</p>
+
+<p>
+Na predavanjih smo omenili, da je potencial točkastega dipola enak
+</p>
+
+<p>
+\[ U_{dip} = \frac{\vec{p}_e \vec{r}}{4 \pi \epsilon_0 r ^3}
+\]
+</p>
+
+<p>
+Z upoštevanjem definicije skalarnega produkta \( \vec{p}_e \vec{r} = p_e r \cos \theta \), kar pomeni, da je potencial torej
+</p>
+
+<p>
+\[ U_{dip} = \frac{p_e \cos \theta}{4 \pi \epsilon_0 r ^2}
+\]
+</p>
+
+<p>
+Opazimo, da je člen (2) enake oblike kot naš potencial točkastega dipola, iz česar lahko tudi hitro izračunamo električni dipolni moment
+</p>
+
+<p>
+\[ \frac{p_e}{4 \pi \epsilon_0} = E_0 a ^3 \implies p_e = 4 \pi \epsilon_0 E_0 a ^3
+\]
+</p>
+</div>
+<div id="outline-container-org80d64f4" class="outline-3">
+<h3 id="org80d64f4"><span class="section-number-3">2.1.</span> Točka b)</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Obravnavamo majhen delček zgornje polsferine površine \( \mathrm{d} S \), ki nosi naboj \( \mathrm{d} q \) in se nahaja pod kotom \( \theta \). Električno polje kaže pravokotno na površino in po Gaussovi diferencialni formi je enako
+</p>
+
+<p>
+\[ \mathrm{d} e = \epsilon_0 E_{\perp } \mathrm{d} S - 0 \implies \sigma = \frac{\mathrm{d} e}{\mathrm{d} S} = \epsilon_0 E_{\perp}
+\]
+</p>
+
+<p>
+Z izraženim električnim poljem lahko preko definicije potenciala najdemo površinsko napetost
+</p>
+
+<p>
+\[ \sigma = \epsilon_0 E_r = \epsilon_0 \left. \left( - \frac{\partial U}{\partial r} \right)\right|_{r = a}
+\]
+</p>
+
+<p>
+Površinska napetost je po odvajanju enaka
+</p>
+
+<p>
+\[ \sigma (\theta) = 3 \epsilon_0 E_0 \cos \theta
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2953aa" class="outline-3">
+<h3 id="orgb2953aa"><span class="section-number-3">2.2.</span> Točka c)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Električni dipolni moment računamo preko
+</p>
+
+<p>
+\[ \vec{p}_e = \int\limits_{}^{} \vec{r} \,' \, \mathrm{d} e = \int\limits_{}^{} \vec{r} \, ' \rho \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r} \, '
+\]
+</p>
+
+<p>
+Površinsko gostoto iz točke b) poznamo in torej lahko zapišemo
+</p>
+
+<p>
+\[ p_{ez } = \int\limits_{}^{} z' \, \mathrm{d} e = \int\limits_{}^{} a \cos \theta \sigma \, \mathrm{d} S = \int\limits_{}^{} a \cos ^2 \theta 3 \epsilon_0 E_0 \, \mathrm{d} S
+\]
+</p>
+
+<p>
+Upoštevamo, da je infinitizimalni element površine enak \( \mathrm{d} S = a ^2 \mathrm{d} \phi \mathrm{d} (\cos \theta) \).
+</p>
+
+<p>
+\[ p_{ez} = 3 \epsilon_0 E_0 a ^3  \int\limits_{-1}^1 \int\limits_0^{2\pi} \cos ^2 \theta \, \mathrm{d} (\cos \theta) \, \mathrm{d} \phi = 4 \pi \epsilon_0 E_0 a ^3
+\]
+</p>
+
+<p>
+Vidimo, da je rezultat enak, kakor v točki a).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6d2eb96" class="outline-2">
+<h2 id="org6d2eb96"><span class="section-number-2">3.</span> Točkast električni dipol v središču prevodne sfere</h2>
+<div class="outline-text-2" id="text-3">
+<div class="problem" id="org00d73c7">
+<p>
+V središču votle prevodne sfere polmera \( a \) postavimo točkast električni dipol z električnim dipolnim momentom \( p_e \).
+</p>
+
+<ol class="org-ol">
+<li>Določi potencial električnega polja povsod znotraj sfere</li>
+<li>Pokaži, da je električno polje naboj, ki se inducira na notranji površini sfere, homogeno in izračun njegovo velikost.</li>
+<li>Izračunaj skupni dipolni moment induciranega naboja. Kakšno smer ima glede na točkasti dipol? Je rezultat presentljiv?</li>
+</ol>
+
+</div>
+
+<p>
+Recikliramo enačbe od zgornje naloge, kjer je splošna rešitev
+</p>
+
+<p>
+\[ U (r, \theta) = \sum\limits_{l = 0}^{\infty} \left( A_l r^l + B_l r^{- (l + 1)} \right) P_l (\cos \theta)
+\]
+</p>
+
+<p>
+Imamo tudi dva robna pogoja
+</p>
+
+<ul class="org-ul">
+<li><p>
+singularnost v središču
+</p>
+
+<p>
+\[ U (r \to 0, \theta) = \frac{p_e \cos \theta}{4 \pi \epsilon_0 r ^2}
+  \]
+</p></li>
+
+<li><p>
+površina ploskve je ekvipotencialna ploskev
+</p>
+
+<p>
+\[ U(a, \theta) = 0
+  \]
+</p></li>
+</ul>
+</div>
+<div id="outline-container-orgfbdd0b0" class="outline-3">
+<h3 id="orgfbdd0b0"><span class="section-number-3">3.1.</span> točka a)</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Iz prvega robnega pogoja dobimo enakost
+</p>
+
+<p>
+\[ U(0, \theta) = \frac{p_e \cos \theta}{4 \pi \epsilon_0 r ^2} = \sum\limits_{l = 0}^{\infty} B_l r^{- (l + 1)} P_l (\cos \theta) \overset{l = 1}{  \implies} B_1 = \frac{p_e}{4 \pi \epsilon_0}, \ B_{l \ne 1} = 0
+\]
+</p>
+
+<p>
+Vmesna rešitev je
+</p>
+
+<p>
+\[ U(r, \theta) = \sum\limits_{l = 1}^{\infty} A_l r^l P_l (\cos \theta) + \frac{p_e}{4 \pi \epsilon_0} \frac{1}{r ^2} P_1 (\cos \theta)
+\]
+</p>
+
+<p>
+Z upoštevanjem drugega robnega pogoja lahko tudi izluščimo enakost za koeficiente \( A_l \)
+</p>
+
+<p>
+\[ U(a, \theta) = 0 = \sum\limits_{l = 1}^{\infty} A_l a^l P_l (\cos \theta) + \frac{p_e}{4 \pi \epsilon_0} \frac{1}{a ^2} P_1 (\cos \theta) \overset{l = 1}{ \implies} A_1 = - \frac{1}{a} \frac{p_e }{4\pi \epsilon_0} \frac{1}{a ^2}, \ A_{l \ne 1} = 0
+\]
+</p>
+
+<p>
+Rešitev je tako
+</p>
+
+<p>
+\[ U(r, \theta) = \underbrace{- \frac{p_e}{a ^3} \frac{1}{4\pi \epsilon_0} r \cos \theta}_{(1)} + \underbrace{\frac{p_e}{4 \pi \epsilon_0} \frac{ \cos \theta}{r ^2}}_{(2)}, \ r \cos \theta = z
+\]
+</p>
+
+<p>
+Prispevek (1) k potencialu je ravno prispevek induciranih naboj in po obliki vidimo, da je homogeno polje \( E = \frac{p_e}{4 \pi \epsilon_0 a ^3} \). Prispevek (2) je potencial točkastega dipola v središču.
+</p>
+</div>
+</div>
+<div id="outline-container-org9dc7646" class="outline-3">
+<h3 id="org9dc7646"><span class="section-number-3">3.2.</span> točka b)</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Podobno kot v prejšnji nalogi nas ponovno zanima površinska napetost \( \sigma \). Izpeljava je podobna kakor prej, vendar tokrat električno polje kaže proti središču krogle
+</p>
+
+<p>
+\[ \sigma = - \epsilon_0 E_{\perp}
+\]
+</p>
+
+<p>
+Ponovno izhajamo iz definicije potenciala
+</p>
+
+\begin{align*}
+  E_{\perp } &= \left. - \frac{\partial U}{\partial r} \right|_{r = a} \\
+&= \left. \frac{p_e}{4 \pi \epsilon_0 a ^3} \cos \theta + \frac{2 p_e}{4 \pi \epsilon_0} \frac{\cos \theta}{r ^3} \right|_{r = a}
+\end{align*}
+
+<p>
+Torej imamo površinsko napetost, ki ima največjo gostoto na polih
+</p>
+
+<p>
+\[ \sigma(\theta) = - \frac{3p_e}{4 \pi a ^3} \cos\theta
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org974a5da" class="outline-3">
+<h3 id="org974a5da"><span class="section-number-3">3.3.</span> točka c)</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Dipola ne bomo računali preko integrala, ampak bomo uporabili spoznanja iz prejšnje naloge.
+</p>
+
+\begin{align*}
+  \frac{p_e}{4 \pi \epsilon_0} &= E_0 a ^3 \\
+p_e &= 4 \pi \epsilon_0 a ^3 E_0 \\
+\sigma (\theta) &= 3 \epsilon_0 E_0 \cos \theta
+\end{align*}
+
+<p>
+Zanima nas induciran električni dipolni moment
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 18:33</p>
+</div>
+</body>
+</html>

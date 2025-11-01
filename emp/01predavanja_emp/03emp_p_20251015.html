@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 18:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3. predavanje iz EMP</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">3. predavanje iz EMP</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb8dff1d">1. Elektrostatika</a>
+<ul>
+<li><a href="#orgaceaa60">1.1. Poissonova in Laplaceova enačba</a>
+<ul>
+<li><a href="#org4c33724">1.1.1. Greenova funkcija Poissonove enačbe</a></li>
+</ul>
+</li>
+<li><a href="#org151fb23">1.2. Earnshawjev teorem</a></li>
+<li><a href="#orgb8ecd84">1.3. Thomsonov problem</a></li>
+<li><a href="#orgb6129b0">1.4. Elektrostatska energija</a>
+<ul>
+<li><a href="#org9979be1">1.4.1. Elektrostatska energija naboja v zunanjem polju</a></li>
+<li><a href="#org2412692">1.4.2. Celotna elektrostatska energija</a></li>
+<li><a href="#org3c08fe7">1.4.3. Gostota elektrostatske energije polja</a></li>
+<li><a href="#orgd8e6fd5">1.4.4. Sila kot funkcional električnega polja</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb8dff1d" class="outline-2">
+<h2 id="orgb8dff1d"><span class="section-number-2">1.</span> Elektrostatika</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgaceaa60" class="outline-3">
+<h3 id="orgaceaa60"><span class="section-number-3">1.1.</span> Poissonova in Laplaceova enačba</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org4c33724" class="outline-4">
+<h4 id="org4c33724"><span class="section-number-4">1.1.1.</span> Greenova funkcija Poissonove enačbe</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Naredimo prehod iz Fourierovega prostora v normalni prostora
+</p>
+
+<p>
+\[ G \left( \vec{r} - \vec{r} \, ' \right) = \iiint\limits_{}^{} \frac{e^{\mathrm{i} \vec{k} \left( \vec{r} - \vec{r} \,' \right)}}{\left( 2 \pi \right) ^3} \frac{1}{\epsilon_0 k ^2} \,\mathrm{d } ^3 \vec{k}
+\]
+</p>
+
+<p>
+kjer smo upoštevali izračun predavanj prejšnjega tedna, da je
+</p>
+
+<p>
+\[ G(k) = \frac{1}{\epsilon_0 k ^2}
+\]
+</p>
+
+<p>
+Preidemo v sferične koordinate
+</p>
+
+<p>
+\[ G \left( \vec{r} - \vec{r} \, '	 \right) = \frac{1}{\left( 2\pi \right) ^3} \int\limits_0^{\infty} \int\limits_0^{\pi} \int\limits_{-1}^{1} \, \mathrm{d} \phi \, \mathrm{d} \left( \cos \theta \right) k ^2 \, \mathrm{d} k  e^{\mathrm{i} k \left| \vec{r} - \vec{r} \, ' \right| \cos \theta} \frac{1}{\epsilon_0 k ^2}
+\]
+</p>
+
+<p>
+Najlažjo integracijo je narediti po \( \phi \), kjer je rezultat samo \( 2\pi \). Uvedemo novo spremenljivko
+</p>
+
+\begin{align*}
+  k \left| \vec{r} - \vec{r} \, ' \right| \cos \theta &= x \\
+k \left| \vec{r} - \vec{r} \, ' \right| \, \mathrm{d} \left( \cos \theta \right) &= \mathrm{d} x
+\end{align*}
+
+<p>
+Integral tako postane lažji za izračun
+</p>
+
+<p>
+\[ G \left( \vec{r} - \vec{r} \, ' \right) =  \frac{1}{\left( 2 \pi \right) ^2} \int\limits_0^{\infty} \int\limits_{vstavi}^{meje} \frac{\mathrm{d} x \mathrm{d} k e^{\mathrm{i} x}}{k \left| \vec{r} - \vec{r} \, ' \right|} = \frac{1}{4 \pi \epsilon_0 \left| \vec{r} - \vec{r} \, ' \right|}
+\]
+</p>
+
+<p>
+Splošna rešitev Poissonove enačbe
+</p>
+
+<p>
+\[ \phi \left( \vec{r} \right) = \int\limits_{}^{} \frac{\rho \left( \vec{r} \right)}{4 \pi \epsilon_0 \left| \vec{r} - \vec{r} \, ' \right|} \, \mathrm{d} ^3 \vec{r}\, '
+\]
+</p>
+
+<p>
+Za električno polje samo preko relacije za električno polje \( \vec{E} \) in potencial \( \phi \)
+</p>
+
+<p>
+\[ E = - \nabla \phi = - \nabla \left( \int\limits_{}^{} \frac{\rho \left( \vec{r} \, ' \right)}{4 \pi \epsilon_0 \left| \vec{r} - \vec{r} \, ' \right|} \, \mathrm{d} ^3 \vec{r} \, '  \right) = \int\limits_{}^{} \frac{\rho \left( \vec{r} \, ' \right)}{4 \pi \epsilon_0} \frac{\left( \vec{r} - \vec{r} \, ' \right)}{\left| \vec{r} - \vec{r} \, ' \right|} \, \mathrm{d} ^3 \vec{r} \, '
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org151fb23" class="outline-3">
+<h3 id="org151fb23"><span class="section-number-3">1.2.</span> Earnshawjev teorem</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="theorem" id="org1ffea94">
+<p>
+Nabor točkastih nabojev ne more nikoli biti v stabilnem ravnovesju samo kot posledica elektrostatskih interakcij.
+</p>
+
+</div>
+
+<p>
+Elektrostatski potencial v praznem prostoru nima minimumov ali maksimumov, ampak kvečjemu sedla.
+</p>
+
+<p>
+Predpostavimo, da vseeno imamo v neki točki minimum. Za delec v minimumu so vsi vektorji sil usmerjeni proti delci. To pa pomeni, da je divergenca sile neničelna
+</p>
+
+<p>
+\[ \nabla \cdot \vec{F} \ne 0
+\]
+</p>
+
+<p>
+Zapisana relacija definira tudi električno polje,
+</p>
+
+<p>
+\[ \nabla \cdot F = \nabla \left( e \vec{E} \right) = - e \nabla ^2 \phi
+\]
+</p>
+
+<p>
+kjer smo upoštevali relacijo med električnim poljem \( E \) in potencialom. Za prazni prostor je po Laplaceovi enačbi to vedno enako \( 0 \). Prišli smo do protislovja, da so torej točke kvečjemu sedlo.
+</p>
+
+<p>
+Iz tega sledi vprašanje, zakaj je snov stabilna? Atomi so medseboj povezani s pomočjo elektrostatske sile, vendar jih ne razžene narazen. To nakazujejo na obstoj drugil sil.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb8ecd84" class="outline-3">
+<h3 id="orgb8ecd84"><span class="section-number-3">1.3.</span> Thomsonov problem</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Elektrostatska energija lahko ima minimume, če naboje ogradiš, npr. na površini.
+</p>
+
+<p>
+Obravnavajmo diskretne nasprotne naboje na okrogli površini:
+</p>
+
+<ul class="org-ul">
+<li>1 naboj bo prost</li>
+<li>2 naboja se bosta postavila na nasprotna roba površine, da sta čim dlje oddaljena drug od drugega</li>
+<li>3 naboji bodo tvorili enostranični trikotnik na robovih površine</li>
+<li>4 naboji tetraeder</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb6129b0" class="outline-3">
+<h3 id="orgb6129b0"><span class="section-number-3">1.4.</span> Elektrostatska energija</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org9979be1" class="outline-4">
+<h4 id="org9979be1"><span class="section-number-4">1.4.1.</span> Elektrostatska energija naboja v zunanjem polju</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+Imamo zunanje električno polje \( \vec{E} \) in zanima nas, koliko elektrostatske energije ima naboj, da je v \( \vec{E} \)? Ne zanima nas, koliko energije smo potrebovali za izdelavo zunanjega električnega polja. Na naboj deluje sila \( \vec{F} = e \vec{E} \). Izračunamo elektrostatsko energijo kot delo, ki potrebno, da naboj postavimo na dano mesto.
+</p>
+
+<p>
+Zapišemo delo po definiciji
+</p>
+
+<p>
+\[ \mathrm{d} A = - \vec{F} \cdot  \mathrm{d} \vec{r} = - e \vec{E} \cdot \mathrm{d} \vec{r} = + e \nabla \phi \cdot \mathrm{d} \vec{r}
+\]
+</p>
+
+<p>
+Uporabimo energijski zakon
+</p>
+
+<p>
+\[ A = \int\limits_{(1)}^{(2)} \, \mathrm{d} A = W(2) - W(1) = \int\limits_{(1)}^{(2)} e \nabla \phi \cdot \mathrm{d} \vec{r}  = e \phi(2) - e \phi(1)
+\]
+</p>
+
+<p>
+Elektrostatsko energijo preproznamo kot
+</p>
+
+<p>
+\[ W = e \phi
+\]
+</p>
+
+<p>
+V primeru da imamo zvezno porazdeljen naboj, bomo gostoto električnega naboja integrirali po prostoru
+</p>
+
+\begin{equation}
+\label{eq:1}
+ W = \int\limits_V^{} \rho \left( \vec{r}\, ' \right) \phi \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r} \, '
+\end{equation}
+
+<p>
+To je energija naboje \( \rho \left( \vec{r} \right) \), v zunanjem električnem polju (potencialu, ki pa ga v principu ustvarjajo drugi naboji, ki so daleč stran).
+</p>
+</div>
+</div>
+<div id="outline-container-org2412692" class="outline-4">
+<h4 id="org2412692"><span class="section-number-4">1.4.2.</span> Celotna elektrostatska energija</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+Zanima nas celotna energija polja, ki ga ustvarijo izbrani naboji. Imamo poljuben volumen, ki ima gostoto električnega naboja \( \rho \left( \vec{r} \right) \). Dana gostota ustvari potencial \( \phi \left( \vec{r} \right) \).
+</p>
+
+<p>
+Predstavljajmo si, da polje ni samo bilo, ampak smo ga kot glasnost na zvočnikih povečali iz tišine na maksimum. To povečanje potenciala označimo s parametrom \( \alpha \in [0, 1] \). Za poljuben \( \alpha \) zapišemo Poissonovo enačbo, kjer upoštevamo njeno lastnost linearnosti:
+</p>
+
+<p>
+\[ \nabla ^2 \left( \alpha \phi \right) = -\frac{\alpha  \rho \left( \vec{r} \right)}{\epsilon_0}
+\]
+</p>
+
+<p>
+Sistemu dodamo \( \mathrm{d} \rho = \rho \mathrm{d} \alpha \) naboja. Zanima nas energija, ki je bila potrebna, da smo dodali naboj \( \mathrm{d} \rho \). Naša dejanska situacije je to, da dodajamo naboj v zunanje električno polje in zato uporabimo enačbo \ref{eq:1}
+</p>
+
+<p>
+\[ \mathrm{d} W = \int\limits_{}^{} \mathrm{d} \rho \cdot a \phi \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r} = \int\limits_{}^{} \mathrm{d} \alpha \rho \left( \vec{r} \right) \alpha \phi \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+Po izračunu integrala bo celotna energija
+</p>
+
+\begin{equation}
+\label{eq:2}
+ W = \int\limits_0^1 \alpha \, \mathrm{d} \alpha \int\limits_{}^{} \rho \left( \vec{r} \right) \phi \left( \vec{r} \right) \, \mathrm{d} \vec{r}
+\end{equation}
+
+<p>
+Enačba \ref{eq:2} je elektrostatska energija polja. Gostota električnega naboja \( \rho \left( \vec{r} \right) \) v enačbi \ref{eq:2} ustvarja potencial \( \phi \left( \vec{r} \right) \) znotraj istega integrala. V primerjavi z enačbo \ref{eq:1} je to drugače, saj je gostota električnega naboja \( \rho \left( \vec{r} \right) \) znotraj potenciala \( \phi \left( \vec{r} \right) \), ki ga ustvarjajo drugi naboji.
+</p>
+
+<p>
+Zapis energije polja lahko prevedemo tudi n
+</p>
+
+<p>
+\[ W = \frac{1}{2} \frac{1}{4 \pi \epsilon_0} \int\limits_{}^{} \int\limits_{}^{} \frac{\rho \left( \vec{r} \right) \rho \left( \vec{r} \, ' \right)}{\left| \vec{r} - \vec{r} \, ' \right|} \, \mathrm{d} ^3 \vec{r} \, \mathrm{d} ^3 \vec{r} \, '
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org3c08fe7" class="outline-4">
+<h4 id="org3c08fe7"><span class="section-number-4">1.4.3.</span> Gostota elektrostatske energije polja</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+Elektrostatska energijo zapišemo z električnim poljem \( \vec{E} \)
+</p>
+
+<p>
+\[ W = \frac{1}{2} \int\limits_{}^{} \rho \left( \vec{r} \right) \phi \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r} = \frac{1}{2} \int\limits_{}^{} \epsilon_0 \left( \nabla \cdot \vec{E} \right) \phi \left( \vec{r} \right) \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+kjer smo upoštevali \( \rho \left( \dot{r} \right) = \epsilon_0 \nabla \cdot \vec{E} \). Hkrati upoštevamo še relacijo \( \vec{E} = - \nabla \cdot \phi \).
+</p>
+
+<p>
+Uporabimo identiteto
+</p>
+
+<p>
+\[ \nabla \left( f \cdot \vec{g} \right) = \nabla f \cdot \vec{g} + f \nabla \cdot \vec{g}
+\]
+</p>
+
+<p>
+in energija postane
+</p>
+
+<p>
+\[ W = \frac{\epsilon_0}{2} \left[ \int\limits_{}^{} \nabla \cdot \left( \phi \vec{E} \right) \, \mathrm{d} ^3 \vec{r} - \int\limits_{}^{} \nabla \phi \cdot \vec{E} \, \mathrm{d} ^3 \vec{r} \right]
+\]
+</p>
+
+<p>
+Volumnski integral lahko pretvorimo v ploskovni integral
+</p>
+
+<p>
+\[ W = \frac{\epsilon_0}{2} \int\limits_{\partial V}^{} \left( \phi \vec{E} \right) \, \mathrm{d} \vec{S} + \frac{\epsilon_0}{2} \int\limits_V^{} \vec{E} \cdot \vec{E} \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+Upoštevali smo, da je \( - \nabla \phi = \vec{E} \)
+</p>
+
+<p>
+Na potencial in električno polje lahko gledamo kot veliko točkastih nabojev. Potencial posameznega naboja je obratno sorazmeren z razdaljo \( \frac{1}{r} \), medtem ko električno polje pa obratno sorazmeren s kvadratom razdalje \( \frac{1}{r ^2} \). Istočasno pa tudi površina raste s kvadratom razdalje \( r ^2 \), kar pomeni, da celoten integral pada kot \( \frac{1}{r} \). V limiti, ko gre \( r \to \infty \), gre prvi integral do \( 0 \).
+</p>
+
+<p>
+Energijo lahko v približku zapišemo kot
+</p>
+
+<p>
+\[ W = \frac{\epsilon_0}{2} \int\limits_{}^{} E  ^2 \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8e6fd5" class="outline-4">
+<h4 id="orgd8e6fd5"><span class="section-number-4">1.4.4.</span> Sila kot funkcional električnega polja</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<p>
+Zanima nas sila na \( \rho \left( \vec{r} \right) \), ki se nahaja v zunanjem električnem polju. Zunanje električno polje je del celotnega električnega polja \( \vec{E} \left( \vec{r} \right) \). Celotno polje \( \vec{E} \) je sestavljeno iz lastnega polja, ki ga ustvari \( \rho \left( \vec{r} \right) \), in zunanjega električnega polja.
+</p>
+
+<p>
+Velja
+</p>
+
+<p>
+\[ \vec{F} = \int\limits_V^{} \rho \left( \vec{r} \right) \vec{E}_Z \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+Volumen je tam, kjer je \( \rho \left( \vec{r} \right) \ne 0 \).
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 18:37</p>
+</div>
+</body>
+</html>
