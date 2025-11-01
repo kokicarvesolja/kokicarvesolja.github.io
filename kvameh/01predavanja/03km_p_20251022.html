@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 18:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3. predavanje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">3. predavanje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0a1c649">1. Formalizem kvantne mehanike</a></li>
+<li><a href="#org7441518">2. Harmonski oscilator</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0a1c649" class="outline-2">
+<h2 id="org0a1c649"><span class="section-number-2">1.</span> Formalizem kvantne mehanike</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Ponovitev od zadnjič: Lastne funkcije gibalne količine so ravni valovi, vendar ravni valovi niso normirani, kar posledično pomeni, da ni možno integrirati. Dokazali smo, da zaradi določenih lastnosti, če je funkcija v Fourierovem prostoru integrabilna, potem je tudi valovna funkcija gibalne količine (čeprav ni v \( L ^2 \)).
+</p>
+
+<p>
+Pri Bornovi interpretaciji smo definirali verjetnost za detekcijo delca kot
+</p>
+
+<p>
+\[ \frac{\mathrm{d} P}{\mathrm{d} x} = \left| \psi(x) \right| ^2
+\]
+</p>
+
+<p>
+V \( p \)-reprezentaciji pa lahko analogno zapišemo
+</p>
+
+<p>
+\[ \frac{\mathrm{d} P}{\mathrm{d} p} = \left| \tilde{\psi}(p) \right| ^2
+\]
+</p>
+
+<p>
+Če obravnavamo podoben primer kot na vajah, kjer imamo potencial na končnem intervalu, energije razdelimo na zvezni del in diskretni del spektra
+</p>
+
+<p>
+\[ E = \begin{cases}
+       E = \frac{\left( \pm \right) ^2}{2m}; & E > 0  \\
+       E_n; & E < 0
+       \end{cases}
+\]
+</p>
+
+<p>
+Valovni vektor zapišemo potem kot linearno kombinacijo
+</p>
+
+<p>
+\[ \psi(x) = \sum\limits_n^{} c_n \left| \psi_n \right\rangle + \int\limits_{}^{} \tilde{\psi}_p \left| p \right\rangle \, \mathrm{d} p
+\]
+</p>
+
+<p>
+kjer za posamezno komponento velja podobna zveza
+</p>
+
+\begin{align*}
+  \left\langle n \middle| \psi \right\rangle &= c_n \\
+\left\langle p \middle| \psi \right\rangle &= \left| \tilde{\psi} \right|
+\end{align*}
+
+<p>
+<b>pomanjkljivo</b>
+</p>
+
+<p>
+Nadaljujemo s <b>kompletnim sistemom komutirajočih operatorjev</b> (točka št. 15). Imejmo dva operatorja \( A, B \), ki komutirata
+</p>
+
+<p>
+\[ \left[ A, B \right] = 0
+\]
+</p>
+
+<p>
+Če sistem ni degeneriran, kar zapišemo z
+</p>
+
+<p>
+\[ A \left| a \right\rangle = a \left| a \right\rangle
+\]
+</p>
+
+<p>
+kjer je \( a \) lastna vrednost. Potem bo lastno stanje
+</p>
+
+<p>
+\[ BA \left| a \right\rangle = A B \left| a \right\rangle = a B \left| a \right\rangle
+\]
+</p>
+
+<p>
+sorazmerno z lastnim vektorjem \( \left| a \right\rangle \).
+</p>
+
+<p>
+V primeru, da je sistem degeneriran, kjer sta lastna vektorja \( \left| a_1 \right\rangle , \left| a_2 \right\rangle\), potem bo lastno stanje z operatorjem \( B \) linearna kombinacija degeneriranih vektorjev
+</p>
+
+<p>
+\[ \left| b_{1, 2} \right\rangle = c_1 \left| a_1 \right\rangle + c_2 \left| a_2 \right\rangle
+\]
+</p>
+
+<p>
+Enako velja tudi, če imamo več kot samo dva operatorjev, ki med seboj komutirajo
+</p>
+
+<p>
+\[ [A, B] = [A, C] = [B, C] = 0
+\]
+</p>
+
+<div class="my_example" id="orgea013e1">
+<p>
+Vzemimo kot primer operatorje \( H, \vec{L} \) in \( \vec{S} \). Dani operatorji zaradi različnih prostorov lahko med seboj komutirajo. Lastna stanja Hamiltoniana so \( E_n \), lastna stanja vrtilne količine so \( L, L_n \) ter lastna stanja spina so \( S, S_n \).
+</p>
+
+<p>
+Vektor valovne funkcije zapišemo kot
+</p>
+
+<p>
+\[ \left| \psi \right\rangle = \left| n, L, L_n, S, S_n \right\rangle
+\]
+</p>
+
+<p>
+Skalarni produkt z \( \vec{r} \) pa je kot posledica zgornje točke
+</p>
+
+<p>
+\[ \left\langle \vec{r} \middle| \psi \right\rangle = \psi_n(\vec{r}) \cdot \psi_{lm} \left( \vec{r} \right) \begin{pmatrix} \alpha \\ \beta \end{pmatrix}
+\]
+</p>
+
+</div>
+
+<p>
+<b>Aksiomi (postulati) kvantne mehanike</b> (točka 16) Obravnavamo Kobenhavensko interpretacijo.
+</p>
+
+<ol class="org-ol">
+<li><p>
+Klasični in kvantni sistem:
+</p>
+<div class="axiom" id="orgcf60fdc">
+<p>
+Kvantni sistem je določen s kvantnim stanjem \( \left| \psi \right\rangle \) iz Hilbertovega prostora.
+</p>
+
+</div>
+
+<p>
+Svet je razdeljen na dva dela: kvantnega in klasičnega. Na nas je, da določimo (pri eksperimentih), da določimo mejo med tema dvema deloma.
+</p></li>
+
+<li><p>
+Aksiom #2
+</p>
+
+<div class="axiom" id="orgca0e657">
+<p>
+Vsaki merljivi količini ustreza hermitski operator.
+</p>
+
+</div>
+
+<p>
+Kot primer navedemo \( A = A ^{\dagger} \).
+</p></li>
+
+<li><p>
+Aksiom #3
+</p>
+
+<div class="axiom" id="org97873e3">
+<p>
+Pričakovana vrednost
+</p>
+
+<p>
+\[ \left\langle A \right\rangle = \left\langle \psi \middle| A \middle| \psi \right\rangle
+        \]
+</p>
+
+</div></li>
+
+<li><p>
+Aksiom #4
+</p>
+
+<div class="axiom" id="org7782f94">
+<p>
+Časovni razvoj \( \left| \psi(t) \right\rangle \) je podan z unitarnim razvojem
+</p>
+
+<p>
+\[ \left| \psi(t) \right\rangle =  U(t) \left| \psi(0) \right\rangle,
+        \]
+</p>
+
+<p>
+pri čemer je generator Hamiltonov operator
+</p>
+
+<p>
+\[ U = \exp \left\{ -\frac{\mathrm{i} H t}{\hbar} \right\} = 1 - \frac{\mathrm{i} H t}{\hbar} + \ldots
+        \]
+</p>
+
+</div>
+
+<p>
+Časovni razvoj valovne funkcije je
+</p>
+
+<p>
+\[ \left| \psi(t + \mathrm{d} t) \right\rangle = \left| \psi(t) \right\rangle - \frac{\mathrm{i} H \mathrm{d}t}{\hbar} \left| \psi(t) \right\rangle + \ldots
+   \]
+</p>
+
+<p>
+Z deljenjem z \( \mathrm{d} t \) in premikom prvega koeficienta na drugo stran, dobimo odvod
+</p>
+
+<p>
+\[ \frac{\mathrm{d} \left| \psi(t) \right\rangle }{\mathrm{d} t} = - \frac{\mathrm{i} H t}{\hbar} \left| \psi \right\rangle
+   \]
+</p>
+
+<p>
+Dobimo Schrödingerjevo enačbo
+</p>
+
+<p>
+\[ \mathrm{i} \hbar \frac{\mathrm{d} }{\mathrm{d} t} \left| \psi \right\rangle = H \left| \psi \right\rangle
+   \]
+</p>
+
+<p>
+kar pomeni, da je Schrödingerjeva enačba samo časovni razvoj tega vektorja.
+</p></li>
+
+<li><p>
+Aksiom #5: kvantna meritev
+</p>
+
+<p>
+Stanje valovnega vektorja opišemo z
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \left| \psi \right\rangle = \sum\limits_n^{} c_n \left| a_n \right\rangle
+\end{equation}
+
+<p>
+kjer so \( \left| a_n \right\rangle \) lastni vektorji operatorja \( A \)
+</p>
+
+<p>
+\[  A \left| a_n \right\rangle = a_n \left| a_n \right\rangle
+   \]
+</p>
+
+<div class="axiom" id="orge30795e">
+<p>
+Verjetnost \( P \) za \( n \)-to lastno vrednost je enaka \( \left| c_n \right| ^2 \), kjer je \( c_n \) verjetnostna amplituda.
+</p>
+
+<p>
+Po opravljeni meritvi je sistem v stanju \( \left| a_m \right\rangle \), kjer velja \( c_{n \ne m}  = 0 \) in \( c_m = 1 \).  Temu dogodku se reče kolaps kvantnega stanja.
+</p>
+
+</div>
+
+<p>
+Beseda meritev je zavajujoča. Pred meritvijo je delec v vseh možnih stanjih hkrati kakor nakazuje enačba \ref{eq:1}. Po meritvi pa je delec v točno specifičnem stanju \( a_m \). To je različno od klasične meritve, kjer ima avto pred in po meritvi določeno stanje (hitrost).
+</p></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7441518" class="outline-2">
+<h2 id="org7441518"><span class="section-number-2">2.</span> Harmonski oscilator</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Naredili bomo povezavo s klasično mehaniko. Če so komponente časovno neodvisne, potem
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + \frac{1}{2} k x ^2 = E = \mathrm{konst}
+\]
+</p>
+
+<p>
+Enačba gibanje je
+</p>
+
+<p>
+\[ \ddot{x} + \omega ^2 x = 0, \ \omega ^2 = \frac{k}{m}
+\]
+</p>
+
+<p>
+in rešitev je
+</p>
+
+<p>
+\[ x(t) = A \cos \omega t + B \sin \omega t
+\]
+</p>
+
+<p>
+Podobno naredimo tudi v kvantni mehaniki. Začnemo s Hamiltonianom, kjer upoštevamo definicije operatorja \( p \):
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + \frac{1}{2} k x ^2 = - \frac{\hbar ^2}{2m} \frac{\mathrm{d} ^2 }{\mathrm{d} x ^2} + \frac{1}{2} k x ^2
+\]
+</p>
+
+<p>
+Harmonski oscilator želimo zapisati v nivojih energije \( \hbar \omega \), zato uvedemo konstanto \( \xi ^2 = \frac{\hbar}{\omega m}\). Hamiltonian tako zapišemo kot
+</p>
+
+<p>
+\[ H = \hbar \omega \left( \frac{1}{2} \frac{x ^2}{\xi ^2} - \frac{1}{2} \xi ^2 \frac{\mathrm{d} ^2 }{\mathrm{d} x ^2} \right)
+\]
+</p>
+
+<p>
+Upoštevamo definicijo razlike kvadratov
+</p>
+
+<p>
+\[ a ^2 - b ^2 = (a - b) (a + b) = (a+ b) (a - b) \implies 2 \left( a ^2 - b ^2 \right) = (a + b) (a - b) + (a + b) (a - b).
+\]
+</p>
+
+<p>
+Hamiltonian postane
+</p>
+
+<p>
+\[ H = \frac{\hbar \omega}{2} \cdot \frac{1}{2} \left[ \left( \frac{x}{\xi} + \xi \frac{\mathrm{d} }{\mathrm{d} x} \right) \left( \frac{x}{\xi} - \xi \frac{\mathrm{d} }{\mathrm{d} x} \right) + \left( \frac{x}{\xi} - \xi \frac{\mathrm{d} }{\mathrm{d} x} \right) \left( \frac{x}{\xi} + \xi \frac{\mathrm{d} }{\mathrm{d} x} \right) \right]
+\]
+</p>
+
+<p>
+Definiramo operatorja
+</p>
+
+\begin{align*}
+  a &= \frac{1}{\sqrt{2}} \left( \frac{x}{\xi} + \xi \frac{\mathrm{d} }{\mathrm{d} x} \right) \\
+a^{\dagger} &= \frac{1}{\sqrt{2}} \left( \frac{x}{\xi} - \xi \frac{\mathrm{d} }{\mathrm{d} x} \right)
+\end{align*}
+
+<p>
+Operatorju \( a \) pravimo anihilacijski, \( a^{\dagger} \) pa kreacijski. S faktorjema torej zapišemo Hamiltonian
+</p>
+
+\begin{equation}
+\label{eq:2}
+ H  = \frac{\omega \hbar}{2} \left( a a^{\dagger} + a ^{\dagger} a \right)
+\end{equation}
+
+<p>
+Komutacija operatorjev \( a \) in \( a^{\dagger} \) nam poda
+</p>
+
+<p>
+\[ \left[ a, a^{\dagger} \right] = a a^{\dagger}- a^{\dagger} a = \frac{\mathrm{d} }{\mathrm{d} x} x - x \frac{\mathrm{d} }{\mathrm{d} x}
+\]
+</p>
+
+<p>
+Če s komutatorjem vplivamo na valovno funkcijo \( \psi \), je rezultat
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} x} x \psi - x \frac{\mathrm{d} }{\mathrm{d} x} \psi = \psi + x \frac{\mathrm{d} \psi}{\mathrm{d} x}  - x \frac{\mathrm{d} \psi}{\mathrm{d} x} = \psi.
+\]
+</p>
+
+<p>
+Z drugimi besedami
+</p>
+
+<p>
+\[ \left[ a, a^{\dagger} \right] = 1
+\]
+</p>
+
+<p>
+iz česar sledi po definicije komutatorja
+</p>
+
+\begin{equation}
+\label{eq:3}
+ a a^{\dagger} - a^{\dagger} a = 1 \implies a a^{\dagger} = 1 + a^{\dagger} a
+\end{equation}
+
+<p>
+Harmonski oscilator \ref{eq:2} kvantno torej zapišemo z identiteto \ref{eq:3}
+</p>
+
+<p>
+\[ H = \hbar \omega \left( a^{\dagger} a + \frac{1}{2} \right)
+\]
+</p>
+
+<p>
+Uvedemo operator štetja (ang. <i>number operator</i>)
+</p>
+
+<p>
+\[ \hat{n} = a^{\dagger} a,
+\]
+</p>
+
+<p>
+ki je hermitski.
+</p>
+
+<p>
+Posodobimo Hamiltonian
+</p>
+
+\begin{equation}
+\label{eq:4}
+ H = \hbar \omega \left( \hat{n} + \frac{1}{2} \right)
+\end{equation}
+
+<p>
+Lastna vrednost operatorja štetja je enaka
+</p>
+
+<p>
+\[ \hat{n} \left| \phi_{\lambda} \right\rangle = \lambda \left| \phi_{\lambda} \right\rangle
+\]
+</p>
+
+<p>
+(Točka 1) Lastna vrednost \( \lambda \ge 0 \), saj če množimo zgornjo enačbo s \( \left\langle \phi_{\lambda} \right| \), dobimo
+</p>
+
+\begin{align*}
+  \left\langle \phi_{\lambda} \middle| \hat{n} \middle| \phi_{\lambda} \right\rangle &= \left\langle \phi_{\lambda} \middle| a^{\dagger} a \middle| \phi_{\lambda} \right\rangle \\
+&= \left\langle a \phi_{\lambda} \middle| a \phi_{\lambda} \right\rangle && \ge 0 \\
+ &= \lambda \left\langle \phi_{\lambda} \middle| \phi_{\lambda} \right\rangle \implies \lambda \ge 0
+\end{align*}
+
+<p>
+saj \( \left\langle \phi_{\lambda} \middle| \phi_{\lambda} \right\rangle \ge 0\). Grafično lahko to vidimo tako, da so vsa stanja parabole harminskega oscilatorja večja od \( 0 \).
+</p>
+
+<p>
+(Točka 2) Ali je lahko lastna vrednost \( \lambda = 0 \)? Potem velja
+</p>
+
+<p>
+\[ a ^{\dagger} a \left| \phi_0 \right\rangle  = a \left| \phi_0 \right\rangle = \left( \frac{x}{\xi} + \xi \frac{\mathrm{d} }{\mathrm{d} x}  \right) \phi_0 (x) = 0
+\]
+</p>
+
+<p>
+Iz česar sledi, da je lastna vrednost enaka \( 0 \), če je
+</p>
+
+<p>
+\[ \phi_0 (x) = \frac{1}{\sqrt{\sqrt{\pi} \xi} } \exp \left\{ - \frac{1}{2} \frac{x ^2}{\xi ^2} \right\}
+\]
+</p>
+
+<p>
+(Točka 3) Komutacija operatorja štetja in kreacijskega operatorja nam poda enakost
+</p>
+
+<p>
+\[ \left[ \hat{n}, a^{\dagger} \right] = \left[ a ^{\dagger} a, a ^{\dagger} \right] = a^{\dagger} \underbrace{\left[ a, a^{\dagger} \right]}_{=1} + \underbrace{\left[ a^{\dagger} \right]}_{=0} a  = a ^{\dagger} = \hat{n} a^{\dagger} - a^{\dagger} n =
+\]
+</p>
+
+<p>
+\( \phi_{\lambda} \) je rešitev z lastno vrednostjo \( \lambda \)
+</p>
+
+<p>
+\[ \hat{n} \left| \phi_{\lambda} \right\rangle = \lambda \left| \phi_{\lambda} \right\rangle
+\]
+</p>
+
+<p>
+Prejle izračunani operator pa nampoda
+</p>
+
+<p>
+\[ \hat{n} a^{\dagger} \left| \phi_{\lambda} \right\rangle = \left( a^{\dagger} \hat{n} + a^{\dagger} \right) \left| \phi_{\lambda} \right\rangle = \left( \lambda + 1 \right) \left| \phi_{\lambda} \right\rangle = \left( \lambda + 1 \right) c_{\lambda} \left| \phi_{\lambda + 1} \right\rangle
+\]
+</p>
+
+<p>
+Zato se \( a^{\dagger} \) reče kreacijski, saj nam ustvari nov \( \lambda \).
+</p>
+
+
+<p>
+\[ \left| c_{\lambda} \right| \left\langle \phi_{\lambda + 1} \middle| \phi_{\lambda + 1} \right\rangle = \left\langle a ^{\dagger} \phi_{\lambda} \middle| a^{\dagger} \phi_{\lambda} \right\rangle = \left\langle \phi_{\lambda} \middle| a a ^{\dagger} \middle| \phi_{\lambda} \right\rangle = \left\langle \phi_{\lambda} \middle| a^{\dagger} a \middle| \phi_{\lambda} \right\rangle + \left\langle \phi_{\lambda} \middle| \phi_{\lambda} \right\rangle = \left( \lambda + 1 \right) \left\langle \phi_{\lambda} \middle| \phi_{\lambda} \right\rangle
+\]
+</p>
+
+<p>
+kjer smo upoštevali \ref{eq:3}.
+</p>
+
+<p>
+Iz tega sledi
+</p>
+
+<p>
+\[ \left| \phi_{\lambda + 1} \right\rangle  = \frac{a^{\dagger}}{\sqrt{\lambda + 1}} \left| \phi_{\lambda} \right\rangle, \ \lambda = 0,1, 2,\ldots
+\]
+</p>
+
+<p>
+\( n \)-to stanje bomo tako dobili s pomočjo rekurzivne zveze kot
+</p>
+
+<p>
+\[ \left| n \right\rangle  = \left| \phi_n \right\rangle = \frac{a^{\dagger}}{\sqrt{n}} \left| \phi_{n - 1} \right\rangle = \frac{a ^{\dagger} a^{\dagger}}{\sqrt{n (n - 1)}} \left| \phi_{n - 2} \right\rangle = \ldots = \frac{\left( a^{\dagger} \right) ^n}{\sqrt{n!}} \left| \phi_0 \right\rangle  = \frac{\left( a^{\dagger} \right) ^n}{\sqrt{n!}} \left| 0 \right\rangle
+\]
+</p>
+
+<p>
+kjer velja
+</p>
+
+<p>
+\[ \left\langle \phi_n \middle| \phi_n \right\rangle  = \left\langle \phi_0 \middle| \phi_0 \right\rangle = 1
+\]
+</p>
+
+<p>
+(Točka 4) Komutacija operatorja štetja in anihilacijskega operatorja je sledeča
+</p>
+
+<p>
+\[ \left[ \hat{n}, a \right] = \left[ a^{\dagger} a, a \right] = a ^{\dagger} \underbrace{\left[ a, a \right]}_{=0} + \underbrace{\left[ a^{\dagger}, a \right]}_{= -1} = - a
+\]
+</p>
+
+<p>
+Torej, če je \( n \) rešitev lastne vrednosti \( n \), potem
+</p>
+
+<p>
+\[ \hat{n} \left| n \right\rangle  = n \left| n \right\rangle
+\]
+</p>
+
+<p>
+Analogno kreacijskemu ugotovimo, zakaj se operatorju reče anihilacijski
+</p>
+
+<p>
+\[ \hat{n} a \left| n \right\rangle  = \left( a \hat{n} - a \right) \left| n \right\rangle = (n - 1) a \left| n \right\rangle = (n - 1) \tilde{c}_n \left| n - 1 \right\rangle
+\]
+</p>
+
+<p>
+Imamo tudi podobno zvezo kakor prej, saj iz
+</p>
+
+<p>
+\[ \left| \phi_n \right\rangle  = \frac{a}{\sqrt{n + 1}} \left| \phi_{n + 1} \right\rangle \implies \left| \phi_0 \right\rangle = \frac{a ^n}{\sqrt{(n + 1)!}} \left| \phi_n \right\rangle
+\]
+</p>
+
+
+<p>
+__
+</p>
+
+<p>
+Upoštevajoč \ref{eq:4} in Schrödingerjeve enačbe
+</p>
+
+<p>
+\[ H \left| n \right\rangle  = E_n \left| n \right\rangle
+\]
+</p>
+
+<p>
+dobimo lastna energijska stanja
+</p>
+
+<p>
+\[ E_n = \hbar \omega \left( n + \frac{1}{2} \right), \ n \in \mathbb{N}_0
+\]
+</p>
+
+<p>
+Ali obstajajo še kakšne druge lastne vrednosti? Dokaz s protislovje. Naj bo lastna vrednost enaka \( \lambda = 7.2 \). Tako lastno vrednost lahko zapišemo kot vsoto celega dela in decimalne številke \( \lambda = n + \nu \), kjer je \( \nu \in (0, 1) \). Predpostavili smo, da je lastna vrednost, torej je rešitev
+</p>
+
+<p>
+\[ \hat{n} \left| \phi_{\lambda} \right\rangle  = \lambda \left| \phi_{\lambda} \right\rangle
+\]
+</p>
+
+<p>
+Z \( n \)-kratno aplikacijo anihilacijskega operatorja po prejšnji izpeljavi
+</p>
+
+\begin{align*}
+  \hat{n} a\left|  \phi_{\lambda} \right\rangle &= ( \lambda - 1 ) a \left| \phi_{ \lambda} \right\rangle \\
+&\vdots \\
+\hat{n} a ^n \left| \phi_{\lambda} \right\rangle &= \left( \lambda - n \right) a ^n \left| \phi_{\lambda} \right\rangle
+\end{align*}
+
+<p>
+Če na dobljen rezultat, še enkrat apliciramo anihilacijski operator
+</p>
+
+<p>
+\[ \hat{n} a^{n + 1} \left| \phi_{\lambda} \right\rangle = \left( \lambda - n - 1 \right) a^{n + 1} \left| \phi_{\lambda} \right\rangle
+\]
+</p>
+
+<p>
+kar pa ni več možno, da je lastna vrednost negativna. Za \( \lambda = 7.2 \) je tako \( \lambda = -0.8 < 0 \), kar pa po točki 1 ni možno.
+</p>
+
+<p>
+Zanima nas ali je potem spekter degeneriran? Označimo \( \left| \phi_n \right\rangle = \left| n \right\rangle \). Ali obstaja potem še neko drugo stanje \( \left| \tilde{\phi}_n \right\rangle \), ki je prav tako rešitev tega stanja? Zato stanje potem tudi velja
+</p>
+
+<p>
+\[ \frac{a^n}{\sqrt{n+ 1}} \left| \tilde{\phi}_n \right\rangle = \left| \tilde{\phi}_0 \right\rangle \overset{?}{=} \left| \phi_0 \right\rangle
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 18:53</p>
+</div>
+</body>
+</html>

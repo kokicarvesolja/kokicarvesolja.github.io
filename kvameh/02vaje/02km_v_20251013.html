@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 19:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2. vaje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">2. vaje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc32928c">1. 2. sklop nalog</a>
+<ul>
+<li><a href="#org9803595">1.1. Vezana stanja v delta potencial, alternativno</a></li>
+<li><a href="#org5fbb406">1.2. Sipanje</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc32928c" class="outline-2">
+<h2 id="orgc32928c"><span class="section-number-2">1.</span> 2. sklop nalog</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org9803595" class="outline-3">
+<h3 id="org9803595"><span class="section-number-3">1.1.</span> Vezana stanja v delta potencial, alternativno</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Imamo potencialno jamo oblike
+</p>
+
+<p>
+\[ V \left( x \right) = - \lambda \delta(x)
+\]
+</p>
+
+<p>
+Schrödingergjeva enačba je oblike
+</p>
+
+\begin{equation}
+\label{eq:1}
+ H \Psi(x) = E \Psi(x)
+\end{equation}
+
+<p>
+kjer je
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + V(x) = - \frac{\hbar ^2}{2m} \frac{\mathrm{d} ^2 }{\mathrm{d}x ^2} - \lambda \delta(x)
+\]
+</p>
+
+<p>
+Potencial je sod, saj velja \( V(x) = V \left( - x \right) \).
+</p>
+
+<p>
+[glej graf na tablici]
+</p>
+
+<p>
+Označimo levo polravnino z \( x < 0 \) z \( i \), desno polravnino pa z \( ii \).
+</p>
+
+<p>
+Ločimo dva primera
+</p>
+
+<ul class="org-ul">
+<li><p>
+soda valovna funkcija, kjer velja \( \Psi(x) = \Psi(-x) \).
+</p>
+
+\begin{align*}
+  \Psi_{ii} &= A e^{- \kappa x} \\
+      \Psi_i &= A e^{\kappa x }
+\end{align*}</li>
+
+<li><p>
+liha valovna funkcija \( \Psi(x) = - \Psi(- x) \), kjer pa je
+</p>
+
+\begin{align*}
+  \Psi_{ii} (x) &= A e^{-\kappa x} \\
+      \Psi_i (x) &= - A e^{\kappa x}
+\end{align*}</li>
+</ul>
+
+<p>
+Želimo najti robni pogoj okoli \( x = 0 \). Integriramo Schrödingerjevo enačbo \ref{eq:1} v mejah \( [-\epsilon, \epsilon] \) in dobimo
+</p>
+
+<p>
+\[ - \left. \frac{\hbar ^2}{2m} \frac{\mathrm{d} }{\mathrm{d} x} \Psi(x) \right|_{0_-}^{0_+} - \Psi(0) \lambda = E \int\limits_{0_-}^{0^+} \Psi(x) \, \mathrm{d} x
+\]
+</p>
+
+<p>
+kjer sta \( 0_- \) levi in \( 0_+ \) desni odvod. Desna stran je ekvivalentna \( 0 \), kar bomo kasneje tudi preverili.
+</p>
+
+<p>
+Razliki levega in desnega odvoda sta za \( - \Psi(0) \lambda \cdot \frac{2m}{\hbar ^2} \) narazen - torej nista zvezna
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \Psi'(0_+) - \Psi' (0_-) = - \Psi(0) \lambda \cdot \frac{2m}{\hbar ^2} = - \Psi(0) 2 \kappa_0
+\end{equation}
+
+<p>
+Razliki levega in desnega odvoda sta podobni Heavisodovi funkciji \( H(x) \), katere odvod je \( \delta(x) \).
+</p>
+
+<p>
+\ref{eq:2} predstavlja prvi pogoj, ki ga mora naša enačba zadovoljiti, medtem ko drugi pogoj pa je to, da je \( \Psi \) zvezna, torej \( \Psi(0_-) = \Psi(0_+) \).
+</p>
+
+<p>
+Liha valovna funckija temu ne zadošča, torej obravnavamo samo sodo funkcijo. Uporabimo nastavek sode funkcije in ju odvajamo
+</p>
+
+\begin{align*}
+  \Psi'(0_+) &= - A \kappa e^{- \kappa 0_+} = - A \kappa \\
+\Psi'(0_-) &= A \kappa e^{\kappa 0_-} = A \kappa
+\end{align*}
+
+<p>
+Upoštevajoč pogoj \ref{eq:2} dobimo
+</p>
+
+\begin{align*}
+  A \kappa + A \kappa &= A 2 \kappa_0 \\
+2 \kappa &= 2 \kappa_0
+\end{align*}
+
+<p>
+iz česar dobimo
+</p>
+
+<p>
+\[ \Psi(x) = A e^{- \left| x \right| \kappa_0}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org5fbb406" class="outline-3">
+<h3 id="org5fbb406"><span class="section-number-3">1.2.</span> Sipanje</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Imamo delec z energijo \( E \), ki potuje skozi tri različna območja. Območji \( V_1 \) in \( V_2 \) sta večji in konstantni, medtem kot območje \( V_3 \) je postavljena med ostala potenciala in ima spremenljiv, poljuben potencial. Predpostavimo \( E > V_1, V_2 \) zaradi česar je delec prost v teh območjih.
+</p>
+
+<p>
+Nastavka valovnih funkcij za območji s konstantnimi potenciali sta
+</p>
+
+\begin{equation}
+\label{eq:4}
+ \Psi_1 (x) = A_1 e^{\mathrm{i} k x} + B_2 e^{- \mathrm{i} k_1 x} \quad \Psi_2 (x) = B_1 e^{\mathrm{i} k_2 x} + A_2 e^{ -\mathrm{i} k_2 x }
+\end{equation}
+
+
+<p>
+kjer sta
+</p>
+
+<p>
+\[ k_1 = \sqrt{ \frac{2m \left( E - V_1 \right)}{\hbar ^2}} \quad k_2 = \sqrt{\frac{2m \left( E - V_2 \right)}{\hbar ^2}}
+\]
+</p>
+
+<p>
+Dogovor je, da členi s koeficienti \( A_i \) potujejo proti potencialu \( V_3 \), medtek ko členi s koeficienti \( B_i \) potujejo stran od tega potenciala.
+</p>
+
+<p>
+Kot omenjeno na predavanjih, verjetnostni tok je definiran
+</p>
+
+\begin{equation}
+\label{eq:3}
+ j(x) = \frac{\hbar}{2m \mathrm{i}} \left[ \Psi^{\ast } (x) \Psi '(x) - \Psi(x) \Psi '^{\ast}  \right] = \frac{\hbar}{m} \mathrm{Im} \left\{ \Psi^{\ast} \Psi'(x) \right\}
+\end{equation}
+
+<p>
+Vstavimo nastavka \ref{eq:4} v verjetnostni tok \ref{eq:3}
+</p>
+
+<p>
+\[ j_1 \left( x \right) = \frac{\hbar}{m} \mathrm{Im} \left\{ \left| A_1 \right| ^2 k_1 \mathrm{i} - \left| B_2 \right| ^2 k_2 \mathrm{i} \underbrace{- A_1^{\ast} B_2 k_1 \mathrm{i} e^{-2i k_1 x}}_{z} \underbrace{+ A_1 B_1 ^{\ast} k_1 \mathrm{i} e^{2\mathrm{i} k_1 x}}_{z^{\ast}}  \right\}
+\]
+</p>
+
+<p>
+Velja iz Mat4, da je \( z + z^{\ast} \in \mathbb{R} \), kar pomeni, da zadnje dva člena ne prideta v upoštev za imaginarna del produkta.
+</p>
+
+<p>
+\[ j_1 (x) = \frac{\hbar k_1}{m} \left( \left| A_1 \right| ^2 + \left| B_1 \right| ^2\right), \quad j_2 (x) = \frac{\hbar k_2}{m} \left( \left| B_2 \right| ^2 - \left| A_2 \right| ^2\right)
+\]
+</p>
+
+<p>
+Definiramo hitrosti \( v_1 \) in \( v_2 \) s koeficienti iz verjetnostnih tokov
+</p>
+
+<p>
+\[ v_1 = \frac{\hbar k_1}{m},  \quad v_2 = \frac{\hbar k_2}{m}
+\]
+</p>
+
+<p>
+in predefiniramo nastavke \ref{eq:4}, saj valovni funkciji oscilirata in ne moreta biti normalizirani.
+</p>
+
+\begin{equation}
+\label{eq:5}
+\Psi_1 (x) = A_1 \frac{e^{\mathrm{i} k_1 x}}{\sqrt{v_1}} +  B_1 \frac{e^{- k_1 x}}{\sqrt{v_1}}, \quad
+\Psi_2 (x) = B_2 \frac{e^{\mathrm{i} k_2 x}}{\sqrt{v_2}} +  A_2 \frac{e^{- k_2 x}}{\sqrt{v_2}}
+\end{equation}
+
+<p>
+s pripadajočima verjetnostima tokovoma
+</p>
+
+<p>
+\[ j_1 (x) = \left| A_1 \right| ^2 - \left| B_1 \right| ^2, \quad j_2 (x) = \left| B_2 \right| ^2 - \left| A_2 \right| ^2
+\]
+</p>
+
+<p>
+Za področje s potencialom \( V_3 \) potrebujemo bolj splošen nastavek, ker ne poznamo lastnosti potenciala \( V_3 (x) \). Ker imamo opravka z diferencialno enačbo drugega reda, vemo, da bo splošna oblika rešitve linearna kombinacija dveh neodvisnih funkcij
+</p>
+
+<p>
+\[ \Psi_3 (x) = C \phi(x) + D \chi(x)
+\]
+</p>
+
+<p>
+Ker je valovna funkcijo zvezna in zvezno odvedljiva, moramo zadostiti pogojem
+</p>
+
+\begin{align*}
+  \Psi_1 (a) &= \Psi_3 (a) \\
+\Psi_1 '(a) &= \Psi_3 '(a) \\
+  \Psi_2 (b) &= \Psi_3 (b) \\
+\Psi_2 '(b) &= \Psi_3 '(b) \\
+\end{align*}
+
+<p>
+Imamo konstante \( A_1, B_1, A_2, B_2, C \) in \( D \). Če poznamo \( A_1 \) in \( A_2 \) bomo rešitev imeli enolično določeno.
+</p>
+
+<p>
+Preko dveh od štirih pogojev dobimo elimirano konstante \( C, D \), preko ostalih dveh pa izrazimo kosntanti \( B_1 \) in \( B_2 \) v odvisnosti od \( A_1 \) in \( A_2 \).
+</p>
+
+
+\begin{equation}
+\label{eq:6}
+ \begin{pmatrix} B_{1} \\ B_{2} \end{pmatrix} = \begin{pmatrix}
+                                                  r & t' \\
+                                                  t & r'
+                                                   \end{pmatrix} \begin{pmatrix} A_{1} \\ A_{2} \end{pmatrix}
+\end{equation}
+
+<p>
+kjer je \( 2 \times 2 \) matrika sipalna matrika \( S \) (ang. <i>scattering matrix</i>).
+</p>
+
+<p>
+Velja
+</p>
+
+\begin{align*}
+  \begin{pmatrix} r \\ t \end{pmatrix} &= \begin{pmatrix}
+                                         r & t' \\
+                                         t & r'
+                                          \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} \\
+\begin{pmatrix} t' \\ r' \end{pmatrix} &= \begin{pmatrix}
+                                          r & t' \\
+                                          t & r'
+                                           \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\end{align*}
+
+<p>
+Definiramo refleksivnost \( R = \left| r \right| ^2 \), ki nam pove koliko delcev se odbije od potenciala, medtem ko tranzitivnost \( T = \left| t \right| ^2 \) pove koliko delcev gre skozi potenciala.
+</p>
+
+<p>
+Velja identiteta
+</p>
+
+<p>
+\[ 1 = \left| r \right|  ^2 + \left| t \right| ^2
+\]
+</p>
+
+<p>
+in verjetnostna tokova potem zapišemo s parametroma \( r, t \)
+</p>
+
+<p>
+\[ j_1 (x) = 1 - \left| r \right|  ^2,  \quad j_2 (x) = \left| t \right| ^2
+\]
+</p>
+
+<p>
+Ker smo v nerelativistični kvantni mehaniki, je predpostavka, da se število delcev ohranja, kar nam poda dva dodatna toka
+</p>
+
+\begin{align*}
+  j_{in} &= \left| A_1 \right| ^2 + \left| A_2 \right| ^2 && \text{proti sipalcu} \\
+j_{out} &= \left| B_1 \right| ^2 + \left| B_2 \right| ^2 && \text{od sipalca}
+\end{align*}
+
+<p>
+\( A_2 \) in \( B_1 \) sta v verjetnostnih tokov drugačno predznačena, vendar nas zanima vsota.
+</p>
+
+<p>
+Vsoti \( j_{in} \) in \( j_{out} \) zapišemo v vektorskem zapisu
+</p>
+
+\begin{align*}
+  \left| A_1 \right| ^2 + \left| A_2 \right| ^2 &= \left(A_1 ^{\ast} \, A_2^{\ast} \right) = A^{\dagger} A \\
+  \left| B_1 \right| ^2 + \left| B_2 \right| ^2 &= \left(B_1 ^{\ast} \, B_2^{\ast} \right) = B^{\dagger} B \\
+\end{align*}
+
+<p>
+Zaradi ohranitve tokov velja \( j_{in} = j_{out} \) oziroma \( A^{\dagger}A = B^{\dagger}B \). Preko enačbe \ref{eq:6} dobimo enakost
+</p>
+
+\begin{align*}
+  A^{\dagger} A &= \left( SA \right)^{\dagger} SA \\
+&= A^{\dagger} S^{\dagger} S A
+\end{align*}
+
+<p>
+Iz tega dobimo, da velja \( S^{\dagger} S = I \) oziroma matematično, matrika \( S \) je unitarna za vsako matriko \( A \).
+</p>
+
+<p>
+Predpostavimo, da je Hamiltonian \( H \in \mathbb{R} \) in konjugirana Schrödingerjeva enačba
+</p>
+
+<p>
+\[ H \Psi(x) = E \Psi(x)
+\]
+</p>
+
+<p>
+bo tudi sipalno stanje. Torej, konjugiramo sedaj \ref{eq:5}, da dobimo
+</p>
+
+\begin{equation}
+\label{eq:7}
+\Psi_1^{\ast} (x) = A_1 ^{\ast} \frac{e^{- \mathrm{i} k_1 x}}{\sqrt{v_{1}}} + B_1 ^{\ast} \frac{e^{\mathrm{i} k_1 x}}{ \sqrt{v_{1}}}, \quad
+\Psi_2^{\ast} (x) = B_1 ^{\ast} \frac{e^{- \mathrm{i} k_2 x}}{\sqrt{v_{2}}} + A_1 ^{\ast} \frac{e^{\mathrm{i} k_2 x}}{ \sqrt{v_{2}}}
+\end{equation}
+
+<p>
+Vlogi koeficientov sta se zamenjali, in naša enačba za sipanje postane
+</p>
+
+\begin{align*}
+  \begin{bmatrix} A_{1}^{\ast} \\ A_2^{\ast} \end{bmatrix} &= S \begin{bmatrix} B_{1}^{\ast} \\ B_{2}^{\ast} \end{bmatrix} \\
+A^{\ast} &= S B^{\ast} \\
+S^{\dagger} &= S^{\dagger} S B^{\ast} \\
+S^{\dagger} A^{\ast} &= B^{\ast} && \left/ ^{\ast} \right. \\
+S^T A &= B
+\end{align*}
+
+<p>
+Torej, ob predpostavki, da je Hamiltonian realen, in ob vedenju, da za vsako matriko velja \ref{eq:6}, je iz zgornje izpeljave razvidno, da velja
+</p>
+
+<p>
+\[ S^T = S
+\]
+</p>
+
+<p>
+in je sipalna matrika simetrična in sta prosta parametra samo \( t \) in \( t' \). Hamiltonian (npr. pri magnetizmu) ni nujno realen.
+</p>
+
+<p>
+Za sod potencial \( V(x) = V(-x) \) in Schrödingerjevo enačbo
+</p>
+
+<p>
+\[ H \Psi(x) = E \Psi(x)
+\]
+</p>
+
+<p>
+nas zanima soda valovna funkcija
+</p>
+
+<p>
+\[ H \Psi(-x) = E \Psi(-x )
+\]
+</p>
+
+<p>
+Iz sodega potenciala dobimo enakost \( k_1 = k_2 \equiv k \) in \( v_1 = v_2  \equiv v \). Valovni funkciji \ref{eq:5} bosta tako pri \( \Psi(-x) \) enaki
+</p>
+
+<p>
+\[ \Psi_1 = B_2 \frac{e^{- \mathrm{k} x}}{\sqrt{v}} + A_2 \frac{e^{\mathrm{i} k x}}{\sqrt{v}} \quad \Psi_2 = A_1 \frac{e^{- \mathrm{k} x}}{\sqrt{v}} + B_1 \frac{e^{\mathrm{i} k x}}{\sqrt{v}}
+\]
+</p>
+
+<p>
+Zgornje lahko zapišemo v matrični obliki kot
+</p>
+
+\begin{equation}
+\label{eq:8}
+ \begin{pmatrix} B_{2} \\ B_{1} \end{pmatrix} = S \begin{pmatrix} A_{2} \\ A_{1} \end{pmatrix} = S \begin{pmatrix}
+                                                                                                     0 & 1 \\
+                                                                                                     1 & 0
+                                                                                                      \end{pmatrix}  \begin{pmatrix} A_{1} \\ A_{2} \end{pmatrix}
+\end{equation}
+
+
+<p>
+kjer smo uvedli Diracovo matriko \( \sigma_x \), ki je enaka
+</p>
+
+<p>
+\[ \sigma_x = \begin{pmatrix}
+              0 & 1 \\
+              1 & 0
+               \end{pmatrix}
+\]
+</p>
+
+
+<p>
+Stanje s koeficienti \( B \) lahko tudi zapišemo kot \( \sigma_x B (-x) = B \). Velja, da je \( \sigma_x ^2 = I \). Enačbo \ref{eq:8} pomnožimo s \( \sigma_x \) in upoštevamo identiteto, da dobimo
+</p>
+
+<p>
+\[ S = \sigma_x S \sigma_x
+\]
+</p>
+
+<p>
+Če je potencial soda funkcija, uporabimo \( \sigma_x \) matriko. Velja,da je \( \sigma_x S \sigma_x = \begin{pmatrix} r' & t \\ t' & r \end{pmatrix} \), kar pomeni, da je matrika \( S \) enaka
+</p>
+
+<p>
+\[ S = \begin{pmatrix}
+       r & t \\
+       t & r
+        \end{pmatrix}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 19:01</p>
+</div>
+</body>
+</html>

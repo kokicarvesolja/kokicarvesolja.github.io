@@ -4,6 +4,14 @@
 Tukaj so zbrani zapiski predavanj prof. dr. Antona Ramšaka.
 
 - [[file:01predavanja/01km_p_20251006.html][predavanje 1, 2025/10/06]]: Uvod v kvantno mehaniko, valovanje, Schrödingerjeva enačba, lastnosti valovanja, pričakovane vrednosti
+- [[file:01predavanja/02km_p_20251015.html][predavanje 2, 2025/10/15:]] formalizem kvantne mehanike
+- [[file:01predavanja/03km_p_20251022.html][predavanje 3, 2025/10/22:]] formalizem kvantne mehanike, harmonski oscilator
+- [[file:01predavanja/04km_p_20251027.html][predavanje 4 in 5, 2025/10/27 in 29:]] simetrije - unitarni operatorji, vrtilna količina, zapis operatorja z matriko, centralni potencial
+
 * Vaje
 
 Tukaj so zbrani zapiski vaj pri prof. dr. Tomažu Rejcu.
+
+- [[file:02vaje/01KM_V_20251001.pdf][vaje 1, 2025/10/01:]] Ponovitev kvantne mehanike, končna potencialna jama
+- [[file:02vaje/02km_v_20251013.html][vaje 2, 2025/10/13:]] 2. sklop nalog: vezana stanja v delta potencial; sipanje
+- [[file:02vaje/03km_v_20251020.html][vaje 3, 2025/10/20:]] 2. sklop nalog, nadaljevanje, 3. sklop nalog: lastnosti komutatorjev in antikomutatorjev;, nadaljevanje nedoločenosti; iskanje valovnih funkcij za princip nedoločenosti

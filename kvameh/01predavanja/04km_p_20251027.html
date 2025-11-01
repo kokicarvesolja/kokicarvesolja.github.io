@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 18:55 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4. in 5. predavanje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">4. in 5. predavanje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0521930">1. Simetrije - unitarni operatorji</a>
+<ul>
+<li><a href="#org2c4cc04">1.1. Translacija</a></li>
+<li><a href="#org2b8d7f1">1.2. Rotacija, vrtenje</a></li>
+<li><a href="#org9fa4fcf">1.3. Inverzija prostora</a></li>
+<li><a href="#org4e740c1">1.4. Obrat časa (time reversal)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sakurai_QM_book">Sakurai_QM_book</span></span></a></li>
+<li><a href="#orgc64da73">1.5. Umeritvena transformacija (ang., nem. <i>gauge</i>)</a></li>
+</ul>
+</li>
+<li><a href="#org64d3766">2. Vrtilna količina</a>
+<ul>
+<li><a href="#org73e47ae">2.1. (Glavne) lastnosti vrtilne količine</a>
+<ul>
+<li><a href="#org1de8b62">2.1.1. Uvod</a></li>
+<li><a href="#org5da4ecd">2.1.2. z \( \vec{L} \) komutirajoči operatorji</a></li>
+<li><a href="#orgd24f380">2.1.3. Lestvični operator</a></li>
+<li><a href="#org04824ce">2.1.4. Lastne vrednosti vrtilne količine</a></li>
+<li><a href="#org8fe699f">2.1.5. Sferične funkcije \( Y_l^m (\theta, \phi) \)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org405e0d8">3. Zapis operatorja z matriko</a></li>
+<li><a href="#orgb18929c">4. Centralni potencial</a>
+<ul>
+<li><a href="#org436a96d">4.1. Lastnosti rešitev \( u(r) \)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0521930" class="outline-2">
+<h2 id="org0521930"><span class="section-number-2">1.</span> Simetrije - unitarni operatorji</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org2c4cc04" class="outline-3">
+<h3 id="org2c4cc04"><span class="section-number-3">1.1.</span> Translacija</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Grafično smo risali realen del \( \psi(x) \), nato pa smo narisali identično funkcijo \( \tilde{\psi}(x) \), ki pa je premaknjena za \( s \) in velja
+</p>
+
+<p>
+\[ \tilde{\psi}(x) = \psi(x - s)
+\]
+</p>
+
+<p>
+Za unitaren operator je značilno, da se ohranja skalarni produkt. Translacijo zapišemo
+</p>
+
+\begin{align*}
+  U(s) \psi(x) &= \tilde{\psi}(x) = \psi(x - s) \\
+&= \psi(x) + s \frac{\partial }{\partial x} \psi(x) + \frac{s ^2}{2!} \frac{\partial ^2 }{\partial x ^2} \psi(x) + \ldots \\
+&= \exp \left\{ -s \frac{\partial }{\partial x}  \right\}\psi(x)
+\end{align*}
+
+<p>
+V zadnji vrstici smo dobili zametek operatorja, vendar ga bomo sedaj nadomestili z gibalno količino \( p_x = - \mathrm{i} \hbar \frac{\partial }{\partial x}  \)
+</p>
+
+\begin{equation}
+\label{eq:1}
+U(s) = \exp \left\{ - s \frac{\partial }{\partial x}  \right\} = \exp \left\{ - \mathrm{i} \frac{s p_x}{\hbar} \right\}
+\end{equation}
+
+<p>
+Operator translacije \ref{eq:1} lahko zapišemo tudi v treh dimenzijah in sicer
+</p>
+
+<p>
+\[ U(\vec{s}) = \exp \left\{ - \mathrm{i} \frac{\vec{s} \cdot \vec{p}}{\hbar} \right\}
+\]
+</p>
+
+<p>
+kjer je produkt \( \vec{s} \cdot \vec{p} \) <i>generator premika</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-org2b8d7f1" class="outline-3">
+<h3 id="org2b8d7f1"><span class="section-number-3">1.2.</span> Rotacija, vrtenje</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Imamo valovno funkcijo \( \psi \left( \vec{r} \right) \), ki se nahaja na ravnini z vektorjem normale \( \vec{n} \). Funkcijo ravninsko zasučemo za kot \( \phi \) tako, da ostane na enaki razdalji od izhodišča. Zasukano funkcijo označimo z \( \psi \left( \vec{r}_1 \right) \), kjer je \( \vec{r}_1 = \vec{r} - \mathrm{d} \vec{r} \).
+</p>
+
+<p>
+Rotacija je infinitizimalno majhna, kar pomeni, da nam bo v pomoč tudi limita, ko gre \( \mathrm{d} \phi \to 0 \). Novi radij vektor \( \vec{r}_1 \) je vsota vektorjev \( \vec{r} \) in \( \mathrm{d} \vec{r} \), kjer sta tedva vektorja zaradi infinitizimalnosti pravokotnotna (glej sliko). Velja torej \( \mathrm{d} \vec{r} = \mathrm{d} \phi \vec{n} \times \vec{r} \).
+</p>
+
+<p>
+Unitarna opracija bo po razvoju po Taylorju
+</p>
+
+\begin{align*}
+  U \left( \mathrm{d} \phi \vec{n} \right) \psi(r) &= \psi \left( \vec{r} - \mathrm{d} \vec{r} \right) \\
+&= \psi \left( \vec{r}  \right) - \mathrm{i} \mathrm{d} \phi \frac{\left( \vec{n} \times \vec{r} \right) \vec{p}}{\hbar} \psi \left( \vec{r} \right) + o \left( \mathrm{d} \phi ^2 \right) \\
+&= \left( I -  \mathrm{i} \mathrm{d} \phi \frac{\left( \vec{n} \times \vec{r} \right) \cdot \vec{p}}{\hbar} \right) \psi \left( \vec{r} \right) + o \left( \mathrm{d} \phi ^2 \right) \\
+&= \left( I - \mathrm{i} \mathrm{d} \phi \frac{\vec{n} \cdot \left( \vec{r} \times \vec{p} \right)}{\hbar} \right) \psi \left( \vec{r} \right) + \ldots
+\end{align*}
+
+
+<p>
+Definiramo operator vrtilne količine \( \vec{L} = \vec{r} \times \vec{p} \). Izpeljani operator
+</p>
+
+<p>
+\[ U \left( \mathrm{d} \phi \vec{n} \right) = \left( I - \mathrm{i} \mathrm{d} \phi \frac{\vec{n} \cdot \vec{L}}{\hbar} \right) \psi + \ldots
+\]
+</p>
+
+<p>
+še ni uporaben, saj obravnavamo zgolj majhen premik
+</p>
+
+
+<div id="org77fa905" class="figure">
+<p><img src="file:///home/krobin/Downloads/This-is-Worthless.png" alt="This-is-Worthless.png" />
+</p>
+</div>
+
+<p>
+Namesto tega predpostavimo, da naredimo \( N \) majhnih premikov, kjer gre \( N \) proti neskončno. Torej
+</p>
+
+<p>
+\[ U \left( \phi \vec{n} \right) = \left. \left( I - \mathrm{i} \frac{\phi}{N} \frac{\vec{n} \cdot \vec{L}}{\hbar} \right)^N \right|_{N \to \infty} = \exp \left\{ - \mathrm{i} \phi \frac{\vec{n} \cdot \vec{L}}{\hbar} \right\}
+\]
+</p>
+
+<p>
+Dobili smo torej operator rotacije
+</p>
+
+<p>
+\[ U \left( \vec{\phi} \right) = \exp \left\{ - \mathrm{i} \frac{\vec{\phi} \cdot \vec{L}}{\hbar} \right\}
+\]
+</p>
+
+<p>
+kjer je \( \vec{\phi} = \phi \cdot \vec{n} \) ter je \( \vec{\phi} \cdot \vec{L} \) generator.
+</p>
+</div>
+</div>
+<div id="outline-container-org9fa4fcf" class="outline-3">
+<h3 id="org9fa4fcf"><span class="section-number-3">1.3.</span> Inverzija prostora</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Obravnavamo operacijo in iščemo operator \( \Pi \), da velja
+</p>
+
+<p>
+\[ \Pi \psi \left( \vec{r} \right) = \psi \left( - \vec{r} \right)
+\]
+</p>
+
+<p>
+V eni dimenziji za operator inverzije velja
+</p>
+
+\begin{align*}
+  \psi(x) &\to \psi(- x) \\
+\frac{\mathrm{d} }{\mathrm{d} x} &\to - \frac{\mathrm{d} }{\mathrm{d} x}, \quad p \to -p \\
+\frac{\mathrm{d} ^2 }{\mathrm{d} x ^2} &\to \frac{\mathrm{d} ^2 }{\mathrm{d} x ^2}, \quad p ^2 \to p ^2
+\end{align*}
+
+<p>
+Naj imamo sod potencial \( V(x) = V(- x) \). Hamiltonian je po definiciji \( H = \frac{ p ^2}{2m} + V \). Zaradi zgoraj izpeljanih lastnosti velja
+</p>
+
+<p>
+\[ \Pi H = H \Pi \implies \left[ \Pi H \right] = 0
+\]
+</p>
+
+<p>
+Torej bodo rešitve enačbe
+</p>
+
+<p>
+\[ H \psi(x) = E \psi(x),
+\]
+</p>
+
+<p>
+na kateri smo opravili inverzijo prostora
+</p>
+
+<p>
+\[ \Pi H \psi = H \Pi \psi(x) = H \psi(- x) = E \psi(-x)
+\]
+</p>
+
+<p>
+enake
+</p>
+
+<p>
+\[ \psi_{\pm} (x) = \frac{1}{\sqrt{2}} \left( \psi(x) \pm \psi(- x) \right),
+\]
+</p>
+
+<p>
+saj je rešitev soda. Če energija \( E \) ni degenerirana, to pomeni, da \( \psi \) soda ali liha.
+</p>
+</div>
+</div>
+<div id="outline-container-org4e740c1" class="outline-3">
+<h3 id="org4e740c1"><span class="section-number-3">1.4.</span> Obrat časa (time reversal)&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sakurai_QM_book">Sakurai_QM_book</span></span></h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Obravnavajmo najprej klasično mehanski primer. Imejmo delec, ki se giblje po trajektoriji \( \vec{r} (t) \) s hitrostjo \( \vec{v} \). V primeru, če se začne gibati s hitrostjo \( - \vec{v} \), se bo gibal nazaj po isti trajektoriji. To nam nakažejo tudi gibalne enačbe, saj za obrat časa \( t \to - t \) in posledično \( \vec{r} (t) \to \vec{r} (- t) \) velja
+</p>
+
+\begin{align*}
+  m \oddv{r} &= \vec{F} (\vec{r}) \\
+m \oddv{r} (t) &= \vec{F} (\vec{r} (t)) && t \to - t \\
+m \oddv{r} (-t) &= \vec{F} \left( \vec{r} (- t) \right)
+\end{align*}
+
+<p>
+Velja \( \frac{\mathrm{d} ^2 }{\mathrm{d} t ^2} = \frac{\mathrm{d} ^2 }{\mathrm{d} t ^2} \).
+</p>
+
+<p>
+Za valovno enačbo
+</p>
+
+<p>
+\[ \frac{\partial ^2 u}{\partial x ^2} = \frac{1}{c ^2} \frac{\partial ^2 }{\partial t ^2}  u(x, t)
+\]
+</p>
+
+<p>
+katere rešitev je
+</p>
+
+<p>
+\[ u = \sin \left( k x - \omega t \right) = \sin \left( k (x - vt) \right) = \sin \left( k (x + vt) \right)
+\]
+</p>
+
+<p>
+pa je obrat časa zaznaven. Pri klasični mehaniki, če zanemarimo entropijo, ne ločimo med obratom časa.
+</p>
+
+<p>
+Obravnavajmo Schrödingerjevo enačbo, kjer je Hamiltonian neodvisen od časa
+</p>
+
+<p>
+\[ \mathrm{i} \hbar \frac{\partial }{\partial t}  \psi(x, t) = H \psi(x, t)
+\]
+</p>
+
+<p>
+\( \psi(x, - t) \) ne reši enačbe, medtem kot \( \psi^{\ast} (x, - t) \) pa je. To lahko hitro preverimo, saj
+</p>
+
+<p>
+\[ \mathrm{i} \hbar \frac{\partial }{\partial t}  \psi^{\ast} (x, - t) = H \psi^{\ast} (x, - t)
+\]
+</p>
+
+<p>
+Uvedemo operator konjugacije \( K \), ki \( z \in \mathbb{C} \) priredi njegovo konjugirano vrednosti:
+</p>
+
+<p>
+\[ K z = z^{\ast}
+\]
+</p>
+
+<p>
+V splošnem primeru, če \( z \) sledi še kakšna druga zadevščina \( \left\langle \cdot \right\rangle \), ki je lahko kompleksno konjugirana, potem
+</p>
+
+\begin{equation}
+\label{eq:3}
+ K z \left\langle \cdot \right\rangle  = z^{\ast} K \left\langle \cdot \right\rangle
+\end{equation}
+
+<p>
+Operator obrata časa v kvantni mehaniki je ravno \( K \). Imamo valovno funkcijo \( \psi(x, t) = \exp \left\{ \mathrm{i} \frac{px}{\hbar} - \mathrm{i} \omega t \right\} \), na katerom delujemo z operatorjem obrata časa
+</p>
+
+<p>
+\[K \psi = \psi^{\ast} = \exp \left\{ - \mathrm{i} \frac{p x}{\hbar} + \mathrm{i} \omega t \right\} \\
+\]
+</p>
+
+<p>
+Če delujemo z operatorjem časa na valovno funkcijo \( \psi(x, - t) = \exp \left\{ \mathrm{i} \frac{px}{\hbar} + \mathrm{i} \omega t \right\} \), pa dobimo
+</p>
+
+<p>
+\[ K \psi(x, - t) =  \exp \left\{ - \mathrm{i} \frac{px}{\hbar} - \mathrm{i} \omega t \right\},
+\]
+</p>
+
+<p>
+kjer je \( \omega t = \frac{E t}{\hbar} \). Tukaj tudi pridemo do spoznanja, da operator obrata časa ne obrne časa nazaj, kakor da bi film nazaj vrteli, ampak obrne hitrost!
+</p>
+
+\begin{align*}
+  \vec{p} & t\to - \vec{p} \\
+\vec{L} &\to - \vec{L}
+\end{align*}
+
+<p>
+[vstavi sliko primera]
+</p>
+
+<p>
+Poglejmo si lastna stacionarna stanja
+</p>
+
+<p>
+\[ H \psi = E \psi,
+\]
+</p>
+
+<p>
+na katero apliciramo operator obrata časa
+</p>
+
+<p>
+\[ K H \psi = H K \psi = H \psi^{\ast} = E \psi^{\ast}
+\]
+</p>
+
+<p>
+Rešitve te enačbe so
+</p>
+
+<p>
+\[ \psi_{R, I} = \frac{1}{\sqrt{2}} e^{\mathrm{i} \delta} \left( \psi \pm \psi^{\ast} \right)
+\]
+</p>
+
+<p>
+kjer je \( \psi_R \in \mathbb{R} \) in \( \psi_I = \frac{\mathrm{i}}{\sqrt{2}} \left( \psi - \psi^{\ast} \right) \in \mathrm{i} \mathbb{R} \). V primeru, če \( E \) ni degenerirana, potem \( \psi \in \mathbb{R} \).
+</p>
+</div>
+</div>
+<div id="outline-container-orgc64da73" class="outline-3">
+<h3 id="orgc64da73"><span class="section-number-3">1.5.</span> Umeritvena transformacija (ang., nem. <i>gauge</i>)</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Umeritvena transformacija ima sledeč učinek
+</p>
+
+<p>
+\[ \psi(x, t) \to e^{\mathrm{i} \delta} \psi(x, t) = \tilde{\psi},
+\]
+</p>
+
+<p>
+kjer je \( \delta \in \mathbb{R} \) konstanta. Če imamo umeritveno transformacijo na vse elemente v našem prostoru, ji pravimo, da je globalna umeritvena transformacija
+</p>
+
+<p>
+\[ \phi_n \to e^{\mathrm{i} \delta} \phi_n = \tilde{\phi}
+\]
+</p>
+
+<p>
+Za umeritvene transformacije velja, da ohranjajo skalarni produkt
+</p>
+
+<p>
+\[ \left\langle \phi \middle| A \middle| \psi \right\rangle = \left\langle \tilde{\phi} \middle| A \middle| \tilde{\psi} \right\rangle = e^{- \mathrm{i} \delta} e^{\mathrm{i} \delta} \left\langle \phi \middle| A \middle| \psi \right\rangle
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org64d3766" class="outline-2">
+<h2 id="org64d3766"><span class="section-number-2">2.</span> Vrtilna količina</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Srečali smo jo (prvič) pri rotacijski simetriji
+</p>
+
+<p>
+\[ \vec{L} = \vec{r} \times \vec{p}.
+\]
+</p>
+
+<p>
+Za začetek nas zanima, če je operator vrtilne količine hermitski. Pred nadaljevanjem samo spomnimo na nekaj identitet
+</p>
+
+\begin{align}
+  x^{\dagger} &= x \\
+p ^{\dagger} &= p \\
+\left( AB \right) ^{\dagger} &= A^{\dagger} B^{\dagger}
+\end{align}
+
+<p>
+Vrtilno količino zapišemo kot
+</p>
+
+<p>
+\[ L^{\dagger} = \left( \sum\limits_{\beta, \gamma}^{} \epsilon_{\alpha\beta\gamma} x_{\beta} p_{\gamma} \right) ^{\dagger} = \sum\limits_{\beta \gamma}^{} \epsilon_{\alpha \beta\gamma} p_{\gamma} ^{\dagger} x_{\beta} ^{\dagger} = \sum\limits_{\beta \gamma}^{} \epsilon_{\alpha \beta \gamma} x_{\beta} p_{\gamma} = L
+\]
+</p>
+
+<p>
+kjer smo upoštevali nekaj glede komutacije \( x \) in \( p \).
+</p>
+
+<p>
+Velikost operatorja vrtilne količine je enaka
+</p>
+
+<p>
+\[ L ^2 = \vec{L} \cdot \vec{L} = \sum\limits_{\alpha}^{} L_{\alpha} ^2
+\]
+</p>
+</div>
+<div id="outline-container-org73e47ae" class="outline-3">
+<h3 id="org73e47ae"><span class="section-number-3">2.1.</span> (Glavne) lastnosti vrtilne količine</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org1de8b62" class="outline-4">
+<h4 id="org1de8b62"><span class="section-number-4">2.1.1.</span> Uvod</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Spomnimo
+</p>
+
+\begin{align*}
+  \left[ x_{\alpha}, x_{\beta} \right] &= 0 \\
+\left[ x_{\alpha}, p_{\beta} \right] &= \mathrm{i} \hbar \delta_{\alpha\beta}
+\end{align*}
+
+<p>
+Komutacija vrtilnih količin v smeri \( x \) in \( y \) je enaka
+</p>
+
+\begin{align*}
+  \left[ L_x, L_y \right] &= \left[ y p_z - z p_y, z p_x - x p_z \right] \\
+&= \left[ y p_z, z p_x \right] - \underbrace{\left[ p_y z, zp_x \right]}_{= 0} - \underbrace{\left[ yp_z, xp_z \right]}_{= 0} + \left[ p_y z, x p_z \right] \\
+&= y p_x \left[ p_z, z \right] + x p_y \left[ z, p_z \right] \\
+&= \mathrm{i} \hbar \left( x p_y - y p_x \right) = \mathrm{i} \hbar L_z
+\end{align*}
+
+<p>
+kjer je \( L_z = xp_y - yp_x \).
+</p>
+
+<p>
+V splošnem torej velja
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \left[ L_{\alpha}, L_{\beta} \right] = \mathrm{i} \hbar \epsilon_{\alpha \beta \gamma} L_{\gamma}
+\end{equation}
+
+<p>
+Enačba \ref{eq:2} je zelo pomembna zveza.
+</p>
+
+<p>
+Velja tudi
+</p>
+
+<p>
+\[ \left[ L_{\alpha}, A_{\beta} \right] = \mathrm{i} \hbar \epsilon_{\alpha \beta \gamma} A_{\gamma},
+\]
+</p>
+
+<p>
+če je \( \vec{A} \) vektorski operator. Vektorski operator je operator, ki se pri rotaciji prostora, transformira kot vektor (aka uporabiš rotacijsko matriko). Primere takih vektorski operatorjev je so vrtilna količina \( \vec{L} \), radij vektor \( \vec{r} \) in gibalne količine \( \vec{p} \).
+</p>
+</div>
+</div>
+<div id="outline-container-org5da4ecd" class="outline-4">
+<h4 id="org5da4ecd"><span class="section-number-4">2.1.2.</span> z \( \vec{L} \) komutirajoči operatorji</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Iščemo operatorje, ki komutirajo z vrtilno količino, saj v tem primeru lahko uporabimo (neke?) lastne vrednosti. Matematično zapisano
+</p>
+
+<p>
+\[ \left[ \vec{L}, A \right] = 0
+\]
+</p>
+
+<p>
+Rotacijski operator na \( A \) zapišemo kot
+</p>
+
+<p>
+\[ U \left( \vec{\phi} \right) A = A U \left( \vec{\phi} \right),
+\]
+</p>
+
+<p>
+kjer smo to zapisali za isto lastnost kot \ref{eq:3}. Če za vsako rotacijo \( \phi \) velja \( \left[ U, A \right] = 0 \), potem je \( A \) skalar. Posledično velja \( \left[ \vec{L}, A \right] = 0 \).
+</p>
+
+<p>
+Količine \( A = 0 \), \( \vec{r}, \vec{r} = r ^2 \), \( \vec{p} \cdot \vec{p} = p ^2 \), \( V \left( \vec{r} \right) = V(r) \), \( H = \frac{p ^2}{2m} + V(x) \) in \( L ^2 \) komutirajo z vsako komponento.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd24f380" class="outline-4">
+<h4 id="orgd24f380"><span class="section-number-4">2.1.3.</span> Lestvični operator</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+Uvedemo <i>lestvični operator</i> (ang. <i>ladder operator</i>), ki je definiran kot
+</p>
+
+<p>
+\[ L_{\pm} = L_x \pm \mathrm{i} L_y
+\]
+</p>
+
+<p>
+Hitro lahko preverimo, da velja \( \left( L_{+} \right)^{\dagger} = L_- \) in \( \left[ L_{\pm}, L ^2 \right] = 0 \). Lestvična operatorja nam bosta zviševala/zniževala stanja podobna kot sta to počela \( a^{\dagger} \) in \( a \). Takrat smo uvedli tudi številski operator \( n \). Pri vrtilni količini bo vlogo številskega operatorja prevzel \( L_z \).
+</p>
+
+\begin{align*}
+  \left[ L_z, L_{\pm} \right] &= \left[ L_z, L_x \pm \mathrm{i} L_y \right] \\
+&= \left[ L_z, L_x \right] \pm \mathrm{i} \left[ L_z, L_y \right] \\
+&= \mathrm{i} \hbar L_y \pm \mathrm{i} \left( - \mathrm{i} \hbar \right) L_x \\
+&= \hbar \left( \pm L_x + \mathrm{i} L_y \right) = - \hbar L_{\pm}
+\end{align*}
+
+<p>
+Izbrali smo si komponento \( L_z \) zaradi dogovora, saj je problem simetričen na vse 3 osi. Če hitro povzamemo, velja
+</p>
+
+<p>
+\[ \left[ L_z, L_{\pm} \right] = \pm \hbar L_{\pm}
+\]
+</p>
+
+<p>
+Pogledalo smo si \( a^{\dagger} a \), zato bomo tukaj tudi pogledali rezultat analogen temu:
+</p>
+
+\begin{equation}
+\label{eq:5}
+\begin{aligned}
+  L_{\pm} L_{mp} &= \left( L_x \pm \mathrm{i} L_y \right) \left( L_x \mp \mathrm{i} L_y \right) \\
+&= L_x ^2 + L_y ^2 \pm \mathrm{i} L_y L_x \mp \mathrm{i} L_x L_y \\
+&= L ^2 - L_z ^2 \pm \hbar L_z
+\end{aligned}
+\end{equation}
+
+<p>
+Komutirajoče zveze
+</p>
+
+<p>
+\[ \left[ L_+, L_- \right] = 2 \hbar L_z
+\]
+</p>
+
+<p>
+ne bomo potrebovali according to Ramšak. Spomnimo, da se rezultat razlikuje od komutiranja anihilacijskega in kreacijskega operatorja, ki pa je bil
+</p>
+
+<p>
+\[ \left[ a^{\dagger}, a \right] = -1
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org04824ce" class="outline-4">
+<h4 id="org04824ce"><span class="section-number-4">2.1.4.</span> Lastne vrednosti vrtilne količine</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+Operator vrtilne količine je definiran kot
+</p>
+
+<p>
+\[ \vec{L} = \vec{r} \times \left( - \mathrm{i} \hbar \nabla \right),
+\]
+</p>
+
+<p>
+preko katerega bi lahko iskali s pomočjo Schrödingerjeve enačbe lastne vrednosti. To smo (baje) že delali in bomo namesto tega iskale lastne vrednosti s pomočjo operatorjev.
+</p>
+
+<p>
+Uporabili bomo identiteti
+</p>
+
+<p>
+\[ \left[ L ^2, L_z \right] = 0, \quad \left[ L_z, L_+ \right] = \hbar L_+ = L_z L_+ - L_+ L_z .
+\]
+</p>
+
+<p>
+Naj bo \( m \in \mathbb{R} \) lastna vrednost vrtilne količine
+</p>
+
+\begin{equation}
+\label{eq:4}
+ L_z \left| m \right\rangle  = m \hbar \left| m \right\rangle
+\end{equation}
+
+<p>
+Na lastno stanje vplivamo z operatorjem \( L_+ \) in iz zgornje identitete sledi
+</p>
+
+<p>
+\[ L_z L_+ \left| m \right\rangle = \left( L_+ L_z + \hbar L_+ \right) \left| m \right\rangle = \hbar (m + 1)L_+ \left| m \right\rangle,
+\]
+</p>
+
+<p>
+kjer smo upoštevali \ref{eq:4}.
+</p>
+
+<p>
+Zanimajo nas tudi lastnosti lastne vrednosti \( \lambda \), za katere velja
+</p>
+
+<p>
+\[ L ^2 \left| m \right\rangle  = \lambda \left| m \right\rangle.
+\]
+</p>
+
+<p>
+Operator \( L ^2 = \vec{L} \cdot \vec{L}\) je produkt dveh vektorjev, zato postopamo malo drugače pri lastnih stanjih
+</p>
+
+\begin{align*}
+  \left\langle m \middle| L ^2 \middle| m \right\rangle &= \left\langle m \middle| \sum\limits_{\alpha}^{} L_{\alpha} ^2 \middle| m \right\rangle \\
+&= \sum\limits_{\alpha}^{} \left\langle L_{\alpha}^{\dagger} m \middle| L_{\alpha} m \right\rangle \ge 0
+\end{align*}
+
+<p>
+Iz tega sledi, da ker je \( \left\langle m \middle|L ^2 \middle| m \right\rangle \ge 0 \), preko enačbe
+</p>
+
+<p>
+\[ \left\langle m \middle| L ^2 \middle| m \right\rangle  = \lambda \left\langle m \middle| m \right\rangle,
+\]
+</p>
+
+<p>
+tudi \( \lambda \ge 0 \), saj je vedno \( \left\langle m \middle| m \right\rangle \ge 0 \)
+</p>
+
+<p>
+Kakšna pa je \( \lambda \)? Zaradi komutacije velja zveza
+</p>
+
+<p>
+\[ L ^2 L_+ \left| m \right\rangle  = L_+ L ^2 \left| m \right\rangle = \lambda L_+ \left| m \right\rangle,
+\]
+</p>
+
+<p>
+iz česar skupaj z zgornjim spoznanjem sledi
+</p>
+
+<p>
+\[ \lambda = l (l + 1) \hbar ^2 \ge 0
+\]
+</p>
+
+<p>
+Če si narišemo graf funkcije \( \lambda(l) \), dobimo parabolo značilno za kvadratno funkcijo. Zaradi pogoja, da je večja ali enaka \( 0 \), sledi, da so primerne lastne vrednosti \( l \) tudi večje ali enake \( 0 \), saj z njimi zadostimo vse možne vrednosti \( \lambda \).
+</p>
+
+<p>
+Velja(?)
+</p>
+
+<p>
+\[ \left\langle L_+ \psi_{lm} \middle| L_+ \middle| \psi_{lm} \right\rangle = \left\langle lm \middle| L_- L_+ \middle| lm \right\rangle \ge 0
+\]
+</p>
+
+<p>
+Preko zveze \ref{eq:5} se nam izraz preobrazi v
+</p>
+
+\begin{align*}
+  \left\langle lm \middle| L_- L_+\middle| lm \right\rangle  & \ge 0 \\
+\left\langle lm \middle| \left( L ^2 - L_z ^2 - \hbar L_z \right) \middle| L_z \right\rangle  & \ge 0 \\
+\left\langle lm \middle| \left| \left( l (l + 1) \hbar ^2 - m ^2 \hbar ^2 - \hbar ^2 \eta \right)  \right| \middle| lm  \right\rangle & \ge 0 \\
+\left( l(l + 1) - m(m + 1)  \right) \hbar ^2  \left\langle lm \middle| lm \right\rangle &\ge 0
+\end{align*}
+
+<p>
+Ker je \( \left\langle lm \middle| lm \right\rangle \) vedno večji od \( 0 \), to pomeni, da je tudi funkcija predfaktor večji od \( 0 \).
+</p>
+
+<p>
+Iz neenakosti
+</p>
+
+<p>
+\[ l(l + 1) - m(m + 1) \ge 0 \implies f(l) = l(l + 1) \ge f(m) = m(m + 1)
+\]
+</p>
+
+<p>
+velja \( l \ge m \) za \( m \ge 0 \). Zvezo lahko zapišemo tudi kot \( 0 \le m \le l \).
+</p>
+
+<p>
+Kaj pa v primeru, da je \( m \le 0 \)? Potem zapišemo \( m = - \left| m \right| \) in sledi
+</p>
+
+\begin{align*}
+  l(l + 1) & \ge - \left| m \right| \left( - \left| m \right|  - 1\right) = \left| m \right| \left( \left| m \right|  + 1 \right) \\
+\left| m \right| &\ge l
+\end{align*}
+
+<p>
+oziroma z drugimi besedami, \( m \) je spodaj omejen z \( -l \) in ko združimo skupaj, dobimo
+</p>
+
+<p>
+\[ - l \le m \le l
+\]
+</p>
+
+<p>
+Do tega lahko pridemo analogno kakor za pozitivne \( m \), samo da uporabimo zvezo \( \left\langle L_- lm \middle| L_- \middle| lm \right\rangle \)
+</p>
+
+<p>
+Lastno stanje zapišemo
+</p>
+
+<p>
+\[ L_+ \left| lm \right\rangle  = c \left| l, m + 1 \right\rangle
+\]
+</p>
+
+<p>
+Potem sledi
+</p>
+
+<p>
+\[ \left\langle L_+ \psi_{lm} \middle| L_+ \psi_{lm} \right\rangle = \left| c \right| ^2 \left\langle \psi_{l, m + 1}, \middle| \psi_{l, m + 1} \right\rangle
+\]
+</p>
+
+<p>
+in nadalje
+</p>
+
+\begin{equation}
+\label{eq:6}
+L_{\pm} \left| lm \right\rangle = \hbar \sqrt{l (l + 1) - m (m \pm 1)} \left| l, m \pm 1 \right\rangle
+\end{equation}
+
+<p>
+Odgovoriti moramo še vprašanje, kaj so lastne vrednosti \( l \)? Gledamo najvišje možno stanje \( \left| ll \right\rangle \), ki ga nižamo z lestvičnim operatorjem
+</p>
+
+\begin{align*}
+  L_- \left| ll \right\rangle &= c_{l, l - 1} \left| l, l - 1 \right\rangle \\
+L_-^2 \left| ll \right\rangle &= c_{l-1, l - 2} \left| l, l - 2 \right\rangle \\
+& \vdots \\
+L_- ^k \left| ll \right\rangle &= c_{l - k + 1, l - k} \left| l, l - k \right\rangle
+\end{align*}
+
+<p>
+Najmanjše stanje, do katerega lahko pridemo brez divergence zaradi omejitve \( -l \le m \le m \), je
+</p>
+
+<p>
+\[ l - k = - l \implies \ 2l = k \in \mathbb{N}_{0}
+\]
+</p>
+
+<p>
+Iz tega sledi, da \( l = \frac{k}{2} = 0, \frac{1}{2}, 1, \frac{3}{2}, 2, \ldots \).
+</p>
+
+<p>
+\[ l = \begin{cases}
+       0, 1, 2, \ldots &; k \text{ sod} \\
+       \frac{1}{2}, \frac{3}{2}, \frac{5}{2}, \ldots  &; k \text{ lih}
+       \end{cases} \quad\text{ in }  - l \le m \le l
+\]
+</p>
+
+<p>
+Rešitev Schrödingerjeve enačbe, na katero smo delovali z operatorjem
+</p>
+
+<p>
+\[ L_z = - \mathrm{i} \hbar \frac{\partial }{\partial \phi} = - \mathrm{i} \hbar \left( x \frac{\partial }{\partial y}  - y \frac{\partial }{\partial y}  \right).
+\]
+</p>
+
+<p>
+Enačba je tako
+</p>
+
+<p>
+\[ -\mathrm{i} \hbar \frac{\partial }{\partial \phi} \psi_m (\phi) = m \hbar \psi_m (\phi)
+\]
+</p>
+
+<p>
+in njena rešitev je
+</p>
+
+<p>
+\[ \psi_m (\phi) = C e^{\mathrm{i} m \phi},
+\]
+</p>
+
+<p>
+ki je zvezna funkcija. Ker je \( L_z \) operator v odvisnosti od \( \phi \), pomeni, da se sučemo v ravnini okoli osi \( z \). Zveznost naše rešitve \( \psi \), da je periodična
+</p>
+
+<p>
+\[ \psi_m (\phi + 2 \pi) = \psi_m (\phi)
+\]
+</p>
+
+<p>
+Uporabimo nastavek rešitve in zveznost, da dobimo identiteto
+</p>
+
+<p>
+\[ e^{i m (\phi + 2 \pi)} = e^{\mathrm{i} m \phi} \implies \ e^{\mathrm{i} 2 \pi m} = 1,
+\]
+</p>
+
+<p>
+iz katere sledi, da je \( m \in \mathbb{Z} \).
+</p>
+
+<p>
+Za lihe \( k \) pa \( l \) nima celih vrednosti, kar pomeni, da smo screwed - to predstavlja spin, ki pa ne reši Schrödingerjeve enačbe.
+</p>
+
+<p>
+Kot zanimivost za \( l = \frac{1}{2} \) lahko najdemo lastne funkcije, ki rešijo
+</p>
+
+<p>
+\[ L ^2 f (\theta, \phi) = \frac{1}{2} \left( \frac{1}{2} + 1 \right) \hbar ^2 f(\theta, \phi),
+\]
+</p>
+
+<p>
+kjer je
+</p>
+
+<p>
+\[ f(\theta, \phi) = C \begin{cases}
+                        \sin \frac{\theta}{2} e^{\mathrm{i} \frac{\phi}{2}} &; m = \frac{1}{2}\\
+                        \cos \frac{\theta}{2} e^{- \mathrm{i} \frac{\phi}{2}} & ; m = - \frac{1}{2}
+                       \end{cases}
+\]
+</p>
+
+<p>
+Rešitev torej obstaja, vendar pa ni zvezna.
+</p>
+</div>
+</div>
+<div id="outline-container-org8fe699f" class="outline-4">
+<h4 id="org8fe699f"><span class="section-number-4">2.1.5.</span> Sferične funkcije \( Y_l^m (\theta, \phi) \)</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<p>
+Sferične funkcije ni tako enostavno zgenerirati kakor harmonične funkcije. Nekatere sferične funkcije so
+</p>
+
+\begin{align*}
+  Y_0^0 &= \frac{1}{\sqrt{4\pi}} \\
+Y_1^0 &= \sqrt{\frac{3}{8 \pi}} \cos \theta \\
+Y_1^\mathbf{1} &= \sqrt{\frac{3}{8 \pi}} \sin \theta e^{\mathrm{i} \phi} \in \mathbb{C}
+\end{align*}
+
+<p>
+Obstaja semi-konvencija, da če je indeks \( m \) zapis kot supskript predstavlja sferične funkcije v kompleksni ravnini. V primeru, da sta oba indeksa spodaj zapisana, potem je sferična funkcija realna
+</p>
+
+<p>
+\[ Y_{ml} = \sqrt{\frac{3}{8 \pi}} \sin \theta \cos \theta \in \mathbb{R}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org405e0d8" class="outline-2">
+<h2 id="org405e0d8"><span class="section-number-2">3.</span> Zapis operatorja z matriko</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+To poglavje ne spada pod vrtilno količino, samo uporabili smo jo za primer. Na isti način bi lahko izpeljali tudi za harmonični oscilator.
+</p>
+
+<p>
+Operator lahko predstavimo z matriko. Gledamo tako valovno funkcijo, da opazujemo samo kotni del
+</p>
+
+<p>
+\[ \psi = \sum\limits_{l = 0}^{\infty} \sum\limits_{m = -l}^l c_{lm} \left| lm \right\rangle, \quad \left\langle \vec{r} \middle| lm \right\rangle = Y_l^m (\theta, \phi)
+\]
+</p>
+
+<p>
+Ne želimo se ukvarjati z reševanjem diferencialne enačbe, ampak z operatorji. Lestvični operator izrazimo v neki bazi
+</p>
+
+<p>
+\[ L_+ \sum\limits_{l', l, m', m}^{} \left| l' m' \right\rangle \left( L_+ \right)_{l' l m ' m} \left\langle lm \right|
+\]
+</p>
+
+<p>
+Zanima nas, kakšna bo matrika tega operatorja. Opazujmo najprej za \( l = 1 \):
+</p>
+
+<p>
+\[ \left( L_+ \right)_{11m' m} = \left\langle 1 m' \middle| L_+ \middle| 1m \right\rangle
+\]
+</p>
+
+<p>
+V nadaljevanju uporabimo enakost \ref{eq:8} in se preobrazi v
+</p>
+
+<p>
+\[ \left( L_+ \right) = \hbar \sqrt{1(1 + 1) - m (m + 1)} \left\langle 1 m' \middle| 1, m + 1 \right\rangle = \hbar \sqrt{1(1 + 1) - m (m + 1)} \delta_{m', m + 1}
+\]
+</p>
+
+<p>
+Navada je, da se v vektorskem zapisu piše stanja z višjim \( m \) na vrhu. To si lahko zapomnimo intuitivno tako, da je stanje z največjim \( m \) usmerjeno navpično navzgor, medtem ko stanje z najmanjšim \( m \) pa navpično navzdol. Koeficienti so
+</p>
+
+<p>
+\[ c_{lm} = \begin{pmatrix} c_{11} \\ c_{10} \\ c_{1,-1} \end{pmatrix}
+\]
+</p>
+
+<p>
+Koeficiente \( L_+ \psi \), ki jih označimo z \( d_{lm} \) zapišemo v matrični obliki kot
+</p>
+
+<p>
+\[ \begin{pmatrix} d_{11} \\ d_{10} \\ d_{1, -1} \end{pmatrix} = \begin{pmatrix}
+                                                                 0 & \sqrt{2} & 0 \\
+                                                                 0 & 0 & \sqrt{2} \\
+                                                                 0 & 0 & 0
+                                                                 \end{pmatrix} \begin{pmatrix} c_{11} \\ c_{10} \\ c_{1, -1} \end{pmatrix}  \hbar
+\]
+</p>
+
+<p>
+Elementi v stolpcu predstavljajo vrednosti \( m' \), elementi v vrstici pa vrednosti \( m \). Zaradi \( \delta_{m', m + 1} \) je diagonala ničelna.
+</p>
+
+<p>
+Torej so matrike lestvičnih operatorjev
+</p>
+
+<p>
+\[ L_+ = \hbar \sqrt{2} \begin{pmatrix}
+                        0 & 1 & 0 \\
+                        0 & 0 & 1 \\
+                        0 & 0 & 0
+                        \end{pmatrix} = L_x + \mathrm{i} L_y; \quad L_- = \hbar \sqrt{2} \begin{pmatrix}
+                                                                                         0 & 0 & 0 \\
+                                                                                         1 & 0 & 0 \\
+                                                                                         0 & 1 & 0
+                                                                                         \end{pmatrix}
+\]
+</p>
+
+<p>
+Preko definicije \( L_+ \) in \( L_- \) lahko zapišemo tudi
+</p>
+
+\begin{align*}
+  L_x &= (L_+ + L_- )\frac{1}{2} = \frac{\hbar}{\sqrt{2}} \begin{pmatrix}
+                                                          0 & 1 & 0 \\
+                                                          1 & 0 & 1 \\
+                                                          0 & 1 & 0
+                                                          \end{pmatrix} \\
+L_y &= \frac{\hbar}{\sqrt{2}} \begin{pmatrix}
+                              0 & -\mathrm{i} & 0 \\
+                              \mathrm{i} & 0 & -\mathrm{i} \\
+                              0 & \mathrm{i} & 0
+                              \end{pmatrix} \\
+L_z &= \hbar \begin{pmatrix}
+             1 & 0 & 0 \\
+             0 & 0 & 0 \\
+             0 & 0 & -1
+             \end{pmatrix}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-orgb18929c" class="outline-2">
+<h2 id="orgb18929c"><span class="section-number-2">4.</span> Centralni potencial</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Klasično smo imeli potencial \( V(r) \) in potem je bila sila
+</p>
+
+<p>
+\[ \vec{F} = - \frac{\partial V}{\partial r} \frac{\vec{r}}{r},
+\]
+</p>
+
+<p>
+iz česar sledi, da je vrtilna količina \( \vec{L} = \mathrm{konst} \). V kvantni mehaniki pa imamo Hamiltonian \( H = \frac{p ^2}{2m} + V(r) \), ki komutira
+</p>
+
+<p>
+\[ \left[ H, L_z \right] = 0, \ \left[ H, L ^2 \right] = 0
+\]
+</p>
+
+<p>
+Hamiltonian lahko prevedemo iz kartezičnih tudi v sferične koordinate
+</p>
+
+<p>
+\[ H = - \frac{\hbar ^2 \nabla ^2}{2m} + V(r) = - \frac{\hbar}{2m} \left( \frac{1}{r ^2} \frac{\partial }{\partial r} r ^2 \frac{\partial }{\partial r}  \right) + \frac{L ^2}{2m r ^2} + V(r)
+\]
+</p>
+
+<blockquote>
+<p>
+Problem je v tem, da ko mi začne padati [flomaster], si ga ne upam loviti, ker imam potem roke čisto črne.
+</p>
+</blockquote>
+
+<p>
+Drugi del si je precej enostavno zapomniti, vendar dokazovali pa ne bomo. Uporabimo nastavek
+</p>
+
+<p>
+\[ \Psi (r, \theta, \phi) = \psi(r) Y_l^m (\theta, \phi)
+\]
+</p>
+
+<p>
+v Schrödingerjevi enačbi s Hamiltonianom v sferičnih koordinatah
+</p>
+
+<p>
+\[ \left[ - \frac{\hbar ^2}{2m} \left( \frac{1}{r ^2} \frac{\partial }{\partial r}  r ^2 \frac{\partial }{\partial r}  \right) + \underbrace{\left( \frac{l(l + 1) \hbar ^2}{2m r ^2} + V(r) \right)}_{V_{ef}} \right] \psi Y_l ^m = E \psi Y_l ^m
+\]
+</p>
+
+<p>
+Uporabimo še nastavek za radialno funkcijo \( \psi(r) = \frac{u(r)}{r} \).
+</p>
+
+<p>
+\[ \left[ - \frac{\hbar ^2}{2m} \left( \frac{1}{r ^2} \frac{\partial }{\partial r} r ^2 \frac{\partial }{\partial r} \right)+ \left( \frac{l(l+ 1) \hbar ^2}{2m r ^2} + V(r) \right)  \right] \frac{u(r)}{r} = E \frac{u}{r}
+\]
+</p>
+
+<p>
+Prvi seštevanec se poenostavi
+</p>
+
+<p>
+\[ \frac{1}{r ^2}\frac{\partial }{\partial r}  r ^2 \frac{\partial }{\partial r} \left( \frac{u}{r}  \right) = \frac{1}{r ^2} \frac{\partial }{\partial r}  r ^2 \left( \frac{u'}{r} - \frac{u}{r ^2} \right) = \frac{1}{r ^2} \frac{\partial }{\partial r} \left( r u' - u \right) = \frac{u''}{r} = \frac{1}{r} \frac{\partial ^2 u}{\partial r ^2}
+\]
+</p>
+
+<p>
+To pomeni, da rešujemo enačbo oblike
+</p>
+
+\begin{equation}
+\label{eq:7}
+ -\frac{\hbar ^2}{2m} \frac{\mathrm{d} ^2 }{\mathrm{d} r ^2} u(r) + \left( \frac{l(l + 1) \hbar ^2}{2m r ^2} + V(r) \right) u(r) = E u(r)
+\end{equation}
+</div>
+<div id="outline-container-org436a96d" class="outline-3">
+<h3 id="org436a96d"><span class="section-number-3">4.1.</span> Lastnosti rešitev \( u(r) \)</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Za razliko od matematikov si ne bomo pogledali vseh vrednosti za \( r \), ampak samo tiste, ki so nam smiselne, ker za več nimamo časa.
+</p>
+
+<p>
+Prvi primer, ki ga pogledamo, je \( r\to 0 \), kjer predpostavimo \( \lim_{r \to 0} v ^2 V(r) = 0 \). To za nas pomeni, da v enačbi \ref{eq:7} zanemarimo \( V(r) \), saj pada počasneje kot \( \frac{1}{r ^2} \). Koeficienti se pokrajšajo s koeficienti skritimi v \( E \).
+</p>
+
+<p>
+Ostane nam zgolj
+</p>
+
+<p>
+\[ \frac{\mathrm{d} ^2 }{\mathrm{d} r ^2} u = \frac{l (l + 1)}{r ^2} u.
+\]
+</p>
+
+<p>
+Uporabimo nastavek \( u = C r^{\lambda} \) in dobimo enačbo
+</p>
+
+<p>
+\[ \lambda (\lambda - 1) r ^{\lambda - 2} = \frac{l(l + 1)}{r ^2} r^{\lambda},
+\]
+</p>
+
+<p>
+katere rešitve so
+</p>
+
+<p>
+\[ \lambda_{1, 2} = l + 1, - 1.
+\]
+</p>
+
+<p>
+Rešitve uporabimo v nastavku in je splošna rešitev diferencialne enačbe
+</p>
+
+<p>
+\[ u(r) = C_l r^{l + 1} + D \frac{1}{r^l}, l = 0,1, 2, \ldots
+\]
+</p>
+
+<p>
+Vrnemo se nazaj k nastavku za sferične rešitve
+</p>
+
+\begin{align*}
+  \left\langle \Psi \middle| \Psi \right\rangle &= 1\\
+&= \int\limits_0^{\infty} \left| \psi \right| ^2 r ^2 \, \mathrm{d} r \underbrace{\int\limits_0^{2\pi} \, \mathrm{d} \phi \int\limits_0^{\pi} \sin \theta \, \mathrm{d} \theta \left| Y_l^m \right| ^2}_1 \\
+&= \int\limits_0^{\infty} \left| u \right|^2 \, \mathrm{d} r
+\end{align*}
+
+<p>
+Za \( l > 0 \) sledi, da
+</p>
+
+<p>
+\[ D_l ^2 \int\limits_0^{\infty} \frac{1}{r^{2l}} \, \mathrm{d} r \to \infty \implies \ D_l = 0
+\]
+</p>
+
+<p>
+Če pa je \( l = 0 \), pa je naš nastavek
+</p>
+
+<p>
+\[ u(r) = C_0 r + C_0.
+\]
+</p>
+
+<p>
+Radialna funkcija je
+</p>
+
+<p>
+\[ \psi(r) = \frac{u}{r} = C_0 + \frac{D_0}{r}
+\]
+</p>
+
+<p>
+Uporabimo Gaussov zakon
+</p>
+
+<p>
+\[ \nabla \cdot \vec{E} = \frac{\rho \left( \vec{r} \right)}{\epsilon_0} ,
+\]
+</p>
+
+<p>
+definicijo potenciala \( \vec{E} = - \nabla \phi \) in imamo točkast naboj \( \rho \left( \dot{r} \right) = e \delta ^3 \left( \vec{r} \right) \). Poissonova enačba je
+</p>
+
+<p>
+\[ - \nabla ^2 \frac{e}{4 \pi \epsilon_0 r} = \frac{e \delta ^3 \left( \vec{r} \right)}{\epsilon_0}
+\]
+</p>
+
+<p>
+Isto logiko uoprabimo na naši radialni funkciji
+</p>
+
+<p>
+\[ \nabla ^2 \psi = - 4 \pi D_0 \delta ^3 \left( \vec{r} \right) = 0 \implies \ D_0 0
+\]
+</p>
+
+<p>
+Zaključimo, da je radialna funkcija za majhne \( r \) enaka
+</p>
+
+<p>
+\[ \psi(r) = C_l r^l; \ l = 0,1,2 , \ldots
+\]
+</p>
+
+<p>
+Poglejmo si še, kako je z velikimi razdaljami, ko \( r \to \infty \). Gledamo primer, ko je \( E > 0 \) in potencial \( V \) pada proti 0 &ldquo;dovolj hitro&rdquo;.
+</p>
+
+<p>
+Rešujemo torej enačbo
+</p>
+
+<p>
+\[ - \frac{\hbar ^2}{2m} \frac{\mathrm{d} ^2 }{\mathrm{d} r ^2} u = E u,
+\]
+</p>
+
+<p>
+ki ima rešitev
+</p>
+
+<p>
+\[ u(r) = C_+ e^{\mathrm{i} k r} + C_- e^{-\mathrm{i} k r} = r \begin{cases}
+                                                                j_l \sim \sin \left( kr - \frac{\pi}{2} l \right)\\
+                                                                n_l \sim \cos \left( kr - \frac{\pi}{2} l \right)
+                                                               \end{cases}
+\]
+</p>
+
+<p>
+Energija je \( E_{\gamma} = \frac{p ^2}{2m} \) za \( p = \hbar k \)
+</p>
+
+<p>
+Tretje možnost je \( E_n < 0 \). Potem bo rešitev
+</p>
+
+<p>
+\[ u = D_- e^{- \kappa_n r} + D_+ e^{\kappa _n r}
+\]
+</p>
+
+<p>
+Ko gre \( r \to \infty \), mora biti integral
+</p>
+
+<p>
+\[ \int\limits_0^{\infty} \left| u \right|  ^2 \, \mathrm{d} r < \infty
+\]
+</p>
+
+<p>
+omejen. Iz tega sledi, da je \( D_+ = 0 \).
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 18:55</p>
+</div>
+</body>
+</html>

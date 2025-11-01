@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 19:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3. vaje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">3. vaje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org440e630">1. 2. sklop nalog</a></li>
+<li><a href="#orgfd52c54">2. 3. sklop nalog</a>
+<ul>
+<li><a href="#org4132fc7">2.1. Lastnosti komutatorjev in antikomutatorjev.</a></li>
+<li><a href="#orge19b370">2.2. Nadaljevanje nedoločenosti</a></li>
+<li><a href="#org98820a3">2.3. Iskanje valovnih funkcij za princip nedoločenosti</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org440e630" class="outline-2">
+<h2 id="org440e630"><span class="section-number-2">1.</span> 2. sklop nalog</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Za \( A = (1, 0) \) in \( B = (r, t) \) zapišemo valovni funkciji za območji 1 in 2:
+</p>
+
+\begin{align*}
+  \Psi_1(x) &= \frac{A_1}{\sqrt{v}}e^{\mathrm{i} k x} + \frac{B_1}{\sqrt{v}} e^{- \mathrm{i} k x} = \frac{e^{\mathrm{i} k x}}{\sqrt{v}} + \frac{r}{\sqrt{v}} e^{-\mathrm{i} k x} \\
+  \Psi_3 (x) &= \frac{A_3}{\sqrt{v}}e^{-\mathrm{i} k x} + \frac{B_3}{\sqrt{v}} e^{ \mathrm{i} k x} = 0 + \frac{t}{\sqrt{v}} e^{-\mathrm{i} k x}
+\end{align*}
+
+<p>
+kjer je \( k ^2 = \frac{2m E}{\hbar ^2} \). Opomnimo, da je potencial enak na obeh straneh, kar tudi vpliva, da \( k_1 = k_2 = k \) ter \( v_1 = v_2 = v \).
+</p>
+
+<p>
+Za potencial delta funkcija \( V(x) = - \lambda \delta(x) \) območja 3 praktično ni. Upoštevamo robna pogoja zveznosti in zvezne odvedljivosti.
+</p>
+
+<p>
+Zveznost \( \Psi_1 (0) = \Psi_3 (0) \) nam poda enačbo
+</p>
+
+\begin{equation}
+\label{eq:1}
+1 + r = t
+\end{equation}
+
+<p>
+Za robni pogoj zvezne odvedljivosti pa uporabimo pogoj, ki smo uporabili na prejšnji uri, in sicer
+</p>
+
+<p>
+\[ \Psi_2 '(0) - \Psi_1 '(0) = \frac{2m \lambda \Psi(0)}{\hbar ^2}, \quad \kappa = \frac{m \lambda}{\hbar ^2}
+\]
+</p>
+
+<p>
+To nam poda drugo enačbo, ki je
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \mathrm{i} k \left( t + r - 1 \right) = - 2 \kappa_0  t
+\end{equation}
+
+<p>
+Dobili smo dve enačbi, kjer enačbo \ref{eq:1} vstavimo v \ref{eq:2}, ki nam poda rešitev za
+</p>
+
+<p>
+\[ r = - \frac{i \kappa_0}{\mathrm{i} k + \kappa_0}
+\]
+</p>
+
+<p>
+in nato še
+</p>
+
+<p>
+\[ t = \frac{\mathrm{i} k}{\mathrm{i} k + \kappa_0}
+\]
+</p>
+
+<p>
+Vrednosti \( r' \) in \( t' \) poiščemo preko analognega postopka, vendar za \( A = (0, 1) \).
+</p>
+
+<p>
+Sipalna matrika \( S \) je tako
+</p>
+
+<p>
+\[ S = \frac{1}{\mathrm{i}k + \kappa_0} \begin{pmatrix}
+                                        -\kappa_0  & \mathrm{i} k \\
+                                         \mathrm{i} k& -\kappa_0
+                                         \end{pmatrix}
+\]
+</p>
+
+<p>
+Tranzitivnost je po definiciji
+</p>
+
+\begin{equation}
+\label{eq:3}
+ T (k) = \left| t \right|  ^2 = \left| \frac{\mathrm{i} k }{\mathrm{i} k + \kappa_0} \right| ^2 = \frac{k ^2}{k ^2 + \kappa_0 ^2}
+\end{equation}
+
+<p>
+Refleksivnost pa analogno
+</p>
+
+\begin{equation}
+\label{eq:4}
+ R(k) = \left| \frac{- \kappa_0}{\mathrm{i} k + \kappa_0} \right| ^2 = \frac{\kappa_0}{k ^2 + \kappa_0}
+\end{equation}
+
+<p>
+Iz definicije \( k \) lahko izrazimo odvisnost \( E(k) \) kot
+</p>
+
+<p>
+\[ E = \frac{\hbar ^2 k ^2}{2m}
+\]
+</p>
+
+<p>
+in sedaj lahko enačbi \ref{eq:3} in \ref{eq:4} izrazimo v odvisnosti od energije, torej
+</p>
+
+<p>
+\[ T(E) = \frac{E}{E + \frac{\hbar ^2 \kappa_0 ^2}{2m}}, \quad R(E) = \frac{E_0}{E + E_0}
+\]
+</p>
+
+<p>
+kjer je \( E_0 = \frac{\hbar ^2 \kappa_0}{2m} \). Trivialno lahko preverimo, da je
+</p>
+
+<p>
+\[ R + T = 1
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgfd52c54" class="outline-2">
+<h2 id="orgfd52c54"><span class="section-number-2">2.</span> 3. sklop nalog</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Iščemo valovno funkcijo, za katero velja princip nedoločenosti
+</p>
+
+<p>
+\[ \delta x \cdot \delta p \ge \frac{\hbar}{2}
+\]
+</p>
+
+<p>
+Najprej bomo dokazali princip nedoločenosti, nato pa poiskali valovne funkcije.
+</p>
+
+<p>
+To bomo naredili v splošnem s hermitskima operatorjema \( A \) in \( B \). Za hermitska ali sebi-adjungirana operatorja velja
+</p>
+
+\begin{equation}
+\label{eq:5}
+ A ^{\dagger} = A, \quad B ^{\dagger} = B
+\end{equation}
+
+<p>
+Po definiciji nedoločenost posameznega operatorja zapišemo kot
+</p>
+
+<p>
+\[ \left( \delta A \right) ^2 = \left\langle A ^2 \right\rangle = \left\langle A \right\rangle ^2 = \left\langle \left( A - \left\langle A \right\rangle \right) ^2 \right\rangle
+\]
+</p>
+
+<p>
+Definiramo \( \tilde{A} = A - \left\langle A \right\rangle \).
+</p>
+
+<p>
+Dokažimo, da je pričakovana vrednost realna. Po definiciji pričakovano vrednost zapišemo v integralski in braket notaciji kot
+</p>
+
+<p>
+\[ \left\langle A \right\rangle  = \int\limits_{}^{} \psi^{\ast} A \psi \, \mathrm{d} x = \left\langle \psi \middle| A \middle| \psi \right\rangle = \left\langle \psi \middle| A \psi \right\rangle = \left\langle A^{\dagger} \psi \middle| \psi \right\rangle
+\]
+</p>
+
+<p>
+Zaradi \ref{eq:5} velja
+</p>
+
+<p>
+\[ \left\langle A \right\rangle  = \left\langle \psi \middle| A \psi \right\rangle = \left\langle A^{\dagger} \psi \middle| \psi \right\rangle = \left\langle A \psi \middle| A \right\rangle^{\dagger} = \left\langle A \right\rangle^{\dagger}
+\]
+</p>
+
+<p>
+kar pomeni, da je \( \left\langle A \right\rangle \in \mathbb{R} \).
+</p>
+
+<p>
+Vsota dveh hermitskih operatorjev je enaka
+</p>
+
+<p>
+\[ \left( A + B \right)^{\dagger} = A ^{\dagger} + B ^{\dagger} = A + B
+\]
+</p>
+
+<p>
+Iz tega sledi, da je
+</p>
+
+<p>
+\[ \tilde{A} ^{\dagger} = \tilde{A}.
+\]
+</p>
+
+<p>
+Vrnimo se nazaj k produktu nedoločenosti
+</p>
+
+\begin{align*}
+   \left( \delta A \delta B \right) ^2 &= \left\langle \psi \middle| \tilde{A} ^2 \middle| \psi \right\rangle \left\langle \psi \middle| \tilde{B} ^2 \middle| \psi  \right\rangle \\
+&= \left\langle \tilde{A} \psi \middle| \tilde{A} \psi \right\rangle \left\langle \tilde{B} \psi\middle| \tilde{B} \psi \right\rangle \\
+&= \left\lVert \tilde{A} \psi \right\rVert ^2 \left\lVert \tilde{B} \psi \right\rVert ^2
+\end{align*}
+
+<p>
+Produkt norm smo lahko zapisali, saj je \( \left\langle \tilde{A} \psi \middle| \tilde{A} \Psi \right\rangle \) produkt dveh enakih vektorjev. Produkt kvadrata norm se pojavi v Cauchy-Schwartzovi neenakosti, iz česar sledi
+</p>
+
+<p>
+\[ \left\lVert \tilde{A} \psi \right\rVert ^2 \left\lVert \tilde{B} \Psi \right\rVert ^2 \ge \left| \left\langle \tilde{A} \psi \middle| \tilde{B} \psi \right\rangle \right| ^2 = \left| \left\langle \psi \middle| \tilde{A} \tilde{B} \psi \right\rangle \right| ^2
+\]
+</p>
+
+<p>
+Dobljen rezultat bomo še dodatno razpisali in sicer
+</p>
+
+<p>
+\[ \left| \left\langle \psi \middle| \tilde{A} \tilde{B} \psi \right\rangle \right| ^2 = \left| \left\langle \psi \middle| \frac{1}{2} \left( \tilde{A} \tilde{B} - \tilde{B} \tilde{A} + \tilde{A} \tilde{B} + \tilde{B} \tilde{A} \right) \middle| \psi \right\rangle \right|
+\]
+</p>
+
+<p>
+Razliki
+</p>
+
+<p>
+\[ \tilde{A} \tilde{B} - \tilde{B} \tilde{A} = \left[ \tilde{A} , \tilde{B} \right]
+\]
+</p>
+
+<p>
+rečemo komutator, vsoti
+</p>
+
+<p>
+\[ \tilde{A} \tilde{B} + \tilde{B} \tilde{A} =\left\{ \tilde{A}, \tilde{B} \right\}
+\]
+</p>
+
+<p>
+pa antikomutator.
+</p>
+</div>
+<div id="outline-container-org4132fc7" class="outline-3">
+<h3 id="org4132fc7"><span class="section-number-3">2.1.</span> Lastnosti komutatorjev in antikomutatorjev.</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Antikomutator dveh hermitskih komutatorjev je tudi hermitski operator:
+</p>
+
+\begin{align*}
+  \left\{ A, B \right\} ^{\dagger} &= \left( A B + B A   \right) ^{\dagger} \\
+&= (AB) ^{\dagger} + (BA) ^{\dagger} = B^{\dagger} A^{\dagger} + A^{\dagger} B^{\dagger} \\
+&= \left\{ A, B \right\}
+\end{align*}
+
+<p>
+Opomba, da velja \( \left( AB \right)^{\dagger} = B^{\dagger} A^{\dagger} \).
+</p>
+
+<p>
+Komutator dveh hermitskih operatorjev pa je anti-hermitski operator
+</p>
+
+\begin{align*}
+  \left[ A, B \right]^{\dagger} &= \left( A B - B A \right)^{\dagger} \\
+&= \left( A B \right) ^{\dagger} - \left( BA \right) ^{\dagger} = B ^{\dagger}A ^{\dagger} - A ^{\dagger} B^{\dagger} \\
+&= B A - A B = - \left[ A, B \right]
+\end{align*}
+
+<p>
+Pričakovana vrednost anti-hermitskega operatorja \( A ^{\dagger} = - A \) je po definiciji
+</p>
+
+\begin{align*}
+  \left\langle A \right\rangle &= \left\langle \psi \middle| A \psi \right\rangle \\
+&= \left\langle A ^{\ast} \psi \middle| \psi \right\rangle = \left\langle - A \psi \middle| \psi \right\rangle \\
+&= - \left\langle A \psi \middle| \psi \right\rangle = -\left\langle \psi \middle| A \psi \right\rangle^{\ast} \\
+&= - \left\langle A \right\rangle^{\ast}
+\end{align*}
+
+<p>
+Iz tega sledi, da je pričakovana vrednost anti-hermitskega operatorja kompleksna vrednost.
+</p>
+</div>
+</div>
+<div id="outline-container-orge19b370" class="outline-3">
+<h3 id="orge19b370"><span class="section-number-3">2.2.</span> Nadaljevanje nedoločenosti</h3>
+<div class="outline-text-3" id="text-2-2">
+\begin{align*}
+  \left( \delta A \delta B \right) ^2 &= \left\lVert \tilde{A} \psi  \right\rVert ^2 \left\lVert \tilde{B} \psi \right\rVert ^2 \\
+& \ge \left| \left\langle \tilde{A} \psi \middle| \tilde{B} \psi \right\rangle \right| \\
+&= \left| \left\langle \psi \middle| \frac{1}{2} \left[ \tilde{A}, \tilde{B} \right] + \frac{1}{2} \left\{ \tilde{A}, \tilde{B} \right\}\middle| \psi \right\rangle \right| \\
+&= \left| \underbrace{\frac{1}{2} \left\langle \left[ \tilde{A}, \tilde{B} \right] \right\rangle}_{\in \mathrm{Im}} + \underbrace{\frac{1}{2} \left\langle \left\{ \tilde{A}, \tilde{B} \right\} \right\rangle}_{\in \mathrm{Re}} \right| ^2 \\
+&= \frac{1}{4} \left( \left| \left\langle \left[ \tilde{A}, \tilde{B} \right] \right\rangle \right|  ^2 + \left| \left\langle \left\{ \tilde{A}, \tilde{B} \right\} \right\rangle \right| ^2 \right)
+\end{align*}
+
+<p>
+Zadnja vrstica je posledica tega, da je prvi člen kompleksno število, drug člen realno število in absolutna vrednost kompleksnega števila \( z = a + \mathrm{i} b \) je \( \left| z \right| = a ^2 + b ^2 \). Ker imamo vsoto dveh pozitivnih členov, kar pomeni, da lahko zanemarimo antikomutator in zapišemo
+</p>
+
+<p>
+\[ \frac{1}{4} \left( \left| \left\langle \tilde{A}, \tilde{B} \right\rangle \right| ^2+ \left| \left\langle \left\{ \tilde{A}, \tilde{B} \right\} \right\rangle \right| ^2\right) \ge \frac{1}{4} \left| \left\langle \left[ \tilde{A}, \tilde{B} \right] \right\rangle \right| ^2
+\]
+</p>
+
+<p>
+Po definiciji zapišemo
+</p>
+
+\begin{align*}
+\left[ \tilde{A}, \tilde{B} \right] &= \left[ A - \left\langle A \right\rangle, B - \left\langle B \right\rangle\right] \\
+&= \left[ A, B \right] - \left[ \left\langle A \right\rangle , B\right] - \left[ A, \left\langle B \right\rangle \right] + \left[ \left\langle A \right\rangle , \left\langle B \right\rangle\right] \\
+&= \left[ A, B \right]
+\end{align*}
+
+<p>
+Zadnji člen je \( 0 \), saj je množenje števil med sabo komutativno. Pri členih z eno pričakovano vrednostjo pa je tudi komutativno, saj imamo en operator in eno število.
+</p>
+
+<p>
+Sedaj, če združimo vse skupaj, dobimo
+</p>
+
+<p>
+\[ \left( \delta A, \delta B \right) ^2 \ge \left( \frac{1}{2} \left| \left\langle \left[ A, B \right] \right\rangle \right| \right) ^2
+\]
+</p>
+
+<p>
+Nadomestimo splošna operatorja \( A \) in \( B \) z \( x = x \) in \( p = - \mathrm{i} \hbar \frac{\partial }{\partial x}  \):
+</p>
+
+<p>
+\[ \delta x \cdot \delta p  = \left| \left\langle \frac{1}{2} \left[ x, p \right] \right\rangle \right|
+\]
+</p>
+
+<p>
+Komutator na funkcijo je enak
+</p>
+
+\begin{align*}
+  \left[ x, p \right] \psi(x) &= \left( x p - p x \right) \psi(x) = \left( - x \mathrm{i} \hbar \frac{\partial }{\partial x}  - \left( \mathrm{i} \hbar \frac{\partial }{\partial x}  \right)x \right) \psi(x) \\
+&= - \mathrm{i} \hbar x \psi'(x) + \mathrm{i} \hbar \left( 1 \cdot \psi(x) + x \psi'(x) \right) \\
+&= \mathrm{i} \hbar \psi(x)
+\end{align*}
+
+<p>
+Končno, dobimo
+</p>
+
+<p>
+\[ \delta x \delta p = \frac{1}{2} \hbar
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org98820a3" class="outline-3">
+<h3 id="org98820a3"><span class="section-number-3">2.3.</span> Iskanje valovnih funkcij za princip nedoločenosti</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Želimo najti valovne funkcije, kjer velja
+</p>
+
+<p>
+\[ \delta x \delta p = \frac{1}{2} \hbar
+\]
+</p>
+
+<p>
+Da bo veljala enakost in ne samo neenakost, moramo zadostiti pogojema, kjer se v teoriji/dokazu principa nedoločenosti pojavi neenakost. To je
+</p>
+
+<ul class="org-ul">
+<li><p>
+Cauchy-Schwartzova neenakosti je enakost, če sta vektorja vzporedna
+</p>
+
+<p>
+\[ \left\lVert \tilde{A} \psi \right\rVert ^2 \left\lVert \tilde{B} \psi \right\rVert ^2= \left| \left\langle \tilde{A} \psi \middle| \tilde{B} \psi \right\rangle  \right| ^2 \iff \quad \tilde{A} \psi = \alpha \tilde{B} \psi, \quad \alpha \in \mathbb{C}
+  \]
+</p></li>
+
+<li><p>
+druga neenakost je enaka \( 0 \), torej
+</p>
+
+<p>
+\[ \left\langle \left\{ \tilde{A}, \tilde{B} \right\} \right\rangle = 0
+  \]
+</p></li>
+</ul>
+
+<p>
+Začnemo z drugim pogojem, ki ga razpišemo po definiciji
+</p>
+
+\begin{align*}
+  0 \equiv \left\langle \left\{ \tilde{A}, \tilde{B} \right\} \right\rangle &= \left\langle \psi \middle| \tilde{A} \tilde{B} + \tilde{B} \tilde{A} \middle| \psi \right\rangle \\
+&= \left\langle \psi \middle| \tilde{A} \tilde{B} \middle| \psi \right\rangle + \left\langle \psi \middle| \tilde{B} \tilde{A} \middle| \psi \right\rangle \\
+&= \left\langle \tilde{A} \psi \middle| \tilde{B} \psi \right\rangle + \left\langle \tilde{B} \psi \middle| \tilde{A} \psi \right\rangle = 0
+\end{align*}
+
+<p>
+Upoštevamo sedaj še prvi pogoj in naš pogoj se preobrazi v
+</p>
+
+\begin{align*}
+  0 &= \left\langle \tilde{A} \psi \middle| \tilde{B} \psi \right\rangle + \left\langle \tilde{B} \psi \middle| \tilde{A} \psi \right\rangle \\
+&= \left\langle \alpha \tilde{B} \psi \middle| \tilde{B} \psi \right\rangle + \left\langle \tilde{B} \psi \middle| \alpha \tilde{B} \psi \right\rangle \\
+&= \alpha ^{\ast} \left\langle \tilde{B} \psi \middle| \tilde{B} \psi \right\rangle + \alpha \left\langle \tilde{B} \psi \middle| \tilde{B} \psi \right\rangle \\
+&= \left( \alpha^{\ast} + \alpha \right) \left\langle \tilde{B} \psi \middle| \tilde{B} \psi \right\rangle
+\end{align*}
+
+<p>
+To je enako nič, če je vsota \( \alpha^{\ast} + \alpha  \) enaka 0, ali pa če je \( \left\langle \tilde{B} \psi \middle| \tilde{B} \psi \right\rangle = \left( \delta B \right) ^2\) enako 0. Slednje ne more biti, saj bi bila nedoločenost operatorja \( A \) neskončna.
+</p>
+
+<p>
+Vsota \( \alpha^{\ast} + \alpha \) pa je enaka 0 zgolj in izključno, če je \( \alpha \) imaginarna številka, torej \( \alpha = \mathrm{i} c, \ c \in \mathbb{R} \). Cauchy-Schwartzov pogoje je tako
+</p>
+
+<p>
+\[ \left| \tilde{A} \psi \right| = \mathrm{i} c \left| \tilde{B} \psi \right\rangle
+\]
+</p>
+
+<p>
+Upoštevajoč definicije \( \tilde{A} \) in \( \tilde{B} \) dobimo
+</p>
+
+<p>
+\[ \left| A \psi \right\rangle - \left\langle A \right\rangle \left| \psi \right\rangle = \mathrm{i} c \left| B \psi \right\rangle - \mathrm{i} c \left\langle B \right\rangle \left| \psi \right\rangle
+\]
+</p>
+
+<p>
+Rešitve \( \psi \) bodo zadostile pogoje
+</p>
+
+<p>
+\[ \delta A \delta B = \frac{1}{2} \left| \left\langle A, B \right\rangle \right|
+\]
+</p>
+
+<p>
+Nadomestimo splošna operatorja \( A \) z \( x \) in \( B \) s \( p \). Dobimo diferencialno enačbo
+</p>
+
+<p>
+\[ \left( - \mathrm{i} \hbar \frac{\partial }{\partial x} - \left\langle p \right\rangle \right) \psi(x) = \mathrm{i} c \left( x - \left\langle x \right\rangle \right) \psi(x)
+\]
+</p>
+
+<p>
+Imamo diferencialno enačbo prvega reda, kjer lahko ločimo spremenljivke
+</p>
+
+<p>
+\[ \int\limits_{}^{} \frac{\mathrm{d} \psi}{\psi} = \int\limits_{}^{} - \frac{1}{\mathrm{i} \hbar} \left( \mathrm{i} c \left( x - \left\langle x \right\rangle \right) + \left\langle p \right\rangle \right) \, \mathrm{d} x
+\]
+</p>
+
+<p>
+in rešitev je
+</p>
+
+<p>
+\[ \psi(x) = C \exp \left\{ - \frac{c}{\hbar} x \left\langle x \right\rangle - \frac{\left\langle p \right\rangle x}{\mathrm{i} \hbar} + \frac{c}{\hbar} \frac{x ^2}{2} \right\}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 19:04</p>
+</div>
+</body>
+</html>
