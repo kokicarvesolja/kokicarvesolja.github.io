@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 19:20 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>1. vaje iz Matematične fizike 2</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">1. vaje iz Matematične fizike 2</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5744589">1. Teorija: PDE 1. reda</a></li>
+<li><a href="#org4b6218e">2. 1. naloga</a></li>
+<li><a href="#orgeb35715">3. 2. naloga (reši doma)</a></li>
+<li><a href="#orgd608614">4. Enačba strune</a></li>
+<li><a href="#org16697c9">5. 3. naloga: Viseči most</a>
+<ul>
+<li><a href="#org48e3b0e">5.1. Struna s težo</a></li>
+</ul>
+</li>
+<li><a href="#org04416b8">6. 4. naloga: Viseča struna</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5744589" class="outline-2">
+<h2 id="org5744589"><span class="section-number-2">1.</span> Teorija: PDE 1. reda</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Rešujemo PDE 1. reda oblike
+</p>
+
+<p>
+\[ a(x, y, u) \frac{\partial u}{\partial x}  + b (x, y, u) \frac{\partial u}{\partial y}  = \phi (x, y, u)
+\]
+</p>
+
+<p>
+Enačbo rešujemo preko karakteristike (grafično jih predstavimo s črtami) z uvedbo novih spremenljivk \( x(s) \) in \( y(s) \). Parcialno odvajanje
+</p>
+
+<p>
+\[ \frac{\partial u}{\partial s} = \frac{\partial u}{\partial x}  \frac{\mathrm{d} x}{\mathrm{d} s} + \frac{\partial u}{\partial y} \frac{\mathrm{d} y}{\mathrm{d} s}
+\]
+</p>
+
+<p>
+Izberemo, da velja
+</p>
+
+\begin{align*}
+  \frac{\mathrm{d} x}{\mathrm{d} s} &= a(x, y, u) \\
+\frac{\mathrm{d} y}{\mathrm{d} s} &= b(x, y, u)
+\end{align*}
+
+<p>
+kar nam da še tretjo ODE
+</p>
+
+<p>
+\[ \frac{\partial u}{\partial s}  = \phi(x, y, u)
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org4b6218e" class="outline-2">
+<h2 id="org4b6218e"><span class="section-number-2">2.</span> 1. naloga</h2>
+<div class="outline-text-2" id="text-2">
+<div class="my_example" id="orgd9852ba">
+<p>
+Rešujemo Burgersevo enačbo
+</p>
+
+<p>
+\[ \frac{\partial \rho}{\partial t}  + \rho \frac{\partial \rho}{\partial x}  = 0
+\]
+</p>
+
+<p>
+z začetnimi pogoji
+</p>
+
+<p>
+\[ \rho (x, t = 0) = \begin{cases}
+                       a ^2 - x ^2; & \left| x \right| \le a \\
+                       0; & \left| x \right| > a
+                     \end{cases}
+\]
+</p>
+
+</div>
+
+<p>
+Kakor v teoriji, dobimo 3 ODE
+</p>
+
+\begin{align*}
+  \frac{\mathrm{d} t}{\mathrm{d} s} &= 1 \\
+\frac{\mathrm{d} x}{\mathrm{d} s} &= \rho \\
+\frac{\mathrm{d} \rho}{\mathrm{d} s} &= 0
+\end{align*}
+
+<p>
+Iz zadnje enačbe sledi, da je \( \rho(s) = \mathrm{konst} \). Iz prve enačbe po integraciji sledi
+</p>
+
+\begin{equation}
+\label{eq:1}
+ t(s) = s + C
+\end{equation}
+
+<p>
+in ob predpostavki \( t(0) = 0 \) sledi, da je \( C = 0 \). Po integraciji druge enačbe dobimo
+</p>
+
+\begin{equation}
+\label{eq:2}
+ x(s) = \int\limits_{}^{} \rho(x, t) \, \mathrm{d} s = \rho(x, t) s + D
+\end{equation}
+
+<p>
+kjer smo upoštevali, da je \( \rho(x, t) = \mathrm{konst} \). Zaradi enačbe \ref{eq:1} lahko zapišemo \ref{eq:2} kot
+</p>
+
+<p>
+\[ x(s) = \rho(x, t) t + x_0
+\]
+</p>
+
+<p>
+kjer smo označili \( x(0)= x_0 = D \).
+</p>
+
+<p>
+Naša enačba karakteristike bo
+</p>
+
+<p>
+\[ x (t) = \rho(x_0, 0) t + x_0
+\]
+</p>
+
+<p>
+[glej skico karakteristik v <a href="https://matevzprincic.splet.arnes.si/files/2023/11/mafija2_latex_vaje.pdf">Prinčičevih zapiskih, stran 3</a>]
+</p>
+
+<p>
+Sedaj iščemo karakteristiko, ki reši našo enačbo, z upoštevanjem IC:
+</p>
+
+\begin{align*}
+  x &= \rho(x_0, 0) t + x_0 \\
+&= \left( a ^2 - x_0 ^2 \right)t + x_0 \\
+&= a ^2 t - x_0 ^2 + x_0
+\end{align*}
+
+<p>
+iz česar sledi
+</p>
+
+<p>
+\[ x_0 = \frac{1 \pm \sqrt{1 - 4t \left( x - a ^2 t \right)}}{2t}
+\]
+</p>
+
+<p>
+Predznak bomo izbrali tako, da bomo pogledali predznak v določeni točki, ki jo poznamo. Poznamo \( x_0 = 0 \) pri \( x = 0 \) in \( t = 0 \) (glej skico karakteristik).
+</p>
+
+<p>
+\[ x_0 = \lim_{t \to 0} \frac{1 \pm \sqrt{1 - 4 t (0 - a ^2 t)}}{2t} = \begin{cases}
+                                                                        \infty; & + \\
+                                                                        0; & -
+                                                                       \end{cases}
+\]
+</p>
+
+<p>
+kjer smo pri limiti za negativen predznak uporabili L&rsquo;Hopitalovo pravilo.
+</p>
+
+<p>
+To nam poda rešitev
+</p>
+
+<p>
+\[ \rho(x, t) = \rho \left( x_0(x, t), t = 0 \right) = a ^2 - \left( \frac{1 - \sqrt{1 - 4t \left( x - a ^2 t \right)}}{2t} \right) ^2
+\]
+</p>
+
+<p>
+(I guess, da smo to enakost dobili iz IC, ob upoštevanju vrednosti \( x_0 \))
+</p>
+</div>
+</div>
+<div id="outline-container-orgeb35715" class="outline-2">
+<h2 id="orgeb35715"><span class="section-number-2">3.</span> 2. naloga (reši doma)</h2>
+<div class="outline-text-2" id="text-3">
+<div class="my_example" id="org72895b9">
+<p>
+Rešujemo PDE 1. reda oblike
+</p>
+
+<p>
+\[ (x - y) \frac{\partial u}{\partial x}  + \frac{\partial u}{\partial y}  = x
+\]
+</p>
+
+<p>
+z začetnimi pogoji \( u(x, y = 0) = f(x) \).
+</p>
+
+</div>
+
+<p>
+Rešitev, ki jo dobimo je,
+</p>
+
+<p>
+\[ u(x, y) = f(1 + (x - y - 1) e^{-y}) + y + \frac{1}{2} y ^2 + (x - y - 1) \left( 1 - e^{-y} \right)
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgd608614" class="outline-2">
+<h2 id="orgd608614"><span class="section-number-2">4.</span> Enačba strune</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Enačba strune je podana z enačbama
+</p>
+
+\begin{align*}
+  \mu \frac{\partial ^2 x }{\partial t ^2} &= \frac{\partial }{\partial s}  \left( F(s) \frac{\partial x}{\partial s}  \right) + f_x   \\
+  \mu \frac{\partial ^2 y}{\partial t ^2} &= \frac{\partial }{\partial s}  \left( F(s) \frac{\partial y}{\partial s}  \right) + f_y   \\
+\end{align*}
+
+<p>
+kjer je \( \mu= \frac{\mathrm{d} m}{\mathrm{d} s} \) in \( f_{\alpha} = \frac{\mathrm{d} F_{sum, \alpha}}{\mathrm{d} s} \). Neraztegljivost podamo s pogojem
+</p>
+
+<p>
+\[ \mathrm{d} s ^2 = \mathrm{d} ^2 x + \mathrm{d} ^2 y
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org16697c9" class="outline-2">
+<h2 id="org16697c9"><span class="section-number-2">5.</span> 3. naloga: Viseči most</h2>
+<div class="outline-text-2" id="text-5">
+<div class="my_example" id="org3b94f1f">
+<p>
+Izračunaj obliko visečega mostu z maso \( M \) in dolžino vrvice \( L \), ki med dvema palicama z višinama \( y_1 \) in \( y_2 \) pokrije razdaljo \( l \).
+</p>
+
+</div>
+
+<p>
+Velja \( \frac{\partial y}{\partial t} = \frac{\partial x}{\partial t}  = 0 \). Najprej si pogledamo v \( x \) smeri, kjer velja
+</p>
+
+<p>
+\[ \frac{\partial }{\partial s}  \left( F(s) \frac{\partial x}{\partial s}  \right) = - f_x = 0
+\]
+</p>
+
+<p>
+oziroma po integraciji
+</p>
+
+<p>
+\[ F(s) \frac{\partial x}{\partial s}  = \mathrm{konst} = F_0
+\]
+</p>
+
+<p>
+V \( y \) smeri pa imamo
+</p>
+
+<p>
+\[ \frac{\partial }{\partial s} \left( F(s) \frac{\partial y}{\partial s}  \right) = - f_y
+\]
+</p>
+
+<p>
+Zunanjo silo zapišemo kot
+</p>
+
+<p>
+\[ \mathrm{d} F_{zun}  = \frac{Mg}{l} \mathrm{d} x
+\]
+ in jo prepišemo v
+</p>
+
+<p>
+\[ f_y = - \frac{Mg}{l} \frac{\mathrm{d} x}{\mathrm{d} s}
+ \]
+</p>
+
+<p>
+Torej rešujemo
+</p>
+
+ \begin{align*}
+   \frac{\partial }{\partial s} \left( F(s) \frac{\partial y}{\partial s}  \right) &= \frac{M g}{l} \frac{\mathrm{d} x}{\mathrm{d} s} \\
+\frac{\partial s}{\partial x} \left( \frac{F_0}{\frac{\partial x}{\partial s}} \cdot \frac{\partial y}{\partial s}  \right) &= \frac{Mg}{l} \frac{\mathrm{d} x}{\mathrm{d} s}\\
+\frac{\partial }{\partial s}  \left( F_0 \frac{\partial y}{\partial x}   \right) &= \frac{Mg}{l} \frac{\mathrm{d} x}{\mathrm{d} s}
+ \end{align*}
+
+<p>
+Kjer smo upoštevali definicijo \( F_0 \) in da se (nematematično) diferenciali v ulomkih (ds) pokrajšajo. Zaradi verižnega pravila velja
+</p>
+
+<p>
+\[ F_0 \frac{\partial x}{\partial s} \frac{\partial ^2 y}{\partial ^2 x} = \frac{Mg}{l} \frac{\partial x}{\partial s}
+ \]
+</p>
+
+<p>
+saj
+</p>
+
+<p>
+\[ \frac{\partial }{\partial s}  \left( \frac{\partial y}{\partial x}  \right) = \frac{\partial }{\partial x}  \left( \frac{\partial y}{\partial x}  \right) \frac{\partial x}{\partial s}  = \frac{\partial ^2 y }{\partial x ^2} \frac{\partial x}{\partial s}
+ \]
+</p>
+
+<p>
+Nadalje
+</p>
+
+ \begin{align*}
+   \frac{\partial ^2 y }{\partial x ^2} &= \frac{Mg}{l F_0} \\
+\frac{\partial y}{\partial x}  = \frac{Mg}{l F_0} + C_1
+ \end{align*}
+
+<p>
+in na koncu
+</p>
+
+<p>
+\[ y(x) = \frac{Mg}{l F_0} \frac{x ^2}{2} + C_1 x + C_2
+ \]
+</p>
+
+<p>
+Ob upoštevanju začetnih pogojev:
+</p>
+
+<ul class="org-ul">
+<li><p>
+\( y(0) = y_1 \)
+</p>
+
+<p>
+\[ y(0) = \frac{Mg}{lF_0} \cdot + C_1 \cdot 0 + C_2
+   \]
+</p></li>
+
+<li><p>
+\( y(l) = y_2 \)
+</p>
+
+<p>
+\[ y_2 = \frac{Mg l}{2F_0} + C_1 l + y_1
+   \]
+</p>
+
+<p>
+in tako
+</p>
+
+<p>
+\[ C_1 = \frac{1}{l} \left( y_2 - y_1 - \frac{Mgl}{2 F_0} \right)
+   \]
+</p></li>
+
+<li>\[ L = \int\limits_{}^{} \, \mathrm{d} s = \int\limits_{}^{} \sqrt{ \mathrm{d} x ^2 + \mathrm{d} ^2 y} = \int\limits_{}^{} \sqrt{1 + \left( \frac{\mathrm{d} y}{\mathrm{d} x} \right) ^2 } \, \mathrm{d} x
+   \]</li>
+</ul>
+</div>
+<div id="outline-container-org48e3b0e" class="outline-3">
+<h3 id="org48e3b0e"><span class="section-number-3">5.1.</span> Struna s težo</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+V primeru, da vrv ni brezmasna, je zunanja sila enaka
+</p>
+
+<p>
+\[ f_y = - \mu g
+\]
+</p>
+
+<p>
+in nadalje
+</p>
+
+<p>
+\[ \frac{\partial }{\partial s}  \left( F_0 \frac{\partial y}{\partial x}  \right) = \mu g
+\]
+</p>
+
+<p>
+Ko razpišemo, pa dobimo
+</p>
+
+<p>
+\[ F_0 \frac{\mathrm{d} y}{\mathrm{d} x} = \mu g s + C
+\]
+</p>
+
+<p>
+in po reševanju integrala dobimo
+</p>
+
+<p>
+\[ y = \mathrm{cosh}  \left( \frac{a}{x} \right), \quad a = \frac{F_0}{\mu g}
+\]
+</p>
+
+<p>
+Glej Wikipedia - catenary.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org04416b8" class="outline-2">
+<h2 id="org04416b8"><span class="section-number-2">6.</span> 4. naloga: Viseča struna</h2>
+<div class="outline-text-2" id="text-6">
+<div class="my_example" id="org0be1ef3">
+<p>
+Imamo visečo struno z majhnimi odmiki v \( y \) smeri. To pomeni, da
+</p>
+
+<p>
+\[ \mathrm{d} s^2 = \mathrm{d} x ^2 + \mathrm{d} y ^2 \approx \mathrm{d} x ^2
+\]
+</p>
+
+<p>
+oziroma \( x = s \).
+</p>
+
+</div>
+
+<p>
+V smeri \( x \) velja
+</p>
+
+<p>
+\[ \frac{\partial x}{\partial t}  = 0
+\]
+</p>
+
+<p>
+iz česar sledi
+</p>
+
+<p>
+\[ \partial_s F (s) = - f_x = \frac{\mathrm{d} F_{zun, x}}{\mathrm{d} x} =  - \mu g
+\]
+</p>
+
+<p>
+saj
+</p>
+
+<p>
+\[ F_{zun, x} = \mu g
+\]
+</p>
+
+<p>
+oziroma diferencialno zapisano
+</p>
+
+<p>
+\[ \mathrm{d} F_{zun, x} = \mu g \mathrm{d} x
+\]
+</p>
+
+<p>
+Torej je zunanja sila enaka
+</p>
+
+<p>
+\[ F(x) = - \mu g x + F_0
+\]
+</p>
+
+<p>
+Določimo
+</p>
+
+<p>
+\[ mg = F(0) = F_0
+\]
+</p>
+
+<p>
+in tako zapišemo zunanjo silo kot
+</p>
+
+\begin{equation}
+\label{eq:3}
+ F(x) = \mu g \left( l - x \right)
+\end{equation}
+
+<p>
+V \( y \) smeri pa nimamo zunanjih sil in je \( f_y = 0 \). Z upoštevanjem \ref{eq:3} preobrazimo našo enačbo strune
+</p>
+
+<p>
+\[ \mu \frac{\partial ^2 y}{\partial t ^2} = \frac{\partial }{\partial x} \left( F(x) \frac{\partial y}{\partial x}  \right) + f_y
+\]
+</p>
+
+<p>
+v
+</p>
+
+<p>
+\[ \frac{\partial ^2 y }{\partial t ^2} = g \left[ \left( l - x \right) \frac{\partial y ^2}{\partial x ^2} - \frac{\partial y}{\partial x}  \right]
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 19:20</p>
+</div>
+</body>
+</html>

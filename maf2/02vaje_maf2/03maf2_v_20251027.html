@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-01 Sat 19:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3. vaje iz Matematične fizike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">3. vaje iz Matematične fizike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4d09bba">1. 7. naloga</a></li>
+<li><a href="#org205a2e3">2. Naloga 8</a></li>
+<li><a href="#org2789a3c">3. Naloga 9 (Prinčič 3.4) - doma</a></li>
+<li><a href="#orgf82702b">4. Naloga 10 (Prinčič 3.5)</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4d09bba" class="outline-2">
+<h2 id="org4d09bba"><span class="section-number-2">1.</span> 7. naloga</h2>
+<div class="outline-text-2" id="text-1">
+<div class="problem" id="org7a976dc">
+<p>
+Imamo neskončno struno, ki ima na točki \( x_0 = 0 \) maso \( m \). Po struni pošljemo valovanje s krožno frekvenco \( \omega \).
+</p>
+
+</div>
+
+<p>
+Imamo valovanje \( \exp \left\{ \mathrm{i} (kx - \omega t) \right\} \), kjer je \( \omega = ck \) in rešujemo valovno enačbo
+</p>
+
+<p>
+\[ \partial_x ^2 u = c ^2 \partial_t ^2 u
+\]
+</p>
+
+<p>
+Dolžinsko gostoto zapišemo kot
+</p>
+
+<p>
+\[ \mu = \mu_0 + m \delta(x)
+\]
+</p>
+
+<p>
+Maso bomo premaknili samo, če nanju delujemo z neko silo \( F_m \)
+</p>
+
+<p>
+\[ F_m = \left. F \frac{\mathrm{d} u}{\mathrm{d} x} \right|_{0^-}^{0^+}
+\]
+</p>
+
+<p>
+Ko valovanje pride do mase, se ga bo določen del odbil, določen del pa prepustil skozi. Torej
+</p>
+
+\begin{equation}
+\label{eq:1}
+ u(x, t) = \begin{cases}
+             u_L (x, t) = e^{\mathrm{i} (k x- \omega t)} + R e^{\mathrm{i} (-kx - \omega t)}&;  x < 0; \\
+             u_D (x, t) = T e^{\mathrm{i} (k x - \omega t)} &;  x \ge 0
+             \end{cases}
+\end{equation}
+
+<p>
+Imamo dva robna pogoja
+</p>
+
+<ol class="org-ol">
+<li><p>
+zveznost
+</p>
+
+<p>
+\[ u_L (0, t) = u_D (0, t),
+   \]
+</p>
+
+<p>
+saj ne želimo, da se struna strga, ter
+</p></li>
+
+<li><p>
+2. Newtonov zakon
+</p>
+
+<p>
+\[ m \ddot{u}_L (0, t) = \left. F \frac{\mathrm{d} u}{\mathrm{d} x} \right|_{0^-}^{0^+}
+   \]
+</p></li>
+</ol>
+
+<p>
+Zveznost in enačba \ref{eq:1} nam podasta pogoj
+</p>
+
+\begin{equation}
+\label{eq:2}
+ 1 + R = T
+\end{equation}
+
+<p>
+Drugi pogoj lahko prepišemo v
+</p>
+
+<p>
+\[ m \ddot{u}_L (0, t) = F \left[ \left. \frac{\mathrm{d} u_D}{\mathrm{d} x} \right|_{x = 0} - \left. \frac{\mathrm{d} u_{L}}{\mathrm{d} x} \right|_{x = 0}  \right]
+\]
+</p>
+
+<p>
+Vstavimo nastavke enačb \ref{eq:2} in dobimo še drugo enačbo
+</p>
+
+<p>
+\[ \mathrm{i} k F (T - 1 + R) = - m T \omega ^2.
+\]
+</p>
+
+<p>
+Vstavimo v enačbo še prvo enačbo \ref{eq:2} in po nekaj matematičnih zablodenj in uvedbo \( \frac{2FF}{m \omega ^2} = \frac{1}{\kappa_0} \) dobimo
+</p>
+
+\begin{align*}
+  T &= \frac{1}{1 - \frac{k \mathrm{i}}{\kappa_0}} \\
+R &= \frac{- 1}{\frac{\mathrm{i} k}{\kappa_0} + 1}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org205a2e3" class="outline-2">
+<h2 id="org205a2e3"><span class="section-number-2">2.</span> Naloga 8</h2>
+<div class="outline-text-2" id="text-2">
+<div class="problem" id="orge809c2a">
+<p>
+Združimo dve opni z različnima gostotama \( \rho_1 \) in \( \rho_2 \). Po opni od leve proti desni pošljemo valovanje \( \vec{k}_0 = k_0 \left( \cos \alpha, \sin \alpha \right) \). Opna z gostoto \( \rho_1 \) se nahaja pri \( x < 0 \). Hitrost valovanja po prvi opni je \( c_1 \), po drugi opni pa \( c_2 \).
+</p>
+
+</div>
+
+<p>
+Valovanje se na spoju \( x = 0 \) odbije in prepusti. Odbito valovanje označimo s \( \vec{k}_1 = k_1 \left( - \cos \beta, \sin \beta \right) \), prepuščeno valovanje pa s \( \vec{k}_2 = k_2 \left( \cos \gamma, \sin \gamma \right)  \).
+</p>
+
+<p>
+Zaradi ohranjanja frekvence in identitete \( \omega = k_0 c _1 \) sledi, da je
+</p>
+
+<p>
+\[ k_1 = \frac{\omega}{c_1} = k_0
+\]
+</p>
+
+<p>
+Hkrati pa za prepuščeno valovanje sledi \( k_2 = \frac{\omega}{c_2} \).
+</p>
+
+<p>
+Rešitev bo oblike
+</p>
+
+<p>
+\[ u \left( \vec{r}, t \right) = \begin{cases}
+                                  u_L \left( \vec{r}, t \right) &; x < 0 \\
+                                  u_D \left( \vec{r}, t \right) &; x > 0
+                                 \end{cases}
+\]
+</p>
+
+<p>
+Imamo dva robna pogoja:
+</p>
+
+<ol class="org-ol">
+<li><p>
+zveznost
+</p>
+
+<p>
+\[ u_L (0, y, t) = u_D (0, y, t)
+   \]
+</p></li>
+
+<li><p>
+zvezno odvedljivost
+</p>
+
+<p>
+\[ \partial_x u_L (0, y, t) = \partial_x u_D \left( 0, y, t \right)
+   \]
+</p></li>
+</ol>
+
+<p>
+Vemo, da bo rešitev oblike
+</p>
+
+\begin{align*}
+  u_L \left( \vec{r}, t \right) &= e^{\mathrm{i} \left( \vec{k}_0 \vec{r} - \omega t \right)} + R e^{\mathrm{i} \left( \vec{k}_1 \vec{r} - \omega t \right)} \\
+u_D \left( \vec{r}, t \right) &= T e^{\mathrm{i} \left( \vec{k} \vec{r} - \omega t \right)}
+\end{align*}
+
+<p>
+Zveznost nam da enakost
+</p>
+
+<p>
+\[ e^{\mathrm{i} \left( k_0 \sin \alpha \gamma - \omega t \right)} + R e^{\mathrm{i} \left( k \sin \beta y - \omega t \right)} = T e^{\mathrm{i} \left( k_2 \sin \gamma y - \omega t \right)}
+\]
+</p>
+
+<p>
+Za \( y = 0 \) dobimo pogoj
+</p>
+
+\begin{equation}
+\label{eq:3}
+1 + R = T
+\end{equation}
+
+<p>
+Uporabimo identiteto
+</p>
+
+<p>
+\[ \sin \left( u_1 x \right) = \sin \left( u_2 x \right) \implies u_1 = u_2.
+\]
+</p>
+
+<p>
+in upoštevamo, da je sistem translacijsko invarianten na \( y \), zato tudi velja
+</p>
+
+\begin{equation}
+\label{eq:4}
+ k_0 \sin \alpha = k_0 \sin \beta = k_2 \sin \gamma
+\end{equation}
+
+<p>
+To se da nadalje preobraziti v
+</p>
+
+<p>
+\[ \frac{\sin \alpha}{c_1} = \frac{\sin \beta}{c_1} = \frac{\sin \gamma}{c_2}
+\]
+</p>
+
+<p>
+kjer je prvi enačaj \( \alpha = \beta \) odbojni zakon, drugi enačaj pa lomni zakon.
+</p>
+
+<p>
+Uporabimo še drugi robni pogoj, kjer smo takoj pokrajšali eksponent, saj velja \ref{eq:4}. Dobimo enačbo
+</p>
+
+<p>
+\[ T k_2 \cos \alpha = \left( 1 + R \right) k_2 \cos \gamma
+\]
+</p>
+
+<p>
+Z upoštevanjem \ref{eq:4} dobimo
+</p>
+
+<p>
+\[ R = \frac{\cos \alpha - \frac{c_1}{c_2} \sqrt{1 - \frac{c_2 ^2}{c_1 ^2} \sin ^2 \alpha }}{\cos \alpha + \frac{c_1}{c_2} \sqrt{1 - \frac{c ^2_2}{c ^2_1} \sin ^2 \alpha}}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org2789a3c" class="outline-2">
+<h2 id="org2789a3c"><span class="section-number-2">3.</span> Naloga 9 (Prinčič 3.4) - doma</h2>
+</div>
+<div id="outline-container-orgf82702b" class="outline-2">
+<h2 id="orgf82702b"><span class="section-number-2">4.</span> Naloga 10 (Prinčič 3.5)</h2>
+<div class="outline-text-2" id="text-4">
+<div class="problem" id="orgbe91c2b">
+<p>
+Imamo končno struno, ki je napeta med stenama, ki sta na razdalji \( l \). Rešujemo valovno enačbo
+</p>
+
+<p>
+\[ \frac{\partial ^2 u}{\partial t ^2} = c ^2 \frac{\partial ^2 u}{\partial x ^2}
+\]
+</p>
+
+<p>
+Imamo tudi dva robna pogoj
+</p>
+
+<ol class="org-ol">
+<li>\( u(x = 0, t) = 0 \)</li>
+<li>\( u(x = L, t) = 0 \)</li>
+</ol>
+
+<p>
+Hkrati pa tudi začetna pogoja
+</p>
+
+<ol class="org-ol">
+<li><p>
+oblika strune je trikotna
+</p>
+
+<p>
+\[ u(x, t = 0) = \begin{cases}
+                    \frac{2a}{l} x &; x < \frac{l}{2} \\
+                    \frac{2a}{l} (l - x) &; x > \frac{l}{2}
+                    \end{cases}
+   \]
+</p></li>
+
+<li>in struna miruje \( \partial_t u (x, t = 0) = 0 \)</li>
+</ol>
+
+</div>
+
+<p>
+Reševali bomo s pomočjo separacije spremenljivk \( u(x, t) = X(x) T(t) \). Po izpeljavi, kakor je bila narejena na predavanjih, velja
+</p>
+
+<p>
+\[ T_n (t) = A_n \cos \left( \omega_n t \right) + B_n \sin \left( \omega_n t \right), \quad X_n (x) = C_n \cos \left( k_n x \right) + D_n \left( k_n x \right)
+\]
+</p>
+
+<p>
+kjer velja \( \omega = k c \).
+</p>
+
+<p>
+Z upoštevanjem prvega robnega pogoja \( u(x - 0, t) = 0 \) dobimo enakost \( X(0) = 0 \) in posledično \( C_n = 0 \). Drugi robni pogoj \( u(x = l, t) = 0 \) nam poda \( X(l) = D_n \sin (k_n l) = 0 \) in nadalje
+</p>
+
+<p>
+\[ k_n l = n \pi, \ n = 1, 2, 3, \ldots
+\]
+</p>
+
+<p>
+Četrti robni pogoj \( \partial_t u(x, t = 0) = 0 \) pa nam po izračunu odvoda
+</p>
+
+<p>
+\[ \partial_t u = X(x) \left[ A_n \omega_n \sin \left( \omega_n t \right) - B_n \omega_n \cos \left( \omega_n t \right) \right],
+\]
+</p>
+
+<p>
+poda enakost \( -B_n \omega_n = 0 \) in posledično \( B_n = 0 \).
+</p>
+
+<p>
+Z upoštevanjem \( \omega = kc \) je delna rešitev po upoštevanjih zgornjih pogojev
+</p>
+
+<p>
+\[ u(x, t) = \sum\limits_n^{} G_n \cos \left( \frac{n \pi c}{l} t \right) \sin \left( \frac{n \pi}{l} x \right) , G_n = D_n A_n
+\]
+</p>
+
+<p>
+Upoštevamo še zadnji, tretji, pogoj
+</p>
+
+\begin{equation}
+\label{eq:5}
+ \sum\limits_n^{} G_n \sin \left( \frac{n \pi}{l} x \right) = u(x, t = 0)
+\end{equation}
+
+<div class="note" id="org6b608c1">
+<p>
+Pri matematiki 4 smo dokazali, da je baza \( \left\{ \sin \left( \frac{n \pi}{l} x \right) \right\}_{n = 1}^{\infty} \) so kompletni ortogonalni sistem (KOS) v \( L ^2 ([0, L]) \). Skalarni produkt v \( L ^2 \) je definiran kot
+</p>
+
+<p>
+\[ \left\langle f, g \right\rangle = \int\limits_0^L f(x) g(x) \, \mathrm{d} x
+  \]
+</p>
+
+<p>
+Velja za \( f \in L ^2 \)
+</p>
+
+<p>
+\[ f = \sum\limits_{b \in KOS}^{} \frac{\left\langle f, b \right\rangle}{\left\langle b, b \right\rangle} b
+  \]
+</p>
+
+</div>
+
+<p>
+Enačbo \ref{eq:5} skalarno pomnožimo, da dobimo
+</p>
+
+<p>
+\[ \left\langle u(x, t = 0), \sin \left( \frac{m \pi}{l} x \right) \right\rangle = \int\limits_0^l \sin \left( \frac{m \pi}{l} x \right) u(x, t = 0) \, \mathrm{d} x = \int\limits_0^l \sum\limits_n^{} G_n \sin \left( \frac{n \pi}{l} x \right) \sin \left( \frac{m \pi}{l} x \right) \, \mathrm{d} x = \frac{l}{2} \delta_{mn}
+\]
+</p>
+
+<blockquote>
+<p>
+Integral na levi strani lahko prepišemo, malo poračunamo in potem obupamo.
+</p>
+</blockquote>
+
+<p>
+\[ G_n \frac{l}{2} = \int\limits_0^{\frac{l}{2}} \sin \left( \frac{m \pi}{L} x \right) \frac{2 a x}{l} \, \mathrm{d} x + \int\limits_{\frac{l}{2}}^l \sin \left( \frac{m \pi}{l} x \right) \frac{2a}{l} (l - x) \, \mathrm{d} x
+\]
+</p>
+
+<p>
+Končna rešitev je
+</p>
+
+<p>
+\[ G_n = \frac{32 a}{\pi ^2 n ^2} \sin ^3 \frac{\pi n}{4} \cos \frac{\pi m}{ 4} = \begin{cases}
+                                                                                   0 &; \mathrm{m} sod \\
+                                                                                   \frac{8a}{\pi ^2 m ^2} \left( -1 \right)^{\frac{m - 1}{2}} &; m \text{ lih}
+                                                                                  \end{cases}
+\]
+</p>
+
+<p>
+Za konec vstavimo v prejšnjo delno rešitev.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-01 Sat 19:21</p>
+</div>
+</body>
+</html>

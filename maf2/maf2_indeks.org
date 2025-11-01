@@ -4,3 +4,14 @@
 Zapiski predavanj pri prof. Marku Žnidariču.
 
 - [[file:01predavanja_maf2/01mf2_p_20251006.html][predavanje 1 & 2, 2025/10/06 - 2025/10/07:]] PDE, vrste, PDE 1. reda, splošne PDE 1. reda, valovna enačba - izpeljava in energija
+- [[file:01predavanja_maf2/02mf2_p_20251014.html][predavanje 3, 2025/10/14:]] Valovna enačba: izpeljava, v 1D, nehomogeno sredstvo, končna struna
+- [[file:01predavanja_maf2/03mf2_p_20251021.html][predavanje 4, 2025/10/21:]] valovna enačba: končna struna, opna
+- [[file:01predavanja_maf2/04maf2_p_20251028.html][predavanje 5, 2025/10/28:]] zvok: gostota energijskega toka, zvok v 3D; difuzijska enačba: izpeljava, robni pogoji, neskončno sredstvo
+
+* Vaje
+
+Zapiski vaj pri prof. Urbanu Duhu
+
+- [[file:02vaje_maf2/01maf2_v_20251013.html][vaje 1, 2025/10/13]]
+- [[file:02vaje_maf2/02maf2_v_20251020.html][vaje 2, 2025/10/20]]
+- [[file:02vaje_maf2/03maf2_v_20251027.html][vaje 3, 2025/10/27]]

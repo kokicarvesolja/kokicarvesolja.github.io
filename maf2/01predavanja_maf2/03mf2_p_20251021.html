@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-11-01 Sat 19:23 -->
+<!-- 2025-11-01 Sat 19:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Matematična fizika 2</title>
+<title>3. predavanje iz Matematične fizike 2</title>
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
   #content { max-width: 60em; margin: auto; }
@@ -192,51 +192,297 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Matematična fizika 2</h1>
+<h1 class="title">3. predavanje iz Matematične fizike 2</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org46c57eb">1. Predavanja</a></li>
-<li><a href="#orgc63e620">2. Vaje</a></li>
+<li><a href="#org76985ba">1. Valovna enačba</a>
+<ul>
+<li><a href="#orgfad3c41">1.1. Končna struna</a></li>
+<li><a href="#org7a8338d">1.2. Nehomogena enačba</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org46c57eb" class="outline-2">
-<h2 id="org46c57eb"><span class="section-number-2">1.</span> Predavanja</h2>
+<div id="outline-container-org76985ba" class="outline-2">
+<h2 id="org76985ba"><span class="section-number-2">1.</span> Valovna enačba</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgfad3c41" class="outline-3">
+<h3 id="orgfad3c41"><span class="section-number-3">1.1.</span> Končna struna</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
-Zapiski predavanj pri prof. Marku Žnidariču.
+Imamo homogene robne pogoje za poljuben čas \( t \)
 </p>
 
-<ul class="org-ul">
-<li><a href="01predavanja_maf2/01mf2_p_20251006.html">predavanje 1 &amp; 2, 2025/10/06 - 2025/10/07:</a> PDE, vrste, PDE 1. reda, splošne PDE 1. reda, valovna enačba - izpeljava in energija</li>
-<li><a href="01predavanja_maf2/02mf2_p_20251014.html">predavanje 3, 2025/10/14:</a> Valovna enačba: izpeljava, v 1D, nehomogeno sredstvo, končna struna</li>
-<li><a href="01predavanja_maf2/03mf2_p_20251021.html">predavanje 4, 2025/10/21:</a> valovna enačba: končna struna, opna</li>
-<li><a href="01predavanja_maf2/04maf2_p_20251028.html">predavanje 5, 2025/10/28:</a> zvok: gostota energijskega toka, zvok v 3D; difuzijska enačba: izpeljava, robni pogoji, neskončno sredstvo</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgc63e620" class="outline-2">
-<h2 id="orgc63e620"><span class="section-number-2">2.</span> Vaje</h2>
-<div class="outline-text-2" id="text-2">
 <p>
-Zapiski vaj pri prof. Urbanu Duhu
+\[ u(0, t) = u(l, t) = 0
+\]
 </p>
 
-<ul class="org-ul">
-<li><a href="02vaje_maf2/01maf2_v_20251013.html">vaje 1, 2025/10/13</a></li>
-<li><a href="02vaje_maf2/02maf2_v_20251020.html">vaje 2, 2025/10/20</a></li>
-<li><a href="02vaje_maf2/03maf2_v_20251027.html">vaje 3, 2025/10/27</a></li>
-</ul>
+<p>
+Rešujemo valovno enačbo
+</p>
+
+<p>
+\[ u_{tt } = c ^2 u_{xx }
+\]
+</p>
+
+<p>
+z nastavkom separacije spremenljivk \( u(x, t) = X(x) T(t) \).
+</p>
+
+<p>
+\[ \frac{\ddot{T}}{T} = c ^2 \frac{X''}{X} = - \omega_k ^2 = - c ^2 k ^2 \ge 0
+\]
+</p>
+
+<p>
+Časovni del je oblike
+</p>
+
+<p>
+\[ T'' + \omega_k ^2 T = 0
+\]
+</p>
+
+<p>
+in rešitev je sinusoida
+</p>
+
+\begin{equation}
+\label{eq:2}
+ T = \alpha_k \cos (k x) + \beta_k \sin (kx) = c_n \Re e^{- \mathrm{i}\omega_n t}, \ c_n \in \mathbb{C}
+\end{equation}
+
+<p>
+Krajevni del pa ima obliko
+</p>
+
+<p>
+\[ X(x) = \gamma_k \cos (kx) + \delta_k \sin (kx).
+\]
+</p>
+
+<p>
+Iz robnega pogoja takoj zaključimo \( \gamma_k = 0 \) pri \( x = 0 \). Hkrati pa imamo
+</p>
+
+<p>
+\[ \sin (kl) = 0 \implies \ k_n = \frac{n \pi}{l}, \ n = 1,2,3, \ldots
+\]
+</p>
+
+<p>
+kjer so \( k_n \) lastne vrednosti. Lastna rešitev krajevnega dela je enaka
+</p>
+
+\begin{equation}
+\label{eq:1}
+X(x) = \sqrt{\frac{2}{L}} \sin (k_n x)
+\end{equation}
+
+<p>
+Funkciji \ref{eq:1} pravimo tudi lastna funkcija. Tvorijo kompletni set za funkcije na intervalu \( [0, l] \), ki so \( 0 \) na robu. Te funkcije imajo tudi definiran skalarni produkt, za katere velja
+</p>
+
+<p>
+\[ \left\langle x_n, x_m \right\rangle = \int\limits_0^l x_n^{\ast} x_m = \delta_{nm}
+\]
+</p>
+
+<p>
+Poljubna rešitev je definicija nastavka ter enačb \ref{eq:1} in \ref{eq:2}
+</p>
+
+<p>
+\[ u(x, t) = \sum\limits_{n = 1}^{\infty} X_n (x) \left[ \alpha_n \cos (\omega_n t) + \beta_n \sin (\omega_n t) \right]
+\]
+</p>
+
+<p>
+Diskretna fourierova vrsta je enaka
+</p>
+
+\begin{equation}
+\label{eq:3}
+ f_(x) = \sum\limits_{n = 1}^{\infty} c_n X(x)
+\end{equation}
+
+<p>
+kjer so členi vrste enaki \( c_n = \left\langle x_n, f \right\rangle\)
+</p>
+
+<p>
+Konvergenca vrste \ref{eq:3} je v srednjem. Najmočnejša konvergenca je enakomerna konvergenca, šibkejša konvergenca je po točkah, najslabša pa je v srednjem, kar je ravno naša funkcija.
+</p>
+
+<p>
+Če razvijamo Fourierovo vrsto po Heavisodovi funkciji, se bo na skoku konvergiralo k točki \( y = \frac{1}{2} \), hkrati bosta pa amplitudi (ki sta velikosti 10-20% skoka) pred in po skoku enaki.
+</p>
+
+<p>
+Če bi bila funkcija gladka, bi bila konvergenca enakomerna.
+</p>
+</div>
+</div>
+<div id="outline-container-org7a8338d" class="outline-3">
+<h3 id="org7a8338d"><span class="section-number-3">1.2.</span> Nehomogena enačba</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Imamo valovno enačbo, ki pa je nehomogena
+</p>
+
+<p>
+\[ u_{tt } = c ^2 u_{xx } + f(x, t).
+\]
+</p>
+
+<p>
+Končna struna ima začetne pogoje \( u(x, 0) = \phi(x) \) in \( \dot{u}(x, 0) = \psi(x) \) ter lastne rešitve \( X_n (x) \)
+</p>
+
+<p>
+Vse funkcije razvijemo po lastnih vrednosti. Funkcijo \( f(x, t) \) razvijemo v vrsto
+</p>
+
+<p>
+\[ f(x, t) = \sum\limits_{n = 1}^{\infty} f_n (t) X_n (x)
+\]
+</p>
+
+<p>
+Po lastnih funkcijah razvijemo tudi funkciji v začetnih pogojih in našo rešitev. Torej
+</p>
+
+\begin{align*}
+  \phi(x) &= \sum\limits_{n = 1}^{\infty} \phi_n X_n (x) \\
+\psi(x) &= \sum\limits_{n = 1}^{\infty} \psi_n X_n (x) \\
+u(x, t) &= \sum\limits_{n = 1}^{\infty} u_n (t) X_n (x)
+\end{align*}
+
+<p>
+Dane nastavka nesemo v nehomogeno valovno enačbo. Spomnimo, da je \( X_n (x) = \sqrt{\frac{2}{l}} \sin (kx) \).
+</p>
+
+<p>
+\[ \sum\limits_{}^{} \ddot{u}_n = \sum\limits_n^{} - \omega_n ^2 c_n + f_n X_n \implies  \ddot{u}_n = - \omega_n ^2 u_n + f_n
+\]
+</p>
+
+<p>
+Pridelali smo si nehomogeno ODE. Vemo, da je rešitev sestavljena iz nehomogene in homogene rešitve
+</p>
+
+<p>
+\[ u_n (x, t) = u_n^{(hom)} (x, t) + u _n^{(nehom)}
+\]
+</p>
+
+<p>
+Rešitev nehomogene enačbe je
+</p>
+
+<p>
+\[ u_n^{(nehom)} (t) = \frac{1}{\omega_n} \int\limits_0^t \sin \left( \omega_n (t - \tau) \right) f_n (\tau) \, \mathrm{d} \tau
+\]
+</p>
+
+<p>
+Tako funkcijo bomo srečali tudi kasneje v letu in ji bomo rekli Greenovi funkciji. Izbrana je tako, da je \( u_n^{(nehom)} = \dot{u}_n^{(nehom)} = 0 \). Nastavek za homogen del pa je
+</p>
+
+<p>
+\[ u_n ^{(hom)} (t) = \phi_n \cos (\omega_n t) + \frac{\psi_n}{\omega_n} \sin (\omega_n t)
+\]
+</p>
+
+<div class="my_example" id="org02371b4">
+<p>
+Imamo valovno enačbo
+</p>
+
+<p>
+\[ u_{tt } = c ^2 u_{ xx }
+\]
+</p>
+
+<p>
+z robnimi pogoji \( u(0, t) = \mu_1 (t) \) in \( u(l, t) = \mu_z (t) \). Uporabimo nastavek
+</p>
+
+<p>
+\[ u = u_1 + u_2
+\]
+</p>
+
+<p>
+kjer je \( u_2 \) tak, da zadosti pogojem ne pa enačbi. Primer je
+</p>
+
+<p>
+\[ u_2 (x, t) = \mu_1 (t) + \frac{x}{l} \left( \mu_2 (t) - \mu_1 (t) \right).
+\]
+</p>
+
+<p>
+Ta nastavek zadosti robnemu pogoju, vendar ne enačbi in potem \( u_1 \) zapišemo kot
+</p>
+
+<p>
+\[ u_{1tt } = c ^2 u_{1 xx } + \tilde{f}(x, t)
+\]
+</p>
+
+<p>
+kjer je \( \tilde{f} \) odvisen od \( u_2 \), saj smo vanj skrili vse odvode od nastavka \( u_2 \).
+</p>
+
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-11-01 Sat 19:23</p>
+<p class="date">Created: 2025-11-01 Sat 19:13</p>
 </div>
 </body>
 </html>
