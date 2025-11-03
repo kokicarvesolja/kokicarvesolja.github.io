@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-03 Mon 20:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4. vaje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">4. vaje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgf620d33">1. Princip nedoločenosti - nadaljevanje</a></li>
+<li><a href="#org5266b4c">2. Pričakovane vrednosti in nedoločenosti v odvisnosti od časa</a>
+<ul>
+<li><a href="#orgc9b3d97">2.1. Teorija časovnega razvoja</a>
+<ul>
+<li><a href="#orgaa5354c">2.1.1. Valovna funkcija</a></li>
+<li><a href="#org181c621">2.1.2. Časovno odvisen operator</a></li>
+<li><a href="#org4c93cc2">2.1.3. Časovno odvisna pričakovana vrednost</a></li>
+<li><a href="#orgf805e81">2.1.4. Operator</a></li>
+</ul>
+</li>
+<li><a href="#org9960f7d">2.2. Reševanje naloge</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf620d33" class="outline-2">
+<h2 id="orgf620d33"><span class="section-number-2">1.</span> Princip nedoločenosti - nadaljevanje</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Rešujemo diferencialno enačbo
+</p>
+
+<p>
+\[ \left( - \mathrm{i} \hbar \frac{\mathrm{d} }{\mathrm{d} x} - \left\langle p \right\rangle \right) \psi(x) = \mathrm{i} \mu \left( x - \left\langle x \right\rangle \right) \psi(x)
+\]
+</p>
+
+<p>
+Splošna rešitev te diferencialne enačbe je
+</p>
+
+<p>
+\[ \psi(x) = A \exp \left\{ \frac{\mathrm{i}}{\hbar} \left[ \left\langle p \right\rangle  - \mathrm{i} \mu \left\langle x \right\rangle\right]x + \mathrm{i} \mu \frac{x ^2}{2} \right\},
+\]
+</p>
+
+<p>
+kjer je \( A \) amplituda. Eksponent lahko dopolnimo do popolnega kvadrata in rešitev postane
+</p>
+
+<p>
+\[ \psi(x) = A \exp \left\{ - \frac{\mu}{2 \hbar} \left( x - \left\langle x \right\rangle \right)^2 + \frac{\mathrm{i}}{\hbar} \left\langle p \right\rangle x \right\} = \tilde{A} \exp \left\{ - \frac{\mu}{2 \hbar} \left( x - \left\langle x \right\rangle \right) ^2 \right\} e^{\mathrm{i} \frac{\left\langle p \right\rangle x}{\hbar}}
+\]
+</p>
+
+<p>
+Vrednost \( \exp \left\{ \left\langle x \right\rangle ^2 \frac{\mu}{2 \hbar} \right\} \) je konstantna in smo jo zato skrili v \( \tilde{A} \).
+</p>
+
+
+<p>
+Valovna funkcija mora biti normirana
+</p>
+
+<p>
+\[ \int\limits_{- \infty}^{\infty} \left| \psi(x) \right| ^2 \, \mathrm{d} x = 1,
+\]
+</p>
+
+<p>
+kjer je v našem primeru
+</p>
+
+<p>
+\[ \rho(x) = \left| \psi(x) \right| = \left| \tilde{A} \right|^2 \cdot e^{- \frac{\mu}{\hbar} \left( x - \left\langle x \right\rangle \right) ^2} = \frac{1}{\sqrt{2\pi}\sigma} e^{- \frac{\left( x - \left\langle x \right\rangle \right) ^2}{2 \sigma ^2}}, \ \sigma > 0
+\]
+</p>
+
+<p>
+Poslužili smo se znanja iz verjetnosti v fiziki, saj smo prepoznali v verjetnostni gostoti Gaussovo krivuljo. Rešitev naše diferencialne enačbe je 3 parametrična krivulja
+</p>
+
+<p>
+\[ \psi(x) = \frac{1}{\left( 2 \pi \sigma ^2 \right)^{\frac{1}{4}}} \exp \left\{ - \frac{\left( x - \left\langle x \right\rangle \right) ^2}{4 \sigma ^2}  \right\} e^{\mathrm{i} \frac{\left\langle p \right\rangle x}{\hbar}},
+\]
+</p>
+
+<p>
+ki jim pravimo Gaussov valovni paket. Parametri so \( \sigma, \left\langle x \right\rangle \) in \( \left\langle p \right\rangle \). Člen \( e^{\mathrm{i} \frac{\left\langle p \right\rangle x}{\hbar}} \) je ravni val z valovno dolžino
+</p>
+
+<p>
+[narišemo graf Im psi(x), Re psi(x) ter rho(x)]
+</p>
+
+<p>
+\[ \frac{\left\langle p \right\rangle}{\hbar} \lambda = 2 \pi  \implies \ \lambda = \frac{h}{p}
+\]
+</p>
+
+<p>
+Tej valovni dolžini pravimo de Brogliejeva valovna dolžina.
+</p>
+</div>
+</div>
+<div id="outline-container-org5266b4c" class="outline-2">
+<h2 id="org5266b4c"><span class="section-number-2">2.</span> Pričakovane vrednosti in nedoločenosti v odvisnosti od časa</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Zanimata nas pričakovana vrednost položaja \( \left\langle x \right\rangle \) in gibalne količine \( \left\langle p \right\rangle \) v odvisnosti od časa. Odvisnost od časa je izražena
+</p>
+
+<p>
+\[ \left\langle i, t \right\rangle  = \int\limits_{}^{} \psi^{\ast} (i, t) i \psi(i, t) \, \mathrm{d} i, \quad i = x, p
+\]
+</p>
+
+<p>
+Nedoločenost v odvisnosti od časa je
+</p>
+
+<p>
+\[ \delta i (t) = \sqrt{\left\langle x ^2, t \right\rangle - \left\langle x, t \right\rangle ^2}, \quad i = x, p
+\]
+</p>
+
+<p>
+Vrednosti ob času to \( \left\langle x, 0 \right\rangle = \left\langle  x \right\rangle\) za položaj, \( \left\langle p, 0 \right\rangle = \left\langle p \right\rangle\). Začetna vrednost nedoločenosti položaja je določena preko našega znanja Verjetnosti v fiziki \( \delta x(0) = \sigma \). Zaradi pogoja minimalizirane nedoločenosti
+</p>
+
+<p>
+\[ \delta x \delta p = \frac{\hbar}{2}
+\]
+</p>
+
+<p>
+pa je začetna vrednost nedoločenosti gibalne količine \( \delta p (0) = \frac{\hbar}{2 \sigma} \)
+</p>
+</div>
+<div id="outline-container-orgc9b3d97" class="outline-3">
+<h3 id="orgc9b3d97"><span class="section-number-3">2.1.</span> Teorija časovnega razvoja</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgaa5354c" class="outline-4">
+<h4 id="orgaa5354c"><span class="section-number-4">2.1.1.</span> Valovna funkcija</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Časovni razvoj valovne funkcije dobimo tako, da rešimo stacionarno Schrödingerjevo enačbo
+</p>
+
+<p>
+\[ H \left| \psi_n \right\rangle  = E_n \left| \psi_n \right\rangle
+\]
+</p>
+
+<p>
+Začetno stanje \( \psi(x, 0) \) razvijemo po lastnih baznih funkcijah
+</p>
+
+<p>
+\[ \psi(x , 0) = \left| \psi, 0 \right\rangle = \sum\limits_n^{} c_n \psi_n (x) = \sum\limits_n^{} c_n \left| \psi_n \right\rangle,
+\]
+</p>
+
+<p>
+kjer \( n \)-ti koeficient časovnega razvoja izračunamo preko
+</p>
+
+<p>
+\[ c_n = \left\langle \psi, 0 \middle| \psi_n \right\rangle
+\]
+</p>
+
+<p>
+Časovni razvoj valovne funkcije je dobljen tako, da dodamo časovno odvisen faktor razvoju po lastnih funkcijah
+</p>
+
+<p>
+\[ \psi(x, t) = \left| \psi, t \right\rangle = \sum\limits_n^{} c_n \exp \left\{ - \mathrm{i} \frac{E_n}{\hbar} t \right\} \left| \psi_n \right\rangle
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org181c621" class="outline-4">
+<h4 id="org181c621"><span class="section-number-4">2.1.2.</span> Časovno odvisen operator</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Funkcija operatorja \( A \) je definirana s pomočjo Taylorjevega razvoja te funkcije
+</p>
+
+\begin{equation}
+\label{eq:3}
+ F(A) = \sum\limits_n^{} \frac{1}{n!} f^{(n)} (A) A^n
+\end{equation}
+
+<p>
+Povedali smo že v prejšnjem podpoglavju, da je časovni razvoj funkcije enak
+</p>
+
+<p>
+\[ \left| \psi, t \right\rangle = \sum\limits_n^{} c_n \exp \left\{- \mathrm{i} \frac{E_n}{\hbar} t \right\} \left| \psi_n \right\rangle
+\]
+</p>
+
+<p>
+Sedaj bomo dokazali, da dobimo enak rezultat, če na začetno stanje \( \left| \psi, 0 \right\rangle \) delujemo s časovnim operatorjem \( e^{- \mathrm{i} \frac{H t}{\hbar}} \), ki smo ga izpeljali na predavanjih.
+</p>
+
+<div class="theorem" id="orgf7c373a">
+<p>
+Dokazujemo
+</p>
+
+<p>
+\[ \left| \psi, t \right\rangle = \sum\limits_n^{} c_n \exp \left\{ - \mathrm{i} \frac{E_n}{\hbar}t  \right\}\left| \psi_n \right\rangle= \exp \left\{ - \mathrm{i} \frac{Ht}{\hbar} \right\} \left| \psi, 0 \right\rangle
+\]
+</p>
+
+</div>
+
+<div class="proof" id="orga954661">
+<p>
+Začetno stanje valovne funkcije, na katerega vplivamo s časovnim operatorjem, razvijemo časovno
+</p>
+
+<p>
+\[ e^{- \mathrm{i} \frac{Ht}{\hbar}} \left| \psi, 0 \right\rangle = \sum\limits_n^{} c_n e^{- \mathrm{i} \frac{Ht}{\hbar}} \left| \psi_n \right\rangle.
+\]
+</p>
+
+<p>
+Eksponent je neodvisen od vsote in ga lahko premaknemo znotraj vsote. Upoštevamo Taylorjev razvoj funkcije z operatorjem \ref{eq:3}. Naša funkcija je eksponentna, torej
+</p>
+
+<p>
+\[ e^{- \mathrm{i} \frac{H t}{\hbar}} \left| \psi, 0 \right\rangle = \sum\limits_n^{} c_n \left[ \sum\limits_m^{} \frac{1}{m!} \left( - \mathrm{i} \frac{t}{\hbar} \right) ^m H^m \left| \psi_n \right\rangle \right]
+\]
+</p>
+
+<p>
+Spomnimo, da so \( \left| \psi_n \right\rangle \) lastna stanja Hamiltoniana preko Schrödingerjeve enačbe. Tako operator pretvorimo v skalar
+</p>
+
+<p>
+\[ H^m \left| \psi_n \right\rangle = H^{m - 1} \cdot H \left| \psi_n \right\rangle = H^{m - 1} \cdot E_n \left| \psi_n \right\rangle = \ldots = E_n^m \left| \psi_n \right\rangle
+\]
+</p>
+
+<p>
+Zgornja vsota po definiciji Taylorjevega razvoja eksponentne funkcije postane
+</p>
+
+<p>
+\[ e^{- \mathrm{i} \frac{Ht}{\hbar}} \left| \psi, 0 \right\rangle = \sum\limits_n^{} c_n e^{- \mathrm{i} \frac{E_n t}{\hbar} } \left|\psi_n \right\rangle
+\]
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org4c93cc2" class="outline-4">
+<h4 id="org4c93cc2"><span class="section-number-4">2.1.3.</span> Časovno odvisna pričakovana vrednost</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+Zanima nas pričakovana vrednost operatorja \( A \) ob času \( t \). S spoznanjem prejšnjega podpoglavja zapišemo pričakovano po definiciji
+</p>
+
+<p>
+\[ \left\langle A, t \right\rangle = \left\langle \psi, t \middle| A \middle| \psi, t \right\rangle
+\]
+</p>
+
+<p>
+Ket lahko zapišemo kot
+</p>
+
+<p>
+\[ \left| \psi, t \right\rangle = e ^{- \mathrm{i} \frac{Ht}{\hbar}} \left| \psi, 0 \right\rangle,
+\]
+</p>
+
+<p>
+medtem ko bra zapišemo na podoben način s pomočjo kompleksne konjugacije
+</p>
+
+<p>
+\[ \left\langle \psi, t \right| = \left\langle \psi, 0 \right| \left( e^{- \mathrm{i} \frac{Ht}{\hbar}} \right) ^{\dagger} = \left\langle \psi, 0 \right| e^{\mathrm{i} \frac{Ht}{\hbar}}.
+\]
+</p>
+
+<p>
+Pričakovano vrednost operatorja \( A \) ob času \( t \) tako zapišemo
+</p>
+
+<p>
+\[ \left\langle A, t \right\rangle = \left\langle \psi, 0 \middle| A(t) \middle| \psi, 0 \right\rangle,
+\]
+</p>
+
+<p>
+kjer je \( A(t) = e^{\mathrm{i} \frac{Ht}{\hbar}} A e^{- \mathrm{i} \frac{Ht}{\hbar}}  \).
+</p>
+
+<p>
+S podanim začetnim stanjem \( \left| \psi, 0 \right\rangle \) lahko sedaj preko časovnega operatorja izračunamo časovno odvisne pričakovane vrednosti, kar je precej lažje kot iskanje časovnega razvoja valovne funkcije \( \left| \psi, t \right\rangle \). Prvemu načinu iskanja pričakovanih vrednosti pravimo Heisenbergov pristop (slika), slednjemu pa Schrödingerjev pristop (slika).
+</p>
+</div>
+</div>
+<div id="outline-container-orgf805e81" class="outline-4">
+<h4 id="orgf805e81"><span class="section-number-4">2.1.4.</span> Operator</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+Zanima nas časovni razvoj operatorja \( A \). Rešujemo diferencialno enačbo
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} A(t) = e^{\mathrm{i} \frac{H t}{\hbar}} \cdot \frac{\mathrm{i} H}{\hbar} A e^{- \mathrm{i} \frac{Ht}{\hbar}} + e^{\mathrm{i} \frac{Ht}{\hbar}} A e^{- \mathrm{i} \frac{Ht}{\hbar}} \left( - \frac{\mathrm{i} H}{\hbar} \right).
+\]
+</p>
+
+<p>
+Člena \( e^{- \mathrm{i} \frac{Ht}{\hbar}} \) in \( \left( - \mathrm{i} \frac{H}{\hbar} \right) \) lahko zamenjamo, saj komutirata. To se da tudi preveriti tako, da zapišemo Taylorjev razvoj in preverimo komutacijo z vsakim členom. Komutacija nam omogoči, da izpostavimo eksponent
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} A(t) = e^{\mathrm{i} \frac{Ht}{\hbar}} \left(\mathrm{i} \frac{H}{\hbar} A - A \mathrm{i} \frac{H}{\hbar} \right) e^{- \mathrm{i} \frac{Ht}{\hbar}} = \frac{\mathrm{i}}{\hbar} \left[ H, A \right] e^{- \mathrm{i} \frac{H t}{\hbar}} = - \frac{\mathrm{i}}{\hbar} \left[ H, A \right](t)
+\]
+</p>
+
+<p>
+Časovni razvoj operatorja torej dobimo z reševanjem diferencialne enačbe
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \frac{\mathrm{d} }{\mathrm{d} t} A(t) = - \frac{\mathrm{i}}{\hbar} \left[ H, A \right](t)
+\end{equation}
+
+<p>
+z začetnim pogojem \( A(0)= A \).
+</p>
+
+<p>
+Pri operatorjih omenimo še naslednje identitete:
+</p>
+
+<ul class="org-ul">
+<li><p>
+\( \left( \alpha A + \beta B \right)(t) = \alpha A(t) + \beta B(t) \) za \( \alpha, \beta \in \mathbb{C} \), saj
+</p>
+
+<p>
+\[ \left( \alpha A + \beta B \right)(t) = e^{\mathrm{i} \frac{Ht}{\hbar}} \left( \alpha A + \beta B \right) e^{- \mathrm{i} \frac{Ht}{\hbar}} = \alpha \left( e^{\mathrm{i} \frac{Ht}{\hbar}} A e^{- \mathrm{i} \frac{Ht}{\hbar}} \right) + \beta \left( e^{\mathrm{i} \frac{Ht}{\hbar}} B e^{- \mathrm{i} \frac{Ht}{\hbar}} \right) = \alpha A(t) + \beta B(t)
+  \]
+</p></li>
+
+<li><p>
+\( \left( AB \right) (t) = A(t) B(t) \), saj
+</p>
+
+<p>
+\[ \left( AB \right) (t) = e^{\mathrm{i} \frac{Ht}{\hbar}} AB e^{- \mathrm{i} \frac{Ht}{\hbar}} = e^{\mathrm{i} \frac{Ht}{\hbar}} A e^{- \mathrm{i} \frac{Ht}{\hbar}} e^{\mathrm{i} \frac{Ht}{\hbar}} B e^{- \mathrm{i} \frac{Ht}{\hbar}} = A(t) B(t)
+  \]
+</p></li>
+
+<li><p>
+\( \left( A^{\dagger} \right)(t) = \left( A(t) \right)^{\dagger} \), saj
+</p>
+
+<p>
+\[ \left( A^{\dagger} \right) (t) = e^{\mathrm{i} \frac{Ht}{\hbar}} A^{\dagger} e^{-\mathrm{i} \frac{Ht}{\hbar}} = \left( e^{\mathrm{i} \frac{Ht}{\hbar}} A e^{- \mathrm{i} \frac{Ht}{\hbar}} \right) ^{\dagger} = \left( A(t) \right)^{\dagger}
+  \]
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9960f7d" class="outline-3">
+<h3 id="org9960f7d"><span class="section-number-3">2.2.</span> Reševanje naloge</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Imamo Hamiltonian \( H = \frac{p ^2}{2m} + V(x) \), kjer je potencial \( V(x) = 0 \). Bazne funkcije prostega delca so zvezne, zato bomo namesto indeksa \( n \), s katerim označujemo diskretni spekter, uporabili indeks \( k \). Valovna funkcija prostega delca je
+</p>
+
+<p>
+\[ \psi_k (x) = \frac{e^{\mathrm{i} k x}}{\sqrt{2\pi}} \text{ in } E_k = \frac{\hbar ^2 k ^2}{2m} .
+\]
+</p>
+
+<p>
+Funkcijo smo normirali s faktorjem \( \frac{1}{\sqrt{2 \pi}} \), saj ob normalizaciji dobimo navadno delta funkcijo. Začetno stanje \( \left| \psi, 0 \right\rangle \) bomo razvili po lastnih stanjih, vendar ker smo v zveznem spektru, bo vsoto nadomestil integral
+</p>
+
+<p>
+\[ \psi(x, 0) = \frac{1}{\sqrt{2\pi}} \int\limits_{}^{} c_k e^{\mathrm{i} k x} \, \mathrm{d} k
+\]
+</p>
+
+<p>
+Posamezen koeficient v razvoju dobimo tako, da v zgornjem integralu prepoznamo Fourierovo transformacijo funkcije \( c(k) \) iz \( k \) v \( x \). \( c(k) \) bo tako inverzna Fourierova transformacija
+</p>
+
+<p>
+\[ c(k) = \frac{1}{\sqrt{2 \pi}} \int\limits_{}^{} \psi(x, 0) e^{- \mathrm{i} k x} \, \mathrm{d} x
+\]
+</p>
+
+<p>
+Časovni razvoj funkcije bi tako bil
+</p>
+
+<p>
+\[ \psi(x, t) = \frac{1}{\sqrt{2\pi}}\int\limits_{}^{} c(k) e^{- \frac{E_k t}{\hbar}} e^{\mathrm{i} kx} \, \mathrm{d} k
+\]
+</p>
+
+<p>
+Imamo operatorje \( x, p, x ^2 \) in \( p ^2 \). Kvadrata operatorjev sta povezana z operatorji preko identitete
+</p>
+
+<p>
+\[ x ^2 (t) = \left[ x(t) \right] ^2 \ \text{ in } \ p ^2 (t) = \left[ p(t) \right] ^2
+\]
+</p>
+
+<p>
+Časovni razvoj operatorja kraja je po enačbi \ref{eq:1} enak
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t}x(t) = \frac{\mathrm{i}}{\hbar} \left[ H, x \right] (t).
+\]
+</p>
+
+<p>
+Za nadaljevanje reševanja diferencialne enačbe uporabimo identiteto
+</p>
+
+<p>
+\[ \left[ AB, C \right] = A \left[ B, C \right] + \left[ A,C \right] B.
+\]
+</p>
+
+<p>
+S to identiteto potem velja
+</p>
+
+<p>
+\[ \left[ H, x \right] = \left[ \frac{p ^2}{2m}, x \right] = \frac{1}{2m} \left[ p ^2, x \right] = \frac{1}{2m} \left( p \left[ p, x \right] + \left[ p, x \right] p \right) = - \frac{\mathrm{i} \hbar p}{m},
+\]
+</p>
+
+<p>
+saj \( \left[ p, x \right] = - \mathrm{i} \hbar \). Torej dobimo
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \frac{\mathrm{d} }{\mathrm{d} t} x(t) = \frac{p(t)}{m}
+\end{equation}
+
+<p>
+Izračunajmo sedaj še \( p(t) \) ponovno preko \ref{eq:1}
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} p(t) = \frac{\mathrm{i}}{\hbar} \left[ H, p \right] (t) = \frac{\mathrm{i}}{\hbar} \left[ \frac{p ^2}{2m}, p \right](t) = 0
+\]
+</p>
+
+<p>
+Dobili smo dve sklopljeni enačbi. Gibalna količina je konstantna, saj je njen odvod ničeln. Označimo \( p(t) = p \). Rešimo \ref{eq:2}
+</p>
+
+<p>
+\[ \frac{\mathrm{d} x}{\mathrm{d} t}(t) = \frac{p}{m} \implies \ x(t) = \frac{p}{m} t + D
+\]
+</p>
+
+<p>
+in z upoštevanjem začetnega pogoja \( x(0) = x \) sledi \( x(0) = D = x \), kar pomeni, da je časovni razvoj operatorja kraja
+</p>
+
+<p>
+\[ x(t) = \frac{p}{m} t + x.
+\]
+</p>
+
+<p>
+Pričakovana vrednost položaja je
+</p>
+
+<p>
+\[ \left\langle x, t \right\rangle  = \left\langle x(t), 0 \right\rangle = \left\langle \frac{p}{m}t + x, 0 \right\rangle= \frac{t}{m} \left\langle p, 0 \right\rangle + \left\langle x, 0 \right\rangle = \frac{t}{m} \left\langle p \right\rangle + \left\langle x \right\rangle.
+\]
+</p>
+
+<p>
+To pomeni, da se gostota porazdelitve premika premo enakomerno. Pričakovana vrednost gibalne količine
+</p>
+
+<p>
+\[ \left\langle p, t \right\rangle  = \left\langle p(t), 0 \right\rangle = \left\langle p, 0 \right\rangle = \left\langle p \right\rangle
+\]
+</p>
+
+<p>
+pa se ne spreminja.
+</p>
+
+<p>
+Nedoločenost gibalne količine je, ponovno spomnimo,
+</p>
+
+<p>
+\[ \delta p (t) = \sqrt{\left\langle p ^2, t \right\rangle - \left\langle p, t \right\rangle ^2}
+\]
+</p>
+
+<p>
+Kvadrat pričakovane vrednosti
+</p>
+
+<p>
+\[ \left\langle p ^2, t \right\rangle  = \left\langle p ^2 (t), 0 \right\rangle = \left\langle \left[ p(t) \right]^2, 0 \right\rangle = \left\langle p ^2, 0 \right\rangle
+\]
+</p>
+
+<p>
+se tako kot pričakovana vrednost gibalne količine ne spreminja. Ker se ne ena, ne druga količina ne spreminjata, je tudi nedoločenost gibalne količine konstantna
+</p>
+
+<p>
+\[ \delta p(t) = \delta p(0) = \frac{\hbar}{2 \sigma}
+\]
+</p>
+
+<p>
+Analogno postopamo tudi pri nedoločenosti kraja
+</p>
+
+<p>
+\[ \delta x ^2 (t) = \left\langle x ^2, t \right\rangle - \left\langle x, t \right\rangle ^2
+\]
+</p>
+
+<p>
+Pričakovana vrednost kraja je
+</p>
+
+<p>
+\[ \left\langle x, t \right\rangle  = \frac{\left\langle p \right\rangle}{m} t + \left\langle x \right\rangle.
+\]
+</p>
+
+<p>
+Medtem ko pri kvadratu pričakovane vrednosti kraja pa moramo biti pozorna na vrstni red operatorjev
+</p>
+
+\begin{align*}
+  \left\langle x ^2, t \right\rangle = \left\langle \left[ x(t) \right] ^2, 0 \right\rangle &= \left\langle \left[ \frac{p t}{m} + x \right] ^2, 0 \right\rangle  \\
+&= \frac{t ^2}{m ^2} \left\langle p ^2, 0 \right\rangle + \frac{t}{m} \left\langle px, 0 \right\rangle+ \frac{t}{m} \left\langle xp, 0 \right\rangle + \left\langle x ^2, 0 \right\rangle
+\end{align*}
+
+<p>
+Nadaljujemo naslednjič.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-03 Mon 20:07</p>
+</div>
+</body>
+</html>

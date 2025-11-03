@@ -15,3 +15,4 @@ Tukaj so zbrani zapiski vaj pri prof. dr. Tomažu Rejcu.
 - [[file:02vaje/01KM_V_20251001.pdf][vaje 1, 2025/10/01:]] Ponovitev kvantne mehanike, končna potencialna jama
 - [[file:02vaje/02km_v_20251013.html][vaje 2, 2025/10/13:]] 2. sklop nalog: vezana stanja v delta potencial; sipanje
 - [[file:02vaje/03km_v_20251020.html][vaje 3, 2025/10/20:]] 2. sklop nalog, nadaljevanje, 3. sklop nalog: lastnosti komutatorjev in antikomutatorjev;, nadaljevanje nedoločenosti; iskanje valovnih funkcij za princip nedoločenosti
+- [[file:02vaje/04km_v_20251103.html][vaje 4, 2025/11/03:]] 4. sklop nalog, časovni operator in te fore
