@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-10-07 Tue 14:09 -->
+<!-- 2025-11-05 Wed 08:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>1. predavanje iz Kvantne mehanike</title>
+<title>1. in 2. predavanje iz Kvantne mehanike</title>
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
   #content { max-width: 60em; margin: auto; }
@@ -227,27 +227,33 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">1. predavanje iz Kvantne mehanike</h1>
+<h1 class="title">1. in 2. predavanje iz Kvantne mehanike</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgad9f0da">1. Uvod</a>
+<li><a href="#org96f2cf0">1. Uvod</a>
 <ul>
-<li><a href="#orgdb49116">1.1. Valovanje</a></li>
-<li><a href="#org11ce76b">1.2. Lastnosti valovne funkcije</a>
+<li><a href="#orgeefc88a">1.1. Valovanje</a></li>
+<li><a href="#org61d7038">1.2. Lastnosti valovne funkcije</a>
 <ul>
-<li><a href="#orgd0e1c7f">1.2.1. Zveznost</a></li>
+<li><a href="#org137634e">1.2.1. Zveznost</a></li>
 </ul>
 </li>
-<li><a href="#orgf0a0ffc">1.3. Pričakovane vrednosti</a></li>
+<li><a href="#org4adf785">1.3. Pričakovane vrednosti</a></li>
+<li><a href="#org067f6a6">1.4. Stacionarna stanja</a></li>
+<li><a href="#org429e6a8">1.5. Komutator</a></li>
+<li><a href="#orgf46d2ee">1.6. Lastnosti operatorjev</a></li>
+<li><a href="#orgea6c16a">1.7. Ehrenfestov teorem</a></li>
+<li><a href="#orga4fd63c">1.8. Nedoločenost</a></li>
 </ul>
 </li>
+<li><a href="#orged61399">2. Formalizem kvantne mehanike</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgad9f0da" class="outline-2">
-<h2 id="orgad9f0da"><span class="section-number-2">1.</span> Uvod</h2>
+<div id="outline-container-org96f2cf0" class="outline-2">
+<h2 id="org96f2cf0"><span class="section-number-2">1.</span> Uvod</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Pri klasični mehaniki nas zanima trajektorija delca \( \vec{r}(t) \). Z Newtonovim zakonom lahko izpeljemo pospešek, ki je funkcija časa, kraja in hitrosti. Če poznamo začetne pogoje, lahko določimo \( \vec{r} \) kjerkoli v prihodnosti.
@@ -317,7 +323,7 @@ Valovna enačba ne reši problema kvantne mehanike (vstavi \( \Psi \) vanjo). Di
 </p>
 
 <p>
-je rešena s \( T (x, t) = \cos \left( kx - \omega t \right) \). Schrödingerjeva enačba je difuzijska enačba s kompleksno enačbo.
+je rešena s \( T (x, t) = \cos \left( kx - \omega t \right) \). Schrödingerjeva enačba je difuzijska enačba s kompleksno rešitvijo.
 </p>
 
 <p>
@@ -333,8 +339,8 @@ Schrödingerjevi enačbi dodamo tudi potencial
 Newtonove enačbe so bile sprejete, saj je lahko prepričljivo izpeljal elipse planetov. Schrödinger se je na podoben način lotil Keplerjevega problema s potencialom \( V \left( \vec{r}, t \right) \propto \frac{1}{r} \). Z nekaj mučenja je izpeljal spekter vodika \( E_n \propto \frac{1}{n ^2} \), s še malo več mučenja je rešil tudi problem spektra vodikovega atoma v električnem polju \( E_n \left( \vec{E}, \vec{B} \right) \).
 </p>
 </div>
-<div id="outline-container-orgdb49116" class="outline-3">
-<h3 id="orgdb49116"><span class="section-number-3">1.1.</span> Valovanje</h3>
+<div id="outline-container-orgeefc88a" class="outline-3">
+<h3 id="orgeefc88a"><span class="section-number-3">1.1.</span> Valovanje</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Prišli smo do tega, da ja, je valovanje, vendar nas zanima, kaj valuje. Bornova interpretacija valovne funkcije definira verjetnost, da delec detektiramo na zaprtem intervalu \( [a, b] \) preko enačbe
@@ -368,8 +374,8 @@ Mi bomo obravnavali minimalistično Kobenhavensko interpretacijo kvantne mehanik
 </p>
 </div>
 </div>
-<div id="outline-container-org11ce76b" class="outline-3">
-<h3 id="org11ce76b"><span class="section-number-3">1.2.</span> Lastnosti valovne funkcije</h3>
+<div id="outline-container-org61d7038" class="outline-3">
+<h3 id="org61d7038"><span class="section-number-3">1.2.</span> Lastnosti valovne funkcije</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Pišemo lastnosti valovne funkcija v eni dimenziji. Velja, da je valovna funkcija normirana
@@ -399,6 +405,10 @@ Verjetnostno gostoto nadomestimo z definicijo in upoštevamo odvod produkta. \( 
 &= \frac{\partial \Psi^{\ast}}{\partial t} \Psi + \frac{\partial \Psi}{\partial t} \Psi^{\ast} \\
 &=- \frac{\hbar ^2}{2m} \frac{1}{-\mathrm{i} \hbar} \frac{\partial ^2 }{\partial x ^2} \Psi^{\ast} \Psi + \frac{V^{\ast}}{- \mathrm{i} \hbar} \Psi^{\ast} \Psi + C. C.
 \end{align}
+
+<p>
+kjer je c.c kompleksna konjugirana vrednost.
+</p>
 
 <p>
 Odvod po kraju lahko razpišemo
@@ -467,15 +477,15 @@ Za \( a \to - \infty \) in \( b \to \infty \) bo razlika \( 0 \). Za naše valov
 \]
 </p>
 
-<div class="my_example" id="orgfbc62db">
+<div class="my_example" id="org3207bfc">
 <p>
 Primera taka funkcije sta \( e^{- \lambda x} \) ter \( e ^{- \mu x ^2} \).
 </p>
 
 </div>
 </div>
-<div id="outline-container-orgd0e1c7f" class="outline-4">
-<h4 id="orgd0e1c7f"><span class="section-number-4">1.2.1.</span> Zveznost</h4>
+<div id="outline-container-org137634e" class="outline-4">
+<h4 id="org137634e"><span class="section-number-4">1.2.1.</span> Zveznost</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 Valovna funkcija \( \Psi \) je zvezna funkcija. Odvod \( \frac{\partial \Psi}{\partial x} \) je zvezna funkcija, če je \( V \) zvezna funkcija. Drugi odvod \( \frac{\partial ^2 }{\partial x ^2} \Psi  \) je zvezna, če je \( V \) zvezna.
@@ -487,8 +497,8 @@ Pravokotna potencialna jama ima v jami kosinusno valovanje, izven jame pa potenc
 </div>
 </div>
 </div>
-<div id="outline-container-orgf0a0ffc" class="outline-3">
-<h3 id="orgf0a0ffc"><span class="section-number-3">1.3.</span> Pričakovane vrednosti</h3>
+<div id="outline-container-org4adf785" class="outline-3">
+<h3 id="org4adf785"><span class="section-number-3">1.3.</span> Pričakovane vrednosti</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Pričakovane vrednosti položaja izračunamo preko
@@ -525,12 +535,786 @@ Dobimo novo zvezo in sicer pričakovano gibalno količine
 <p>
 kjer je \( \hat{p} = - \mathrm{i} \hbar \frac{\partial }{\partial x}  \) ali v treh dimenzijah \( \hat{\vec{p}} = - \mathrm{i} \hbar \nabla \).
 </p>
+
+<p>
+S kvadriranjem operatorja gibalne količine dobimo nov operator kinetične energije:
+</p>
+
+<p>
+\[ T = p ^2 = \vec{p} \vec{p} = - \hbar ^2 \nabla ^2
+\]
+</p>
+
+<p>
+Definiramo, nam že poznan, Hamiltonianov operator
+</p>
+
+\begin{equation}
+\label{eq:5}
+ \hat{H} = \frac{p ^2}{2m} + V = - \frac{\hbar ^2 \nabla ^2}{2m} + V
+\end{equation}
 </div>
+</div>
+<div id="outline-container-org067f6a6" class="outline-3">
+<h3 id="org067f6a6"><span class="section-number-3">1.4.</span> Stacionarna stanja</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Za funkcijo, kjer ločimo spremenljivke
+</p>
+
+<p>
+\[ \Psi \left( \vec{r}, t \right) = \psi (\vec{r}) f (t),
+\]
+</p>
+
+<p>
+iščemo taka stanja, da bo veljalo
+</p>
+
+<p>
+\[ \hat{H} \Psi_n =  E_n \Psi_n
+\]
+</p>
+
+<p>
+Z upoštevanjem enačbe \ref{eq:5} razpišemo
+</p>
+
+\begin{align*}
+  \left( - \frac{\hbar ^2}{2m} \nabla ^2 + V \right) \Psi_n &= E_n \Psi_n \\
+\hat{H} \Psi = \mathrm{i} \hbar \frac{\partial \Psi}{\partial t} \\
+&= E_n \Psi
+\end{align*}
+
+<p>
+iz česar sledi enakost za časovni del
+</p>
+
+<p>
+\[ f = \exp \left\{ - \mathrm{i} \frac{E_n}{\hbar} t \right\}
+\]
+</p>
+
+<p>
+V kvantni mehaniki pišemo časovni eksponent negativno predznačen kot \( e^{- \mathrm{i} \omega t} \), kjer je \( \omega = \frac{E}{\hbar} \).
+</p>
+</div>
+</div>
+<div id="outline-container-org429e6a8" class="outline-3">
+<h3 id="org429e6a8"><span class="section-number-3">1.5.</span> Komutator</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Naj bosta \( \hat{A} \) in \( \hat{B} \) operatorja. Definiramo operacijo
+</p>
+
+<p>
+\[ \left[ \hat{A}, \hat{B} \right] = \hat{A} \hat{B} - \hat{B} \hat{A}
+\]
+</p>
+
+<p>
+Glej Poissonove oklepaje iz klasične mehanike, kjer smo povedali
+</p>
+
+<p>
+\[ \left[ q_i, p_i  \right]= \delta_{ij}
+\]
+</p>
+
+<div class="my_example" id="org0d902c8">
+<p>
+Naj bo operator \( \hat{A} = x \) in \( \hat{B} = \hat{p} = - \mathrm{i} \hbar \frac{\partial }{\partial  x} \). Po definiciji
+</p>
+
+<p>
+\[ \left[ x, p \right] = xp - px = - \mathrm{i} \hbar \frac{\partial }{\partial x}  + \mathrm{i} \hbar \frac{\partial }{\partial x}  x
+\]
+</p>
+
+<p>
+\( x \) ne smeš odvajati v drugem členu. Potrebno je videti, kako ta komutator vpliva na splošno funkcijo \( \Psi \). Torej
+</p>
+
+\begin{align*}
+ \left[ x, p \right]\Psi (x) &= - \mathrm{i} \hbar x \frac{\partial \Psi}{\partial x}  + \mathrm{i} \hbar \frac{\partial }{\partial x} \left( x \Psi \right) \\
+&= - \mathrm{i} \hbar x \frac{\partial \Psi}{\partial x}  + \mathrm{i} \hbar \Psi + \mathrm{i} \hbar x \frac{\partial \Psi}{\partial x}  \\
+&= \mathrm{i} \hbar \Psi
+\end{align*}
+
+<p>
+kar velja za vsako funkcijo \( \Psi \).
+</p>
+
+<p>
+Torej velja
+</p>
+
+<p>
+\[ \left[ x_i, p_j \right] = \mathrm{i} \hbar \delta_{ij}
+\]
+</p>
+
+</div>
+
+<p>
+Lastnosti komutatorjev so
+</p>
+
+<ul class="org-ul">
+<li>\[ \left[ \alpha A, B \right] = \alpha \left[ A, B \right]
+  \]</li>
+<li><p>
+\[   \left[ AB, C \right] = A \left[ B, C \right] + \left[ A, C \right] B
+  \]
+</p>
+
+<div class="proof" id="orgc368be8">
+<p>
+Dokazujemo drugo alinejo. Razpišemo desno stran
+</p>
+
+\begin{align*}
+  A \left[ B, C \right] + \left[ A, C \right] B &= A \left( BC - CB \right) + \left( AC - CA \right) B \\
+&= ABC - ACB + ACB - CAB \\
+&= \left[ AB, C \right]
+\end{align*}
+
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf46d2ee" class="outline-3">
+<h3 id="orgf46d2ee"><span class="section-number-3">1.6.</span> Lastnosti operatorjev</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Imamo operator \( A = \frac{\partial }{\partial x}  \mathrm{i} \), s katerim operiramo na funkciji \( \phi \) in \( \psi \). Opazujemo matrični element, ki ga bomo še definirali kasneje
+</p>
+
+<p>
+\[ \int\limits_{-\infty}^{\infty} \phi^{\ast} A \psi \, \mathrm{d} x = \int\limits_{- \infty}^{\infty} \phi^{\ast} \frac{\partial }{\partial x} \psi \, \mathrm{d} x
+\]
+</p>
+
+<p>
+Preko integriranja per partes in upoštevanja, da so naše funkcije v razredu Schwartzevih funkcij, pridobimo enakost
+</p>
+
+<p>
+\[ \int\limits_{- \infty}^{\infty} \phi^{\ast} A \psi \, \mathrm{d} x =\left. \phi^{\ast} \psi \right_{-\infty}^{\infty} - \int\limits_{-\infty}^{\infty} \frac{\partial \phi^{\ast}}{\partial x} \psi \, \mathrm{d} x = - \int\limits_{-\infty}^{\infty} \left( A \phi^{\ast} \right) \psi \, \mathrm{d} x
+\]
+</p>
+
+<p>
+Lahko zapišemo člen v zadnjem integralu kot \( \left( A \phi^{\ast} \right) = \left( A \phi \right)^{\ast} \). Operator \( A \) je v tem primeru antisimetričen.
+</p>
+
+<p>
+Če je operator \( A \) enak gibalni količini, potem preko enakega postopka pridemo do rezultata
+</p>
+
+\begin{align*}
+  \int\limits_{-\infty}^{\infty} \phi^{\ast} \left( - \mathrm{i} \hbar \frac{\partial }{\partial x} \psi \right) \, \mathrm{d}x &= \mathrm{i} \hbar \int\limits_{-\infty}^{\infty} \frac{\partial \phi ^{\ast}}{\partial x} \psi \, \mathrm{d} x \\
+&= \int\limits_{-\infty}^{\infty} \left( - \mathrm{i} \hbar \frac{\partial }{\partial x}  \phi \right)^{\ast} \psi \, \mathrm{d} x
+\end{align*}
+
+<p>
+Operatorju, kjer velja
+</p>
+
+<p>
+\[ \int\limits_{-\infty}^{\infty} \phi^{\ast} \hat{p}\psi \, \mathrm{d} x = \int\limits_{-\infty}^{\infty} \left( \hat{p} \phi \right)^{\ast} \psi \, \mathrm{d} x  ,
+\]
+</p>
+
+<p>
+pravimo, da je simetričen ali hermitski.
+</p>
+
+<p>
+Poglejmo si še primer, ko je \( A = H = \frac{p ^2 }{2m} + V \). Problematičen del Hamiltoniana je \( p ^2 \).
+</p>
+
+\begin{align*}
+  \int\limits_{-\infty}^{\infty} \phi^{\ast} \frac{\partial ^2 }{\partial x ^2} \psi &= - \int\limits_{-\infty}^{\infty} \frac{\partial \phi^{\ast}}{\partial x} \frac{\partial \psi}{\partial x}  \, \mathrm{d} x \\
+&=  \int\limits_{-\infty}^{\infty}  \frac{\partial ^2 }{\partial x ^2} \phi^{\ast} \psi \, \mathrm{d} x
+\end{align*}
+
+<p>
+Per partes smo naredili dvakrat - najprej na \( \frac{\partial }{\partial x}  \left( \frac{\partial \psi}{\partial x}  \right) \), kar nam pridela prvi negativen predznak. Z drugim per partes se negativna predznaka izničita.
+</p>
+
+<p>
+\( H \) je hermitski, če je potencial realen ali dugače zapisano \( V = V^{\ast} \).
+</p>
+
+<p>
+\[ \int\limits_{-\infty}^{\infty} \phi^{\ast} H \psi \, \mathrm{d} x = \int\limits_{- \infty}^{\infty} \left( H \phi \right)^{\ast} \psi \, \mathrm{d} x
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgea6c16a" class="outline-3">
+<h3 id="orgea6c16a"><span class="section-number-3">1.7.</span> Ehrenfestov teorem</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Postopamo podobno kot pri izpeljavi operatorja gibalne količine. Imamo operator \( \hat{A} \), ki je lahko \( x, \hat{p} \) ali \( H \). Pričakovana vrednost je
+</p>
+
+<p>
+\[ \left\langle \hat{A} \right\rangle = \int\limits_{-\infty}^{\infty} \Psi^{\ast} \hat{A} \Psi \, \mathrm{d} x
+\]
+</p>
+
+<p>
+Časovna odvisnost pričakovane vrednosti operatorja je
+</p>
+
+\begin{equation}
+\label{eq:6}
+ \frac{\mathrm{d} }{\mathrm{d} t} \left\langle \hat{A} \right\rangle  = \int\limits_{- \infty}^{\infty} \left( \frac{\partial \Psi^{\ast}}{\partial t} A \Psi + \Psi^{\ast} \frac{\partial A}{\partial t} \Psi + \Psi^{\ast} A \frac{\partial \Psi}{\partial x}   \right) \, \mathrm{d} x
+\end{equation}
+
+<p>
+Veljata naslednji zvezi
+</p>
+
+<p>
+\[ \frac{\partial \Psi}{\partial t}  = \frac{1}{\mathrm{i} \hbar} H \Psi \quad \text{in} \quad \frac{\partial \Psi^{\ast}}{\partial t} = - \frac{1}{\mathrm{i} \hbar} \left( H \Psi \right)^{\ast}
+\]
+</p>
+
+<p>
+Nadalje sledi iz enačbe \ref{eq:6}, da
+</p>
+
+\begin{align*}
+  \frac{\mathrm{d} }{\mathrm{d} t} \left\langle A \right\rangle &= \int\limits_{- \infty}^{\infty} \left( - \frac{1}{\mathrm{i} \hbar} \left[ H \Psi \right]^{\ast} A \Psi + \Psi^{\ast} \frac{\partial A}{\partial t} \Psi + \Psi^{\ast} A \left[ \frac{1}{\mathrm{i} \hbar} H \Psi \right] \right) \, \mathrm{d} x \\
+&=  \left\langle \frac{\partial \hat{A}}{\partial t}  \right\rangle + \frac{1}{\mathrm{i} \hbar} \int\limits_{- \infty}^{\infty} \left[ \Psi^{\ast} H \Psi - \left( H \Psi \right)^{\ast} A \Psi \right] \, \mathrm{d} x \\
+&= \left\langle \frac{\partial \hat{A}}{\partial t}  \right\rangle + \frac{1}{\mathrm{i} \hbar} \left\langle \left[ \hat{A}, \hat{H} \right] \right\rangle
+\end{align*}
+
+<p>
+Enačbi
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} \left\langle \hat{A} \right\rangle =  \left\langle \frac{\partial \hat{A}}{\partial t}  \right\rangle + \frac{1}{\mathrm{i} \hbar} \left\langle \left[ \hat{A}, \hat{H} \right] \right\rangle
+\]
+</p>
+
+<p>
+pravimo Ehrenfestov teorem.
+</p>
+
+
+<div class="my_example" id="orge3f3a19">
+<p>
+Za \(  A = x \) s Hamiltonianom velja preko teorema
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} \left\langle x \right\rangle  = \frac{1}{\mathrm{i} \hbar} \left\langle \left[ x, H \right] \right\rangle = \frac{1}{\mathrm{i} \hbar} \mathrm{i} \hbar \frac{\left\langle p \right\rangle}{m} = \frac{\left\langle p \right\rangle}{m}
+\]
+</p>
+
+<p>
+saj velja
+</p>
+
+\begin{align*}
+  \left[ x, H \right] &= \left[ x, \frac{p ^2}{2m} + V(\vec{r}, t) \right] \\
+&= \frac{1}{2m} \left[ x, p ^2 \right] \\
+&= \frac{1}{2m} \left( \left[ x, p \right] p + p \left[ x, p \right] \right) \\
+&= \frac{1}{2m} \left( \mathrm{i} \hbar p + p \mathrm{i} \hbar \right)
+\end{align*}
+
+<p>
+Velja \( \left[ x, V \right] = 0 \).
+</p>
+
+</div>
+
+<div class="my_example" id="org58704cb">
+<p>
+Za operator vzamemo gibalno količino \( A = p \). Lahko vzamemo totalni odvod, ker funkcija \( \vec{r} \) ni funkcija časa. Po definiciji Ehrenfestovega teorema
+</p>
+
+<p>
+\[ m \frac{\mathrm{d} ^2 }{\mathrm{d} t ^2} \left\langle x \right\rangle  = \frac{\mathrm{d} \left\langle p \right\rangle}{\mathrm{d} t}
+\]
+</p>
+
+<p>
+kjer smo upoštevali rezultat prejšnjega primera. Nadaljujemo
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} \left\langle p \right\rangle  = \frac{1}{\mathrm{i} \hbar} \left\langle \left[ p, H \right] \right\rangle = \frac{1}{\mathrm{i} \hbar} \left\langle \left[ p, \frac{p ^2}{2m} + V \right] \right\rangle
+\]
+</p>
+
+<p>
+Komutacija \( p \) in \( p ^2 \) nam da ničelni rezultat. Torej
+</p>
+
+<p>
+\[\frac{\mathrm{d} }{\mathrm{d} t} \left\langle p \right\rangle &= \frac{1}{\mathrm{i} \hbar} \left\langle \left[ p, V \right] \right\rangle
+\]
+</p>
+
+<p>
+Komutacija \( p \) in \( V \) pa nam poda rezultat
+</p>
+
+\begin{align*}
+  \left[ p, V(x, t) \right] \Psi &= \left( p V - V p \right) \Psi \\
+&= - \mathrm{i} \hbar \frac{\partial }{\partial x} V \Psi + \mathrm{i} \hbar V \frac{\partial }{\partial x} \Psi \\
+&= - \mathrm{i} \hbar \left( \frac{\partial V}{\partial x} V \right) \Psi - \mathrm{i} \hbar V \frac{\partial \Psi}{\partial x}  + \mathrm{i} \hbar V \frac{\partial \Psi}{\partial x } \\
+&= \left( - \mathrm{i} \hbar \frac{\partial V}{\partial x}  \right) \Psi
+\end{align*}
+
+<p>
+Torej
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} \left\langle p \right\rangle  = m \frac{\mathrm{d} ^2 \left\langle x \right\rangle }{\mathrm{d} t ^2} = \left\langle  - \frac{\partial V}{\partial x}  \right\rangle = \left\langle F(x, t) \right\rangle
+\]
+</p>
+
+<p>
+To nas spominja na 2. Newtonov zakon. Klasično bi ga zapisali
+</p>
+
+<p>
+\[ m \frac{\mathrm{d} ^2 }{\mathrm{d} t ^2} = F (x, t)
+\]
+</p>
+
+<p>
+Ekvivalenten kvantnomehanski zapis bi bil
+</p>
+
+<p>
+\[ m \frac{\mathrm{d} ^2 \left\langle x \right\rangle }{\mathrm{d} t ^2} = F \left( \left\langle x \right\rangle , t \right)
+\]
+</p>
+
+<p>
+vendar mi imamo pa \( \left\langle F (x, t) \right\rangle \), kar je po definiciji
+</p>
+
+<p>
+\[ \int\limits_{-\infty}^{\infty} \Psi^{\ast} F (x, t)  \Psi \, \mathrm{d} x = F \left( \left\langle x \right\rangle , t\right) \int\limits_{- \infty}^{\infty} \left| \Psi \right| ^2 \, \mathrm{d} x = F \left( \left\langle x \right\rangle , t\right)
+\]
+</p>
+
+<p>
+Verjetnostna gostota \( \rho(x, t) \) ima obliko \( \delta \)-funkcije in ko gre širina stolpca \( \sigma \) proti 0 okoli pričakovane vrednosti \( \left\langle x \right\rangle \) bo zgornji integral veljal, saj je \( F(x, t) \) neodvisna od \( x \). Temu prehodu, ko gre širina proti \( 0 \), pravimo klasična limita.
+</p>
+
+<p>
+<i>Think through this, razlaga integrala je bolj švoh</i>.
+</p>
+
+</div>
+
+<div class="my_example" id="orgafa5b87">
+<p>
+Vzemimo za operator \( \hat{A} = \hat{\vec{r}} \times \hat{\vec{p}} = \hat{\vec{L}} \). Za vajo dokažemo doma
+</p>
+
+<p>
+\[ \frac{\mathrm{d} \left\langle \hat{\vec{L}} \right\rangle}{\mathrm{d} t} = \left\langle \hat{\vec{M}} \right\rangle  = \left\langle \vec{r} \times \left( - \nabla V \right) \right\rangle
+\]
+</p>
+
+<p>
+kjer je \( \hat{\vec{M}} = \vec{r} \times \vec{F} \).
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orga4fd63c" class="outline-3">
+<h3 id="orga4fd63c"><span class="section-number-3">1.8.</span> Nedoločenost</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+[vstavi graf]
+</p>
+
+<p>
+Širina stolpca je enaka
+</p>
+
+<p>
+\[ \delta x ^2 = \sigma_x ^2 = \left\langle x ^2 \right\rangle  - \left\langle x \right\rangle ^2 \ge 0
+\]
+</p>
+
+<p>
+Naredimo to za splošen operator
+</p>
+
+<p>
+\[ \delta ^2 \hat{A} ^2 = \left\langle \hat{A} ^2 \right\rangle - \left\langle \hat{A} \right\rangle ^2
+\]
+</p>
+
+<p>
+Na vajah dokažemo, da za poljubna operatorja \( \hat{A} \) in \( \hat{B} \) velja
+</p>
+
+<p>
+\[ \left| \Delta A \Delta B \right| \ge \frac{1}{2} \left\langle  \left[ \hat{A}, \hat{B} \right] \right\rangle
+\]
+</p>
+
+<p>
+preko Schwartzove neenakosti.
+</p>
+
+<p>
+\[ \left| \int\limits_{}^{} \phi^{\ast} \psi \, \mathrm{d} x \right| \le \int\limits_{}^{} \left| \phi^ \right|^2 \, \mathrm{d} x \int\limits_{}^{} \left| \psi \right| ^2 \, \mathrm{d} x
+\]
+</p>
+
+<p>
+Za \( A = x \) in \( B = p \) je enako
+</p>
+
+<p>
+\[ \delta x \delta p \ge \frac{1}{2} \hbar
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orged61399" class="outline-2">
+<h2 id="orged61399"><span class="section-number-2">2.</span> Formalizem kvantne mehanike</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Uporabljali bomo Diracov formalizem, ki ga je izdal v svoji knjigi leta 1930. Drugi pomembnejši za naš formalizem pa je von Neumann s knjigo leta 1932.
+</p>
+
+<ol class="org-ol">
+<li>Nahajamo se v vektorskem prostor, ki je Hilbertov \( L ^2 \). Naj bo funkcija \( \Psi(\vec{r}, t) \in L ^2 \). Obstaja baza \( \left\{ \phi_n \right\} \) za \( n \in \mathbb{N} \). Če bi obstajala baza \( \left\{ \phi_k \right\} \), kjer \( k \in \mathbb{R} \) je to Banachov prostor, kjer je matematika drastično značilna.</li>
+
+<li><p>
+Pri vektorjih imamo tudi avtomatsko skalarni produkt. Za dva vektorja \( \psi, \phi \in L ^2 \). Skalarni produkt zapišemo na več možnih načinov:
+</p>
+
+<p>
+\[ \left( \phi, \psi \right) = \left( \phi \middle| \psi \right) = \left\langle \phi, \psi \right\rangle  = \left\langle \phi \middle| \psi \right\rangle = \int\limits_{}^{} \phi^{\ast} \psi \, \mathrm{d} x
+   \]
+</p>
+
+<p>
+Mi bomo uporabljali Diracov zapis skalarnega produkta, ki \( \left\langle \phi \middle| \psi \right\rangle \). Za skalarni produkt velja
+</p>
+
+<ul class="org-ul">
+<li>\( \left\langle \phi \middle| \psi \right\rangle  = \left\langle \psi \middle| \phi \right\rangle ^{\ast} \)</li>
+<li>\( \left\langle \psi \middle| \psi \right\rangle \ge 0 \) in če \( \left\langle \psi \midlle|\psi \right\rangle = 0\), ko \( \psi = 0 \)</li>
+<li>\( \left| \left\langle \phi \middle| \psi \right\rangle \right| ^2 \ge \left\langle \phi \middle| \phi \right\rangle \left\langle \psi \middle| \psi \right\rangle\)</li>
+</ul></li>
+
+<li>Definiram <i>ket</i>. Za funkcijo ali stanje \( \Psi(x, t) \in L ^2 \) , definiramo stanje ali vektor kot \( \left| \psi \right\rangle \)</li>
+
+<li><p>
+Linearni operatorji je definiran s tem, da vsoto preslika v vsoto
+</p>
+
+<p>
+\[ \hat{A} \left( \lambda \left| \phi \right\rangle  + \mu \left| \psi \right\rangle\right) = \lambda \hat{A} \left| \phi \right\rangle + \mu \hat{A} \left| \psi \right\rangle
+   \]
+</p>
+
+<p>
+Operator je antilinearen, če ga kompleksno konjugira:
+</p>
+
+<p>
+\[ \hat{A} \lambda \left| \psi \right\rangle  = \lambda^{\ast} \hat{A} \left| \psi \right\rangle
+   \]
+</p></li>
+
+<li><p>
+Rieszov izrek: Naj bo \( \hat{f} \) linearni funkcional. Obstaja neka funkcija, da delovanje funkcionala \( \hat{f} \) predstavimo kot skalarni produkt
+</p>
+
+<p>
+\[ \hat{f} \left| \psi \right\rangle = \left| f \middle| \psi \right\rangle = \int\limits_{}^{} f^{\ast} (x) \psi(x) \, \mathrm{d} x = z \in \mathbb{C}
+   \]
+</p>
+
+<p>
+kjer je \( z \in \mathcal{C} \) število.
+</p>
+
+<p>
+Uvedemo bra \( \left\langle \psi \right| \). Funkcional zapišemo kot \( \left\langle \phi \right|  = \hat{f}\) ali drugače
+</p>
+
+<p>
+\[ \hat{f} \left| \psi \right\rangle  = z = \left\langle \phi\middle| \psi \right\rangle
+   \]
+</p>
+
+<p>
+Tukaj velja, da če imamo bra, ki deluje na vektor, je to skalarni produkt
+</p>
+
+<p>
+\[ \left\langle \phi \right| \left| \psi \right\rangle = \left| \phi \middle| \psi \right\rangle
+   \]
+</p></li>
+
+<li><p>
+Razvoj stanja po dani bazi \( \left\{ \phi_n (x) \right\} \). Velja
+</p>
+
+<p>
+\[ \int\limits_{}^{} \phi^{\ast}_m \phi_n \, \mathrm{d} x = \delta_{mn }
+   \]
+</p>
+
+<p>
+Integral je ortonormiran, vendar je lahko proble degeneriran.
+</p>
+
+<p>
+Funkcijo \( \Psi (x) \) razvijemo po bazi
+</p>
+
+<p>
+\[ \Psi (x) = \sum\limits_n^{} c_n \phi_n (x)
+   \]
+</p>
+
+<p>
+Razvoj pomnožimo s \( \phi_m^{\ast} \) in upoštevamo zgornjo enakost
+</p>
+
+<p>
+\[ \int\limits_{}^{} \phi_m ^{\ast} (x) \Psi(x) \, \mathrm{d} x = c_m
+   \]
+</p>
+
+<p>
+To pomeni, da lahko naš razvoj po bazi zapišemo namesto s \( c_n \) kot
+</p>
+
+<p>
+\[ \Psi (x) = \sum\limits_n^{} \int\limits_{}^{} \phi^{\ast}_n (x') \Psi(x') \, \mathrm{d} x' \phi_n (x)
+   \]
+</p>
+
+<p>
+Ker varčujemo z biti, bomo pisali bazo \( \left\{ \left| \phi_n \right\rangle \right\} \) tudi kot \( \left\{ \left| n \right\rangle \right\} \). Razvoj po bazi zapišemo kot
+</p>
+
+<p>
+\[ \left| \psi \right\rangle  = \sum\limits_n^{} c_n \left| n \right\rangle
+   \]
+</p>
+
+<p>
+Na vektor delujemo s funkcionalom \( \left| m \right\rangle \) in zapišemo
+</p>
+
+<p>
+\[ \left\langle m \middle| \psi \right\rangle  = \sum\limits_n^{} c_n \left\langle m \middle| n \right\rangle = c_m
+   \]
+</p>
+
+<p>
+Poleg tega
+</p>
+
+<p>
+\[ \left| \psi \right\rangle  = \sum\limits_n^{} \left\langle n \middle| \\Psi \right\rangle \left| n \right\rangle = \sum\limits_n^{} \left| n \right\rangle \left\langle n \middle| \Psi \left\rangle = \left( \sum\limits_n^{} \left| n \right\rangle \left\langle n \right|\right) \left| \Psi \right\rangle = I \left| \Psi \right\rangle
+   \]
+</p>
+
+<p>
+saj velja
+</p>
+
+<p>
+\[ I = \sum\limits_n^{} \left| n \right\rangle  \left| n \right\rangle \iff I = \sum\limits_n^{} \int\limits_{}^{} \phi_n ^{\ast} (x') \Psi(x') \, \mathrm{d} x' \phi_n (x)
+   \]
+</p></li>
+
+<li><p>
+Zapis operatorja v dani bazi \( \left\{ n \right\} \). Imamo poljuben operator \( \hat{A} \) in enakost \( I = \sum\limits_n^{} \left| n \right\rangle \left\langle n \right|\).
+</p>
+
+<p>
+Operator, ki deluje na vektor, zapišemo kot
+</p>
+
+\begin{align*}
+  A \left| \psi \right\rangle &= I A I \left| \psi \right\rangle \\
+     &= \sum\limits_{m, n}^{} \left| m \right\rangle \left\langle m \right| A \left| n \right\rangle \left| n \middle| \psi \right\rangle \\
+     &= \sum\limits_{m, n}^{} \left| m \right\rangle A_{mn} \left\langle n \middle| \psi \right\rangle \\
+     &= \sum\limits_{m, n}^{} \left| m \right\rangle A_{mn} c_n
+\end{align*}
+
+<p>
+Zapišemo \( A \left| \psi \right\rangle  = \left| \psi_1 \right\rangle\). Razvoj posameznih funkcij po bazi zapišemo kot
+</p>
+
+<p>
+\[ \left| \psi \right\rangle  = \sum\limits_n^{} c_n \left| n \right\rangle
+   \]
+</p>
+
+<p>
+ter
+</p>
+
+<p>
+\[ \left| \psi_1 \right\rangle  = \sum\limits_n^{} d_n \left| n \right\rangle
+   \]
+</p>
+
+<p>
+Torej bomo zapisali kot
+</p>
+
+<p>
+\[ A \left| \psi \right\rangle  = \sum\limits_m^{} \left( \sum\limits_n^{} A_{mn} c_n \right) \left| m \right\rangle = \left| \psi_1 \right\rangle
+   \]
+</p>
+
+<p>
+Vsota \( \sum\limits_n^{} A_{mn} c_n \) predstavlja člene \( \sum\limits_m^{} d_m \). Vse skupaj lahko zapišemo v matrični obliki
+</p>
+
+<p>
+\[ \begin{pmatrix} d_{1} \\ d_{2} \\ \vdots \\ d_n \\ \vdots \end{pmatrix} = \begin{pmatrix}
+                                                                               A_{11} & A_{12} & &  \\
+                                                                                & \ddots & & \\
+                                                                                &  & A_{nn} & \\
+                                                                                &&&& \ddots
+                                                                               \end{pmatrix} \begin{pmatrix} c_{1} \\ c_{2} \\ \vdots \\ c_{n} \\  \vdots \end{pmatrix}
+   \]
+</p>
+
+<div class="my_example" id="orgd3d280d">
+<p>
+Operator gibalne količine \( A = - \mathrm{i} \hbar \frac{\partial }{\partial x}  = \hat{p} \). Baza je
+</p>
+
+<p>
+\[ \phi_n (x) = c_n \sin k_n x
+        \]
+</p>
+
+<p>
+Matrični element neskončne potencialne jame bo
+</p>
+
+<p>
+\[ A_{mn} = \int\limits_{-a}^a \phi_m^{\ast} (x) \hat{p} \phi_n (x) \, \mathrm{d} x = \left\langle m \middle| A \middle| n \right\rangle
+        \]
+</p>
+
+<p>
+Zapišemo razvoj po bazi
+</p>
+
+<p>
+\[ \psi(x) = \sum\limits_n^{} \alpha_n \phi_n (x)
+        \]
+</p>
+
+</div></li>
+
+<li><p>
+Operator je hermitski ali simetričen, če velja
+</p>
+
+<p>
+\[ \left| \phi \middle| A \middle| \psi \right\rangle  = \int\limits_{}^{} \phi^{\ast} A \psi \, \mathrm{d} x = \left| A \phi \middle| \psi \right\rangle
+   \]
+</p>
+
+<p>
+za vsak vektor \( \phi, \psi \). Možen je tudi zapis \( \left\langle \psi \middle| A \middle| \psi \right\rangle  = \left\langle \psi \middle| A \psi \right\rangle\)
+</p>
+
+<p>
+Ima nekaj lepih lastnosti:
+</p>
+<ul class="org-ul">
+<li><p>
+pričakovana vrednost
+</p>
+
+\begin{align*}
+  \left\langle \psi \middle| A \middle| \psi \right\rangle &= \left\langle A \psi \middle| \psi \right\rangle \\
+   &= \left\langle \psi \middle| A \psi \right\rangle^{\ast} \\
+   &= \left\langle \psi \middle| A \middle| \psi \right\rangle^{\ast}
+\end{align*}
+
+<p>
+je realna, saj je konjugirana vrednost enaka nekonjugirani.
+</p></li>
+
+<li><p>
+Naj bo \( a \) lastna vrednost. Potem zapišemo
+</p>
+
+<p>
+\[ A \left| a \right\rangle  = a \left| a \right\rangle
+     \]
+</p>
+
+<p>
+kjer je \( \left| a \right\rangle \) lastni vektor. Nadalje to pomnožimo s funkcionalom \( \left\langle a \right| \) in dobimo
+</p>
+
+<p>
+\[ \left\langle a \middle| A \middle| a \right\rangle  = a \left\langle a \middle| a \right\rangle  \in \mathbb{R}
+     \]
+</p>
+
+<p>
+Iz tega sledi, da je lastna vrednost \( a \in \mathbb{R} \) realna.
+</p></li>
+
+<li><p>
+Imamo dve različni lastni vrednosti \( a, b \) in različna lastna vektorja \( \left| a \right\rangle \) ter \( \left| b \right\rangle \). Velja
+</p>
+
+<p>
+\[ A \left| a \right\rangle  = a \left| a \right\rangle \quad A \left| b \right\rangle = b \left| b \right\rangle
+     \]
+</p>
+
+<p>
+Prvo enakost pomnožimo z lastnim vektorjem \( \left\langle b \right| \), dobimo
+</p>
+
+\begin{align*}
+  \left\langle b \middle| A \middle| a \right\rangle &= a \left\langle b \middle| a \right\rangle \\
+   &= \left\langle Ab \middle| a \right\rangle \\
+   &= b \left\langle b \middle| a \right\rangle \\
+   &= (a - b) \left\langle b \middle| a \right\rangle = 0
+\end{align*}
+
+<p>
+Imamo dve situaciji: če je \( a \ne b \), potem je skalarni produkt \( \left\langle b \middle| a \right\rangle  = 0\). Če pa \( a = b \), potem sta \( \left\{ \left| a \right\rangle, \left| b \right\rangle\right\} \) bazi in sledi \( \left| a_1 \right\rangle, \left| b_1 \right\rangle \)
+</p></li>
+</ul></li>
+</ol>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-10-07 Tue 14:09</p>
+<p class="date">Created: 2025-11-05 Wed 08:24</p>
 </div>
 </body>
 </html>

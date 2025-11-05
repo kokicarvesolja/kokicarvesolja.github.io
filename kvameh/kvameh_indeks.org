@@ -3,10 +3,10 @@
 
 Tukaj so zbrani zapiski predavanj prof. dr. Antona Ramšaka.
 
-- [[file:01predavanja/01km_p_20251006.html][predavanje 1, 2025/10/06]]: Uvod v kvantno mehaniko, valovanje, Schrödingerjeva enačba, lastnosti valovanja, pričakovane vrednosti
-- [[file:01predavanja/02km_p_20251015.html][predavanje 2, 2025/10/15:]] formalizem kvantne mehanike
-- [[file:01predavanja/03km_p_20251022.html][predavanje 3, 2025/10/22:]] formalizem kvantne mehanike, harmonski oscilator
-- [[file:01predavanja/04km_p_20251027.html][predavanje 4 in 5, 2025/10/27 in 29:]] simetrije - unitarni operatorji, vrtilna količina, zapis operatorja z matriko, centralni potencial
+- [[file:01predavanja/01km_p_20251006.html][predavanje 1 in 2, 2025/10/06 in 08]]: Uvod v kvantno mehaniko, valovanje, Schrödingerjeva enačba, lastnosti valovanja, pričakovane vrednosti
+- [[file:01predavanja/02km_p_20251015.html][predavanje 3, 2025/10/15:]] formalizem kvantne mehanike
+- [[file:01predavanja/03km_p_20251022.html][predavanje 4, 2025/10/22:]] formalizem kvantne mehanike, harmonski oscilator
+- [[file:01predavanja/04km_p_20251027.html][predavanje 5 in 6, 2025/10/27 in 29:]] simetrije - unitarni operatorji, vrtilna količina, zapis operatorja z matriko, centralni potencial
 
 * Vaje
 
