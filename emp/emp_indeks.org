@@ -7,6 +7,7 @@ Tukaj so zbrani zapiski predavanj, ki sem se jih udeležil pri prof. dr. Miha Ra
 - [[file:01predavanja_emp/02emp_p_20251008.html][predavanje 2, 2025/10/08:]] Princip superpozicije, gostota naboja, integralna oblika Gaussovega zakona, Poissonova in Laplaceova enačba; Greenova funkcija
 - [[file:01predavanja_emp/03emp_p_20251015.html][predavanje 3, 2025/10/15:]] Greenova funkcija, Earnshawjev teorem, Thomsonov problem, elektrostatska energija: elektrostatska energija naboja v zunanjem polju, celotna elektrostatska energija, gostota elektrostatskega polja, sila kot funkcional električnega polja
 - [[file:01predavanja_emp/04emp_p_20251022.html][predavanje 4, 2025/10/22:]] Sila kot funkcional električnega polja, napetostni tenzor električnega polja, multipolni razvoj električnega potenciala, polje in potencial točkastega dipola, multipolni razvoj elektrostatske energije, sila in navor na multipole v zunanjem polju; magnestatika: amperova sila med ravnima električnimi vodniki, sila med poljubnima vodnikoma
+- [[file:01predavanja_emp/05emp_p_20251105.html][predavanje 5, 2025/11/05:]] Magnetostatika: električni tok in velikosti, gostota magnetnega toka, velikosti magnetnega polja, magnetne silnice, magnetna cirkulacija, magnetni pretok, gostota električnega toka, primeri gostote toka, Amperov zakon, magnetni potencial, vektorski potencial tuljave
 
 
 * Vaje
@@ -17,3 +18,4 @@ Tukaj so zbrani zapiski vaj pri prof. Martinu Klanjšku.
 - [[file:02vaje_emp/02emp_v_20251014.html][vaje 2, 2025/10/14:]] Električno polje ravne plošče z režo (nadaljevanje), Poissonova enačba za točkast naboj, električno polje vodikovega atoma, ploščatega kondenzator s prečnim trakom + teorija Fourierovega prostora
 - [[file:02vaje_emp/03emp_v_20251021.html][vaje 3, 2025/10/21:]] nadaljevanje ploščatega kondenzatorja s prečnim trakom, prepolovljena prevodna cev [Hvala Jani K. za zapiske!]
 - [[file:02vaje_emp/04emp_v_20251028.html][vaje 4, 2025/10/28:]] nadaljevanje prepolovljene prevodne cevi, prevodna krogla v homogenem električnem polju, točkast električni dipol v središču prevodne sfere
+- [[file:02vaje_emp/05emp_v_20251104.html][vaje 5, 2025/11/04:]] točkasti naboj nad prevodno ploščo, električna sila na točkasti naboj nad prevodno ploščo, električna sila na polovico prevodne krogle, točkasti naboj v kotu med dvema pravokotnma prevodnima ploščama

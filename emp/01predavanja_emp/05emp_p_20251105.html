@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-08 Sat 15:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>5. predavanje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">5. predavanje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge180d34">1. Magnetostatika</a>
+<ul>
+<li><a href="#org2091d70">1.1. Električni tok in velikosti</a></li>
+<li><a href="#org08bb28e">1.2. Gostota magnetnega toka</a></li>
+<li><a href="#org2da5ec0">1.3. Velikosti magnetnega polja</a></li>
+<li><a href="#org3425b70">1.4. Magnetne silnice</a></li>
+<li><a href="#org65d28e9">1.5. Magnetna cirkulacija</a></li>
+<li><a href="#org1267378">1.6. Magnetni pretok</a></li>
+<li><a href="#orga2531f6">1.7. Gostota električnega toka</a></li>
+<li><a href="#org3d54219">1.8. Primeri gostote toka</a>
+<ul>
+<li><a href="#orge4f14c6">1.8.1. Zvezno porazdeljen naboj</a></li>
+<li><a href="#org8a63559">1.8.2. Linearni vodnik</a></li>
+<li><a href="#org797e047">1.8.3. Točkast naboj</a></li>
+<li><a href="#orgc9d8af8">1.8.4. Površinska gostota toka</a></li>
+</ul>
+</li>
+<li><a href="#org9f75685">1.9. Amperov izrek</a></li>
+<li><a href="#org41595a4">1.10. Magnetni potencial</a></li>
+<li><a href="#org729a636">1.11. Vektorski potencial tuljave</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge180d34" class="outline-2">
+<h2 id="orge180d34"><span class="section-number-2">1.</span> Magnetostatika</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org2091d70" class="outline-3">
+<h3 id="org2091d70"><span class="section-number-3">1.1.</span> Električni tok in velikosti</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Električni tok je gibanje naboja po času vzdolž nekega električnega vodnika.
+</p>
+
+<p>
+\[ I = \frac{\mathrm{d} e}{\mathrm{d} t},
+\]
+</p>
+
+<p>
+z enotami \( \mathrm{A} \) Amperov.
+</p>
+
+<p>
+V magnetostatiki je električni tok časovno konstanten.
+</p>
+
+<p>
+Nekaj velikosti tokov so
+</p>
+
+<p>
+\[ \begin{array}{c|c} \hline \text{pojav} & \text{velikost} \\ \hline
+\text{tok skozi celično membrano} & 1-10 \mathrm{p A} \\
+\text{živčni impulz} & 1 \mu \mathrm{A}\\
+\text{gospodinjski tok} & 1 \mathrm{A} \\
+\text{tok skozi superprevodni magnet v LHC} & 12 \mathrm{k A} \\
+\text{tok pri blisku} & 1-20 \cdot 10^4 \mathrm{A} \\
+\text{tok v Zemeljskem jedru} & 10^9 \mathrm{A} \\ \hline
+\end{array}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org08bb28e" class="outline-3">
+<h3 id="org08bb28e"><span class="section-number-3">1.2.</span> Gostota magnetnega toka</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Podobno kot v elektrostatiki, lahko delovanje sil med električnimi vodniki opišemo z uvedbo magnetnega polja. Velja
+</p>
+
+<p>
+\[ \vec{F} = - \frac{\mu_0 I_1 I_2}{4 \pi} \iint\limits_{}^{} \frac{\mathrm{d} \vec{l}_1 \times \mathrm{d} \vec{l}_2 \times \left( \vec{r} \left( l_2 \right) - \vec{r} \left( l_1 \right) \right)}{\left| \vec{r} \left( l_2 \right) - \vec{r} \left( l_1 \right) \right| ^3} = \int\limits_{c_1}^{} I_1 \, \mathrm{d} \vec{l}_1 \times \int\limits_{c_2}^{} \frac{\mu I_2}{4 \pi} \frac{\mathrm{d} \vec{l}_2 \times \left( \vec{r} (l_1) - \vec{r} (l_2) \right)}{\left| \vec{r}(l_1) - \vec{r}(l_2) \right| ^3}
+\]
+</p>
+
+<p>
+Ločili smo integrala, ker prvi integral sporoča, da je sila na prvi vodnik, drugi integral pa je tok, ki ustvarja silo na prvi vodnik. Slednji integral uvedemo kot magnetno polje
+</p>
+
+<p>
+\[ \vec{B} \left( \vec{r} \right) = \frac{\mu_0 I_2}{4 \pi} \int\limits_{c_2}^{}  \frac{\mathrm{d} \vec{l}_2 \times \left( \vec{r} - \vec{r} (l_2) \right)}{\left| \vec{r} - \vec{r} (l_2) \right| ^3}.
+\]
+</p>
+
+<p>
+Ta integral poznamo tudi pod imenom Biot-Savartov zakon. S tako uvedenim magnetnim poljem \( B \) zapišemo silo kot
+</p>
+
+<p>
+\[ \vec{F} = \int\limits_{c_1}^{} I_1 \, \mathrm{d} \vec{l}_1  \times \vec{B} \left( \vec{r} (l_1) \right)
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org2da5ec0" class="outline-3">
+<h3 id="org2da5ec0"><span class="section-number-3">1.3.</span> Velikosti magnetnega polja</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+\[ \begin{array}{c|c} \hline \text{pojav} & \text{velikost} \\ \hline
+\text{možganska aktivnost} & 1 \mathrm{fT} \\
+\text{medgalaktična magnetna polja} & 1-10  \mathrm{pT}\\
+\text{srčna aktivnost} & 100 \mathrm{pT} \\
+\text{Zemeljsko magnetno polje} & 100 \mu \mathrm{T} \\
+\text{železni magnet} & 100 \mathrm{mT} \\
+\text{Sončne pege} & 1 \mathrm{T} \\
+\text{pospeševalniki} & 10 \mathrm{T} \\
+\text{nevronska zvezda} & 10^6 - 10^7 \mathrm{T} \\
+\text{atomsko jedro} & 1 \mathrm{TT} \\ \hline
+\end{array}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org3425b70" class="outline-3">
+<h3 id="org3425b70"><span class="section-number-3">1.4.</span> Magnetne silnice</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Magnetne silnice so vedno zaključene. Do tega spoznanja smo prišli eksperimentalno.
+</p>
+
+
+<div id="org2adb051" class="figure">
+<p><img src="figures/silnice_magnetnoPolje.png" alt="silnice_magnetnoPolje.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org65d28e9" class="outline-3">
+<h3 id="org65d28e9"><span class="section-number-3">1.5.</span> Magnetna cirkulacija</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Magnetno cirkulacijo uvedemo kot
+</p>
+
+<p>
+\[ \Gamma_M = \oint\limits_c^{} \vec{B} \cdot \mathrm{d} \vec{r},
+\]
+</p>
+
+<p>
+kjer je \( c \) zaključena zanka. Za razliko od električnega cirkulacije je ta integral striktno različen od \( 0 \). Integral po zaključeni zanki lahko preko Stokesovega izreka pretvorimo v integral po zaključeni površini
+</p>
+
+<p>
+\[ \oint\limits_{c = \partial S}^{} \vec{B} \cdot \mathrm{d} \vec{r} = \iint\limits_S^{} \nabla \times \vec{B} \cdot \, \mathrm{d} \vec{S} \ne 0
+\]
+</p>
+
+<p>
+Iz tega sledi, da je
+</p>
+
+<p>
+\[ \nabla \times \vec{B} \ne 0,
+\]
+</p>
+
+<p>
+kar pomeni, da je magnetno polje vrtinčno.
+</p>
+</div>
+</div>
+<div id="outline-container-org1267378" class="outline-3">
+<h3 id="org1267378"><span class="section-number-3">1.6.</span> Magnetni pretok</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Magnetni pretok uvedemo kot
+</p>
+
+<p>
+\[ \phi_M = \int\limits_S^{} \vec{B} \cdot \mathrm{d} \vec{S},
+\]
+</p>
+
+<p>
+kjer je \( S \) poljubna površina. Velja pa, da je magnetni pretok skozi zaključeno površino
+</p>
+
+<p>
+\[ \oint\limits_S^{} \vec{B} \cdot \mathrm{d} \vec{S} = 0
+\]
+</p>
+
+<p>
+To je posledica tega, da ne obstajajo monopoli oziroma so vse magnetne silnice sklenjene. V diferencialni obliki pretok zapišemo
+</p>
+
+<p>
+\[ 0 = \oint\limits_{S = \partial V}^{} \vec{B} \cdot \mathrm{d} \vec{S} = \int\limits_V^{} \nabla \cdot \vec{B} \, \mathrm{d} V = 0,
+\]
+</p>
+
+<p>
+iz česar zaključimo, da je magnetno polje brezizvorno, saj
+</p>
+
+<p>
+\[ \nabla \cdot \vec{B} = 0
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orga2531f6" class="outline-3">
+<h3 id="orga2531f6"><span class="section-number-3">1.7.</span> Gostota električnega toka</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+Električni tok, ki je vezan na žice, se posploši z uvedbo gostote električnega toka. In sicer
+</p>
+
+<p>
+\[ I = \int\limits_S^{} \vec{\jmath} \cdot \mathrm{d} \vec{S}
+\]
+</p>
+
+<p>
+Gostota električnega toka \( \vec{\jmath} \) ima lahko poljubno smer v prostoru in ni nujno vezan na vodnike - gostota toka ne teče nujno vzdolž žice in Zemljino jedro ni sestavljeno iz vodnikov.
+</p>
+</div>
+</div>
+<div id="outline-container-org3d54219" class="outline-3">
+<h3 id="org3d54219"><span class="section-number-3">1.8.</span> Primeri gostote toka</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-orge4f14c6" class="outline-4">
+<h4 id="orge4f14c6"><span class="section-number-4">1.8.1.</span> Zvezno porazdeljen naboj</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<p>
+Imamo električen naboj z gostoto \( \rho \left( \vec{r} \right) \) in hitrostno polje \( \vec{v} \left( \vec{r} \right) \), ki poganja naboje. Izhajamo iz diferencialne oblike definicije gostote električnega toka
+</p>
+
+<p>
+\[ \mathrm{d} I = \vec{\jmath} \cdot \mathrm{d} \vec{S}
+\]
+</p>
+
+<p>
+Z upoštevanjem definicije toka lahko povežemo gostoto električnega toka s hitrostnim poljem
+</p>
+
+<p>
+\[ \mathrm{d} I = \frac{\mathrm{d} e}{\mathrm{d} t} = \frac{\rho \mathrm{d} V}{\mathrm{d} t} = \frac{\rho \mathrm{d} S \mathrm{d} x}{\mathrm{d} t} = \rho \mathrm{d} S \vec{v} = \vec{\jmath} \mathrm{d} \vec{S}.
+\]
+</p>
+
+<p>
+Torej je gostota električnega toka enaka
+</p>
+
+<p>
+\[ \vec{\jmath} = \rho \vec{v}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org8a63559" class="outline-4">
+<h4 id="org8a63559"><span class="section-number-4">1.8.2.</span> Linearni vodnik</h4>
+<div class="outline-text-4" id="text-1-8-2">
+<p>
+Gostoto električnega toka zapišemo kot
+</p>
+
+<p>
+\[ \vec{\jmath} = I \delta ^2 \left( \vec{\rho} - \vec{\rho}_0 \right) \hat{t},
+\]
+</p>
+
+<p>
+kjer sta \( \vec{\rho} \) in \( \vec{\rho}_0 \) radij vektorja v 2D, pravokotna na enotski vektor \( \hat{t} \), ki kaže vzporedno z vodnikom.
+</p>
+</div>
+</div>
+<div id="outline-container-org797e047" class="outline-4">
+<h4 id="org797e047"><span class="section-number-4">1.8.3.</span> Točkast naboj</h4>
+<div class="outline-text-4" id="text-1-8-3">
+<p>
+Gostota električnega toka je
+</p>
+
+<p>
+\[ \vec{\jmath} = e \delta ^2 \left( \vec{r} - \vec{r}_0 (t) \right) \vec{v}(t),
+\]
+</p>
+
+<p>
+kjer je \( \vec{r}_{0} \) tir naboja, \( \vec{v} \) pa hitrost naboja.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc9d8af8" class="outline-4">
+<h4 id="orgc9d8af8"><span class="section-number-4">1.8.4.</span> Površinska gostota toka</h4>
+<div class="outline-text-4" id="text-1-8-4">
+<p>
+\[ \vec{\jmath} \left( \vec{r} \right) = \sigma \cdot \vec{v} \delta \left( z - z_0 \right),
+\]
+</p>
+
+<p>
+kjer je \( \sigma \) površinska gostota naboja in \( z_0 \) lega površine. Pogosto se označi tudi
+</p>
+
+<p>
+\[ \vec{\jmath}_S = \sigma \vec{v},
+\]
+</p>
+
+<p>
+kjer je površinska gostota toka.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9f75685" class="outline-3">
+<h3 id="org9f75685"><span class="section-number-3">1.9.</span> Amperov izrek</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Imejmo tokovno zanko \( c' \), ki jo opisuje parametrizacija \( \vec{r} (l') \). Element zanke označimo z \( \mathrm{d} \vec{l} \, ' \). Predstavljajmo si (navidezno) zanko \( c \), ki objame dejansko tokovno zanko in jo opisuje krivulja s parametrizacijo \( \vec{r}(l) \). Majhen element virtualne zanke je opisan z \( \mathrm{d} \vec{l} \).
+</p>
+
+<p>
+Zanima nas cirkulacija magnetnega polja po zanki \( c \). Uporabili bomo definicijo magnetne cirkulacije ter Biot-Savartov zakon
+</p>
+
+<p>
+\[ \Gamma_M = \oint\limits_c^{} \vec{B} \cdot \mathrm{d} \vec{l} = \oint\limits_c^{} \left[ \frac{\mu_0 I}{4 \pi} \oint\limits_{c'}^{} \, \mathrm{d} \vec{l}\,' \times \frac{\left( \vec{r} (l) - \vec{r} (l') \right)}{\left| \vec{r} (l) - \vec{r} (l') \right| ^3} \right] \cdot \mathrm{d} \vec{l}
+\]
+</p>
+
+<p>
+Ciklično smemo zamenjati vrstni red
+</p>
+
+<p>
+\[ \Gamma_M = \oint\limits_{c}^{} \oint\limits_{c'}^{} \frac{\mu_0 I }{4 \pi} \left( \mathrm{d} \vec{l} \times \mathrm{d} \vec{l} \, ' \right) \cdot \frac{\vec{r} (l) - \vec{r} (l')}{\left| \vec{r} (l) - \vec{r} (l') \right| ^3}.
+\]
+</p>
+
+<p>
+Z uvedbo posplošene površine \( \mathrm{d} S = \mathrm{d} \vec{l} \times \mathrm{d} \vec{l}' \) se integral prepiše v
+</p>
+
+<p>
+\[ \Gamma_M = \frac{\mu_0 I}{4 \pi} \oint\limits_{S}^{} \mathrm{d} \vec{S} \cdot \frac{\left( \vec{r} (l) - \vec{r} (l') \right)}{\left| \vec{r} (l) - \vec{r} (l') \right|^3}
+\]
+</p>
+
+<p>
+Vrednost integrala po uvedbi sferičnih koordinat je
+</p>
+
+<p>
+\[ \Delta = \oint\limits_{S}^{} \, \mathrm{d} \Omega = 4\pi
+\]
+</p>
+
+<p>
+iz česar tako sledi
+</p>
+
+<p>
+\[ \Gamma_M = \mu_0 I,
+\]
+</p>
+
+<p>
+kar je Amperov izrek. Magnetna cirkulacija je enaka zaobjemetemu električnemu toku.
+</p>
+
+<p>
+Integral lahko preko Stokesovega izreka prepišemo v integral po površini
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \oint\limits_{\partial S = c}^{} \vec{B} \cdot \mathrm{d} \vec{r} = \int\limits_S^{} \nabla \times \vec{B} \, \mathrm{d} S
+\end{equation}
+
+<p>
+Iz Amperovega zakona in \ref{eq:1} ter definicije gostote električnega toka dobimo enakost
+</p>
+
+<p>
+\[ \int\limits_{}^{} \nabla \times \vec{B} \, \mathrm{d} \vec{S} = \mu_0 I = \mu_0 \int\limits_S^{} \vec{\jmath} \cdot \mathrm{d} \vec{S}
+\]
+</p>
+
+<p>
+Torej velja
+</p>
+
+<p>
+\[ \nabla \times \vec{B} = \mu_0 \vec{\jmath},
+\]
+</p>
+
+<p>
+kar je diferencialno obliko Amperovega zakona.
+</p>
+</div>
+</div>
+<div id="outline-container-org41595a4" class="outline-3">
+<h3 id="org41595a4"><span class="section-number-3">1.10.</span> Magnetni potencial</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Magnetno polje je vrtinčno, kar pomeni, da ga ne moremo zapisati s skalarnim potencialom. Vemo pa, da je \( \vec{B} \) brezizvorno \( \nabla \cdot \vec{B} = 0 \). Vemo pa, da je v splošnem
+</p>
+
+<p>
+\[ \nabla \cdot \left( \nabla \times \vec{A} \right) = 0.
+\]
+</p>
+
+<p>
+Zato uvedemo vektorski magnetni potencial kot
+</p>
+
+<p>
+\[ \vec{B} = \nabla \times \vec{A}.
+\]
+</p>
+
+<p>
+Magnetni pretok se tako zapiše
+</p>
+
+\begin{equation}
+\label{eq:3}
+ \phi_M = \int\limits_S^{} \vec{B} \cdot \mathrm{d} \vec{S} = \int\limits_S^{} \left( \nabla \times \vec{A} \right) \, \mathrm{d} \vec{S} = \int\limits_{\partial S}^{} \vec{A} \, \mathrm{d} \vec{r}
+\end{equation}
+
+<p>
+To naj nam bi pomagalo predstavljati vektorski potencial - je potencial, ki gre skozi površino zanke, kakor kaže zgornja enačba.
+</p>
+</div>
+</div>
+<div id="outline-container-org729a636" class="outline-3">
+<h3 id="org729a636"><span class="section-number-3">1.11.</span> Vektorski potencial tuljave</h3>
+<div class="outline-text-3" id="text-1-11">
+<p>
+Imamo tuljavo s premerom \( a \), po kateri teče tok \( I \). Znotraj tuljave se nam pojavi homogeno polje \( \vec{B}_0 \), medtem ko zunaj tuljave pa je \( \vec{B} = 0 \). Magnetno polje vektorsko zapišemo kot
+</p>
+
+<p>
+\[ \vec{B}_0 \left( 0, 0, B_0 \right).
+\]
+</p>
+
+<p>
+Da ima naše magnetno polje \( \vec{B}_0 \) takšne komponente in velja \( \vec{B}_0 = \nabla \times \vec{A} \), mora biti \( \vec{A} \) oblike
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \vec{A} = \frac{1}{2} \vec{B}_0 \times \vec{r}.
+\end{equation}
+
+<p>
+Enačba \ref{eq:2} nam definira vektorski potencial znotraj tuljave.
+</p>
+
+<p>
+Zunaj tuljave bi pričakovali, da je \( \vec{A} \) ničeln ali konstanten, saj je \( \vec{B} = 0 \).
+</p>
+
+<p>
+Predstavljajmo si zanko, ki je tik ob zunanjem robu tuljave. Za to zanko bomo računali pretok skozi njo. Po definiciji magnetnega pretoka je
+</p>
+
+<p>
+\[ \phi_M = \int\limits_S^{} \vec{B} \cdot \mathrm{d} \vec{S} = B_0 \pi a ^2
+\]
+</p>
+
+<p>
+Uporabimo enačbo \ref{eq:3}, in prepišemo magnetni pretok
+</p>
+
+<p>
+\[ \phi_M = \int\limits_{\partial S}^{} \vec{A} \cdot \mathrm{d} \vec{r} \propto A_{zunaj} \cdot 2 \pi r_{zunaj},
+\]
+</p>
+
+<p>
+kjer je \( r_{zunaj} = a + \mathrm{d} r \). Iz tega lahko zaključimo, da \( \vec{A}_{zunaj} \ne 0 \).
+</p>
+
+<p>
+Uganemo obliko \( \vec{A} \) zunaj tuljave kot
+</p>
+
+<p>
+\[ \vec{A} = C \cdot \vec{B}_0 \times \frac{\vec{r}}{r ^2}.
+\]
+</p>
+
+<p>
+Za to enačbo velja \( \nabla \times A = 0 \). Določimo \( C \), da je \( \vec{A} \) na meji med notranjostjo in zunanjostjo tuljave zvezen
+</p>
+
+<p>
+\[ \oint\limits_{\partial S}^{}\vec{A} \cdot \mathrm{d} \vec{r} = \int\limits_{\partial S}^{}  C \left( \vec{B}_0 \times \frac{\vec{r}}{r} \right) \, \mathrm{d} \vec{r} = 2\pi B_0 = \int\limits_S^{} \vec{B} \cdot \mathrm{d} \vec{S} = B_0 \pi a ^2
+\]
+</p>
+
+<p>
+Torej je konstanta \( C = \frac{a ^2}{2} \) in vektorski potencial je tako
+</p>
+
+<p>
+\[ \vec{A} = \frac{a ^2}{2} \vec{B}_0 \times \frac{\vec{r}}{r ^2}
+\]
+</p>
+
+<p>
+Tak \( \vec{A} \) je močno prostorsko odvisna funkcija, čeprav je \( \vec{B} = 0 \), vendar na meji je zvezen.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-08 Sat 15:31</p>
+</div>
+</body>
+</html>

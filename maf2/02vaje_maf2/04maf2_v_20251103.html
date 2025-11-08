@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-08 Sat 15:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4. vaje iz Matematične fizike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">4. vaje iz Matematične fizike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2307fc4">1. Naloga 11 (Prinčič 3.6) - končna struna z maso</a>
+<ul>
+<li><a href="#org1edd6f4">1.1. Teorija o vrsti robnih pogojev</a></li>
+</ul>
+</li>
+<li><a href="#orgdd47aad">2. Naloga 12 (Prinčič 3.7) - nehomogena valovna enačba</a>
+<ul>
+<li><a href="#org1c1ca3f">2.1. Teorija reševanja nehomogenih valovnih enačb</a></li>
+<li><a href="#org5520b95">2.2. Reševanje</a></li>
+</ul>
+</li>
+<li><a href="#orgb5137c7">3. Naloga 13 (Prinčič 3.8) - nehomogen robni pogoj</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2307fc4" class="outline-2">
+<h2 id="org2307fc4"><span class="section-number-2">1.</span> Naloga 11 (Prinčič 3.6) - končna struna z maso</h2>
+<div class="outline-text-2" id="text-1">
+<div class="problem" id="org33b6261">
+<p>
+Imamo struno dolžine \( l \), ki je na levem koncu vpeta, na desnem koncu pa ima prost konec, na katerem je masa \( m \). Iščemo lastna nihanja.
+</p>
+
+</div>
+
+<p>
+Začnemo z valovno enačbo
+</p>
+
+<p>
+\[ \frac{\partial ^2 u}{\partial t ^2} = c ^2 \frac{\partial ^2 u}{\partial x ^2}.
+\]
+</p>
+
+<p>
+Na levem koncu imamo Dirichletov robni pogoj
+</p>
+
+<p>
+\[ u(0, t) = 0,
+\]
+</p>
+
+<p>
+na desnem pa je robni pogoj Newtonov zakon za maso
+</p>
+
+<p>
+\[ m \frac{\partial ^2 u}{\partial t ^2} (L, t) = \left. - F \frac{\partial u}{\partial x} \right|_{x = L},
+\]
+</p>
+
+<p>
+ki je homogen. Sila ima negativen predznak, saj če ima masa negativen pospešek, bo sila pozitivna. Problem bi bil samo, če bi \( u \propto x \) in \( u \not \propto t \), saj bi dobili nehomogeno enačbo \( \mathcal{L} \left( u_1 + u_2 \right) = 0 \).
+</p>
+
+<p>
+Problem rešujemo s separacijo spremenljivk \( u(x, t) = X(x) T(t) \). Splošne rešitve diferencialne enačbe
+</p>
+
+<p>
+\[ c ^2 \frac{X ''}{X} = \frac{\ddot{T}}{T} = - \omega ^2
+\]
+</p>
+
+<p>
+so
+</p>
+
+<p>
+\[ X(x) = A \sin (kx) + B \cos(kx) \ \text{in } T(t) = C \sin (kx) + D \cos (kx),
+\]
+</p>
+
+<p>
+kjer je \( k = \frac{\omega}{c} \). Iz prvega robnega pogoja dobimo, da je \( B = 0 \). Drugi robni pogoj nam poda enačbo
+</p>
+
+<p>
+\[ m X(L) \ddot{T}(t) = - F \cdot X' (L) T(t) \implies \ \tan (kL) = \frac{F}{mk c^2} = \frac{Fl}{m \xi c ^2},
+\]
+</p>
+
+<p>
+kjer smo definirali \( \xi = kL \). Rešujemo transcendentalno enačbo
+</p>
+
+<p>
+\[ \tan \xi = \frac{Fl}{m c ^2} \frac{1}{\xi}
+\]
+</p>
+
+<p>
+Rešitve transcendentalne enačbe so na <a href="file:///home/krobin/Documents/02Areas/Sola/FMF/3letnik/1semester/mafija2/03viri/mafija2_latex_vaje.pdf">sliki 15, str. 23</a>. Rešitve so simetrične za \( \epsilon \) glede na ordinatno os. Za \( \xi \to \infty \) opazimo, da velja
+</p>
+
+<p>
+\[ \xi_n = n \cdot \pi, \ n \in \mathbb{N}
+\]
+</p>
+
+<p>
+Splošna rešitev je take enačbe je
+</p>
+
+<p>
+\[ u(x, t) = \sum\limits_{n = 1}^{\infty} \left[ \tilde{c}_n \sin \left( \frac{c}{l} \xi_n t \right) + \tilde{D}_n \cos \left( \frac{c}{l} \xi_n t \right) \right] \cdot \sin \left( \frac{\xi_n}{l} \cdot x \right)
+\]
+</p>
+
+<p>
+Te funkcije so kompleten sistem in za njih velja
+</p>
+
+<p>
+\[ \left\langle f, g \right\rangle = \int\limits_0^L w(x) f(x) g(x) \, \mathrm{d} x, \ w(x) = \mu + m \delta(x - l)
+\]
+</p>
+
+<p>
+To direktno sledi iz Sturm-Liouvilleovega izreka.
+</p>
+
+<p>
+Poglejmo še dve limiti:
+</p>
+
+<ul class="org-ul">
+<li>\( m = 0 \) (krajišče je prosto), iz česar sledi \( \xi_n = \frac{\pi}{2} + n \pi, \ n \in \mathbb{N}_0 \)</li>
+<li>\( m \to \infty \)(krajišče je vpeto v steno), iz česar sledi \( \xi_n = n \pi, \ n \in \mathbb{N} \)</li>
+</ul>
+</div>
+<div id="outline-container-org1edd6f4" class="outline-3">
+<h3 id="org1edd6f4"><span class="section-number-3">1.1.</span> Teorija o vrsti robnih pogojev</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Razlika med homogenimi in nehomogenimi robnimi pogoji je sledeča. Pri homogenih pogojih imamo
+</p>
+
+<p>
+\[ u(x = 0, t) = 0.
+\]
+</p>
+
+<p>
+Če rešitev razvijemo po lastnih funkcijah
+</p>
+
+<p>
+\[ u(x, t) = \sum\limits_n^{} A_n u_n (x, t),
+\]
+</p>
+
+<p>
+in velja \( u_n (0, t) = 0 \), potem sledi \( u(x, t)= 0 \).
+</p>
+
+<p>
+Za nehomogen pogoj
+</p>
+
+<p>
+\[ u(x = 0, t) = 4
+\]
+</p>
+
+<p>
+pa iz \( u_n (0, t) = 4 \) ne sledi \( u(0, t) = 4 \). Separacija spremenljivk ne bo šla skozi, če je pogoj nehomogen, kar je naš način preverjanja homogenosti.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgdd47aad" class="outline-2">
+<h2 id="orgdd47aad"><span class="section-number-2">2.</span> Naloga 12 (Prinčič 3.7) - nehomogena valovna enačba</h2>
+<div class="outline-text-2" id="text-2">
+<div class="problem" id="org59451cd">
+<p>
+Zanima nas oblika strune dolžine \( l \), ki je vpeta na obeh koncih, nanjo pa deluje gostota zunanje sile \( f(x, t) = f_0 \cos (\omega t) \)
+</p>
+
+</div>
+</div>
+<div id="outline-container-org1c1ca3f" class="outline-3">
+<h3 id="org1c1ca3f"><span class="section-number-3">2.1.</span> Teorija reševanja nehomogenih valovnih enačb</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Nehomogeno valovno enačbo rešimo tako, da najprej rešimo homogen problem, torej \( f(x, t) = 0 \). Rešitev zapišemo kot
+</p>
+
+<p>
+\[ u_{homo} (x, t) = \sum\limits_n^{} A_n X_n(x) T_n (t).
+\]
+</p>
+
+<p>
+Nehomogenost nato razvijemo po lastnih funkcijah \( X_n \)
+</p>
+
+<p>
+\[ f(x, t) = \sum\limits_n^{} f_n(t) X_n (x).
+\]
+</p>
+
+<p>
+Uporabimo nastavek
+</p>
+
+<p>
+\[ u(x, t) = \sum\limits_n^{} u_n (t) X_n (x),
+\]
+</p>
+
+<p>
+ki ga nesemo v PDE
+</p>
+
+<p>
+\[ \sum\limits_n^{} \ddot{u}_n (t) X_n (x) = c ^2 \sum\limits_n^{} \left( - k_n ^2 \right) u_n X_n + \sum\limits_n^{} k_n X_n.
+\]
+</p>
+
+<p>
+Iz njega sledi navadna diferencialna enačba
+</p>
+
+<p>
+\[ \ddot{u}_n = - c ^2 k_n ^2 + f_n,
+\]
+</p>
+
+<p>
+ki jo lahko rešimo.
+</p>
+</div>
+</div>
+<div id="outline-container-org5520b95" class="outline-3">
+<h3 id="org5520b95"><span class="section-number-3">2.2.</span> Reševanje</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Začnemo z reševanjem homogene diferencialne enačbe, katera krajevna rešitev je
+</p>
+
+<p>
+\[ X_n = \sin \left( n \frac{\pi}{l} x \right), \ k_n = \frac{n \pi}{l}
+\]
+</p>
+
+<p>
+Nadaljujemo z razvojem nehomogenosti po lastnih funkcijah
+</p>
+
+\begin{equation}
+\label{eq:1}
+ f(x, t) = \sum\limits_n^{} f_n (t) X_n (x) \quad \left/ \int\limits_0^L X_m (x) \, \mathrm{d} x \right.
+\end{equation}
+
+<p>
+kjer upoštevamo, da velja
+</p>
+
+<p>
+\[ f_n = \frac{\left\langle f(x, t), X_n \right\rangle}{\left\langle X_m, X_n \right\rangle}, \quad \int\limits_0^L \sin \left( \frac{n \pi}{L} x \right) \sin \left( \frac{n \pi}{L} x \right) \, \mathrm{d} x = \frac{L}{2} \delta_{n, m}.
+\]
+</p>
+
+<p>
+Zaradi normiranosti bo \ref{eq:1}
+</p>
+
+<p>
+\[ f_n (t) = \frac{2}{L} \int\limits_0^L f(x, t) X_n (x) \, \mathrm{d} x = \frac{2}{L} \int\limits_0^L f_0 \cos (\omega t) \sin \left( \frac{n \pi}{L} x \right) \, \mathrm{d} x
+\]
+</p>
+
+<p>
+Uvedemo novo spremenljivko \( u = \frac{n \pi}{L} x \) in po izračunu dobimo, da je
+</p>
+
+<p>
+\[ f_n(t) = F_n \cos (\omega t), \quad F_n = - \frac{2 f_0}{n \pi} \left( (-1)^m - 1 \right)
+\]
+</p>
+
+<p>
+Uporabimo torej nastavek
+</p>
+
+<p>
+\[ u(x, t) = \sum\limits_n^{} u_n (t) \sin (k_n x),
+\]
+</p>
+
+<p>
+ki ga nesemo v PDE
+</p>
+
+<p>
+\[ \sum\limits_n^{} \ddot{u}(t) \sin (k_n x) = c ^2 \sum\limits_n^{} k_n ^2 u_n (t) \sin (k_n x) + \sum\limits_n^{} F_n \cos (\omega t) \sin (k_n x)
+\]
+</p>
+
+<p>
+in nato rešujemo nehomogeno navadno diferencialno enačbo
+</p>
+
+<p>
+\[ \ddot{u}(t) = - c ^2 k_n ^2 u(t) + F_n \cos (\omega t)
+\]
+</p>
+
+<p>
+Spomnimo, da se nehomogeno ODE reši kot linearno kombinacijo
+</p>
+
+<p>
+\[ u_n (t) = u_n ^{(homo)} (t) + u_n^{(part)} (t)
+\]
+</p>
+
+<p>
+Rešitev homogenega dela enačbe
+</p>
+
+<p>
+\[ \ddot{u}_n = - c ^2 k_n ^2 u_n (t)
+\]
+</p>
+
+<p>
+je
+</p>
+
+<p>
+\[ u_n^{(h)} = A_n \sin \left( c k_n t \right) + B_n \cos (c k_n t)
+\]
+</p>
+
+<p>
+Partikularni del enačbe pa rešimo z ugibanjem nastavka - delovala bi tudi variacija konstante, vendar se ne splača. Prav tako rabimo najti zgolj eno partikularno rešitev zaradi eksistenčnega izreka. Naše ugibanje nastavka je
+</p>
+
+<p>
+\[ u_n^{(p)} = C \cos (\omega t),
+\]
+</p>
+
+<p>
+ki ga vstavimo v enačbo
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \ddot{u}_n^{(p)} = - c ^2 k_n ^2 u_n^{(p)} + F_0 \cos (\omega t).
+\end{equation}
+
+<p>
+Dobimo
+</p>
+
+<p>
+\[ - \omega ^2 C \cos (\omega t) = - c ^2 k_n ^2 C \cos (\omega t) + F_n \cos (\omega t) \implies \ C = \frac{F_n}{\omega_n ^2 - \omega ^2}.
+\]
+</p>
+
+<p>
+Partikularna rešitev je torej
+</p>
+
+<p>
+\[ u_n^{(p)} = \frac{F_n}{\omega_n ^2 - \omega ^2} \cos (\omega t),
+\]
+</p>
+
+<p>
+za katero mora velja \( \omega_n \ne \omega \).
+</p>
+
+<p>
+V primeru, da \( \omega_n = \omega \), potem uporabimo nastavek oblike
+</p>
+
+<p>
+\[ u_n ^{(p)} = C t \sin (\omega t),
+\]
+</p>
+
+<p>
+ki ga vstavimo v enačbo \ref{eq:2}. Analogno prejšnjemu reševanju je rešitev
+</p>
+
+<p>
+\[ u_n = \frac{F_n}{2 \omega} t \sin \left( \omega_n t \right)
+\]
+</p>
+
+<p>
+Rešitev ODE je tako
+</p>
+
+<p>
+\[ u_n (t) = A_n \sin (\omega_n t) + B_n \cos (\omega_n t) + \begin{cases}
+                                                              \frac{F_n}{\omega_n ^2 - \omega ^2} \cos (\omega t) &; \omega \ne \omega_n \\
+                                                              \frac{F_n}{2 \omega_n} t \sin (\omega t) &; \omega = \omega_n
+                                                             \end{cases}
+\]
+</p>
+
+<p>
+Rešitev naše diferencialne enačbe je
+</p>
+
+<p>
+\[ u(x, t) = \sum\limits_{n = 1}^{\infty} \sin (k_n x) \left[ A_n \sin (\omega_n t) + B_n \cos (\omega_n t) + \begin{cases}
+                                                              \frac{F_n}{\omega_n ^2 - \omega ^2} \cos (\omega t) &; \omega \ne \omega_n \\
+                                                              \frac{F_n}{2 \omega_n} t \sin (\omega t) &; \omega = \omega_n
+                                                             \end{cases} \right]
+\]
+</p>
+
+<p>
+Edina prosta parametra sta \( A_n \) in \( B_n \).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb5137c7" class="outline-2">
+<h2 id="orgb5137c7"><span class="section-number-2">3.</span> Naloga 13 (Prinčič 3.8) - nehomogen robni pogoj</h2>
+<div class="outline-text-2" id="text-3">
+<div class="problem" id="org11132dd">
+<p>
+Struna dolžine \( l \) je na enem koncu vpeta, na drugem koncu pa niha \( u(l, t) = u_0 \cos (\omega t) \).
+</p>
+
+</div>
+
+<p>
+Robni problemi so torej
+</p>
+
+<ul class="org-ul">
+<li>konec vrvi je vpet, \( u(x = 0, t) = 0 \) ter</li>
+<li>drug konec vrvi niha, \( u(x = l, t) = u_0 \cos (\omega t) \)</li>
+</ul>
+
+<p>
+Nehomogen robni pogoj prevedmo na nehomogeno diferencialno enačbo z uvedbo
+</p>
+
+<p>
+\[ \tilde{u} (x, t) = u(x, t) - \frac{x}{L} u_0 \cos (\omega t).
+\]
+</p>
+
+<p>
+Ključ tega nastavka je, da se bosta nihajoč robni pogoj ter nastavek odštela. Valovna enačba je tako
+</p>
+
+<p>
+\[ \frac{\partial ^2 \tilde{u}}{\partial t ^2} = c ^2 \frac{\partial ^2 \tilde{u}}{\partial x ^2}  + \omega ^2 \frac{x}{L} u_0 \cos (\omega t)
+\]
+</p>
+
+<p>
+Prvi robni pogoj nam da
+</p>
+
+<p>
+\[ \tilde{u}(x = 0, t) = u(x = 0, t) - \frac{0}{l} u_0 \cos (\omega t) = 0 ,
+\]
+</p>
+
+<p>
+drugi robni pogoj pa
+</p>
+
+<p>
+\[ \tilde{u}(x = l, t) = u(x = l, t) - \frac{l}{l} u_0 \cos (\omega t) = u_0 \cos (\omega t) - u_0 \cos(\omega t) = 0
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-08 Sat 15:26</p>
+</div>
+</body>
+</html>

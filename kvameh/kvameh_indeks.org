@@ -7,6 +7,7 @@ Tukaj so zbrani zapiski predavanj prof. dr. Antona Ramšaka.
 - [[file:01predavanja/02km_p_20251015.html][predavanje 3, 2025/10/15:]] formalizem kvantne mehanike
 - [[file:01predavanja/03km_p_20251022.html][predavanje 4, 2025/10/22:]] formalizem kvantne mehanike, harmonski oscilator
 - [[file:01predavanja/04km_p_20251027.html][predavanje 5 in 6, 2025/10/27 in 29:]] simetrije - unitarni operatorji, vrtilna količina, zapis operatorja z matriko, centralni potencial
+- [[file:01predavanja/05km_p_20251105.html][predavanje 7, 2025/11/05:]] Coulombski potencial, kvantni Laplace-Runge-Lenzov vektor, klasična limita kvantne mehanike, nabit delec v magnetnem in električnem polju
 
 * Vaje
 

@@ -15,3 +15,4 @@ Zapiski vaj pri prof. Urbanu Duhu
 - [[file:02vaje_maf2/01maf2_v_20251013.html][vaje 1, 2025/10/13]]
 - [[file:02vaje_maf2/02maf2_v_20251020.html][vaje 2, 2025/10/20]]
 - [[file:02vaje_maf2/03maf2_v_20251027.html][vaje 3, 2025/10/27]]
+- [[file:02vaje_maf2/04maf2_v_20251103.html][vaje 4, 2025/11/03]]
