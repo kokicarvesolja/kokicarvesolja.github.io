@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-18 Tue 19:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>7. vaje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">7. vaje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org6ced8bf">1. Magnetno polje nabite vrteče se okrogle plošče&#xa0;&#xa0;&#xa0;<span class="tag"><span class="1_kolokvij">1_kolokvij</span></span></a>
+<ul>
+<li><a href="#org06d5bed">1.1. Točka a)</a></li>
+<li><a href="#orgd0a12e9">1.2. Točka c)</a></li>
+<li><a href="#org8ff3889">1.3. Točka b)</a></li>
+</ul>
+</li>
+<li><a href="#orge2e6228">2. Magnetna sila v koaksialnem kablu</a></li>
+<li><a href="#orgcd2144b">3. Magnetna sila v toroidni tuljavi</a></li>
+<li><a href="#orgd8b4a15">4. Opomnik h kolokviju</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6ced8bf" class="outline-2">
+<h2 id="org6ced8bf"><span class="section-number-2">1.</span> Magnetno polje nabite vrteče se okrogle plošče&#xa0;&#xa0;&#xa0;<span class="tag"><span class="1_kolokvij">1_kolokvij</span></span></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org06d5bed" class="outline-3">
+<h3 id="org06d5bed"><span class="section-number-3">1.1.</span> Točka a)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Operiramo z Biot-Savartovim zakonom
+</p>
+
+<p>
+\[ \vec{B}\left( \vec{r} \right) = \frac{\mu_0}{4 \pi} \int\limits_{}^{} \frac{\vec{\jmath} \left( \vec{r} \, ' \right) \times \left( \vec{r} - \vec{r} \, ' \right)}{\left| \vec{r} - \vec{r} \, ' \right| ^3} \, \mathrm{d} ^3 \vec{r} \, '
+\]
+</p>
+
+<p>
+Napisali smo, da je tok kolobarja enak
+</p>
+
+<p>
+\[ \mathrm{d} I = \frac{\mathrm{d} e}{t_0} = \sigma \omega r' \, \mathrm{d} r'
+\]
+</p>
+
+
+<div id="org0e4ecfa" class="figure">
+<p><img src="figures/14okroglaPlosca.png" alt="14okroglaPlosca.png" />
+</p>
+</div>
+
+<p>
+V Biot-Savartovem zakonu lahko zapišemo
+</p>
+
+\begin{align*}
+  \vec{\jmath} \left( \vec{r} \, ' \right) \mathrm{d} ^3 \vec{r} \, ' &= \vec{\jmath} \left( \vec{r} \, ' \right) \, \mathrm{d} S ' \, \mathrm{d} l' \\
+&= \mathrm{d} I \cdot \hat{t} \cdot r' \mathrm{d} \phi,
+\end{align*}
+
+<p>
+kjer smo upoštevali \( \vec{\jmath} \mathrm{d} S = \mathrm{d} I \cdot \hat{t} \) ter \( \mathrm{d} l = r' \mathrm{d} \phi \).
+</p>
+
+<p>
+Računamo za vektor \( \vec{r} = (0, 0, z) \). Radij vektor na plošči ima komponente \( \vec{r} \, ' = (r' \cos \phi, r' \sin t, 0) \). Tangentni vektor na kolobar pa je \( \hat{t} = (- \sin \phi, \cos \phi, 0) \).
+</p>
+
+<p>
+Izračunajmo najprej vektorski produkt
+</p>
+
+<p>
+\[ \hat{t} \times \left( \vec{r} - \vec{r} \,' \right) = \left( z \cos \phi, z \sin \phi, r \right).
+\]
+</p>
+
+<p>
+Velja tudi
+</p>
+
+<p>
+\[ \left| \vec{r} - \vec{r} \, ' \right| ^3 = \left( r ' ^2 + z ^2 \right)^{\frac{3}{2}}.
+\]
+</p>
+
+<p>
+Nadomestimo izračunane stvari v Biot-Savartovem zakonu
+</p>
+
+<p>
+\[ \vec{B} = \frac{\mu_0}{4 \pi} \int\limits_0^{2 \pi} \int\limits_0^a \begin{bmatrix} z \cos \phi \\ z \sin \phi \\ r' \end{bmatrix} \frac{\sigma \omega r ^2 \, \mathrm{d} r' \mathrm{d} \phi}{\left( r '^2 + z ^2\right)^{\frac{3}{2}}}
+\]
+</p>
+
+<p>
+Iz tega sledi, da sta \( B_x = B_y = 0 \).
+</p>
+
+<p>
+Izračunamo magnetno polje še \( B_z \), katerega integral je
+</p>
+
+<p>
+\[ B_z (z) = \frac{\mu_0 \sigma \omega}{2} \int\limits_0^a \frac{r' ^3}{\left( r' ^2 + z ^2 \right)^{\frac{3}{2}}} \, \mathrm{d} r'
+\]
+</p>
+
+<p>
+Z uvedbo nove spremenljivke \( u = r ' + z ^2 \), katere diferencial je \( \mathrm{d} u = 2 r' \, \mathrm{d} r ' \), se naš integral preobrazi v
+</p>
+
+\begin{align*}
+ B_z &= \frac{\mu_0 \sigma \omega}{4} \int\limits_{z ^2}^{a ^2 + z ^2} \frac{u - z ^2}{u^{\frac{3}{2}}} \, \mathrm{d} u \\
+&= \frac{\mu_0 \sigma \omega}{4} \int\limits_{z ^2}^{a ^2 + z ^2} \left[ u^{- \frac{1}{2}} - z ^2 u^{- \frac{3}{2}} \right] \, \mathrm{d} u \\
+&= \left.  \frac{\mu_0 \omega \sigma}{4} \left[ 2 u^{\frac{1}{2}} + 2 z ^2 u^{- \frac{1}{2}} \right] \right|_{z ^2}^{a ^2 + z ^2} \\
+&= \frac{\mu_0 \sigma \omega}{2} \left(\frac{a ^2 + 2 z ^2}{\sqrt{a ^2 + z ^2}} - 2z\right)
+\end{align*}
+</div>
+</div>
+<div id="outline-container-orgd0a12e9" class="outline-3">
+<h3 id="orgd0a12e9"><span class="section-number-3">1.2.</span> Točka c)</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Opazujemo limitni primer \( z \gg a \) oziroma \( \frac{a}{z} \ll 1 \) pri polju
+</p>
+
+<p>
+\[ B_z (z) = \frac{\mu_0 \omega \sigma}{2} \left( \frac{a ^2 + 2 z ^2}{z \sqrt{1 + \frac{a ^2}{z ^2}}} - 2z \right)
+\]
+</p>
+
+<p>
+Razvijemo koren v imenovalcu preko zveze, ki smo jo že večkrat povedali
+</p>
+
+<p>
+\[ \left( 1 + \frac{a ^2}{z ^2} \right)^{ - \frac{1}{2}} = 1 - \frac{1}{2} \frac{a ^2}{z ^2} + \frac{3}{8} \frac{a ^4}{z ^4},
+\]
+</p>
+
+<p>
+kjer smo upoštevali \( \binom{- \frac{1}{2}}{2} = \frac{3}{8} \). Razvili smo za dodaten člen, saj se nam bodo členi pokrajšali. Ekstra člen bo označen z <b>odebeljenim</b> fontom.
+</p>
+
+\begin{align*}
+  B(z) &= \frac{\mu_0 \omega \sigma}{2} \left( \frac{1}{z} \left( a ^2 + 2 z ^2 \right) \left[ 1 - \frac{1}{2} \frac{a ^2}{z ^2} + \mathbf{\frac{3}{8} \frac{a ^4}{z ^4}} + \ldots \right] - 2z \right) \\
+&= \frac{\mu_0 \omega \sigma}{2} \left( \frac{1}{z} \left[ a ^2 - \frac{1}{2} \frac{a ^4}{z ^2 + \mathrm{\frac{3}{8} \frac{a ^6}{z ^4}}} + 2 z ^2 - a ^2 + \mathbf{\frac{3}{4} \frac{a ^4}{z ^2}} \right] - 2 z \right) \\
+&= \frac{\mu_0 \omega \sigma}{2} \left( \frac{a ^2}{z} - \frac{1}{2} \frac{a ^4}{z ^3} - \frac{a ^3}{z} + \mathbf{\frac{3}{8} \frac{a ^6}{z ^5}} + \mathbf{  \frac{3}{4} \frac{a ^4}{z ^3}}  \right) \\
+&= \frac{\mu_0 \omega \sigma a ^2}{8 z ^3}
+\end{align*}
+
+<p>
+Zanemarili smo člen z \( \frac{1}{z ^5} \), saj pada hitreje kot \( \frac{1}{z ^3} \). V primeru, če ne bi upoštevali dodatnega člena, bi dobili napačno predznačen in dvakrat večji rezultat
+</p>
+
+<p>
+\[ - \frac{\mu_0 \sigma \omega a ^4}{4 z ^3} \quad \text{NAPAČEN REZULTAT !!!!}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org8ff3889" class="outline-3">
+<h3 id="org8ff3889"><span class="section-number-3">1.3.</span> Točka b)</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Magnetno polje dipola je
+</p>
+
+<p>
+\[ \vec{B}_{dip} = \frac{\mu_0}{4 \pi} \frac{3 \left( \vec{r} \cdot \vec{p}_m \right)\vec{r} - \vec{p}_m r ^2}{r ^5}.
+\]
+</p>
+
+<p>
+Po definiciji vektorskega potenciala je potem
+</p>
+
+<p>
+\[ \vec{A}_{dip} = \frac{\mu_0}{4\pi} \frac{\vec{p}_m \times \vec{r}}{r ^3}
+\]
+</p>
+
+<p>
+Opazujemo magnetni dipol v osi dipola, torej \( \vec{p}_m \parallel \vec{r} \). Magnetno polje je takrat
+</p>
+
+\begin{equation}
+\label{eq:1}
+ B_{dip} = \frac{\mu_0}{4 \pi} \frac{3 ^2 p_m- r ^2 p_m}{r ^5} = \frac{\mu_0}{2 \pi} \frac{p_m}{r ^3}
+\end{equation}
+
+<p>
+V ekvatorialni ravnini pa velja \( \vec{r} \perp \vec{p}_m \) in magnetno polje je
+</p>
+
+<p>
+\[ B_{dip} = - \frac{\mu_0}{4 \pi} \frac{p_m}{r ^3}
+\]
+</p>
+
+<p>
+Magnetni dipol lahko izračunamo preko enačbe
+</p>
+
+<p>
+\[ \vec{p}_m = \frac{1}{2} \int\limits_{}^{} \vec{r} \, ' \times \vec{\jmath} \left( \vec{r} \, ' \right) \, \mathrm{d} ^3 \vec{r}\, '
+\]
+</p>
+
+<p>
+Drugi način je, da izračunamo po prispevkih kolobarja, saj
+</p>
+
+<p>
+\[ \mathrm{d} p_m = S' \, \mathrm{d} I = \pi r' ^2 \sigma \omega r' \, \mathrm{d} r\, ' \implies p_m = \pi \sigma \omega \int\limits_0^a r' ^3 \, \mathrm{d} r\, ' = \frac{\pi \sigma \omega}{4} a ^4
+\]
+</p>
+
+<p>
+Lahko pa tudi preberemo iz enačbe \ref{eq:1} skupaj z rezultatom iz točke c.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge2e6228" class="outline-2">
+<h2 id="orge2e6228"><span class="section-number-2">2.</span> Magnetna sila v koaksialnem kablu</h2>
+<div class="outline-text-2" id="text-2">
+<div class="problem" id="orgfebb9d9">
+<p>
+Dolg koaksialni kabel je sestavljen iz tanke prevodne cevi polmera \( a \), po osi katere poteka tanek prevodni vodnik. Po vodniku spustimo električni tok \( I \), ki se v nasprotni smeri vrača enakomerno porazdeljen po plašču. Izračunaj silo na dolžinsko enoto, s katero je po obodu napeta cev koaksialnega kabla.
+</p>
+
+</div>
+
+<p>
+Zanima nas dolžinska gostota sile plašča \( f_1 = \frac{F_1}{l} \).
+</p>
+
+
+<div id="orgfc11ec6" class="figure">
+<p><img src="figures/15Koaksialc.png" alt="15Koaksialc.png" />
+</p>
+</div>
+
+<p>
+Na plašč delujeta dve sili - magnetna sila, ki kaže navzven in je posledica odbijajočih se magnetnih polj. Magnetna polja sta odbijajoča, saj je električni tok različno usmerjen. Druga sila, ki kaže navznoter, pa je posledica toka, ki teče po plašču in predstavlja površinsko napetost - kakor napiše Mastnak, str. 36, predstavljamo si, da je plašč sestavljen iz veliko vzporednih žic, po katerih teče tok in se med seboj privlačijo.
+</p>
+
+<p>
+Kakor vidimo na sliki, je silo na majhen delček plašča precej grdo izračunati. Raje uporabimo podoben trik kakor pri nalogah površinske napetosti, kjer uporabimo polovico plašča, saj takrat velja \( F_m = 2 F_1 \).
+</p>
+
+<p>
+S pomočjo Amperovega zakona lahko določimo magnetno polje znotraj in zunaj plašča
+</p>
+
+<p>
+\[ \oint\limits_{}^{} \vec{B} \, \mathrm{d} \vec{l} = \mu_0 I_{tot},
+\]
+</p>
+
+<p>
+kjer je \( I_{tot} \) celoten zaobjet tok. Označimo tok po žili z \( I_z \), tok po plašču pa je \( I_p \), ki sta po velikosti enaka.
+</p>
+
+<p>
+Zunaj plašča, kjer se nahajamo na točki \( r > a \) (zelena črtkana črta, spodaj desno na sliki), je totalen zaobjet tok \( I_{tot} = I_z - I_p = 0 \). Iz tega sledi, da je magnetno polje zunaj žile ničelno \( \vec{B} = 0 \). Znotraj žile, v točki \( r < a \) (modra črtkana črta, spodaj desno na sliki), pa je zaobjet tok samo tok žile, iz česar sledi magnetno polje
+</p>
+
+\begin{equation}
+\label{eq:2}
+ B \cdot 2 \pi r = \mu_0 I \implies B = \frac{\mu_0 I}{2 \pi r}
+\end{equation}
+
+<p>
+Ker zunaj plašča ni magnetnega polja, pomeni, da tudi ni magnetne sile.
+</p>
+
+<p>
+Izračunajmo še magnetno silo znotraj plašča. Majhno površino plašča \( \mathrm{d} S \) zapišemo kot
+</p>
+
+<p>
+\[ \mathrm{d} S = a \mathrm{d} \phi l
+\]
+</p>
+
+<p>
+Ker integriramo po ploskvi, ki tesno objema površino plašča (modra črta, spodaj levo na sliki), velja, da sta magnetno polje \( \vec{B} \) in normala ploskve \( \vec{n} \) pravokotna. Magnetno polje \( \vec{B} \) je tangentno na polkrožnico. Če si predstavljamo plašč iz velikega števila žic, bo vsaka žica imela svoje magnetno polje, ki jo obkroža. Ko naredimo vsoto teh magnetnih polj, ostane samo tangentna komponenta. Iz tega sledi, da je njun skalarni produkt \( \vec{B} \cdot \vec{n} = 0 \). Splošna formula za magnetno silo
+</p>
+
+<p>
+\[ \vec{F}_m = \frac{1}{\mu_0} \oint\limits_S^{} \left[ \vec{B} \left( \vec{B} \cdot \vec{n} \right) - \frac{1}{2} B ^2  \vec{n}\right] \, \mathrm{d} S
+\]
+</p>
+
+<p>
+postane
+</p>
+
+<p>
+\[ \vec{F}_{m2} = - \frac{1}{2 \mu_0} \int\limits_0^{\pi} B ^2 \vec{n} a l \, \mathrm{d} \phi,
+\]
+</p>
+
+<p>
+kjer je normala tangentna na površino, ki jo opišemo s cilindričnimi koordinatami \( \vec{n} = [\cos \phi, \sin \phi] \). Upoštevamo \ref{eq:2} in dobimo
+</p>
+
+<p>
+\[ \vec{F}_{m2} = \frac{a l}{2 \mu_0} \left( \frac{\mu_0 I}{2 \pi a} \right) ^2 \int\limits_0^{\pi} \begin{bmatrix} \cos \phi \\ \sin \phi \end{bmatrix} \, \mathrm{d} \phi.
+\]
+</p>
+
+<p>
+Vrednost integrala \( \int_0^{\pi} \cos \phi \, \mathrm{d} \phi \) je \( 0 \), vrednost drugega integrala \( \int_0^{\pi} \sin \phi \, \mathrm{d} \phi \) pa je \( 2 \).
+</p>
+
+<p>
+Dolžinska gostota sile je tako
+</p>
+
+<p>
+\[ \frac{\vec{F}_{m2}}{l} = \frac{\mu_0 I}{4 \pi ^2 a} \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+\]
+</p>
+
+<p>
+Sila ima pozitivno \( y \) komponento, torej kaže navzgor za zgornjo polovico plašča. To pomeni, da sila magnetna sila razpenja
+</p>
+
+<p>
+\[ \frac{F_1}{l} = \frac{\mu_0 I ^2}{8 \pi ^2 a}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgcd2144b" class="outline-2">
+<h2 id="orgcd2144b"><span class="section-number-2">3.</span> Magnetna sila v toroidni tuljavi</h2>
+<div class="outline-text-2" id="text-3">
+<div class="problem" id="orgf6c61ed">
+<p>
+Po toroidni tuljavi s številom ovojev \( N \) teče električni tok \( I \). Polmer ovojev tuljave je \( r_1 \), os tuljave pa opisuje krog s polmerom \( r_2 \) v vodoravni ravnini.
+</p>
+
+<ol class="org-ol">
+<li>Pokaži, da je gostota magnetnega polja znotraj tuljave odvisna le od oddaljenosti od navpične osi torusa \( r \) in jo izračunaj. Pokaži, da zunaj tuljave ni polja.</li>
+<li>Za primer \( r_2 \gg r_1 \) z uporabo napetostnega tenzorja izračunaj, s kakšno silo je napet posamezni ovoj tuljave.</li>
+</ol>
+
+</div>
+
+
+<div id="orgb7e4ea9" class="figure">
+<p><img src="figures/16toroidnaTuljava.png" alt="16toroidnaTuljava.png" />
+</p>
+</div>
+
+<p>
+S pomočjo Amperovega zakona in zaprte krivulje na razdalji \( r_1 < r < r_2 \) okrog središča torusa, ki leži v njegovi ravnini.
+</p>
+
+\begin{equation}
+\label{eq:3}
+ B_{in} 2 \pi r = \mu_0 N I \implies \, B_{in} = \frac{\mu_0 NI}{2 \pi r}
+\end{equation}
+
+<p>
+Zunaj tuljave za zaprto krivuljo \( r > r_2 \) v torusovi ravnini velja
+</p>
+
+<p>
+\[ B_{zunaj} 2 \pi r = \mu_0 \left( NI + N (-I) \right) = 0 \implies B_{zunaj} = 0
+\]
+</p>
+
+<p>
+V nadaljevanju bomo opazovali zgornji polkrog ene tuljavine zanke. Opazuj spodnjo sliko
+</p>
+
+
+<div id="org4a4dea5" class="figure">
+<p><img src="figures/16toroidnaTuljavaEnaZanka.png" alt="16toroidnaTuljavaEnaZanka.png" />
+</p>
+</div>
+
+<p>
+Magnetno polje \( \vec{B} \) je usmerjeno pravokotno na zanko. Preko pravila desne roke hitro pridemo do zaključka, da magnetna sila deluje navzgor. Sili \( F_1 \), ki držita zanko skupaj, pa kažeta navzdol in velikost ene sile \( F_1 \) je ravno polovica magnetne sile \( F_m \).
+</p>
+
+<p>
+Magnetna sila \( \vec{F}_m \) je po definiciji
+</p>
+
+<p>
+\[ \vec{F}_m = \frac{1}{\mu_0} \oint_S^{} \left[ \vec{B} \left( \vec{B} \cdot \vec{n} \right) - \frac{1}{2} B ^2 \vec{n} \right] \, \mathrm{d} S
+\]
+</p>
+
+<p>
+Ploskva, po kateri integriramo je polovica valja, kjer polkrožnica zanke definira plašč - na sliki je plašč označen z oranžno barvo.
+</p>
+
+<p>
+Integracijo po površini razdelimo na 4 dele - levo osnovno ploskev polvalja, desno osnovno ploskev polvalja, plašč ter spodnjo, pravokotno površino.
+</p>
+
+<p>
+Plašč se nahaja malo nad zanko in kakor smo prej povedali, zunaj magnetnega polja ni, torej tudi ni sile.
+</p>
+
+<p>
+Osnovni ploskvi polvalja imata enaki velikosti magnetnega polja, vendar nasprotno predznačeni in se zato pokrajšata.
+</p>
+
+<p>
+Edina netrivialna stranica je torej spodnji pravokotnik. Normala pravokotnika kaže ven, navzdol iz valja in je pravokotna z magnetnim polje \( \vec{B} \). Magnetni sili tako ostane zgolj
+</p>
+
+<p>
+\[ \vec{F}_{ms} = -\frac{1}{2 \mu_0} \iint\limits_{\square}^{} B ^2 S \hat{n}_s
+\]
+</p>
+
+<p>
+Zaradi predpostavke \( r_2 \gg r_1 \) se magnetno polje \ref{eq:3} zapiše kot
+</p>
+
+<p>
+\[ B = \int\limits_{r_1}^{r_1 + r_2} \frac{\mu_0 NI}{2 \pi r} \, \mathrm{d} r \approx \frac{\mu_0 NI}{2 \pi r_2}.
+\]
+</p>
+
+<p>
+Površina pravokotnika pa je zmnožek dolžine \( 2 r_1 \) ter širine, ki je ravno ena \( N \)-tina obsega zanke, kar pomeni, da se ne rabimo mučiti z integralom!
+</p>
+
+<p>
+Torej
+</p>
+
+<p>
+\[ \vec{F}_{ms} = - \frac{1}{2} \left(-\vec{n}_s\right)  \frac{1}{2 \mu_0} B ^2 S = \vec{n}_s \frac{\mu_0 ^2 N ^2 I ^2 \cdot 2 r_1 \cdot 2 \pi r_2}{4 \pi ^2 r_2 ^2 \cdot 2 \mu_0 N} = \vec{n}_s \frac{\mu_0 N I ^2 r_1}{2 \pi r_2}
+\]
+</p>
+
+<p>
+Magnetna sila kaže v navzgor in ovoj razteguje. Sila napetosti je potem
+</p>
+
+<p>
+\[ F_1 = \frac{F_m}{2} = \frac{\mu_0 N I ^2}{4 \pi} \frac{r_2}{r_1}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8b4a15" class="outline-2">
+<h2 id="orgd8b4a15"><span class="section-number-2">4.</span> Opomnik h kolokviju</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Osnovnih enačb, kakor so sila vodnika
+</p>
+
+<p>
+\[ \vec{F}_m = I \vec{l} \times \vec{B}
+\]
+</p>
+
+<p>
+in sila za naboj
+</p>
+
+<p>
+\[ \vec{F}_e = e \vec{E},
+\]
+</p>
+
+<p>
+na listu kolokvija ni, vendar je pričakovano, da jih poznaš.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-18 Tue 19:03</p>
+</div>
+</body>
+</html>

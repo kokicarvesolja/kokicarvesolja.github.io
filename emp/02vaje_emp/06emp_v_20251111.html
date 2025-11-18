@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-18 Tue 18:58 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>6. vaje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">6. vaje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org004c81c">1. Točkasti naboj v kotu med dvema pravokotnima prevodnima ploščama</a></li>
+<li><a href="#org9921d49">2. Magnetno polje krožne tokovne zanke</a>
+<ul>
+<li><a href="#orgf52cff3">2.1. Teorija magnetostatike</a>
+<ul>
+<li><a href="#org870bd77">2.1.1. Vodnik</a></li>
+</ul>
+</li>
+<li><a href="#orgf66e71a">2.2. Reševanje naloge</a></li>
+</ul>
+</li>
+<li><a href="#org803c0ec">3. Magnetno polje nabite vrteče se okrogle plošče</a></li>
+</ul>
+</div>
+</div>
+<p>
+&#x2026; nadaljujemo od zadnjič
+</p>
+<div id="outline-container-org004c81c" class="outline-2">
+<h2 id="org004c81c"><span class="section-number-2">1.</span> Točkasti naboj v kotu med dvema pravokotnima prevodnima ploščama</h2>
+<div class="outline-text-2" id="text-1">
+<div class="problem" id="org1dc8e8e">
+<p>
+Točkasti naboj \( e \) sr nahaja v kotu med dvema razsežnima prevodnima ozemljenima ploščama, ki sta pravokotni drga na drugo, tako da je od vsake oddaljen za razdaljo \( a \).
+</p>
+
+<ol class="org-ol">
+<li>Izračunaj kvadrupolni moment nastale porazdelitve nabojev.</li>
+<li>Kako se obnaša potencial električnega polja v veliki oddaljenosti \( r \), kjer je \( r \gg a \)?</li>
+</ol>
+
+<p>
+Potencial električnega polja, ki ga povzroči lokalizirana porazdelitev nabojev v točki \( \vec{r} \), v multipolnem razvoju zapišemo kot
+</p>
+
+<p>
+\[ U \left( \vec{r} \right) = \frac{1}{ 4\pi \epsilon_0} \left( \frac{e}{r} + \sum\limits_i^{} p_i \frac{ r_i}{r ^3} + \sum\limits_{i j}^{} Q_{ij} \frac{r_i r_j}{r ^5} \right),
+\]
+</p>
+
+<p>
+kjer so \( p_i = \int\limits_{}^{} \rho \left( \vec{r} \, ' \right) \vec{r}_i \, ' \, \mathrm{d} ^3 \vec{r} \, ' \) komponente vektorja dipolnega momenta in
+</p>
+
+\begin{equation}
+\label{eq:1}
+ Q_{ij} = \int\limits_{}^{} \rho \left( \vec{r} \, ' \right) \left[ 3 r_i ' r_j ' - \delta_{ij} r' ^2 \right] \, \mathrm{d} ^3 \vec{r} \, '
+\end{equation}
+
+<p>
+komponente tenzorja kvadrupolnega momenta, \( \rho \left( \vec{r} \, ' \right) \) pa je prostorninska gostota naboja v točki \( \vec{r} \,' \)
+</p>
+
+</div>
+
+<p>
+Člen \( \delta_{ij} r' ^2 \) zagotovi brezslednost tenzorja \( Q \)
+</p>
+
+
+<div id="orgb02f7d6" class="figure">
+<p><img src="figures/kvadrupol.png" alt="kvadrupol.png" />
+</p>
+</div>
+
+<p>
+Skupen naboj monopola je ničeln, saj je vsota vseh naboj \( 0 \). Enako je z dipolnim členom, kjer se paroma nasprotni naboji izničijo. Torej prvi neničelni člen je kvadrupolni člen. Enačbo \ref{eq:1} zapišemo diskretno
+</p>
+
+<p>
+\[ Q_{ij } = \sum\limits_{k = 1}^4 e_k \left[ 3 r_{ik} ' r_{j, k} ' - \delta_{ij} r_k ' ^2 \right]
+\]
+</p>
+
+<p>
+Tenzor \( Q \) bo simetričen zaradi simetričenga primera.
+</p>
+
+<p>
+Prva komponenta \( Q_{xx } \) je
+</p>
+
+\begin{align*}
+  Q_{xx } &= \sum\limits_{k = 1}^4 e_k \left( 3 x_n ^2 - \delta_{ij} r_k ^2 \right) \\
+&= e \left( 3 a ^2 - 1 \left( \sqrt{2} a \right) ^2 \right) - e \left[ 3 \left( -a \right) ^2 - 1 \left( \sqrt{2}a \right) ^2 \right] + e \left[ 3 \left( -a \right)^2 -1 \left( \sqrt{2} a \right) ^2 \right] - e \left[ 3 a ^2 - 1 \left( \sqrt{2} a \right) ^2 \right] = 0
+\end{align*}
+
+<p>
+Analogno sledi za \( Q_{yy} \) in \( Q_{zz} \). Vsi delci (virtualni in realni) ležijo v ravnini \( z = 0 \), kar pomeni, da so vse komponente tenzorja z \( z \) indeksom ničelne. Preostaneta še člena \( Q_{xy} \) in \( Q_{yx} \). Zaradi simetričnosti tenzorja izračunamo samo enega in imamo oba:
+</p>
+
+\begin{align*}
+  Q_{xy} &= \sum\limits_{k = 1}^{} e_k \left( 3 x_n y_n - 0 \cdot r_n ^2 \right) \\
+&= e 3 a ^2 - e \cdot 3(-a \cdot a) + e \cdot 3 \left( - a \right) ^2 - e 3 \left( -a \cdot a \right) = 12 e a ^2
+\end{align*}
+
+<p>
+Tenzor \( Q \) tako izgleda
+</p>
+
+<p>
+\[ \underline{Q} = \begin{bmatrix}
+             0 & 12e a^{2} &  \\
+             12 ea^{2} & 0 & 0 \\
+             0 & 0 & 0
+             \end{bmatrix}
+\]
+</p>
+
+<p>
+Dopolni nalogo.
+</p>
+</div>
+</div>
+<div id="outline-container-org9921d49" class="outline-2">
+<h2 id="org9921d49"><span class="section-number-2">2.</span> Magnetno polje krožne tokovne zanke</h2>
+<div class="outline-text-2" id="text-2">
+<div class="problem" id="orgaa8ff3e">
+<p>
+Izračunaj vektorski potencial magnetnega polja krožne zanke s polmerom \( a \) in električnim tokom \( I \) v veliki oddaljenosti od zanke \( r \gg a \). Rezultat podaj z oddaljenostjo \( r \) od središča zanke in s kotom \( \theta \) glede na os zanke. Pri računu obdr&gt;zi le vodilni člen v razvoju po \( r \). Pokaži, da ima tako dobljeni rezultat obliko vektorskega potenciala magnetnega dipola z magnetnim dipolnim momentom \( \pi a ^2 I \).
+</p>
+
+</div>
+</div>
+<div id="outline-container-orgf52cff3" class="outline-3">
+<h3 id="orgf52cff3"><span class="section-number-3">2.1.</span> Teorija magnetostatike</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Za magnetostatiko velja, da je \( I = \mathrm{konst} \). K naši zbirki enačb bomo dodali še dve Maxwellovi enačbi. Prva je
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \nabla \cdot \vec{B} = 0
+\end{equation}
+
+<p>
+Ta enačba eliminira magnetne monopole in z njo lahko zapišemo magnetno polje s pomočjo vektorskega potenciala
+</p>
+
+<p>
+\[ \vec{B} = \vec{\nabla} \times \vec{A}.
+\]
+</p>
+
+<p>
+Druga (nepopolna) enačba, ki jo dodamo na repertuar je Amperova enačba
+</p>
+
+\begin{equation}
+\label{eq:3}
+ \vec{\nabla} \times \vec{B} = \mu_0 \vec{\jmath}
+\end{equation}
+
+<p>
+V enačbo \ref{eq:3} vstavimo definicijo vektorskega potenciala in dobimo
+</p>
+
+<p>
+\[ \vec{\nabla} \times \left( \vec{\nabla} \times \vec{A} \right) = \mu_0  \vec{\jmath}.
+\]
+</p>
+
+<p>
+Enačba se z uporabi matematičnih identitet pretvori v
+</p>
+
+<p>
+\[ \vec{\nabla} \left( \vec{\nabla} \cdot \vec{A} \right) - \nabla ^2 \vec{A} = \mu_0 \vec{\jmath}.
+\]
+</p>
+
+<p>
+Vektorski potencial si izberemo tako, da je \( \vec{\nabla} \cdot \vec{A} = 0 \). Iz tega sledi enačba
+</p>
+
+<p>
+\[ \nabla ^2 \vec{A} \left( \vec{r} \right) = - \mu_0 \vec{\jmath} \left( \vec{r} \right)
+\]
+</p>
+
+<p>
+To je tridimenzionalna enačba, katere ekvivalent v elektrostatiki je
+</p>
+
+<p>
+\[ \nabla ^2 U \left( \vec{r} \right) = - \frac{\rho \left( \vec{r} \right)}{\epsilon_0}.
+\]
+</p>
+
+<p>
+\[ \vec{A} \left( \vec{r} \right) = \frac{\mu_0}{4 \pi} \int\limits_{}^{}\frac{\mathrm{d} ^3 \vec{r} \, ' \vec{\jmath} \left( \vec{r}\, ' \right)}{\left| \vec{r} - \vec{r} \, ' \right|}
+\]
+</p>
+</div>
+<div id="outline-container-org870bd77" class="outline-4">
+<h4 id="org870bd77"><span class="section-number-4">2.1.1.</span> Vodnik</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Gostota električnega toka je neničeln v smeri vodnika. To pomeni, da ga lahko zapišemo kot
+</p>
+
+<p>
+\[ \vec{\jmath} \left( \vec{r} \, ' \right) \mathrm{d} ^3 \vec{r}\,' = \vec{\jmath} S' \, \mathrm{d} l' = I \, \mathrm{d} \vec{l}\, ',
+\]
+</p>
+
+<p>
+kjer smo upoštevali, da za vodnik velja \( \mathrm{d} ^3 \vec{r} \, ' = S' \, \mathrm{d} l' \) in definicijo gostote električnega toka \( \vec{J} S' = I \vec{t} \). \( \vec{t} \) je enotski vektor.
+</p>
+
+<p>
+Magnetni vektorski potencial za vodnik je tako
+</p>
+
+<p>
+\[ \vec{A} \left( \vec{r} \right) = \frac{\mu_0 I}{4 \pi} \int\limits_{}^{} \frac{\mathrm{d} \vec{l} \,'}{\left| \vec{r} - \vec{r} \, ' \right|}
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf66e71a" class="outline-3">
+<h3 id="orgf66e71a"><span class="section-number-3">2.2.</span> Reševanje naloge</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Reševanje začnemo z integralom izpeljanim v prejšnjem podpoglavju
+</p>
+
+<p>
+\[ \vec{A} \left( \vec{r} \right) = \frac{\mu_0 I}{4 \pi} \int\limits_{}^{} \frac{\mathrm{d} \vec{l} \, '}{\left| \vec{r} - \vec{r} \, ' \right|}.
+\]
+</p>
+
+<p>
+Določiti moramo \( \mathrm{d} \vec{l} \, ' \), \( \vec{r} \) in \( \vec{r} \, ' \). Predpostavimo, da naša tokovna zanka leži v \( xy \) ravnini. Zanko zasučemo okrog kota \( \phi \) tako, da je vektor \( \vec{r} \) v ravnini \( xz \) in posledično je \( \phi = 0 \). To nam olajša računanje, saj imamo samo kot \( \theta \) med \( z \) in \( x \) osjo. Torej bo v polarnih koordinatah \( \vec{r} \) enak
+</p>
+
+\begin{equation}
+\label{eq:4}
+ \vec{r} = \left( r \sin \theta, 0, r \cos \theta \right),
+\end{equation}
+
+<p>
+Radij vektor, ki teče po naši krožni zanki, je zapisan v polarnih koordinatah s
+</p>
+
+\begin{equation}
+\label{eq:5}
+ \vec{r} \, ' = a \left( \cos \phi, \sin \phi , 0\right).
+\end{equation}
+
+<p>
+Majhen delček zanke \( \mathrm{d} \vec{l} \, ' = \mathrm{d} l' \hat{t} \) je tangenten na radij vektor \( \vec{r} \, ' \), kar pomeni, da ga zapišemo kot
+</p>
+
+<p>
+\[ \mathrm{d} \vec{l} \, ' = a \mathrm{d} l' \left( - \sin \phi , \cos \phi, 0 \right)
+\]
+</p>
+
+<p>
+Sedaj lahko s pomočjo enačb \ref{eq:4} in \ref{eq:5} zapišemo \( \left| \vec{r} - \vec{r} \, ' \right| \) preko definicije absolutne vrednosti vektorjev
+</p>
+
+<p>
+\[ \left| \vec{r} - \vec{r} \, ' \right| = \left| \left( \sin \theta, 0, \cos \theta \right) r - a \left( \cos \phi, \sin \phi, 0 \right) \right|  = \sqrt{r ^2 + a ^2 - 2ra \sin \theta \cos \phi} \approx r \sqrt{1 - \frac{2a}{r} \sin \theta \cos \phi},
+\]
+</p>
+
+<p>
+kjer smo nadalje še upoštevali \( r \gg a \). Zaradi tega lahko izraz
+</p>
+
+<p>
+\[ \frac{1}{\left| \vec{r} - \vec{r} \, ' \right|} = \frac{1}{r} \left( 1 - \frac{2a}{r} \sin \theta \cos \phi \right) ^{- \frac{1}{2}} \approx \frac{1}{r} \left( 1 + \frac{1}{2} \frac{2a}{r} \sin \theta \cos \phi \right),
+\]
+</p>
+
+<p>
+tudi razvijemo.
+</p>
+
+<p>
+Integral za vektorski potencial postane ob zamenjavi z vsemi izpeljanimi členi
+</p>
+
+<p>
+\[ \vec{A} \left( \vec{r}  \right) = \frac{\mu_0 I }{4 \pi} \frac{a}{r} \int\limits_0^{2\pi} \left( - \sin \phi, \cos \phi, 0 \right) \frac{a \mathrm{d} \phi}{r} \left( 1 + \frac{a}{r} \sin \theta \cos \phi \right)
+\]
+</p>
+
+<p>
+Zaradi sinusnih in kosinusnih funkcij pri integraciji do \( 2 \pi \) sta komponenti \( A_x \) in \( A_z \) ničelni. Edina preostala komponenta je
+</p>
+
+<p>
+\[ A_y (r) = \frac{\mu_0 I}{4 \pi} \frac{a}{r} \int\limits_0^{2\pi} \frac{a \sin \theta}{r} \cos ^2 \phi \, \mathrm{d} \phi = \frac{\mu_0 I}{4} \frac{a ^2}{r ^2} \sin \theta
+\]
+</p>
+
+<p>
+Vektorsko lahko zapišemo
+</p>
+
+<p>
+\[ \vec{A} \left( \vec{r} \right) = \frac{\mu_0 I \pi a ^2}{4 \pi} \frac{\sin \theta}{r ^2} \hat{e}_y,
+\]
+</p>
+
+<p>
+kjer označimo \( p_m = IS \). Hkrati pa velja, da \( \hat{e}_y \) lahko nadomestimo z izrazom \( \hat{e}_z \times \frac{\vec{r}}{r} \) in posledično lahko definiramo dipolni člen magnetnega multipolnega razvoja
+</p>
+
+<p>
+\[ \vec{p}_m = p_m \hat{e}_z.
+\]
+</p>
+
+<p>
+Vektorski potencial lahko tudi zapišemo z vektorskim zapisom kot
+</p>
+
+<p>
+\[ \vec{A} \left( \vec{r} \right) = \frac{\mu_0}{4 \pi} \frac{\vec{p}_m \times \vec{r}}{r ^3}
+\]
+</p>
+
+<p>
+[dopolni]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org803c0ec" class="outline-2">
+<h2 id="org803c0ec"><span class="section-number-2">3.</span> Magnetno polje nabite vrteče se okrogle plošče</h2>
+<div class="outline-text-2" id="text-3">
+<div class="problem" id="org1b891f0">
+<p>
+Tanko okroglo ploščo polmera \( a \) enakomerno premažemo z nabojem površinskeg gostote \( \sigma \) in jo v vodoravnem položaju zavrtimo z enakomerno kotno hitrostjo \( \omega \) okrog navpične osi, ki poteka skozi središče plošče.
+</p>
+
+<ol class="org-ol">
+<li>Z uporabo Biot-Savartove enačbe izračunaj velikost gostote magnetnega polja \( B \) na navpični osi plošče kot funkcijo oddaljenosti \( z \) od središča plošče.</li>
+<li>Pokaži, da je magnetni pretok dipolni moment plošče \( p_m = \frac{\pi}{4} \sigma \omega a ^4 \).</li>
+<li>V razvoju pod a točko izračunanega izraza za \( B(z) \) v Taylorjevo vrsto določi člen, ki najpočasneje pada z \( z \). Utemelji, zakaj je to dipolni člen. Iz njegove oblike preberi magnetni dipolni moment plošče in ga primerjaj z izrazom pod točko b.</li>
+</ol>
+
+</div>
+
+<p>
+Problem začnemo reševati tako, da določimo, da je disk v ravnini \( xy \) in je vektor kroženja zapisan z \( \vec{\omega} = (0, 0, \omega) \).
+</p>
+
+<p>
+Začnemo s splošnim Biot-Savartovim zakonom
+</p>
+
+<p>
+\[ \vec{B} \left( \vec{r} \right) = \frac{\mu_0}{4 \pi} \int\limits_{}^{} \frac{\vec{\jmath} \left( \vec{r} \, ' \right) \times \left( \vec{r} - \vec{r} \, ' \right)}{\left| \vec{r} - \vec{r} \, ' \right| ^3} \, \mathrm{d} ^3 \vec{r} \, '
+\]
+</p>
+
+<p>
+Omenimo, nepomembno za to nalogo, da je diskretna verzija Biot-Savartovega zakona
+</p>
+
+<p>
+\[ B \left( \vec{r}  \right) = \frac{\mu_0 I}{4 \pi} \int\limits_{}^{} \frac{\mathrm{d} \vec{l} \, ' \times \left( \vec{r} - \vec{r}\, ' \right)}{\left| \vec{r} - \vec{r} \, ' \right| ^3}
+\]
+</p>
+
+<p>
+Opazujmo kolobar širina \( \mathrm{d} \vec{r} \, ' \) na razdalji \( \vec{r} \, ' \) od središča. Naboj na tem kolobarju je
+</p>
+
+<p>
+\[ \mathrm{d} e = \sigma 2 \pi r' \mathrm{d} r'. = \sigma S
+\]
+</p>
+
+<p>
+Prispevek k toku je celoten naboj, ki gre skozi dan presek - celoten tok na kolobarju gre skozi presek ravno v obhodnem času \( \frac{2 \pi }{\omega} = t_0 \). Torej bo prispevek k toku
+</p>
+
+<p>
+\[ \mathrm{d} I = \frac{\mathrm{d} e}{t_0} = \frac{\mathrm{d} e}{\frac{2\pi}{\omega}} = \frac{\omega}{2\pi} \sigma 2 \pi r' \mathrm{d} r' = \sigma \omega r' \mathrm{d} r'
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-18 Tue 18:58</p>
+</div>
+</body>
+</html>
