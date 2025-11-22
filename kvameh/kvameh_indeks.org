@@ -17,3 +17,5 @@ Tukaj so zbrani zapiski vaj pri prof. dr. Tomažu Rejcu.
 - [[file:02vaje/02km_v_20251013.html][vaje 2, 2025/10/13:]] 2. sklop nalog: vezana stanja v delta potencial; sipanje
 - [[file:02vaje/03km_v_20251020.html][vaje 3, 2025/10/20:]] 2. sklop nalog, nadaljevanje, 3. sklop nalog: lastnosti komutatorjev in antikomutatorjev;, nadaljevanje nedoločenosti; iskanje valovnih funkcij za princip nedoločenosti
 - [[file:02vaje/04km_v_20251103.html][vaje 4, 2025/11/03:]] 4. sklop nalog, časovni operator in te fore
+- [[file:02vaje/05km_v_20251110.html][vaje 5, 2025/11/10:]] nadaljevanje pričakovanih vrednosti in nedoločenosti Gaussovega paketa od prejšnje ure, harmonski razvoj: teorija in časovni razvoj delca v harmonskem oscilatorju
+- [[file:02vaje/06km_v_20251117.html][vaje 6, 2025/11/17:]] harmonski oscilator v električnem polju in koherentna stanja harmonskega oscilatorja
