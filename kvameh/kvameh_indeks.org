@@ -19,3 +19,5 @@ Tukaj so zbrani zapiski vaj pri prof. dr. Tomažu Rejcu.
 - [[file:02vaje/04km_v_20251103.html][vaje 4, 2025/11/03:]] 4. sklop nalog, časovni operator in te fore
 - [[file:02vaje/05km_v_20251110.html][vaje 5, 2025/11/10:]] nadaljevanje pričakovanih vrednosti in nedoločenosti Gaussovega paketa od prejšnje ure, harmonski razvoj: teorija in časovni razvoj delca v harmonskem oscilatorju
 - [[file:02vaje/06km_v_20251117.html][vaje 6, 2025/11/17:]] harmonski oscilator v električnem polju in koherentna stanja harmonskega oscilatorja
+- [[file:02vaje/07km_v_20251124.html][vaje 7, 2025/11/24:]] harmonski oscilator v električnem polju, dvodimenzionalni harmonski oscilator - posebni primer, tretja komponenta vrtilne količine
+- [[file:02vaje/08km_v_20251201.html][vaje 8, 2025/12/01:]] dvodimenzionalni harmonski oscilator - lastna stanja, Larmorjeva precesija

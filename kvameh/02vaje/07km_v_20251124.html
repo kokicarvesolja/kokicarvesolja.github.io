@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-11-27 Thu 14:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>7. vaje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">7. vaje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd35fc4d">1. Harmonski oscilator v električnem polju</a></li>
+<li><a href="#orgf86c5c9">2. Dvodimenzionalni harmonski oscilator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="2_kolokvij_snov">2_kolokvij_snov</span></span></a>
+<ul>
+<li><a href="#orgef39674">2.1. Teorija</a>
+<ul>
+<li><a href="#orgf5f87d3">2.1.1. Posebni primeri</a></li>
+<li><a href="#orgf4517c0">2.1.2. Vrtilna količina \( z \)</a></li>
+</ul>
+</li>
+<li><a href="#org53c3a39">2.2. Naloga</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd35fc4d" class="outline-2">
+<h2 id="orgd35fc4d"><span class="section-number-2">1.</span> Harmonski oscilator v električnem polju</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Nadaljujem nalogo od zadnjič. Spomnimo, da je Hamiltonian harmonskega oscilatorja enak
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + \frac{1}{2} k x ^2 = \hbar \omega \left( a^{\dagger} a + \frac{1}{2} \right),
+\]
+</p>
+
+<p>
+kjer sta \( a \) anihilacijski in \( a^{\dagger} \) kreacijski operator definirana kot
+</p>
+
+<p>
+\[ a = \frac{1}{\sqrt{2}} \left( \frac{x}{x_0} + \mathrm{i} \frac{p}{p_0} \right), \quad x_0 = \sqrt{\frac{\hbar}{m \omega}} \text{ in } p_0 = \frac{\hbar}{x_0}
+\]
+</p>
+
+<p>
+Kreacijski in anihilacijski operator ne komutirata, saj velja zveza
+</p>
+
+<p>
+\[ \left[ a, a^{\dagger} \right] = 1
+\]
+</p>
+
+<p>
+Kvadrata pričakovanih vrednosti kraja in gibalne količine sta kot izpeljano na predavanjih
+</p>
+
+\begin{align} \label{eq:kraj}
+  \left\langle x ^2 \right\rangle &= x_0 ^2 \left( \mathrm{Re} \left\langle a ^2 \right\rangle + \left\langle a^{\dagger} a \right\rangle + \frac{1}{2} \right)  \\ \label{eq:gk}
+\left\langle p ^2 \right\rangle &= p_0 ^2 \left( - \mathrm{Re} \left\langle a ^2 \right\rangle + \left\langle a^{\dagger} a \right\rangle + \frac{1}{2} \right)
+\end{align}
+
+<p>
+Definirali smo tudi koherentno stanje harmonskega oscilatorja, kjer za \( z \in \mathbb{C} \) velja
+</p>
+
+<p>
+\[ a \left| z \right\rangle  = z \left| z \right\rangle
+\]
+</p>
+
+<p>
+Časovni razvoj začetnega stanja \( \left| \psi, 0 \right\rangle = \left| z \right\rangle\) je enak
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \left| \psi, t \right\rangle  = \exp \left\{ - \mathrm{i} \frac{\omega t}{2} \right\} \left| z \exp \left\{ - \mathrm{i} \omega t \right\} \right\rangle = \left| z, t \right\rangle
+\end{equation}
+
+<p>
+Pričakovana vrednost kraja in gibalne količine sta
+</p>
+
+<p>
+\[ \left\langle x \right\rangle = \sqrt{2} x_0 \mathrm{Re} z \text{ in } \left\langle p \right\rangle = \sqrt{2} p_0 \mathrm{Im} z
+\]
+</p>
+
+<p>
+Po času \( t = 0 \) vklopimo električno polje se harmonski oscilator modificira v
+</p>
+
+<p>
+\[ \tilde{H} = \frac{\tilde{p} ^2}{2m} + \frac{1}{2} k x ^2 - E_1,
+\]
+</p>
+
+<p>
+kjer velja \( \tilde{x} = x - x_1 \) in \( \tilde{p} = p \). \( x_1 \) je definiran iz klasičnega harmonskega oscilatorja in je enak \( x_1 = \frac{e \epsilon}{k} \). Kreacijski operator novega harmonskega oscilatorja je
+</p>
+
+<p>
+\[ \tilde{a} = \frac{1}{\sqrt{2}} \left( \frac{\tilde{x}}{x} + \mathrm{i} \frac{\tilde{p}}{p_0} \right) = a - \frac{x_1}{\sqrt{2} x_0}
+\]
+</p>
+
+<p>
+Ne moremo zahtevati identičnega začetnega pogoja kot pri klasičnem harmonskem oscilatorju, saj bi kršili Heisenbergov princip nedoločenosti. Namesto tega uporabimo najbližji ekvivalent - osnovne stanje harmonskega oscilatorja pred vklopom električnega polja \( \left| \psi, 0 \right\rangle = \left| 0 \right\rangle \).
+</p>
+
+<p>
+Anihilacijski operator \( a \) ima na začetno stanje sledeče učinek
+</p>
+
+<p>
+\[ a \left| \psi, 0 \right\rangle  = 0.
+\]
+</p>
+
+<p>
+Novi anihilacijski operator \( \tilde{a} \) pa modificira začetno stanje v
+</p>
+
+<p>
+\[\tilde{a} \left| \psi, 0 \right\rangle = - \frac{x_1}{\sqrt{2}x_0} \left| \psi, 0 \right\rangle.
+\]
+</p>
+
+<p>
+Označimo torej
+</p>
+
+<p>
+\[ \left|\psi, 0 \right\rangle  = \left| z \right\rangle; \quad z = - \frac{x_1}{\sqrt{2}x_0}
+\]
+</p>
+
+<p>
+Iz definicij \ref{eq:kraj} in \ref{eq:gk} želimo priti do njunih vrednosti, ko je vključeno električno polje.
+</p>
+
+\begin{align}
+  \left\langle x ^2 \right\rangle &= x_0 ^2 \left( \mathrm{Re} \left\langle a ^2 \right\rangle + \left\langle a^{\dagger} a \right\rangle + \frac{1}{2} \right) \\
+&= x_0 ^2 \left( \mathrm{Re} z ^2 + z ^{\ast} z + \frac{1}{2} \right) \\
+\left\langle p ^2 \right\rangle &= p_0 ^2 \left( - \mathrm{Re} \left\langle a ^2 \right\rangle + \left\langle a^{\dagger} a \right\rangle + \frac{1}{2} \right) \\
+&= p_0 ^2 \left( - \mathrm{Re} z ^2 + z^{\ast} z + \frac{1}{2} \right)
+\end{align}
+
+<p>
+Nedoločenost kraja je po definiciji \( \delta ^2 x = \left\langle x ^2 \right\rangle - \left\langle x \right\rangle ^2\). Upoštevamo zgoraj izpeljane količine, da dobimo
+</p>
+
+\begin{align*}
+\delta ^2 x &= \left\langle x ^2  \right\rangle- \left\langle x  \right\rangle ^2 = x_0 ^2 \left( \mathrm{Re}  z ^2 + z^{\ast} z ++ \frac{1}{2} \right) - 2x_0 ^2 \mathrm{Re}  z  ^2 \\
+&= x_0 ^2 \left( \frac{z^{\ast 2}+ z ^2}{2} + z^{\ast} z + \frac{1}{2} \right) - 2 x_0 \frac{z^{\ast 2} + 2 z^{\ast} z + z ^2}{2} \\
+&= \frac{1}{2} x_0 ^2
+\end{align*}
+
+<p>
+Upoštevali smo identiteto
+</p>
+
+<p>
+\[ \mathrm{Re} z ^2 = \frac{z ^2 + z^{\ast 2}}{2}.
+\]
+</p>
+
+<p>
+Podobno identiteto
+</p>
+
+<p>
+\[ \mathrm{Im} z ^2 = \frac{z ^2 - z ^{\ast 2}}{2}
+\]
+</p>
+
+<p>
+uporabimo, da dobimo nedoločenost gibalne količine
+</p>
+
+<p>
+\[ \delta ^2 p = \frac{p_0 ^2}{2}.
+\]
+</p>
+
+<p>
+Nedoločenost tega stanja je enostavno Gaussov valovni paket, saj \( \delta x \delta p = \frac{\hbar}{2} \). Gaussov valovni paket je sedaj
+</p>
+
+<p>
+\[ \psi_z (x) = \frac{1}{\sqrt[4]{\pi x_0 ^2}} \exp \left\{ - \frac{\left( x - \sqrt{2} x_0 \mathrm{Re} z \right) ^2}{2x_0 ^2} \right\} \exp \left\{ \mathrm{i} \frac{\sqrt{2} p_0 \mathrm{Im} z}{\hbar} x \right\}.
+\]
+</p>
+
+<p>
+Ta valovni paket ima en parameter manj (\( s \)), kakor tisti, ki smo ga že izpeljali na predavanjih.
+</p>
+
+<p>
+Pričakovani vrednosti Hamiltoniana in kvadrata Hamiltoniana sta
+</p>
+
+<p>
+\[ \left\langle H \right\rangle= \hbar \omega \left( z^{\ast} z + \frac{1}{2}  \right)
+\]
+</p>
+
+<p>
+ter
+</p>
+
+\begin{align*}
+ \left\langle H ^2 \right\rangle &= \left\langle \hbar ^2 \omega ^2 \left( z^{\ast} z + \frac{1}{2} \right) ^2 \right\rangle
+\end{align*}
+
+<p>
+[dopolni, str. 42]
+</p>
+
+<p>
+pri računanju smo morali biti biti pozorni na vrstni red operacij (oz. nekomutacijo).
+</p>
+
+<p>
+Z danim začetnim stanjem \( \left| \psi, 0 \right\rangle = \left| z \right\rangle \) bi radi izračunali časovni razvoj za nov Hamiltonian z vklopljenim električnim poljem. Upoštevamo \ref{eq:1}, kjer dodamo faktor, za koliko je začetno stanje nižje (\( E_1 \)) od navadnega Hamiltoniana.
+</p>
+
+<p>
+\[ \left| \psi, t \right\rangle  = \exp \left\{ - \frac{\mathrm{i} \omega t}{2} \right\} \left| z \exp \left\{ - \mathrm{i} \omega t \right\} \right\rangle \exp \left\{ - \mathrm{i} \frac{E_1}{\hbar}t \right\}
+\]
+</p>
+
+<p>
+Ta novi faktor nima vpliva pri opazljivkah, saj se pri računanju faktor odšteje s svojo konjugirano vrednostjo iz bra-ja.
+</p>
+
+<p>
+Časovna odvisnost pričakovane vrednosti kraja je
+</p>
+
+\begin{align*}
+  \left\langle x, t \right\rangle &= \left\langle \tilde{x}, t \right\rangle + x_1 = \sqrt{2} x_0 \mathrm{Re} \left( z \exp \left\{ - \mathrm{i} \omega t \right\} \right) + x_1 \\
+&= \sqrt{2} x_0 \frac{x_1}{\sqrt{2} x_0} \mathrm{Re} \left( \exp \left\{ - \mathrm{i} \omega t \right\} \right) + x_1 \\
+&= x_1 \left( 1 - \cos (\omega t) \right)
+\end{align*}
+
+<p>
+Vidimo, da smo dobili enak rezultat kot pri klasičnem harmonskem oscilatorju v električnem polju.
+</p>
+
+<p>
+Naš harmonski oscilator ima vedno obliko Gaussovega paketa, vendar je samo v skrajnih lega dejanski valovni paket. V vmesnih stanjih valovanje valovne funkcije tvori ovojnico Gaussovega paketa. Glej priloženo sliko
+</p>
+
+
+<div id="org0bed38a" class="figure">
+<p><img src="figures/07harmonskiOscikatorvE.png" alt="07harmonskiOscikatorvE.png" />
+</p>
+</div>
+
+<p>
+Pri fazi \( \omega t = \frac{\pi}{2} \) je \( z = - \mathrm{i} \frac{x_1}{\sqrt{2} x_0} \in \mathrm{i} \mathbb{R} \). Pri fazi \( \omega t = \pi \) pa je \( z = \frac{x_1}{\sqrt{2} x_0} \in \mathbb{R} \).
+</p>
+</div>
+</div>
+<div id="outline-container-orgf86c5c9" class="outline-2">
+<h2 id="orgf86c5c9"><span class="section-number-2">2.</span> Dvodimenzionalni harmonski oscilator&#xa0;&#xa0;&#xa0;<span class="tag"><span class="2_kolokvij_snov">2_kolokvij_snov</span></span></h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgef39674" class="outline-3">
+<h3 id="orgef39674"><span class="section-number-3">2.1.</span> Teorija</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Imamo dvodimenzionalni Hamiltonian s harmonskim potencialom
+</p>
+
+<p>
+\[ H = \frac{p_x ^2}{2m} + \frac{p_y ^2}{2m} + \frac{1}{2} k_x x ^2 + \frac{1}{2} k_y y ^2 = H_x + H_y,
+\]
+</p>
+
+<p>
+kjer velja
+</p>
+
+<p>
+\[ H_i = \frac{p_i ^2}{2m} + \frac{1}{2} k_i i ^2, \quad i= x, y.
+\]
+</p>
+
+<p>
+Zanimajo nas lastna stanja in lastne energije za tak harmonski oscilator.
+</p>
+
+<p>
+Za posamezno dimenzijo velja
+</p>
+
+\begin{align*}
+  H_x \psi_x (x) &= E_x \psi_x (x) \\
+H_y \psi_y (y) &= E_y \psi_y (y).
+\end{align*}
+
+<p>
+Zanima pa nas celoten Hamiltonian
+</p>
+
+<p>
+\[ H \psi(x, y) = E \psi(x, y).
+\]
+</p>
+
+<p>
+Od prej vemo, da velja potem enakost za lastna stanja
+</p>
+
+<p>
+\[ \psi(x, y) = \psi_x (x) \psi_y (y)
+\]
+</p>
+
+<p>
+ter za lastne energije
+</p>
+
+\begin{equation}
+\label{eq:2}
+E = E_x + E_y.
+\end{equation}
+
+<p>
+Lastne energije harmonskega oscilatorja so ob upoštevanju enodimenzionalnih harmonskih oscilatorjev enake
+</p>
+
+<p>
+\[ E = \hbar \omega_x \left( n_x + \frac{1}{2} \right) + \hbar \omega_y \left( n_y + \frac{1}{2} \right), \quad \omega_i = \sqrt{\frac{k_i}{m}}
+\]
+</p>
+
+<p>
+V Diracovem zapisu bomo Schrödingerjevo enačbo zapiše kot
+</p>
+
+\begin{equation}
+\label{eq:3}
+ H \left| n_x \right\rangle  \left| n_y \right\rangle = E \left| n_x \right\rangle \left| n_y \right\rangle.
+\end{equation}
+
+<p>
+Harmonska oscilatorja v \( x \) in \( y \) komponenti sta vsak v svojem Hilbertovem prostoru. Harmonski oscilator v dveh dimenzijah je večji Hilbertov prostor, katerega baza je sestavljena iz harmonskih oscilatorjev posameznih komponent. Krajše enačbo zapišemo kot
+</p>
+
+<p>
+\[ H \left| n_x n_y \right\rangle = E \left| n_x n_y \right\rangle
+\]
+</p>
+</div>
+<div id="outline-container-orgf5f87d3" class="outline-4">
+<h4 id="orgf5f87d3"><span class="section-number-4">2.1.1.</span> Posebni primeri</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Opazujemo primer, ko \( k_x > 0 \) in \( k_y = 0 \).
+</p>
+
+<p>
+Lastna funkcija Hamiltoniana v \( y \) koordinati je samo ravni val \( \psi_y (y) = \exp \left\{ \mathrm{i} q y \right\} \). Energija tega stanja je energija ravnega vala \( E_y = \frac{\hbar ^2 q ^2}{2m} \), energija dvodimenzionalnega Hamiltoniana pa je
+</p>
+
+<p>
+\[ E = \hbar \omega_x  \left( n_x + \frac{1}{2} \right) + \frac{\hbar ^2 q ^2}{2m}
+\]
+</p>
+
+<p>
+Drugi poseben primer je \( k_x = k_y = k \) oz. z drugimi besedami je to izotropen dvodimenzionalni harmonski oscilator. Hamiltonian je tako oblike
+</p>
+
+<p>
+\[ H_0 = \frac{p ^2}{2m} + \frac{1}{2} k r ^2, \quad r ^2 = x ^2 + y ^2
+\]
+</p>
+
+<p>
+Ker sta valovna vektorja enaka, je tudi frekvenca enaka, torej bo energija
+</p>
+
+<p>
+\[ E = \hbar \omega \left( n_x + n_y + 1 \right)
+\]
+</p>
+
+<p>
+Osnovno stanje takega harmonskega oscilatorja je pri \( n_x = n_y = 0 \), in stacionarna Schrödingerjeva enačba je
+</p>
+
+<p>
+\[ H \left| 0, 0 \right\rangle = \hbar \omega \left| 0, 0 \right\rangle
+\]
+</p>
+
+<p>
+Prvi vzbujeni stanji sta
+</p>
+
+<p>
+\[ H \left| 1, 0 \right\rangle = 2 \hbar \omega \left| 1, 0 \right\rangle \text{ in } H \left| 0, 1 \right\rangle = 2 \hbar \omega \left| 0, 1 \right\rangle,
+\]
+</p>
+
+<p>
+torej je dvakrat degenerirano. Rešitev tega stanja je tudi linearna kombinacija teh dveh vzbujeni stanj
+</p>
+
+<p>
+\[ H \left( \alpha \left| 1, 0 \right\rangle + \beta \left| 0, 1 \right\rangle\right) = 2 \hbar \omega \left( \alpha \left| 1, 0 \right\rangle + \beta \left| 0, 1 \right\rangle\right), \ \alpha, \beta \in \mathbb{C}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgf4517c0" class="outline-4">
+<h4 id="orgf4517c0"><span class="section-number-4">2.1.2.</span> Vrtilna količina \( z \)</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Hamiltonianu dodamo člen \( \lambda L_z \), da ima obliko
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + \frac{1}{2} k r ^2 + \lambda L_z = H_0 + \lambda L_z, \ L_z = xp_y - y p_x = - \mathrm{i} \hbar \frac{\partial }{\partial \phi}.
+\]
+</p>
+
+<p>
+Zanima nas, kako ta novi člen vpliva na lastna stanja in lastne energije našega problema.
+</p>
+
+<p>
+Operator gibalne količine v cilindričnih koordinatah je
+</p>
+
+<p>
+\[ \frac{p ^2}{2m} = - \frac{\hbar ^2}{2m} \nabla ^2 = - \frac{\hbar ^2}{2m} \left( \frac{1}{r} \frac{\partial }{\partial r}  \left( r \frac{\partial }{\partial r}  \right) + \frac{1}{r ^2} \frac{\partial ^2 }{\partial \phi ^2}  \right)
+\]
+</p>
+
+<p>
+Operatorja \( H_0 \) in \( L_z \) komutirata
+</p>
+
+\begin{align*}
+  \left[ H_0, L_z \right] &= 0
+\end{align*}
+
+<p>
+[dopolni]
+</p>
+
+<p>
+Naj bo \( F(\phi) \) lastna funkcija \( L_z \). Potem velja
+</p>
+
+<p>
+\[ L_z F(\phi) = \lambda F(\phi)
+\]
+</p>
+
+<p>
+Rešujemo torej diferencialno enačbo
+</p>
+
+<p>
+\[ - \mathrm{i} \hbar \frac{\partial }{\partial \phi}  F(\phi) = \lambda F(\phi),
+\]
+</p>
+
+<p>
+katere rešitev je
+</p>
+
+<p>
+\[ F = A \exp \left\{ - \frac{\lambda}{\mathrm{i} \hbar} \phi \right\}.
+\]
+</p>
+
+<p>
+Zahtevamo periodičnost \( F(\phi + 2 \pi) = F(\phi) \), iz česar sledi enačba
+</p>
+
+<p>
+\[ A \exp \left\{ - \frac{\lambda}{\mathrm{i} \hbar} \phi \right\} = A \exp \left\{ \mathrm{i} m \phi \right\},
+\]
+</p>
+
+<p>
+in nato enakost \( \lambda= \hbar m \).
+</p>
+
+<p>
+Konstanto \( A \) določimo iz normiranosti
+</p>
+
+<p>
+\[ \int\limits_0^{2\pi} \left| F(\phi) \right|  ^2 \, \mathrm{d} \phi = 1 \implies \ A = \frac{1}{\sqrt{2\pi}}
+\]
+</p>
+
+<p>
+Torej je lastna funkcija operatorja \( L_z \)
+</p>
+
+\begin{equation}
+\label{eq:4}
+F_m (\phi) = \frac{1}{\sqrt{2\pi}} e^{\mathrm{i} m \phi}, \ m \in \mathbb{Z},
+\end{equation}
+
+<p>
+enačba pa se glasi
+</p>
+
+<p>
+\[ L_z F_m(\phi) = \hbar m F_m (\phi)
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org53c3a39" class="outline-3">
+<h3 id="org53c3a39"><span class="section-number-3">2.2.</span> Naloga</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Opazujemo Harmonski oscilator v prvem vzbujenem stanju \( E = 2 \hbar \omega \). Vzbujena stanja sta
+</p>
+
+\begin{align*}
+  \psi_{10} (x, y) &= \psi_1 (x) \psi_0 (y) = \left| 1, 0 \right\rangle \\
+\psi_{01}(x, y) &= \psi_0 (x) \psi_1 (y) = \left| 0, 1 \right\rangle
+\end{align*}
+
+<p>
+Iz prejšnje naloge vemo, da so lastne funkcije koherentnih stanj Gaussovi paketi. Če je koherentno stanje \( z = 0 \), potem \( \left\langle x \right\rangle = 0 \) in \( \left\langle p \right\rangle = 0 \), iz česar sledi
+</p>
+
+<p>
+\[ \psi_0 (x) = \frac{1}{\sqrt[4]{\pi x_0 ^2}} \exp \left\{ - \frac{x ^2}{2x_0 ^2} \right\}
+\]
+</p>
+
+<p>
+Zaradi kreacijskega faktorja vemo, da velja
+</p>
+
+<p>
+\[ a ^{\dagger} \psi_0 (x) = 1 \cdot \psi_1 (x)
+\]
+</p>
+
+<p>
+Upoštevajoč definicijo kreacijskega faktorja in Gaussovega valovnega paketa.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-11-27 Thu 14:51</p>
+</div>
+</body>
+</html>
