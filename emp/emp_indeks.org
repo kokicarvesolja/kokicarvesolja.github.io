@@ -8,6 +8,7 @@ Tukaj so zbrani zapiski predavanj, ki sem se jih udeležil pri prof. dr. Miha Ra
 - [[file:01predavanja_emp/03emp_p_20251015.html][predavanje 3, 2025/10/15:]] Greenova funkcija, Earnshawjev teorem, Thomsonov problem, elektrostatska energija: elektrostatska energija naboja v zunanjem polju, celotna elektrostatska energija, gostota elektrostatskega polja, sila kot funkcional električnega polja
 - [[file:01predavanja_emp/04emp_p_20251022.html][predavanje 4, 2025/10/22:]] Sila kot funkcional električnega polja, napetostni tenzor električnega polja, multipolni razvoj električnega potenciala, polje in potencial točkastega dipola, multipolni razvoj elektrostatske energije, sila in navor na multipole v zunanjem polju; magnestatika: amperova sila med ravnima električnimi vodniki, sila med poljubnima vodnikoma
 - [[file:01predavanja_emp/05emp_p_20251105.html][predavanje 5, 2025/11/05:]] Magnetostatika: električni tok in velikosti, gostota magnetnega toka, velikosti magnetnega polja, magnetne silnice, magnetna cirkulacija, magnetni pretok, gostota električnega toka, primeri gostote toka, Amperov zakon, magnetni potencial, vektorski potencial tuljave
+- [[file:01predavanja_emp/06emp_p_20251112.html][predavanje 6, 2025/11/12:]] Magnetostatika: vektorski magnetni potencial tuljave, magnetna sila, Kirchoffova enačba, magnetna energija - magnetna energija v zunanje polju, kot funkcional toka, celotna magnetna energija, gostota magnetnega polja; sila kot funkcional magnetnega toka
 
 
 * Vaje
