@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-12-01 Mon 20:14 -->
+<!-- 2025-12-04 Thu 10:20 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>8. vaje iz Kvantne mehanike</title>
@@ -232,22 +232,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7e7786f">1. Harmonski oscilator v dveh dimenzijah</a>
+<li><a href="#org7c50ec0">1. Harmonski oscilator v dveh dimenzijah</a>
 <ul>
-<li><a href="#orgfa8b976">1.1. Drugi pristop</a></li>
+<li><a href="#org0fbd4b7">1.1. Drugi pristop</a></li>
 </ul>
 </li>
-<li><a href="#org5bb9681">2. Vrtilna količina</a>
+<li><a href="#org1fdde62">2. Vrtilna količina</a>
 <ul>
-<li><a href="#org1c71c43">2.1. Teorija</a></li>
-<li><a href="#org79b0d5f">2.2. Naloga</a></li>
+<li><a href="#orgf63b5b2">2.1. Teorija</a></li>
+<li><a href="#org864f2d8">2.2. Naloga</a>
+<ul>
+<li><a href="#org12da92e">2.2.1. Meritev \( L_z \) ob času \( t \)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7e7786f" class="outline-2">
-<h2 id="org7e7786f"><span class="section-number-2">1.</span> Harmonski oscilator v dveh dimenzijah</h2>
+<div id="outline-container-org7c50ec0" class="outline-2">
+<h2 id="org7c50ec0"><span class="section-number-2">1.</span> Harmonski oscilator v dveh dimenzijah</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Imamo prvo vzbujeno stanje, ki ima dve degenerirani stanji \( \left| 1, 0 \right\rangle \) in \( \left| 0, 1 \right\rangle \). Želimo najti linearno kombinacijo teh dveh stanj tako, da bosta tudi lastni stanji operatorja \( L_z \).
@@ -289,8 +293,8 @@ Faktor \( \frac{1}{\sqrt{2}} \) poskrbi, da je naše stanje normalizirano. Na po
 \]
 </p>
 </div>
-<div id="outline-container-orgfa8b976" class="outline-3">
-<h3 id="orgfa8b976"><span class="section-number-3">1.1.</span> Drugi pristop</h3>
+<div id="outline-container-org0fbd4b7" class="outline-3">
+<h3 id="org0fbd4b7"><span class="section-number-3">1.1.</span> Drugi pristop</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Iščemo lastna stanja operatorja \( L_z \), ki so hkrati tudi lastna stanja Hamiltoniana z energijo \( E = 2 \hbar \omega \).
@@ -450,12 +454,12 @@ Drug lastni vektor je \( (\mathrm{i}, 1) \), kjer pa se stanje v Diracovem zapis
 </div>
 </div>
 </div>
-<div id="outline-container-org5bb9681" class="outline-2">
-<h2 id="org5bb9681"><span class="section-number-2">2.</span> Vrtilna količina</h2>
+<div id="outline-container-org1fdde62" class="outline-2">
+<h2 id="org1fdde62"><span class="section-number-2">2.</span> Vrtilna količina</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org1c71c43" class="outline-3">
-<h3 id="org1c71c43"><span class="section-number-3">2.1.</span> Teorija</h3>
+<div id="outline-container-orgf63b5b2" class="outline-3">
+<h3 id="orgf63b5b2"><span class="section-number-3">2.1.</span> Teorija</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Operator vrtilne količine je definirana kot
@@ -529,10 +533,10 @@ Operatorja \( L_x \) in \( L_y \) lahko tudi izrazimo preko lestvičnih operator
 \end{equation}
 </div>
 </div>
-<div id="outline-container-org79b0d5f" class="outline-3">
-<h3 id="org79b0d5f"><span class="section-number-3">2.2.</span> Naloga</h3>
+<div id="outline-container-org864f2d8" class="outline-3">
+<h3 id="org864f2d8"><span class="section-number-3">2.2.</span> Naloga</h3>
 <div class="outline-text-3" id="text-2-2">
-<div class="problem" id="orgf389a3e">
+<div class="problem" id="orge25c2fe">
 <p>
 Imamo delec z vrtilno količino \( l = 1 \) in magnetnim momentom \( \mu \), ki se nahaja v magnetnem polju \( \vec{B} = B \hat{e}_z \). Magnetni moment \( \vec{\mu} \) in magnetno polje med seboj tvorita kot \( \theta \).
 </p>
@@ -548,7 +552,7 @@ Hamiltonian delca z magnetnim momentom \( \vec{\mu} \) v zunanjem magnetnem polj
 \]
 </p>
 
-<div class="note" id="orgf90d4a1">
+<div class="note" id="org9ff6b8d">
 <p>
 Če je neko stanje \( \left| \psi \right\rangle \) lastno stanje operatorja \( \vec{L} \cdot \hat{e} \) tako, da velja
 </p>
@@ -734,16 +738,132 @@ Začetno stanje je torej
 katerega časovni razvoj je
 </p>
 
+\begin{equation}
+\label{eq:4}
+ \left| \psi, t \right\rangle  = \sin ^2 \frac{\theta}{2} \exp \left\{ - \mathrm{i} \lambda B t \right\} \left| 1, - 1 \right\rangle + \sqrt{2} \cos  \frac{\theta}{2} \sin \frac{\theta}{2} \left| 1, 0 \right\rangle + \cos ^2 \frac{\theta}{2} \exp \left\{ \mathrm{i} \lambda B t \right\} \left| 1, 1 \right\rangle.
+\end{equation}
+
+
 <p>
-\[ \left| \psi, t \right\rangle  = \sin ^2 \frac{\theta}{2} \exp \left\{ - \mathrm{i} \lambda B t \right\} \left| 1, - 1 \right\rangle + \sqrt{2} \cos  \frac{\theta}{2} \sin \frac{\theta}{2} \left| 1, 0 \right\rangle + \cos ^2 \frac{\theta}{2} \exp \left\{ \mathrm{i} \lambda B t \right\} \left| 1, 1 \right\rangle.
+Pričakovana vrednost operatorja \( L_z \) skozi čas je precej enostavna, saj vrne enako stanje pomnoženo z lastno vrednostjo.
+</p>
+
+<p>
+\[ L_z \left| lm \right\rangle = \hbar m \left| lm \right\rangle.
+\]
+</p>
+
+<p>
+Pričakovana vrednost po definiciji je
+</p>
+
+\begin{align*}
+  \left\langle L_z, t \right\rangle &= \left\langle \psi, t \middle| L_z \middle| \psi, t \right\rangle \\
+&= \left\langle \psi, t \right| \left( - \hbar \sin ^2 \frac{\theta}{2} \exp \left\{ - \mathrm{i} \lambda B t \right\} \left| 1, -1 \right\rangle + \hbar \cos ^2 \frac{\theta}{2} \exp \left\{ \mathrm{i} \lambda B t \right\} \left| 1,1 \right\rangle \right)
+\end{align*}
+
+<p>
+Vektor \( \left| \psi, t \right\rangle \) moramo kompleksno konjugirati, da ga pretvorimo v bra. Torej
+</p>
+
+\begin{align*}
+\left\langle L_z, t \right\rangle &= \sin ^2 \frac{\theta}{2} \exp \left\{ \mathrm{i} \lambda B t \right\} \left| 1, - 1 \right\rangle \left( - \hbar \sin ^2 \frac{\theta}{2} \exp \left\{ - \mathrm{i} \lambda B t \right\} \left| 1, - 1 \right\rangle \right) + \cos ^2 \frac{\theta}{2} \exp \left\{ - \mathrm{i} \lambda B t \right\} \left\langle 1, 1 \right| \cdot \hbar \cos ^2 \frac{\theta}{2} \exp \left\{ \mathrm{i} \lambda B t \right\} \left| 1, 1 \right\rangle + 0 \\
+&= - \hbar \sin ^4 \frac{\theta}{2} + \hbar \cos ^4 \frac{\theta}{2} + \hbar \left( \cos ^2 \frac{\theta}{2} + \sin ^2 \frac{\theta}{2} \right) \left( \cos ^2 \frac{\theta}{2} - \sin ^2 \frac{\theta}{2} \right) = \hbar \cos \theta
+\end{align*}
+
+<p>
+Preko identitet \ref{eq:2} lahko določimo tudi pričakovani vrednosti \( L_x \) in \( L_y \):
+</p>
+
+\begin{align*}
+  \left\langle L_x, t \right\rangle &= \left\langle \psi, t \middle| \frac{L_+ + L_-}{2}\middle| \psi, t \right\rangle \\
+&= \frac{1}{2} \left( \left\langle L_+, t \right\rangle + \left\langle L_-, t \right\rangle \right) \\
+\left\langle L_y, t \right\rangle &= \left\langle \psi, t \middle| \frac{L_+ - L_-}{2 \mathrm{i}} \middle| \psi, t \right\rangle \\
+&= \frac{1}{2 \mathrm{i}} \left( \left\langle L_+, t \right\rangle - \left\langle L_-, t \right\rangle\right)
+\end{align*}
+
+<p>
+Ker velja \( L_+ ^{\dagger} = L_- \), lahko posledično zapišemo \( \left\langle L_-, t \right\rangle = \left\langle L_+^{\dagger}, t \right\rangle = \left\langle L_+, t \right\rangle ^{\ast}\). Pričakovana vrednost \( L_x \) se tako zapiše
+</p>
+
+<p>
+\[ \left\langle L_x, t \right\rangle = \frac{1}{2} \left( \left\langle L_+, t \right\rangle + \left\langle L_+, t \right\rangle ^{\ast}\right) = \mathrm{Re} \left( \left\langle L_+, t \right\rangle \right)
+\]
+</p>
+
+<p>
+ter \( L_y \) je
+</p>
+
+<p>
+\[ \left\langle L_y, t \right\rangle = \mathrm{Im} \left( \left\langle L_+, t \right\rangle \right).
+\]
+</p>
+
+<p>
+Upoštevamo vrednosti zapisane v alinejah in lahko precej preprosto izračunamo pričakovano vrednost \( \left\langle L_+, t \right\rangle \)
+</p>
+
+\begin{align*}
+  \left\langle L_+, t \right\rangle &= \left\langle \psi, t \right| \left( \sqrt{2} \hbar \sin ^2 \frac{\theta}{2}  \exp \left\{- \mathrm{i} \lambda B t \right\} \left| 1, 0 \right\rangle + 2 \hbar \sin \frac{\theta}{2} \cos \frac{\theta}{2} \left| 1, 1 \right\rangle \right) \\
+&= 2 \hbar \sin ^3 \frac{\theta}{2} \cos \frac{\theta}{2} + 2 \hbar \cos ^3 \frac{\theta}{2} \cos \frac{\theta}{2} \exp \left\{ - \mathrm{i} \lambda B t \right\} \\
+&= \exp \left\{ - \mathrm{i} \lambda B t \right\} \sin \frac{\theta}{2} \cos \frac{\theta}{2} \left( \sin ^2 \frac{\theta}{2} + \cos ^2 \frac{\theta}{2} \right) 2 \hbar \\
+&= \hbar \sin \theta \exp \left\{ - \mathrm{i} \lambda B t \right\} \\
+&= \hbar \sin \frac{\theta}{2} \left( \cos (\lambda B t) - \mathrm{i} \sin (\lambda B t) \right)
+\end{align*}
+
+<p>
+Da zaključimo: operator \( L_z \) se tekom časa ne spreminja
+</p>
+
+<p>
+\[ \left\langle L_z, t \right\rangle  = \hbar \cos \theta.
+\]
+</p>
+
+<p>
+Operatorja \( L_x \) in \( L_y \) pa krožita okoli magnetnega polja
+</p>
+
+<p>
+\[ \left\langle L_x, t \right\rangle = \hbar \sin \theta \cos (\lambda B t) \quad \text{ in } \left\langle L_y, t \right\rangle = - \hbar \sin \theta \sin (\lambda B t).
+\]
+</p>
+
+<p>
+Temu kroženju pravimo Larmorjeva precesija, ki pa jo poznamo že iz klasične fizike.
+</p>
+
+<p>
+V primeru, da funkcija še ni razvita po lastnih stanjih (npr. na kolokviju), jo moramo najprej razviti, preden lahko ugotavljamo pričakovane vrednosti operatorja.
+</p>
+</div>
+<div id="outline-container-org12da92e" class="outline-4">
+<h4 id="org12da92e"><span class="section-number-4">2.2.1.</span> Meritev \( L_z \) ob času \( t \)</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Po aksiomih kvantne mehanike je pred meritvijo valovna funkcija v vseh možnih stanjih, ki jih določa enačba \ref{eq:4}. V primeru, da izvedemo meritev ob času \( t = 0 \), bo valovna funkcija kolapsirala in bo za vse čase \( t_+ = 0 + \epsilon \) za \( \epsilon > 0 \) v opaženem stanju.
+</p>
+
+<p>
+\[
+</p>
+\begin{array}{|c|c|c|} \hline
+\text{rezultat meritve} & \text{verjetnost} & \left| \psi, t_+ \right\rangle \\ \hline
+-\hbar & \sin ^4 \frac{\theta}{2} & \left| 1, -1 \right\rangle \\
+0 & 2 \sin ^2 \frac{\theta}{2} \cos ^2 \frac{\theta}{2} & \left| 1, 0 \right\rangle \\
+\hbar & \cos ^4 \frac{\theta}{2} & \left| 1, 1 \right\rangle \\ \hline
+\end{array}
+<p>
 \]
 </p>
 </div>
 </div>
 </div>
 </div>
+</div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-12-01 Mon 20:14</p>
+<p class="date">Created: 2025-12-04 Thu 10:20</p>
 </div>
 </body>
 </html>
