@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-12-10 Wed 18:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>6. vaje iz Matematične fizike 2</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">6. vaje iz Matematične fizike 2</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org10212b5">1. Naloga 17 (Prinčič 4.5)</a></li>
+<li><a href="#orga35bd53">2. Teorija Greenove funkcije</a></li>
+<li><a href="#orgc8012e5">3. Naloga 18 (Prinčič, 4.4)</a></li>
+<li><a href="#org77ab8ce">4. Naloga 19 (Prinčič 5.3)</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org10212b5" class="outline-2">
+<h2 id="org10212b5"><span class="section-number-2">1.</span> Naloga 17 (Prinčič 4.5)</h2>
+<div class="outline-text-2" id="text-1">
+<div class="problem" id="org5dd6994">
+<p>
+Iščemo stacionarno porazdelitev temperature v polneskončni cevi. Voda teče v \( z \)-smeri s hitrostjo \( \vec{v}_0 \). Podano imam temperaturo plašča \( \left. T \right|_{u = r_0} = T_0 \) ter temperaturo osnovne plošče \( \left. T \right|_{z = 0} = T_1 (r) \).
+</p>
+
+</div>
+
+<p>
+Rešujemo difuzijsko enačbo
+</p>
+
+<p>
+\[ \frac{\mathrm{d} T}{\mathrm{d} t} = D \nabla ^2 T,
+\]
+</p>
+
+<p>
+vendar se zaradi premikajoče se snovi temperatura premika s snovjo. To težavo nam reši substancialni odvod
+</p>
+
+<p>
+\[ \frac{\mathrm{D} }{\mathrm{D} t} = \frac{\partial }{\partial t}  + \left( \vec{v} \cdot \nabla \right) T.
+\]
+</p>
+
+<p>
+Sledeče je bilo izpeljano pri mafiji in bo izpeljano pri Mehaniki kontinuumov. Hitrost v smeri \( z \) zapišemo kot \( \vec{v} = v \hat{e}_z \). Iščemo stacionarno rešitev, torej bo enačba, ki jo rešujemo oblike
+</p>
+
+<p>
+\[ \left( v \hat{e}_z \cdot \nabla \right) T = v \frac{\partial T}{\partial z} = \left[ \frac{1}{r} \frac{\partial }{\partial r} \left( r \frac{\partial T}{\partial r}  \right)+ \frac{\partial ^2 T}{\partial z ^2}   \right]D,
+\]
+</p>
+
+<p>
+kjer smo upoštevali Laplaceovo operator v cilindričnih koordinatah. Enačbo rešujemo s pomočjo separacije spremenljivke. Zakaj to deluje na polneskončnem primeru, bomo povedali kasneje. S \( T(r, z) = R(r) Z(z) \) difuzijska enačba postane
+</p>
+
+<p>
+\[ \frac{v}{D} \frac{Z '}{Z} - \frac{Z''}{Z} = \frac{R' + r R''}{r R} = - \lambda
+\]
+</p>
+
+<p>
+Reševanje \( z \) dela delamo z nastavkom \( Z = e^{kz} \), saj imamo LDE s konstantnimi koeficienti. Dobimo kvadratno enačbo
+</p>
+
+<p>
+\[ k ^2 - \frac{v}{D} k - \lambda = 0,
+\]
+</p>
+
+<p>
+katere rešitve so
+</p>
+
+<p>
+\[ k_{1, 2} = \frac{\frac{v}{D} \pm \sqrt{\frac{v ^2}{D ^2} + 4 \lambda}}{2}.
+\]
+</p>
+
+<p>
+Splošna rešitev je tako
+</p>
+
+\begin{equation}
+\label{eq:2}
+ Z(z) = A e^{k_1 z} + B e^{k_2 z}.
+\end{equation}
+
+<p>
+Za radialni del rešujemo enačbo
+</p>
+
+<p>
+\[ r R'' + R' + \lambda r R = 0,
+\]
+</p>
+
+<p>
+ki jo pomnožimo z \( r \) ter uvedemo spremenljivko \( \tilde{r} = \sqrt{\lambda} r \), da dobimo Besselovo diferencialno enačbo
+</p>
+
+<p>
+\[ \tilde{r} ^2 \frac{\mathrm{d} ^2 R}{\mathrm{d} \tilde{r} ^2} + \tilde{r} \frac{\mathrm{d} R}{\mathrm{d} \tilde{r}} + \tilde{r} ^2 R = 0
+\]
+</p>
+
+<p>
+Za \( n = 0 \) so so tako splošne rešitve
+</p>
+
+\begin{equation}
+\label{eq:1}
+ R(r) =  AJ_0 \left( \sqrt{\lambda} r \right) + B Y_0 \left( \sqrt{\lambda} r \right)
+\end{equation}
+
+<p>
+Iz robnega pogoja \( \left. T \right|_{r = r_0} = T_0 \) z uvedbo nastavka \( T(r, z) = R(r) Z(z) + T_0 \) dobimo homogen robni pogoj \( R(r_0) = 0 \). Ker \( Y_0 \) divergirajo v izhodišču, naše rešitev pa ne, bo \( B = 0 \).
+</p>
+
+<p>
+Homogen robni pogoj pa nam poda zvezo za ničle
+</p>
+
+<p>
+\[ A J_0 \left( \sqrt{\lambda} r_0 \right) = 0 \implies \ \sqrt{\lambda_{1}} r_0 = \xi_n^{(0)}, \ n = 1, 2, \ldots
+\]
+</p>
+
+<p>
+Pri enačbi \ref{eq:2} zavržemo prvi člen, saj člen divergira v neskončnosti, medtem ko naša temperatura pa ne.
+</p>
+
+<p>
+Naš ne-še-čisto-točen nastavek je
+</p>
+
+<p>
+\[ T(r, z) = \sum\limits_{n = 1}^{\infty} B_n \exp \left\{ \frac{v}{D} - \sqrt{\frac{v ^2}{D ^2}  + 4 \lambda} z \right\} J_0 \left( \frac{\xi_n^{(0)}}{r_0} r \right) + T_0
+\]
+</p>
+
+<p>
+Upoštevamo še drugi robni pogoj \( \left. T \right|_{z = 0} = T_1 (r) \), da dobimo enačbo
+</p>
+
+\begin{equation}
+\label{eq:3}
+ T(r, z = 0) = \sum\limits_{n = 1}^{\infty} B_0 J_0 \left( \frac{\xi_n^{(0)}}{r_0} r \right) + T_0 = T_1 (r)
+\end{equation}
+
+<p>
+Besselove funkcije \( J_0 \left( \xi_n ^{(0)} \frac{r}{r_0} \right) \) tvorijo KOS (kompletni ortogonalni sistem) v \( L_w ^2 \left( [0, r_0] \right) \). V cilindričnih koordinatah imamo tako utež \( w = r \mathrm{d} r \) in skalarni produkt je definiran kot
+</p>
+
+<p>
+\[ \left\langle f, g \right\rangle  = \int\limits_0^{ r_0} r f(r) g(r) \, \mathrm{d} r
+\]
+</p>
+
+<p>
+Prav tako velja identiteta
+</p>
+
+<p>
+\[ \left\lVert J_0 \left( \xi_n ^{(0)} \frac{r}{r_0} \right) \right\rVert ^2 = \frac{r_0 ^2}{2} J_1 ^2 \left( \xi^{(0)}_n \right)
+\]
+</p>
+
+<p>
+Enačbo \ref{eq:3} rešimo z integriranjem v mejah od \( [0, r_0] \)
+</p>
+
+<p>
+\[ \int\limits_0^{r_0} \left( T_1 (r) - T_0 \right) r J_0 \left( \xi_n ^{(0)} \frac{r}{r_0} \right) \, \mathrm{d} r = \left( \frac{2}{r_0 ^2 J_1 ^2 \left( \xi_m^{(0)} \right)} \right)^{-1} B_m,
+\]
+</p>
+
+<p>
+iz česar sledi
+</p>
+
+<p>
+\[ B_m = \frac{2}{r_0 ^2 J_1 ^2 (\xi_m)} \int\limits_0^{r_0} \left( T_1 (r) - T_0 \right) r J_0 \left( \frac{\xi_m}{r_0} r \right) \, \mathrm{d} r
+\]
+</p>
+
+<p>
+Ker imamo stacionarno rešitev, lahko drug robni pogoj izrazimo z vrsto, namesto da postopamo po poteh homogenizacije.
+</p>
+</div>
+</div>
+<div id="outline-container-orga35bd53" class="outline-2">
+<h2 id="orga35bd53"><span class="section-number-2">2.</span> Teorija Greenove funkcije</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Imamo nehomogeno difuzijsko enačbo
+</p>
+
+<p>
+\[ \left( \frac{\partial }{\partial t}  - D \nabla ^2 \right) T \left( \vec{r}, t \right) = f \left( \vec{x}, t \right),
+\]
+</p>
+
+<p>
+z začetnim pogojem \( T \left( \vec{x}, t = 0 \right) \).
+</p>
+
+<p>
+Za \( x \in \mathbb{R} ^n \) in \( t \in [0, \infty) \) bo nehomogena diferencialna enačba oblike
+</p>
+
+<p>
+\[ \left( \frac{\partial }{\partial t} - D \nabla ^2 \right) G \left( \vec{x}, \vec{x} \, ', t, t' \right) = \delta^{(n)} \left( \vec{x} - \vec{x}\, ' \right) \delta (t - t').
+\]
+</p>
+
+<p>
+Nehomogenost v tem primeru je Greenova funkcija, ki je
+</p>
+
+\begin{equation}
+\label{eq:4}
+ G \left( \vec{x}, \vec{x}\, ', t , t' \right) = \frac{1}{\sqrt{4 \pi D (t - t')}^n} \exp \left\{ - \frac{\left( \vec{x} - \vec{x}\, ' \right) ^2}{4 D (t- t')} \right\} \Theta (t - t').
+\end{equation}
+
+
+<p>
+Rešitev difuzijske enačbe je
+</p>
+
+<p>
+\[ T \left( \vec{x}, t \right) = \int\limits_{\mathbb{R} ^n}^{} T \left( \vec{x}, 0 \right) G \left( \vec{x}, \vec{x} \, ', t , t' \right) \, \mathrm{d} ^n \vec{x} \, ' + \int\limits_{- \infty}^{\infty} \int\limits_{\mathbb{R} ^n}^{} f \left( \vec{x} \, ', t' \right) G \left( \vec{x} \, ', \vec{x}, t, t' \right) \, \mathrm{d} ^n \vec{x} \, ' \mathrm{d} t'
+\]
+</p>
+
+<p>
+Prva rešitev je homogena, druga pa partikularna.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc8012e5" class="outline-2">
+<h2 id="orgc8012e5"><span class="section-number-2">3.</span> Naloga 18 (Prinčič, 4.4)</h2>
+<div class="outline-text-2" id="text-3">
+<div class="problem" id="org98d86e9">
+<p>
+Segrevamo palico. Funkcija, ki opisuje gretje, je
+</p>
+
+<p>
+\[ f \left( \vec{x}, t \right) = f \delta(x) \theta(t)
+\]
+</p>
+
+</div>
+
+<p>
+Rešujemo integral
+</p>
+
+<p>
+\[ T \left( \vec{x}, t \right) = \int\limits_{- \infty}^{\infty} \int\limits_{- \infty}^{\infty} f \delta(x) \theta(t) G \left( x, x', t, t' \right) \, \mathrm{d} x' \mathrm{d} t' .
+\]
+</p>
+
+<p>
+Uporabimo definicijo Greenove funkcije \ref{eq:4} in se integral pretvori v
+</p>
+
+<p>
+\[ T \left( \vec{x}, t \right) = \int\limits_{- \infty}^{\infty} \int\limits_{- \infty}^{\infty} f \delta(x') \theta(t') \frac{1}{\sqrt{4 \pi  D(t - t')}} \exp \left\{ - \frac{\left( x - x' \right) ^2}{4 D (t - t')} \right\} \theta(t - t') \, \mathrm{d} x ' \mathrm{d} t'
+\]
+</p>
+
+<p>
+Integriramo po \( x' \) in nam preostane zgolj
+</p>
+
+<p>
+\[ T \left( \vec{x}, t \right) = \int\limits_{- \infty}^{\infty} f \theta(t') \frac{1}{\sqrt{4 \pi D(t - t')}} \exp \left\{ -\frac{x ^2}{4 D (t - t')} \right\} \theta(t - t') \, \mathrm{d} t'
+\]
+</p>
+
+<p>
+Prva \( \theta(t') \) in druga \( \theta (t' - t) \) nam spremenita meje iz \( (- \infty, \infty) \) v \( (0, t) \)
+</p>
+
+<p>
+Integral nas spomni na <i>error function</i>
+</p>
+
+<p>
+\[ \mathrm{erf} = \frac{2}{\sqrt{\pi}} \int\limits_0^x e^{- t ^2} \, \mathrm{d} t
+\]
+</p>
+
+<p>
+V integralu tako uvedemo novo spremenljivko
+</p>
+
+<p>
+\[ u ^2 = \frac{x ^2}{4 D (t - t')} \implies \, u = \frac{\left| x \right|}{\sqrt{4 D(t - t')}},
+\]
+</p>
+
+<p>
+kjer smo dali absolutno vrednost zaradi simetrije rešitve. Diferencial nove spremenljivke je
+</p>
+
+<p>
+\[ \mathrm{d} u = \frac{2 D \left| x \right|}{4 D (t - t')^{\frac{3}{2}}} \, \mathrm{d} t'
+\]
+</p>
+
+<p>
+Integral je tako
+</p>
+
+<p>
+\[ \int\limits_0^t f \frac{1}{\sqrt{4 \pi D (t - t')}} \exp \left\{ - \frac{x ^2}{4 D (t - t')} \right\} \, \mathrm{d} t' = \frac{1}{\sqrt{\pi}} \int\limits_{\frac{\left| x \right|}{\sqrt{4 D t}}}^{\infty} f \frac{\left| x \right|}{2 D u ^2} e^{- u ^2} \, \mathrm{d} u
+\]
+</p>
+
+<p>
+Slednji integral rešimo s <del>samomorom</del> per partesom, kjer \( \mathrm{d} u = \frac{1}{z ^2} \, \mathrm{d} z \) in \( v = \exp \left\{ - z ^2 \right\} \).
+</p>
+
+<p>
+Rešitev integrala je
+</p>
+
+<p>
+\[ \int\limits_a^{\infty} \frac{1}{z ^2} e^{- z ^2} \, \mathrm{d} z = \frac{e^{- a ^2}}{a} + \sqrt{\pi} \left( \mathrm{erf} (a) - 1 \right)
+\]
+</p>
+
+<p>
+Rešitev toplotne enačbe je tako
+</p>
+
+<p>
+\[ T \left( \vec{x}, t \right) = \frac{1}{\sqrt{\pi}} f \frac{\left| x \right|}{2 D} \left( \frac{\exp \left\{ - \frac{x ^2}{4 D t} \right\} \sqrt{4 D t}}{\left| x \right|} + \sqrt{\pi} \left( \mathrm{erf} \left( \frac{\left| x \right|}{\sqrt{4 D t}} \right) - 1 \right) \right)
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org77ab8ce" class="outline-2">
+<h2 id="org77ab8ce"><span class="section-number-2">4.</span> Naloga 19 (Prinčič 5.3)</h2>
+<div class="outline-text-2" id="text-4">
+<div class="problem" id="orgc2562eb">
+<p>
+Imamo opno s polmerom \( R \) v gravitacijskem polju. Površinska gostota mase znaša \( \mu \), površinska napetost pa \( \gamma \).
+</p>
+
+</div>
+
+<p>
+Rešujemo enačbo
+</p>
+
+<p>
+\[ \nabla ^2 u = - \frac{p}{\gamma}.
+\]
+</p>
+
+<p>
+Tlak zapišemo z površinsko gostoto mase kot
+</p>
+
+<p>
+\[ p = - \frac{\mathrm{d} m }{\mathrm{d} S } g = - \mu g
+\]
+</p>
+
+<p>
+Enačba, ki jo rešujemo, ima tudi robni pogoj \( u \left( r = a, \phi \right) = 0 \). Dan robni pogoj je v cilindričnih koordinatah.
+</p>
+
+<p>
+Diferencialna enačb v cilindričnih koordinatah je tako
+</p>
+
+<p>
+\[ \frac{1}{r} \frac{\partial }{\partial r}  \left( r \frac{\partial }{\partial r}  u \right) = \frac{\mu g}{\gamma}
+\]
+</p>
+
+<p>
+Po integriranju dobimo
+</p>
+
+<p>
+\[ r \frac{\partial }{\partial r} u = \frac{r ^2}{2} \frac{ \mu g}{ \gamma} + C_0.
+\]
+</p>
+
+<p>
+Po ponovnem integriranju dobimo pa
+</p>
+
+\begin{equation}
+\label{eq:5}
+ u = \int\limits_{}^{} \left( \frac{r}{2} \frac{\mu g}{\gamma} + \frac{C_0}{r} \right) \, \mathrm{d} r = \frac{r ^2}{4} \frac{\mu g}{\gamma} + C_0 \ln r + C_1
+\end{equation}
+
+<p>
+Naravni logaritem divergira v izhodišču, zato \( C_0 = 0 \). Iz robnega pogoja \( u (r = a) = 0 \) pa dobimo
+</p>
+
+<p>
+\[ C_1 = - \frac{a ^2}{4} \frac{\mu g}{\gamma}.
+\]
+</p>
+
+<p>
+Rešitev je tako
+</p>
+
+<p>
+\[ u \left( r \right) = \frac{\mu g}{4 \gamma} \left( r ^2 - a ^2 \right)
+\]
+</p>
+
+<p>
+Na opno sedaj položimo kovanec s polmerom \( R_k \) in maso \( m_k \). Sedaj imamo nov robni pogoj na obsegu kovanca.
+</p>
+
+<p>
+Zaradi gravitacije kovanec upogiba opna in posledično opna deluje na delec s silo nazaj. Enakost sil je \( m g = F \sin \alpha \), kjer je \( \alpha \) kot med horizontalo in naklonom opne. Sila \( F \) je enaka \( l \gamma \), kjer je \( l = 2 \pi R_k \) obseg kovanca. \( \sin \alpha \) pa lahko zaradi majhnosti in simetričnosti zapišemo preko zveze \( \sin \alpha = \left. \frac{\mathrm{d} u}{\mathrm{d} r} \right|_{r = R_k} \).
+</p>
+
+<p>
+Združimo sedaj vse skupaj, da dobimo drugi robni pogoj
+</p>
+
+<p>
+\[ m_k g = \left. 2 \pi R_k \gamma \frac{\partial u}{\partial r} \right|_{r = R_k} \implies \left. \frac{\partial u}{\partial r} \right|_{r = R_k} = \frac{m_k g}{2 \pi R_k \gamma}
+\]
+</p>
+
+<p>
+Splošna rešitev \ref{eq:5} je še zmeraj enaka, vendar tokrat \( C_0 \) ne bo ničeln. Po upoštevanju prvega robnega pogoja je konstanta \( C_1 \) enaka
+</p>
+
+<p>
+\[ C_1 = - \frac{\mu g}{ 4\gamma } a ^2 - C_0 \ln a.
+\]
+</p>
+
+<p>
+Preobrazimo splošno rešitev
+</p>
+
+<p>
+\[ u(r) = \frac{\mu g}{4 \gamma} \left( r ^2 - a ^2 \right) + C_0 \ln \frac{r}{a},
+\]
+</p>
+
+<p>
+ki jo vstavimo v drugi robni pogoj in izrazimo \( C_0 \).
+</p>
+
+<p>
+\[ \frac{\mu g}{4 \gamma} \cdot 2 R_k + \frac{C_0}{R_k} = \frac{m_k g}{2 \pi R_k \gamma} \implies  C_0 = \frac{m_k g + \pi R_k ^2 \mu g}{2 \pi \gamma}.
+\]
+</p>
+
+<p>
+Rešitev opne s kovancem je
+</p>
+
+<p>
+\[ u(r) = \frac{\mu g}{4 \gamma} \left( r ^2 - a ^2 \right) + \frac{g}{2 \pi \gamma} \left( m - \pi \mu R_k ^2  \right) \ln \frac{r}{a}.
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-12-10 Wed 18:44</p>
+</div>
+</body>
+</html>

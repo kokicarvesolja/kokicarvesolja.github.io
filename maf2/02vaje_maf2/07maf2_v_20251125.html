@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-12-10 Wed 18:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>7. vaje iz Matematične fizike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">7. vaje iz Matematične fizike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge8dc896">1. Laplaceova enačba</a>
+<ul>
+<li><a href="#org0811999">1.1. Naloga 20 (Prinčič 5.1)</a></li>
+<li><a href="#org783315f">1.2. Naloga 21 (Prinčič 5.2)</a></li>
+</ul>
+</li>
+<li><a href="#org710224c">2. Hidrodinamika</a>
+<ul>
+<li><a href="#org55b05e0">2.1. Naloga 22 (Prinčič 6.1)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge8dc896" class="outline-2">
+<h2 id="orge8dc896"><span class="section-number-2">1.</span> Laplaceova enačba</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org0811999" class="outline-3">
+<h3 id="org0811999"><span class="section-number-3">1.1.</span> Naloga 20 (Prinčič 5.1)</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="problem" id="orge198ce4">
+<p>
+Zanima nas rešitev Laplaceove enačbe
+</p>
+
+<p>
+\[ \nabla ^2 u = 0
+\]
+</p>
+
+<p>
+v kvadratu s stranico \( a \). Robni pogoji so
+</p>
+
+<p>
+\[ u \left( - \frac{a}{2}, y \right) = u \left( \frac{a}{2}, y \right) = f(y),
+\]
+</p>
+
+<p>
+kjer je \( f(y) \) soda funkcija glede na izhodišče koordinatnega in
+</p>
+
+<p>
+\[ u \left( x, - \frac{a}{2} \right) = u \left( x, \frac{a}{2} \right) = 0
+\]
+</p>
+
+</div>
+
+<p>
+Problem bomo reševali s separacijo spremenljivk \( u(x, y) = X(x) Y(y) \). Po separaciji nam ostane enačba
+</p>
+
+<p>
+\[ \frac{X''}{X} = - \frac{Y''}{Y} = k ^2
+\]
+</p>
+
+<p>
+V \( y \) smeri je splošna rešitev
+</p>
+
+<p>
+\[ Y(y) = A \sin (ky) + B \cos (ky),
+\]
+</p>
+
+<p>
+vendar zaradi sodosti funkcije \( f(x) \) in lihosti sinusa le-tega prečrtamo. Drugi robni pogoj \( B \cos \left( k \frac{a}{2} \right) = 0 \) nam definira vrednosti, ki jih \( k \) lahko zavzame in sicer \( k_n = \frac{2 \pi}{a} \left( n + \frac{1}{2} \right) \). Rešitev je v \( y \) smeri je
+</p>
+
+<p>
+\[ Y(y) = B_n \cos \left( \frac{2 \pi}{a} \left[ n + \frac{1}{2} \right] y \right)
+\]
+</p>
+
+<p>
+Splošna rešitev v \( x \) smeri je
+</p>
+
+<p>
+\[ X(x) = C \mathrm{sinh} (kx) + D \mathrm{cosh} (kx),
+\]
+</p>
+
+<p>
+kjer ponovno zaradi sodosti ponovno zavržemo liho funkcijo.
+</p>
+
+<p>
+Rešitev celotnega problema je vrsta
+</p>
+
+<p>
+\[ u(x, y) = \sum\limits_{n = 0}^{\infty} C_n \mathrm{cosh} (k_n x) \cos (k_n y)
+\]
+</p>
+
+<p>
+Upoštevamo še robni pogoj funkcije
+</p>
+
+<p>
+\[ \sum\limits_{n = 0}^{\infty} C_n \mathrm{cosh} \left(k_n \frac{a}{2}\right) \cos (k_n y) = f(y)
+\]
+</p>
+
+<p>
+Upoštevamo tudi ortogonalnost kosinusnih funkcij na intervalu \( \left[ - \frac{a}{2}, \frac{a}{2} \right] \)
+</p>
+
+<p>
+\[ \int\limits_{-\frac{a}{2}}^{\frac{a}{2}} \cos (k_n y) \cos (k_m y) \, \mathrm{d} y = \frac{a}{2} \delta_{n, m},
+\]
+</p>
+
+<p>
+iz česar sledi
+</p>
+
+<p>
+\[ \frac{a}{2} C_n \cos \left( k_n \frac{a}{2} \right) = \int\limits_{- \frac{a}{2}}^{\frac{a}{2}} f(y) \cos(k_n y) \, \mathrm{d} y.
+\]
+</p>
+
+<p>
+Sedaj lahko dobimo vrednost posameznih koeficientov
+</p>
+
+<p>
+\[ C_n = \frac{2}{a \mathrm{cosh} \left( \frac{a}{2} k_n \right)} \int\limits_{- \frac{a}{2}}^{\frac{a}{2}} f(y) \cos (k_n y) \, \mathrm{d} y
+\]
+</p>
+
+<div class="note" id="org3f9fe06">
+<p>
+Naj bo rešitev \( u_f \) kvadrata z robnimi pogojimi
+</p>
+
+<p>
+\[ u \left( - \frac{a}{2}, y \right) = u \left( \frac{a}{2}, y \right) = f(y)
+  \]
+</p>
+
+<p>
+in
+</p>
+
+<p>
+\[ u \left( x, - \frac{a}{2} \right) = u \left( x, \frac{a}{2} \right) = 0.
+  \]
+</p>
+
+<p>
+Naj bo rešitev \( u_g \) kvadrata z robnimi pogoji
+</p>
+
+<p>
+\[ u \left( x, - \frac{a}{2} \right) = u \left( x, \frac{a}{2} \right) = g(x),
+  \]
+</p>
+
+<p>
+in
+</p>
+
+<p>
+\[ u \left( - \frac{a}{2}, y \right) = u \left( \frac{a}{2}, y \right) = 0
+  \]
+</p>
+
+<p>
+V primeru, če imamo kvadrat, ki ima robne pogoje
+</p>
+
+<p>
+\[ u \left( - \frac{a}{2}, y \right) = u \left( \frac{a}{2}, y \right) = f(y)
+  \]
+</p>
+
+<p>
+in
+</p>
+
+<p>
+\[ u \left( x, - \frac{a}{2} \right) = u \left( x, \frac{a}{2} \right) = g(x),
+  \]
+</p>
+
+<p>
+lahko rešimo problem kot vsoto dveh Laplaceovih enačb za kvadrata:
+</p>
+
+<p>
+\[ u = u_f + u_g
+  \]
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org783315f" class="outline-3">
+<h3 id="org783315f"><span class="section-number-3">1.2.</span> Naloga 21 (Prinčič 5.2)</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="problem" id="org87308e3">
+<p>
+Imejmo dve polneskončni plošči, ki ju povezuje trak širina \( a \). Potencial plošč je ničeln, trak pa ima potencial \( U_0 \). Zanima nas potencial \( U \) v vseh treh dimenzijah.
+</p>
+
+</div>
+
+<p>
+Rešujemo torej Laplaceovo enačbo
+</p>
+
+<p>
+\[ \nabla ^2 U = 0,
+\]
+</p>
+
+<p>
+saj nimamo električnih izvorov. Robni pogoj je
+</p>
+
+<p>
+\[ U(x = 0, y, z) = \begin{cases}
+                    0 &; \left| y \right| > \frac{a}{2}\\
+                    U_0 &; \left| y \right| \le \frac{a}{2}
+                    \end{cases}
+\]
+</p>
+
+<p>
+K reševanju tega bomo pristopili s separacijo spremenljivk, vendar postopek ne bo podoben prejšnjim postopkom.
+</p>
+
+<p>
+Rešujemo enačbo oblike
+</p>
+
+<p>
+\[ \frac{X''}{X} = - \frac{Y''}{Y} = k ^2
+\]
+</p>
+
+<p>
+in splošni rešitvi za posamezno spremenljivko sta
+</p>
+
+<p>
+\[ X = A e^{kx} + B e^{- kx} = A e^{- \left| k \right|\left| x \right|} \text{ in } Y = Ce^{\mathrm{i} k y} + D e^{- \mathrm{i} k y}
+\]
+</p>
+
+<p>
+Imamo nehomogen robni pogoj, zato ne moremo reševati problema kot do sedaj. Prav tako nimamo načina, kako bi kvantizirali \( k \) - namesto vsote, bomo pisali integral. Napisali bomo splošno rešitev in postopali naprej s pomočjo Fourierove transformacije
+</p>
+
+\begin{equation}
+\label{eq:1}
+ u(x, y) = \int\limits_{-\infty}^{\infty} C(k) \exp \left\{ - \left| k \right|  \left| x \right| + \mathrm{i} k y \right\} \, \mathrm{d} y.
+\end{equation}
+
+<p>
+Iz matematike 4 vemo, da velja
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \int\limits_{- \infty}^{\infty} e^{\mathrm{i} k y} \, \mathrm{d} y = 2 \pi \delta(k).
+\end{equation}
+
+<p>
+Robni pogoj splošne rešitve \ref{eq:1}
+</p>
+
+<p>
+\[ U(0, y) = \int\limits_{-\infty}^{\infty} C(k) e^{\mathrm{i} k y} \, \mathrm{d} k.
+\]
+</p>
+
+<p>
+prestavimo v Fourierov prostor z množenjem enačb s \( \int_{-\infty}^{\infty} e^{-\mathrm{i}k' y} \, \mathrm{d} y \), kjer je \( k' \ne k \).
+</p>
+
+<p>
+Robni pogoj tako postane
+</p>
+
+<p>
+\[ \int\limits_{- \infty }^{\infty} U(0,y) e^{- \mathrm{i} k' y} \, \mathrm{d} y = \int\limits_{- \infty}^{\infty} \int\limits_{- \infty}^{\infty} C(k) e^{\mathrm{i} (k - k')y} \, \mathrm{d} y.
+\]
+</p>
+
+<p>
+Upoštevamo identiteto \ref{eq:2} in rešitev postane
+</p>
+
+<p>
+\[ \int\limits_{-\infty}^{\infty} U(0, y) e^{- \mathrm{i} k' y} \, \mathrm{d} y = \int\limits_{-\infty}^{\infty} C(k) \cdot 2\pi \delta(k - k') \, \mathrm{d} k = 2 \pi C(k').
+\]
+</p>
+
+<p>
+Sedaj lahko izrazimo vrednost koeficienta preko dobljene enačbe
+</p>
+
+<p>
+\[ C(k) = \frac{1}{2 \pi} \int\limits_{- \infty}^{\infty} U(0, y) e^{- \mathrm{i} k y} \, \mathrm{d} y = \frac{1}{2\pi} \int\limits_{- \frac{a}{2}}^{\frac{a}{2}} U_0 e^{- \mathrm{i} k y} \, \mathrm{d}y
+\]
+</p>
+
+<p>
+Integral se izenači v
+</p>
+
+<p>
+\[ \int\limits_{- \frac{a}{2}}^{\frac{a}{2}} \left( \cos (ky) - \mathrm{i} \sin (ky) \right) \, \mathrm{d} y = - \frac{1}{\mathrm{i} k } \left( \exp \left( - \mathrm{i} \frac{a}{2} \right) - \exp \left\{ \mathrm{i} k \frac{a}{2} \right\} \right) = \frac{\sin \left( k \frac{a}{2} \right)}{k}
+\]
+</p>
+
+<p>
+Torej je koeficient enak
+</p>
+
+<p>
+\[ C(k) = \frac{U_0}{\pi} \frac{\sin \left( k \frac{a}{2} \right)}{k}.
+\]
+</p>
+
+<p>
+Splošna rešitev se tako spremeni v grd, vendar še zmeraj rešljiv integral
+</p>
+
+<p>
+\[ U(x, y) = \frac{U_0}{\pi} \int\limits_{- \infty}^{\infty} \frac{\sin \left( k \frac{a}{2} \right)}{k} \exp \left\{ - \left| kx \right| \right\} e^{\mathrm{i} k y} \, \mathrm{d} k.
+\]
+</p>
+
+<p>
+Pri reševanju postopamo tako, da najprej opazimo sodost funkcije \( \frac{\sin \left( k \frac{a}{2} \right)}{k} \). Prav tako se poslužimo identitete
+</p>
+
+<p>
+\[ \int\limits_{- \infty}^{\infty} e^{\mathrm{i} k y} \, \mathrm{d}k = \int\limits_{-\infty}^0 e^{\mathrm{i} k y} \, \mathrm{d} k + \int\limits_0^{\infty} e^{\mathrm{i}k y} \, \mathrm{d} k =  \int\limits_0^{\infty} \left( e^{- \mathrm{i} k y} + e^{\mathrm{i} k y} \right) \, \mathrm{d} k = 2 \int\limits_0^{\infty} \cos (ky) \, \mathrm{d} k
+\]
+</p>
+
+<p>
+Definiramo integral
+</p>
+
+<p>
+\[ I(z) = \frac{2U_0}{\pi} \int\limits_0^{\infty} e^{- k z} \sin \left( k \frac{a}{2} \right) \cos (ky) \, \mathrm{d} k,
+\]
+</p>
+
+<p>
+kjer lahko zapišemo zvezo
+</p>
+
+<p>
+\[ \int\limits_{\alpha}^{ \beta} I(z) \, \mathrm{d} z = \frac{2 U_0}{\pi} \int\limits_0^{\infty} \frac{\sin \left( k \frac{a}{2} \right) \cos \left( ky \right)}{k} \left( e^{- k\alpha} - e^{- k \beta} \right) \, \mathrm{d} k.
+\]
+</p>
+
+<p>
+Velja torej zveza
+</p>
+
+<p>
+\[ U(x, y) = \int\limits_{\left| x \right|}^{\infty} I(z) \, \mathrm{d} z
+\]
+</p>
+
+<p>
+[dopolni rešitev]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org710224c" class="outline-2">
+<h2 id="org710224c"><span class="section-number-2">2.</span> Hidrodinamika</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Rešujemo Navier-Stokesovo enačbo
+</p>
+
+<p>
+\[ \rho \frac{\mathrm{d} \vec{v}}{\mathrm{d} t} = \vec{f} - \nabla p + \eta \nabla ^2 \vec{v} + \left( \zeta + \frac{\eta}{3} \right) \nabla \left( \nabla \cdot \vec{v} \right),
+\]
+</p>
+
+<p>
+kjer je \( \eta \) viskoznost in \( \zeta \) volumenska viskoznost. Podobno kot smo že srečali, ker imamo opravka z nestacionarno tekočino se odvodi spremenijo na substancialne oblike
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} = \frac{\partial }{\partial t}  + \left( \vec{v} \cdot \nabla \right).
+\]
+</p>
+
+<p>
+Ne rešujemo samo Navier-Stokesovo enačbo, ampak rešujemo sklopljen sistem diferencialnih enačb skupaj s kontinuitetno enačbo
+</p>
+
+<p>
+\[ \frac{\partial \rho}{\partial t}  = - \nabla \left( \rho \vec{v} \right)
+\]
+</p>
+
+<p>
+Reševanje enačbe si še dodatno olajšamo, če rešujemo enačbo za nestisljive tekočine, kjer velja \( \frac{\partial \rho}{\partial t} = 0 \), iz česar sledi \( \nabla \vec{v} = 0 \). Hkrati predpostavimo tudi brezvrtinčnost \( \nabla \times \vec{v} = 0 \), kar pomeni, da je naše območje enostavno povezano in lahko hitrost izrazimo s hitrostnim potencialom \( \vec{v} = - \nabla \phi \).
+</p>
+</div>
+<div id="outline-container-org55b05e0" class="outline-3">
+<h3 id="org55b05e0"><span class="section-number-3">2.1.</span> Naloga 22 (Prinčič 6.1)</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="problem" id="orgb6dd14c">
+<p>
+Laminaren tok neviskozne (\( \eta = 0 \)) vode, ki teče s hitrostjo \( v_0 \), obliva steber polmera \( R \). Zanima nas hitrostni profil vode, kjer upoštevamo njeno nestistljivost.
+</p>
+
+</div>
+
+<p>
+Ob predpostavki brezvrtinčnosti \( \nabla \times \vec{v} = 0 \) dobimo nastavek \( \vec{v} = - \nabla \phi \) in nestisljivosti \( \nabla \cdot \vec{v} = 0 \) nam poda Laplaceovo enačbo
+</p>
+
+<p>
+\[ \nabla ^2 \phi = 0
+\]
+</p>
+
+<p>
+Določimo robne pogoje:
+</p>
+<ul class="org-ul">
+<li><p>
+daleč stran od stebra je tok vode enak \( v_0 \)
+</p>
+
+<p>
+Zapišemo torej
+</p>
+
+<p>
+\[ \vec{v} \left( r \to \infty \right) = v_0 \hat{e}_x \implies \ \phi(x, y) = - v_0 x = - v_0 r \cos \phi
+  \]
+</p></li>
+
+<li><p>
+Radialni tok ob stebru je ničeln (voda ne teče skozi steber)
+</p>
+
+<p>
+\[ \vec{v} \left( r = R  \right) \hat{e}_r = 0 \implies \ \frac{\partial \phi}{\partial r} (r = R) = 0
+  \]
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2025-12-10 Wed 18:45</p>
+</div>
+</body>
+</html>
