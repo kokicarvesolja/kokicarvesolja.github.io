@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-03 Sat 19:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>8. vaje iz Matematične fizike 2</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">8. vaje iz Matematične fizike 2</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1fa3ed9">1. Naloga xx (Prinčič 7.3)</a>
+<ul>
+<li><a href="#org414952a">1.1. Točka a)</a></li>
+<li><a href="#org068f3df">1.2. Točka b)</a></li>
+<li><a href="#org05b6d80">1.3. Limite</a></li>
+</ul>
+</li>
+<li><a href="#org00bdc7a">2. Helmholtzova enačba v sferičnih koordinatah</a>
+<ul>
+<li><a href="#orgd70b905">2.1. Naloga yy (Prinčič 7.4)</a></li>
+<li><a href="#org30d42a0">2.2. Naloga zz (Prinčič 7.5)</a></li>
+<li><a href="#org2f87133">2.3. Naloga ww&#xa0;&#xa0;&#xa0;<span class="tag"><span class="the_power_of_sturm_liouvile">the_power_of_sturm_liouvile</span></span></a>
+<ul>
+<li><a href="#orgfd175c4">2.3.1. Poseben primer</a></li>
+</ul>
+</li>
+<li><a href="#orgbc0db93">2.4. Naloga kk</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1fa3ed9" class="outline-2">
+<h2 id="org1fa3ed9"><span class="section-number-2">1.</span> Naloga xx (Prinčič 7.3)</h2>
+<div class="outline-text-2" id="text-1">
+<div class="problem" id="orgc1c2a9b">
+<p>
+Zanima nas hitrostni profil dolge cevi s polmerom \( R \), skozi katero teče nestisljiva tekočina z viskoznostjo \( \eta \).
+</p>
+
+<ol class="org-ol">
+<li>\( \nabla p = \frac{\Delta p}{L} \hat{e}_z \)</li>
+<li>\( \nabla p = \frac{\Delta p}{L} e^{\mathrm{i} \omega t} \hat{e}_z \)</li>
+</ol>
+
+</div>
+
+<p>
+Robni pogoj je \( \vec{v} (r = R) = 0 \). Hitrost ima komponento samo v \( z \) smeri, torej \( \vec{v} = v(r, t) \hat{e}_z \).
+</p>
+
+<p>
+Navier-Stokesova enačba
+</p>
+
+<p>
+\[ \rho \left( \frac{\partial \vec{v}}{\partial t}  + \left( \vec{v} \cdot \nabla \right) \vec{v} \right) = - \nabla p + \eta \nabla ^2 \vec{v},
+\]
+</p>
+
+<p>
+se nam ob upoštevanju lastnosti tekočin (nestisljivost in viskoznost) preobrazi v
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \rho \frac{\partial \vec{v}}{\partial t} = - \left( \nabla p \right) \cdot \hat{e}_z + \eta \nabla ^2 v
+\end{equation}
+</div>
+<div id="outline-container-org414952a" class="outline-3">
+<h3 id="org414952a"><span class="section-number-3">1.1.</span> Točka a)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Iščemo hitrost po dolgem času, torej \( \frac{\partial \vec{v}}{\partial t} = 0 \).
+</p>
+</div>
+</div>
+<div id="outline-container-org068f3df" class="outline-3">
+<h3 id="org068f3df"><span class="section-number-3">1.2.</span> Točka b)</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Za b) zaradi znane časovne odvisnosti gradienta tlaka uporabimo nastavek \( v(r, t) = R(r) e^{\mathrm{i} \omega t} \). Navier-Stokes \ref{eq:1} postane nehomogena diferencialna enačba 2. reda
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \rho R \mathrm{i} \omega - \eta \nabla ^2 R= - \frac{\Delta p}{L} .
+\end{equation}
+
+<p>
+Homogeni del diferencialne enačbe je Helmholtzova enačba
+</p>
+
+<p>
+\[ \nabla ^2 R_H = \frac{\rho \mathrm{i} \omega}{\eta} R_H,
+\]
+</p>
+
+<p>
+kjer je \( -k ^2 = \frac{\rho \mathrm{i} \omega}{\eta} \). Rešitev Helmholtzove enačbe je
+</p>
+
+<p>
+\[ R_H (r) = A J_0 (kr) + B Y_0 (kr).
+\]
+</p>
+
+<p>
+Rešitev nam ne divergira v izhodišču, torej je \( B = 0 \). Izrazimo sedaj \( k \)
+</p>
+
+<p>
+\[ - k ^2 = \frac{\rho \mathrm{i} \omega}{\eta} \implies k = \pm \sqrt{\frac{\rho \omega}{\eta}} \sqrt{- \mathrm{i}}.
+\]
+</p>
+
+<p>
+Koren od \( - \mathrm{i} \) lahko zapišemo v polarnim zapisom kot
+</p>
+
+<p>
+\[ \sqrt{- \mathrm{i}} = \sqrt{e^{- \mathrm{i} \frac{\pi}{2}}} = e^{- \mathrm{i} \frac{\pi}{4}} = \frac{1}{\sqrt{2}} (1- \mathrm{i}).
+\]
+</p>
+
+<p>
+Koeficient \( k \) je tako enak
+</p>
+
+<p>
+\[ k = \pm \sqrt{\frac{\rho \omega}{2 \eta}} (1 - \mathrm{i}).
+\]
+</p>
+
+<p>
+Zaradi identitet kot sta
+</p>
+
+<p>
+\[ J_0 (x) = J_0 (-x) \text{ in } J_n (-x) = (-1)^n J_n (x),
+\]
+</p>
+
+<p>
+ni važno ali izberemo pozitivno ali negativno vrednost \( k \). Zaradi ljubezni do sebe izberemo pozitiven \( k \).
+</p>
+
+<p>
+Izračunajmo še partikularno rešitev \( R_P \). Nehomogeni del enačbe je neodvisen od \( r \), kar pomeni, da želimo enako odvisnost imeti tudi pri funkcijah od \( R_P \). Torej bo partikularna rešitev
+</p>
+
+<p>
+\[ R_P = \mathrm{i} \frac{\Delta p}{ L \rho \omega}
+\]
+</p>
+
+<p>
+Splošna rešitev enačbe \ref{eq:2} je
+</p>
+
+<p>
+\[ R(r) = A J_0 (kr) + \mathrm{i} \frac{\Delta p}{L \rho \omega} .
+\]
+</p>
+
+<p>
+Preko robnega pogoja \( v(r = R) = 0 \) določimo, da je \( A = - \frac{\mathrm{i} \Delta p }{L \rho \omega J_0 (kR)} \). Končna rešitev je
+</p>
+
+<p>
+\[ v(r, t) = - \mathrm{i} \frac{\Delta p}{L \rho \omega} \left( \frac{J_0 (kr)}{J_0 (k R)} - 1 \right) e^{\mathrm{i} \omega t}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org05b6d80" class="outline-3">
+<h3 id="org05b6d80"><span class="section-number-3">1.3.</span> Limite</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Opazujemo rešitve za majhne \( \omega \). Besslovo funkcijo lahko razvijemo v vrsto
+</p>
+
+\begin{equation}
+\label{eq:3}
+ J_0 (x) = 1 - \frac{x ^2}{4} + o \left( x ^4 \right).
+\end{equation}
+
+<p>
+Lahko tudi pogledamo, kakšne morajo biti vrednosti za majhne \( \omega \). Zaradi korenske premosorazmernosti sledi
+</p>
+
+<p>
+\[ \left| k r \right| \ll 1,
+\]
+</p>
+
+<p>
+iz česar sledi
+</p>
+
+<p>
+\[ \sqrt{\frac{\omega \rho}{\eta}} R \ll 1 \implies \ \omega \ll \frac{\eta}{\rho R ^2}.
+\]
+</p>
+
+<p>
+Hitrost pa je ob upoštevanju razvojev enaka
+</p>
+
+\begin{align*}
+  v(r, t) &= - \mathrm{i} \frac{\Delta p}{L \rho \omega} e^{\mathrm{i} \omega t} \left( \frac{1 - \frac{k ^2 r ^2}{4}}{1 - \frac{k ^2 R ^2}{4}} - 1 \right) \\
+&= - \mathrm{i} \frac{\Delta p}{ L \rho \omega} e^{\mathrm{i} \omega t} \left[ \left( 1- \frac{k ^2 r ^2}{4} \right) \left( 1 + \frac{k ^2 R ^2}{4} \right) - 1 \right]
+\end{align*}
+
+<p>
+Pri razvoju v vrsto \ref{eq:3} smo šli zgolj do 2. reda. Zmnožek v zgornji vrsti pa nam bo dal člen s \( k ^4 \), ki ga zanemarimo. Če bi ga želeli upoštevati, bi morali pri \ref{eq:3} upoštevati četrti red. Torej
+</p>
+
+\begin{align*}
+  v(r, t) &= - \mathrm{i} \frac{\Delta p}{L \rho \omega} e^{\mathrm{i} \omega t} \left( 1 + \frac{k ^2}{4} \left[ R ^2 - r ^2 \right] - \cancel{\frac{k ^4 R ^2 r ^2}{16}} - 1 \right) \\
+&= \frac{\Delta p}{4 \eta L} e^{\mathrm{i} \omega t} \left( r ^2 - R ^2 \right)
+\end{align*}
+
+<p>
+Za velike \( \omega \) bo veljalo
+</p>
+
+<p>
+\[ \omega \gg \frac{\eta}{\rho R ^2}.
+\]
+</p>
+
+<p>
+Upoštevamo asimptoto za velike \( \omega \)
+</p>
+
+<p>
+\[ J_m (x) \approx \sqrt{\frac{2}{\pi x}} \cos \left( x - \frac{1}{2} m \pi - \frac{\pi}{4} \right) .
+\]
+</p>
+
+<p>
+Hitrost zapišemo torej
+</p>
+
+<p>
+\[ v(r, t) = - \mathrm{i} \frac{\Delta p}{L \rho \omega} e^{\mathrm{i} \omega t} \left[ \sqrt{\frac{R}{r}} \frac{\cos \left( kr - \frac{\pi}{4} \right)}{\cos \left( k R - \frac{\pi}{4} \right)} - 1 \right] .
+\]
+</p>
+
+<p>
+Zaradi \( \omega \gg 1 \) velja tudi \( kr \sim k R \) in posledično bo \( \sqrt{\frac{R}{r}} \approx 1 \). Kosinus lahko zapišemo kot vsoto polarnih števil
+</p>
+
+<p>
+\[ \cos \left( x + \mathrm{i} y \right) = \frac{1}{2} \left[ e^{\mathrm{i} (x + \mathrm{i} y)} + e^{- \mathrm{i} (x + \mathrm{i} y)} \right]  \underset{\left| y \right| \gg 1}{\approx} \frac{1}{2} \begin{cases}
+                                                                                                                                                                                                     e^{\mathrm{i} x - y} &; y < 0 \\
+                                                                                                                                                                                                     e^{\mathrm{i} x + y} &; y > 0
+                                                                                                                                                                                                     \end{cases}
+\]
+</p>
+
+<p>
+Torej bo \( y = \mathrm{Im} k R = \sqrt{\frac{\omega \rho}{2 \eta} R} < 0 \)
+</p>
+
+<p>
+Iz tega sledi rešitev v limiti, ki je ravno v nasprotni fazi od toka
+</p>
+
+<p>
+\[ v(r, t) = - \mathrm{i} \frac{\Delta p}{L \rho \omega} e^{\mathrm{i} \omega t} \left( \frac{\exp \left\{ \mathrm{i} \left( \sqrt{\frac{\rho  \omega}{2 \eta}} r - \frac{\pi}{4}\right) + \sqrt{\frac{\rho \omega}{2 \eta} r} \right\}}{\exp \left\{ \mathrm{i} \left( \sqrt{\frac{\omega \rho}{\eta}} R - \frac{\pi}{4} \right) + \sqrt{\frac{\omega \rho}{2 \eta} R} \right\} - 1} \right)
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org00bdc7a" class="outline-2">
+<h2 id="org00bdc7a"><span class="section-number-2">2.</span> Helmholtzova enačba v sferičnih koordinatah</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Rešujemo Helmholtzovo enačbo oblike
+</p>
+
+<p>
+\[ \nabla ^2 u + \lambda u = 0.
+\]
+</p>
+
+<p>
+Enačbo rešujemo s pomočjo separacijo spremenljivk
+</p>
+
+<p>
+\[ u(r, \phi, \theta) = R(r) \Theta(\theta) \Phi(\phi) = R (r) Y(\theta, \phi),
+\]
+</p>
+
+<p>
+kjer \( \phi \in [0, 2\pi) \) in \( \theta \in [0, \pi] \) na celi sferi. Laplaceov operator zapišemo v sferičnih koordinatah
+</p>
+
+<p>
+\[ \nabla ^2 u = \frac{1}{r ^2} \frac{\partial }{\partial r}  \left( r ^2 \frac{\partial u}{\partial r}  \right) - \frac{L ^2}{r ^2} u
+\]
+</p>
+
+<p>
+in je
+</p>
+
+<p>
+\[ L ^2 = - \frac{1}{\sin \theta} \frac{\partial }{\partial \theta} \left( \sin \theta \frac{\partial }{\partial \theta}  \right) - \frac{1}{\sin ^2 \theta} \frac{\partial ^2 }{\partial \phi ^2}.
+\]
+</p>
+
+<p>
+Za sferične harmonike velja
+</p>
+
+<p>
+\[ L ^2 Y = l (l + 1) Y
+\]
+</p>
+
+<p>
+Enačbe azimutalnega dela je
+</p>
+
+<p>
+\[ \Phi''= - m ^2 \Phi,
+\]
+</p>
+
+<p>
+katere rešitve so
+</p>
+
+<p>
+\[ \Phi_m = \begin{cases}
+           A \cos (m \phi) + B \sin (m \phi) &; m > 0  \\
+           A + B \phi &; m = 0.
+            \end{cases}
+\]
+</p>
+
+<p>
+Na celi sferi \( m \) zasedajo vrednosti \( 0, 1, \ldots, \).
+</p>
+
+<p>
+Za \( \theta \) uvedemo spremenljivko \( t = \cos \theta \) in rešujemo diferencialno enačbo
+</p>
+
+<p>
+\[ \frac{\mathrm{d} }{\mathrm{d} t} \left[ \left( 1 - t ^2 \right) \frac{\mathrm{d} }{\mathrm{d} t} \right] \Theta + \left[ l (l + 1) - \frac{m ^2}{1 - t ^2} \right] \Theta =0
+\]
+</p>
+
+<p>
+in rešitev je
+</p>
+
+<p>
+\[ \Theta_{l, m} (\theta) = A P_l^m (\cos \theta) + B Q_l^m (\cos \theta),
+\]
+</p>
+
+<p>
+kjer \( l \) zaseda vrednosti \( 0, 1, 2, \ldots \) in \( m = 0, 1, \ldots, l \) na celi sferi. Vsi \( \theta \) divergirajo v \( \cos \theta = \pm 1 \).
+</p>
+
+<p>
+Enačba radialnega dela je
+</p>
+
+<p>
+\[ \frac{1}{r ^2} \frac{\mathrm{d} }{\mathrm{d} r} \left( r ^2 \frac{\mathrm{d} R}{\mathrm{d} r} \right) + \lambda R - \frac{l(l + 1)}{r ^2} R = 0
+\]
+</p>
+
+<p>
+Imamo tri možne rešitve
+</p>
+
+<ol class="org-ol">
+<li><p>
+\( \lambda = 0 \), potem je rešitev
+</p>
+
+<p>
+\[ R_l (r) = A r^l + B r^{- (l + 1)}
+   \]
+</p></li>
+
+<li><p>
+\( \lambda = k ^2 \) so rešitve
+</p>
+
+<p>
+\[ R_l (r) = A j_l (kr) + B y_l (kr), \ j_l (x) = \sqrt{\frac{\pi}{2 x}} J_{l + \frac{1}{2}} (x)
+   \]
+</p>
+
+<p>
+in velja
+</p>
+
+<p>
+\[ j_0 (x) = \frac{\sin x}{x}, \ y_0 (x) = - \frac{\cos x}{x}
+   \]
+</p></li>
+
+<li><p>
+\( \lambda = - k ^2 \) so rešitve
+</p>
+
+<p>
+\[ R_l (r) = A i_l (kr) + B k_l (kr)
+   \]
+</p>
+
+<p>
+in velja
+</p>
+
+<p>
+\[ i_0 (x) = \frac{\mathrm{sinh} x}{x} , \ k_0 (x) = \frac{e^{- x}}{x}
+   \]
+</p></li>
+</ol>
+</div>
+<div id="outline-container-orgd70b905" class="outline-3">
+<h3 id="orgd70b905"><span class="section-number-3">2.1.</span> Naloga yy (Prinčič 7.4)</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="problem" id="orgeae00ff">
+<p>
+Opazujemo ohlajanje krogle s temperaturo \( T_1 \). Temperatura okolice je \( T_0 \).
+</p>
+
+</div>
+
+<p>
+Rešujemo difuzijsko enačbo
+</p>
+
+<p>
+\[ D \nabla ^2 T = \frac{\partial T}{\partial t},
+\]
+</p>
+
+<p>
+z robnim pogojem \( T(r = R, t) = T_0 \) in začetnim pogojem \( T(r, t = 0) = T_0 \).
+</p>
+
+<p>
+Za reševanje uporabimo nastavek, ki nam homogenizira robni pogoj
+</p>
+
+<p>
+\[ T = \tau (t) R(r) + T_0,
+\]
+</p>
+
+<p>
+ki nam da diferencialno enačbo
+</p>
+
+<p>
+\[ \frac{\nabla ^2 R}{R} = \frac{1}{D} \frac{\dot{\tau}}{\tau} = - k ^2
+\]
+</p>
+
+<p>
+Rešitve časovnega dela je eksponento padanje
+</p>
+
+<p>
+\[ \tau(t) = A e^{- k ^2 D t}.
+\]
+</p>
+
+<p>
+Enačba radialnega dela je
+</p>
+
+<p>
+\[ \nabla ^2 R = - k ^2 R,
+\]
+</p>
+
+<p>
+katere rešitve so, kakor vidimo v delu s teorijo
+</p>
+
+<p>
+\[ R(r) = B j_0 (kr) + C y_0 (kr).
+\]
+</p>
+
+<p>
+Rešitev nam v izhodišču ne divergira, torej bo \( C = 0 \), saj \( y_0 \) divergirajo. Rešitve radialnega dela ob upoštevanju definicije \( j_0 \) iz teorije je
+</p>
+
+<p>
+\[ R(r) = B \frac{\sin (kr)}{kr}
+\]
+</p>
+
+<p>
+Upoštevajmo robni pogoj \( T(r = R, t) = T_0 \), da dobimo enačbo
+</p>
+
+<p>
+\[ A e^{- k ^2 D t} \frac{\sin (k R)}{kR} + T_0 = T_0 \implies \ k = \frac{n \pi}{R}, \ n \in \mathbb{Z}^+
+\]
+</p>
+
+<p>
+Rešitev torej zapišemo kot vrsto
+</p>
+
+<p>
+\[ T(r, t) = \sum\limits_{n = 1}^{\infty} \hat{A}_n \frac{\sin \left( \frac{n \pi}{R} r \right)}{\frac{n \pi}{R} r} e^{- \left( \frac{n \pi}{R} \right) ^2 D t} + T_0
+\]
+</p>
+
+<p>
+Za določitev koeficienta \( \hat{A} \) uporabimo še začetni pogoj \( T(r, t = 0) = T_1 \) in dobimo enačbo
+</p>
+
+<p>
+\[ T_1 - T_0 = \sum\limits_{n = 1}^{\infty} \hat{A}_n j_0 (k_n r).
+\]
+</p>
+
+<p>
+Uporabimo skalarni produkt v sferičnih koordinatah
+</p>
+
+<p>
+\[ \left( T_1 - T_0 \right) \int\limits_0^R j_0 (k_{n'}  \cdot r) r ^2 \, \mathrm{d} r = \hat{A}_m \int\limits_0^R \left( j_0 (k_{n'} r) \right) ^2 r ^2 \, \mathrm{d} r.
+\]
+</p>
+
+<p>
+Izrazimo koeficient \( \hat{A} \) in upoštevamo definicijo \( j_0 (x) \), da dobimo
+</p>
+
+<p>
+\[ \hat{A}_n = \frac{(T_1 - T_0) \int\limits_0^R \frac{\sin (k_{n'} r)}{k_{n'} r} r ^2 \, \mathrm{d} r}{\int\limits_0^R \frac{\sin  ^2 (k_{n'}  r)}{k_{n'} ^2 r ^2} r ^2 \, \mathrm{d} r} = (T_1 - T_0) \frac{- \left( -1 \right)^n n \pi}{\frac{1}{2} n \pi} = 2 \left( -1 \right)^{n + 1} (T_1 - T_0)
+\]
+</p>
+
+<p>
+Celotna rešitev je tako
+</p>
+
+<p>
+\[ T(r, t) = \sum\limits_{n = 1}^{\infty} 2 \left( - 1 \right)^{n + 1} (T_1 - T_0) \frac{\sin \left( \frac{n \pi}{R}r \right)}{\left( \frac{n \pi}{R}r \right)} \exp \left\{ - \left( \frac{n \pi}{R} \right) ^2 D t \right\} + T_0
+\]
+</p>
+
+<p>
+Za čas \( t = 0 \) je vrsta dobro definirana v srednjem (lokalni členi bodo konvergirali). Za \( t > 0  \) bodo členi eksponentno zadušeni in takrat vrsta absolutno konvergira.
+</p>
+
+<p>
+Do take konvergence (v srednjem) pride takrat, ko imamo nezvezne začetne pogoje.
+</p>
+</div>
+</div>
+<div id="outline-container-org30d42a0" class="outline-3">
+<h3 id="org30d42a0"><span class="section-number-3">2.2.</span> Naloga zz (Prinčič 7.5)</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="problem" id="orgd9e819c">
+<p>
+Imamo tanko polsfero, ki se dotika ravnine s temperaturo \( T_0 \). Začetna temperatura polsfere je \( T_1 \).
+</p>
+
+</div>
+
+<p>
+Rešujemo difuzijsko enačbo
+</p>
+
+\begin{equation}
+\label{eq:4}
+ D \nabla ^2 T = \frac{\partial T}{\partial t}
+\end{equation}
+
+<p>
+z robnimi pogoji \( T \left( \theta = \frac{\pi}{2}, t \right)= T_0 \) in začetnim pogojem \( T \left( \theta, t = 0 \right)= T_1 \).
+</p>
+
+<p>
+Problem bomo reševali s separacijo spremenljivk, ki nam hkrati uredi še težave z robnim pogojem
+</p>
+
+<p>
+\[ T = T_0 + \Theta(\theta) \tau (t).
+\]
+</p>
+
+<p>
+Nastavek vstavimo v enačbo \ref{eq:4} in nam preostane enačba
+</p>
+
+<p>
+\[ \frac{\nabla ^2 \Theta}{\Theta} = \frac{1}{D} \frac{\dot{\tau}}{\tau} = - \lambda
+\]
+</p>
+
+<p>
+Časovni del ima enačbo
+</p>
+
+<p>
+\[ \frac{\dot{\tau}}{\tau} = - \lambda D,
+\]
+</p>
+
+<p>
+z eksponentno rešitvijo
+</p>
+
+<p>
+\[ \tau(t) = A e^{- \lambda D t} .
+ \]
+</p>
+
+<p>
+Kotni del ima enačbo
+</p>
+
+<p>
+\[ \nabla ^2 \Theta = - \lambda \Theta.
+ \]
+</p>
+
+<p>
+Enačbo lahko napišemo z operatorjem vrtilne količine, kakor smo povedali v teoretičnem delu višje gor. Enačba je torej
+</p>
+
+\begin{equation}
+\label{eq:5}
+-\frac{L ^2}{R ^2} \Theta = - \lambda \Theta.
+\end{equation}
+
+<p>
+Ker nimamo kotne odvisnosti za \( \phi \), bodo rešitve samo navadni Legendrovi polinomi
+</p>
+
+<p>
+\[ \Theta(\theta) = A P_l (\theta) + B Q_l (\theta).
+ \]
+</p>
+
+<p>
+Vemo pa tudi, da velja identiteta
+</p>
+
+<p>
+\[ L ^2 \Theta = l (l + 1),
+ \]
+</p>
+
+<p>
+ki jo uporabimo v modificirani enačbi za kot \ref{eq:5}
+</p>
+
+<p>
+\[ \frac{- l (l + 1)}{R ^2} \Theta = -\lambda \Theta \implies \ \lambda = \frac{l (l + 1)}{R ^2}
+ \]
+</p>
+
+<p>
+Zaradi divergence v \( \cos \theta = - 1 \) je koeficient \( A = 0 \) in nam preostane samo
+</p>
+
+<p>
+\[ \Theta (\theta) = B P_l (\cos \theta) .
+ \]
+</p>
+
+<p>
+Nahajamo se na polsferi, kar pomeni, da ne poznamo, katere vrednosti \( l \)-jev pridejo v poštev. Te vrednosti bomo dobili iz robnih pogojev
+</p>
+
+<p>
+\[ T_0 = T_0 + \tau B P_l (0) \implies \ P_l (0) = 0 .
+ \]
+</p>
+
+<p>
+Ničle tega Legendrovega polinoma so lihi \( l = 1, 3, 5, \ldots \).
+</p>
+
+<p>
+Splošna rešitev je tako
+</p>
+
+<p>
+\[ T = T_0 + \sum\limits_{l = 1,3,5, \ldots}^{\infty} C_l P_l (\cos \theta) \exp \left\{ - \frac{l(l + 1)}{R ^2} D t \right\}.
+\]
+</p>
+
+<p>
+Upoštevamo še začetni pogoj ter definicijo skalarnega produkta
+</p>
+
+\begin{align*}
+  T_1 - T_0 &= \sum\limits_{l = 1}^{\infty} C_l P_l (\cos \theta) && \left/ \int\limits_0^1 P_l (\cos \theta) \, \mathrm{d} \cos \theta \right. \\
+(T_1 - T_0) \int\limits_0^1 P_l (\cos \theta) \, \mathrm{d} (\cos \theta) &= C_l \int\limits_0^1 P_l ^2 (\cos \theta) \, \mathrm{d} \cos \theta
+\end{align*}
+
+<p>
+Vrednosti, ki jih \( l \) zaseda so lihe - torej so tudi Legendrovi polinomi v naši vrsti lihi.
+</p>
+
+<p>
+Če vzamemo sodo funkcijo na sodem intervalu \( [-1, 1] \), integral lahko zapišemo kot dvakratni integral po intervalu \( [0, 1] \). Za lihe funkcije pa je potem integral po intervalu \( [0, 1] \) ravno polovica integrala po intervalu \( [-1, 1] \).
+</p>
+
+<p>
+Poznamo identiteto
+</p>
+
+<p>
+\[ \int\limits_{-1}^1 P_l ^2 (\cos \theta) \, \mathrm{d} (\cos \theta) = \frac{2}{(2l + 1)}
+\]
+</p>
+
+<p>
+Iz tega sledi, da je koeficient enak
+</p>
+
+<p>
+\[ C_l = (2l + 1) (T_1 - T_0) \int\limits_0^1 P_l (\cos \theta) \, \mathrm{d} \cos \theta
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org2f87133" class="outline-3">
+<h3 id="org2f87133"><span class="section-number-3">2.3.</span> Naloga ww&#xa0;&#xa0;&#xa0;<span class="tag"><span class="the_power_of_sturm_liouvile">the_power_of_sturm_liouvile</span></span></h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="problem" id="orgf3be79c">
+<p>
+Imamo sfero s polmerom \( R \), ki ima v ekvatorialni ravnini grelec z močjo \( P \). Zunaj sfere je temperatura \( T_0 \). Iščemo stacionarno rešitev difuzijske enačbe.
+</p>
+
+</div>
+
+<p>
+Iščemo stacionarno rešitev, torej velja \( \frac{\partial T}{\partial t} = 0 \). Od difuzijske enačbe nam torej ostane samo krajevni del in izvori
+</p>
+
+<p>
+\[ \nabla ^2 T = - \frac{q}{\lambda}.
+\]
+</p>
+
+<p>
+Izvor je po definiciji \( q = \frac{\mathrm{d} P}{\mathrm{d} V} \). Naš grelec se nahaja v ekvatorialni ravnini sfere, kar pomeni, da se poslužimo \( \delta (z) \) funkcije.
+</p>
+
+<p>
+Zapišemo torej
+</p>
+
+<p>
+\[ q = \frac{\mathrm{d} P}{\mathrm{d} V} = C \delta(z) = C \delta \left( r \cos \theta \right).
+\]
+</p>
+
+<p>
+Konstantno \( C \) določimo tako, da pointegriramo po volumnu krogle, saj vemo, da je celotna moč po volumnu krogle samo naš grelec z močjo \( P \).
+</p>
+
+\begin{align*}
+  P &= C \int\limits_V^{} \delta \left( r \cos \theta \right) \, \mathrm{d} V  \\
+&= C \int\limits_0^R \int\limits_{-1}^1 \int\limits_0^{2 \pi} \delta \left( r \cos \theta \right) r ^2 \cos \theta \, \mathrm{d} r \, \mathrm{d} \cos \theta \, \mathrm{d} \phi \\
+&= C \int\limits_0^R \int\limits_{-1}^1 r ^2 \frac{\delta \left( r \cos \theta \right)}{r} \, \mathrm{d} (\cos \theta) \, \mathrm{d} r \\
+&= 2 \pi C \frac{R ^2}{2} \implies C = \frac{P}{\pi R ^2}
+\end{align*}
+
+<p>
+Rešujemo Poissonovo enačbo
+</p>
+
+<p>
+\[ \nabla ^2 T = - \frac{P}{\pi R ^2 \lambda} \delta \left( r \cos \theta \right)
+\]
+</p>
+
+<p>
+z nastavkom, ki nam tudi homogenizira naše robne pogoje.
+</p>
+
+<p>
+\[ T = \sum\limits_{n = 1}^{\infty} \sum\limits_{l = 0}^{\infty} c_{n, l} j_l \left( \xi_n^{(l)} \frac{r}{R} \right) P_l \left( \cos \theta \right) + T_0
+\]
+</p>
+
+<p>
+(glej predavanja)
+</p>
+
+<p>
+Nastavek vstavimo v difuzijsko enačbo
+</p>
+
+<p>
+\[ \sum\limits_n^{} \sum\limits_l^{} c_{n, l} \nabla ^2 \left( j_l \left[ \xi_n^{(l)} \right] P_l (\cos \theta) \right)  = - \frac{P}{\pi R ^2 \lambda} \delta \left( r \cos \theta \right).
+\]
+</p>
+
+<p>
+Uporabimo eno fino zadevo Poissonove rešitve, da velja \( \nabla ^2 u  = - \lambda u \) - odvod nam poda lastne vrednosti. Nastavek tako postane
+</p>
+
+<p>
+\[ \sum\limits_n^{} \sum\limits_l^{} c_{n, l} \left( \frac{\xi_n^{(l)}}{R} \right) ^2 j_l \left( \frac{\xi_n^{(l)}}{R} r \right) P_l (\cos \theta) = - \frac{P}{\pi R ^2 \lambda} \delta (r \cos \theta)
+\]
+</p>
+
+<p>
+S pomočjo skalarnega produkta lahko izračunamo
+</p>
+
+\begin{align*}
+ -c_{n, l} \left( \frac{\xi_n^{(l)}}{R} \right) ^2 \int\limits_0^R \int\limits_{-1}^1 j_l ^2 \left( \xi_n^{(l)} \frac{r}{R} \right) P_l ^2 \left( \cos \theta \right) r ^2 \, \mathrm{d} r \, \mathrm{d} (\cos \theta) &= - \frac{P}{\pi R ^2 \lambda} \int\limits_0^R \int\limits_{-1}^1 \frac{\delta (r \cos \theta)}{r} r ^2 j_l \left( \xi_n^{(l)} \frac{r}{R} \right) P_l (\cos \theta) \, \mathrm{d} r \, \mathrm{d} (\cos \theta) \\
+&= - \frac{P}{\pi R ^2 \lambda} P_l (0) \int\limits_0^{R} j_l \left( \xi_n^{(l)} \frac{r}{R} \right) \, \mathrm{d} r
+\end{align*}
+
+<p>
+Iz tega lahko sedaj izrazimo koeficiente
+</p>
+
+<p>
+\[ C_{n, l} = \frac{P (2l + 1)}{2 \pi \lambda \left( \xi_n^{(l)} \right) ^2} P_l (0) \frac{\int\limits_0^R r j_l \left( \xi_n ^{(l)} \frac{r}{R} \right) \, \mathrm{d} r }{\int\limits_0^R r ^2 j_l ^2 \left( \xi_n ^{(l)} \frac{r}{R} \right) \, \mathrm{d} r}
+\]
+</p>
+</div>
+<div id="outline-container-orgfd175c4" class="outline-4">
+<h4 id="orgfd175c4"><span class="section-number-4">2.3.1.</span> Poseben primer</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Za \( \delta \) funkcijo, ki se nahaja v volumnu, zmeraj velja
+</p>
+
+<p>
+\[ \iiint\limits_{\mathbb{R} ^3}^{} f \left( \vec{r} \right) \partial_S \,\mathrm{d } ^3 \vec{r} = \iint\limits_S^{} f \left( \vec{r} \right) \,\mathrm{d} ^2 S.
+\]
+</p>
+
+<p>
+Specifično za naš primer
+</p>
+
+\begin{align*}
+  \iiint\limits_{\mathbb{R} ^3}^{} f \left( \vec{r} \right) \delta_S r_s ^2 \, \mathrm{d} r_s \, \mathrm{d} \phi \,\mathrm{d } (\cos \theta) = \int\limits_0^R \int\limits_0^{2\pi} f \left( \vec{r} \right) r \, \mathrm{d} r \, \mathrm{d} \phi
+\end{align*}
+
+<p>
+Tem integralom se reče \( \delta \) funkcije površine. Več je na voljo v Križaničevi knjigi Parcialne diferencialne enačbe.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbc0db93" class="outline-3">
+<h3 id="orgbc0db93"><span class="section-number-3">2.4.</span> Naloga kk</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="problem" id="org4948194">
+<p>
+Imamo sfero s polmerom \( R \) in toplotno prevodnostjo \( \lambda_k \). Sfero obdamo z lakom toplotne prevodnosti \( \lambda_l \) majhne debeline \( d \). Temperatura okolice je \( T_0 \). Temperatura sfere je ob času \( t = 0 \) enaka \( T_1 \).
+</p>
+
+</div>
+
+<p>
+Rešujemo difuzijsko enačbo
+</p>
+
+<p>
+\[ D \nabla ^2 T = \frac{\partial T}{\partial t}
+\]
+</p>
+
+<p>
+z začetnim pogojem \( T(t = 0) = T_1 \).
+</p>
+
+<p>
+Toplotni tok skozi lak je zaradi majhne debeline enak
+</p>
+
+<p>
+\[ j_l = \lambda_l \cdot\frac{ \Delta T}{d} = \lambda_l \frac{T_0 - T_{(r = R)}}{d}
+\]
+</p>
+
+<p>
+Tok, ki gre skozi stranico krogle, mora biti enak toku skozi lak, kar nam poda naš robni pogoj
+</p>
+
+<p>
+\[ \left. \lambda_k \partial_r T \right|_{r = R} = \lambda_l \frac{T_0 - T(r = R)}{d}
+\]
+</p>
+
+<p>
+Robni pogoj še zmeraj precej enostavno homogeniziramo z nastavkom
+</p>
+
+<p>
+\[ T(r, t) = R(r) \tau(t) + T_0.
+\]
+</p>
+
+<p>
+Nastavek vstavimo v difuzijsko enačbo in dobimo
+</p>
+
+<p>
+\[ \frac{\nabla ^2 R}{R} = \frac{1}{D} \frac{\dot{\tau}}{\tau} = - k ^2
+\]
+</p>
+
+<p>
+Rešitev časovnega dela je eksponentno pojemanje
+</p>
+
+<p>
+\[ \tau(t) = A \cdot e^{- D k ^2 t}.
+\]
+</p>
+
+<p>
+Radialni del je neodvisen od kotov, kar pomeni, da je \( m = l = 0 \). Po teoretičnem uvodu so rešitve torej samo
+</p>
+
+<p>
+\[ R(r) = A j_0 (kr) + B y_0 (kr).
+\]
+</p>
+
+<p>
+Člen \( B = 0 \), saj divergira v izhodišču. V robne pogoje torej vstavimo \( R(r) = A j_0 (kr) \) in dobimo
+</p>
+
+<p>
+\[ \lambda_k \tau A j_0 ' (kR) k = \lambda_l \left( - \frac{A j_0 (kR) \tau}{d} \right).
+\]
+</p>
+
+<p>
+Upoštevamo definicijo \( j_0 (x) = \frac{\sin x}{x} \), ki jo vstavimo v enačbo, kjer smo še pokrajšali časovne komponente.
+</p>
+
+<p>
+\[ \lambda_k \left( \frac{\cos (kR)}{kR} - \frac{\sin (kR)}{(kR) ^2} \right)k = - \lambda_l \frac{\sin (kR)}{kR d}
+\]
+</p>
+
+<p>
+Enačbo delimo s \( \cos (kR) \) in uvedemo spremenljivko \( \xi = kR \)
+</p>
+
+<p>
+\[ \lambda_k \left( \frac{1}{\xi} - \tan (\theta) \frac{1}{\xi ^2} \right) \frac{\xi}{R} = - \lambda_l \tan (\xi) \frac{1}{\xi d}
+\]
+</p>
+
+<p>
+Dobili smo transcendentno enačbo
+</p>
+
+<p>
+\[ \tan (\xi) \left( \frac{\lambda_l}{ \lambda_k} \frac{R}{d} - 1 \right) = \xi.
+\]
+</p>
+
+<p>
+Uvedemo spremenljivko \( \alpha = \frac{\lambda_l }{\lambda_k} \frac{R}{d} \), ki ji pravimo <i>snovna konstanta</i>.
+</p>
+
+<p>
+Rešitve enačbe
+</p>
+
+\begin{equation}
+\label{eq:6}
+ \tan (\xi) \left( \alpha - 1 \right) = \xi,
+\end{equation}
+
+<p>
+so \( \xi_n \) za \( n = 1, 2, \ldots \) in rešitev je
+</p>
+
+<p>
+\[ T(r, t) = \sum\limits_{n = 1}^{\infty} A j_0 \left( \xi_n \frac{r}{R} \right) \exp \left\{ - D \left( \xi \frac{r}{R} \right) ^2 t \right\} + T_0
+\]
+</p>
+
+<p>
+Upoštevamo še začetni pogoj \( T( t= 0 ) = T_1 \)
+</p>
+
+<p>
+\[ T_1 - T_0 = \sum\limits_{n = 1}^{\infty} A j_0 \left( \xi_n \frac{r}{R} \right).
+\]
+</p>
+
+<p>
+\( \xi_n \) sicer niso ničle \( j_0 \), ampak nam Sturm-Liouvilleov izrek nam pove, da so rešitve enačbe \ref{eq:6} ortogonalne med seboj v danem skalarnem produktu. <b><b>Pomembno</b></b>: robni pogoji morajo biti tipa Sturm-Liouville.
+</p>
+
+<p>
+\[ \int\limits_{}^{} (T_1 - T_0) j_0 \left( \xi_n \frac{r}{R} \right) r ^2 \, \mathrm{d} r = A_n \int\limits_{}^{} j_0 ^2 \left( \xi_n \frac{r}{R} \right) r ^2 \, \mathrm{d} r
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-03 Sat 19:31</p>
+</div>
+</body>
+</html>

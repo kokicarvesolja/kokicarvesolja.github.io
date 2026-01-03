@@ -20,3 +20,5 @@ Zapiski vaj pri prof. Urbanu Duhu
 - [[file:02vaje_maf2/06maf2_v_20251117.html][vaje 6, 2025/11/17:]] Difuzijska enačba - stacionarna porazdelitev toplote v polneskončni cevi. Greenove funkcije (teorija), opna v gravitacijskem polju
 - [[file:02vaje_maf2/07maf2_v_20251125.html][vaje 7, 2025/11/25:]] Laplaceova enačba - kvadrat z robnimi pogoji, trak s potencialom. Hidrodinamika - valj v reki
 - [[file:02vaje_maf2/08maf2_v_20251201.html][vaje 8, 2025/12/01:]] Hidrodinamika - valj v reki (nadaljevanje), Poiseuilleov zakon. Lastne funkcije.
+- ...
+- [[file:02vaje_maf2/10maf2_v_20251215.html][vaje 10, 2025/12/15:]] Helmholtzova enačba v cilindričnih koordinatah in sferičnih.
