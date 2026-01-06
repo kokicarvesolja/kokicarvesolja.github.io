@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-06 Tue 14:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>9. vaje iz Matematične fizike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">9. vaje iz Matematične fizike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org77c600e">1. Lastne funkcije</a>
+<ul>
+<li><a href="#orgf115a03">1.1. Helmholtzova enačba v cilindričnih koordinatah</a>
+<ul>
+<li><a href="#orge25fbc1">1.1.1. Asimptotski približki</a></li>
+</ul>
+</li>
+<li><a href="#org541d7f6">1.2. Naloga 24 (Prinčič, 7.1)</a></li>
+<li><a href="#orgf3adbfd">1.3. Naloga 25 (Prinčič, 7.2)</a></li>
+<li><a href="#org1cbb99a">1.4. Naloga 26</a>
+<ul>
+<li><a href="#orgc80c198">1.4.1. Točka a)</a></li>
+<li><a href="#orgf4f96d8">1.4.2. Točka b)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org77c600e" class="outline-2">
+<h2 id="org77c600e"><span class="section-number-2">1.</span> Lastne funkcije</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgf115a03" class="outline-3">
+<h3 id="orgf115a03"><span class="section-number-3">1.1.</span> Helmholtzova enačba v cilindričnih koordinatah</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Helmholtzova enačba je diferencialna enačba oblike
+</p>
+
+<p>
+\[ \nabla ^2 u + \lambda u = 0,
+\]
+</p>
+
+<p>
+ki jo rešujemo s separacijo spremenljivk \( u(r, \phi, z) = R(r) \Phi(\phi) Z(z) \).
+</p>
+
+<p>
+Separacija nam poda 3 diferencialne enačbe.
+</p>
+
+<p>
+Prva diferencialna enačba
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \Phi'' = - m ^2 \Phi,
+\end{equation}
+
+<p>
+poda rešitvi za azimutalni kot \( \phi \) za \( m \ge 0 \), kjer je \( m \) celo število. Za \( m > 0 \) je splošna rešitev enačbe \ref{eq:1}
+</p>
+
+<p>
+\[ \Phi_m = A \cos \left( m \phi \right) + B \sin \left( m \phi \right).
+\]
+</p>
+
+<p>
+Za \( m = 0 \) je rešitev enačbe
+</p>
+
+<p>
+\[ \Phi_0 = A + B \phi
+\]
+</p>
+
+<p>
+Druga diferencialna enačba
+</p>
+
+\begin{equation}
+\label{eq:2}
+Z'' = \pm \beta ^2 Z
+\end{equation}
+
+<p>
+ima dve rešitvi glede na predznak.
+</p>
+
+<p>
+\[ Z(z) = \begin{cases}
+          C \sin (\beta z) + D \cos (\beta z) &; + \beta \\
+          C \mathrm{sh} \left( \beta z \right) + D \mathrm{ch} (\beta z) &; - \beta
+          \end{cases}
+\]
+</p>
+
+<p>
+Tretja diferencialna enačba se glasi
+</p>
+
+<p>
+\[ r ^2 R'' + r R' + \left[ \left( \lambda \pm \beta ^2 \right) r ^2 - m ^2 \right] R = 0.
+\]
+</p>
+
+<p>
+Oblika rešitve bo odvisna od vrednosti \( \lambda \pm \beta ^2 \).
+</p>
+
+<ul class="org-ul">
+<li><p>
+vrednost \( \lambda \pm \beta ^2 = 0 \) bo za \( m \ge 0 \) podala rešitev oblike
+</p>
+
+<p>
+\[ R_m = \begin{cases}
+           A r^m + B r^{-m} &; m > 0 \\
+           A + B \ln r &; m = 0
+           \end{cases}
+  \]
+</p></li>
+
+<li><p>
+vrednost \( \lambda \pm \beta ^2 = k ^2 \) bo podala Besslove funkcije kot rešitve
+</p>
+
+<p>
+\[ R_m = A J_m (kr) + B Y_m (kr).
+  \]
+</p>
+
+<p>
+Alternativna rešitev so tudi Henklove funkcije, ki so definirane kot
+</p>
+
+<p>
+\[ H_m^{(1)} (kr) = J_m (kr) + \mathrm{i} Y_m (kr) \quad \text{ in } \quad H_m^{(2)} (kr) = J_m (kr) - \mathrm{i} Y_m (kr).
+  \]
+</p>
+
+<p>
+Rešitev se potem glasi
+</p>
+
+<p>
+\[ R_m = A H_m^{(1)} (kr) + BH_m^{(2)} (kr)
+  \]
+</p></li>
+
+<li><p>
+vrednost \( \lambda \pm \beta ^2 = - k ^2 \) poda modificirane Beslove funkcije kot rešitve
+</p>
+
+<p>
+\[ R_m = A I_m (kr) + B K_m (kr)
+  \]
+</p></li>
+</ul>
+
+<p>
+Modificirane Besslove funkcije imajo v kompleksnem prostoru tudi povezavo z Besslovimi funkcijami
+</p>
+
+<p>
+\[ J_m (\mathrm{i} z) = \exp \left\{  \frac{1}{2} \mathrm{i} \pi m\right\}I_m(z) \quad \text{ in } \quad N_m (\mathrm{i} z) =\exp \left\{ \frac{1}{2} (m + 1) \pi \right\} I_m (z) - \frac{2}{\pi} \exp \left\{ \frac{1}{2} \mathrm{i} m \pi \right\} K_m(z)
+\]
+</p>
+
+<p>
+Pri iskanju lastnih funkcij v cilindričnih koordinatah ima skalarni produkt dodano integralsko utež \( r \)
+</p>
+
+<p>
+\[ \left\langle f, g \right\rangle = \int\limits_{}^{} f \cdot g \, r \, \mathrm{d} r \, \mathrm{d} \phi \, \mathrm{d} z
+\]
+</p>
+</div>
+<div id="outline-container-orge25fbc1" class="outline-4">
+<h4 id="orge25fbc1"><span class="section-number-4">1.1.1.</span> Asimptotski približki</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Asimptotska približka za Besslove funkcije, kjer je \( x \gg 1 \), so
+</p>
+
+<p>
+\[ J_m (x) \asymp \sqrt{\frac{2}{\pi x}} \cos \left( x - \frac{1}{2} m \pi - \frac{\pi}{4} \right) \quad \text{ in } \quad Y_m(x) \asymp \sqrt{\frac{2}{\pi x}} \sin \left( x - \frac{1}{2} m \pi - \frac{\pi}{4} \right).
+\]
+</p>
+
+<p>
+Za Henklove funkcije sta asimptotska približka
+</p>
+
+<p>
+\[ H_m^{(1)}(x) \asymp e^{\mathrm{i} x} \quad \text{ in } H_m^{(2)} (x) \asymp e^{- \mathrm{i} x}.
+\]
+</p>
+
+<p>
+Za konec pa še asimptotski približki modificiranih Besslovih funkcij
+</p>
+
+<p>
+\[ I_m (x) \asymp e^x \quad \text{ in } \quad K_m (x) \asymp e^{- x}
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org541d7f6" class="outline-3">
+<h3 id="org541d7f6"><span class="section-number-3">1.2.</span> Naloga 24 (Prinčič, 7.1)</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="problem" id="orgb774864">
+<p>
+Kovanec z maso \( m \) in polmerom \( R_1 \) je simetrično položen na opno s polmerom \( a \) in površinsko napetostjo \( \gamma \).
+</p>
+
+</div>
+
+<p>
+Rešujemo valovno enačbo za opno
+</p>
+
+<p>
+\[ \frac{\partial ^2 u}{\partial t ^2} = c ^2 \nabla ^2 u, \ c ^2 = \frac{\gamma}{\mu},
+\]
+</p>
+
+<p>
+kjer je \( \mu \) površinska gostota. Hkrati imamo tudi robna pogoja.
+</p>
+
+<p>
+Prvi robni pogoj je to, da je opna na robu vpeta
+</p>
+
+\begin{equation}
+\label{eq:3}
+u (r = a) = 0.
+\end{equation}
+
+<p>
+Drugi robni pogoj pa povezuje opno s kovancem preko drugega Newtonovega zakona
+</p>
+
+\begin{equation}
+\label{eq:4}
+m \ddot{u} \left( r = R_1 \right) = \oint\limits_{r = R_1}^{} \left. \gamma \frac{\partial u}{\partial r} \right|_{r = R_1} \, \mathrm{d} l = 2 \pi R_1 \left. \gamma \frac{\partial u}{\partial r} \right|_{r = R_1}
+\end{equation}
+
+<p>
+Slednji robni pogoj je oblike
+</p>
+
+<p>
+\[ \alpha x(0) + \beta x' (0) = 0,
+\]
+</p>
+
+<p>
+kar nam pove, da imamo opravka s Sturm-Liouvilleovim problemom.
+</p>
+
+<p>
+Reševanja enačbe poteka preko separacije spremenljivk \( u(r, t) = R(r) T(t) \), ki nam poda dve ODE.
+</p>
+
+<p>
+\[ \frac{\ddot{T}}{T} = c ^2 \frac{\nabla ^2 R}{R} = - \omega ^2.
+\]
+</p>
+
+<p>
+Reševanje diferencialne enačbe v času ima splošno rešitev
+</p>
+
+\begin{equation}
+\label{eq:5}
+T (t) = A \sin (\omega t) + B \cos (\omega t).
+\end{equation}
+
+<p>
+Ostane nam še radialna diferencialna enačba
+</p>
+
+<p>
+\[ \nabla ^2 R = - \frac{\omega ^2}{c ^2} R,
+\]
+</p>
+
+<p>
+in uvedemo \( k ^2 = \frac{\omega ^2}{c ^2} \) za krajši zapis. Rešitve radialnega dela so v splošnem odvisne od števila \( m \), ki se pojavi kot rešitev enačbe \ref{eq:1}. Naš problem je simetričen, kar pomeni, da nimamo odvisnosti od azimutalnega kota \( \phi \) in posledično je \( m = 0 \). Rešitev radialnega dela je tako
+</p>
+
+\begin{equation}
+\label{eq:6}
+R(r) = C J_0 (kr) + D Y_0 (kr).
+\end{equation}
+
+<p>
+V rešitvi \ref{eq:6} \( Y_0 \) sicer divergirajo v izhodišču \( r = 0 \), vendar je naše definicijsko območje obroč na intervalu \( r \in [R_1, a] \).
+</p>
+
+<p>
+Ob upoštevanju prvega robnega pogoja \ref{eq:3} in rešitve \ref{eq:6} dobimo enakost
+</p>
+
+<p>
+\[ u(r = a) = T(t) \left[ C J_0 (ka ) + D Y_0 (ka) \right] = 0 \implies \ D = - C \frac{J_0 (ka)}{Y_0 (ka)}.
+\]
+</p>
+
+<p>
+Vmesna rešitev je torej
+</p>
+
+\begin{equation}
+\label{eq:7}
+R(r) = C J_0 (kr) - C\frac{J_0 (ka)}{Y_0 (ka)} Y_0 (kr).
+\end{equation}
+
+<p>
+Sedaj jo vstavimo v drugi robni pogoj \ref{eq:4} in dobimo enakost
+</p>
+
+<p>
+\[ - m \omega ^2 T \left( C J_0 (k R_1) - C \frac{J_0 (ka)}{Y_0 (k a)} Y_0 (k R_1) \right) = 2 \pi R_1 \gamma T \left( C k J_0 ' (k R_1) - C k \frac{J_0 (ka)}{Y_0 (ka)} Y_0 ' (kR_1) \right)
+\]
+</p>
+
+<p>
+Izpostavimo in pokrajšamo lahko koeficiente ter časovni del nastavka. Na pomoč nam priskočita tudi identiteti
+</p>
+
+<p>
+\[ 2 J_n' = J_{n - 1} - J_{n + 1} \quad \text{ in } \quad J_{-n} = \left( -1 \right)^n J_n.
+\]
+</p>
+
+<p>
+Slednja identiteta velja tudi za \( Y \) in posledično velja
+</p>
+
+<p>
+\[ J_0 ' = - J_1 \quad \text{ in } \quad Y_0 ' = - Y_1.
+\]
+</p>
+
+<p>
+Ostane nam
+</p>
+
+<p>
+\[ - m c ^2 k ^2 \left( J_0 (k R_1) - \frac{J_0 (ka)}{Y_0 (ka)} Y_0 (k R_1) \right) = 2 \pi R_1 \gamma \left( - J_1 (k R_1) + \frac{J_0 (ka)}{Y_0 (ka) } Y_1 (k R_1) \right),
+\]
+</p>
+
+<p>
+od koder lahko izrazimo
+</p>
+
+<p>
+\[ k = -\frac{2 \pi R_1 \gamma}{m c ^2} \frac{\left( - J_1 (k R_1) + \frac{J_0 (ka)}{Y_0 (ka)} Y_1 (k R_1) \right)}{J_0 (k R_1) - \frac{J_0 (ka)}{Y_0 (ka)} Y_0 (k R_1)}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgf3adbfd" class="outline-3">
+<h3 id="orgf3adbfd"><span class="section-number-3">1.3.</span> Naloga 25 (Prinčič, 7.2)</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="problem" id="org2b48f8e">
+<p>
+Na boben s polmerom \( R_0 \) udarimo v točko \( (r = a, \phi = 0) \) s sunkom \( p_0 \). Kakšna je oblika bobna v kasnejših časih?
+</p>
+
+</div>
+
+<p>
+Rešujemo valovno enačbo
+</p>
+
+<p>
+\[ \frac{\partial ^2 u}{\partial t ^2}  = c ^2 \nabla ^2 u.
+\]
+</p>
+
+<p>
+Rob opne je vpet v obroč, kar nam da prvi robni pogoj
+</p>
+
+\begin{equation}
+\label{eq:10}
+u \left( r = R_0, \phi, t \right) = 0.
+\end{equation}
+
+<p>
+Pred udarcem je boben miroval, kar pomeni, da je začetni pogoj njegovo mirovanje
+</p>
+
+\begin{equation}
+\label{eq:8}
+u (r, \phi, t = 0) = 0.
+\end{equation}
+
+<p>
+Po udarcu pa odvod bobna ne bo več ničeln zaradi gibalne količine, s katero smo delovali nanj
+</p>
+
+\begin{equation}
+\label{eq:11}
+ \left. \frac{\partial u}{\partial t}  \right|_{t = 0} = \frac{C}{r} \delta (r - a) \delta(\phi),
+\end{equation}
+
+<p>
+kjer je \( C \) konstanta. Določimo jo iz enačbe za gibalno količino.
+</p>
+
+\begin{align*}
+  p_0 &= \int\limits_{}^{} v \, \mathrm{d} m = \int\limits_{}^{} \left. \mu \dot{u}\right|_{t = 0} \, \mathrm{d} S\\
+&= C \mu \int\limits_{}^{} \frac{1}{r} \delta (r - a) \delta (\phi) r \, \mathrm{d}r \, \mathrm{d} \phi = C \mu
+\end{align*}
+
+<p>
+Konstanta je torej enaka \( C = \frac{p_0}{\mu} \).
+</p>
+
+<p>
+Nalogo rešujemo podobno kot nalogo 24 s separacijo spremenljivke. Rešitev časovne diferencialne enačbe \ref{eq:5} je enaka
+</p>
+
+<p>
+\[ T = A \sin (\omega t),
+\]
+</p>
+
+<p>
+zaradi začetnega pogoja \ref{eq:8}.
+</p>
+
+<p>
+Radialna diferencialna enačba je
+</p>
+
+<p>
+\[ \frac{\nabla ^2 R}{R} = - \frac{\omega ^2}{c ^2} = - k ^2.
+\]
+</p>
+
+<p>
+Pri rešitvi tokrat imamo kotno odvisnost in bo splošna rešitev
+</p>
+
+\begin{equation}
+\label{eq:9}
+R_m = \left[ A_m J_m (kr) + B_m Y_m (kr) \right] \left[ C_m \cos (m\phi) + D_m \sin (m \phi) \right]
+\end{equation}
+
+<p>
+Koeficienta \( B_m  \) in \( D_m \) bosta ničelna. Prvi zaradi tega, ker nimamo divergence v izhodišču, drugi pa zaradi simetričnosti problema.
+</p>
+
+<p>
+Upoštevamo robni pogoj \ref{eq:10}, da določimo vrednosti, ki jih zavzame \( k \). Dobimo enačbo
+</p>
+
+<p>
+\[ A_m J_m (k R_0)  C_m \cos (m \phi) = 0 \implies k_{nm} R_0 = \xi_n^{(m)}.
+\]
+</p>
+
+<p>
+Vrednosti, ki jih zavzame \( k_{nm} \) so torej
+</p>
+
+<p>
+\[ k_{nm} = \frac{\xi_n^{(m)}}{R_0},
+\]
+</p>
+
+<p>
+kjer je \( \xi_n^{(m)} \) \( n \)-ta ničla \( m \)-te Besslove funkcije \( J_m \).
+</p>
+
+<p>
+Z rešitvijo
+</p>
+
+<p>
+\[ u (r, \phi, t) = \sum\limits_{m = 0}^{\infty} \sum\limits_{n = 1}^{\infty} \sin \left( c k_{mn} t \right)  C_{mn} J_m \left( \xi_n^{(m)} \frac{r}{R_0} \right) \cos (m \phi),
+\]
+</p>
+
+<p>
+kjer smo upoštevali \( \omega_{mn} = c k_{mn} \).
+</p>
+
+<p>
+Za konec naloge lahko preko začetnega pogoja \ref{eq:11} poiščemo še vrednosti koeficientov \( C_{mn} \). Rešitev, ki smo jo odvajali po času je enaka
+</p>
+
+<p>
+\[ \left. \frac{\partial u}{\partial t}  \right|_{t = 0} = c \sum\limits_{m = 0}^{\infty} \sum\limits_{n = 1}^{\infty} C_{mn} k_{mn} J_m \left( \xi_n^{(m)} \frac{r}{R_0} \right) \cos (m \phi).
+\]
+</p>
+
+<p>
+Imamo torej enakost
+</p>
+
+<p>
+\[ c \sum\limits_{m = 0}^{\infty} \sum\limits_{n = 1}^{\infty} C_{mn} k_{mn} J_m \left( \xi_n^{(m)} \frac{r}{R_0} \right) \cos (m \phi) = \delta \left( r- a \right) \delta(\phi) \frac{p_0}{\mu_0 r}.
+\]
+</p>
+
+<p>
+Za izluščitev koeficienta bomo uporabili sledeča skalarna produkta
+</p>
+
+<p>
+\[ \int\limits_0^{2 \pi} \cos (l \phi) \cos (l' \pi) \, \mathrm{d} \phi = \pi \delta_{l l'} \quad \text{ in } \quad  \int\limits_0^{R_0} J_m \left( \xi_n^{(m)} \frac{r}{R_0} \right) J_{m'} \left( \xi_n^{(m')} \frac{r}{R_0} \right) \cdot r \cdot \, \mathrm{d}r = \frac{R_0 ^2}{2} J_{m + 1} \left( \xi_n^{(m)} \right) ^2 \delta_{m m'}.
+\]
+</p>
+
+<p>
+Pri skalarnem produktu Besslovih funkcij smo upoštevali še dodano utež \( r \). Zgornjo enakost torej pomnožimo z \( \int\limits_0^{R_0} \int\limits_0^{2 \pi} J_{m'} \left( \xi_{n'}^{(m')} \frac{r}{R_0} \right) \cos (m' \phi) \cdot r \, \mathrm{d} r \mathrm{d} \phi \) in dobimo
+</p>
+
+\begin{align*}
+  c k_{m'n'} C_{m' n'} \int\limits_0^{R_0} \int\limits_0^{2 \pi} \left( J_{m'} \left( \xi_{n'}^{(m')} \frac{r}{R_0} \right) \right) ^2 \cos ^2 (m' \phi) r \, \mathrm{d} r \, \mathrm{d} \phi &= \int\limits_0^{R_0} \int\limits_0^{2\pi} \delta (r - a) \delta(\phi) \frac{p_0}{\mu_0 r} r J_{m'} \left( \xi_{n'}^{(m')} \frac{r}{R} \right) \cos (m' \phi) \, \mathrm{d} r \, \mathrm{d} \phi \\
+c k_{m' n'} C_{m' n'} \frac{R ^2}{2} J_{m' + 1} \left( \xi_{n'}^{(m')} \right) ^2 \pi &= J_{m'} \left( \xi_{n'}^{(m')} \frac{a}{R} \right) \cos (m' \cdot 0) \frac{p_0}{\mu_0} \\
+ &= J_{m'} \left( \xi_{n'}^{(m')} \frac{a}{R_0} \right) \frac{p_0}{\mu_0}
+\end{align*}
+
+<p>
+Vrednosti koeficientov so torej
+</p>
+
+<p>
+\[ C_{mn} = \frac{2p_0}{\mu_0 \pi c R_0} \frac{J_m \left( \xi_n^{(m)} \frac{a}{R_0} \right)}{J_{m + 1} \left( \xi_n^{(m)} \right) ^2}, \ m \ne 0
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org1cbb99a" class="outline-3">
+<h3 id="org1cbb99a"><span class="section-number-3">1.4.</span> Naloga 26</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="problem" id="orgc617896">
+<p>
+Imamo valj s polmerom \( a \) in rešujemo difuzijsko enačbo
+</p>
+
+\begin{equation}
+\label{eq:12}
+ \frac{\partial u}{\partial t}  = D \nabla ^2 u - \frac{1}{\tau} u.
+\end{equation}
+
+<p>
+z robnim pogojem \( u (r = a) = u_0 \).
+</p>
+
+<p>
+Zanima nas rešitev, če je rešitev
+</p>
+
+<ol class="org-ol">
+<li>stacionarna
+<ol class="org-ol">
+<li>zunaj</li>
+<li>znotraj valja</li>
+</ol></li>
+<li>časovno odvisna od notranjosti valja z začetnim robnim pogojem \( u (r, t = 0) = u_0 \).</li>
+</ol>
+
+</div>
+</div>
+<div id="outline-container-orgc80c198" class="outline-4">
+<h4 id="orgc80c198"><span class="section-number-4">1.4.1.</span> Točka a)</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+Iščemo stacionarno rešitev, kar pomeni, da se enačba poenostavi v
+</p>
+
+\begin{equation}
+\label{eq:13}
+ \nabla ^2 u = \frac{1}{\tau D} u, \ k = \frac{1}{\tau D}
+\end{equation}
+
+
+<p>
+Rešitve so v tem primeru (zakaj?) modificirane Besslove funkcije
+</p>
+
+<p>
+\[ u(r) = AI_0 (kr) + BK_0 (kr).
+\]
+</p>
+
+<p>
+Zaradi neodvisnosti od kota je vrednosti indeksa \( m = 0 \). Rešitev zunaj valja je
+</p>
+
+<p>
+\[ u(r) = B K_0 (kr),
+\]
+</p>
+
+<p>
+in iz robnega pogoja \( u(a) = u_0 \), da je vrednost koeficienta \( B = \frac{u_0}{K_0 (ka)} \). Analagono, določimo koeficient znotraj valja
+</p>
+
+<p>
+\[ u(r) = A I_0 (kr) \implies \ A = \frac{u_0}{I_0 (ka)}
+\]
+</p>
+
+<p>
+Funkciji se zaradi oblik zlepita na robu.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf4f96d8" class="outline-4">
+<h4 id="orgf4f96d8"><span class="section-number-4">1.4.2.</span> Točka b)</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+V primeru časovne odvisnosti znotraj valja imamo nehomogene robne pogoje. Takojšnja separacija ni v redu, saj moramo pogoje homogenizirati.
+</p>
+
+<p>
+Možni način homogenizacije bi bila uporaba nastavka
+</p>
+
+<p>
+\[ u (r, t) = R(r) T(t) + u_0,
+\]
+</p>
+
+<p>
+ki nam po vstavitvi v enačbo poda sledečo diferencialno enačbo
+</p>
+
+<p>
+\[ R \dot{T} = D \nabla ^2 R T - \frac{1}{\tau} RT - \frac{1}{\tau} u_0.
+\]
+</p>
+
+<p>
+Enačba je boljša, vendar tečna za reševanje.
+</p>
+
+<p>
+Namesto tega bomo uporabili sledeč nastavek
+</p>
+
+<p>
+\[ u (r, t) = R(r) T(t) + u_0 \frac{I_0 (kr)}{I_0 (ka)}.
+\]
+</p>
+
+<p>
+Nastavek vstavimo v difuzijsko enačbo in dobimo
+</p>
+
+<p>
+\[ R \dot{T} = D \nabla ^2 R T - \frac{1}{\tau} RT - \frac{1}{\tau} u_0 \frac{I_0 (kr)}{I_0 (ka )} + D \nabla ^2 I_0 (kr) \frac{u_0}{I_0 (ka)}.
+\]
+</p>
+
+<p>
+V zadnjih dveh členih prepoznamo enačbo \ref{eq:13}, kar pomeni, da se izničita. Separiramo spremenljivke in dobimo
+</p>
+
+<p>
+\[ \frac{\nabla ^2 R}{R} = \frac{1}{D} \frac{\dot{T}}{T} + \frac{1}{D \tau} = - \kappa ^2
+\]
+</p>
+
+<p>
+Diferencialno enačbo v času lahko rešimo
+</p>
+
+<p>
+\[ \dot{T} + \frac{1}{\tau} T = - D \kappa ^2 T \implies \dot{T} = -(\frac{1}{\tau} + D \kappa ^2) T ,
+\]
+</p>
+
+<p>
+katere rešitev je
+</p>
+
+<p>
+\[ T = C \exp \left\{ - \left( D \kappa ^2 + \frac{1}{\tau} \right) t \right\}.
+\]
+</p>
+
+<p>
+Diferencialna enačba v radialnem delu se glasi
+</p>
+
+<p>
+\[ \frac{\nabla ^2 R}{R } = - \kappa ^2.
+\]
+</p>
+
+<p>
+Splošna rešitev je oblike
+</p>
+
+<p>
+\[ R(r) = E J_0 (\kappa r) + F Y_0 (\kappa r).
+\]
+</p>
+
+<p>
+Divergence ni v središču valja, torej bo \( F = 0 \).
+</p>
+
+<p>
+Upoštevamo robni pogoj
+</p>
+
+\begin{align*}
+  \left. u (r, t) \right|_{r = a} &= \left. \exp \left\{ - \left( D \kappa ^2 + \frac{1}{\tau} \right) t \right\} E J_0 (\kappa r) \right|_{r = a} + u_0 \frac{I_0 (ra)}{I_0 (ra)} \\
+&= u_0.
+\end{align*}
+
+<p>
+Preostane nam torej
+</p>
+
+<p>
+\[ E J_0 (\kappa a) = 0.
+\]
+</p>
+
+<p>
+Določimo ničle Besslovih funkcij
+</p>
+
+<p>
+\[ ka = \xi_n^{(0)}, \ n = 1, 2, 3, \ldots.
+\]
+</p>
+
+<p>
+Rešitev difuzijske enačbe bo tako
+</p>
+
+<p>
+\[ u (r, t) = \sum\limits_{n = 1}^{\infty} E_n \exp \left\{ - \left( D \kappa ^2 - \frac{1}{\tau} \right)t \right\} J_0 \left( \xi_n^{(0)} \frac{r}{a} \right) + u_0 \frac{I_0 (kr)}{I_0 (ar)}.
+\]
+</p>
+
+<p>
+Upoštevamo še začetni pogoj \( u(r, 0) = u_0 \).
+</p>
+
+<p>
+\[ u (r, 0) = \sum\limits_{n = 1}^{\infty} E_n J_0 \left( \xi_n^{(0)} \frac{r}{a} \right) + u_0 \frac{I_0 (kr) }{I_0 (ka)} = 0.
+\]
+</p>
+
+<p>
+Preko skalarnega produkta in množenja obeh strani enačbe z \( \int\limits_0^R J_0 \left( \xi_n^{(0)} \frac{r}{a} \right) r \, \mathrm{d} r \) lahko izluščimo vrednosti koeficientov \( E_n \).
+</p>
+
+\begin{align*}
+  \int\limits_0^R \sum\limits_{n = 1}^{\infty} E_n J_0 \left( \xi_n^{(0)} \frac{r}{a} \right) ^2 r \, \mathrm{d}r &= \int\limits_0^R u_0 \left( 1 - \frac{I_0 (kr)}{I_0 (ka)} \right) J_0 \left( \xi_{n'}^{(0)} \frac{r}{a} \right) r \, \mathrm{d}r \\
+E_n &= \frac{2}{a} \frac{u_0 \int\limits_0^R \left( 1 - \frac{I_0 (kr)}{I_0 (ka )} \right) J_0 \left( \xi_n^{(0)} \frac{r}{a} \right) r \, \mathrm{d} r}{J_1 ^2 \left( \xi_n^{(0)} \frac{r}{a} \right)}.
+\end{align*}
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-06 Tue 14:28</p>
+</div>
+</body>
+</html>
