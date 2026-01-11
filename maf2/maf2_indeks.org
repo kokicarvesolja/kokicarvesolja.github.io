@@ -22,3 +22,6 @@ Zapiski vaj pri prof. Urbanu Duhu
 - [[file:02vaje_maf2/08maf2_v_20251201.html][vaje 8, 2025/12/01:]] Hidrodinamika - valj v reki (nadaljevanje), Poiseuilleov zakon. Lastne funkcije.
 - [[file:02vaje_maf2/09maf2_v_20251208.html][vaje 9, 2025/12/08:]] Lastne funkcije v cilindričnih koordinatah.
 - [[file:02vaje_maf2/10maf2_v_20251215.html][vaje 10, 2025/12/15:]] Helmholtzova enačba v cilindričnih koordinatah in sferičnih.
+- [[file:02vaje_maf2/11maf2_v_20251223.html][vaje 11, 2025/12/23:]] Greenova funkcija v eni in več dimenzijah na neskončnem območju. Valovanja v dveh točkah.
+- [[file:02vaje_maf2/12maf2_v_20260105.html][vaje 12, 2026/01/05:]] Greenova funkcija z Dirichletovimi in Neumannovimi robnimi pogoji. Alternativno reševanje naloge s poltrakom pod napetostjo \( U_0 \) in Lloydovo zrcalo.
+- [[file:02vaje_maf2/13maf2_v_20250109.html][vaje 13, 2026/01/09:]] Greenova funkcija - difuzijska in valovna enačba.
