@@ -15,6 +15,8 @@ Tukaj so zbrani zapiski predavanj, ki sem se jih udeležil pri prof. dr. Miha Ra
 
 Tukaj so zbrani zapiski vaj pri prof. Martinu Klanjšku.
 
+Zapiske sem ustvaril sam tekom in po vajah. Osnova za zapiske so vaje, ki jih je izvajal prof. Klanjšek, kjer sem luknje v razlagi in razumevanju dopolnjeval z zapiski [[https://ejmastnak.com/notes/fmf/emp/emp-exercises.pdf][Elijana J. Mastnaka.]] Zaradi celovitosti se mi je zdelo smiselno vključiti navodila nalog, ki nam jih je podal profesor in si jih ne lastim. Delam na temu, da bodo navodila jasno označena. Zapiske si delam kot pomoč pri pripravi na kolokvij in se mi je zdelo edino smiselno, da dostop omogočim tudi drugim. Napake se moje.
+
 - [[file:02vaje_emp/01emp_v_20251007.html][vaje 1, 2025/10/07:]] Električno polje nabite okrogle plošče in električno polje ravne plošče z režo
 - [[file:02vaje_emp/02emp_v_20251014.html][vaje 2, 2025/10/14:]] Električno polje ravne plošče z režo (nadaljevanje), Poissonova enačba za točkast naboj, električno polje vodikovega atoma, ploščatega kondenzator s prečnim trakom + teorija Fourierovega prostora
 - [[file:02vaje_emp/03emp_v_20251021.html][vaje 3, 2025/10/21:]] nadaljevanje ploščatega kondenzatorja s prečnim trakom, prepolovljena prevodna cev [Hvala Jani K. za zapiske!]
@@ -22,5 +24,9 @@ Tukaj so zbrani zapiski vaj pri prof. Martinu Klanjšku.
 - [[file:02vaje_emp/05emp_v_20251104.html][vaje 5, 2025/11/04:]] točkasti naboj nad prevodno ploščo, električna sila na točkasti naboj nad prevodno ploščo, električna sila na polovico prevodne krogle, točkasti naboj v kotu med dvema pravokotnima prevodnima ploščama
 - [[file:02vaje_emp/06emp_v_20251111.html][vaje 6, 2025/11/11:]] nadaljevanje točkastega naboja v kotu med dvema pravokotnima prevodnima ploščama, magnetno polje krožne tokovne zanke, magnetno polje nabite vrteče se okrogle plošče
 - [[file:02vaje_emp/07emp_v_20251118.html][vaje 7, 2025/11/18:]] nadaljevanje magnetnega polja nabite vrteče se okrogle plošče, magnetna sila v koaksialnem kablu in toroidni tuljavi, opomnik h kolokviju
-- ...
+- [[file:02vaje_emp/08emp_v_20251125.html][vaje 8, 2025/11/25:]] Upornost prevodne ploščice, Cabrerov eksperiment in induciran tok v okvirju
+- [[file:02vaje_emp/09emp_v_20251202.html][vaje 9, 2025/12/02:]] Nadaljevanje induciranega toka v okvirju, kožni pojav v širokem ploščatem vodniku.
+- [[file:02vaje_emp/10emp_v_20251209.html][vaje 10, 2025/12/09:]] Energijski tok v koaksialnem in valjastem vodniku, prekinjeni vodnik [hvala Jani K. za zapiske!]
 - [[file:02vaje_emp/11emp_v_20251216.html][vaje 11, 2025/12/16:]] radialno polarizirana krogla, homogeno polarizirana krogla, ploščica iz anizotropnega dielektrika
+- [[file:02vaje_emp/12emp_v_20251223.html][vaje 12, 2025/12/23:]] Točkast dipol v krogelni lupini dielektrika, elektromagnetno valovanje v hladni plazmi.
+- [[file:02vaje_emp/13emp_v_20250106.html][vaje 13, 2026/01/06:]] Valovni vodnik iz dveh vzporednih plošč

@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-14 Wed 07:35 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>10. vaje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">10. vaje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4ceb182">1. Energijski tok v koaksialnem vodniku in v valjastem vodniku</a>
+<ul>
+<li><a href="#org794487f">1.1. Teorija energijskega toka</a></li>
+<li><a href="#orga2cd2d2">1.2. Reševanje naloge</a>
+<ul>
+<li><a href="#org9fe33c1">1.2.1. Koaksialni vodnik</a></li>
+<li><a href="#org24b8f80">1.2.2. Valjast uporovni vodnik</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf2fb10b">2. Prekinjeni vodnik</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4ceb182" class="outline-2">
+<h2 id="org4ceb182"><span class="section-number-2">1.</span> Energijski tok v koaksialnem vodniku in v valjastem vodniku</h2>
+<div class="outline-text-2" id="text-1">
+<div class="problem" id="org1a73ed7">
+<ol class="org-ol">
+<li>Izračunaj energijski tok skozi prečni presek koaksialnega vodnika, kjer je napetost med žilo in plaščem \( U \), ta pa po njiju v nasprotnih smereh poganja električni tok \( I \).</li>
+<li>Izračunaj energijski tok skozi zunanjo površino dolgega ravnega vodnika preseka \( S \) in dolžine \( l \) iz kovine s specifično prevodnostjo \( \sigma \), po katerem teče električni tok \( I \). Končni rezultat izrazi s celotno uporabnostjo vodnika \( R = \frac{l}{\sigma S} \)</li>
+</ol>
+
+</div>
+</div>
+<div id="outline-container-org794487f" class="outline-3">
+<h3 id="org794487f"><span class="section-number-3">1.1.</span> Teorija energijskega toka</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Energijski zakon se glasi
+</p>
+
+<p>
+\[ \frac{\partial w}{\partial t} + \nabla \cdot \vec{P} + \vec{\jmath} \cdot \vec{E} = 0.
+\]
+</p>
+
+<p>
+\( w \) predstavlja gostoto energije in je definirana kot
+</p>
+
+<p>
+\[ w = \frac{1}{2} \epsilon_0 E ^2 + \frac{1}{2 \mu_0} B ^2.
+\]
+</p>
+
+<p>
+\( \vec{\mathcal{P}} \) je Poyntingov vektor, ki se ga izračuna preko enačbe
+</p>
+
+<p>
+\[ \vec{\mathcal{P}} = \frac{1}{\mu_0} \vec{E} \times \vec{B} ,
+\]
+</p>
+
+<p>
+ki podaja gostoto energijskega toka.
+</p>
+
+<p>
+Zadnji člen v energijskem zakon je ohmski člen, ki govori o izgubah energije zaradi upora.
+</p>
+
+<p>
+Energijski zakon pretvorimo iz diferencialne v integralno obliko preko integrala po volumnu
+</p>
+
+<p>
+\[ \frac{\partial W}{\partial t}  + \int\limits_{}^{} \nabla \cdot \vec{P} \, \mathrm{d} V + \int\limits_{}^{} \vec{\jmath} \cdot \vec{E} \, \mathrm{d} V = 0.
+\]
+</p>
+
+<p>
+Preko Gaussovega izreka lahko integral \( \nabla \cdot \vec{\mathcal{P}} \) pretvorimo na energijski tok
+</p>
+
+<p>
+\[ \int\limits_{}^{} \nabla \cdot \vec{\mathcal{P}} \, \mathrm{d} V = \int\limits_{}^{} \vec{\mathcal{P}} \cdot \, \mathrm{d} \vec{S}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orga2cd2d2" class="outline-3">
+<h3 id="orga2cd2d2"><span class="section-number-3">1.2.</span> Reševanje naloge</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org9fe33c1" class="outline-4">
+<h4 id="org9fe33c1"><span class="section-number-4">1.2.1.</span> Koaksialni vodnik</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<div id="org558a762" class="figure">
+<p><img src="figures/energijskiTokKoaks.png" alt="energijskiTokKoaks.png" />
+</p>
+</div>
+
+<p>
+Pomagali si bomo s skico.
+</p>
+
+<p>
+Kakor vemo pri nalogi iz sile na koaksialni kabel, ima magnetno polje \( \mathbf{B} \) v vodniku pravokotno smer na radij.
+</p>
+
+<p>
+Električno polje \( \mathbf{E} \) je radialno usmerjeno. Prisotnost električnega polja pomeni neenakomerno razporejenost naboja. Pozitivni naboji iz plašča so prišli na notranji vodnik in na plašču so preostali negativni naboji.
+</p>
+
+<p>
+Magnetno polje dobimo preko Amperovega zakona z zaključeno zanko, ki zaobjame notranji vodnik
+</p>
+
+<p>
+\[ \mu_0 I = B 2 \pi r \implies \, B = \frac{\mu_0 I}{2 \pi r}.
+\]
+</p>
+
+<p>
+Električno polje pa dobimo iz Gaussovega zakona, kjer si zamislimo zaključeno ploskev vzdolž vodnika.
+</p>
+
+<p>
+\[ e = \epsilon_0 E \cdot 2 \pi r l \implies \, E = \frac{e}{2 \pi \epsilon_0 l r}.
+\]
+</p>
+
+<p>
+Naboja \( e \) ne poznamo, vendar ga lahko izračunamo preko znanega električnega potenciala, za katerega velja
+</p>
+
+<p>
+\[ U = \int\limits_a^b E \, \mathrm{d} r = \frac{e}{2 \pi \epsilon_0 l} \ln  \frac{b}{a}.
+\]
+</p>
+
+<p>
+Iz tega sledi, da je električno polje enako
+</p>
+
+<p>
+\[ E = \frac{U}{r \ln \frac{b}{a}}.
+\]
+</p>
+
+<p>
+Poyntingov vektor kaže ven iz ravnine lista in je enak ob upoštevanju zgoraj izračunanih količin
+</p>
+
+<p>
+\[ P = \frac{1}{\mu_0} E B = \frac{UI}{2 \pi \ln \frac{b}{a} \cdot r ^2}.
+\]
+</p>
+
+<p>
+Površinski tok izračunamo po kolobarjih, kjer je diferencial površine \( \mathrm{d} S = 2 \pi r \, \mathrm{d} r \).
+</p>
+
+<p>
+\[ \int\limits_{}^{} \mathbf{\mathcal{P}} \, \mathrm{d} \mathbf{S} = \frac{UI}{2 \pi \ln \frac{b}{a}} \int\limits_a^b \frac{1}{r ^2}2 \pi r \, \mathrm{d} r = UI
+\]
+</p>
+
+<p>
+Vrnimo se nazaj k integralski enačbi. V primeru koaksialnega vodnika nimamo upora, torej bo \( \mathbf{j} \cdot \mathbf{E} = 0 \). Ostane nam
+</p>
+
+<p>
+\[ \frac{\partial W}{\partial t}  + \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} = 0
+\]
+</p>
+
+<p>
+Površinski tok je različen od \( 0 \), vendar je sprememba energije skozi čas tudi \( 0 \).
+</p>
+
+<p>
+Imamo torej valjast kolobar dolžine \( L < l \), v katerega zaradi konstantnosti električnega in magnetnega polja priteka enako energije kakor jo iz elementa odteka. Iz tega sledi, da je
+</p>
+
+<p>
+\[ \frac{\partial W}{\partial t} = 0.
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org24b8f80" class="outline-4">
+<h4 id="org24b8f80"><span class="section-number-4">1.2.2.</span> Valjast uporovni vodnik</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<div id="orgee4cd58" class="figure">
+<p><img src="figures/energijskiTokValj.png" alt="energijskiTokValj.png" />
+</p>
+</div>
+
+<p>
+V valjastem vodniku je zaradi priključka napetosti na osnovni ploskvi električno polje \( \mathbf{E} \) usmerjeno vzdolž dolžine vodnika. Magnetno polje \( \mathbf{B} \) pa je še zmeraj pravokotno na radij.
+</p>
+
+<p>
+Električno polje je samo
+</p>
+
+<p>
+\[ E = \frac{U}{l}.
+\]
+</p>
+
+<p>
+Za Amperov zakon pa je malo drugačno. Zaključena krožnica z radijem \( r < a \) ne zajame celotnega toka po vodniku. Zajet tok je kvadratno sorazmeren s polmerom zaradi ploščine krožnice pri radiju \( r \). Torej
+</p>
+
+<p>
+\[ B \cdot 2 \pi r = \mu_0 I \left( \frac{r}{a} \right) ^2 \implies \, B = \frac{\mu_0 I}{2 \pi a ^2} r
+\]
+</p>
+
+<p>
+Sedaj lahko izračunamo \( \mathbf{\mathbf{P}} \)
+</p>
+
+<p>
+\[ \mathbf{\mathcal{P}} = \frac{1}{\mu_0} E B = \frac{UI}{2 \pi a ^2 l} r
+\]
+</p>
+
+<p>
+Opazimo lahko, da je sorazmeren s polmerom, kar pomeni, da bližje smo središču valja, manjši bo Poyntingov vektor.
+</p>
+
+<p>
+Površinski tok je tokrat ploskovni integral po plašču valja s polmerom \( r \). Torej
+</p>
+
+<p>
+\[ \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} = \frac{UI}{2 \pi \alpha ^2 l} r \cdot 2 \pi r l = \frac{UI r ^2}{a ^2}.
+\]
+</p>
+
+<p>
+Površinski tok, ki nas zanima je tok celotnega vodnika, torej bo \( r = a \). Sledi
+</p>
+
+<p>
+\[ \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} = UI
+\]
+</p>
+
+<p>
+Energijski zakon tokrat zadnji dve komponenti. Zaradi konstantnosti magnetnega in električnega polja bo \( \frac{\partial W}{\partial t} = 0 \).
+</p>
+
+<p>
+Površinski tok v tem primeru teče notri v vodnik (in ne vzdolž vodnika kot pri prejšnjem primeru).
+</p>
+
+<p>
+Izračunajmo še ohmske izgube. Zaradi homogenosti problema je volumnski integral izračunati precej enostavno
+</p>
+
+<p>
+\[ \int\limits_{}^{} \mathbf{j} \cdot \mathbf{E} \, \mathrm{d} V = j E V = j S E l = U I.
+\]
+</p>
+
+<p>
+Upoštevali smo identiteti \( j S = I \) ter \( E l = U \).
+</p>
+
+<p>
+Ob upoštevanju \( U = RI \) so torej ohmske izgube \( R ^2 I \). Energijski zakon velja
+</p>
+
+<p>
+\[ \frac{\partial W}{\partial t} + \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} + \int\limits_{}^{} \mathbf{j} \cdot \mathbf{E}\cdot \, \mathrm{d} V = - UI + UI = 0.
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf2fb10b" class="outline-2">
+<h2 id="orgf2fb10b"><span class="section-number-2">2.</span> Prekinjeni vodnik</h2>
+<div class="outline-text-2" id="text-2">
+<div class="problem" id="org4f7f96a">
+<p>
+Dolg raven valjast vodnik preseka \( S \) je na nekem mestu prekinjen. Prekinitev ima obiko ozke špranje širine \( d \) pravokotne na vodnik. Ob času \( t = 0 \) po vodniku spustimo konstanten električni tok \( I \), zaradi katerega se na zgornji in spodnji meji špranje začne nabirati naboj.
+</p>
+
+<ol class="org-ol">
+<li>Določi smer in velikost jakosti električnega polja ter gostote magnetnega polja v špranji v oddaljenosti \( r \) od osi vodnika ob času \( t \).</li>
+<li>S pomočjo Poyntingovega vektorja izračunaj energijski tok, ki ob času \( t \) priteka v špranjo.</li>
+<li>Prejšnji rezultat primerjaj s časovnim odvodom energije elktromagnetnega polja v špranji.</li>
+</ol>
+
+<p>
+Pri vseh računih zanemarik popačitev polj ob zunanjem robu špranje. Špranjo torej obravnavaj kot ploščati kondenzator. Upornost vodnika je zanemarljivo majhna.
+</p>
+
+</div>
+
+
+<div id="org7a6a436" class="figure">
+<p><img src="figures/prekinjenVodnik.png" alt="prekinjenVodnik.png" />
+</p>
+</div>
+
+<p>
+Naboj, ki se nabira na ploskvah je linearen s časom, torej
+</p>
+
+<p>
+\[ e = It.
+\]
+</p>
+
+<p>
+Iz formule za ploščati kondenzator lahko izrazimo električno polje
+</p>
+
+\begin{equation}
+\label{eq:1}
+ E = \frac{\sigma}{\epsilon_0} = \frac{e}{\epsilon_0 S} = \frac{I}{\epsilon_0 S} t.
+\end{equation}
+
+<p>
+V špranji tok ne teče, kar bi pomenilo, da ni magnetnega polja. Zaradi spreminjajočega električnega polja pa imamo v špranji premikalni tok
+</p>
+
+<p>
+\[ \nabla \times \mathbf{B} = \epsilon_0 \mu_0 \frac{\partial \mathbf{E}}{\partial t}
+\]
+</p>
+
+<p>
+Z integriranjem po ploskvi pretvorimo diferencialno obliko v integralsko obliko
+</p>
+
+<p>
+\[ \oint\limits_{}^{} \mathbf{B} \cdot \mathrm{d} \mathbf{l} = \epsilon_0 \mu_0 \frac{\partial \mathbf{E}}{\partial t} \cdot \pi r ^2
+\]
+</p>
+
+<p>
+Premikalni tok ima enako smer kakor električni tok pred zaključkom volumna. Magnetno polje je pravokotno na radij, kakor na sliki.
+</p>
+
+<p>
+Sledi torej
+</p>
+
+\begin{align*}
+  \oint\limits_{}^{} \mathbf{B} \cdot \mathrm{d} \mathbf{l} &= \epsilon_0 \mu_0 \frac{\partial E}{\partial t}  \cdot \pi r ^2 \\
+B 2 \pi r &= \epsilon_0 \mu_0 \frac{I}{\epsilon_0 S} \pi r ^2 \\
+B &= \frac{\mu_0 I}{2 S} r
+\end{align*}
+
+<p>
+Poyntingov vektor ponovno kaže proti središču valja.
+</p>
+
+<p>
+\[ P = \frac{1}{\mu_0} EB = \frac{I}{2 S} r \frac{I}{\epsilon_0 S} t = \frac{I ^2}{2 \epsilon_0 S ^2} r t
+\]
+</p>
+
+<p>
+Energijski tok v celotni špranji je pri radiju \( r = a \), površina pa je površina skozi katero tok teče - v tem primeru plašč špranje.
+</p>
+
+<p>
+\[ \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} = \mathcal{P} \cdot 2 \pi a d = \frac{I ^2}{\epsilon_0 S}
+\]
+</p>
+
+<p>
+Energijski zakon vključuje samo površinski tok in gostoto energije
+</p>
+
+<p>
+\[ \frac{\partial W}{\partial t}  + \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} = 0
+\]
+</p>
+
+<p>
+Celotna energija je sestavljena iz energije magnetnega polja \( W_m \), ki se ne spreminja ter energije električnega polja \( W_e \), ki se s časom spreminja.
+</p>
+
+<p>
+Energija elektromagnetnega polja je tako
+</p>
+
+<p>
+\[ W_e = \frac{1}{2} \epsilon_0 E ^2 S d = \frac{I ^2}{2 \epsilon_0 S} d t ^2,
+\]
+</p>
+
+<p>
+kjer smo upoštevali \ref{eq:1}. Gostota energije je
+</p>
+
+<p>
+\[ \frac{\partial W_{e}}{\partial t}  = \frac{I ^2 d}{ 2 \epsilon_0 S} t.
+\]
+</p>
+
+<p>
+Energije se ohranja, saj velja
+</p>
+
+<p>
+\[ \frac{\partial W}{\partial t}  + \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} = 0 =  \frac{I ^2 d}{\epsilon_0 S}t -  \frac{I ^2 d}{2\epsilon_0 S} t = 0.
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-14 Wed 07:35</p>
+</div>
+</body>
+</html>
