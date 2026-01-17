@@ -25,3 +25,4 @@ Zapiski vaj pri prof. Urbanu Duhu
 - [[file:02vaje_maf2/11maf2_v_20251223.html][vaje 11, 2025/12/23:]] Greenova funkcija v eni in več dimenzijah na neskončnem območju. Valovanja v dveh točkah.
 - [[file:02vaje_maf2/12maf2_v_20260105.html][vaje 12, 2026/01/05:]] Greenova funkcija z Dirichletovimi in Neumannovimi robnimi pogoji. Alternativno reševanje naloge s poltrakom pod napetostjo \( U_0 \) in Lloydovo zrcalo.
 - [[file:02vaje_maf2/13maf2_v_20250109.html][vaje 13, 2026/01/09:]] Greenova funkcija - difuzijska in valovna enačba.
+- [[file:02vaje_maf2/14maf2_v_20250112.html][vaje 14, 2026/01/12:]] Greenova funkcija - valovna enačba
