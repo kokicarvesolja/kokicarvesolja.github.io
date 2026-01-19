@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-19 Mon 14:15 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>14. vaje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">14. vaje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge9d24c4">1. Dodatek k valovnemu vodnik iz dveh vzporednih plošč</a>
+<ul>
+<li><a href="#org78f0e6b">1.1. Točka d)</a></li>
+</ul>
+</li>
+<li><a href="#orgf7d58f4">2. Valjast valovni vodnik</a>
+<ul>
+<li><a href="#orgbd52dfa">2.1. Točka a)</a>
+<ul>
+<li><a href="#orgdc75556">2.1.1. TM način</a></li>
+<li><a href="#org40ef0e6">2.1.2. TE način</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf45e51c">3. Valovni vodnik s presekom dela kroga.</a></li>
+<li><a href="#orgdb16c84">4. TEM način v koaksialnem vodniku.</a>
+<ul>
+<li><a href="#orgac12278">4.1. Koaksialni vodnik</a></li>
+</ul>
+</li>
+<li><a href="#org78aa554">5. Energijski tok v valovnem vodniku iz dveh vzporednih plošč</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge9d24c4" class="outline-2">
+<h2 id="orge9d24c4"><span class="section-number-2">1.</span> Dodatek k valovnemu vodnik iz dveh vzporednih plošč</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org78f0e6b" class="outline-3">
+<h3 id="org78f0e6b"><span class="section-number-3">1.1.</span> Točka d)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Imamo valovni vodnik s stranicama osnovne ploskve širine \( a \) in višine \( b \). Največkrat se izbere \( b = 2a \).
+</p>
+
+<p>
+Koordinatni sistem postavimo v ravnino osnovne ploskve.
+</p>
+
+<p>
+V TM načinu je valovna enačba
+</p>
+
+<p>
+\[ \left( \nabla_{\perp } ^2 + \kappa ^2 \right) E_z(x, y) =0,
+\]
+</p>
+
+<p>
+kjer je \( \nabla_{\perp } = \frac{\partial ^2 }{\partial x ^2} + \frac{\partial ^2 }{\partial y ^2}  \). Velja \( H_z = 0 \). Nalogo rešujemo s separacijo spremenljivk \( E(x, y) = X(x) Y(y) \).
+</p>
+
+<p>
+Nastavek vstavimo v enačbo in dobimo
+</p>
+
+<p>
+\[ \frac{X''}{X} + \frac{Y''}{Y} + \kappa ^2 = 0 \,  \forall x, y.
+\]
+</p>
+
+<p>
+Dve ODE, ki ju dobimo sta
+</p>
+
+<p>
+\[ X '' + \kappa_x ^2 X = 0 \quad \text{ in } \quad Y'' + \kappa_y ^2 Y = 0,
+\]
+</p>
+
+<p>
+kjer velja \( \kappa_x ^2 + \kappa_y ^2 = \kappa ^2 \).
+</p>
+
+<p>
+Robni pogoj na robu območja je
+</p>
+
+<p>
+\[ \left. E_{\parallel}  \right|_{\partial} = \left. E_z \right|_{\partial}  = 0.
+\]
+</p>
+
+<p>
+Robni pogoj pri \( x, y = 0 \) dobimo sinusno odvisnost \( \sin (\kappa_i i) \), kjer \( i = x, y \). Robni pogoj pri \( x, y = a \) pa dobimo vrednosti \( \kappa_i = \frac{n \pi}{j} \) za \( n = 1, 2, \ldots \) in \( j = a, b \).
+</p>
+
+<p>
+Po definiciji velja
+</p>
+
+<p>
+\[ \kappa ^2 = \frac{\omega ^2}{c_{0 } ^2} - k ^2.
+\]
+</p>
+
+<p>
+Disperzijska relacija je tako
+</p>
+
+<p>
+\[ \omega = c_0 \sqrt{k ^2 + \left( \frac{n \pi}{a} \right) ^2 + \left( \frac{n \pi}{b} \right) ^2}
+\]
+</p>
+
+<p>
+V TE načinu rešujemo enačbo
+</p>
+
+<p>
+\[ \left( \nabla_{\perp } ^2 + \kappa ^2 \right) H_z (x, y) = 0,
+\]
+</p>
+
+<p>
+za katerega velja \( E_z = 0 \). Uporabimo enak nastavek \( H(x, y) = X(x) Y(y) \). Robni pogoj na robu je
+</p>
+
+<p>
+\[ \left. H_{\perp } \right|_{\partial} = 0.
+\]
+</p>
+
+<p>
+Rešitvi posamezne enačbe bosta do konstante natančno
+</p>
+
+<p>
+\[ X \sim \cos (\kappa_x x) \quad \text{ in } \quad Y \sim \cos (\kappa_y  y),
+\]
+</p>
+
+<p>
+kjer je \( \kappa_x = \frac{n \pi}{a} \) ter \( \kappa_y = \frac{m \pi}{b} \). Tako \( m \) in \( n \) zasedata vrednosti \( 1, 2, \ldots \), vendar eden od njiju lahko zaseda vrednost \( 0 \), vendar ne oba hkrati. To pride iz posledice tega, da nam robni pogoj poda odvod po \( z \) in \( \cos (0) \ne 1 \).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf7d58f4" class="outline-2">
+<h2 id="orgf7d58f4"><span class="section-number-2">2.</span> Valjast valovni vodnik</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgbd52dfa" class="outline-3">
+<h3 id="orgbd52dfa"><span class="section-number-3">2.1.</span> Točka a)</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgdc75556" class="outline-4">
+<h4 id="orgdc75556"><span class="section-number-4">2.1.1.</span> TM način</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+Za TM način še zmeraj velja \( H_z = 0 \). Rešujemo valovno enačbo
+</p>
+
+<p>
+\[ \left( \nabla_{\perp } ^2 + \kappa ^2 \right)  E_z (r, \phi) = 0,
+\]
+</p>
+
+<p>
+kjer je \( \nabla_{\perp } ^2 \) v cilindričnih koordinatah, torej
+</p>
+
+<p>
+\[ \nabla_{\perp} ^2 =  \frac{1}{r} \frac{\partial }{\partial r} \left( r \frac{\partial }{\partial r}  \right) + \frac{1}{r ^2} \frac{\partial ^2 }{\partial \phi ^2}.
+\]
+</p>
+
+<p>
+Ponovno uporabimo separacijo spremenljivk \( E_z (r, \phi) = R(r) \Phi (\phi) \). ODE sta podobni kot pri Laplaceovi enačbi v cilindričnih koordinatah na začetku semestra.
+</p>
+
+<p>
+\[ \Phi '' + m ^2 \Phi = 0 \quad \text{ in } \quad R'' + \frac{1}{r} R'+ \left( \kappa ^2 - \frac{m ^2}{r ^2} \right) R =0.
+\]
+</p>
+
+<p>
+Rešitve prve ODE so linearne kombinacije sinusne in kosinusne funkcije, vendar bomo kosinus zapisali kot sinus s fazo. Torej
+</p>
+
+<p>
+\[ \Phi \sim \sin \left( m\phi  + \phi_m \right).
+\]
+</p>
+
+<p>
+Druga ODE je Besslova diferencialna enačba, katere rešitev je oblike
+</p>
+
+<p>
+\[ R(r) = A_m J_m (\kappa r) + B_m Y_m (\kappa r),
+\]
+</p>
+
+<p>
+kjer je \( J_m \) Besslova funkcija, \( Y_m \) pa Neumannova funkcija, ki jih zavržemo, saj divergirajo v \( r = 0 \). Splošna rešitev je tako
+</p>
+
+<p>
+\[ E_z (r, \phi) = \sum\limits_{m = 1}^{\infty}  A_m J_m (\kappa r) \sin (m \phi + \phi_m)
+\]
+</p>
+
+<p>
+Robni pogoj, ki velja je
+</p>
+
+<p>
+\[ E_z (a, \phi) = 0,
+\]
+</p>
+
+<p>
+od koder dobimo
+</p>
+
+<p>
+\[ J_m (\kappa a) = 0 \implies \, \kappa_m = \frac{\xi_n^{(m)}}{a},
+\]
+</p>
+
+<p>
+kjer je \( \xi_n^{(m)} \) n-ta ničla \( m \)-te Besslove funkcije \( J_m \).
+</p>
+
+<p>
+Ker velja \( \kappa ^2 = \frac{\omega ^2}{c_0 ^2} - k ^2 \), ima disperzijska relacija obliko
+</p>
+
+<p>
+\[ \omega = c_0 \sqrt{k  ^2 + \left( \frac{\xi_n^{(m)}}{a} \right) ^2}.
+\]
+</p>
+
+<p>
+Najnižja veja frekvence bo pri \( \xi_0^{(1)} \). Širina pasu bo
+</p>
+
+<p>
+\[ \Delta \omega = \frac{c_0}{a} \left( \epsilon_{11} - \epsilon_{01} \right).
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org40ef0e6" class="outline-4">
+<h4 id="org40ef0e6"><span class="section-number-4">2.1.2.</span> TE način</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Za TE način velja \( E_z = 0 \) in splošna rešitev je
+</p>
+
+<p>
+\[ H_z (r, \phi) = \sum\limits_{m = 1}^{\infty}  A_m J_m (\kappa r) \sin (m \phi + \phi_m)
+\]
+</p>
+
+<p>
+z robnm pogojem \( \left. H_{\perp} \right|_{\partial} = 0 \) na robu domene. Z drugimi besedami robni pogoj je
+</p>
+
+<p>
+\[ \frac{\partial H_{z}}{\partial r}  (a, \phi) = 0 \implies \, J_m' (\kappa a) = 0,
+\]
+</p>
+
+<p>
+kjer vrednosti \( \kappa \) zasedajo
+</p>
+
+<p>
+\[ \kappa_m = \frac{\xi_n ' ^{(m)} }{ a},
+\]
+</p>
+
+<p>
+kjer je \( \xi_n' ^{(m)}  \) \( n \)-ta ničla odvoda \( m \)-te Besslove funkcije.
+</p>
+
+<p>
+Najnižja veja je pri \( J_1 ' \), katera ničla je pri \( \epsilon_1 ' ^{(1)} = 1.84 \), druga najnižja veja pa je pri \( \xi_1 ' ^{(2)} = 3.05  \).
+</p>
+
+<p>
+Širina pasu je
+</p>
+
+<p>
+\[ \Delta \omega = \frac{c_0}{a} \left( \xi_1' ^{(2)} - \xi_1 ' ^{(1)} \right)
+\]
+</p>
+
+<p>
+in disperzijska relacija
+</p>
+
+<p>
+\[ \omega (k) = c_0 \sqrt{k ^2 + \left( \frac{\xi_n' ^{(m)}}{a} \right) ^2}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf45e51c" class="outline-2">
+<h2 id="orgf45e51c"><span class="section-number-2">3.</span> Valovni vodnik s presekom dela kroga.</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Imamo valovni vodnik četrtine valja z radijem \( r = a \) ter \( \phi \in \left[ 0, \frac{\pi}{2} \right] \).
+</p>
+
+<p>
+V TM načinu je splošna rešitev
+</p>
+
+<p>
+\[ E_z (r, \phi) = \sum\limits_{m = 1}^{\infty}  A_m J_m (\kappa r) \sin \left( m \phi + \phi_m \right).
+\]
+</p>
+
+<p>
+Imamo tri robne pogoje:
+</p>
+
+<ul class="org-ul">
+<li>robni pogoj na obodu je \( J_m = \left( \kappa a \right) = 0 \), iz česar določimo vrednosti, ki jih zaseda \( \kappa = \frac{\xi_n^{(m)}}{a} \).</li>
+<li>pri \( \phi = 0 \), ki poda \( E_z (r, \phi = 0) = 0 \), iz česar sledi \( \phi_m = 0 \). To pomeni, da je kotna odvisnost oblike \( \sin (m \phi) \).</li>
+<li><p>
+Tretji robni pogoj je pri \( \phi = \frac{\pi}{2} \), iz česar sledi \( E_z \left( r, \phi = \frac{\pi}{2} \right) = 0 \). Dobimo enačbo
+</p>
+
+<p>
+\[ \sin \left( m \frac{\pi}{2} \right) = 0 \implies m = 2, 4, 6, \ldots.
+  \]
+</p>
+
+<p>
+Torej imamo manj vej.
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb16c84" class="outline-2">
+<h2 id="orgdb16c84"><span class="section-number-2">4.</span> TEM način v koaksialnem vodniku.</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+TEM način je hkrati način, kjer sta TM in TE hkrati. Velja \( E_z , H_z = 0 \). V praznem prostoru je samo to mogoče.
+</p>
+
+<p>
+Veljata zvezi
+</p>
+
+<p>
+\[ \nabla \times \mathbf{E} = \mathrm{i} \mathbf{k} \times \mathbf{E}  \quad \text{ in } \quad \nabla \times \mathbf{H} = \mathrm{i} \mathbf{k} \times \mathbf{H},
+\]
+</p>
+
+<p>
+kjer so \( \mathbf{E}, \mathbf{H} \) in \( \mathbf{k} \) medseboj ortogonalni vektorji - torej definirajo nek preostor.
+</p>
+
+<p>
+Iz Maxwellovih enačbi pa vemo, da velja
+</p>
+
+<p>
+\[ \nabla \times \mathbf{E} = - \mu_0 \frac{\partial \mathbf{H}}{\partial t} = \mathrm{i} \omega \mu_0 \mathbf{H} \quad \text{ in } \quad \nabla \times \mathbf{H} = \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}  = - \mathrm{i} \omega \epsilon_0 \mathbf{E}.
+\]
+</p>
+
+<p>
+Ob združitvi zgornjih enakosti s spodnjimi dobimo
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \mathbf{H} = \frac{\mathbf{k}}{\omega \mu_0} \times \mathbf{E} \quad \text{ in } \quad \mathbf{E} = - \frac{\mathbf{k}}{\omega \epsilon_0}\times \mathbf{H}
+\end{equation}
+
+<p>
+Enako je kot v praznem prostoru. Dobljeno enakost za \( \mathbf{H} \) vstavimo v enakost za \( \mathbf{E} \) in dobimo
+</p>
+
+\begin{align*}
+  \mathbf{E} &= - \frac{\mathbf{k}}{\omega \epsilon_0} \times \left( \frac{\mathbf{k}}{\omega \mu_0} \times \mathbf{E} \right) \\
+&= - \frac{1}{\omega ^2 \epsilon_0 \mu_0} \left[ \mathbf{k} \left( \mathbf{k} \cdot \mathbf{E} \right) - k ^2 \mathbf{E} \right] = \frac{k ^2}{\omega ^2 \epsilon_0 \mu_0} \mathbf{E}.
+\end{align*}
+
+<p>
+Upoštevali smo, da je skalarni produkt pravokotnik vektorjev \( \mathbf{k} \) in \( \mathbf{E} \) ničeln. Prepoznamo tudi \( \frac{1}{\epsilon_0 \mu_0} = \frac{1}{c_0 ^2} \).
+</p>
+
+<p>
+Imamo enačbo
+</p>
+
+<p>
+\[ \mathbf{E} \left( 1 - \frac{k ^2 c_0 ^2}{\omega ^2} \right) = 0 \implies \omega = c_0 k,
+\]
+</p>
+
+<p>
+kar je disperzijska relacija identična praznemu prostoru.
+</p>
+
+<p>
+Dobljeno disperzijsko relacijo vstavimo v valovno enačbo
+</p>
+
+<p>
+\[ \left[ \nabla_{\perp } ^2 + \left( \frac{\omega ^2}{c_0 ^2} - k ^2 \right) \right] \mathbf{E} = 0
+\]
+</p>
+
+<p>
+in dobimo Laplaceovo enačbo
+</p>
+
+<p>
+\[ \nabla_{\perp } ^2 \mathbf{E} = 0,
+\]
+</p>
+
+<p>
+kar pomeni, da rešujemo elektrostatični problem.
+</p>
+
+<p>
+Robni problemi so
+</p>
+
+<p>
+\[ \left. E_{\parallel} \right|_{\partial} = 0 \quad \text{ in } \quad \nabla_{\parallel }^2 \mathbf{E} = 0.
+\]
+</p>
+
+<p>
+Po Dirichletovem problemu je \( E_{\parallel} = 0 \), razen če imamo prostor, ki ni enostavno povezan - če ima presek valovnega vodnika luknje. V koaksialnem vodniku TEM način obtaja
+</p>
+</div>
+<div id="outline-container-orgac12278" class="outline-3">
+<h3 id="orgac12278"><span class="section-number-3">4.1.</span> Koaksialni vodnik</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Imamo koaksialni vodnik z notranjim polmerom \( a \) ter zunanjim polmerom \( b \). V koaksialnem vodniku imamo plazmo, katere dielektričnost je
+</p>
+
+<p>
+\[ \epsilon = 1 -  \frac{\omega_p ^2}{\omega ^2}.
+\]
+</p>
+
+<p>
+\( \omega_p \) je podana.
+</p>
+
+<p>
+Zanima nas disperzijska relacija \( \omega(k) \) tega koaksialnega vodnika ter impedanca \( Z(\omega) = \frac{U}{I} \).
+</p>
+
+<p>
+Iz teoretičnega uvoda velja disperzijska relacija \( \omega = ck \). Upoštevamo definicijo \( c = \frac{1}{\sqrt{\epsilon_0 \mu_0 \epsilon}} \), iz česar sledi
+</p>
+
+<p>
+\[ \omega = \frac{1}{\sqrt{\epsilon_0 \mu_0 k}} k = \frac{c_0}{\sqrt{\epsilon}} k = \frac{c_0}{\sqrt{1 - \frac{\omega_p ^2}{\omega ^2}}}k
+\]
+</p>
+
+<p>
+Enačbo kvadriramo, saj želimo izraziti \( \omega \)
+</p>
+
+<p>
+\[ \omega ^2 \left( 1 -\frac{\omega_p ^2}{\omega ^2} \right) = c_0 ^2 k ^2 ,
+\]
+</p>
+
+<p>
+iz česar izrazimo disperzijsko relacijo
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \omega = \sqrt{ \omega_p ^2 + c_0 ^2 k ^2}.
+\end{equation}
+
+<p>
+Dobljena vrednost je identitečna disperzijski relaciji za plazmo brez vodnika.
+</p>
+
+<p>
+Pri računanju impedance se bomo morali poslužiti nekaj rezultatov iz naloge 15
+</p>
+
+<p>
+\[ I = 2 \pi r H  \text{ (Ampere) } \quad \text{ in } \quad U = E r \ln \frac{b}{a} \text{ (Gauss) }
+\]
+</p>
+
+<p>
+Impedanca je po definiciji
+</p>
+
+<p>
+\[ Z = \frac{U}{I} = \frac{\ln \frac{b}{a}}{2 \pi} \frac{E}{H}
+\]
+</p>
+
+<p>
+Velikost posameznih komponent določimo iz enačbe \ref{eq:1}, ki ji dodamo dielektrično konstanto \( \epsilon \) plazme.
+</p>
+
+<p>
+\[ E = \frac{k}{\omega \epsilon_0 \epsilon} H.
+\]
+</p>
+
+<p>
+Impedanca je torej
+</p>
+
+<p>
+\[ Z = \frac{\ln \frac{b}{a}}{2 \pi} \frac{k}{\omega \epsilon_0 \epsilon}.
+\]
+</p>
+
+<p>
+Valovni vektor nadomestimo s tem, da ga izrazimo iz disperzijske relacije \ref{eq:2}
+</p>
+
+<p>
+\[ k = \frac{\sqrt{\omega ^2 - \omega_p ^2 }}{c_0}.
+\]
+</p>
+
+<p>
+Hkrati lahko tudi izraz za konstanto dielektričnosti izrazimo
+</p>
+
+<p>
+\[ \epsilon \omega ^2 = \omega ^2 - \omega_p ^2.
+\]
+</p>
+
+<p>
+Dobljeno vstavimo v impedanco in dobimo
+</p>
+
+<p>
+\[ Z = \frac{\ln \frac{b}{a}}{2 \pi} \frac{1}{\epsilon_0 c_0} \frac{\omega}{\sqrt{\omega ^2 - \omega_p ^2} } .
+\]
+</p>
+
+<p>
+Upoštevamo, da velja
+</p>
+
+<p>
+\[ \frac{1}{\epsilon_0} \sqrt{\epsilon_0 \mu_0} = \sqrt{\frac{\mu_0}{\epsilon_0}} = Z_0.
+\]
+</p>
+
+<p>
+ter izrazimo \( \omega  \) iz korena. Torej velja
+</p>
+
+<p>
+\[ Z = \frac{\ln \frac{b}{a}}{2 \pi} Z_0 \frac{1}{\sqrt{1 - \frac{\omega_p ^2}{\omega ^2}}}.
+\]
+</p>
+
+<p>
+Bralec lahko vidi, da impedanca divergira za \( \omega = \omega_p \).
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org78aa554" class="outline-2">
+<h2 id="org78aa554"><span class="section-number-2">5.</span> Energijski tok v valovnem vodniku iz dveh vzporednih plošč</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Imejmo dve vzporedni ploščí, ki sta na razdalji \( a \) oddaljeni imata med sabi. Plošči sta visoki \( b \).
+</p>
+
+<p>
+Zanima nas, kateri od načinov med TEM in TM je bolj energijsko ugoden. Podano imamo magnetno polje \( \mathbf{H}_0 \), ki je vzporeden s ploščama. Energijski tok bomo dobili preko integracije Poyntingovega vektorja \( \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} \).
+</p>
+
+<p>
+Tako električno polje \( \mathbf{E} \) kot magnetno polje \( \mathbf{H} \) imata sinusno odvisnost. Poyntingov vektor
+</p>
+
+<p>
+\[ \mathbf{\mathcal{P}} = \mathbf{E} \times \mathbf{H} \propto \sin ^2 (\omega t).
+\]
+</p>
+
+<p>
+Za dolg čas opazovanja bomo torej vzeli povprečje \( \left\langle \sin ^2 (\omega t) \right\rangle = \frac{1}{2} \). Torej si bomo tudi ogledovali \( \left\langle \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} \right\rangle \).
+</p>
+
+<p>
+V TEM načinu, kjer so si \( \mathbf{E} \), \( \mathbf{H} \) in \( \mathrm{d} \mathbf{S} \) pravokotni med seboj, potem velja
+</p>
+
+\begin{align*}
+  \left\langle \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} \right\rangle &= \left\langle \int\limits_{}^{} E H \, \mathrm{d} S \right\rangle \\
+&= \left\langle \int\limits_{}^{} \frac{k}{ \omega \epsilon_0} H ^2 \, \mathrm{d} S \right\rangle,
+\end{align*}
+
+<p>
+Upoštevali smo \ref{eq:1}, kjer velja \( E = \frac{k}{\omega \epsilon_0} H \).
+</p>
+
+<p>
+Energijski tok v
+</p>
+
+<p>
+\[ \left\langle \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} \right\rangle = \left\langle \frac{k}{\omega \epsilon_0} H ^2 a b \right\rangle = \frac{k}{\omega \epsilon_0} H_0 ^2 a b \frac{1}{2} = \frac{1}{2} Z_0 H ^2 ab.
+\]
+</p>
+
+<p>
+Tukaj smo upoštevali, da velja
+</p>
+
+<p>
+\[ \frac{k}{\omega \epsilon_0} = \frac{1}{c_0 \epsilon_0} = Z_0 .
+\]
+</p>
+
+<p>
+Na fotografiji je TM način zgornja del, TEM pa spodnji.
+</p>
+
+<p>
+\[ \left( \mathbf{E} \times \mathbf{H} \right) \cdot \mathrm{d} \mathbf{S} = E_x H_y \mathrm{d} S.
+\]
+</p>
+
+<p>
+\( E_x \) in \( H_y \) izračunamo iz 4 enačb za komponente. Rešitev je
+</p>
+
+<p>
+\[ \left\langle \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} \right\rangle = \frac{1}{2} Z_0 H_0 ^2 \sqrt{1 - \frac{\omega_{min} ^2}{\omega ^2} } \cdot \frac{1}{2} ab.
+\]
+</p>
+
+<p>
+Razmerje med TM in TEM načinu je
+</p>
+
+<p>
+\[ \frac{\left\langle \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} \right\rangle_{TM}}{\left\langle \int\limits_{}^{} \mathbf{\mathcal{P}} \cdot \mathrm{d} \mathbf{S} \right\rangle_{TEM}} = \frac{1}{2} \sqrt{1 - \frac{\omega_{min} ^2}{\omega ^2}} \le \frac{1}{2}.
+\]
+</p>
+
+<p>
+Torej je TEM za polovico bolj ugoden od TM, če je možen.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-19 Mon 14:15</p>
+</div>
+</body>
+</html>

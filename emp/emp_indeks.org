@@ -30,3 +30,4 @@ Zapiske sem ustvaril sam tekom in po vajah. Osnova za zapiske so vaje, ki jih je
 - [[file:02vaje_emp/11emp_v_20251216.html][vaje 11, 2025/12/16:]] radialno polarizirana krogla, homogeno polarizirana krogla, ploščica iz anizotropnega dielektrika
 - [[file:02vaje_emp/12emp_v_20251223.html][vaje 12, 2025/12/23:]] Točkast dipol v krogelni lupini dielektrika, elektromagnetno valovanje v hladni plazmi.
 - [[file:02vaje_emp/13emp_v_20250106.html][vaje 13, 2026/01/06:]] Valovni vodnik iz dveh vzporednih plošč
+- [[file:02vaje_emp/14emp_v_20260115.html][vaje 14, 2026/01/15:]] Dodatek k valovnemu vodniku iz dveh vzporednih plošč, valjast valovni vodnik, valovni vodnik s presekom dela kroga, TEM način v koaksialnem vodniku, energijski tok v valovnem vodniku iz dveh vzporednih plošč
