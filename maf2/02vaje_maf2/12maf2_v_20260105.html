@@ -3,11 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-01-11 ned 18:22 -->
+<!-- 2026-01-19 Mon 12:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>12. vaje iz Matematične fizike 2</title>
-<meta name="author" content="Kristofer Robin" />
 <meta name="generator" content="Org Mode" />
 <style type="text/css">
   #content { max-width: 60em; margin: auto; }
@@ -233,19 +232,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc6902b3">1. Greenove funkcije</a>
+<li><a href="#org0a13e5b">1. Greenove funkcije</a>
 <ul>
-<li><a href="#orgddf3709">1.1. Neumannovi robni pogoji</a></li>
-<li><a href="#org3fe979c">1.2. Naloga 34 (Prinčič, 5.2) - alternativno reševanje&#xa0;&#xa0;&#xa0;<span class="tag"><span class="w">w</span></span></a></li>
-<li><a href="#org26f7461">1.3. Akustika</a></li>
-<li><a href="#org0c70fb7">1.4. Naloga 35 (Lloydovo zrcalo)</a></li>
+<li><a href="#org8e2614c">1.1. Neumannovi robni pogoji&#xa0;&#xa0;&#xa0;<span class="tag"><span class="iffy">iffy</span></span></a></li>
+<li><a href="#org31e1fb4">1.2. Naloga 34 (Prinčič, 5.2) - alternativno reševanje&#xa0;&#xa0;&#xa0;<span class="tag"><span class="w">w</span></span></a></li>
+<li><a href="#org8733e72">1.3. Akustika</a></li>
+<li><a href="#orgbf6855a">1.4. Naloga 35 (Lloydovo zrcalo)</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc6902b3" class="outline-2">
-<h2 id="orgc6902b3"><span class="section-number-2">1.</span> Greenove funkcije</h2>
+<div id="outline-container-org0a13e5b" class="outline-2">
+<h2 id="org0a13e5b"><span class="section-number-2">1.</span> Greenove funkcije</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Imamo diferencialni operator
@@ -374,8 +373,8 @@ Opravimo zamenjavo \( \vec{r} \leftrightarrow \vec{r}_0 \) in \( G\left( \vec{r}
  u \left( \vec{r} \right) = \int\limits_{\mathcal{D}}^{} G \left( \vec{r}, \vec{r}_0 \right) f \left( \vec{r}_0 \right) \, \mathrm{d} ^n \vec{r}_0 + \int\limits_{\partial \mathcal{D}}^{} \frac{\partial G \left( \vec{r}, \vec{r}_0 \right)}{\partial \vec{n}_{\vec{r}_0}} u \left( \vec{r}_0 \right) \, \mathrm{d} S_0
 \end{equation}
 </div>
-<div id="outline-container-orgddf3709" class="outline-3">
-<h3 id="orgddf3709"><span class="section-number-3">1.1.</span> Neumannovi robni pogoji</h3>
+<div id="outline-container-org8e2614c" class="outline-3">
+<h3 id="org8e2614c"><span class="section-number-3">1.1.</span> Neumannovi robni pogoji&#xa0;&#xa0;&#xa0;<span class="tag"><span class="iffy">iffy</span></span></h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 V primeru reševanja enačbe
@@ -391,17 +390,46 @@ je postopek malo drugačen.
 </p>
 
 \begin{align*}
-  \int\limits_{\mathcal{D}}^{} \nabla ^2 u \left( \vec{r} \right) \, \mathrm{d} V &= \int\limits_{\mathcal{D}}^{}
+  \int\limits_{\mathcal{D}}^{} \nabla ^2 u \left( \vec{r} \right) \, \mathrm{d} V &= \int\limits_{\mathcal{D}}^{} \nabla \cdot \left( \nabla u \right) \, \mathrm{d} V \\
+&= \oint\limits_{\partial \mathcal{D}}^{} \nabla u \, \mathrm{d} \vec{S} \\
+&= \oint\limits_{\partial \mathcal{D}}^{} \frac{\partial u}{\partial \hat{n}} \, \mathrm{d} S \\
 \end{align*}
+
+<p>
+Iz tega sledi, da je za Neumannove robne pogoje
+</p>
+
+<p>
+\[ \oint\limits_{\partial \mathcal{D}}^{} \frac{\partial u}{\partial \hat{n}}  \, \mathrm{d} S = \int\limits_{\mathcal{D}}^{} f \left( \vec{r} \right) \, \mathrm{d} V
+\]
+</p>
+
+<p>
+V primeru, da je normalni odvod funkcije \( u \) ničeln, potem nam preostane enačba
+</p>
+
+<p>
+\[ \int\limits_{\mathcal{D}}^{} f \left( \vec{r} \right) \, \mathrm{d} V = 0
+\]
+</p>
+
+<p>
+in Greenova funkcija v tem primeru je
+</p>
+
+<p>
+\[ f \left( \vec{r} \right) = \delta \left( \vec{r} - \vec{r}_0 \right).
+\]
+</p>
 </div>
 </div>
-<div id="outline-container-org3fe979c" class="outline-3">
-<h3 id="org3fe979c"><span class="section-number-3">1.2.</span> Naloga 34 (Prinčič, 5.2) - alternativno reševanje&#xa0;&#xa0;&#xa0;<span class="tag"><span class="w">w</span></span></h3>
+<div id="outline-container-org31e1fb4" class="outline-3">
+<h3 id="org31e1fb4"><span class="section-number-3">1.2.</span> Naloga 34 (Prinčič, 5.2) - alternativno reševanje&#xa0;&#xa0;&#xa0;<span class="tag"><span class="w">w</span></span></h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Ta problem smo že reševali.
 </p>
-<div class="problem" id="orga271633">
+<div class="problem" id="orgdbf982d">
 <p>
 Imamo polktrak širine \( a \), ki se nahaja v ravnini \( zy \). Poltrak ima napetost \( U_0 \). Rešujemo Laplaceovo enačbo
 </p>
@@ -452,7 +480,7 @@ Za dan problem že poznamo, da je
 </p>
 
 <p>
-Iz teoretičenga uvoda vemo
+Iz teoretičnega uvoda vemo
 </p>
 
 <p>
@@ -559,8 +587,8 @@ Uvedemo spremenljivko \( z = \frac{y - y_0}{x} \) in dobimo
 </p>
 </div>
 </div>
-<div id="outline-container-org26f7461" class="outline-3">
-<h3 id="org26f7461"><span class="section-number-3">1.3.</span> Akustika</h3>
+<div id="outline-container-org8733e72" class="outline-3">
+<h3 id="org8733e72"><span class="section-number-3">1.3.</span> Akustika</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Imamo hitrostno polje \( v \left( \vec{r}, t \right) \) z gostoto \( \rho \left( \vec{r}, t \right) = \rho_0 + \delta \rho \left( \vec{r}, t \right) \) in tlak \( p \left( \vec{r}, t \right) = p_0 + \delta p \left( \vec{r}, t \right) \).
@@ -673,10 +701,10 @@ Povprečen energijski tok
 </ol>
 </div>
 </div>
-<div id="outline-container-org0c70fb7" class="outline-3">
-<h3 id="org0c70fb7"><span class="section-number-3">1.4.</span> Naloga 35 (Lloydovo zrcalo)</h3>
+<div id="outline-container-orgbf6855a" class="outline-3">
+<h3 id="orgbf6855a"><span class="section-number-3">1.4.</span> Naloga 35 (Lloydovo zrcalo)</h3>
 <div class="outline-text-3" id="text-1-4">
-<div class="problem" id="orgbc0a461">
+<div class="problem" id="org42fb681">
 <p>
 Imamo Lloydovo zrcalo, ki ima izvor na \( \vec{r} = a \hat{e}_z \). Rešujemo enačbo
 </p>
@@ -834,8 +862,7 @@ kjer smo upoštevali, da \( r_+ \sim r_- \sim r \). Pri \( \theta = \frac{\pi}{2
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Kristofer Robin</p>
-<p class="date">Created: 2026-01-11 ned 18:22</p>
+<p class="date">Created: 2026-01-19 Mon 12:48</p>
 </div>
 </body>
 </html>
