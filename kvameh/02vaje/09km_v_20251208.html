@@ -1,0 +1,1822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-25 Sun 20:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>9. vaje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">9. vaje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgca851d6">1. Rashbova sklopitev</a>
+<ul>
+<li><a href="#orgcb83815">1.1. Lestvični operatorji spina</a></li>
+<li><a href="#org88072d3">1.2. Reševanje naloge</a></li>
+<li><a href="#org2151f25">1.3. Spin v prostoru</a></li>
+<li><a href="#orge2c639e">1.4. Paulijeve matrike</a></li>
+<li><a href="#orgdb98c81">1.5. Reševanje naloge s Paulijevimi spinskimi matrikami</a></li>
+</ul>
+</li>
+<li><a href="#org4798f0a">2. Simetrija na obrat časa z Rashbovo sklopitvijo&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nismo_delali">nismo_delali</span></span></a>
+<ul>
+<li><a href="#orgaca410a">2.1. Teorija - simetrija na obrat časa</a></li>
+<li><a href="#orgee198e3">2.2. Reševanje naloge</a></li>
+</ul>
+</li>
+<li><a href="#org0480f2a">3. Sipanje na spinskem odvisnem potencialu \( \delta \) funkcije v eni dimenziji</a>
+<ul>
+<li><a href="#org3c3209b">3.1. Sipanje na \( \delta \) funkciji brez spina</a></li>
+<li><a href="#orgfef66ac">3.2. Reševanje naloge</a></li>
+<li><a href="#orged7e4a5">3.3. Sipanje na \( \delta \) potencialu s spinom</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca851d6" class="outline-2">
+<h2 id="orgca851d6"><span class="section-number-2">1.</span> Rashbova sklopitev</h2>
+<div class="outline-text-2" id="text-1">
+<div class="problem" id="org8b0c1c0">
+<p>
+Obravnavajmo delec v dvodimenzionalni \( x, y \) ravnini s spinom \( S = \frac{1}{2} \) in Hamiltonianom
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + \lambda \left( p_x S_y - p_y S_x \right),
+\]
+</p>
+
+<p>
+kjer sta \( \vec{p} = (p_x, p_y, 0) \) in \( \vec{S} = (S_x, S_y, 0) \) gibalna količina in spin operatorja. \( \lambda \) je konstantna. Iščemo lastne vrednosti in funkcije Hamiltoniana \( H \).
+</p>
+
+</div>
+
+<p>
+Matematično je spinska vrtilna količina identitična tirni vrtilni količini. Zanjo veljajo tudi enake relacije, čeprav ima fizikalno drugačen pomen.
+</p>
+
+<p>
+Hilbertov prostor \( \mathcal{H} \) je tenzorski prostor Hilbertovega prostora krajevnega dela in spinskega dela
+</p>
+
+<p>
+\[ \mathcal{H} = \mathcal{H}_r \otimes \mathcal{H}_s.
+\]
+</p>
+
+<p>
+Valovna funkcija v Hilbertovem prostoru \( \mathcal{H} \) je
+</p>
+
+<p>
+\[ \left| \psi  \right\rangle = \left| \psi_r \right\rangle \otimes \left| \psi_2 \right\rangle
+\]
+</p>
+
+<p>
+Delec s spinom \( S = \frac{1}{2} \) ima valovno funkcijo, ki je linearna kombinacija obeh stanj
+</p>
+
+<p>
+\[ \left| \psi_2 \right\rangle = \alpha \left| \frac{1}{2}, \frac{1}{2} \right\rangle + \beta \left| \frac{1}{2}, - \frac{1}{2} \right\rangle,
+\]
+</p>
+
+<p>
+kjer prvo kvantno število označuje velikost spina \( s= \frac{1}{2} \), druga številka pa projekcijo spina \( m_s \in \left\{ - \frac{1}{2}, \frac{1}{2} \right\} \).
+</p>
+
+<p>
+Operator spina \( S ^2 \) deluje na stanje \( \left| s, m_s \right\rangle \)
+</p>
+
+\begin{equation}
+\label{eq:1}
+ S ^2 \left| s, m_s \right\rangle = \hbar ^2 s( s + 1 ) \left| s, m_s \right\rangle.
+\end{equation}
+
+<p>
+Učinek operatorja \( S ^2 \) na bazno stanje bo torej po \ref{eq:1}
+</p>
+
+<p>
+\[ S ^2 \left| \frac{1}{2}, \frac{1}{2} \right\rangle = \frac{3}{4} \hbar ^2 \left| \frac{1}{2}, \frac{1}{2} \right\rangle, \quad S ^2 \left| \frac{1}{2}, - \frac{1}{2} \right\rangle = \frac{3}{4} \hbar ^2 \left| \frac{1}{2}, - \frac{1}{2} \right\rangle
+\]
+</p>
+
+<p>
+Operator \( S_z \) pa ima na stanje \( \left| s, m_s \right\rangle \) naslednji učinek
+</p>
+
+<p>
+\[ S_z \left| s, m_s \right\rangle = \hbar m \left| s, m_s \right\rangle
+\]
+</p>
+
+<p>
+\( S_z \) na bazno stanje bo torej povzročilo
+</p>
+
+<p>
+\[ S_z \left| \frac{1}{2}, \frac{1}{2} \right\rangle = \frac{\hbar}{2} \left| \frac{1}{2}, \frac{1}{2} \right\rangle, \quad S_z \left| \frac{1}{2}, - \frac{1}{2} \right\rangle = - \left| \frac{1}{2}, - \frac{1}{2} \right\rangle
+\]
+</p>
+
+<p>
+Za stanja v spinskem prostoru ponavadi uporabimo drugo notacijo. Stanje s spinom navzgor \( \left| \frac{1}{2}, \frac{1}{2} \right\rangle \) označimo z \( \left| \uparrow \right\rangle \), stanje s spinom navzdol pa označimo \( \left| \downarrow \right\rangle \).
+</p>
+
+<p>
+Krajevni Hilbertov prostor je neskončno-dimenzionalen, medtem ko spinski del pa je dvodimenzionalen, saj je osnovno stanje predstavljeno z linearno kombinacijo dveh vektorjev.
+</p>
+</div>
+<div id="outline-container-orgcb83815" class="outline-3">
+<h3 id="orgcb83815"><span class="section-number-3">1.1.</span> Lestvični operatorji spina</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Podobno kot pri tirni vrtilni količini lahko definiramo lestvična operatorja, ki nam zvišujeta ali znižujeta dano stanje \( m_s \)
+</p>
+
+<p>
+\[ S_{\pm} \left| s, m_s \right\rangle = \hbar \sqrt{s (s+ 1) - m_{s} (m_{s} \pm 1)} \left| s, m_s \pm 1 \right\rangle
+\]
+</p>
+
+<p>
+Definirana sta kot
+</p>
+
+\begin{align}
+  S_+ &= S_x + \mathrm{i} S_y \label{eq:spinU} \\
+S_- &= S_x - \mathrm{i} S_y \label{eq:spinD}
+\end{align}
+
+<p>
+S seštevanjem in odštevanjem enačb lahko izrazimo operatorja \( S_x \) in \( S_y \)
+</p>
+
+\begin{align}
+S_x &= \frac{S_+ + S_-}{2} \label{eq:spinX} \\
+S_y &= \frac{S_+ - S_-}{2 \mathrm{i}} \label{eq:spinY}
+\end{align}
+
+<div class="my_example" id="org1691a8f">
+<p>
+Kot primer si poglejmo, kako lestvični operatorji vplivajo na stanje s spinom navzgor \( \left| \uparrow \right\rangle \) in navzdol \( \left| \downarrow \right\rangle \).
+</p>
+
+<p>
+Operator \( S_+ \) ima na stanji sledeč učinek
+</p>
+
+<p>
+\[ S_+ \left| \uparrow \right\rangle = 0 \text{ in } S_+ \left| \downarrow \right\rangle = \left| \uparrow \right\rangle \hbar \sqrt{ \frac{1}{2} \cdot \frac{3}{2} + \frac{1}{2} \cdot \frac{1}{2}} = \hbar \left| \uparrow \right\rangle
+\]
+</p>
+
+<p>
+Analogno velja tudi
+</p>
+
+<p>
+\[ S_- \left| \uparrow \right\rangle = \left| \downarrow \right\rangle \hbar \sqrt{\frac{3}{4} - \frac{1}{2} \left( - \frac{1}{2} \right)} = \hbar \left| \downarrow \right\rangle \text{ in } S_- \left| \downarrow \right\rangle = 0
+\]
+</p>
+
+<p>
+Z upoštevanjem definiciji \ref{eq:spinX} dobimo
+</p>
+
+<p>
+\[ S_x \left| \uparrow \right\rangle = \frac{\hbar}{2} \left| \downarrow \right\rangle \text{ in } S_x \left| \downarrow \right\rangle = \frac{\hbar}{2} \left| \uparrow \right\rangle,
+\]
+</p>
+
+<p>
+ter analogno
+</p>
+
+<p>
+\[ S_y \left| \uparrow \right\rangle  = - \frac{\hbar}{2 \mathrm{i}} \left| \downarrow \right\rangle \text{ in } S_y \left| \downarrow \right\rangle = \frac{\hbar}{2 \mathrm{i}} \left| \uparrow \right\rangle
+\]
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org88072d3" class="outline-3">
+<h3 id="org88072d3"><span class="section-number-3">1.2.</span> Reševanje naloge</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Lastne funkcije in stanja bomo dobili preko reševanje Schrödingerjeve enačbe
+</p>
+
+<p>
+\[ H \left| \psi \right\rangle = E \left| \psi \right\rangle.
+\]
+</p>
+
+<p>
+Enačbo bomo reševali z nastavkom
+</p>
+
+<p>
+\[ \left| \psi \right\rangle = \left| \psi_{\uparrow} \right\rangle \left| \uparrow \right\rangle + \left| \psi_{\downarrow} \right\rangle \left| \downarrow \right\rangle,
+\]
+</p>
+
+<p>
+kjer iščemo funkciji \( \left| \psi_{\uparrow} \right\rangle \) in \( \left| \psi_{\downarrow} \right\rangle \).
+</p>
+
+<p>
+Upoštevamo definicijo Hamiltoniana in nastavek
+</p>
+
+<p>
+\[ \left( \frac{p_x ^2 + p_y ^2}{2m} + \lambda \left( p_x S_y - p_y S_x \right)  \right) \left( \left| \psi_{\uparrow}\right\rangle  \left| \uparrow \right\rangle + \left| \psi_{\downarrow} \right\rangle \left| \downarrow \right\rangle \right) = E \left( \left| \psi_{\uparrow}\right\rangle  \left| \uparrow \right\rangle + \left| \psi_{\downarrow} \right\rangle \left| \downarrow \right\rangle \right)
+\]
+</p>
+
+<p>
+Operatorja gibalne količine delujeta na \( \left| \psi_{\uparrow} \right\rangle \) in \( \left| \psi_{\downarrow} \right\rangle \), medtem ko operatorja spina delujte na \( \left| \uparrow \right\rangle \) ter \( \left| \downarrow \right\rangle \). Za operatorja gibalne količine ne vemo točnega rezultata, kakšen bo učinek.
+</p>
+
+<p>
+Našo enačbo pomnožimo in razpišemo
+</p>
+
+\begin{align*}
+   E \left( \left| \psi_{\uparrow}\right\rangle  \left| \uparrow \right\rangle + \left| \psi_{\downarrow} \right\rangle \left| \downarrow \right\rangle \right) = & \frac{1}{2m} \left[ \left| \uparrow \right\rangle \left( p_x ^2 \left| \psi_{\uparrow} \right\rangle + p_y ^2 \left| \psi_{\uparrow} \right\rangle \right) + \left| \downarrow \right\rangle \left( p_x ^2 \left| \psi_{\downarrow} \right\rangle + p_y ^2 \left| \psi_{\downarrow} \right\rangle \right) \right] \\
+& + \lambda \left[ p_x \left| \psi_{\uparrow} \right\rangle \cdot \left( - \frac{\hbar}{2 \mathrm{i}} \right)\left| \downarrow \right\rangle + p_x \left| \psi_x \right\rangle \frac{\hbar}{2 \mathrm{i}} \left| \uparrow \right\rangle - p_y \left| \psi_{\uparrow} \right\rangle \frac{\hbar}{2} \left| \downarrow \right\rangle - p_y \left| \psi_{\downarrow} \right\rangle \cdot \frac{\hbar}{2} \left| \uparrow \right\rangle \right]
+\end{align*}
+
+<p>
+Dobljeno pomnožimo z \( \left\langle \uparrow \right| \)
+</p>
+
+<p>
+\[ \frac{1}{2m} \left( p_x ^2 \left| \psi_{\uparrow} \right\rangle + p_y ^2 \left| \psi_{\uparrow} \right\rangle \right) + \lambda \left( p_x \left| \psi_{\downarrow}\right\rangle  \cdot \frac{\hbar}{2 \mathrm{i}} - p_y \left| \psi_{\downarrow} \right\rangle \frac{\hbar}{2} \right) = E \cdot \left| \psi_{\uparrow} \right\rangle.
+\]
+</p>
+
+<p>
+Analogno pomnožimo tudi z \( \left\langle \psi_{\downarrow} \right| \)
+</p>
+
+<p>
+\[ \frac{1}{2m} \left( p_x ^2 \left| \psi_{\downarrow} \right\rangle + p_y ^2 \left| \psi_{\downarrow} \right\rangle \right) + \lambda \left( p_x \left| \psi_{\uparrow}\right\rangle  \cdot\left( -  \frac{\hbar}{2 \mathrm{i}}\right) - p_y \left| \psi_{\uparrow} \right\rangle \frac{\hbar}{2} \right) = E \cdot \left| \psi_{\downarrow} \right\rangle.
+\]
+</p>
+
+<p>
+Dobili smo sistem diferencialnih enačb, ki jih lahko z upoštevanjem definicijo operatorjev zapišemo
+</p>
+
+\begin{align*}
+ -\frac{\hbar ^2}{2m} \nabla ^2 \psi_{\uparrow} \left( \vec{r} \right) + \lambda \left( - \frac{\mathrm{i} \hbar \partial_x \psi_{\downarrow} \hbar}{2 \mathrm{i} } + \mathrm{i} \hbar \partial_y \psi_{\downarrow} \cdot \frac{\hbar}{2} \right) &= E \psi_{\uparrow} \left( \vec{r} \right) \\
+ -\frac{\hbar ^2}{2m} \nabla ^2 \psi_{\downarrow} \left( \vec{r} \right) + \lambda \left( \frac{\mathrm{i} \hbar \partial_x \psi_{\uparrow} \hbar}{2 \mathrm{i} } + \mathrm{i} \hbar \partial_y \psi_{\uparrow} \cdot \frac{\hbar}{2} \right) &= E \psi_{\downarrow} \left( \vec{r} \right).
+\end{align*}
+
+<p>
+Ne bomo reševali tega sistema, ampak bomo ubrali lažjo pot, ki vključuje simetrije.
+</p>
+
+<p>
+Za začetek bomo dokazali, da velja
+</p>
+
+<p>
+\[ \left[ H, \vec{p} \right] = 0.
+\]
+</p>
+
+<p>
+Za dokaz moramo dokazati, da hamiltonian \( H \) komutira z vsako komponento \( \vec{p} \).
+</p>
+
+<p>
+\[ \left[ H, p_x \right] = \left[ \frac{p_x ^2 + p_y ^2}{2m} + \lambda \left( p_x S_y - p_y S_x  \right), p_x \right]
+\]
+</p>
+
+<p>
+Operatorja \( p_x ^2 \) in \( p_x \) komutirata in prav tako \( p_y ^2 \) in \( p_x \). Poglejmo si še člen Rashbove sklopitve \( \left( p_x S_y - p_y S_x \right) \). \( p_x \) in \( p_y \) komutirata s \( p_x \). Spinska operatorja \( S_{x, y} \) delujeta na Hilbertov prostor \( \mathcal{H}_s \), medtem ko \( p_x \) deluje na Hilbertov prostor \( \mathcal{H}_p \).
+</p>
+
+<p>
+Vsak operator iz enega Hilbertovega prostora komutira z vsakim operatorjem iz drugega Hilbertovega prostora. Sledi
+</p>
+
+<p>
+\[ \left[ H, p_x \right] = \left[ H, p_y \right] = 0
+\]
+</p>
+
+<p>
+Za dva operatorja, ki komutirata, lahko najdemo lastne funkcije, ki so hkrati lastne funkcije obeh operatorjev. Z drugimi besedamo, lastne funkcije gibalne količine so prav tako lastne funkcije Hamiltoniana. Velja tudi obratno, vendar je lastne funkcije \( \vec{p} \) lažje najti.
+</p>
+
+<p>
+Lastne funkcije gibalne količine operatorja gibalne količine \( \vec{p} = - \mathrm{i} \hbar \nabla \) so rešitve enačbe
+</p>
+
+<p>
+\[ \vec{p} \left| \psi_1 \right\rangle = \alpha \left| \psi_1 \right\rangle.
+\]
+</p>
+
+<p>
+Lastne funkcije gibalne količine so ravni valovni oblike \( e^{\mathrm{i} \vec{k} \cdot \vec{r}} \). V koordinatni reprezentaciji je rešitev
+</p>
+
+<p>
+\[ \vec{p} e^{\mathrm{i} \vec{k} \cdot \vec{r}} = - \mathrm{i} \hbar \left( \mathrm{i} \vec{k} \right)e^{\mathrm{i} \vec{k} \cdot \vec{r}} = \hbar \vec{k} e^{\mathrm{i} \vec{k} \cdot \vec{r}}.
+\]
+</p>
+
+<p>
+Rešitev lahko zapišemo tudi v Diracovem zapisu, kjer je \( \hbar \vec{k} = \hbar \left( k_x, k_y \right) \) kvantno število dane valovne funkcije, saj je presorazmerno z valovno funkcijo
+</p>
+
+<p>
+\[ \vec{p} \left| \vec{k} \right\rangle  = \hbar \vec{k} \left| \vec{k} \right\rangle.
+\]
+</p>
+
+<p>
+Pri reševanju Schrödingerjeve enačbe, kjer nadomestimo \( \left| \psi_p \right\rangle = \left| \vec{k} \right\rangle\).
+</p>
+
+<p>
+\[ H \left( \left| \vec{k} \right\rangle \otimes \left| \psi_s \right\rangle\right) = \left( \left| \vec{k} \right\rangle \otimes \left| \psi_s \right\rangle\right).
+\]
+</p>
+
+<p>
+Preverimo, če ta nastavek res reši našo enačbo, vendar bomo zaradi krajšega zapisali izpuščali tenzorski znak \( \otimes \).
+</p>
+
+\begin{align*}
+  H \left( \left| \vec{k} \left| \psi_s \right\rangle \right\rangle \right) &= \\
+\left[ \frac{p ^2}{2m} + \lambda \left( p_x S_y - p_y S_x \right) \right] \left( \left| \vec{k} \right\rangle \left| \psi_s \right\rangle\right) &= \\
+\left( \frac{p ^2}{2m} \left| \vec{k} \right\rangle \right) \left| \psi_s \right\rangle  + \lambda \left( p_x \left| \vec{k} \right\rangle S_y \left| \psi_s \right\rangle  - p_y  \left| \vec{k} \right\rangle S_x \left| \psi_s \right\rangle  \right) &= \\
+\frac{\hbar ^2 k ^2}{2m} \left| \vec{k} \right\rangle \left| \psi_s   \right\rangle+ \lambda \hbar k_x \left| \vec{k} \right\rangle S_y \left| \psi_s \right\rangle - \lambda \hbar k_y \left| \vec{k} \right\rangle S_x \left| \psi_s \right\rangle &= E \left| \vec{k} \right\rangle \left| \psi_s \right\rangle
+\end{align*}
+
+<p>
+V zgornji enačbi sedaj nastopajo samo števila razen operatorjev \( S_y \) in \( S_x \). Zgornjo enačbo pomnožimo z \( \left\langle \vec{k} \right| \), kar nam poda enačbo, ki se sedaj nahaja zgolj v Hilbertovem prostoru \( \mathcal{H}_s \).
+</p>
+
+<p>
+\[ \frac{\hbar ^2 k ^2}{2m} \left| \psi_s \right\rangle + \lambda \hbar \left( k_x S_y - k_y S_x \right) \left| \psi_s \right\rangle = E \left| \psi_s \right\rangle.
+\]
+</p>
+
+<p>
+Z upoštevanjem rezultatov iz teoretičnega uvoda za funkcijo \( \left| \psi_s \right\rangle = \left( \alpha \left| \uparrow \right\rangle + \beta \left| \downarrow \right\rangle\right)\) dobimo
+</p>
+
+<p>
+\[ \frac{h ^2}{2m} \left( \alpha \left| \uparrow \right\rangle + \beta \left| \downarrow \right\rangle\right) + \frac{\lambda \hbar ^2 k_x}{2 \mathrm{i}} \left( - \alpha  \left| \downarrow \right\rangle + \beta \left| \uparrow  \right\rangle\right) - \frac{\lambda \hbar ^2 k_y}{2} \left( \alpha \left| \downarrow \right\rangle + \beta \left| \uparrow \right\rangle\right) = E \left( \alpha \left| \uparrow \right\rangle + \beta \left| \downarrow \right\rangle\right).
+\]
+</p>
+
+<p>
+Dobljena enačba je sestavljena zgolj iz skalarjev ter dveh linearno neodvisnih stanj \( \left| \uparrow \right\rangle \) in \( \left| \downarrow \right\rangle \).
+</p>
+
+<p>
+Dobimo lahko sistem enačb tako, da zgornjo enačbo pomnožimo z \( \left\langle \uparrow \right| \) in \( \left| \downarrow \right\rangle \) in upoštevamo ortogonalnost stanj
+</p>
+
+\begin{align*}
+  \frac{\hbar ^2 k ^2}{2m} \alpha + \frac{\lambda \hbar ^2 k_x}{2 \mathrm{i}} \beta - \frac{\lambda \hbar ^2 k_y}{2} \beta &= E \alpha  \\
+\frac{\hbar ^2 k ^2}{2m} \beta - \frac{\lambda \hbar ^2 k_x}{2 \mathrm{i}} \alpha - \frac{\lambda \hbar ^2 k_y}{2} \alpha &= E \beta,
+\end{align*}
+
+<p>
+kjer iščemo vrednosti \( \alpha \) in \( \beta \). Hkrati so nam tudi vrednosti lastnih energij neznane. Drugače povedano, imamo problem lastnih vrednosti za matrični sistem
+</p>
+
+\begin{equation}
+\label{eq:5}
+ \begin{bmatrix}
+   \frac{\hbar ^2 k ^2}{2m} & \frac{ \lambda\hbar ^2 }{2 \mathrm{i}} \left( k_x - \mathrm{i} k_y \right) \\
+    -\frac{\lambda \hbar ^2}{2 \mathrm{i}} \left( k_x + \mathrm{i} k_y \right) & \frac{\hbar ^2 k ^2}{2m}
+    \end{bmatrix}  \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = E \begin{bmatrix} \alpha \\ \beta \end{bmatrix}
+\end{equation}
+
+<p>
+Pred nadaljevanjem reševanja problema bomo prepisali vektor \( \vec{k} = (k_x, k_y) \) v polarne koordinate
+</p>
+
+<p>
+\[ k_x + \mathrm{i} k_y = k e^{\mathrm{i} \phi} \text{ in } k_x - \mathrm{i} k_y = e^{ -\mathrm{i} k \phi}.
+\]
+</p>
+
+<p>
+Problem lastnih vrednosti je torej
+</p>
+
+
+<p>
+\[ \begin{bmatrix}
+   \frac{\hbar ^2 k ^2}{2m} & \frac{ \lambda\hbar ^2 }{2 \mathrm{i}} ke^{-\mathrm{i} \phi} \\
+    -\frac{\lambda \hbar ^2}{2 \mathrm{i}} ke^{\mathrm{i} \phi} & \frac{\hbar ^2 k ^2}{2m}
+    \end{bmatrix}  \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = E \begin{bmatrix} \alpha \\ \beta \end{bmatrix}.
+\]
+</p>
+
+<p>
+Lastne vrednosti dobimo iz karakterističnega polinoma
+</p>
+
+\begin{equation}
+\label{eq:3}
+ \det \begin{vmatrix}
+      \frac{\hbar ^2 k ^2}{2m} - E & \frac{ \lambda\hbar ^2 }{2 \mathrm{i}} ke^{-\mathrm{i} \phi} \\
+         -\frac{\lambda \hbar ^2}{2 \mathrm{i}} ke^{\mathrm{i} \phi} & \frac{\hbar ^2 k ^2}{2m} - E
+         \end{vmatrix} = \left( \frac{\hbar ^2 k ^2}{2m} - E \right) ^2 - \left( \frac{\lambda \hbar ^2 k }{2} \right) ^2 = 0.
+\end{equation}
+
+<p>
+Po korenjenju in izražavi \( E \) dobimo
+</p>
+
+\begin{equation}
+\label{eq:2}
+ E_{\pm} = \frac{\hbar ^2 k}{2m} \pm \frac{\lambda \hbar ^2 k}{2}.
+\end{equation}
+
+<p>
+Za \( \lambda = 0 \), ko Rashbove sklopitve ni, je energija enaka \( E = \frac{\hbar ^2 k ^2}{2m} \). Dobili smo prost delec, ki je dvakrat degeneriran za vsak \( \vec{k} \).
+</p>
+
+<p>
+V primeru \( \lambda \ne 0 \), bomo izraz dopolnili do popolnega kvadrata
+</p>
+
+<p>
+\[ E = \frac{\hbar ^2}{2m} \left( k \pm \frac{m \lambda }{2} \right) ^2 - \frac{\hbar ^2 m \lambda ^2}{8}.
+\]
+</p>
+
+<p>
+Vidimo, da degeneracije v tem primeru ni, saj imamo za stanji \( \pm k \) dve različni energiji \( E_{\pm} \), ki sta premaknjeni za \( \frac{\lambda \hbar ^2 k}{2}\) višje ali nižje od energij dvakrat degeneriranega prostega delca..
+</p>
+
+
+<div id="org810c271" class="figure">
+<p><img src="figures/rashbovaSklopitev.png" alt="rashbovaSklopitev.png" />
+</p>
+</div>
+
+<p>
+V besedišču lastnih stanj in pripadajočih energij pravimo:
+</p>
+
+<p>
+Pri \( \lambda = 0 \) imamo poljubno linearno kombinacijo \( \alpha \left| \uparrow \right\rangle + \beta \left| \downarrow \right\rangle \ \forall \alpha, \beta\), ki imajo isto energijo \( \frac{\hbar ^2 k ^2}{2m} \). Drugače zapisano
+</p>
+
+<p>
+\[ H \left| \vec{k} \right\rangle  \left( \alpha \left| \uparrow \right\rangle + \beta \left| \downarrow  \right\rangle\right) = \frac{\hbar ^2 k ^2}{2m} \left( \alpha \left| \uparrow \right\rangle + \beta \left| \downarrow \right\rangle\right).
+\]
+</p>
+
+<p>
+Za \( \lambda \ne 0 \) pa bosta dve točno določeni linearni kombinaciji lastna stanja tega problema, vse ostale linearne kombinacije pa ne bodo lastna stanja. Poiščimo sedaj ta lastna stanja.
+</p>
+
+<p>
+V izraz \ref{eq:3} vstavimo naše energije \ref{eq:2} in nam ostane
+</p>
+
+<p>
+\[ \begin{bmatrix}
+   \mp \frac{\lambda \hbar ^2 k}{2} &  \frac{\lambda \hbar ^2}{2 \mathrm{i}} e^{- \mathrm{i} \phi} \\
+     -\frac{\lambda \hbar k}{2 \mathrm{i}} e^{\mathrm{i} \phi} & \mp \frac{\lambda \hbar k}{2m}
+    \end{bmatrix} \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = 0
+\]
+</p>
+
+<p>
+Po množenju energij dobimo enačbo
+</p>
+
+<p>
+\[ \mp \frac{\lambda \hbar ^2 k}{2} \alpha + \frac{\lambda \hbar ^2 k}{2 \mathrm{i}} e^{- \mathrm{i} \phi} \beta =0 \implies \ \beta = \pm \alpha \mathrm{i} e^{\mathrm{i} \phi}.
+\]
+</p>
+
+<p>
+Normalizirana lastna vektorja sta torej
+</p>
+
+<p>
+\[ \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ \pm \mathrm{i} e^{\mathrm{i} \phi} \end{bmatrix}
+\]
+</p>
+
+<p>
+Pripadajoči lastni funkciji za lastne vrednosti \( E_{\pm} \) sta
+</p>
+
+<p>
+\[ \left| \psi_+ \right\rangle  = \left| \vec{k} \right\rangle \frac{\left| \uparrow \right\rangle + \mathrm{i} e^{\mathrm{i} \left| \downarrow \right\rangle}}{\sqrt{2}} \text{ in } \left| \psi_- \right\rangle = \left| \vec{k} \right\rangle \frac{\left| \uparrow \right\rangle - \mathrm{i} e^{\mathrm{i} \phi} \left| \downarrow \right\rangle}{\sqrt{2}}.
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org2151f25" class="outline-3">
+<h3 id="org2151f25"><span class="section-number-3">1.3.</span> Spin v prostoru</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Če projekcija \( \vec{S} \cdot \hat{e} \) spina \( \vec{S} \) v smeri \( \hat{e} \) deluje na funkcijo \( \left| \psi_s \right\rangle \) tako, da velja
+</p>
+
+\begin{equation}
+\label{eq:4}
+ \vec{S} \cdot \hat{e} \left| \psi_s \right\rangle = \frac{\hbar}{2} \left| \psi_s \right\rangle,
+\end{equation}
+
+<p>
+potem pravimo, da spin delca kaže v smeri \( \hat{e} \).
+</p>
+
+<p>
+Za smer \( \hat{e} \) v sferičnih koordinatah
+</p>
+
+<p>
+\[ \hat{e} = \left( \sin \theta \cos \phi, \sin \theta \sin\phi , \cos \theta\right),
+\]
+</p>
+
+<p>
+potem je rešitev zgornje enačbe
+</p>
+
+<p>
+\[ \left| \psi_s \right\rangle = \cos \left( \frac{\theta}{2} \right) \left| \uparrow \right\rangle + \sin \left( \frac{\theta}{2} \right) e^{\mathrm{i} \Phi} \left| \downarrow \right\rangle.
+\]
+</p>
+
+<p>
+Torej za naši lastni funkciji \( \psi_{\pm} \) lahko določimo \( \theta \) in \( \phi \) s primerjavo argumentov.
+</p>
+
+<p>
+\[ \frac{1}{\sqrt{2}} \left| \uparrow \right\rangle + \mathrm{i} e^{\mathrm{i} \phi} \left| \downarrow \right\rangle = \frac{1}{\sqrt{2}} \left| \uparrow \right\rangle + \frac{1}{\sqrt{2}} e^{\mathrm{i} \left( \phi \pm \frac{\pi}{2} \right)} \left| \downarrow \right\rangle.
+\]
+</p>
+
+<p>
+Iz enakosti
+</p>
+
+<p>
+\[ \cos \left(  \frac{\theta}{2} \right) = \frac{1}{\sqrt{2}} \implies \theta = \frac{\pi}{2}
+\]
+</p>
+
+<p>
+ter
+</p>
+
+<p>
+\[ e^{\mathrm{i} \left( \phi \pm \frac{\pi}{2} \right)} = e^{\mathrm{i} \Phi} \implies \Phi = \phi \pm \frac{\pi}{2}.
+\]
+</p>
+
+
+<div id="org2c20eca" class="figure">
+<p><img src="figures/rashbovaSklopitevSpin.png" alt="rashbovaSklopitevSpin.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge2c639e" class="outline-3">
+<h3 id="orge2c639e"><span class="section-number-3">1.4.</span> Paulijeve matrike</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Spinski operator \( \vec{S} \) bomo predstavili z vektorjem Paulijevih matrik \( \vec{\sigma} = \left( \sigma_x, \sigma_y, \sigma_z \right) \)
+</p>
+
+<p>
+\[ \vec{S} = \frac{\hbar}{2} \vec{\sigma}.
+\]
+</p>
+
+<p>
+Za zapis linearnega operatorja kot matriko moramo izbrati neko bazo. V našem primeru bo baza \( \left| \uparrow \right\rangle, \left| \downarrow \right\rangle \), Paulijeve matrike pa so
+</p>
+
+<p>
+\[ \sigma_x = \begin{pmatrix}
+              0 & 1 \\
+              1 & 0
+               \end{pmatrix} \quad \sigma_y = \begin{pmatrix}
+                                              0 & - \mathrm{i} \\
+                                              \mathrm{i} & 0
+                                               \end{pmatrix} \quad \sigma_z = \begin{pmatrix}
+                                                                              1 & 0 \\
+                                                                              0 & - \mathrm{i}
+                                                                               \end{pmatrix}.
+\]
+</p>
+
+<p>
+Pri prejšnji rešitvi smo rešitev zapisali kot \( \left| \psi_s \right\rangle = \alpha \left| \uparrow \right\rangle + \beta \left| \downarrow \right\rangle\). Ko imamo opravka s Paulijevimi matrikami, zapišemo valovno funkcijo s t.i. spinorjem
+</p>
+
+<p>
+\[ \begin{pmatrix} \alpha \\ \beta \end{pmatrix}.
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgdb98c81" class="outline-3">
+<h3 id="orgdb98c81"><span class="section-number-3">1.5.</span> Reševanje naloge s Paulijevimi spinskimi matrikami</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Hamiltonian, ki vsebuje Rashbovo sklopitev, bo s pomočjo Paulijevih matrik zapisan kot
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + \lambda \frac{\hbar}{2} \left( p_x \sigma_y - p_y \sigma_x \right).
+\]
+</p>
+
+<p>
+Ponovno napišemo valovno funkcijo v koordinatnem zapisu
+</p>
+
+<p>
+\[ \psi = e^{\mathrm{i} \vec{k} \cdot \vec{r}} \begin{bmatrix} \alpha \\ \beta \end{bmatrix}.
+\]
+</p>
+
+<p>
+Schrödingerjeva enačba \( H \psi = E \psi \) se glasi
+</p>
+
+<p>
+\[ H \psi = \frac{\hbar ^2 k ^2}{2m} e^{\mathrm{i} \vec{k} \cdot \vec{r}} \begin{bmatrix} \alpha \\ \beta \end{bmatrix} + \frac{\lambda \hbar}{2} \left( \hbar k_x \sigma_y - \hbar k_y \sigma_x  \right) e^{\mathrm{i} \vec{k} \cdot \vec{r}} \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = E \psi = E e^{\mathrm{i} \vec{k} \cdot \vec{r}} \begin{bmatrix} \alpha \\ \beta \end{bmatrix}.
+\]
+</p>
+
+<p>
+Krajevni del valovne funkcije lahko pokrajšamo in nam ostane
+</p>
+
+<p>
+\[ \frac{ \hbar ^2 k ^2}{2m} \begin{bmatrix} \alpha \\ \beta \end{bmatrix} + \frac{\lambda \hbar ^2}{2} \left( k_x \begin{bmatrix}
+                                                                                                                   0 & -\mathrm{i} \\
+                                                                                                                   \mathrm{i} & 0
+                                                                                                                    \end{bmatrix}  - k_y \begin{bmatrix}
+                                                                                                                                                0 & 1 \\
+                                                                                                                                                1 & 0
+                                                                                                                                                 \end{bmatrix} \right) \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = E \begin{bmatrix} \alpha \\ \beta \end{bmatrix}
+\]
+</p>
+
+<p>
+Rešujemo sistem enačb
+</p>
+
+<p>
+\[ \begin{bmatrix}
+   \frac{\hbar ^2 k ^2}{2m}  & \frac{\lambda \hbar ^2}{2} \left( - \mathrm{i} k_x - k_y \right) \\
+    \frac{\lambda \hbar ^2}{2} \left( \mathrm{i} k_x - k_y \right) & \frac{\hbar ^2 k ^2}{2m}
+    \end{bmatrix} \begin{bmatrix} \alpha \\ \beta \end{bmatrix}= E \begin{bmatrix} \alpha  \\ \beta \end{bmatrix}
+\]
+</p>
+
+<p>
+Vidimo, da je problem identičen \ref{eq:5}, kar pomeni, da bi do rešitve postopali enako kakor prej.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4798f0a" class="outline-2">
+<h2 id="org4798f0a"><span class="section-number-2">2.</span> Simetrija na obrat časa z Rashbovo sklopitvijo&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nismo_delali">nismo_delali</span></span></h2>
+<div class="outline-text-2" id="text-2">
+<div class="note" id="org9031ee0">
+<p>
+Te naloge se v letu 2025/26 na vajah ni delalo. Iz interesa (in ker sem manjkal na samih vajah) sem jo vseeno naredil in vključil v zapiske.
+</p>
+
+</div>
+
+<p>
+Imamo Hamiltonian
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + \lambda \frac{\hbar}{2} \left( p_x \sigma_y - p_y \sigma_x \right).
+\]
+</p>
+
+<p>
+Nalogo rešujemo s Paulijevimi matrikami.
+</p>
+</div>
+<div id="outline-container-orgaca410a" class="outline-3">
+<h3 id="orgaca410a"><span class="section-number-3">2.1.</span> Teorija - simetrija na obrat časa</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+To, da imamo simetrijo na obrat časa, pomeni, da imamo operator obrata časa \( \mathcal{T} \), ki komutira s Hamiltonianom \( \left[ H, \mathcal{T} \right] = 0 \).
+</p>
+
+<p>
+Komutativnost operatorja ni nič novega, kar pa je, je to, da je \( \mathcal{T} \) antikomutitaren. To pomeni, da konjugira skalaren produkt
+</p>
+
+<p>
+\[ \left\langle \mathcal{T} \psi_1 \middle| \mathcal{T} \psi_2 \right\rangle = \left\langle \psi_1 \middle| \psi_2 \right\rangle^{\ast}.
+\]
+</p>
+
+<p>
+Spomnimo, da unitaren operator \( U \) ohranja skalarni produkt
+</p>
+
+<p>
+\[ \left\langle U \psi_1 \middle| U \psi_2 \right\rangle = \left\langle U^{\dagger} U \psi_1 \middle| \psi_2 \right\rangle= \left\langle \psi_1 \middle| \psi_2 \right\rangle.
+\]
+</p>
+
+<p>
+Iz tega sledi, da velja \( U^{\dagger} U = I \), kjer je \( I \) identiteta.
+</p>
+
+<p>
+Definirajmo operator kompleksne konjugacije \( K: \psi \mapsto \psi^{\ast} \). Dokazujemo, da če lahko zapišemo \( \mathcal{T} \) kot produkt operatorjev \( U \) in \( K \), potem je \( \mathcal{T} \) antikomutitaren.
+</p>
+
+\begin{align*}
+  \left\langle \mathcal{T} \psi_1 \middle| \mathcal{T} \psi_2 \right\rangle &= \left\langle U K \psi_1 \middle| U K \psi_2 \right\rangle \\
+&= \left\langle U^{\dagger} U K \psi_1 \middle| K \psi_2 \right\rangle \\
+&= \left\langle  K \psi_1 \middle| K \psi_2 \right\rangle \\
+&= \int\limits_{}^{} \left( K \psi_1 (\vec{r}) \right)^{\ast} \left( K \psi_2 (\vec{r}) \right) \, \mathrm{d} \vec{r} \\
+&= \int\limits_{}^{} \left( \psi_1^{\ast} (\vec{r}) \right)^{\ast} \psi_2 ^{\ast} (\vec{r}) \, \mathrm{d} \vec{r} \\
+&= \int\limits_{}^{} \psi_2^{\ast} (\vec{r}) \psi_1 (\vec{r}) \, \mathrm{d} \vec{r} = \left\langle \psi_2 \middle| \psi_1 \right\rangle = \left\langle \psi_1 \middle| \psi_2 \right\rangle^{\ast}
+\end{align*}
+
+<p>
+Iz predavanj vemo, da za delce s spinom \( S = \frac{1}{2} \), da je operator obrata časa oblike
+</p>
+
+<p>
+\[ \mathcal{T} = \mathrm{i} \sigma_y K.
+\]
+</p>
+
+<p>
+Dokazujemo, da to velja. Iz definicije produkta operatorjev razberemo, da je \( U = \mathrm{i} \sigma_y \). Z dokazom, da je \( U \) unitaren, dokažemo, da je \( \mathcal{T} \) antikomutitativen.
+</p>
+
+<p>
+\[ U^{\dagger} U = \left[ \sigma_y ^{\dagger} \left( \mathrm{i} \right)^{\dagger} \right] \mathrm{i} \sigma_y = \sigma_y (- \mathrm{i}) \mathrm{i} \sigma_y = \sigma_y ^2 = I
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-orgee198e3" class="outline-3">
+<h3 id="orgee198e3"><span class="section-number-3">2.2.</span> Reševanje naloge</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Za začetek dokazujemo, da Hamiltonian \( H \) komutira z operatorjem obrata časa \( \left[ H, \mathcal{T} \right] = 0 \). Upoštevamo definicijo komutacije ter pomnožimo enačbo z desne s \( \mathcal{T}^{-1} \). Dobimo enakost
+</p>
+
+<p>
+\[ H = \mathcal{T} H \mathcal{T}^{-1}.
+\]
+</p>
+
+<p>
+Če velja ta enakost, \( H \) in \( \mathcal{T} \) komutirata. Operator obrata časa nadomestimo s \( \mathcal{T} = \mathrm{i} \sigma_y K \)
+</p>
+
+<p>
+\[ H = \mathrm{i} \sigma_y K H \left( K^{-1} \sigma_y^{-1} i^{-1} \right).
+\]
+</p>
+
+<p>
+Za operator kompleksne konjugacije in Paulijevo matriko velja \( K ^2 = 1 \), iz česar sledi \( K^{-1} = K \). Iz iste lastnosti za Paulijevo matriko sledi \( \sigma_y = \sigma_y^{-1} \). Hkrati sledi \( \mathrm{i}^{-1} = -\mathrm{i} \).
+</p>
+
+<p>
+\[ \mathcal{T} H \mathcal{T} ^{-1} = \left( \mathrm{i} \sigma_y K \right) H \left( K \sigma_y (- \mathrm{i}) \right)
+\]
+</p>
+
+<p>
+Levi operator kompleksne konjugacije \( K \) najprej vpliva na Hamiltonian \( H \), nato pa še na vse, kar je desno od njega.
+</p>
+
+<p>
+\[ \mathcal{T} H \mathcal{T} ^{-1} =  \left( \mathrm{i} \sigma_y \right) H^{\ast} K K \sigma_y (- \mathrm{i}) = \left( \mathrm{i} \sigma_y \right) H^{\ast} \underbrace{K ^2}_{= I} \sigma_y (- \mathrm{i})
+\]
+</p>
+
+<p>
+Sledi
+</p>
+
+\begin{align*}
+  \mathcal{T} H \mathcal{T}^{-1} &= \mathrm{i} \sigma_y H^{\ast} \sigma_y (- \mathrm{i}) \\
+&= \sigma_y H^{\ast} \sigma_y
+\end{align*}
+
+<p>
+Pred izločitvijo operatorjev \( K \) nismo smeli pokrajšati imaginarnih enot \( \mathrm{i} \) zaradi učinka, ki jih ima operator \( K \) na njih.
+</p>
+
+<p>
+Hamiltonianom nadomestimoz izrazom za Rashbovo sklopitev
+</p>
+
+\begin{align*}
+  \mathcal{T} H \mathcal{T} &= \left[ \frac{p ^2}{2m} + \lambda \frac{\hbar}{2} \left( p_x \sigma_y - p_y \sigma_x \right) \right]^{\ast} \sigma_y \\
+&= \sigma_y \left[ \frac{p ^2}{2m} + \lambda \frac{\hbar}{2} \left( (- p_x) (- \sigma_y) - (- p_y) (\sigma_x) \right) \right] \sigma_y.
+\end{align*}
+
+<p>
+Upoštevali smo definicijo \( p ^2 = - \hbar ^2 \left( \partial_x ^2 + \partial _y ^2 \right) \), iz česar sledi \( p^{2 \ast} = p ^2 \). Analogno sledi \( p_{x, y}^{\ast} = - p_{x, y} \), \( \sigma_y^{\ast} = - \sigma_y \) ter \( \sigma_x ^{\ast} = \sigma_x \).
+</p>
+
+<p>
+Opomniti moramo, da Paulijeve matrike ne komutirajo, kar pomeni, da moramo ohraniti vrstni red
+</p>
+
+<p>
+\[ \mathcal{T} H \mathcal{T}^{-1} = \frac{p ^2}{2m} \sigma_y ^2  + \lambda \frac{\hbar}{2} \left( p_x \sigma_y ^3 + p_y \sigma_y \sigma_x \sigma_y \right).
+\]
+</p>
+
+<p>
+Velja antikomutacija \( \left\{ \sigma_{\alpha}, \sigma_{\beta} \right\}= 2 \delta_{\alpha \beta} \cdot I \). Iz definicije antikomutacije tako sledi
+</p>
+
+<p>
+\[ \sigma_x \sigma_y + \sigma_y \sigma_x = 0 \implies \, \sigma_y \sigma_x = - \sigma_x \sigma_y.
+\]
+</p>
+
+<p>
+in
+</p>
+
+<p>
+\[ \sigma_y ^2 = I.
+\]
+</p>
+
+<p>
+V dokazu komutacije bomo zapisali \( \sigma_y ^3 = \sigma_y \cdot I = \sigma_y \) ter obrat vrstnega reda
+</p>
+
+\begin{align*}
+   \mathcal{T} H \mathcal{T}^{-1}  &= \frac{p ^2}{2m} + \lambda \frac{\hbar}{2} \left( p_x \sigma_y + p_y\left( - \sigma_x \sigma_y \right) \sigma_y \right) \\
+&= \frac{p ^2}{2m} + \lambda\frac{\hbar}{2} \left( p_x \sigma_y - p_y \sigma_x \right) = H
+\end{align*}
+
+<p>
+Dokazali smo torej, da je \( H \) invarianten na obrat časa.
+</p>
+
+<p>
+Oglejmo si fizikalne lastnosti, ki so posledica te invariantnosti. Začnemo s Schrödingerjevo enačbo \( H \left| \psi \right\rangle = E \left| \psi \right\rangle\), kjer je \( \left| \psi \right\rangle \) lastna funkcija, na katero vplivamo s \( \mathcal{T} \). Iz komutativnosti tako sledi
+</p>
+
+<p>
+\[ H \mathcal{T} \left| \psi \right\rangle  = \mathcal{T}H \left| \psi \right\rangle = \mathcal{T} E \left| \psi \right\rangle = E \mathcal{T} \left| \psi \right\rangle.
+\]
+</p>
+
+<p>
+Iz tega sledi, če je \( \left| \psi \right\rangle \) lastna funkcija Hamiltoniana, potem bo tudi \( \mathcal{T} \left| \psi \right\rangle \) lastna funkcija.
+</p>
+
+<p>
+Oglejmo si skalarni produkt \( \left\langle \psi \middle| \mathcal{T} \psi \right\rangle \). Če najdemo rešitev, lastno funkcijo, \( \left| \psi \right\rangle \), potem je tudi \( \mathcal{T} \left| \psi \right\rangle \) rešitev z isto lastno energijo. Rešitvi sta tako ortogonalni in linearno neodvisni.
+</p>
+
+\begin{align*}
+  \left\langle \psi \middle| \mathcal{T} \psi \right\rangle &= \left\langle \mathcal{T} \psi \middle| \mathcal{T} (\mathcal{T} \psi) \right\rangle^{\ast} \\
+&= \left\langle \mathcal{T} \psi \middle| \mathcal{T} ^2 \psi \right\rangle^{\ast},
+\end{align*}
+
+<p>
+kjer smo upoštevali definicijo antikomutativnosti. Za \( \mathcal{T} = \mathrm{i} \sigma_y K \) velja
+</p>
+
+<p>
+\[ \mathcal{T} ^2 = \mathrm{i} \sigma_y K \mathrm{i} \sigma_y K = \mathrm{i} \sigma_y (-\mathrm{i}) (- \sigma_y) K ^2 = - \sigma_y ^2 = -I .
+\]
+</p>
+
+<p>
+Komutativnost operatorja obrata časa velja vedno, vendar \( \mathcal{T} ^2 = -I \) pa ne. Za delec brez spina je operator časa \( \mathcal{T} = K \) in kvadrat operatorja je \( \mathcal{T} ^2 = I \).
+</p>
+
+<p>
+Zgornji skalarni produkt tako postane
+</p>
+
+<p>
+\[ \left\langle \psi \middle| \mathcal{T} \psi \right\rangle = \left\langle \mathcal{T} \psi \middle| - \psi \right\rangle^{\ast} = - \left\langle \mathcal{T} \psi \middle| \psi \right\rangle^{\ast} = - \left\langle \psi \middle| \mathcal{T} \psi \right\rangle.
+\]
+</p>
+
+<p>
+To je možno samo, če velja \( \left\langle \psi \middle| \mathcal{T} \psi \right\rangle = 0 \).
+</p>
+
+<p>
+Vsak energijski nivo je tako vsaj dvakrat degeneriran. Taki degeneraciji se reče Kramersova degeneracija. Ortogonalen par \( \left| \psi \right\rangle \) in \( \mathcal{T} \left| \psi \right\rangle \) pa je Kramersov par.
+</p>
+
+<p>
+Sedaj se bomo vrnili k Rashbovi sklopitvi. Za vsak valovni vektor \( \vec{k} \) smo dobili dve lastni energiji
+</p>
+
+<p>
+\[ E_{\pm} = \frac{\hbar ^2 k ^2}{2m} \pm \frac{1}{2} \lambda \hbar ^2 k,
+\]
+</p>
+
+<p>
+s pripadajočima lastnima vektorjema
+</p>
+
+<p>
+\[ \left| \psi_{\pm} \right\rangle = \left| \vec{k} \right\rangle \frac{\left| \uparrow \right\rangle \pm \mathrm{i} e ^{\mathrm{i} e \phi} \left| \downarrow \right\rangle}{\sqrt{2}}.
+\]
+</p>
+
+<p>
+Izberemo si stanje s pozitivnim predznakom in za njega poiščimo njegov Kramersov par. Nalogo podamo v Diracovi reprezentaciji, vendar preidemo v koordinatno prezentacijo
+</p>
+
+\begin{align*}
+  \mathcal{T} \left| \psi_+ \right\rangle = \mathcal{T} \psi &= \mathrm{i} \sigma_y K e^{\mathrm{i} \vec{k} \cdot \vec{r}} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} \\
+&= \mathrm{i} \begin{pmatrix}
+             0 & - \mathrm{i} \\
+             \mathrm{i} & 0
+              \end{pmatrix} e^{- \mathrm{i} \vec{k} \vec{r}} \begin{pmatrix} \alpha^{\ast} \\ \beta^{\ast} \end{pmatrix} \\
+&= e^{- \mathrm{i} \vec{k} \cdot \vec{r} } \begin{pmatrix}
+                                           0 & 1 \\
+                                           -1 & 0
+                                            \end{pmatrix} \begin{pmatrix} \alpha^{\ast} \\ \beta^{\ast} \end{pmatrix} \\
+&=e^{- \mathrm{i} \vec{k} \cdot \vec{r}} \begin{pmatrix} \beta^{\ast} \\ - \alpha^{\ast} \end{pmatrix}.
+\end{align*}
+
+<p>
+V Diracovi reprezentaciji je zapis
+</p>
+
+<p>
+\[ \mathcal{T} \left| \psi_+ \right\rangle = \left| -\vec{k} \right\rangle \left( \beta^{\ast} \left| \downarrow \right\rangle - \alpha^{\ast} \left| \downarrow \right\rangle\right),
+\]
+</p>
+
+<p>
+kjer sta nekonjugirani vrednosti \( \alpha = \frac{1}{\sqrt{2}} \) ter \( \beta = \frac{\mathrm{i} e^{\mathrm{i} \phi}}{\sqrt{2}} \). Tako dobimo
+</p>
+
+<p>
+\[ \mathcal{T} \left| \psi_+ \right\rangle = \left| - \vec{k} \right\rangle \left[ - \frac{\mathrm{i} e^{- \mathrm{i} \phi}}{\sqrt{2}} \left| \uparrow  \right\rangle - \frac{1}{\sqrt{2}} \left| \downarrow \right\rangle\right] = - \mathrm{i} e^{- \mathrm{i} \phi} \left| - \vec{k} \right\rangle \frac{\left| \uparrow \right\rangle - \mathrm{i} e^{\mathrm{i} \phi} \left| \downarrow \right\rangle}{\sqrt{2}}
+\]
+</p>
+
+<p>
+Kakor smo dorekli že na začetku semestra, če sta valovni funkciji za fazni faktor narazen, lahko fazo zanemarimo, saj faza na opazljivko ne vpliva. Velikost faze \( - \mathrm{i} e^{- \mathrm{i} \phi} \) je \( 1 \).
+</p>
+
+\begin{align*}
+  \mathcal{T} \left| \psi_+ \right\rangle &= \left| - \vec{k} \right\rangle \frac{\left| \uparrow \right\rangle - \mathrm{i } e^{- \mathrm{i} \phi} \left| \downarrow \right\rangle}{\sqrt{2}}\\
+&= \left| - \vec{k} \right\rangle \frac{\left| \uparrow \right\rangle + \mathrm{i} e^{\mathrm{i} (\phi + \pi)} \left| \downarrow \right\rangle}{\sqrt{2}}
+\end{align*}
+
+<p>
+kjer smo uporabili identiteto \( - \mathrm{i} = \mathrm{i} e^{\mathrm{i} \pi} \). Naša začetna funkcija \( \left| \psi_+ \right\rangle \) je imela fazni kot \( \phi \) s pripadajočim vektorjem \( \vec{k} \) in spinom navzgor. Pripadajoč par pa ima fazo zamaknjeno za \( \pi \), torej \( \phi + \pi \) s pripadajočim negativno usmerjenim vektorjem \( - \vec{k} \) ter spinom navzdol.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0480f2a" class="outline-2">
+<h2 id="org0480f2a"><span class="section-number-2">3.</span> Sipanje na spinskem odvisnem potencialu \( \delta \) funkcije v eni dimenziji</h2>
+<div class="outline-text-2" id="text-3">
+<div class="problem" id="org73931bf">
+<p>
+Imejmo dva delca. Prvi delec ima spin \( S_1 = \frac{1}{2} \) v stanju \( s_1 = \left| \uparrow \right\rangle \) in se lahko prosto giba po koordinatni osi \( x \). Drugi delec ima spin \( S_2 = 1 \) v stanju \( s_2 = \left| 1 0 \right\rangle \) in je fiksno pritrjen na koordinati \( x = 0 \). Delca čutita spina drug drugega samo, ko sta oba na koordinati \( x = 0 \).
+</p>
+
+<p>
+Njun Hamiltonian je
+</p>
+
+<p>
+\[ H = \frac{p_1 ^2}{2m} - \frac{\lambda}{\hbar ^2} \delta(x_1) \vec{S}_1 \cdot \vec{S}_2,
+\]
+</p>
+
+<p>
+kjer indeks \( 1 \) označuje prvi delec in \( \lambda > 0 \).
+</p>
+
+<p>
+Prost delec potuje od \( - \infty \) proti \( +\infty \) z neko energijo \( E > 0 \) in se sipa na drugem delcu. Kaj se zgodi s spini po sipanju?
+</p>
+
+</div>
+
+<p>
+Hilbertov prostor našega problema je sestavljen iz treh podprostorov \( \mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_{S_1} \otimes \mathcal{H}_{S_{2}} \). \( \mathcal{H}_1 \) je krajevni podprostor za 1. delec, \( \mathcal{H}_{S_1} \) in \( \mathcal{H}_{S_2} \) pa spinska podprostora. Drugi delec zaradi mirovanja nima svojega krajevnega podprostora.
+</p>
+
+<p>
+Prostor \( \mathcal{H}_{S_1} \) je dvodimenzionalen, saj je izbrana baza lahko \( \left| \uparrow \right\rangle , \left| \downarrow \right\rangle\). Prostor \( H_{S_2} \) pa je tridimenzionalen, primer baze pa je \( \left| 1, 1 \right\rangle , \left| 1, 0 \right\rangle , \left| 1, -1 \right\rangle\). Prva številka baze predstavlja spin, druga številka pa njeno projekcijo na \( z \)-os.
+</p>
+
+<p>
+To pomeni, da je spinski del Hilbertovega prostora 6-dimenzionalen, saj \( 2 \cdot 3 = 6 \). Radi bi zapisali bazo za \( H_{S_1} \otimes \mathcal{H}_{S_2} \). Eden od načinov je <i>produktna baza</i>, v kateri \( S_1 ^2, S_{1z}, S_2 ^2, S_{2z} \) komutirajo, kar implicira obstoj lastnih funkcij, ki so hkrati lastna stanja vseh naštetih operatorjev. Baza je
+</p>
+
+<p>
+\[ \left\{ \left| \uparrow \right\rangle \left| 1 1 \right\rangle, \left| \uparrow \right\rangle \left| 1 0 \right\rangle, \left| \uparrow \right\rangle \left| 1 -1 \right\rangle, \left| \downarrow \right\rangle \left| 11 \right\rangle, \left| \downarrow \right\rangle \left| 10 \right\rangle, \left| \downarrow \right\rangle \left| 1, - 1 \right\rangle \right\}.
+\]
+</p>
+
+<p>
+Baza je oblike \( \left| s_1 m_1 \right\rangle \left| s_2, m_2 \right\rangle\), vendar ker sta \( s_1 \) in \( s_2 \) fiksirana, bomo okrajšali zapis v \( \left| m_1 \right\rangle \left| m_2 \right\rangle \). Krajše zapisana baza je tako
+</p>
+
+<p>
+\[ \left\{ \left| \uparrow \right\rangle \left| 1 \right\rangle, \left| \uparrow \right\rangle \left| 0 \right\rangle, \left| \uparrow \right\rangle \left|- 1 \right\rangle, \left| \downarrow \right\rangle \left| 1 \right\rangle, \left| \downarrow \right\rangle \left| 0 \right\rangle, \left| \downarrow \right\rangle \left| -1 \right\rangle \right\}
+\]
+</p>
+
+<p>
+Drugi način skupne baze pa je baza z dobrim skupnim spinom \( \vec{S} = \vec{S}_1 + \vec{S}_2 \), kjer \( S ^2, S_z, S_1 ^2, S_2 ^2 \) komutirajo. Vrednosti, ki jih zavzame skupni spin je
+</p>
+
+<p>
+\[ \left| S_1 - S_2 \right| \le S \le \left| S_1 + S_2 \right|.
+\]
+</p>
+
+<p>
+V našem primeru to pomeni, da je \( S = \frac{1}{2}, \frac{3}{2} \). Baza bi tako bila
+</p>
+
+<p>
+\[ \left\{ \left| \frac{3}{2}, \frac{3}{2}, \frac{1}{2} 1 \right\rangle, \left| \frac{3}{2}, \frac{1}{2}, \frac{1}{2} 1 \right\rangle, \left| \frac{3}{2},- \frac{1}{2}, \frac{1}{2} 1 \right\rangle, \left| \frac{3}{2}, - \frac{3}{2}, \frac{1}{2} 1 \right\rangle, \left| \frac{1}{2}, \frac{1}{2}, \frac{1}{2} 1 \right\rangle, \left| \frac{1}{2}, -\frac{1}{2}, \frac{1}{2} 1 \right\rangle \right\}.
+\]
+</p>
+
+<p>
+Ker sta \( s_1 = \frac{1}{2} \) in \( s_2 = 1 \) nespreminjajoči, ju v zapisu baze izpustimo. Posodobljena baza je tako
+</p>
+
+<p>
+\[ \left\{ \left| \frac{3}{2}, \frac{3}{2} \right\rangle, \left| \frac{3}{2}, \frac{1}{2} \right\rangle, \left| \frac{3}{2}, -\frac{1}{2} \right\rangle, \left| \frac{3}{2}, -\frac{3}{2} \right\rangle, \left| \frac{1}{2}, \frac{1}{2} \right\rangle, \left| \frac{1}{2}, - \frac{1}{2} \right\rangle \right\}
+\]
+</p>
+</div>
+<div id="outline-container-org3c3209b" class="outline-3">
+<h3 id="org3c3209b"><span class="section-number-3">3.1.</span> Sipanje na \( \delta \) funkciji brez spina</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Na začetku leta smo imeli delec s Hamiltonianom
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} - \lambda \delta(x).
+\]
+</p>
+
+<p>
+Prišli smo do ugotovitev, da ima sistem eno vezano stanje
+</p>
+
+<p>
+\[ E_0 = - \frac{\hbar ^2 k ^2}{2m}, \ \kappa = \frac{m \lambda}{\hbar ^2} ,
+\]
+</p>
+
+<p>
+s pripadajočo valovno funkcijo
+</p>
+
+<p>
+\[ \psi_0 = \sqrt{\kappa} e^{- \kappa \left| x \right|}.
+\]
+</p>
+
+<p>
+Potem pa imamo še sipalna stanja za \( E > 0 \). Parametrizirali smo sipalno matriko
+</p>
+
+<p>
+\[ S = \begin{pmatrix}
+       r & t' \\
+       t & r'
+        \end{pmatrix} = \frac{1}{k + \mathrm{i} \kappa} \begin{pmatrix}
+                         -\mathrm{i} \kappa& k \\
+                         k& -\mathrm{i} \kappa
+                         \end{pmatrix},
+\]
+</p>
+
+<p>
+kjer je \( k = \sqrt{\frac{2m E}{\hbar ^2}} \).
+</p>
+
+<p>
+Delec, ki ga pošljemo iz leve strani potenciala, z indeksnim vektorjem \( (1, 0)^T \) bo delno prepuščen, delno pa odbit
+</p>
+
+<p>
+\[ \psi(x < 0) = e^{\mathrm{i} k x} + re^{- \mathrm{i} k x} \text{ in } \psi(x > 0) = t e^{\mathrm{i} k x}.
+\]
+</p>
+
+<p>
+Sipalna matrika je unitarna, kar pomeni, da velja \( S ^{\dagger} S = I \). Iz tega posledično sledi
+</p>
+
+<p>
+\[ \left| t \right| ^2 + \left| r \right| ^2 = T + R = 1,
+\]
+</p>
+
+<p>
+kjer sta \( T \) in \( R \) verjetnosti za prepuščenost in odbitost delca.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfef66ac" class="outline-3">
+<h3 id="orgfef66ac"><span class="section-number-3">3.2.</span> Reševanje naloge</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Imamo delec 1 s spinom \( \left| \uparrow \right\rangle \), ki je levo od delca 2 s spinom \( \left| 0 \right\rangle \). Zanima nas sipano stanje teh dveh delcev.
+</p>
+
+<p>
+Valovno funkcijo pred sipanjem zapišemo z
+</p>
+
+<p>
+\[ e^{\mathrm{i} k x} \left| \uparrow \right\rangle \left| 0 \right\rangle,
+\]
+</p>
+
+<p>
+ki je zapisana v produktni bazi - produkt spinov delca 1 in delca 2. Hkrati pa so lastne funkcije \ref{eq:6} in \ref{eq:7} v bazi z dobrim skupnim spinom.
+</p>
+
+<p>
+Začetno stanje bomo pretvorili v iz produktne baze v bazo z dobrim skupnim spinom.
+</p>
+
+
+<div id="org850093a" class="figure">
+<p><img src="figures/09Clebsch-Gordan.png" alt="09Clebsch-Gordan.png" />
+</p>
+</div>
+
+<p>
+Vir: <a href="https://ejmastnak.com/notes/fmf/qm/qm-exercises.pdf">Mastnak zapiski, stran 77</a>, posnetek zaslona
+</p>
+
+<p>
+Na listu z GC koefienti najprej poiščemo tabelo, katere naslov ima našo kombinacijo spinov. V našem primeru sta to \( s_1 = \frac{1}{2} \) in \( s_2 = 1 \). Začetno stanje našega problema ima spinsko stanje \( \left| \uparrow \right\rangle \left| 0 \right\rangle = \left| \frac{1}{2} \right\rangle \left| 0 \right\rangle \).
+</p>
+
+<p>
+Najdemo vrstico, ki vsebuje naša spinska stanja. Nadaljevanje vrstice so koeficienti, ki jih je potrebno koreniti. V stolpcu nad koeficientom pa je zapisano stanje v bazi z dobrim skupnim spinom.
+</p>
+
+<p>
+Naše začetno spinsko stanje v produktni bazi tako zapišemo v bazi z dobrim skupnim spinom
+</p>
+
+<p>
+\[ \left| \frac{1}{2} \right\rangle \left| 0 \right\rangle \implies \sqrt{\frac{3}{2}} \left| \frac{3}{2}, \frac{1}{2} \right\rangle - \sqrt{\frac{1}{3}} \left| \frac{1}{2}, \frac{1}{2} \right\rangle.
+\]
+</p>
+
+<p>
+Celotno stanje stanje pa je
+</p>
+
+\begin{equation}
+\label{eq:8}
+ \left| \psi_{in} \right\rangle = e^{\mathrm{i} k x} \left| \uparrow \right\rangle  \left| 0 \right\rangle = e^{\mathrm{i} k x} \left[ \sqrt{\frac{3}{2}} \left| \frac{3}{2}, \frac{1}{2} \right\rangle - \sqrt{\frac{1}{3}} \left| \frac{1}{2}, \frac{1}{2} \right\rangle \right].
+\end{equation}
+
+<p>
+Lastno stanje po sipanju z lastno energijo \( E \) za \( x_1 < 0 \) je
+</p>
+
+<p>
+\[ \psi_b^- = \left( e^{\mathrm{i} k x} + r_s e^{- \mathrm{i} k x} \right) \left| s, m \right\rangle,
+\]
+</p>
+
+<p>
+za \( x_1 > 0 \) pa
+</p>
+
+<p>
+\[ \psi_b^+ = t_s e^{\mathrm{i} k x} \left| s, m \right\rangle.
+\]
+</p>
+
+<p>
+Če primerjamo lastni stanji \( \psi_b^- \) z začetnim stanjem \ref{eq:8} lahko opazimo, da moramo prvi člen obtežiti s koeficientom \( \sqrt{\frac{3}{2}} \), drugo člen pa s koeficientom \( -\sqrt{\frac{1}{3}} \). Lastna funkcija za \( x_1 < 0 \) bo tako
+</p>
+
+\begin{equation}
+\label{eq:9}
+ \left| \psi_- \right\rangle = \sqrt{\frac{2}{3}} \left[ e^{\mathrm{i} k x} + r_{\frac{3}{2}} e^{- \mathrm{i} k x} \right] \left| \frac{3}{2} \frac{1}{2} \right\rangle - \sqrt{\frac{1}{3}} \left[ e^{\mathrm{i} k x} + r_{\frac{1}{2}} e^{- \mathrm{i} k x} \right] \left| \frac{1}{2} \frac{1}{2} \right\rangle
+\end{equation}
+
+<p>
+Lastna funkcija za \( x_1 > 0 \) pa
+</p>
+
+<p>
+\[ \psi_+ = \sqrt{\frac{2}{3}} \left( t_{\frac{3}{2}} e^{\mathrm{i} k x} \left| \frac{3}{2}, \frac{1}{2} \right\rangle \right) - \sqrt{\frac{1}{3}} \left( t_{\frac{1}{2}} e^{\mathrm{i} k x} \left| \frac{1}{2}, \frac{1}{2} \right\rangle \right).
+\]
+</p>
+
+<p>
+V \ref{eq:9} lahko prepoznamo začetno stanje in ga nadomestimo
+</p>
+
+<p>
+\[ \left| \psi_- \right\rangle = \left| \psi_{in} \right\rangle + e^{- \mathrm{i} k x} \left( \sqrt{\frac{2}{3}} r_{\frac{3}{2}} \left| \frac{3}{2}, \frac{1}{2} \right\rangle - \sqrt{ \frac{1}{3}} r_{\frac{1}{2}} \left| \frac{1}{2}, \frac{1}{2} \right\rangle\right).
+\]
+</p>
+
+<p>
+Drugo lahko drugače zapišemo kot
+</p>
+
+<p>
+\[ \left| \psi_+ \right\rangle = e^{\mathrm{i} k x} \left( \sqrt{\frac{2}{3}} t_{\frac{3}{2}} \left| \frac{3}{2}, \frac{1}{2} \right\rangle - \sqrt{\frac{1}{3}} t_{\frac{1}{2}} \left| \frac{1}{2}, \frac{1}{2} \right\rangle \right).
+\]
+</p>
+
+<p>
+Za pridobitev verjetnosti po sipanju moramo pretvoriti nazaj iz baze z dobrim skupnim spinom v produktno bazo.
+</p>
+
+<p>
+Stanje \( \left| \psi_{in} \right\rangle \) v produktni bazi že poznamo, ostalo je potrebno pretvoriti. Pretvorimo \( \left| \frac{3}{2}, \frac{1}{2} \right\rangle \) v produktno bazo. Stanje poiščemo v stolpcu in v pripadajočem stolpcu odčitamo korenjene koeficiente s pripadajočim spinskim stanjem
+</p>
+
+<p>
+\[ \left| \frac{3}{2}, \frac{1}{2} \right\rangle \implies \ \sqrt{\frac{1}{3}} \left| \downarrow \right\rangle \left| 1 \right\rangle + \sqrt{\frac{2}{3}} \left| \uparrow \right\rangle \left| 0 \right\rangle.
+\]
+</p>
+
+<p>
+Analogno je
+</p>
+
+<p>
+\[ \left| \frac{1}{2}, \frac{1}{2} \right\rangle \implies \ \sqrt{\frac{2}{3}} \left| \downarrow \right\rangle \left| 1 \right\rangle - \sqrt{\frac{1}{3}} \left| \uparrow \right\rangle \left| 0 \right\rangle.
+\]
+</p>
+
+<p>
+Lastno stanje za \( x_1 < 0 \) v produktni bazi zapišemo
+</p>
+
+\begin{align*}
+  \left| \psi_- \right\rangle = e^{\mathrm{i} k x} \left| \uparrow \right\rangle \left| 0 \right\rangle + &\left[ \sqrt{\frac{2}{3}} r_{\frac{3}{2}} \left( \sqrt{\frac{1}{3}} \left| \downarrow \right\rangle  \left| 1 \right\rangle + \sqrt{\frac{2}{3}} \left| \uparrow \right\rangle \left| 0 \right\rangle\right) \right. \\
+-& \left.  \sqrt{\frac{1}{3}} r_{\frac{1}{2}} \left( \sqrt{\frac{2}{3}} \left| \downarrow \right\rangle \left| 1 \right\rangle - \sqrt{\frac{1}{3}} \left| \uparrow \right\rangle \left| 0 \right\rangle \right) \right]
+\end{align*}
+
+<p>
+Lastno stanje za \( x_1 > 0 \) je analogno pretvorjeno
+</p>
+
+\begin{align*}
+  \left| \psi_+ \right\rangle = e^{\mathrm{i} k x} &\left[\sqrt{\frac{2}{3}} t_{\frac{3}{2}} \left( \sqrt{\frac{1}{3}} \left| \downarrow \right\rangle  \left| 1 \right\rangle + \sqrt{\frac{2}{3}} \left| \uparrow \right\rangle \left| 0 \right\rangle\right) \right. \\
+&- \left. \sqrt{\frac{1}{3}} t_{\frac{1}{2}} \left( \sqrt{\frac{2}{3}} \left| \downarrow \right\rangle \left| 1 \right\rangle - \sqrt{\frac{1}{3}} \left| \uparrow \right\rangle \left| 0 \right\rangle \right)    \right]
+\end{align*}
+
+<p>
+Združimo podobne člene v obeh izrazih.
+</p>
+
+\begin{align*}
+  \left| \psi_- \right\rangle &= e^{\mathrm{i} k x} \left| \uparrow \right\rangle \left| 0 \right\rangle + e^{- \mathrm{i} k x} \left[ \left( \frac{\sqrt{2}}{3} r_{\frac{3}{2}} - \frac{\sqrt{2}}{3} r_{\frac{1}{2}} \right) \left| \downarrow \right\rangle \left| 1 \right\rangle + \left( \frac{2}{3}r_{\frac{3}{2}} + \frac{1}{3} r_{\frac{1}{2}} \right) \left| \uparrow \right\rangle \left| 0 \right\rangle\right] \\
+\left| \psi_+ \right\rangle &= e^{\mathrm{i} k x} \left[ \left( \frac{\sqrt{2}}{3} t_{\frac{3}{2}} - \frac{\sqrt{2}}{3} t_{\frac{1}{2}} \right)\left| \downarrow \right\rangle \left| 1 \right\rangle + \left( \frac{2}{3} t_{\frac{3}{2}} + \frac{1}{3} t_{\frac{1}{2}} \right)\left| \uparrow \right\rangle \left| 0 \right\rangle \right]
+\end{align*}
+
+<p>
+Koeficiente \( r_{s} \) in \( t_s \) že poznamo in jih lahko izračunamo iz sipalne matrike. Definiramo nove verjetnostne amplitude kot so \( r_{\downarrow 1 \gets \uparrow 0} = r_{\downarrow 1} \). Ta verjetnostna amplituda nam pove, da se je stanju z začetnim spinom \( \left| \uparrow \right\rangle \left| 0 \right\rangle \) spremenil spin po sipanju v \( \left| \downarrow \right\rangle \left|  1 \right\rangle\).
+</p>
+
+<p>
+Zapišemo lastna stanja z novimi verjetnostnimi amplitudami
+</p>
+
+\begin{align*}
+  \left| \psi_- \right\rangle &= e^{\mathrm{i} k x} \left| \uparrow \right\rangle \left| 0 \right\rangle + e^{- \mathrm{i} k x} \left[ r_{\downarrow 1} \left| \downarrow \right\rangle \left| 1 \right\rangle + r_{\uparrow 0} \left| \uparrow \right\rangle \left| 0 \right\rangle \right] \\
+\left| \psi_+ \right\rangle &= e^{\mathrm{i} k x} \left[ t_{\downarrow 1} \left| \downarrow \right\rangle \left| 1 \right\rangle + t_{\uparrow 0} \left| \uparrow \right\rangle \left| 0 \right\rangle \right]
+\end{align*}
+
+<p>
+Možni so štirje rezultati: vpadajoči delec se lahko odbije ali prepusti in njegov spin se lahko obrne ali ostane enak. Kot primer, verjetnost, da se delec odbije z obrnjenim spinom je
+</p>
+
+<p>
+\[ R_{\downarrow 1} = \left| \frac{\sqrt{2}}{3} r_{\frac{3}{2}} - \frac{\sqrt{2}}{3} r_{\frac{1}{2}} \right| ^2.
+\]
+</p>
+
+<p>
+Dokažimo, da je vsota verjetnosti vseh 4 možnih dejanj enako 1.
+</p>
+
+\begin{align*}
+  P_{tot} &= \left| \frac{\sqrt{2}}{3} r_{\frac{3}{2}} - \frac{\sqrt{2}}{3} r_{\frac{1}{2}} \right| ^2 + \left| \frac{2}{3} r_{\frac{3}{2}} + \frac{1}{3} r_{\frac{1}{2}} \right| ^2 + \left| \frac{\sqrt{2}}{3} t_{\frac{3}{2}} - \frac{\sqrt{2}}{3} t_{\frac{1}{2}} \right| ^2 + \left| \frac{2}{3} t_{\frac{3}{2}} - \frac{1}{3} t_{\frac{1}{2}} \right| ^2 \\
+&= \frac{2}{9} \left| r_{\frac{3}{2}} \right| ^2 + \frac{2}{9} \left| r_{\frac{1}{2}}  \right| ^2 - \frac{2}{9} \cdot 2 \mathrm{Re} \left( r_{\frac{3}{2}} ^{\ast} r_{\frac{1}{2}} \right) + \frac{4}{9} \left| r_{\frac{3}{2}}  \right| ^2 + \frac{1}{9} \left| r_{\frac{1}{2}} \right| ^2 + \frac{2}{9} \cdot 2 \mathrm{Re} \left( r_{\frac{3}{2}}^{\ast} r_{\frac{1}{2}} \right) \\
+&\quad +\frac{2}{9} \left| t_{\frac{3}{2}} \right| ^2 + \frac{2}{9} \left| t_{\frac{1}{2}}  \right| ^2 - \frac{2}{9} \cdot 2 \mathrm{Re} \left( t_{\frac{3}{2}} ^{\ast} t_{\frac{1}{2}} \right) + \frac{4}{9} \left| t_{\frac{3}{2}}  \right| ^2 + \frac{1}{9} \left| t_{\frac{1}{2}} \right| ^2 + \frac{2}{9} \cdot 2 \mathrm{Re} \left( t_{\frac{3}{2}}^{\ast} t_{\frac{1}{2}} \right) \\
+&= \frac{2}{3} \left| r_{\frac{3}{2}} \right| ^2 + \frac{1}{3} \left| r_{\frac{1}{2}} \right| ^2 + \frac{2}{3} \left| t_{\frac{3}{2}} \right| ^2 + \frac{1}{3} \left| t_{\frac{1}{2}} \right| ^2 \\
+&= \frac{2}{3} \left( \left| r_{\frac{3}{2}} \right| ^2 + \left| t_{\frac{3}{2}} \right| ^2\right) + \frac{1}{3} \left( \left| r_{\frac{1}{2}} \right| ^2 + \left| t_{\frac{1}{2}} \right| ^2\right)
+\end{align*}
+
+<p>
+Pripadajoča člena posameznega oklepaja sta ravno del iste sipalne matrike
+</p>
+
+<p>
+\[ S_{\frac{3}{2}} = \begin{bmatrix}
+                     r_{\frac{3}{2}} & t_{\frac{3}{2}} ' \\
+                     t_{\frac{3}{2}} & r_{\frac{3}{2}} '
+                      \end{bmatrix} \text{ in } S_{\frac{1}{2}} = \begin{bmatrix}
+                     r_{\frac{1}{2}} & t_{\frac{1}{2}} ' \\
+                     t_{\frac{1}{2}} & r_{\frac{1}{2}} '
+                     \end{bmatrix}.
+\]
+</p>
+
+<p>
+Iz unitarnosti \( S^{\dagger} S = I \) in posledično
+</p>
+
+<p>
+\[ \left| r_s \right| ^2 + \left| t_s \right| ^2 = 1 , \ s = \frac{1}{2}, \frac{3}{2},
+\]
+</p>
+
+<p>
+sledi, da je \( P_{tot} = 1 \).
+</p>
+</div>
+</div>
+<div id="outline-container-orged7e4a5" class="outline-3">
+<h3 id="orged7e4a5"><span class="section-number-3">3.3.</span> Sipanje na \( \delta \) potencialu s spinom</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Hamiltonian
+</p>
+
+<p>
+\[ H = \frac{p_1 ^2}{2m} - \frac{\lambda}{\hbar ^2} \vec{S}_1 \cdot \vec{S}_2 \delta(x_1),
+\]
+</p>
+
+<p>
+bomo zapisali drugače tako, da nadomestimo zapis za skalarni produkt. Iz baze z dobrim skupnim spinom velja \( \vec{S} = \vec{S}_1 + \vec{S}_2 \), kar pomeni, da po kvadriranju dobimo
+</p>
+
+<p>
+\[ S ^2 = S_1 ^2 + 2 \vec{S}_1 \cdot \vec{S}_2 + S_2 ^2 \implies \vec{S}_1 \cdot \vec{S}_2 = \frac{1}{2} \left( S ^2 - S_1 ^2 - S_2 ^2 \right),
+\]
+</p>
+
+<p>
+kar lahko vstavimo v Hamiltonian
+</p>
+
+<p>
+\[  H = \frac{p_1 ^2}{2m} - \frac{\lambda}{2 \hbar ^2} \left( S ^2 - S_1 ^2 - S_2 ^2 \right) \delta(x_1).
+\]
+</p>
+
+<p>
+Vsi operatorji v bazi z dobrim skupnim spinom komutirajo med sabo, potem tudi vsi komutirajo s Hamiltonianom
+</p>
+
+<p>
+\[ \left[ H, S ^2 \right] = \left[ H, S_1 ^2 \right] = \left[ H, S_2 ^2 \right] = \left[ H, S_z \right] = 0
+\]
+</p>
+
+<p>
+Lastne funkcije enega operatorja so tudi lastne funkcije vseh ostalih operatorjev.
+</p>
+
+<p>
+Rešimo sedaj Schrödingerjevo enačbo
+</p>
+
+<p>
+\[ H \left| \psi \right\rangle = E \left| \psi \right\rangle,
+\]
+</p>
+
+<p>
+z nastavkom \( \left| \psi \right\rangle = \left| \psi_1 \right\rangle \otimes \left| s , m\right\rangle\). To lahko naredimo zaradi komutacije med Hamiltonianom in spinskimi operatorji. Dobimo enačbo
+</p>
+
+\begin{align*}
+  H \left| \psi_1 \right\rangle \otimes \left| s, m \right\rangle &= \left( \frac{p_1 ^2}{2m} \left| \psi_1 \right\rangle \right) \otimes \left| s, m \right\rangle - \frac{\lambda}{2 \hbar ^2} \delta(x_1) \left| \psi_1 \right\rangle \otimes \left( S ^2 - S_1 ^2 - S_2 ^2 \right) \left| s, m \right\rangle \\
+&= E \left| \psi_1 \right\rangle \otimes \left| s, m \right\rangle
+\end{align*}
+
+<p>
+Spinski operatorji \( S \), \( S_1 ^2 \) in \( S_2 ^2 \) delujejo na lastna stanja, kar pomeni, da lahko operatorje nadomestimo z njihovimi lastnimi stanji
+</p>
+
+\begin{align*}
+    H \left| \psi_1 \right\rangle \otimes \left| s, m \right\rangle &= \left( \frac{p_1 ^2}{2m} \left| \psi_1 \right\rangle \right) \otimes \left| s, m \right\rangle - \frac{\lambda}{2 \hbar ^2} \delta(x_1) \left| \psi_1 \right\rangle \otimes \left[ \hbar ^2 s(s + 1) - \hbar ^2 s_1 (s_1 - 1) - \hbar ^2 s_2 (s_2 + 1) \right] \left| s, m \right\rangle \\
+&= E \left| \psi_1 \right\rangle \otimes \left| s, m \right\rangle
+\end{align*}
+
+<p>
+\( \left| s, m \right\rangle \) se pokrajša iz enačbe. Prav tako nadomestimo \( s_1 \) in \( s_2 \) z njunima vrednostima
+</p>
+
+<p>
+\[ \left( \frac{p_1 ^2}{2m} - \frac{\lambda}{2} \delta(x_1) \left[ s (s + 1) - \frac{3}{4} - 2 \right] \right) \left| \psi_1 \right\rangle  = E \left| \psi_1 \right\rangle.
+\]
+</p>
+
+<p>
+Rešitev Schrödingerjeve enačbe krajevnega dela bo odvisna samo od spina \( s \), ki lahko zavzema dve vrednosti - \( \frac{1}{2} \) in \( \frac{3}{2} \).
+</p>
+
+<p>
+Za \( s = \frac{3}{2} \) imamo enačbo
+</p>
+
+<p>
+\[ \left[ \frac{p_1 ^2}{2m} - \frac{\lambda}{2} \delta(x_1) \right] \left| \psi_1 \right\rangle = E \left| \psi_1 \right\rangle.
+\]
+</p>
+
+<p>
+Za \( s = \frac{1}{2} \) pa je enačba
+</p>
+
+<p>
+\[ \left[ \frac{p_1 ^2}{2m} + \lambda \delta(x_1) \right] \left| \psi_1 \right\rangle = E \left| \psi_1 \right\rangle.
+\]
+</p>
+
+<p>
+Naš problem smo tako preobrazili v problem sipanja na \( \delta \) funkciji, ki ni odvisna od spina. Rešitve tega problema že poznamo.
+</p>
+
+<ul class="org-ul">
+<li><p>
+Vezana stanja ima samo \( \delta \) potencial, ki je usmerjena navzdol - torej samo \( s = \frac{3}{2} \). Stanje \( s = \frac{1}{2} \) ima pozitivno vrednost \( \delta \) potenciala.
+Definiramo \( \lambda_{\frac{3}{2}} = \frac{\lambda}{2} \) in pripadajoč Hamiltonian je
+</p>
+
+<p>
+\[ \frac{p_1 ^2}{2m} - \lambda_{\frac{3}{2}} \delta(x_1) = H_{S = \frac{3}{2}}.
+   \]
+</p>
+
+<p>
+Analogno definiramo \( \lambda_{\frac{1}{2}} = - \lambda \) in Hamiltonian je
+</p>
+
+<p>
+\[ \frac{p_1 ^2}{2m} - \lambda_{\frac{1}{2}} \delta(x_1) = H_{S = \frac{1}{2}}.
+   \]
+</p>
+
+<p>
+Vezano stanje ima energijo
+</p>
+
+<p>
+\[ E_0 = - \frac{\hbar ^2 \kappa_{\frac{3}{2}} ^2}{2m}, \ \kappa_{\frac{3}{2}} = \frac{m \lambda_{\frac{3}{2}}}{\hbar ^2} = \frac{m \lambda}{2 \hbar ^2} ,
+   \]
+</p>
+
+<p>
+in lastno funkcijo
+</p>
+
+<p>
+\[ \left| \psi_0^m \right\rangle = \sqrt{\kappa_{\frac{3}{2}}} \exp \left\{ - \kappa_{\frac{3}{2}} \left| x \right| \right\} \left| \frac{3}{2} m \right\rangle.
+   \]
+</p>
+
+<p>
+\( m \) zaseda vrednosti \( \left\{ \frac{3}{2}, \frac{1}{2}, - \frac{1}{2}, - \frac{3}{2} \right\} \). To pomeni, da imamo štirikrat degenerirano stanje. V zgornjem zapisu smo uporabili mešanico koordinatne in Diracove reprezentacije. Dogovorimo se, da zgornji zapis pomeni
+</p>
+
+<p>
+\[ \psi(x_1) \left| s, m \right\rangle = \left[ \int\limits_{}^{} \psi(x_1) \left| x_1 \right\rangle \, \mathrm{d} x_1 \right] \left| s, m \right\rangle
+   \]
+</p></li>
+
+<li><p>
+Poglejmo sedaj še sipalna stanja. Na območju levo od delta potenciala bomo imeli dva valova - vpadajoči in odbiti. Desno od delta potenciala pa bo prepuščeni val.
+</p>
+
+\begin{equation}
+\label{eq:6}
+\left| \psi_b^- \right\rangle = \left( e^{\mathrm{i} k x} + r_s e^{- \mathrm{i} k x} \right) \left| s, m \right\rangle; \ x_1 < 0
+\end{equation}
+
+<p>
+Na desni pa bo
+</p>
+
+\begin{equation}
+\label{eq:7}
+ \left| \psi_b^+ \right\rangle  = t_s e^{\mathrm{i} k x} \left| s, m \right\rangle; x_1 > 0.
+\end{equation}
+
+<p>
+Sipalna matrika je oblike
+</p>
+
+<p>
+\[ \mathbf{S}_S = \begin{bmatrix}
+                    r_{s} & t_{s}' \\
+                    t_{s} & r_{s}'
+                     \end{bmatrix},
+  \]
+</p>
+
+<p>
+in je enaka tisti iz začetka leta, saj je krajevni del enačbe identičen. Torej
+</p>
+
+<p>
+\[ \mathbf{S}_S = \frac{1}{k + \mathrm{i} \kappa_S} \begin{bmatrix}
+                                                      -\mathrm{i} \kappa_S & k \\
+                                                       k& - \mathrm{i} \kappa_S
+                                                       \end{bmatrix}; \ \kappa_{\frac{3}{2}} = \frac{m \lambda_{\frac{3}{2}}}{\hbar ^2} = \frac{m \lambda}{2 \hbar ^2} \text{ in } \kappa_{\frac{1}{2}} = \frac{m \lambda_{\frac{1}{2}}}{\hbar ^2} = - \frac{m \lambda}{\hbar ^2}.
+  \]
+</p>
+
+<p>
+Opomba, da matrika je sicer enake oblike, vendar parametra \( r_s \) in \( t_s \) sta odvisna od spina.
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-25 Sun 20:33</p>
+</div>
+</body>
+</html>

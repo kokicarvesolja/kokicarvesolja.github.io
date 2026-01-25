@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-25 Sun 20:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>10. vaje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">10. vaje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3ab9dc2">1. Nedegenerirana teorija perturbacije</a>
+<ul>
+<li><a href="#orgb4bd512">1.1. Teorija</a></li>
+<li><a href="#org74ff300">1.2. Harmonski oscilator s perturbacijo 4. reda</a></li>
+<li><a href="#org0c90e24">1.3. Harmonski oscilator s perturbacijo 3. reda</a></li>
+</ul>
+</li>
+<li><a href="#orgda5dbd2">2. Degenerirana teorija perturbacije</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3ab9dc2" class="outline-2">
+<h2 id="org3ab9dc2"><span class="section-number-2">1.</span> Nedegenerirana teorija perturbacije</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgb4bd512" class="outline-3">
+<h3 id="orgb4bd512"><span class="section-number-3">1.1.</span> Teorija</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Imamo Hamiltonian, ki je sestavljen iz dveh delov - Hamiltoniana \( H_0 \) s pripadajočimi lastnimi funkcijami \( \left| n_0 \right\rangle \) in nedegenerirane lastne vrednosti energije \( E_n^{(0)} \) in majhne perturbacije \( H' \).
+</p>
+
+<p>
+\[ H = H_0 + H'
+\]
+</p>
+
+<p>
+Lastne vrednosti energije tega Hamiltoniana pridobimo preko drugega reda perturbacijske teorije
+</p>
+
+<p>
+\[ E_n = E_n^{(0)} + \left\langle n^{(0)} \middle| H' \middle| n^{(0)} \right\rangle + \sum\limits_{m \ne n}^{} \frac{\left| \left\langle m^{(0)} \middle| H' \middle| n^{(0)} \right\rangle \right|}{E_n^{(0)} - E_m ^{(0)}}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org74ff300" class="outline-3">
+<h3 id="org74ff300"><span class="section-number-3">1.2.</span> Harmonski oscilator s perturbacijo 4. reda</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="problem" id="orgdacb29a">
+<p>
+Želimo izračunati približke lastnih vrednosti energij Hamiltoniana s perturbacijo 4. reda.
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} + \frac{1}{2} k x ^2 + \lambda x ^4, \, \ \lambda > 0
+\]
+</p>
+
+</div>
+
+<p>
+V neperturbiranem Hamiltonianu prepoznamo harmonski oscilator, za katerega poznamo lastne vrednosti
+</p>
+
+<p>
+\[ E_n^{(0)} = \hbar \omega \left( n + \frac{1}{2} \right).
+\]
+</p>
+
+<p>
+Perturbacija je torej \( H' = \lambda x ^4 \). Prvi red perturbacije je torej
+</p>
+
+<p>
+\[ E_n = E_n^{(0)} + \left\langle n^{(0)} \middle| \lambda x ^4 \middle| n^{(0)} \right\rangle
+\]
+</p>
+
+<p>
+Pri računanju se bomo poslužili anihilacijskega in kreacijskega operatorja, za katera velja odvisnost
+</p>
+
+<p>
+\[ x = \frac{x_0}{\sqrt{2}} \left( a + a^{\dagger} \right) , \, \ x_0 = \sqrt{\frac{\hbar}{m \omega}}
+\]
+</p>
+
+<p>
+\( x^4 \) z anihilacijskima operatorjema nam poda 16 členov, kar je fuj. Namesto tega bomo razdelili izraz na \( \left\langle x^2 n^{(0)} \middle| x ^2\middle| n^{(0)} \right\rangle \).
+</p>
+
+<p>
+Pred nadaljevanjem se spomnimo identitete za komutacijo anihilacijskega in kreacijskega operatorja
+</p>
+
+<p>
+\[ \left[ a, a^{\dagger} \right] = 1 \implies \ a a^{\dagger} = 1 + a^{\dagger} a.
+\]
+</p>
+
+<p>
+Kvadrat operatorja položaja za harmonski oscilator je po definiciji \( x ^2 = \frac{x_0 ^2}{2} \left( a + a^{\dagger} \right) ^2 \). Vpliv tega operatorja na stanje \( \left| n \right\rangle \) je enako
+</p>
+
+\begin{align*}
+  x ^2 \left| n \right\rangle &= \frac{x_0 ^2}{2} \left( a + a^{\dagger} \right) ^2 \left|  n \right\rangle \\
+&= \frac{x_0 ^2}{2} \left( a ^2  + 2 a^{\dagger} a + a ^{\dagger 2} + 1  \right) \left| n \right\rangle \\
+&= \frac{x_0 ^2}{2} \left( \sqrt{n} \sqrt{n - 1} \left| n - 2 \right\rangle + (2n + 1) \left| n \right\rangle  + \sqrt{n + 1} \sqrt{n + 2} \left| n + 2 \right\rangle\right)
+\end{align*}
+
+
+<p>
+Zaradi ortogonalnosti bo braket rezultat potem
+</p>
+
+\begin{align*}
+  \left\langle x ^2 n^{(0)} \middle| x ^2 \middle| n^{(0)} \right\rangle &= \frac{x_0 ^4}{2} \left[ n (n - 1) +  (2n + 1) ^2 + (n + 1)(n + 2) \right] \\
+&= \frac{x_0 ^4}{4} \left[ 6n ^2 + 6n + 3 \right]
+\end{align*}
+
+<p>
+Torej, energija peturbiranega Hamiltoniana v prvem redu je
+</p>
+
+<p>
+\[ E_n = E_n^{(0)} + \lambda \frac{3 x_0 ^4}{4} \left( 2n ^2 + 2n + 1 \right)
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org0c90e24" class="outline-3">
+<h3 id="org0c90e24"><span class="section-number-3">1.3.</span> Harmonski oscilator s perturbacijo 3. reda</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="problem" id="org0482c3a">
+<p>
+
+</p>
+
+</div>
+
+<p>
+Intuicija nam pravi, da se bo energija znižala, saj se valovna funkcija zaradi nižjega potenciala na levi premakne v levo.
+</p>
+
+
+<div id="org0a73a90" class="figure">
+<p><img src="figures/QHO3Pert.png" alt="QHO3Pert.png" />
+</p>
+</div>
+
+<p>
+Dokazujemo, da je prvi red popravka perturbacije ničeln. Naj bo \( \psi_n (x) \) lastna funkcija osnovnega harmonskega oscilatorja. Za nedegenerirana stanja je lastno stanje lahko soda ali liha funkcija. Zaradi lihosti perturbacije \( \lambda x ^3 \) bo
+</p>
+
+<p>
+\[ \left\langle n \middle| \lambda x ^3 \middle| n \right\rangle = \int\limits_{- \infty}^{\infty} \psi_n^{\ast} (x) \lambda x ^3 \psi_n(x) \, \mathrm{d} x = 0.
+\]
+</p>
+
+<p>
+integrand vedno ničeln. Integral lihe funkcije na sodem intervalu pa je vedno \( 0 \).
+</p>
+
+<p>
+Poglejmo si sedaj drugi popravek perturbacijskega približka
+</p>
+
+<p>
+\[ \sum\limits_{m \ne n}^{} \frac{\left| \left\langle m \middle| \lambda x ^3 \middle| n \right\rangle \right| ^2}{E_n - E_m} + o \left( \lambda ^3 \right)
+\]
+</p>
+
+<p>
+Pričakovano vrednost tega popravka je
+</p>
+
+<p>
+\[ \left\langle m \middle| \lambda x ^3 \middle| n \right\rangle = \lambda \left\langle x m \middle| x ^2 \middle| n \right\rangle.
+\]
+</p>
+
+<p>
+Ket lahko uporabimo iz prejšnje naloge in je enak
+</p>
+
+<p>
+\[ x ^2 \left| n \right\rangle  = \frac{x_0 ^2}{2} \left( \sqrt{n} \sqrt{n - 1} \left| n - 2 \right\rangle + (2n + 1) \left| n \right\rangle + \sqrt{n + 1} \sqrt{n + 2} \left| n + 2 \right\rangle \right).
+\]
+</p>
+
+<p>
+Bra pa moramo še izračunati, vendar je precej enostavno
+</p>
+
+<p>
+\[ x \left| m \right\rangle = \frac{x_0}{\sqrt{2}} \left( a + a^{\dagger} \right) \left| m \right\rangle = \frac{x_0}{\sqrt{2}} \left[ \sqrt{m} \left| m - 1 \right\rangle + \sqrt{m + 1} \left| m + 1 \right\rangle\right]
+\]
+</p>
+
+<p>
+Pričakovano vrednost dobimo z združitvijo bra-keta in si pomagamo s Krönekerjevo delto, ki jo tudi preindeksiramo
+</p>
+
+\begin{align*}
+  \lambda \left\langle x m \middle| x ^2 \middle| n \right\rangle &= \lambda \left( \frac{x_0}{\sqrt{2}} \sqrt{m} \left\langle m - 1 \right| + \sqrt{m + 1} \left\langle m + 1 \right| \right) \cdot \frac{x_0 ^2}{2} \left( \sqrt{n} \sqrt{n - 1} \left| n - 2 \right\rangle + (2n + 1) \left| n \right\rangle + \sqrt{n + 1} \sqrt{n + 2} \left| n + 2 \right\rangle \right)\\
+\end{align*}
+
+<p>
+Končen rezultat je
+</p>
+
+\begin{align*}
+  \left\langle m \middle| \lambda x ^3 \middle| n \right\rangle  = & \lambda \frac{x_0 ^3}{2 \sqrt{2}} \left( 3n \sqrt{n}\delta_{m,n -1} + 3 (n + 1 ) \sqrt{n + 1} \delta_{m, n + 1} \right. \\
+    &+ \left. \sqrt{(n + 1) (n + 2) (n + 3)} \delta_{m, n + 3} + \sqrt{n (n - 1) (n - 2)} \delta_{m, n - 3} \right)
+\end{align*}
+
+<p>
+Razliko energij v popravki perturbacije zapišemo kot
+</p>
+
+<p>
+\[ E_n - E_m = \hbar \omega (n - m).
+\]
+</p>
+
+<p>
+Vsota postane razlika polinomov
+</p>
+
+\begin{align*}
+\sum\limits_{m \ne n}^{} \frac{\left| \left\langle m \middle| \lambda x ^3 \middle| n \right\rangle \right| ^2}{E_n - E_m} &= \frac{\lambda ^2 x_0 ^6}{8} \left( \frac{9n ^3}{\hbar \omega} + \frac{9 (n + 1) ^3}{(- \hbar \omega)} + \frac{(n + 1)(n + 2)(n + 3)}{(- 3\hbar \omega)} + \frac{n (n - 1) (n - 2)}{3 \hbar \omega} \right) \\
+&= - \frac{\lambda ^2 x_0 ^6}{8 \hbar \omega} \left( 30n ^2 + 30 n + 11 \right)
+\end{align*}
+
+<p>
+Želimo preveriti, ali se je verjetnostna porazdelitev res premaknila v levo. Lastne funkcije perturbacije so po definiciji
+</p>
+
+<p>
+\[ \left| n \right\rangle = \left| n_0 \right\rangle + \sum\limits_{m \ne n}^{} \frac{\left\langle m \middle| \lambda x ^3 \middle| n \right\rangle}{E_n - E_m} \left| m \right\rangle,
+\]
+</p>
+
+<p>
+kjer je \( \left| n_0 \right\rangle \) lastna funkcija osnovnega harmonskega oscilatorja. Vsota predstavlja popravek osnovnega stanja. Upoštevajoč matrični element \( \left\langle m \middle| \lambda x ^3 \middle| n \right\rangle \), je popravljeno osnovno stanje
+</p>
+
+\begin{align*}
+ \left| n \right\rangle = \left| n_0 \right\rangle &+ \frac{\lambda x_0 ^3}{\sqrt{8}} \left( \frac{\sqrt{n (n - 1) (n - 2)}}{3 \hbar \omega} \left| n_0 - 3 \right\rangle + \frac{3n\sqrt{n}}{\hbar \omega} \left| n_0 - 1 \right\rangle \right. \\
+&- \left. \frac{3(n + 1) \sqrt{n + 1}}{\hbar \omega} \left| n_0 + 1 \right\rangle - \frac{\sqrt{(n + 1) (n + 2) (n + 3)}}{3 \hbar \omega} \left| n_0 + 3 \right\rangle \right)
+\end{align*}
+
+<p>
+Osnovno stanje perturbacije je
+</p>
+
+<p>
+\[ \left| 0 \right\rangle = \left| 0_0 \right\rangle + \frac{\lambda x_0 ^3}{\sqrt{8} \cdot 3 \hbar \omega} \left( -9 \left| 1 \right\rangle - \sqrt{6} \left| 3 \right\rangle  \right) + o \left( \lambda ^2 \right)
+\]
+</p>
+
+<p>
+Slednje stanje ni normirano, saj
+</p>
+
+<p>
+\[ \left\langle 0 \middle| 0 \right\rangle = 1 + \frac{\lambda ^2 x_0 ^6}{8 \cdot 9 \hbar ^2 \omega ^2} \left( 81 + 6 \right) + o \left( \lambda ^2 \right).
+\]
+</p>
+
+<p>
+Osnovno stanje zapišemo
+</p>
+
+<p>
+\[ \frac{\left| 0 \right\rangle}{\sqrt{1 + \frac{\lambda ^2 x_0 ^2}{\hbar ^2\omega ^2} \frac{87}{72}}} = \left| 0 \right\rangle \left( 1 - o \left( \lambda ^2 \right) \right)
+\]
+</p>
+
+<p>
+Popravek, ki je posledica normiranosti, se skriva znotraj približka \( o \left( \lambda ^2 \right) \), ki smo ga že tako ali tako zanemarili.
+</p>
+
+<p>
+Za odgovor na vprašanje, kaj se zgodi z valovno funkcijo po perturbaciji, moramo izračunati pričakovano osnovnega stanja perturbacije
+</p>
+
+\begin{align*}
+  \left\langle 0 \middle| x \middle| 0 \right\rangle &= \frac{x_0}{\sqrt{2}} \left\langle 0 \middle| \left( a + a ^{\dagger} \right) \middle| 0 \right\rangle \\
+&=  0 + \left\langle 0 \right| \left[ \frac{\lambda x_0 ^3}{\sqrt{8} \cdot 3 \hbar \omega} \left( -9 \left| 0 \right\rangle_0 - \sqrt{6} \left| 2 \right\rangle_0 - 9 \sqrt{2} \left| 2 \right\rangle_0 - \sqrt{24} \left| 4 \right\rangle_0 \right) \right] \\
+&= - \frac{3 \lambda x_0 ^4}{2 \hbar \omega} + o \left( \lambda ^2 \right) = - \frac{3}{2} \left( \frac{\lambda x_0 ^3}{\hbar \omega} \right) x_0
+\end{align*}
+
+<p>
+Vidimo torej, da se osnovno stanje tega stanja dejansko premakne v levo.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgda5dbd2" class="outline-2">
+<h2 id="orgda5dbd2"><span class="section-number-2">2.</span> Degenerirana teorija perturbacije</h2>
+<div class="outline-text-2" id="text-2">
+<div class="problem" id="orga359d76">
+<p>
+
+</p>
+
+</div>
+
+<p>
+Hamiltonian vodikovega delca v električnem polju je
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} - \frac{e ^2}{4 \pi \epsilon_0} \frac{1}{r} - e \epsilon z,
+\]
+</p>
+
+<p>
+kjer je \( \vec{\epsilon} = (0, 0, \epsilon) \) električno polje v smeri \( z \).
+</p>
+
+<p>
+Osnovno stanje vodikovega atoma nižje kot osnovno stanje \( E_0 = -13.6 \mathrm{eV} \).
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-25 Sun 20:33</p>
+</div>
+</body>
+</html>

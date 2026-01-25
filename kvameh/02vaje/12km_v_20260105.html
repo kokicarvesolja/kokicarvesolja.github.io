@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-25 Sun 20:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>12. vaje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">12. vaje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgcb1d68b">1. Vodikov atom v časovno odvisnem električnem polju</a>
+<ul>
+<li><a href="#org0fa178c">1.1. Časovno odvisna teorije motnje</a></li>
+<li><a href="#orga9da48a">1.2. Reševanje</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcb1d68b" class="outline-2">
+<h2 id="orgcb1d68b"><span class="section-number-2">1.</span> Vodikov atom v časovno odvisnem električnem polju</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Ponovno imamo vodikov atom, vendar tokrat v električnem polju, ki ima časovno odvisnost
+</p>
+
+<p>
+\[ \vec{\epsilon} (t) = \frac{\epsilon_0}{1 + \left( \frac{t}{\tau} \right) ^2} \hat{e}_z
+\]
+</p>
+
+<p>
+Ob času \( t = - \infty \) je valovna funkcija v osnovnem stanju
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \left| \psi, - \infty \right\rangle = \left| 1 00 \right\rangle.
+\end{equation}
+
+<p>
+Valovni funkciji sicer manjka nek spinski del, vendar kakor smo videli pri prejšnji nalogi, električno polje ne vpliva na spin. Posledično ga lahko ne pišemo.
+</p>
+
+<p>
+Zanima nas stanje vodikovega atoma ob času \( t = \infty \). Z drugimi besedami, zanima nas verjetnost \( P_{2lm}(t = \infty) \), da se vodikov atom nahaja v prvem vzbujenem stanju.
+</p>
+
+<p>
+Hamiltonian je enak kakor pri prejšnji nalog, vendar je eletrično polje časovno odvisno
+</p>
+
+<p>
+\[ H = H_0 + H' = \frac{p ^2}{2m} - \frac{e ^2}{4 \pi \epsilon_0 r} - e \vec{\epsilon}(t) \cdot \vec{r}
+\]
+</p>
+</div>
+<div id="outline-container-org0fa178c" class="outline-3">
+<h3 id="org0fa178c"><span class="section-number-3">1.1.</span> Časovno odvisna teorije motnje</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Lahko bi reševali nestacionarno Schrödingerjevo enačbo
+</p>
+
+<p>
+\[ H \psi(\vec{r}, t) = \mathrm{i} \hbar \partial_t \psi \left( \vec{r}, t \right)
+\]
+</p>
+
+<p>
+z začetnim pogojem \( \psi \left( \vec{r}, - \infty \right) = \psi_{100} \left( \vec{r} \right) \).
+</p>
+
+<p>
+Ta postopek ni zaželjen, saj vključuje reševanje PDE. Iz koordinatne reprezentacije bomo sedaj prišli na Diracovo reprezentacijo. Valovno funkcijo razvijemo po lastnih funkcijah, kjer imamo dva člena, ki sta odvisna od časa
+</p>
+
+<p>
+\[ \left| \psi, t \right\rangle = \sum\limits_{nlm}^{} c_{nlm} (t) \left| nlm, t \right\rangle.
+\]
+</p>
+
+<p>
+Kakor dokazano na predavanjih, so lastna stanja valovne funkcije zgornje enačbe lastna stanja vodikovega atoma ob odsotnosti motnje
+</p>
+
+\begin{equation}
+\label{eq:3}
+ \left| nlm, t \right\rangle  = \left| nlm \right\rangle \exp \left\{ - \mathrm{i} \frac{E_n}{\hbar}t \right\}.
+\end{equation}
+
+<p>
+Časovno odvisnost perturbacije zajamemo v časovno odvisnost koeficientov in bo oblike
+</p>
+
+\begin{equation}
+\label{eq:2}
+ c_{nlm} (t) = c_{nlm} (-\infty) - \frac{\mathrm{i}}{\hbar} \int\limits_{- \infty}^t \sum\limits_{n'l'm'}^{} \left\langle nlm, t' \middle| H' (t') \middle| n' l' m', t' \right\rangle c_{n'l'm'} (t') \, \mathrm{d} t'
+\end{equation}
+
+<p>
+Uporabimo 1. red časovno odvisne teorije perturbacije, za katero velja \( c_{n' l' m'} (t) = c_{n' l' m'} (- \infty) \).
+</p>
+</div>
+</div>
+<div id="outline-container-orga9da48a" class="outline-3">
+<h3 id="orga9da48a"><span class="section-number-3">1.2.</span> Reševanje</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Iz \ref{eq:1} preberemo, da je \( c_{n' l' m'} (- \infty) = 1 \) ter da ni v prvem vzbujenem stanju, iz česar sledi \( c_{2lm} (- \infty) = 0 \). Enačba \ref{eq:2} postane tako
+</p>
+
+<p>
+\[ c_{2lm} (\infty) = \frac{\mathrm{i}}{\hbar} \int\limits_{- \infty}^{\infty} \left\langle 2lm, t' \middle| - e \frac{\epsilon_0}{1 + \left( \frac{t}{\tau} \right) ^2} z \middle| 100, t' \right\rangle \cdot 1 \, \mathrm{d} t'.
+\]
+</p>
+
+
+<p>
+Nadomestimo stanja v integrandu z \ref{eq:3} in izpostavimo časovno neodvisne elemente
+</p>
+
+<p>
+\[ c_{2lm}(\infty) = \mathrm{i} \frac{e \epsilon_0}{\hbar} \left\langle 2lm \middle| z \middle| 100 \right\rangle \int\limits_{- \infty}^{\infty} \exp \left\{ \frac{\mathrm{i}}{\hbar} t' (E_2 - E_1) \right\} \frac{1}{1 + \left( \frac{t}{\tau} \right) ^2} \, \mathrm{d} t'.
+\]
+</p>
+
+<p>
+Matrične elemente tipa \( \left\langle 2lm \middle| z \middle| 100 \right\rangle \) smo računali že pri prejšnjih vajah, vendar imamo tokrat manj računanja, saj je ket fiksen, bra pa ima 4 možna stanja \( \left| 200 \right\rangle, \left| 21, -1 \right\rangle, \left| 210 \right\rangle\) in \( \left| 211 \right\rangle \).
+</p>
+
+<p>
+Povzetek simetrij, ki smo jih uporabili
+</p>
+
+<ul class="org-ul">
+<li>iz komutacije \( \left[ H', L_z \right] = 0 \) sledi, da so vsi keti, ki imajo \( m' \ne m = 0 \) ničelni</li>
+<li>iz antikomutacije \( \left\{ H', P \right\} = 0 \) pa je sledilo, da so vsa stanja, ki imajo \( l' = l = 0 \) ničelna.</li>
+</ul>
+
+<p>
+V zgornjih simetrijah so kvantna števila braja so označene z \( l' \) in \( m' \), medtem ko so stanja keta označena brez črtice.
+</p>
+
+<p>
+Edini integral, ki ga moramo tako izračunati je stanje \( \left\langle 210 \middle| z \middle| 100 \right\rangle \).
+</p>
+
+<p>
+Splošna oblika valovne funkcije v koordinatni reprezentaciji je
+</p>
+
+<p>
+\[ \psi_{nlm} \left( \vec{r} \right) = R_{nl} (r) Y_{lm} (\theta, \phi).
+\]
+</p>
+
+<p>
+Iz tabele odčitamo radialne funkcije ter sferne harmonike in matrični element je
+</p>
+
+\begin{align*}
+  \left\langle 210 \middle| z \middle| 100 \right\rangle &= \int\limits_{}^{} \psi_{210}^{\ast} \left( \vec{r} \right) z \psi_{100} \left( \vec{r} \right) \, \mathrm{d} \vec{r} \\
+&= \int\limits_{}^{} \frac{1}{\sqrt{3}} \frac{1}{\left( 2r_B \right)^{\frac{3}{2}}} \frac{r}{r_B} \exp \left\{ - \frac{r}{2 r_B} \right\} \cdot \sqrt{\frac{3}{4 \pi}} \cos \theta r \cos \theta \frac{2}{r_B^{\frac{3}{2}}} \exp \left\{ - \frac{r}{r_B} \right\} \frac{1}{\sqrt{4 \pi}} \cdot r ^2 \, \mathrm{d} r \, \mathrm{d} (\cos \theta) \, \mathrm{d} \phi\\
+&= 2 \pi \cdot \frac{2}{3} \cdot \frac{1}{4 \pi} \frac{1}{\left( 2 r_B \right)^{\frac{3}{2}}} \frac{1}{r_B} \frac{2}{r_B^{\frac{3}{2}}} \int\limits_{}^{} r^4 \exp \left\{ - \frac{r}{2r_B} - \frac{r}{r_B} \right\} \, \mathrm{d} r
+\end{align*}
+
+<p>
+Uvedemo novo spremenljivko \( u = -\frac{3}{2} \frac{r}{r_B} \) iz česar sledi
+</p>
+
+\begin{align*}
+ \frac{2}{3} \frac{1}{r^{\frac{3}{2}}} \frac{1}{r_B ^4} \int\limits_0^{\infty} \frac{2 r_B}{3} \frac{r_B ^4 2^4}{3^4} u^4 e^{-u} \, \mathrm{d} u &= \frac{2^6}{3^6} \frac{1}{2^{\frac{3}{2}}} r_B \int\limits_0^{\infty} u^4 e^{- u} \, \mathrm{d} u \\
+&= \frac{2^{\frac{9}{2}}}{3^6} r_B 4! = \frac{2^{\frac{15}{2}}}{3^5} r_B
+\end{align*}
+
+<p>
+Časovni integral
+</p>
+
+<p>
+\[ \int\limits_{- \infty}^{\infty}  \exp \left\{ \frac{\mathrm{i}}{\hbar} t' (E_2 - E_1) \right\} \frac{1}{1 + \left( \frac{t}{\tau} \right) ^2} \, \mathrm{d} t'
+\]
+</p>
+
+<p>
+bomo izračunali v kompleksni ravnini s pomočjo izreka o residuih. Integrand ima pole pri vrednostih \( t' = \pm \mathrm{i} \tau \).
+</p>
+
+<p>
+Integral po sklenjeni krivulji bomo izračunali preko polkrožnice, vendar moramo določiti ali bo polkrožnica na zgornji ali spodnji kompleksni ravnini. Izberemo integral po zgornji ravnini, saj bo eksponent po polkrožnici ničeln. Z drugimi besedami, ko \( t' \to \mathrm{i} \infty \), bo vrednost eksponenta \( \exp \left\{ \mathrm{i} \cdot \mathrm{i} \infty \right\} = e^{- \infty} = 0 \).
+</p>
+
+<p>
+Velja
+</p>
+
+<p>
+\[ \oint\limits_{K \cup L}^{} \frac{\exp \left\{ \frac{\mathrm{i}}{\hbar} t' (E_2 - E_1) \right\}}{1 + \left( \frac{t}{\tau} \right) ^2}\, \mathrm{d} t = \int\limits_{- \infty}^{\infty} \frac{\exp \left\{ \frac{\mathrm{i}}{\hbar} t' (E_2 - E_1) \right\}}{1 + \left( \frac{t}{\tau} \right) ^2}\, \mathrm{d} t + 0 = 2 \pi \mathrm{i} \mathrm{Res} \left( \frac{\exp \left\{ \frac{\mathrm{i}}{\hbar} t' (E_2 - E_1) \right\}}{1 + \left( \frac{t}{\tau} \right) ^2}\, \mathrm{i} \tau  \right).
+\]
+</p>
+
+<p>
+Residuum izračunamo kot smo ga pri matematiki 4. Za začetek imenovalec razstavimo
+</p>
+
+<p>
+\[ 1 + \left( \frac{t'}{\tau} \right) ^2 = \frac{1}{\tau ^2} \left( \tau ^2 + t' ^2 \right) = \frac{1}{\tau ^2} (t' + \mathrm{i} \tau) (t' - \mathrm{i} \tau).
+\]
+</p>
+
+<p>
+Residuum je
+</p>
+
+\begin{align*}
+  \mathrm{Res} \left( \frac{\exp \left\{ \frac{\mathrm{i}}{\hbar} t' (E_2 - E_1) \right\}}{1 + \left( \frac{t}{\tau} \right) ^2}\, \mathrm{i} \tau  \right) &= \lim_{t \to \mathrm{i} \tau} (t' - \mathrm{i} \tau) \frac{\exp \left\{ \frac{\mathrm{i}}{\hbar} t' (E_2 - E_1) \right\}}{\left( t' - \mathrm{i} \tau \right) (t' + \mathrm{i} \tau)} \tau ^2  \\
+&= \lim_{t' \to \mathrm{i} \tau} \frac{\exp \left\{ \frac{\mathrm{i}}{\hbar} t' (E_2 - E_1) \right\}}{t' + \mathrm{i} \tau} \tau ^2 \\
+&= \frac{ \tau\exp \left\{ \frac{\mathrm{i}}{\hbar} \tau (E_2 - E_1) \right\}}{2 \mathrm{i}}
+\end{align*}
+
+<p>
+Združimo rezultate integrala in koeficient je enak
+</p>
+
+\begin{align*}
+  c_{210} (\infty) &= \mathrm{i} \frac{e \epsilon_0}{\hbar} \left\langle 210 \middle| z \middle| 100 \right\rangle 2 \pi \mathrm{i} \frac{\tau}{2 \mathrm{i}} \exp \left\{ - \frac{\tau}{\hbar} (E_2 - E_1) \right\} \\
+&= \mathrm{i} \frac{e \epsilon_0}{\hbar} \frac{2^{\frac{15}{2}}}{3^5} r_B \pi \cdot \tau \cdot \exp \left\{ - \frac{\tau}{\hbar} (E_2 - E_1) \right\}
+\end{align*}
+
+<p>
+Verjetnost za prehod v višje stanje je po enačbi \( P_{nlm} (t) = \left| c_{nlm} (t) \right| ^2\)
+</p>
+
+<p>
+\[ P_{210} (\infty) = \frac{2^{\frac{15}{2}} \pi ^2}{3^{10}} \left( \frac{e \epsilon_0 r_B \tau}{\hbar} \right) ^2 \exp \left\{ - \frac{2 \tau}{\hbar} (E_2 - E_1) \right\} \propto \tau ^2 \exp \left\{ - \frac{2 \tau (E_2 - E_1) }{ \hbar} \right\}
+\]
+</p>
+
+<p>
+Produktu \( e \epsilon_0 r_B \) pravimo značilna energija našega problema, medtem ko je \( \tau \) značilni čas našega sunka.
+</p>
+
+<p>
+Zanima nas kakšna je vrednost značilnega časa, da bo verjetno prehoda največja, torej \( \partial _{\tau} P_{210} (\infty) = 0 \).
+</p>
+
+<p>
+Dobimo rezultat
+</p>
+
+<p>
+\[ \delta_t P_{210} \propto = 1 - \frac{\tau(E_2 - E_1)}{\hbar} = 0 \implies \tau = \frac{\hbar}{E_2 - E_1}
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-25 Sun 20:33</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-25 Sun 20:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>11. vaje iz Kvantne mehanike</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">11. vaje iz Kvantne mehanike</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge4e7e33">1. Degenerirana teorija perturbacije</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge4e7e33" class="outline-2">
+<h2 id="orge4e7e33"><span class="section-number-2">1.</span> Degenerirana teorija perturbacije</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Imamo Hamiltonian vodikovega atoma \( H_0 = \frac{p ^2}{2m} - \frac{e ^2}{4 \pi \epsilon_0 r} \) z motnjo električnega polja
+</p>
+
+<p>
+\[ H = \frac{p ^2}{2m} - \frac{e ^2}{4 \pi \epsilon_0 r} - e \epsilon z,
+\]
+</p>
+
+<p>
+kjer je os \( z \) poravnana z magnetnim poljem.
+</p>
+
+<p>
+Osredotočali se bomo na prvo vzbujeno stanje vodikovega atoma, ki je osemkrat degenerirano.
+</p>
+
+<p>
+Bazo spina \( m_s \) bomo predstavili s puščicami \( \uparrow, \downarrow \).
+</p>
+
+\begin{align*}
+  \left| 200 \right\rangle \left| \uparrow \right\rangle &\quad \left| 200 \right\rangle \left| \downarrow \right\rangle \\
+\left| 2 1 -1 \right\rangle \left| \uparrow \right\rangle &\quad \left| 2 1 -1 \right\rangle \left| \downarrow \right\rangle \\
+\left| 2 1 0 \right\rangle \left| \uparrow \right\rangle &\quad \left| 2 1 0 \right\rangle \left| \downarrow \right\rangle \\
+\left| 2 1 1 \right\rangle \left| \uparrow \right\rangle &\quad \left| 2 1 1 \right\rangle \left| \downarrow \right\rangle \\
+\end{align*}
+
+<p>
+Vsako degenerirano stanje ob prisotni motnji zapišemo v matriko velikosti \( 8 \times 8 \) (vstavi matrik). Po diagonalizaciji dobimo lastne vrednosti in lastne vektorje te matrike.
+</p>
+
+<p>
+Lastne vrednosti nam bodo povedale, kako se bodo degenerirana stanja razcepila ob prisotnosti električnega polja.
+</p>
+
+<p>
+V splošnem bomo računali člen \( \left\langle n l m_l m_s \middle| H' \middle| n l', m_l ', m_s' \right\rangle \). Ker imamo prvo vzbujeno stanje, bo \( n = 2 \) v bra in ketu matričnega elementa.
+</p>
+
+<p>
+Spina gor in dol tvorita ortonormirano bazo, kar pomeni, da lahko en del matričnega elementa, ki ne vpliva na spin, predstavimo z \( \delta_{m_s m_s '} \)
+</p>
+
+<p>
+\[ \left\langle 2 l m_l  m_s \middle| H' \middle| 2 l' m_l ' m_s ' \right\rangle = \delta_{m_s m_s '} \left\langle 2 l m_l \middle| H ' \middle| 2 l' m_l ' \right\rangle
+\]
+</p>
+
+<p>
+Zaradi ortogonalnosti spina se naša matrika poenostavi v bločno matriko
+</p>
+
+<p>
+\[ \begin{bmatrix}
+   \left\langle \uparrow \middle| \uparrow \right\rangle & 0 \\
+   0 & \left\langle \downarrow \middle| \downarrow \right\rangle
+    \end{bmatrix},
+\]
+</p>
+
+<p>
+kjer sta neničelna bloka \( 4 \times 4 \) matrika. Če diagonaliziramo en blok in pridobimo njene lastne vrednosti, bomo pridobili tudi lastne vrednosti druge matrike (?). Zapišimo sedaj zgornji blok matrike
+</p>
+
+<p>
+\[ D = \begin{bmatrix}
+       \left\langle 200 \middle| H' \middle| 200 \right\rangle & \left\langle 200 \middle| H' \middle| 21 -1 \right\rangle & \left\langle 200 \middle| H' \middle| 210 \right\rangle & \left\langle 200 \middle| H' \middle| 211 \right\rangle \\
+       \left\langle 21 -1 \middle| H' \middle| 200 \right\rangle & \left\langle 21-1 \middle| H' \middle| 21 -1 \right\rangle & \left\langle 21 -1 \middle| H' \middle| 210 \right\rangle & \left\langle 21 -1 \middle| H' \middle| 211 \right\rangle \\
+       \left\langle 210 \middle| H' \middle| 200 \right\rangle & \left\langle 210 \middle| 21 - 1 \right\rangle & \left\langle 210 \middle| H' \middle| 210 \right\rangle & \left\langle 210 \middle| H' \middle| 211 \right\rangle \\
+       \left\langle 211 \middle| H ' \middle| 200 \right\rangle & \left\langle 211 \middle| H' \middle| 21-1 \right\rangle & \left\langle 211 \middle| H' \middle| 210 \right\rangle & \left\langle 211 \middle| H' \middle| 211 \right\rangle
+       \end{bmatrix}
+\]
+</p>
+
+<p>
+V koordinatnem zapisu je naključni matrični element
+</p>
+
+\begin{equation}
+\label{eq:2}
+ \left\langle 210 \middle| - e \epsilon z \middle| 21 -1\right\rangle  = \int\limits_{}^{} R^{\ast}_{21} (r) Y_{10}^{\ast} (\phi, \theta) \left[ - e \epsilon z \right] R_{21} (r) Y_{1, -1}(\phi, \theta) \, \mathrm{d} \vec{r}
+\end{equation}
+
+
+<p>
+Računanje 16 takih integralov je precej nadležna naloga, še posebej zaradi tega, ker nam zmanjkuje leta. Namesto tega se bomo poslužili hermitskosti operatorja
+</p>
+
+<p>
+\[ \left\langle \psi \middle| H \middle| \Phi \right\rangle = \left\langle \Phi \middle| H \middle| \Psi \right\rangle ^{\ast} \implies H = H^{\ast}
+\]
+</p>
+
+<p>
+To pomeni, da imamo v resnici simetrično bločno matriko in namesto 16 integralov, nam jih sedaj ostane samo še 10. Bolje, ampak še zmeraj ne dovolj dobro.
+</p>
+
+<p>
+Uvedemo operator parnosti \( P: \vec{r} \to - \vec{r} \), ki komutira s \( H_0 \).
+</p>
+
+<p>
+Pri izbiri operatorjev, ki komutirajo s Hamiltonianom \( H_0 \), morajo ti tudi komutirati med seboj. Kot primer težave navedemo operatorja \( L_x \) in \( L_z \), ki komutirata s \( H_0 \), vendar ne komutirata med seboj. To pomeni, da rešitve niso lastna stanja obeh operatorjev (glej poglavje Rashbove sklopitve).
+</p>
+
+<p>
+Operatorji, ki komutirajo s \( H_0 \) so operator vrtilne količine \( L ^2 \), \( L_z \), spina \( S ^2 \), \( S_z \) in parnost \( P \). Spinski operatorji nas zaradi postavitve problema (aka matrike) ne zanimajo.
+</p>
+
+<p>
+Enostavno lahko preverimo, če tudi \( L_i, \, i = x, y, z\) komutirajo z operatorjem parnosti.
+</p>
+
+<p>
+\[ \left[ L_i, P \right] = 0, \ i = x, y, z \implies \, \left[ L ^2, P \right] = \left[ \sum\limits_{i = x, y, z}^{} L_i ^2, P \right] = 0
+\]
+</p>
+
+<p>
+Torej imamo kombinacijo operatorjev, ki med seboj komutirajo: \( H_0, L ^2, L_z, P \). Lastne vrednosti enega operatorja bodo tudi lastne vrednosti ostalih operatorjev (?).
+</p>
+
+<p>
+Dodatno se izkaže, da so sferični harmoniki že lastne funkcije operatorja parnosti, saj velja
+</p>
+
+\begin{equation}
+\label{eq:1}
+ P \left\langle n, l, m_l \right\rangle = \left( -1 \right)^l \left| n, l, m_l  \right\rangle
+\end{equation}
+
+<p>
+\( s \) orbitale, ki imajo kvantno število vrtilne količine \( l = 0 \), imajo sodo parnost, \( p \) orbitale, s kvantnim številom \( l = 1 \), imajo pa liho parnost. To izrazoslovje se posploši tudi na splošen sodi ali lihi \( l \).
+</p>
+
+<p>
+Poglejmo še lastnosti komutacij motnje \( H' = - e \epsilon z \) z izbranimi operatorji \( L ^2, L_z, P \)
+</p>
+
+\begin{align*}
+  \left[ H', P \right] &\ne 0 \\
+\left[ H', L_z \right] = \left[ - e \epsilon z, xp_y - yp_x \right] &= 0 \\
+\left[ H', L ^2 \right] &\ne 0
+\end{align*}
+
+<p>
+V kratkem: to nam (skoraj) nič ne pomaga.
+</p>
+
+<p>
+Poglejmo si, kaj pa lahko dosežemo z antikomutacijo
+</p>
+
+<p>
+\[ \left\{ H', P \right\} = H' P + P H' = H' P + \left( - H' \right) P = 0.
+\]
+</p>
+
+<p>
+Poglejmo si sedaj matrični element
+</p>
+
+\begin{align*}
+  \left\langle 2 lm \middle| \left[ H', L_z \right] \middle| 2 l' m' \right\rangle &= \left\langle 2lm \middle| \left( H' L_z - L_z H' \right) \middle| 2 l' m' \right\rangle \\
+0 &= \left\langle 2lm \middle| H' L_z \middle| 2l' m' \right\rangle - \left\langle 2 lm \middle| L_z  H' \middle| 2l' m' \right\rangle \\
+\end{align*}
+
+<p>
+Operator \( L_z \) deluje na stanje \( \left| 2 l' m' \right\rangle \) v prvem členu in zaradi hermitskosti, bo deloval na stanje \( \left\langle 2 l m \right| \) v drugem členu. Velja
+</p>
+
+<p>
+\[ L_z \left| l m_l  \right\rangle = \hbar m \left| l m_l \right\rangle
+\]
+</p>
+
+<p>
+\[ \left\langle 2lm \middle| \left[ H ', L_z \right] \middle| 2 l' m' \right\rangle = 0 = \hbar (m' - m) \left\langle 2lm \middle| H' \middle| 2l' m' \right\rangle
+\]
+</p>
+
+<p>
+Razlika \( m' - m \) ni ničelna, kar pomeni, da bo za zadoščenost ničelne enakosti desne strani enačbe, moral biti matrični element enak ničeln.
+</p>
+
+<p>
+Torej se naše matrika poenostavi iz 10 na 5 integralov.
+</p>
+
+<p>
+\[ D = \begin{bmatrix}
+       \left\langle 200 \middle| H' \middle| 200 \right\rangle & 0 & \left\langle 200 \middle| H' \middle| 210 \right\rangle &  0 \\
+       0 & \left\langle 21-1 \middle| H' \middle| 21-1 \right\rangle & 0 & 0 \\
+       \left\langle 210 \middle| H' \middle| 200 \right\rangle & 0 & \left\langle 210 \middle| H' \middle| 210 \right\rangle & 0 \\
+       0 & 0 & 0 & \left\langle 211 \middle| H' \middle| 211 \right\rangle
+       \end{bmatrix}
+\]
+</p>
+
+<p>
+Vrnimo se nazaj h antikomutaciji \( \left\{ H', P \right\} \). Vemo, da velja
+</p>
+
+\begin{align*}
+  \left\langle 2 lm \middle| \left\{ H', P \right\}\middle| 2 l' m' \right\rangle &= 0 \\
+\left\langle 2 lm \middle| H' P + P H' \middle| 2 l' m' \right\rangle &= 0 \\
+\left\langle 2 lm \middle| H' P \middle| 2 l' m' \right\rangle + \left\langle 2lm \middle| P H' \middle| 2l' m' \right\rangle &= 0\\
+\left\langle 2 lm \middle| H' \left( -1 \right)^{l'} \middle|2l ' m' \right\rangle + \left( -1 \right)^l \left\langle 2lm \middle| H' \middle| 2l' m' \right\rangle &= 0 \\
+\left\langle 2lm \middle| H' \middle| 2l' m' \right\rangle \left( \left( -1 \right)^{l'} + \left( -1 \right)^l \right) &= 0
+\end{align*}
+
+<p>
+Upoštevali smo lastnost \ref{eq:1}, in velja
+</p>
+
+<p>
+\[ \left( \left( -1 \right)^{l'} + \left( -1 \right)^l \right) \ne 0 \implies \left\langle nlm \middle|  H' \middle|nl' m' \right\rangle = 0
+\]
+</p>
+
+<p>
+Brez antikomutatorja lahko pridemo do istega spoznanja tako, da pogledamo \ref{eq:2}. Člen \( R^{\ast} Y^{\ast} \) ima parnost \( \left( -1 \right)^l \), operator ima liho parnosti \( -1 \) in zadnji, nekonjugiran člen ima parnost \( \left( -1 \right)^l \).
+</p>
+
+<p>
+Iz tega sledi, za liho parnost je celoten integral enak 0. Najti moramo samo kombinacije vrednosti \( l \) in \( l' \), kjer je parnost liha.
+</p>
+
+<p>
+Vrnimo se nazaj k matriki \( D \). Oskrunjena oblika je
+</p>
+
+<p>
+\[ D = \begin{bmatrix}
+       0 & 0 & \left\langle 200 \middle| H' \middle| 210 \right\rangle & 0\\
+       0 & 0 & 0 & 0 \\
+        \left\langle 210 \middle| H' \middle| 200 \right\rangle& 0 & 0 & 0 \\
+        0& 0 & 0 & 0
+       \end{bmatrix}
+\]
+</p>
+
+<p>
+Izračunajmo sedaj zgornji matrični element
+</p>
+
+<p>
+\[   \left\langle 200 \middle| H' \middle| 210 \right\rangle = \int\limits_{}^{} R_{20} ^{\ast} Y_{00}^{\ast} \left( - \epsilon r \cos \theta \right) R_{21} Y_{10} \, \mathrm{d} \vec{r}
+\]
+</p>
+
+<p>
+Iz tabel (<b>ki jih prinesi s seboj na kolokvij</b>) odčitamo radialne in sferične funkcije. V našem primeru je to
+</p>
+
+\begin{align*}
+  \int\limits_{}^{} R_{20} ^{\ast} Y_{00}^{\ast} \left( - \epsilon r \cos \theta \right) R_{21} Y_{10} \, \mathrm{d} \vec{r} = &\int\limits_{}^{} 2 \left( \frac{1}{2a} \right)^{\frac{3}{2}} \left( 1 - \frac{r}{2a} \right) e^{- \frac{r}{2a}} \cdot \frac{1}{\sqrt{4 \pi}} \cdot \left( - \epsilon e r \cos \theta \right) \\
+ & \cdot \frac{1}{\sqrt{3}} \left( \frac{1}{2a} \right)^{\frac{3}{2}} \left( \frac{r}{a} \right) e^{- \frac{r}{2a}} \cdot \sqrt{\frac{3}{4 \pi}} \cos \theta \, \mathrm{d} \vec{r}
+\end{align*}
+
+<p>
+Posamezne člene \( R_{20}^{\ast}, Y_{00}^{\ast}, R_{21} \) in \( Y_{10} \) sem med seboj ločil z \( \cdot \). \( a \) je Bohrov radij. Nadalje razpišemo
+</p>
+
+\begin{align*}
+    \int\limits_{}^{} R_{20} ^{\ast} Y_{00}^{\ast} \left( - \epsilon r \cos \theta \right) R_{21} Y_{10} \, \mathrm{d} \vec{r} = & -2 \left( \frac{1}{2a} \right)^{\frac{3}{2}} \frac{1}{\sqrt{4 \pi}} e \epsilon \frac{1}{\sqrt{3}} \left( \frac{1}{2a} \right)^{\frac{3}{2}} \frac{1}{a} \sqrt{\frac{3}{4 \pi}} \int\limits_0^{\infty} \left( 1 - \frac{r}{2a} \right) r e^{- \frac{2r}{2a}} r \cdot r ^2 \, \mathrm{d} r  \int\limits_{-1}^1 \cos ^2 \theta \, \mathrm{d} \left( \cos \theta \right) \int\limits_0^{2 \pi} \, \mathrm{d} \phi \\
+&= - \frac{2}{4 \pi } \cdot \left( \frac{1}{4a ^2} \right)^{\frac{3}{2}} e\epsilon \frac{1}{a} \int\limits_0^{\infty} \left( r ^4 - \frac{r^5}{2a} \right) e^{- \frac{r}{a}} \, \mathrm{d} r \cdot \left. \frac{1}{3} \left[ \cos ^3 \theta \right] \right|_{-1}^1 \cdot 2 \pi\\
+\end{align*}
+
+<p>
+Uvedemo spremenljivko \( u = \frac{r}{a} \), kjer potem dobimo integral \( \Gamma \) funkcije \( \int\limits_0^{\infty} u^n e^{- u} \, \mathrm{d} u = n! \).
+</p>
+
+\begin{align*}
+  \int\limits_0^{\infty} \left( a ^4 u ^4 - \frac{a^5 u ^5}{2a} \right) e^{-u} a \, \mathrm{d} u &= a ^5 \left( \int\limits_0^{\infty} u^4 e^{-u} \, \mathrm{d} u - \frac{1}{2} \int\limits_0^{\infty} u^5 e^{-u} \, \mathrm{d} u \right)  \\
+&= - 36 a ^5
+\end{align*}
+
+<p>
+To pomeni, da je vrednost integrala
+</p>
+
+\begin{align*}
+   \int\limits_{}^{} R_{20} ^{\ast} Y_{00}^{\ast} \left( - \epsilon r \cos \theta \right) R_{21} Y_{10} \, \mathrm{d} \vec{r} &= \frac{1}{8 a ^3} e \epsilon \frac{1}{a} a^5 \left( - 36 \right) \frac{1}{3} \cdot 2 \\
+&= 3 \epsilon e a
+\end{align*}
+
+<p>
+Matriko prepišemo v bazo, kjer so stolpci v vrstnem redu \( \left| 200 \right\rangle, \left| 210 \right\rangle, \left| 21-1 \right\rangle, \left| 211 \right\rangle\). Sedaj bločnost pride še bolj do izraza
+</p>
+
+<p>
+\[ D = \begin{bmatrix}
+       0 & \left\langle 200 \middle| H' \middle| 210 \right\rangle = B & 0 & 0 \\
+       \left\langle 210 \middle| H' \middle| 200 \right\rangle = B^{\ast} & 0 & 0 & 0 \\
+       0 & 0 & 0 & 0 \\
+       0 & 0 & 0 & 0
+       \end{bmatrix}
+\]
+</p>
+
+<p>
+Determinanta \( 2 \times 2 \) matrike, ki vključuje \( B \), je
+</p>
+
+<p>
+\[ \det \begin{bmatrix}
+        -\lambda & B \\
+        B & -\lambda
+         \end{bmatrix} = \left( - \lambda \right) ^2 - B ^2 = 0 \implies \lambda_{\pm} = \pm B.
+\]
+</p>
+
+<p>
+Torej so lastne vrednosti
+</p>
+
+<ul class="org-ul">
+<li><p>
+\( \lambda = 0 \), ki nam da štirikrat degenerirano stanja
+</p>
+
+<p>
+\[ \left| 21-1 \right\rangle \left| \uparrow \right\rangle, \, \left| 211 \right\rangle \left| \uparrow \right\rangle, \, \left| 21 -1 \right\rangle \left| \downarrow \right\rangle, \, \left| 211 \right\rangle \left| \downarrow \right\rangle
+  \]
+</p></li>
+
+<li>\( \lambda = + B \), ki nam da dvakrat degenerirano stanje ter</li>
+<li>\( \lambda = - B \), ki nam prav tako poda dvakrat degenerirano stanje</li>
+</ul>
+
+<p>
+Za ostali lastni vrednosti moramo poiskati pripadajoče lastne vektorje lastnih vrednosti \( \lambda _{\pm} = \pm B \).
+</p>
+
+<p>
+Lastni vektor vrednosti \( \lambda = - B \) je \( \left[ 1, -1 \right]^T \), kar pomeni, da je funkcija stanja
+</p>
+
+<p>
+\[ \psi= \frac{1}{\sqrt{2}} \left( \left| 200 \right\rangle  - \left| 210 \right\rangle\right) ,
+\]
+</p>
+
+<p>
+za \( \lambda = B \) je lastni vektor \( \left[ 1, 1 \right]^T \), da je funkcija stanja
+</p>
+
+<p>
+\[ \psi = \frac{1}{\sqrt{2}} \left( \left| 200 \right\rangle + \left| 210 \right\rangle\right) .
+\]
+</p>
+
+<p>
+Torej sta dvakrat degenerirana stanje za \( \lambda = -B \) (ki ima višjo energijo od osnovnega stanja):
+</p>
+
+<p>
+\[ \frac{1}{\sqrt{2}} \left(\left| 200 \right\rangle  - \left| 210 \right\rangle \right) \left| \uparrow \right\rangle \text{ in } \frac{1}{\sqrt{2}} \left(\left| 200 \right\rangle  - \left| 210 \right\rangle \right) \left| \downarrow \right\rangle
+\]
+</p>
+
+<p>
+Stanje \( \lambda = B \) z nižjo energijo pa je stanje
+</p>
+
+<p>
+\[ \frac{1}{\sqrt{2}} \left(\left| 200 \right\rangle  + \left| 210 \right\rangle \right) \left| \uparrow \right\rangle \text{ in } \frac{1}{\sqrt{2}} \left(\left| 200 \right\rangle  + \left| 210 \right\rangle \right) \left| \downarrow \right\rangle
+\]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-25 Sun 20:33</p>
+</div>
+</body>
+</html>
