@@ -25,4 +25,4 @@ Tukaj so zbrani zapiski vaj pri prof. dr. Tomažu Rejcu.
 - [[file:02vaje/10km_v_20251215.html][vaje 10, 2025/12/15:]] Nedegenerirana in degenerirana teorija perturbacije
 - [[file:02vaje/11km_v_20251222.html][vaje 11, 2025/12/22:]] Degenerirana teorija perturbacije
 - [[file:02vaje/12km_v_20260105.html][vaje 12, 2026/01/05:]] Vodikov atom v časovno odvisnem električnem polju
-  [[file:02vaje/13km_v_20260112.html][vaje 13, 2026/01/12:]] Rabijeve oscilacije
+- [[file:02vaje/13km_v_20260112.html][vaje 13, 2026/01/12:]] Rabijeve oscilacije
