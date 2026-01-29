@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-29 Thu 17:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>11. predavanje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">11. predavanje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3b5835d">1. Elektromagnetno polje v snovi</a>
+<ul>
+<li><a href="#org57ceaba">1.1. Magnetno polje v snovi</a>
+<ul>
+<li><a href="#org4f4ae9e">1.1.1. Konstitutivna relacija za magnetno polje v snovi</a></li>
+<li><a href="#orgfe2fe41">1.1.2. Magnetizacija in gostota magnetnega dipolnega momenta</a></li>
+<li><a href="#orge515f1c">1.1.3. Klasifikacija snovi glede na odziv na magnetno polje</a></li>
+</ul>
+</li>
+<li><a href="#orgc1bc293">1.2. Maxwellove enačbe v snovi</a></li>
+<li><a href="#org48e26e9">1.3. Ohranitveni zakoni v snovi</a>
+<ul>
+<li><a href="#org59282df">1.3.1. Ohranjevanje energije</a></li>
+<li><a href="#org6997f14">1.3.2. Energija elektromagnetnega polja v snovi</a></li>
+<li><a href="#org157a5f3">1.3.3. Ohranjanje gibalne količine</a></li>
+</ul>
+</li>
+<li><a href="#org912d836">1.4. Robni pogoji za Maxwellove enačbe</a>
+<ul>
+<li><a href="#org48b44be">1.4.1. Robni pogoji za \( \vec{B} \)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3b5835d" class="outline-2">
+<h2 id="org3b5835d"><span class="section-number-2">1.</span> Elektromagnetno polje v snovi</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org57ceaba" class="outline-3">
+<h3 id="org57ceaba"><span class="section-number-3">1.1.</span> Magnetno polje v snovi</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org4f4ae9e" class="outline-4">
+<h4 id="org4f4ae9e"><span class="section-number-4">1.1.1.</span> Konstitutivna relacija za magnetno polje v snovi</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Magnetizacija je odvisna od zunanjega magnetnega polja
+</p>
+
+<p>
+\[ \vec{M} = \vec{M} \left( \vec{H} \right) .
+\]
+</p>
+
+<p>
+Tej enačbi pravimo konstitutivna relacija, kjer je \( \vec{H} \) poljubna funkcija. Odvisnost smo zapisali s \( \vec{H} \), saj je magnetizacija povezana s snovjo. V izotropni homogeni snovi in za šibka polja velja
+</p>
+
+\begin{equation}
+\label{eq:1}
+ \vec{M} = \chi_M \vec{H} + o \left( H ^2 \right),
+\end{equation}
+
+<p>
+kjer je \( \chi_M \) magnetna susceptibilnost.
+</p>
+
+<p>
+Uvedemo tudi magnetno permeabilnosti \( \mu \), ki je definirana kot
+</p>
+
+<p>
+\[ \chi_M = \mu- 1.
+\]
+</p>
+
+<p>
+Potem preko linearne konstitutivno relacije \ref{eq:1} velja
+</p>
+
+<p>
+\[ \vec{H} = \frac{\vec{B}}{\mu_0} - \chi_M \vec{H} = \frac{\vec{B}}{\mu_0} - (\mu - 1) \vec{H},
+\]
+</p>
+
+<p>
+iz česar sledi
+</p>
+
+<p>
+\[ \vec{B} = \mu \mu_0 \vec{H}, \quad   \vec{M} = \left( 1 - \frac{1}{\mu} \right) \frac{\vec{B}}{\mu_0}.
+\]
+</p>
+
+<p>
+Poudarjamo, da to velja samo za <b>linearno konstitutivno relacijo</b>.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfe2fe41" class="outline-4">
+<h4 id="orgfe2fe41"><span class="section-number-4">1.1.2.</span> Magnetizacija in gostota magnetnega dipolnega momenta</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Zanima nas, kaj je vektorsko polje magnetizacije \( \vec{M} \)?
+</p>
+
+<p>
+Obravnavamo Maxwellovo relacijo
+</p>
+
+<p>
+\[ \nabla \times \vec{B} = \mu_0 \vec{\jmath} + \nabla \times \vec{M}.
+\]
+</p>
+
+<p>
+Preko te enačbe zapišemo enačbo za magnetni potencial \( \vec{A} \), ki jo rešimo in rešitev primerjamo z \( \vec{A} \) magnetnega dipola. Iz tega sledi, da je magnetizacija \( \vec{M} \) je (volumska) gostota magnetnega dipolnega momenta.
+</p>
+</div>
+</div>
+<div id="outline-container-orge515f1c" class="outline-4">
+<h4 id="orge515f1c"><span class="section-number-4">1.1.3.</span> Klasifikacija snovi glede na odziv na magnetno polje</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Glede na magnetne lastnosti ločimo tri skupine:
+</p>
+
+<ul class="org-ul">
+<li><i>feromagnetiki</i> imajo permanentno magnetizacijo, ki je neodvisna od zunanjega magnetnega polja. Praviloma je močno odvisna od temperature (Curiejeva temperatura)</li>
+<li><i>diamagnetiki</i> imajo magnetizacijo samo ob prisotnosti zunanjega magnetnega polja. Magnetizacija kaže v obratno smer kot zunanje polje. Iz tega sledi, da \( \chi_M < 0 \). Superprevodnik je idealni diamagnet. Drugače reda \( 10^{-5} \).</li>
+<li><i>paramagnetiki</i> imajo magnetizacijo samo ob prisotnosti zunanjega polja in kaže v smeri polja - efektivno ga ojačuje.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc1bc293" class="outline-3">
+<h3 id="orgc1bc293"><span class="section-number-3">1.2.</span> Maxwellove enačbe v snovi</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Kompleten sistem Maxwellovih enačbo je
+</p>
+
+\begin{align*}
+  \nabla \cdot \vec{D} = \rho, & \qquad \nabla \cdot \vec{B} = 0 \\
+\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}, &\qquad \nabla \times \vec{H} = \vec{\jmath} + \frac{\partial \vec{D}}{\partial t} .
+\end{align*}
+
+<p>
+Poleg Maxwellovih enačb za izračunljivost potrebujemo tudi 2 konstitutivni relaciji
+</p>
+
+<p>
+\[
+</p>
+\begin{array}{|c|c|} \hline
+\text{splosno} & \text{linearna konst. rel.} \\ \hline
+\vec{P} = \vec{P} \left( \vec{D} \right) & \vec{D} = \epsilon \epsilon_0 \vec{E} \\ \hline
+\vec{M} = \vec{M} \left( \vec{H} \right) & \vec{B} = \mu \mu_0 \vec{H} \\ \hline
+\end{array}
+<p>
+\]
+</p>
+
+<p>
+V anizotropni snovi \( \epsilon \) nadomestimo s tenzorjem \( \underline{\epsilon} \).
+</p>
+
+<p>
+Gostota električnega polja je potem
+</p>
+
+<p>
+\[ \vec{D} = \epsilon_0 \underline{\epsilon} \vec{E}.
+\]
+</p>
+
+<p>
+Analogno je permeabilnost \( \mu \) zamenjana za \( \underline{\mu} \), in gostota magnetnega polja je
+</p>
+
+<p>
+\[ \vec{B} = \mu_0 \underline{\mu} \vec{H}.
+\]
+</p>
+
+<p>
+S tenzorji \( \vec{D} \) in \( \vec{B} \) nista nujno vzporedna njunima pripadajočima poljema \( \vec{E} \) in \( \vec{H} \).
+</p>
+
+<p>
+V nelinearnih snoveh (npr. nelinearna optika)
+</p>
+
+\begin{align*}
+  \vec{D} &= \_ \vec{E} + \_ \vec{E} \cdot \vec{E} + \_ \vec{E} \vec{E} \vec{E} + \ldots \\
+  \vec{B} &= \_ \vec{H} + \_ \vec{H} \cdot \vec{H} + \_ \vec{H} \vec{H} \vec{H} + \ldots
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org48e26e9" class="outline-3">
+<h3 id="org48e26e9"><span class="section-number-3">1.3.</span> Ohranitveni zakoni v snovi</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org59282df" class="outline-4">
+<h4 id="org59282df"><span class="section-number-4">1.3.1.</span> Ohranjevanje energije</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Kontinuitetna enačba (ohrani obliko)
+</p>
+
+<p>
+\[ \frac{\partial w}{\partial t} + \nabla \cdot \vec{P} + \vec{\jmath}\cdot \vec{E} = 0,
+\]
+</p>
+
+<p>
+(definiraj, kaj so posamezni členi)
+</p>
+
+<p>
+kjer pa zdaj
+</p>
+
+<p>
+\[ w = \int\limits_0^{\vec{D}} \vec{E} \left( \vec{D} \right) \, \mathrm{d} \vec{D} + \int\limits_0^B \vec{H} \left( \vec{B} \right) \, \mathrm{d} \vec{B}
+\]
+</p>
+
+<p>
+gostota energije.
+</p>
+
+<p>
+\[ \vec{\mathcal{P}} = \vec{E} \times \vec{H}
+\]
+</p>
+
+<p>
+pa je posplošen Poyntingov vektor.
+</p>
+</div>
+</div>
+<div id="outline-container-org6997f14" class="outline-4">
+<h4 id="org6997f14"><span class="section-number-4">1.3.2.</span> Energija elektromagnetnega polja v snovi</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Zanima nas, kolikšna je razlika energije elektromagnetnega polja, če damo v del prostora snov, za katero velja \( \epsilon = 1 \) in \( \mu = 1 \).
+</p>
+
+<p>
+Energija električnega polja je
+</p>
+
+\begin{align*}
+  W - W_0 &= \int\limits_V^{} \left( \int\limits_0^D \vec{E} \left( \vec{D} \right) \, \mathrm{d} \vec{D} \right) \, \mathrm{d} ^3 \vec{r} - \int\limits_V^{} \left( \int\limits_0^{D_0} \vec{E}_0 \left( \vec{D}_0 \right) \, \mathrm{d} \vec{D}_0 \right) \, \mathrm{d} ^3 \vec{r} \\
+&= \frac{1}{2} \int\limits_V^{} \vec{E} \cdot \vec{D} \, \mathrm{d} ^3 \vec{r} - \frac{1}{2} \int\limits_V^{} \vec{E} _0 \cdot \vec{D}_0 \, \mathrm{d} ^3 \vec{r}
+\end{align*}
+
+<p>
+Pri računanju notranjih integralov smo upoštevali linearno konstitutivno zvezo. Prvi integral je polje, ko prostor vsebuje snov, drugi integral pa je energija praznega prostora. Razliko energij prepišemo v
+</p>
+
+<p>
+\[ W - W_0 = \frac{1}{2} \int\limits_V^{} \left( \vec{E} \cdot \vec{D}_0 - \vec{E}_0 \cdot \vec{D} \right) \, \mathrm{d} ^3 \vec{r} + \frac{1}{2} \int\limits_{}^{} \left( \vec{E} + \vec{E}_0 \right) \left( \vec{D} - \vec{D}_0 \right) \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+Predpostavimo, da se zunanji izvori ne spremenijo \( \rho = \rho_0 \) in velja
+</p>
+
+<p>
+\[ \nabla \cdot \left( \vec{D} - \vec{D}_0 \right) = 0.
+\]
+</p>
+
+<p>
+Vsoto jakosti električnih polj \( \vec{E} + \vec{E}_0 \) zapišemo s potencialom \( \phi \).
+</p>
+
+<p>
+Drugi integral se tako pretvori
+</p>
+
+\begin{align*}
+  \frac{1}{2} \int\limits_{}^{} \left( \vec{E} + \vec{E}_0 \right) \left( \vec{D} - \vec{D}_0 \right) \, \mathrm{d} ^3 \vec{r} &= \frac{1}{2} \int\limits_{}^{} \nabla \phi \left( \vec{D} - \vec{D}_0 \right) \, \mathrm{d} ^3 \\
+&= - \frac{1}{2} \int\limits_{}^{}\nabla \cdot \left( \phi \left( \vec{D} - \vec{D}_0 \right) \right) \, \mathrm{d} ^3 \vec{r} + \frac{1}{2} \int\limits_{}^{} \underbrace{\nabla \cdot \left( \vec{D} - \vec{D}_0 \right)}_{= 0} \phi \, \mathrm{d} ^3 \vec{r}
+\end{align*}
+
+<p>
+Preostal integral po volumnu prevedemo na površinski integral. Za slednji integral sledi, da je predpostavki končne snovi, daleč stran od nje \( \vec{D} = \vec{D}_0 \), iz česar sledi, da je integral ničeln.
+</p>
+
+<p>
+Če je prostor izven snovi vakuum, sledi
+</p>
+
+<p>
+\[ W - W_0 = \frac{1}{2} \int\limits_V^{} \epsilon_0 \left( \epsilon - 1 \right) \vec{E}_0 \vec{E} \, \mathrm{d} ^3 \vec{r} = -\frac{1}{2} \int\limits_V^{} \vec{P} \cdot \vec{E}_0 \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+
+<p>
+\( \vec{E}_0 \) predstavlja električno polje brez snovi, medtem ko je \( \vec{P} \) polarizacija v snovi.
+</p>
+
+<p>
+Razlika energij magnetnega polja ob linearni konstitutivni relaciji velja
+</p>
+
+\begin{align*}
+  W - W_0 &= \frac{1}{2} \int\limits_V^{} \vec{H} \cdot \vec{B} \, \mathrm{d} ^3 \vec{r} - \frac{1}{2} \int\limits_V^{} \vec{H}_0 \cdot \vec{B}_0 \, \mathrm{d} ^3 \vec{r}  \\
+&= \frac{1}{2} \int\limits_V^{} \left( \vec{B} \cdot \vec{H}_0 - \vec{B}_0 \cdot \vec{H} \right) \, \mathrm{d} ^3 \vec{r} + \frac{1}{2} \int\limits_{V}^{} \left( \vec{B} + \vec{B}_0 \right) \left( \vec{H} - \vec{H}_0 \right) \, \mathrm{d} ^3 \vec{r}
+\end{align*}
+
+<p>
+Ob predpostavkah, da
+</p>
+
+<ul class="org-ul">
+<li>so tokovni izviri nespreminjajoči in</li>
+<li>snov je končna</li>
+</ul>
+
+<p>
+\[ W - W_0 = \frac{1}{2} \int\limits_V^{} \mu_0 \left( \vec{\mu}- 1 \right) \vec{H} \cdot \vec{H}_0 \, \mathrm{d} ^3 \vec{r} = \frac{1}{2} \int\limits_{}^{} \vec{M} \cdot \vec{B}_0 \, \mathrm{d} ^3 \vec{r}
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org157a5f3" class="outline-4">
+<h4 id="org157a5f3"><span class="section-number-4">1.3.3.</span> Ohranjanje gibalne količine</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+Definirali smo Cauchyjevo kontinuitetno enačbo za gibalno količino in linearni konstitutivni relaciji.
+</p>
+
+<p>
+\[ \frac{\partial g_{i}}{\partial t}  - \frac{\partial T_{ik}}{\partial x_{k}} + f_i = 0,
+\]
+</p>
+
+<p>
+kjer je zdaj
+</p>
+
+<p>
+\[ \vec{g} = \vec{D}\times \vec{B}
+\]
+</p>
+
+<p>
+gostota gibalne količine. Napetostni tenzor \( \underline{T} \) pa je
+</p>
+
+<p>
+\[ T_{ik} = E_i D_k - \frac{1}{2} \left( \vec{E} \cdot \vec{D} \right) \delta_{ik} + B_i H_k - \frac{1}{2} \left( \vec{B} \cdot \vec{H} \right) \delta_{ik}
+\]
+</p>
+
+<p>
+Za poljubne konstitutivne relacije ni nujno, da še lahko uvedeš napetostni tenzor. Ni možno napisati oblike
+</p>
+
+<p>
+\[ \frac{\partial \vec{g}}{\partial t} = \nabla \cdot \left( \ \_ \ \right) ,
+\]
+</p>
+
+<p>
+zato se pogosto uvaja približne zapise napetostnega tenzorja.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org912d836" class="outline-3">
+<h3 id="org912d836"><span class="section-number-3">1.4.</span> Robni pogoji za Maxwellove enačbe</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Predpostavimo, da imamo dve snovi, ki se stikata. Vsaka snov ima svojo lokalno normalo \( \vec{n}_1 \) in \( \vec{n}_2 \), ki je pravokotno na površino in kaže v snov.
+</p>
+
+<p>
+Velja
+</p>
+
+\begin{align*}
+  D_{1n} - D_{2n} = \sigma & \qquad E_{1t} - E_{2t} = 0 \\
+B_{1n} - B_{2n} = 0 & \qquad H_{1t} - H_{2t} = K,
+\end{align*}
+
+<p>
+kjer je \( \sigma \) površinska gostota naboja in \( K \) površinska gostota toka. Indeks \( n \) označuje vektorske komponente, ki so vzporedne normalam snovi, indeks \( t \) pa označuje tangentne komponente, ki so pravokotne na normalo snovi.
+</p>
+</div>
+<div id="outline-container-org48b44be" class="outline-4">
+<h4 id="org48b44be"><span class="section-number-4">1.4.1.</span> Robni pogoji za \( \vec{B} \)</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+[vstavi skico]
+</p>
+
+<p>
+V diferencialni obliki velja
+</p>
+
+<p>
+\[ \nabla \cdot \vec{B} = 0 \iff \int\limits_{}^{} \nabla \cdot \vec{B} \, \mathrm{d} ^3 \vec{r} = 0
+\]
+</p>
+
+<p>
+Iz volumnskega integrala velja
+</p>
+
+<p>
+\[ 0 = \int\limits_V^{} \nabla \cdot \vec{B} \, \mathrm{d} ^3 \vec{r} = \oint\limits_{\partial V}^{} \vec{B} \cdot \mathrm{d} \vec{S}
+\]
+</p>
+
+<p>
+Izberemo valjast volumen, katerega osnovni ploskvi sta vsaka v svoji snovi. Osnovna ploskev v snovi 1 ima normalo \( \vec{n}_1 \), osnovna ploskev v snovi 2 pa ima normalo \( \vec{n}_2 \). Obe normali kažeta v snov. Predpostavimo majhno višino valja \( \mathrm{d} l \).
+</p>
+
+\begin{align*}
+  0 &= \int\limits_{(1)}^{} \vec{B}_1 \cdot \vec{n}_1 \, \mathrm{d} S + \int\limits_{(2)}^{} \vec{B}_2 \cdot \vec{n}_2 \, \mathrm{d} \vec{S} + \int\limits_{\text{plasc}}^{} \vec{B}_{pl} \cdot \vec{n}_{pl} \, \mathrm{d} S && \mathrm{d}l \to 0 \\
+&= \int\limits_{(1)}^{} \vec{B}_1 \vec{n}_1 \, \mathrm{d} S + \int\limits_{(2)}^{} \vec{B}_2 \cdot \vec{n}_2 \, \mathrm{d} S
+\end{align*}
+
+<p>
+Torej
+</p>
+
+<p>
+\[ \vec{B}_1 \cdot \vec{n}_1 + \vec{B}_2 \cdot \vec{n}_2 = 0 \implies B_{1n} - B_{2n} = 0.
+\]
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-29 Thu 17:26</p>
+</div>
+</body>
+</html>

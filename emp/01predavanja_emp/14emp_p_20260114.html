@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-01-29 Thu 17:28 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>14. predavanje iz Elektromagnetnega polja</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">14. predavanje iz Elektromagnetnega polja</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2b86418">1. Naslov</a>
+<ul>
+<li><a href="#orgfe6d2e7">1.1. Prostor Minkovskega</a></li>
+<li><a href="#org844c99a">1.2. Štirivektor gostote toka</a>
+<ul>
+<li><a href="#org72d4ad6">1.2.1. Gostota naboja in Lorentzova transformacija</a></li>
+<li><a href="#orgcd059ab">1.2.2. Štirivektor gostote toka</a></li>
+</ul>
+</li>
+<li><a href="#org20a89c7">1.3. Štirivektor elektromagnetnega potenciala</a>
+<ul>
+<li><a href="#orgd76ccf9">1.3.1. Schwartzschildova invarianta v relativistični dinamiki</a></li>
+</ul>
+</li>
+<li><a href="#org770e098">1.4. Kovariantni tenzor elektromagnetnega polja</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2b86418" class="outline-2">
+<h2 id="org2b86418"><span class="section-number-2">1.</span> Naslov</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Na prejšnjem predavanju smo dobili transformirane količine v sistemu, ki se premika s svetlobno hitrostjo. Transformirane komponente električnega polja so
+</p>
+
+\begin{align*}
+  E_x &= E_{x'} ' \\
+E_y &= \gamma \left( E_{y'}' + v B_{z'} ' \right) \\
+E_z &= \gamma \left( E_{z'}' - v B_{y'} ' \right),
+\end{align*}
+
+<p>
+kjer je sistem s črtico premikajoči se sistem. Transformirane komponente magnetnega polja pa so
+</p>
+
+\begin{align*}
+  B_x &= B_{x'}' \\
+B_y &= \gamma \left( B_{y'}' - \frac{v}{c ^2} E_{z'}' \right) \\
+B_z &= \gamma \left( B_{z'}' + \frac{v}{c ^2} E_{y'}' \right) \\
+\end{align*}
+
+<p>
+Sledeče ima dve posledici.
+</p>
+
+<p>
+Prva posledica je, da je skalarni produkt invarianten - koti med poljema \( \mathbf{E} \) in \( \mathbf{B} \) se ohranjajo.
+</p>
+
+\begin{align*}
+  \mathbf{E} \cdot \mathbf{B} &= E_x B_x + E_y B_y + E_z B_z \\
+ \mathbf{E}' \cdot \mathbf{B} '&= E_{x'}' B_{x'}' + \gamma ^2 \left( 1 - \frac{v ^2}{c ^2} \right) E_{y'}' + B_{y'}' + \gamma \left( 1 - \frac{v ^2}{c ^2} \right) E_{z'}' B_{z'}' .
+\end{align*}
+
+<p>
+Druga posledica je to, da ima v praznem prostoru rešitev Maxwellove enačbe enako obliko - obliko ravnega vala - veliko polj pa sta odvisni od sistema.
+</p>
+
+<p>
+\[ E ^2 - c ^2 B ^2 = E' ^2 + c ^2 B ' ^2.
+\]
+</p>
+
+<p>
+Poteka pretakanje iz enega polja v drugo in ni več ločeno na magnetno in električno polje.
+</p>
+</div>
+<div id="outline-container-orgfe6d2e7" class="outline-3">
+<h3 id="orgfe6d2e7"><span class="section-number-3">1.1.</span> Prostor Minkovskega</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Ideja je, da se teorijo relativnosti formulira s štirivektorji, ki pri posebni teoriji relativnosti (PTR) sledijo metriki Minkovskega. Pri splošni teoriji relativnosti pa je metrika odvisna od porazdelitve mase.
+</p>
+
+<p>
+Štirivektor dogodka je
+</p>
+
+<p>
+\[ x_{\mu} = (x, y, z, ct).
+\]
+</p>
+
+<p>
+Indeks \( \mu \) spodaj zavzema vrednosti \( 1 - 4 \) in označuje kovariantni vektor.
+</p>
+
+<p>
+Štirivektor dogodka z indeksom zgoraj
+</p>
+
+<p>
+\[ x^{\mu} = (x, y, z, - ct),
+\]
+</p>
+
+<p>
+označuje kontravariantni vektor.
+</p>
+
+<p>
+Lorentzova transformacija ohranja skalarni produkt
+</p>
+
+<p>
+\[ x_{\mu} x^{\mu} = x' _{\mu}  x'^{\mu}.
+\]
+</p>
+
+<p>
+Zanima nas, kako bi elektromagnetno polje zapisali s četverci.
+</p>
+</div>
+</div>
+<div id="outline-container-org844c99a" class="outline-3">
+<h3 id="org844c99a"><span class="section-number-3">1.2.</span> Štirivektor gostote toka</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org72d4ad6" class="outline-4">
+<h4 id="org72d4ad6"><span class="section-number-4">1.2.1.</span> Gostota naboja in Lorentzova transformacija</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Naboj mora biti invarianten na Lorentzovo transformacijo, saj bi drugače s prehajanjem med sistem pridobivali ali izgubljali naboj.
+</p>
+
+<p>
+Torej velja
+</p>
+
+<p>
+\[ e = \int\limits_V^{} \rho \, \mathrm{d} ^3 \mathbf{r} = \int\limits_{V'}^{} \rho' \mathrm{d} ^3 \mathbf{r}'.
+\]
+</p>
+
+<p>
+Gostota naboja \( \rho \) se nahaja v sistemu \( S \), medtem ko je \( \rho' \) v sistemu \( S' \). Ob upoštevanju, da velja
+</p>
+
+<p>
+\[ \mathrm{d} ^3 \mathbf{r} = \mathrm{d} x \mathrm{d} y \mathrm{d} z = \mathrm{d} ^3 \mathbf{r} ' = \mathrm{d} x' \mathrm{d} y' \mathrm{d} z' = \gamma \mathrm{d} x \mathrm{d} y \mathrm{d} z,
+\]
+</p>
+
+<p>
+enakost postane
+</p>
+
+<p>
+\[ e = \int\limits_V^{} \rho  \mathrm{d} x \mathrm{d} y \mathrm{d} z = \int\limits_{V'}^{} \rho' \gamma  \mathrm{d} x \mathrm{d} y \mathrm{d} z.
+\]
+</p>
+
+<p>
+Sledi
+</p>
+
+<p>
+\[ \rho' = \frac{\rho}{\gamma}.
+\]
+</p>
+
+<p>
+Zaključimo lahko, da je \( \frac{\rho}{\gamma} \) invariantna količina na Lorentzovo transformacijo.
+</p>
+</div>
+</div>
+<div id="outline-container-orgcd059ab" class="outline-4">
+<h4 id="orgcd059ab"><span class="section-number-4">1.2.2.</span> Štirivektor gostote toka</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+V treh dimenzijah je bila gostota toka zapisana kot
+</p>
+
+<p>
+\[ \mathbf{j} = \rho \mathbf{v}.
+\]
+</p>
+
+<p>
+Uvede se ga kot
+</p>
+
+<p>
+\[ j_{\mu} = \frac{\rho}{\gamma} u_{\mu} = \frac{\rho}{\gamma} (\gamma_v, \gamma_c).
+\]
+</p>
+
+<p>
+Sledi, da sta kovariantni in kontravariantni vektor enaka
+</p>
+
+<p>
+\[ j_{\mu} = \left( \mathbf{j}, \rho c \right) \quad \text{ in } \quad j^{\mu} = \left( \mathbf{j}, - c \rho \right).
+\]
+</p>
+
+<p>
+Gostoto toka smo uvedli kot pravi štirivektor, iz česar sledi, da zanj velja Lorentzova transformaija
+</p>
+
+\begin{align*}
+  j_x ' &= \gamma \left( j_x - \beta c \rho \right) \\
+j_y ' &= j_y \\
+j_z ' &= j_z\\
+c \rho' &= \gamma \left( c \rho - \beta j_x \right)
+\end{align*}
+
+<p>
+Invarianca ima obliko
+</p>
+
+<p>
+\[ j_{\mu} j^{\mu} = \mathbf{j} \cdot \mathbf{j} - c ^2 \rho ^2.
+\]
+</p>
+
+<p>
+Če na invarianco delujemo z \( \frac{\partial }{\partial x^{\mu}}  \), iz česar sledijo stvari kot so npr. kontinuitetna enačba
+</p>
+
+<p>
+\[ \nabla \cdot \mathbf{j} - \frac{\partial \rho}{\partial t} = 0.
+\]
+</p>
+
+<p>
+Razcep štirivektorja toka je relativen, odvisen, od gostote naboja in gotota toka je odvisn od sistema.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org20a89c7" class="outline-3">
+<h3 id="org20a89c7"><span class="section-number-3">1.3.</span> Štirivektor elektromagnetnega potenciala</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Spomnimo se Riemann-Lorentzovbih enačb za magnetni vektorski potencial \( \mathbf{A} \) in \( \phi \).
+</p>
+
+<p>
+\[ \nabla ^2 \phi - \frac{1}{c ^2} \frac{\partial ^2 \phi}{\partial t ^2} = - \frac{\rho}{\epsilon_0} \quad \text{ in } \quad \nabla ^2 \mathbf{A} - \frac{1}{c ^2} \frac{\partial ^2 \mathbf{A}}{\partial t ^2} = - \mu_0 \mathbf{j}.
+\]
+</p>
+
+<p>
+Uvedemo D&rsquo;Alembertov operator \( \square ^2 = \partial_{\mu} \partial^{\mu} = \left( \nabla, - \frac{\partial }{\partial (ct)} \right) \left( \nabla,  \frac{\partial }{\partial (tc)}  \right) \). Drugače zapišemo
+</p>
+
+<p>
+\[ \square ^2 \phi = - \frac{\rho}{\epsilon_0} \quad \text{ in } \quad \square ^2 \mathbf{A} = - \mu_0 \mathbf{j}
+\]
+</p>
+
+<p>
+Električna gostota naboja in gostota toka tvorita četverca in pričakujemo, da tudi \( \mathbf{A} \) in \( \phi \) tvorita četverec. Štirivektor elektromagnetnega potenciala je
+</p>
+
+<p>
+\[ A_{\mu} = \left( \mathbf{A}, \frac{\phi}{c} \right) \quad \text{ in } \quad A^{\mu} = \left( \mathbf{A}, - \frac{\phi}{c} \right).
+\]
+</p>
+
+<p>
+Torej lahko Riemann-Lorentzove enačbe zapišemo v manifestno Lorentzovi invariantni obliki kot
+</p>
+
+<p>
+\[ \square ^2 A_{\mu} = - \mu_0 j_{\mu} \quad \text{ oziroma } \quad \square A^{\mu} = - \mu_0 j^{\mu}.
+\]
+</p>
+
+<p>
+Ker uvedemo \( \mathbf{A} \) kot pravi štirivektor, zanj ponovno velja Lorentzova transformacija.
+</p>
+
+\begin{align*}
+  A_x ' &= \gamma \left( A_x - \beta \frac{\phi}{c} \right) \\
+A_y' &= A_y \\
+A_z ' &= A_z \\
+\frac{\phi '}{c} &= \gamma \left( \frac{\phi}{c} - \beta A_x \right)
+\end{align*}
+
+<p>
+Invariantna je enaka
+</p>
+
+<p>
+\[ A_{\mu} A^{\mu} = A ^2 - \frac{\phi ^2}{c ^2}
+\]
+</p>
+
+<p>
+Razcep \( A_{\mu} \) na \( \mathbf{A} \) in \( \phi \) je ponovno odvisen od sistema. Z drugimi besedami je relativen.
+</p>
+</div>
+<div id="outline-container-orgd76ccf9" class="outline-4">
+<h4 id="orgd76ccf9"><span class="section-number-4">1.3.1.</span> Schwartzschildova invarianta v relativistični dinamiki</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+Želimo zapisati Lagrangeev člen za nabite delce v zunanjem polju v relativistični obliki. In sicer
+</p>
+
+<p>
+\[ - \int\limits_{}^{} \left( \rho \phi + \mathbf{j} \cdot \mathbf{A} \right) \, \mathrm{d} ^3 \mathbf{r} \, \mathrm{d} t = \int\limits_{}^{} A_{\mu} j^{\mu} \, \mathrm{d} ^4 x_{\mu} = \int\limits_{}^{}A^{\mu} j_{\mu} \, \mathrm{d} ^4 x^{\mu}.
+\]
+</p>
+
+<p>
+kjer sta \( \phi \) in \( \mathbf{A} \) zunanja potenciala.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org770e098" class="outline-3">
+<h3 id="org770e098"><span class="section-number-3">1.4.</span> Kovariantni tenzor elektromagnetnega polja</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Zanima nas, kakšen je kovarianten ( = manifestno invarianten na Lorentzovo transformacijo) zapis osnovnih polj \( \mathbf{E} \) in \( \mathbf{B} \), saj so bile transformacije nestandardne.
+</p>
+
+<p>
+Pri izpeljavi nam bosta prav prišli identiteti
+</p>
+
+<p>
+\[ \mathbf{B} = \nabla \times \mathbf{A} \quad \text{ in } \mathbf{E} = - \nabla \phi - \frac{\partial \mathbf{A}}{\partial t}
+\]
+</p>
+
+<p>
+ter, da se zavedamo
+</p>
+
+<p>
+\[ A_{\mu} = \left( \mathbf{A}, \frac{\phi}{c} \right) \quad \text{ in } \quad \frac{\partial }{\partial x^{\mu}} = \left( \nabla, \frac{\partial }{\partial (ct)}  \right)
+\]
+</p>
+
+\begin{align*}
+  E_x &= - c \frac{\partial \frac{\phi}{c} }{\partial x}  + c \frac{\partial A_{x}}{\partial (-ct} \\
+&= -c \frac{\partial A_{4}}{\partial x^{1}} + c \frac{\partial A_{1}}{\partial x^{4}}
+\end{align*}
+
+<p>
+Poglejmo še za \( B_x \), ki je po definiciji
+</p>
+
+<p>
+\[ B_x = \frac{\partial A_{z}}{\partial y}  - \frac{\partial A_{y}}{\partial z}.
+\]
+</p>
+
+<p>
+V jeziku četvercev je \( A_z = A_3, y = x^2, A_y = A_2 \) in \( z = x^3 \).
+</p>
+
+<p>
+Sledi torej
+</p>
+
+<p>
+\[ B_x = \frac{\partial A_{3}}{\partial x^{2}} - \frac{\partial A_{2}}{\partial x^{3}}.
+\]
+</p>
+
+<p>
+Obe komponenti se izvažata kot &ldquo;nekakšen štiri dimenzionalni rotor&rdquo;.
+</p>
+
+<p>
+V treh dimenzijah je
+</p>
+
+<p>
+\[ \left( \nabla \times \mathbf{c} \right)_i = \epsilon_{ijk} \frac{\partial c_{j}}{\partial x_{k}}.
+\]
+</p>
+
+<p>
+Na osnovi tega razmisleka uvedemo tenzor elektromagnetnega polja
+</p>
+
+<p>
+\[ F_{\mu \nu} = \frac{\partial A_{\nu}}{\partial x^{\mu}} - \frac{\partial A_{\mu}}{\partial x^{\nu}} = \partial_{\mu} A_{\nu} - \partial_{\nu} A_{\mu},
+\]
+</p>
+
+<p>
+ki je antisimetričen.
+</p>
+
+<p>
+Zapisali smo že \( B_x = F_{23} \) in \( F_{14} = \frac{- E_x}{c} \)
+</p>
+
+<p>
+Obravnavamo ga po komponentah
+</p>
+
+<p>
+\[ F_{\mu \nu} = \begin{bmatrix}
+                 0 & B_z & - B_y & - \frac{E_x}{c} \\
+                 -B_z & 0 & B_x & - \frac{E_y}{c} \\
+                 B_y & -B_x & 0 & -\frac{E_z}{c} \\
+                 \frac{E_x}{c} & \frac{E_y}{c} & \frac{E_z}{c} & 0
+                 \end{bmatrix}.
+\]
+</p>
+
+<p>
+Tenzor je antisimetričen in torej velja \( F_{\mu \nu} = - F_{\nu \mu} \). Komponente tenzorja so komponente \( \mathbf{E} \) in \( \mathbf{B} \). Tako smo polji združili v eno količino. V štirih dimenzijah postane eno polje.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-01-29 Thu 17:28</p>
+</div>
+</body>
+</html>
