@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vaje iz Fizikalnih merjenj, 9. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vaje iz Fizikalnih merjenj, 9. teden v letu</h1>
+<p class="subtitle">2026/02/24</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#kovariancakorelacija"
+id="toc-kovariancakorelacija">Kovarianca/korelacija</a></li>
+<li><a href="#širjenje-napak-splošni-predpis-po-gaussu"
+id="toc-širjenje-napak-splošni-predpis-po-gaussu">Širjenje napak
+(splošni predpis = po Gaussu)</a></li>
+<li><a href="#meritev-časa-preleta-ang.-time-of-flight-or-tof"
+id="toc-meritev-časa-preleta-ang.-time-of-flight-or-tof">Meritev časa
+preleta (ang. <em>time-of-flight</em> or TOF)</a></li>
+<li><a href="#uvod-v-združevanje-odvisnih-meritev"
+id="toc-uvod-v-združevanje-odvisnih-meritev">Uvod v združevanje odvisnih
+meritev</a></li>
+</ul>
+</nav>
+<h1 id="kovariancakorelacija">Kovarianca/korelacija</h1>
+<p>Neznana količina, ki jo merimo, je <span class="math inline">\( x
+\)</span>. Imamo dva seta meritev, oba porazdeljena po normalni
+porazdelitvi</p>
+<p><span class="math display">\[ z_1 \sim N (x, \sigma_1 ^2 ) \quad
+\text{ in } \quad z_2 \sim N(x, \sigma_2 ^2)
+\]</span></p>
+<div class="note">
+<div class="title">
+<p>Note</p>
+</div>
+<p>O točnosti in natančnosti: Razdalja med pričakovana vrednostjo <span
+class="math inline">\( x \)</span> in njeno povprečno vrednostjo <span
+class="math inline">\( \bar{x} \)</span> je točnost, medtem ko
+odstopanje od povprečne vrednosti pa je natančnost.</p>
+<p>Velika netočnost je ponavadi rezultat sistematska napaka.</p>
+<p><img src="figures/tocnost_natancnost.png" /></p>
+</div>
+<p>Predpostavimo, da so naši izmerki natančni.</p>
+<p>Naša seta meritev napišemo kot vsoto pričakovane vrednosti in šuma,
+ki sta oba razporejena po normalni porazdelitvi.</p>
+<p><span class="math display">\[ z_1 = x + r_1; \quad r_1 \sim N (0,
+\sigma_1 ^2) \quad \text{ in } \quad z_2 = x + r_2; \quad r_2 \sim N(0,
+\sigma_2 ^2)
+\]</span></p>
+<p>Če imamo odvisne meritve (šume), potem zapišemo</p>
+<p><span class="math display">\[ r_2 = \alpha r_1 + w; \quad w \sim N(0,
+\sigma_w ^2)
+\]</span></p>
+<p>Varianca <span class="math inline">\( \sigma_2 ^2 \)</span> je po
+definiciji</p>
+<p><span class="math display">\[ \sigma_2 ^2 = \left\langle \left( z_2 -
+x \right) ^2 \right\rangle = \left\langle r_2 ^2 \right\rangle.
+\]</span></p>
+<p>Upoštevamo odvisnost meritve (šumov) in varianca postane</p>
+<span class="math display">\[\begin{align*}
+  \sigma_2 ^2 &amp;= \left\langle r_2 ^2 \right\rangle \\
+&amp;= \left\langle \left( \alpha r_1 + w \right) ^2 \right\rangle \\
+&amp;= \left\langle \alpha ^2 r_1 ^2 + 2\alpha r_1 w + w ^2
+\right\rangle \\
+&amp;= \alpha ^2 \sigma_1 ^2 + \sigma_w ^2
+\end{align*}
+\]</span>
+<p>Člen <span class="math inline">\( \left\langle r_1 w \right\rangle
+\)</span> je kovarianca in ker je <span class="math inline">\( r_2 = r_2
+(r_1, w) \)</span> in sta <span class="math inline">\( r_1 \)</span> in
+<span class="math inline">\( w \)</span> neodvisni, je njuna kovarianca
+ničelna.</p>
+<p>Sledi, da dobimo zapis</p>
+<p><span class="math display">\[ 1 = \left( \alpha
+\frac{\sigma_1}{\sigma_2} \right) ^2 + \left( \frac{\sigma_w}{\sigma_2}
+\right) ^2,
+\]</span></p>
+<p>iz česar vidimo, da je korelacijski koeficient <span
+class="math inline">\( \rho_{12} = \left( \alpha \frac{\sigma_1
+}{\sigma_2} \right) ^2 \)</span> omejen na intervalu</p>
+<p><span class="math display">\[ 0 \le \left( \alpha
+\frac{\sigma_1}{\sigma_2} \right) ^2 \le 1 \implies -1 \le \rho_{12} \le
+1
+\]</span></p>
+<p>V primeru <span class="math inline">\( \rho_{12} = 0 \)</span> je
+popolna neodvisnost spremenljivk, v primeru <span class="math inline">\(
+\rho = \pm 1 \)</span> imamo pa popolno korelacijo.</p>
+<p>Kovarianca je po definiciji</p>
+<p><span class="math display">\[ \sigma_{12} = \left\langle \left( z_1 -
+x \right) \left( z_2 - x \right) \right\rangle  = \left\langle r_1 r_2
+\right\rangle.
+\]</span></p>
+<p>Upoštevamo definicije šumov in dobimo</p>
+<p><span class="math display">\[ \sigma_{12} = \left\langle r_1 \left(
+\alpha r_1 + w \right) \right\rangle  = \alpha \sigma_1 ^2,
+\]</span></p>
+<p>saj je kovarianca <span class="math inline">\( \left\langle r_1 w
+\right\rangle = 0\)</span>.</p>
+<p>Če se vrnemo h korelacijskemu faktorju,</p>
+<p><span class="math display">\[ \rho_{12} = \alpha
+\frac{\sigma_1}{\sigma_2},
+\]</span></p>
+<p>ki ga pomnožimo z <span class="math inline">\( \sigma_1 \sigma_2
+\)</span>, potem lahko zapišemo kot</p>
+<p><span class="math display">\[ \rho_{12} \sigma_1 \sigma_2 = \alpha
+\sigma_1 ^2 = \sigma_{12} = \rho_{12} \sigma_1 \sigma_2
+\]</span></p>
+<h1 id="širjenje-napak-splošni-predpis-po-gaussu">Širjenje napak
+(splošni predpis = po Gaussu)</h1>
+<p>Imamo večjo kombinacijo spremenljivk</p>
+<span class="math display">\[\begin{align*}
+  u_1 &amp;= f_1 (x_1, x_2, \ldots, x_n) \\
+u_2 &amp;= f_2 (x_1, x_2, \ldots, x_n) \\
+&amp;\vdots \\
+u_n &amp;= f_n (x_1, x_2, \ldots, x_n),
+\end{align*}
+\]</span>
+<p>kjer so <span class="math inline">\( x_1, x_2, \ldots, x_n \)</span>
+količine, ki jih merimo. Uvedemo vektorski zapis</p>
+<p><span class="math display">\[ \mathbf{x} = \begin{bmatrix} x_{1} \\
+x_{2} \\ \vdots \\ x_{n} \end{bmatrix} \quad \text{ in } \quad
+\mathbf{u} = \begin{bmatrix} u_{1} \\ u_{2} \\ \vdots \\ u_{n}
+\end{bmatrix}
+\]</span></p>
+<p>Za <span class="math inline">\( \mathbf{x} \)</span> poznamo ocene,
+ki jih označimo kot</p>
+<p><span class="math display">\[ \bar{\mathbf{x}} = \begin{bmatrix}
+\bar{x}_{1} \\ \bar{x}_{2} \\ \vdots \\ \bar{x}_{n} \end{bmatrix}.
+\]</span></p>
+<p>Dejanska vrednost <span class="math inline">\( \bar{x}_i \)</span> je
+vsota ocene <span class="math inline">\( x_i \)</span> in šuma <span
+class="math inline">\( m_i \)</span></p>
+<p><span class="math display">\[ \bar{x}_i = x_i + m_i; \quad m_i \sim
+N(0, \sigma_1 ^2).
+\]</span></p>
+<p>Kovarianca je po definiciji</p>
+<p><span class="math display">\[ \delta_{ij} = \left\langle (\bar{x}_{i
+- x_i}) \left( \bar{x}_j - x_j \right) \right\rangle  = \left\langle m_i
+m_j \right\rangle.
+\]</span></p>
+<p>V primeru <span class="math inline">\( i = j \)</span> dobimo <span
+class="math inline">\( \sigma_i ^2 = \left\langle (\bar{x}_i - x_i) ^2
+\right\rangle = \sigma_i ^2 \)</span>, kar je že zapis variance znotraj
+zapisa za kovarianco!</p>
+<p>Uvedemo kovariantno matriko, katere elementi so</p>
+<p><span class="math display">\[ \left( M \right)_{ij} = \sigma_{ij} =
+\left\langle (\bar{x}_i - x_i) \left( \bar{x}_j - x_j \right)
+\right\rangle  = \left\langle m_i m_j \right\rangle.
+\]</span></p>
+<p>Matrični zapis kovariantne matrike je</p>
+<p><span class="math display">\[ M = \left\langle \left(
+\bar{\mathbf{x}} - \mathbf{x} \right) \left( \bar{\mathbf{x}} -
+\mathbf{x} \right)^T \right\rangle =\left\langle \mathbf{m} \mathbf{m}^T
+\right\rangle.
+\]</span></p>
+<p>Lastnosti kovariantne matrike so</p>
+<ul>
+<li>simetričnost <span class="math inline">\( M = M^T \)</span></li>
+<li>diagonalni elementi kovariantne matriko <span class="math inline">\(
+\left( M \right)_{ii} = \sigma_{ii} = \sigma_i ^2 \)</span> so
+variance</li>
+<li>izvendiagonalni elementi so kovariance <span class="math inline">\(
+\left( M \right)_{ij, i \ne j} = \sigma_{ij} \)</span></li>
+</ul>
+<p>Za vektor <span class="math inline">\( \mathbf{u} = \left( f_1
+(\mathbf{x}), f_2 (\mathbf{x}), \ldots, f_n (\mathbf{x}) \right)
+\)</span> nas zanima ocena <span class="math inline">\( \bar{\mathbf{u}}
+\)</span>, zato da lahko izračunamo kovariantno matriko <span
+class="math inline">\( U \)</span>.</p>
+<p>Po definiciji je kovariantna matrika</p>
+<p><span class="math display">\[ U = \left\langle \left(
+\bar{\mathbf{u}} - \mathbf{u} \right) \left( \bar{\mathbf{u}} -
+\mathbf{u} \right)^T \right\rangle.
+\]</span></p>
+<p>Ocene ne poznamo, zato postopamo podobno kot zadnjič, ko razvijemo po
+Taylorju</p>
+<p><span class="math display">\[ \mathbf{u} = \begin{bmatrix} f_1
+(\bar{\mathbf{x}}) \\ f_2 (\bar{\mathbf{x}}) \\ \ldots \\ f_n
+(\bar{\mathbf{x}}) \end{bmatrix} + J_{\mathbf{u}}(\mathbf{x})   \left(
+\mathbf{x} - \bar{ \mathbf{x}} \right) + o(x ^2),
+\]</span></p>
+<p>kjer je <span class="math inline">\( J_{\mathbf{u}} \)</span>
+Jacobijeva matrika. Ocena je potem</p>
+<p><span class="math display">\[ \bar{\mathbf{u}} = \begin{bmatrix} f_1
+(\bar{\mathbf{x}}) \\ f_2 (\bar{\mathbf{x}}) \\ \vdots \\ f_n
+(\bar{\mathbf{x}}) \end{bmatrix} + J_{\mathbf{u}} (\bar{\mathbf{x}})
+\left( \bar{\mathbf{x}} - \bar{\mathbf{x}} \right) = \begin{bmatrix} f_1
+(\bar{\mathbf{x}}) \\ f_2 (\bar{\mathbf{x}}) \\ \vdots \\ f_n
+(\bar{\mathbf{x}}) \end{bmatrix},
+\]</span></p>
+<p>saj je drugi člen ničeln.</p>
+<p>Torej</p>
+<p><span class="math display">\[ \bar{\mathbf{u}} - \mathbf{u}  =
+J_{\mathbf{u}} (\bar{\mathbf{x}}) \left(\bar{ \mathbf{x}}  -
+\mathbf{x}  \right).
+\]</span></p>
+<p>Kovariantna matrika je potem</p>
+<span class="math display">\[\begin{align*}
+  U &amp;= \left\langle \left( \bar{\mathbf{u}} - \mathbf{u}
+\right)\left( \bar{\mathbf{u}} - \bar{u} \right)^T \right\rangle \\
+&amp;= \left\langle J_{\mathbf{u}} \left( \bar{\mathbf{x}} \right)
+\left( \bar{\mathbf{x}} - \mathbf{x} \right) \left( \bar{\mathbf{x}} -
+\bar{x} \right)^T J_{\mathbf{u}}^T (\bar{\mathbf{x}}) \right\rangle \\
+&amp;= J_{\mathbf{u}} (\bar{\mathbf{x}}) M J_{\mathbf{u}}^T
+(\bar{\mathbf{x}}).
+\end{align*}
+\]</span>
+<p>Upoštevali smo, da velja <span class="math inline">\( \left\langle
+J_{\mathbf{u}} (\bar{\mathbf{x}})\right\rangle =
+J_{\mathbf{u}}(\bar{\mathbf{x}}) \)</span>, saj je to matrika konstant.
+Spomnimo se še definicije Jacobijeve matrike, ki je</p>
+<p><span class="math display">\[ J_{\mathbf{u}}(\mathbf{x}) =
+\begin{bmatrix}
+                                \frac{\partial f_{1}}{\partial
+x_{1}}  &amp; \frac{\partial f_{1}}{\partial x_{2}}  &amp; \ldots &amp;
+\frac{\partial f_{1}}{\partial x_{n}}  \\
+                                 \vdots &amp;  &amp; &amp; \\
+                                 \vdots &amp;  &amp; &amp; \\
+                                 \frac{\partial f_{n}}{\partial x_{1}}
+&amp; \frac{\partial f_{n}}{\partial x_2} &amp; \ldots &amp;
+\frac{\partial f_{n}}{\partial x_{n}}
+                                \end{bmatrix}
+\]</span></p>
+<h1 id="meritev-časa-preleta-ang.-time-of-flight-or-tof">Meritev časa
+preleta (ang. <em>time-of-flight</em> or TOF)</h1>
+<div class="problem">
+<p>Imamo delec, ki se premika s hitrostjo <span class="math inline">\( v
+\)</span>. Imamo dva senzorja, ki se nahajata na koordinatah <span
+class="math inline">\( x_1 \)</span> in <span class="math inline">\( x_2
+\)</span>. Čas za prelet intervala je <span class="math inline">\(
+\Delta t \)</span>. Senzor 1 ima oceno meritev <span
+class="math inline">\( \bar{x}_1 \)</span> in nedoločenost <span
+class="math inline">\( \sigma_1 \)</span>. Senzor 2 ima oceno meritve
+<span class="math inline">\( \bar{x}_2 \)</span> in nedoločenost <span
+class="math inline">\( \sigma_2 \)</span>. Senzorja sta neodvisna.</p>
+<p>Izračunaj kovariantno matriko za vektor <span class="math inline">\(
+\mathbf{u} = (x_1, x_2, v)^T \)</span>.</p>
+</div>
+<p>Vektor ocen je</p>
+<p><span class="math display">\[ \bar{\mathbf{x}} = \begin{bmatrix}
+\bar{x}_{1} \\ \bar{x}_{2} \end{bmatrix}.
+\]</span></p>
+<p>Kovariantna matrika je</p>
+<p><span class="math display">\[ M = \begin{bmatrix}
+       \sigma_{1} ^2 &amp;  \\
+        &amp; \sigma_2 ^2
+        \end{bmatrix},
+\]</span></p>
+<p>saj je kovarianca senzorjev 0 zaradi neodvisnosti.</p>
+<p>Vektor ocene je</p>
+<p><span class="math display">\[ \bar{\mathbf{u}} = \begin{bmatrix}
+\bar{x}_{1} \\ \bar{x}_{2} \\ \bar{v} \end{bmatrix},
+\]</span></p>
+<p>želimo pa izračunati kovariantno matriko <span class="math inline">\(
+U \)</span>.</p>
+<p>Odvisnost hitrost od meritve je</p>
+<p><span class="math display">\[ v = \frac{x_2 - x_1}{\Delta t}.
+\]</span></p>
+<p>Vektor, za katerega računamo, je v odvisnosti od meritev</p>
+<p><span class="math display">\[ \mathbf{u} = \begin{bmatrix} x_{1} \\
+x_{2} \\ v \end{bmatrix} = \begin{bmatrix} f_{1}(\mathbf{x}) \\ f_2
+(\mathbf{x}) \\ f_3 (\mathbf{x}) \end{bmatrix}.
+\]</span></p>
+<p>Jacobijeva matrika je potem</p>
+<p><span class="math display">\[ J_{\mathbf{u}} = \begin{bmatrix} 1
+&amp; 0  \\ 0 &amp; 1 \\ - \frac{1}{\Delta t} &amp; \frac{1}{\Delta t}
+\end{bmatrix}.
+\]</span></p>
+<p>Kovariantna matrika je potem po definiciji</p>
+<span class="math display">\[\begin{align*}
+  U &amp;= J_{\mathbf{u}} M J_{\mathbf{u}}^T \\
+&amp;=  \begin{bmatrix} 1 &amp; 0  \\ 0 &amp; 1 \\ - \frac{1}{\Delta t}
+&amp; \frac{1}{\Delta t} \end{bmatrix} \begin{bmatrix}
+                                                                                               \sigma_1
+^2 &amp;  \\
+                                                                                                &amp;
+\sigma_2 ^2
+                                                                                                \end{bmatrix}  \begin{bmatrix}
+1  &amp; 0 &amp; - \frac{1}{\Delta t}  \\ 0 &amp; 1 &amp;
+\frac{1}{\Delta t}\end{bmatrix} \\
+&amp;= \begin{bmatrix}
+  \sigma_1 ^2  &amp; 0 &amp; - \frac{\sigma_1 ^2}{\Delta t} \\
+   0 &amp; \sigma_2 ^2 &amp; \frac{\sigma_2 ^2}{\Delta t} \\
+   -\frac{\sigma_1 ^2}{\Delta t} &amp; \frac{\sigma_2 ^2}{\Delta t}
+&amp;  \frac{\sigma_1 ^2 \sigma_2  ^2}{\left( \Delta t \right) ^2}
+   \end{bmatrix}
+\end{align*}
+\]</span>
+<h1 id="uvod-v-združevanje-odvisnih-meritev">Uvod v združevanje odvisnih
+meritev</h1>
+<p>Želimo doseči optimalno združevanje meritev, kjer bomo besedo
+<em>optimalno</em> še definirali.</p>
+<p>Ocenjujemo neznano konstantno količino <span class="math inline">\( x
+\)</span>, za katero imamo dve oceni/meritvi</p>
+<p><span class="math display">\[ z_1 = x + r_1; \quad \left\langle r_1
+^2 \right\rangle = \sigma_1 ^2 \quad \text{ in } \quad z_2 = x + r_2;
+\quad \left\langle r_2 ^2 \right\rangle = \sigma_2 ^2,
+\]</span></p>
+<p>kjer velja</p>
+<p><span class="math display">\[ \left\langle r_1 r_2 \right\rangle =
+\sigma_{12} \ne 0.
+\]</span></p>
+<p>Izmerjeni oceni želimo združiti v novo oceno za <span
+class="math inline">\( x \)</span>, ki jo označimo z <span
+class="math inline">\( \tilde{x} \)</span>. Zanjo zahtevamo, da je <span
+class="math inline">\( \left\langle \tilde{x} \right\rangle = x
+\)</span> (pričakovana vrednost nove ocene je še zmeraj <span
+class="math inline">\( x \)</span>). Zapišemo</p>
+<p><span class="math display">\[ \tilde{x} = x + \tilde{r}.
+\]</span></p>
+<p>Novo oceno zapišemo z nastavkom linearne kombinacije ocen</p>
+<p><span class="math display">\[ \tilde{x} = a z_1 + b z_2.
+\]</span></p>
+<p>Zahtevamo linearno kombinacijo, saj samo <span class="math inline">\(
+z_1 \)</span> ne bi zadostil pogoju <span class="math inline">\(
+\left\langle \tilde{x} \right\rangle = x \)</span>.</p>
+<p>Razpišemo vse količine</p>
+<span class="math display">\[\begin{align*}
+  \tilde{x} = x + \tilde{r} &amp;= a \left( x + r_1 \right) + b (x +
+r_2) \\
+x + \tilde{r} &amp;= x (a + b) + ar_1 + b_2 &amp;&amp; \left/
+\left\langle \cdot \right\rangle \right. \\
+x &amp;= x (a + b),
+\end{align*}
+\]</span>
+<p>kjer dobimo pogoj <span class="math inline">\( a + b = 1 \)</span>
+oz. <span class="math inline">\( a = 1 - b \)</span>.</p>
+<p>Novo oceno torej lahko zapišemo kot</p>
+<p><span class="math display">\[ \tilde{x} = (1 - b) z_1 + z_2 = z_1 + b
+(z_2 - z_1).
+\]</span></p>
+<p>Členu <span class="math inline">\( (z_2 - z_1) \)</span> pravimo
+<em>inovacija</em>, <span class="math inline">\( b \)</span> pa pravimo
+utež/faktor. Člen se imenuje inovacija, saj <span class="math inline">\(
+z_1 \)</span> nenehno z večanjem meritev popravlja drugi člen.</p>
+<p>V primeru vrednosti <span class="math inline">\( b = \frac{1}{2}
+\)</span> dobimo ravno povprečje</p>
+<p><span class="math display">\[ \tilde{x} = z_1 + \frac{1}{2} (z_2 -
+z_1) = \frac{z_1 + z_2}{2} = \bar{z},
+\]</span></p>
+<p>kar pomeni, da je povprečje dobra, vendar ne optimalna ocena.</p>
+<p>Iščemo <span class="math inline">\( b_0 \)</span> - optimalno utež -
+ki nam poda optimalno oceno (optimalno združevanje <span
+class="math inline">\( z_1 \)</span> in <span class="math inline">\( z_2
+\)</span>).</p>
+<p>Beseda optimalno pomeni, da je napaka minimalna. Optimalno oceno bomo
+označili z <span class="math inline">\( \tilde{x} = \hat{x} \)</span>. Z
+drugimi besedami zapisan pogoj za optimalno oceno je, da <em>zahtevamo
+najmanjšo varianco</em>.</p>
+<p><span class="math display">\[ \frac{\mathrm{d} \tilde{\sigma}
+^2}{\mathrm{d} b} = 0  \implies b_0.
+\]</span></p>
+<p>Zapišemo varianco po definiciji</p>
+<p><span class="math display">\[ \tilde{\sigma} ^2 = \left\langle
+\tilde{r} ^2 \right\rangle = \left\langle \left( (1 - b)r_1  + br_2
+\right) ^2 \right\rangle,
+\]</span></p>
+<p>ki jo kvadriramo in dobimo</p>
+<span class="math display">\[\begin{equation}
+\begin{aligned}
+  \tilde{\sigma} ^2 &amp;= \left\langle \left( 1 - b \right) ^2 r_1 ^2 +
+b ^2 r_2 ^2 + 2 (1 - b) b r_1 r_2 \right\rangle \\
+&amp;= \left( 1 - b \right) ^2 \sigma_1 ^2 + b ^2 \sigma_2 ^2 + 2 (1 -
+b) b \sigma_{12},
+\end{aligned}\label{ali:vari}
+\end{equation}
+\]</span>
+<p>kjer smo upoštevali <span class="math inline">\( \left\langle r_1 ^2
+\right\rangle = \sigma_1 ^2 \)</span> in <span class="math inline">\(
+\left\langle r_2 ^2 \right\rangle = \sigma_2 ^2 \)</span>.</p>
+<p>Za minimum moramo odvajati in dobimo</p>
+<p><span class="math display">\[ \frac{1}{2} \frac{\mathrm{d}
+\tilde{\sigma} ^2}{\mathrm{d} b} = b_0 \left( \sigma_1 ^2 + \sigma_2 ^2
+- 2 \sigma_{12} \right) - \sigma_1 ^2 + \sigma_{12},
+\]</span></p>
+<p>iz česar zaključimo</p>
+<p><span class="math display">\[ b_0 = \frac{\sigma_1 ^2 -
+\sigma_{12}}{\sigma_1 ^2 + \sigma_2 ^2 - 2 \sigma_{12}}.
+\]</span></p>
+<p>Optimalna ocena je torej</p>
+<span class="math display">\[\begin{equation}
+\label{eq:2}
+\hat{x} = z_1 + \frac{\sigma_1 ^2 - \sigma_{12}}{\sigma_1 ^2 + \sigma_2
+^2 - 2\sigma_{12}} (z_2 - z_1).
+\end{equation}
+\]</span>
+<p>Iz pogoja se vidi, da povprečevanje ni optimalna ocena. Lahko pa si
+pogledamo, kdaj je optimalna ocena povprečje s tem, da pogledamo
+pogoj</p>
+<p><span class="math display">\[ b_0 = \frac{1}{2} = \frac{\sigma_1 ^2 -
+\sigma_{12}}{\sigma_1 ^2 + \sigma_2 ^2 -2 \sigma_{12}} \implies \
+\sigma_1 ^2 = \sigma_2 ^2 \iff \sigma_1 = \sigma_2 = \sigma.
+\]</span></p>
+<p>V primeru, ko imamo negotovosti, ki so enake, lahko merimo.</p>
+<p>V kontekstu fizikalnega praktkuma: meritve so bile opravljene na isti
+napravi v obdobju kratkega časa in zato se lahko predpostavi enakost
+negotovosti posameznih meritev. Povprečenje naših rezultatov torej sploh
+ni bilo tako napačno.</p>
+<p>Če v <span class="math inline">\(\ref{ali:vari}\)</span> vstavimo
+vrednost <span class="math inline">\( b_0 \)</span> za optimalno oceno,
+lahko izračunamo kakšna je negotovost optimalne ocene</p>
+<span class="math display">\[\begin{equation}
+\label{eq:1}
+\hat{\sigma} ^2 = \left( 1 - b_0 \right) ^2 \sigma_1 ^2 + b_0 ^2
+\sigma_2 ^2 + 2 (1 - b_0) b_0 \sigma_{12}
+\end{equation}
+\]</span>
+<p>Izračunajmo vmesni rezultat</p>
+<p><span class="math display">\[ 1- b_0 = \frac{\sigma_2 ^2 -
+\sigma_{12}}{\sigma_1 ^2 + \sigma_2 ^2 - 2 \sigma_{12}} = \frac{\sigma_2
+^2 - \sigma_{12}}{I}
+\]</span></p>
+<p>V vseh členih enačbe <span class="math inline">\(\ref{eq:1}\)</span>
+se pojavi imenovalec <span class="math inline">\( I ^2 \)</span>,
+zato</p>
+<p><span class="math display">\[ \hat{\sigma} ^2 = \frac{1}{I ^2} \left[
+\left( \sigma_2 ^2 - \sigma_{12} \right) ^2 \sigma_1 ^2 + \left(
+\sigma_21 ^2 - \sigma_{12} \right) ^2 \sigma_2 ^2 + 2 \left( \sigma_2 ^2
+- \sigma_{12} \right) \left( \sigma_1 ^2 - \sigma_{12}
+\right)\sigma_{12} \right].
+\]</span></p>
+<p>Namesto računanja bomo najprej izostavili <span
+class="math inline">\( \sigma_2 ^2 - \sigma_{12} \)</span> in <span
+class="math inline">\( \sigma_1 ^2 - \sigma_{12} \)</span>, kjer zadnji
+člen s faktorjem <span class="math inline">\( 2 \)</span> razbijemo na
+dva delo (dobesedno <span class="math inline">\( 2x = x + x \)</span>).
+Dobimo</p>
+<span class="math display">\[\begin{align*}
+   &amp; \left( \sigma_2 ^2 - \sigma_{12} \right) ^2 \sigma_1 ^2 +
+\left( \sigma_21 ^2 - \sigma_{12} \right) ^2 \sigma_2 ^2 + 2 \left(
+\sigma_2 ^2 - \sigma_{12} \right) \left( \sigma_1 ^2 - \sigma_{12}
+\right)\sigma_{12} = \\
+&amp; =  \left( \sigma_2 ^2 - \sigma_{12} \right) \left[ \left( \sigma_2
+^2 - \sigma_{12} \right) \sigma_1 ^2 + \left( \sigma_1 ^2 - \sigma_{12}
+\right) \sigma_{12} \right] \\
+&amp;\quad+ \left( \sigma_1 ^2 - \sigma_{12} \right) \left[ \left(
+\sigma_1 ^2 - \sigma_{12} \right) \sigma_2 ^2 + \left( \sigma_2 ^2 -
+\sigma_{12} \right) \sigma_{12} \right] \\
+&amp;= \left( \sigma_1 ^2 \sigma_2 ^2 - \sigma_{12} ^2 \right) \left[
+\sigma_2 ^2 - \sigma_{12} + \sigma_1 ^2 - \sigma_{12} \right].
+\end{align*}
+\]</span>
+<p>V prvi vrstici se po računanju oklepajev pokrajša v prvi faktor v
+drugi vrstici, ki smo ga lahko izpostavili. Drugi faktor druge vrstice
+pa je ravno imenovalec <span class="math inline">\( I \)</span>.</p>
+<p>Torej</p>
+<p><span class="math display">\[ \hat{\sigma} ^2 = \frac{\sigma_1 ^2
+\sigma_2 ^2 - \sigma_{12} ^2}{\sigma_1 ^2 + \sigma_2 ^2 - 2 \sigma_{12}}
+\]</span></p>
+<p>in ob upoštevanju <span class="math inline">\(  \sigma_{12} =
+\rho_{12} \sigma_1 \sigma_2  \)</span> zapišemo</p>
+<p><span class="math display">\[ \hat{\sigma} ^2 = \frac{\sigma_1 ^2
+\sigma_2 ^2 \left( 1 - \rho_{12} ^2 \right)}{\sigma_1 ^2 + \sigma_2 ^2 -
+2 \rho_{12} \sigma_1 \sigma_2}.
+\]</span></p>
+<p>Če izpostavimo <span class="math inline">\( \left( 1 - \rho_{12} ^2
+\right)  \)</span>, potem</p>
+<span class="math display">\[\begin{align*}
+  \hat{\sigma} ^2 &amp;= \left( 1 - \rho_{12} ^2 \right) \left(
+\frac{\sigma_1 ^2 + \sigma_2 ^2 - 2 \rho_{12} \sigma_1
+\sigma_2}{\sigma_1 ^2 \sigma_2 ^2} \right)^{-1} \\
+&amp;= \left( 1- \rho_{12} ^2 \right) \left( \sigma_1^{-2} \sigma_2
+^{-2} - \frac{2 \rho_{12}}{\sigma_1 \sigma_2} \right)^{-1}.
+\end{align*}
+\]</span>
+<p>Rezultat v zadnji vrstici se pogosto pojavlja v literaturi in je za
+na list z enačbami skupaj z <span
+class="math inline">\(\ref{eq:2}\)</span>.</p>
+</body>
+</html>

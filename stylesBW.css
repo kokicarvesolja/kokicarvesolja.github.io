@@ -1,0 +1,184 @@
+html, body {
+}
+
+.preamble ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+body {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.subtitle{
+    text-align: center;
+}
+
+.description {
+    display: block;
+    text-align: center;
+}
+
+.datum {
+    display: block;
+    text-align: center;
+}
+
+.definition {
+    text-align: center;
+    margin: 20px;
+    padding: 40px;
+    background-color: #dfdfdf;
+    border: 2.5px solid black;
+    border-radius: 5px;
+}
+
+.definition::before{
+    content: "Definicija";
+    font-style: italic;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: -25px;
+}
+
+.corollary {
+    text-align: center;
+    margin: 20px;
+    padding: 40px;
+    background-color: #dfdfdf;
+    border: 2.5px solid black;
+    border-radius: 5px;
+}
+
+.corollary::before{
+    content: "Posledica";
+    font-style: italic;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: -25px;
+}
+
+.my_example{
+    text-align: center;
+    background-color: #dfdfdf;
+    margin: 20px;
+    padding: 40px;
+    border: 2.5px solid black;
+    border-radius: 5px;
+}
+
+.my_example::before{
+    content: "Primer";
+    font-style: italic;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: -25px;
+}
+
+.problem{
+    text-align: center;
+    background-color: #dfdfdf;
+    margin: 20px;
+    padding: 40px;
+    border: 2.5px solid black;
+    border-radius: 5px;
+}
+
+.problem::before{
+    content: "Naloga";
+    font-style: italic;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: -25px;
+}
+
+.note{
+    text-align: center;
+    background-color: #dfdfdf;
+    margin: 20px;
+    padding: 40px;
+    border: 2.5px solid black;
+    border-radius: 5px;
+}
+
+.note::before{
+    font-style: italic;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: -25px;
+}
+
+blockquote, .quote{
+    margin: 1em 0 1em 1.7em;
+    padding-left: 1em;
+    border-left: 2px solid #e6e6e6;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-left-color: rgb(230, 230, 230);
+    color: #606060;
+}
+
+.theorem {
+    text-align: center;
+    background-color: #dfdfdf;
+    margin: 20px;
+    padding: 40px;
+    border: 2.5px solid black;
+    border-radius: 5px;
+}
+
+.theorem::before{
+    content: "Izrek";
+    font-style: italic;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: -25px;
+}
+
+.proof {
+    text-align: center;
+    background-color:#dfdfdf;
+    margin: 20px;
+    padding: 40px;
+    border: 2.5px solid black;
+    border-radius: 5px;
+}
+
+.proof::before{
+    content: "Dokaz";
+    font-style: italic;
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: -25px;
+}
+
+.proof::after{
+    content: "";
+    display: block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    left: 650px;
+    border: 2.5px solid black;
+}
+
+
+/*managing links in the nav bar */
+
+.menu a:link, .menu a:visited {
+    color: black;
+    font-weight: bold;
+    text-decoration-line: none;
+}
+
+.menu a:hover {
+    color: #adadad;
+    font-weight: bold;
+    text-decoration-line: none;
+}

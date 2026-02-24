@@ -1,0 +1,7 @@
+#+title: Fizikalna merjenja
+* Predavanja
+* Vaje
+
+Tukaj so zbrani zapiski vaj pri prof. Gregor Kladniku.
+- ...
+- [[file:02vaje/20260224fmer_09v.html][vaje 2, 2026/02/24:]] Kovarianca in korelacija; širjenje napak v splošnem predpisu, uvod v združevanje odvisnih meritev
