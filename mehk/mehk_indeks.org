@@ -1,0 +1,8 @@
+#+title: Mehanika Kontinuov
+* Predavanja
+* Vaje
+
+Tukaj so zbrani zapiski vaj pri prof. Jan Lipcu
+
+- ...
+- [[file:02vaje/20260311mehk_11v.html][vaje 3, 2026/03/12:]] Jekleni valj z izolacijo in lastne frekvence elastične sfere.

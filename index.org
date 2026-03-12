@@ -31,3 +31,4 @@ Welcome to my corner of the internet. Here you can find done, not-done and orpha
 - [[file:kvameh/kvameh_indeks.html][Kvantna mehanika]] pri prof. dr. Ramšaku
 - [[file:maf2/maf2_indeks.html][Matematična fizika 2]] pri prof. dr. Žnidariču
 - [[file:fmer/fmer_indeks.org][Fizikalna merjenja]]
+- [[file:mehk/mehk_indeks.html][Mehanika Kontinuov]]
