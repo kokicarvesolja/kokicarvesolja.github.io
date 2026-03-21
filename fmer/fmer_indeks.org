@@ -3,5 +3,16 @@
 * Vaje
 
 Tukaj so zbrani zapiski vaj pri prof. Gregor Kladniku.
-- ...
+- [[file:02vaje/20260217fmer_08v.html][vaje 1, 2026/02/17:]] meritve, gaussova metoda na funkciji dveh spremenljivk, širjenje napak po Gaussovi metodi, merjenje časa preleta
 - [[file:02vaje/20260224fmer_09v.html][vaje 2, 2026/02/24:]] Kovarianca in korelacija; širjenje napak v splošnem predpisu, uvod v združevanje odvisnih meritev
+- [[file:02vaje/20260303fmer_10v.html][vaje 3, 2026/03/03:]] uvod v združevanje meritev, naloga: meritev višine, optimalno združevanje neodvisnih meritev, nalog: meritev hitrosti (zvoka), naloga: uteženo povprečje in Kalmanov filter
+- [[file:02vaje/20260310fmer_11v.html][vaje 4, 2026/03/10:]] Kalmanov filter za sledenje spremenljivki \( x(t) \) v diskretni sliki, naloga: kroglica na stopnici s in brez šuma, Kalmanov filter za sledenje vektorski spremenljivki v diskretni sliki, naloga: Kalmanov filter prožnega trka dveh teles
+- [[file:02vaje/20260317fmer_12v.html][vaje 5, 2026/03/17:]] Nadaljevanje naloge: Kalmanov filter prožnega trka dveh telesa, naloga: geometrijska optika, teorija in primer: Kalmanov filter z linearnimi vezmi, teorija in primer: ostrenje s Kalmanovim filtrom z upoštevanjem linearnih vezi.
+
+* Export to HTML
+
+For faster export, evaluate
+
+#+begin_src bash
+pandoc fmer/fmer_indeks.org -s -o fmer/fmer_indeks.html -c stylesBW.css --include-in-header=preamble.html --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --toc=true
+#+end_src
