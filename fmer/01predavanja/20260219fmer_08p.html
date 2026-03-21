@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Predavanja iz Fizikalnih merjenj, 8. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Predavanja iz Fizikalnih merjenj, 8. teden v letu</h1>
+<p class="subtitle">2026/02/19</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#snov-predavanj" id="toc-snov-predavanj">Snov predavanj</a>
+<ul>
+<li><a href="#kalmanov-filter" id="toc-kalmanov-filter">Kalmanov
+filter</a></li>
+</ul></li>
+<li><a href="#uvod" id="toc-uvod">Uvod</a>
+<ul>
+<li><a href="#meritev-razdalje" id="toc-meritev-razdalje">Meritev
+razdalje</a></li>
+</ul></li>
+<li><a href="#optimalno-filtriranje"
+id="toc-optimalno-filtriranje">Optimalno filtriranje</a>
+<ul>
+<li><a href="#optimalno-sledenje-oceni-z-različno-disperzijo"
+id="toc-optimalno-sledenje-oceni-z-različno-disperzijo">Optimalno
+sledenje oceni z različno disperzijo</a>
+<ul>
+<li><a href="#brumov-šum" id="toc-brumov-šum">Brumov šum</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="snov-predavanj">Snov predavanj</h1>
+<h2 id="kalmanov-filter">Kalmanov filter</h2>
+<p>Meritve in merilen šum: slednji je nedeterministična, naključna
+spremenljivka.</p>
+<p>Ocene, združevanje ocen: ocena je naključna spremenljivka okoli prave
+vrednosti z nedoločenostjo.</p>
+<p>Korelirane ocene</p>
+<p>Optimalen filter za združevanje, sledenje spremenljivkam (konstantam
+ali skalarnih spremenljivkam)</p>
+<p>Vektorske spremenljivke</p>
+<p>Univerzalen merilni sistem</p>
+<p>Red senzorja - zakaj je nek merilni sistem dober</p>
+<p>Vpliv senzorja na opazovani sistem</p>
+<p>Termični šum na uporniku.</p>
+<p>Merjenje konstantnih signalov (postprodukcija signala)</p>
+<p>Metoda najmanjših kvadratov, lock-in detekcija, luščenje valov
+spektrih</p>
+<p>Merjenje</p>
+<h1 id="uvod">Uvod</h1>
+<h2 id="meritev-razdalje">Meritev razdalje</h2>
+<p>Primer, kako kameleon meri/dojema razdaljo. Na <span
+class="math inline">\( 10 \mathrm{cm} \)</span> oceni razdaljo na <span
+class="math inline">\( 100 \mu \mathrm{m} \)</span> natančno.</p>
+<h1 id="optimalno-filtriranje">Optimalno filtriranje</h1>
+<p>Iščemo predpis za optimalno sinhronizacijo opazovalnega sistema <span
+class="math inline">\( S \)</span> in merilnega sistema <span
+class="math inline">\( M \)</span>. Sistem <span class="math inline">\(
+S \)</span> ima spremenljivko <span class="math inline">\( x_s (t)
+\)</span>, merilni sistem pa ima oceno meritve <span
+class="math inline">\( \hat{x}_m \)</span>. <span class="math inline">\(
+\hat{\cdot} \)</span> nam bo povedala, da je to ocena. Opazovalni in
+merilni sistem povezuje nek detektor.</p>
+<p>Zahteve za detektor so:</p>
+<ul>
+<li>šibka sklopitev merilnega sistema <span class="math inline">\( M
+\)</span> z opazovalnim sistemom <span class="math inline">\( S
+\)</span>. Z drugimi besedami, izvedba meritve minimalno vpliva na
+opazovalni sistem.</li>
+<li>berljivost <span class="math inline">\( x_m(t) \)</span> v <span
+class="math inline">\( M \)</span></li>
+<li><span class="math inline">\( \left\langle \left( x_s - x_m
+\right)  ^2 \right\rangle \)</span> stanje usklajenosti</li>
+<li>dinamika naj bo čimbolj podobna zapisani(?) dinamiki za <span
+class="math inline">\( x_M(t) \)</span>: <span class="math inline">\(
+x_s (t) \)</span> in <span class="math inline">\( x_m(t) \)</span>
+podobni dinamiki</li>
+</ul>
+<p>Dinamika je bistvena sestavine filtrirnega procesa</p>
+<div class="my_example">
+<p>Opazujemo gibanje telesa v eni dimenziji.</p>
+<p>Izmerili smo lego telesa skozi čas, in vsak izmerek ima svojo
+nedoločenost. Nedoločenost nam pove, da je izmerek porazdeljen v okolici
+<span class="math inline">\( z \)</span> okrog prave vrednosti <span
+class="math inline">\( x \)</span>.</p>
+<p>Pravimo, da so izmerki <span class="math inline">\( z \)</span>
+porazdeljeni z normalno porazdelitvijo <span class="math inline">\( N(x,
+\sigma) \)</span>.</p>
+<p>Izmerke zapišemo kot</p>
+<p><span class="math display">\[ z(t) = x(t) + r(t),
+\]</span></p>
+<p>kjer je <span class="math inline">\( r(t) \)</span> normalno
+porazdeljen merilni šum.</p>
+<p>V primeru, da o spremenljivki ne vemo ničesar <span
+class="math inline">\( x_s (t) \)</span>. V tem primeru mora velja</p>
+<p><span class="math display">\[ x_M = z(t),
+\]</span></p>
+<p>kar pomeni, da lahko meritve samo povežemo skupaj.</p>
+<p>Drug možen primer, da poznamo dinamiko (v našem primeru npr.
+premoenakomerno gibanje, kjer je <span class="math inline">\( a = 0
+\)</span> in <span class="math inline">\( v = \mathrm{konst}
+\)</span>).</p>
+<p>Tretja možnost je, da ne poznamo dinamike, vendar poznamo lastnosti
+sistema. Primer tega je, da vemo, da je <span class="math inline">\( a
+&lt; \infty \)</span> oz. lahko še bolj natančno <span
+class="math inline">\( a \le 5 \frac{\mathrm{m}}{\mathrm{s}} \)</span>
+in npr. <span class="math inline">\( v &lt; c_0 \)</span>, kjer je <span
+class="math inline">\( c_0 \)</span> svetlobna hitrost. To nam omgooča,
+da z bolj prilagojeno krivuljo povežemo izmerke med seboj.</p>
+</div>
+<p>V nadaljevanju si bomo ogledali</p>
+<ul>
+<li>optimalno združevanje ocen z različno disperzijo</li>
+<li>sledenje on-line: konstanti, skalarni spremenljivki, vektorski
+spremenljivki.</li>
+</ul>
+<h2 id="optimalno-sledenje-oceni-z-različno-disperzijo">Optimalno
+sledenje oceni z različno disperzijo</h2>
+<p>Imamo izmerek</p>
+<p><span class="math display">\[ z_1 = x + r_1,
+\]</span></p>
+<p>kjer je <span class="math inline">\( r_1 \)</span> normalni šum,
+<span class="math inline">\( x \)</span> pa prava vrednost. Ker je šum
+naključna spremenljivka, je tudi <span class="math inline">\( z_1
+\)</span> naključna spremenljivka. Velja</p>
+<p><span class="math display">\[ \frac{\mathrm{d} P}{\mathrm{d} r_{1}} =
+\frac{1}{\sqrt{2 \pi} \sigma_1} \exp \left\{ - \frac{r_1 ^2}{2 \sigma_1
+^2} \right\} = N(0, \sigma_1).
+\]</span></p>
+<p>Drug izmerek je <span class="math inline">\( z_2 = x + r_2 \)</span>,
+kjer je <span class="math inline">\( r_2 \)</span> ponovno porazdeljena
+po <span class="math inline">\( N(0, \sigma_2) \)</span>.</p>
+<p><span class="math inline">\( \sigma \)</span> je vrednost pri Full
+Width Half Maximum in je</p>
+<p><span class="math display">\[ FWHM = 2.3 5 \sigma = \sqrt{2 \ln 2} (2
+\sigma) \approx 2 \sigma
+\]</span></p>
+<p>Šum ima Gaussovo porazdelitev zaradi centralnega limitnega izreka
+(CLI), ki pravi, da vsota</p>
+<p><span class="math display">\[ r = \sum\limits_{i = 1}^{N \to \infty}
+r_i
+\]</span></p>
+<p>teži h Gaussovi porazdelitvi ne glede na porazdelitev (manjka beseda)
+posameznik prispevkov.</p>
+<h3 id="brumov-šum">Brumov šum</h3>
+<p>To je motnja zaradi napajanja z AC napetostjo pri frekvenci <span
+class="math inline">\( \nu = 50 \mathrm{Hz} \)</span>.</p>
+<p><img src="figures/08p_BrumovSum.png" /></p>
+<p>Meritev izvedemo zelo hitro, predpostavimo trenutno meritev, ki jo
+označimo z <span class="math inline">\( U_m \)</span>.</p>
+<p>Opazovalni sistem je <span class="math inline">\( U = U_0 \cos
+(\omega t) \)</span>. Povprečna vrednost je</p>
+<p><span class="math display">\[ \left\langle U(t) \right\rangle = 0.
+\]</span></p>
+<p>Porazdelitev je neodvisna od časa, torej</p>
+<p><span class="math display">\[ \frac{\mathrm{d} P}{\mathrm{d} t} =
+\mathrm{konst} = \frac{1}{\frac{T}{2}},
+\]</span></p>
+<p>kjer je <span class="math inline">\( \frac{T}{2} \)</span> polovica
+obhodnega časa <span class="math inline">\( T = \frac{1}{\nu}
+\)</span>.</p>
+<p>Porazdeljenost pa je odvisna od časa in bo</p>
+<p><span class="math display">\[ \frac{\mathrm{d} P}{\mathrm{d} U}=
+\frac{\mathrm{d} P}{\mathrm{d} t} \frac{\mathrm{d} t}{\mathrm{d} U} =
+\frac{1}{\frac{T}{2}} \cdot \frac{1}{\omega_0 U_0 \sqrt{1- \cos ^2
+(\omega t)}} = \frac{1}{\pi} \frac{1}{\sqrt{U_0 ^2 - U ^2}},
+\]</span></p>
+<p>kjer smo upoštevali</p>
+<p><span class="math display">\[ \mathrm{d} U = - \omega U_0 \sin
+(\omega t) \mathrm{d} t \quad \text{ in } \quad \omega = 2 \pi \nu =
+\frac{2 \pi}{T}.
+\]</span></p>
+<p>Takemu šumu pravimo Brumov šum.</p>
+<p><img src="figures/08p_BrumovSum2.png" /></p>
+<p>Z večanjem števila prispevkov gre in fact res proti Gaussovi
+porazdelitvi - konvolucija prispevkov.</p>
+</body>
+</html>

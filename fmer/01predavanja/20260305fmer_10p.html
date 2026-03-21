@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Predavanja iz Fizikalnih merjenj, 10. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Predavanja iz Fizikalnih merjenj, 10. teden v
+letu</h1>
+<p class="subtitle">2026/03/05</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#merjenje-skalarnih-spremenljivk-xt"
+id="toc-merjenje-skalarnih-spremenljivk-xt">Merjenje skalarnih
+spremenljivk <span class="math inline">\( x(t) \)</span></a>
+<ul>
+<li><a href="#dinamični-šum" id="toc-dinamični-šum">Dinamični
+šum</a></li>
+</ul></li>
+<li><a href="#vektorske-spremenljivke"
+id="toc-vektorske-spremenljivke">Vektorske spremenljivke</a>
+<ul>
+<li><a
+href="#disperzija-in-korelacija-med-komponentami-vektorskih-količin"
+id="toc-disperzija-in-korelacija-med-komponentami-vektorskih-količin">Disperzija
+in korelacija med komponentami vektorskih količin</a></li>
+<li><a href="#senzor-več-spremenljivk"
+id="toc-senzor-več-spremenljivk">Senzor več spremenljivk</a></li>
+<li><a href="#ostrenje-z-vektorskimi-meritvami"
+id="toc-ostrenje-z-vektorskimi-meritvami">Ostrenje z vektorskimi
+meritvami</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="merjenje-skalarnih-spremenljivk-xt">Merjenje skalarnih
+spremenljivk <span class="math inline">\( x(t) \)</span></h1>
+<p>V primeru, da ne poznamo dinamike, potem bo najboljša dinamike
+kar</p>
+<p><span class="math display">\[ \hat{x}(t) = z(t).
+\]</span></p>
+<p>Z drugimi besedamo, meritve rabimo opravljati čim pogosteje in
+natančneje, stare pa zavreči.</p>
+<p>Varianca je potem kar</p>
+<p><span class="math display">\[ \hat{\sigma}_x ^2 (t) = R.
+\]</span></p>
+<p>V primeru, če poznamo dinamiko med sistemi, potem rešujemo linearno
+diferencialno enačbo 1. reda</p>
+<p><span class="math display">\[ \dot{x} (t) = A x + C(t).
+\]</span></p>
+<p>V diskretnem prostoru, kjer vzorčimo s časom <span
+class="math inline">\( T \)</span>, bo zgornja diferencialna enačba
+postala diferenčna enačba</p>
+<p><span class="math display">\[ \dot{x} = \frac{x_{n + 1} - x_n}{T},
+\]</span></p>
+<p>kjer sta <span class="math inline">\( x_{n + 1} = x((n + 1)T)
+\)</span> in <span class="math inline">\( x_n = x(n T) \)</span>. Potem
+lahko izrazimo <span class="math inline">\( x_{n + 1} \)</span></p>
+<p><span class="math display">\[ x_{n + 1} = x_n + \left[ A (nT) x_n +
+C(nT) \right] \cdot T = \left[ 1 + A(nT) \cdot T \right] x_n + C(nT).
+\]</span></p>
+<p>Z uvedbo <span class="math inline">\( \Phi_n = [1 + A(nT) \cdot T]
+\)</span> in <span class="math inline">\( c_n = C(n T) \cdot T \)</span>
+dobimo zapis za dinamični zakon v diferenčni enačbi</p>
+<p><span class="math display">\[ x_{n + 1} = \Phi_n x_n + c_n.
+\]</span></p>
+<p>Porazdeljenost se ohranja tudi znotraj diferenčne enačbe, saj sta
+množenje in seštevanje linearni operaciji. Sedaj starih meritev ne smemo
+zanemariti kakor smo pri neznani dinamiki.</p>
+<p>Isto dinamiko privzamemo tudi za oceno <span class="math inline">\(
+\hat{x} \)</span> v merilnem sistemu <span class="math inline">\( M
+\)</span>.</p>
+<p>Recimo, da smo opravili <span class="math inline">\( n \)</span>
+vzorčenj. Z znano dinamiko v času <span class="math inline">\( t = n T
+\)</span> in optimalno oceno <span class="math inline">\( \hat{x}_n
+\)</span> in <span class="math inline">\( \hat{\sigma}_n ^2 \)</span>,
+lahko napovemo oceno v času <span class="math inline">\( t = (n + 1) T
+\)</span></p>
+<p><span class="math display">\[ \bar{x}_{n + 1} = \Phi_n \hat{x}_n +
+c_n \quad \text{ in } \quad \bar{\sigma}_{n + 1} ^2 = \phi_{n ^2}
+\hat{\sigma}_n ^2.
+\]</span></p>
+<p>Dokažimo, da ta napoved variance ocene drži.</p>
+<p>Varianco ob času <span class="math inline">\( t = nT \)</span>
+zapišemo po definiciji</p>
+<p><span class="math display">\[ \hat{\sigma}_n ^2 = \left\langle \left(
+\hat{x}_n - x_n \right) ^2 \right\rangle.
+\]</span></p>
+<p>Napoved variance pa je</p>
+<p><span class="math display">\[ \bar{\sigma}_{n + 1} ^2 = \left\langle
+\left( \bar{x}_{n + 1} - x_{n + 1}\right) ^2 \right\rangle.
+\]</span></p>
+<p>Upoštevamo napoved ocene in razpišemo</p>
+<p><span class="math display">\[ \bar{\sigma}_{n + 1} ^2 = \left\langle
+\left[ \left( \Phi_n \hat{x}_n + c_n \right) ^2 - \left( \Phi_n x_n +
+c_n \right) ^2\right] \right\rangle = \left\langle \left[ \Phi_n \left(
+\hat{x}_n - x_n \right) \right] ^2 \right\rangle.
+\]</span></p>
+<p>Zaključimo torej</p>
+<p><span class="math display">\[ \bar{\sigma}_{n + 1} ^2 = \Phi_n ^2
+\left\langle \left( \hat{x}_n - x_n \right) ^2 \right\rangle = \Phi_n ^2
+\hat{\sigma}_n ^2.
+\]</span></p>
+<p>Za meritev <span class="math inline">\( z_{n + 1} \)</span> z
+varianco <span class="math inline">\( \sigma ^2 \)</span> lahko
+izostrimo oceno v času <span class="math inline">\( t = (n + 1) T
+\)</span> z enačbami</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \bar{x}_{n + 1} +
+\frac{\sigma_{n + 1} ^2}{\sigma ^2} \left( z_{n + 1} - \bar{x}_{n + 1}
+\right) \quad \text{ in } \quad \hat{\sigma}_{n + 1} ^{-2} =
+\bar{\sigma}_{n + 1}^{-2} + \sigma^{-2}.
+\]</span></p>
+<p>Zgornjemu postopku pravimo ostrenje z meritvijo.</p>
+<p>Uvedemo nove oznake: <span class="math inline">\( \hat{\sigma}_{n +
+1} ^2 \)</span> postane kovarianca izostrene ocene <span
+class="math inline">\( P_{n +1} \)</span>. <span class="math inline">\(
+\bar{\sigma}_{n + 1} ^2 \)</span> postane kovarianca napovedi <span
+class="math inline">\( M_{n + 1} \)</span>, <span class="math inline">\(
+\frac{\hat{\sigma}_{n + 1} ^2}{\sigma ^2} \)</span> postane ojačevalni
+faktor <span class="math inline">\( K_{n + 1} \)</span> in <span
+class="math inline">\( \left( z_{n + 1} - \bar{x}_{n + 1} \right)
+\)</span> je inovacija.</p>
+<p>Z novimi oznakami imamo tako</p>
+<p><span class="math display">\[ M_{n + 1} = \phi_n ^2 P_n \quad \text{
+in } \quad P_{n + 1} = \frac{M_{n + 1} \sigma ^2}{M_{n + 1} + \sigma
+^2}= M_{n + 1} - \frac{M_{n + 1} ^2}{M_{n + 1} + \sigma ^2}
+\]</span></p>
+<h2 id="dinamični-šum">Dinamični šum</h2>
+<p>Dinamiko spremenljivke <span class="math inline">\( x(t) \)</span> v
+sistemu <span class="math inline">\( S \)</span> ne poznamo eksaktno,
+torej imata <span class="math inline">\( \Phi_n \)</span> in <span
+class="math inline">\( c_n \)</span> svojo negotovost.</p>
+<p>Spremenljivko spreminja nek neznan člen</p>
+<p><span class="math display">\[ x_{n + 1} = \Phi_n x_n + c_n + \Gamma_n
+w(t),
+\]</span></p>
+<p>za katerega ne vemo ali je pozitiven ali negativen. Posledično lahko
+zaključimo, da je njena pričakovana vrednost <span
+class="math inline">\( \left\langle w \right\rangle = 0 \)</span>.
+Neznanemu členu pravimo naključeno šum, <span class="math inline">\(
+\Gamma_n \)</span> pa je multiplikativni faktor.</p>
+<p>Primer takega šuma so trki med delci: okolica deluje na delec v
+pozitivni ali negativni smeri.</p>
+<p>Za naključen šum velja</p>
+<p><span class="math display">\[ \left\langle w_n, w_{n&#39;}
+\right\rangle = \delta_{n, n&#39;} Q,
+\]</span></p>
+<p>kjer je <span class="math inline">\( Q \)</span> velikost dinamičnega
+šuma, ki je nekorelirana (<span class="math inline">\( \delta
+\)</span>).</p>
+<p>Ponovna analogija s trki med delci: kam se delec odbije v naslednjem
+trenutku je neodvisno od trkov s prejšnjimi delci.</p>
+<p>V diskretni obliki spremenljivko <span class="math inline">\( x
+\)</span> zapišemo z dinamičnim šumom</p>
+<p><span class="math display">\[ x_{n + 1} = \Phi_n x_n + c_n + \Gamma_n
+w_n.
+\]</span></p>
+<p>V sistemu <span class="math inline">\( M \)</span> pa bo odstopanje
+od spremenljivko v sistemu <span class="math inline">\( S \)</span>
+ravno <span class="math inline">\( \Gamma_n w_n \)</span>, saj ne
+poznamo dinamike šuma. V sistemu <span class="math inline">\( M
+\)</span> je ocena</p>
+<p><span class="math display">\[ \bar{x}_{n + 1} = \Phi \hat{x}_n + c_n.
+\]</span></p>
+<p>To odstopanje na ostrenje z meritvijo</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \bar{x} _{n + 1} +
+\frac{\hat{\sigma}_{n + 1} ^2}{\sigma ^2} \left( z_{n + 1} - \bar{x}_{n
++ 1} \right),
+\]</span></p>
+<p>ne bo imelo vpliva.</p>
+<p>Poglejmo si, kakšen vpliv pa bo imela na kovarianco napovedi</p>
+<span class="math display">\[\begin{align*}
+  M_{n + 1} &amp;= \left\langle \left[ \left( \bar{x}_{n + 1} - x_{n +
+1} \right) \right]^2 \right\rangle \\
+&amp;= \left\langle\left[ \left( \Phi_n \hat{x}_n  + c_n \right) -
+\left( \Phi_n x_n + c_n + \Gamma_n w_n \right)\right] ^2  \right\rangle
+\\
+&amp;= \left\langle \left[ \Phi_n \left( \hat{x}_n - x_n \right) -
+\Gamma_n w_n \right] ^2 \right\rangle.
+\end{align*}
+\]</span>
+<p>Kvadriramo oklepaje in ni korelacije med <span class="math inline">\(
+\hat{x}_n, x_n \)</span> in <span class="math inline">\( w_n \)</span>,
+nam ostane samo</p>
+<span class="math display">\[\begin{align*}
+  M_{n + 1} &amp;= \left\langle \Phi_n ^2 \left( \hat{x}_n - x \right)
+^2 + \left( \Gamma_n w_n \right) ^2 \right\rangle \\
+&amp;= \Phi_n ^2 P_n + \Gamma_n ^2 \left\langle w_n ^2 \right\rangle.
+\end{align*}
+\]</span>
+<p>Kovarianca napovedi ima torej v vsakem trenutku prišteto dodaten
+konstanten člen</p>
+<p><span class="math display">\[ M_{n + 1} = \Phi_n ^2 P_n + Q_n.
+\]</span></p>
+<p>Pri prehodu v zvezno sliko je ocena spremenljivke v sistemu <span
+class="math inline">\( M \)</span></p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \bar{x}_{n + 1} +
+K_{n + 1} \left( z_{n + 1} - \bar{x}_{n + 1} \right).
+\]</span></p>
+<p>Upoštevamo definicijo napovedi in</p>
+<p><span class="math display">\[ \frac{\hat{x}_{n + 1} - x_n}{T} =
+\frac{\Phi_n \hat{x}_n + c_n - \hat{x}_n + K_{n + 1} (z_{n + 1} -
+\bar{x}_{n + 1})}{T}.
+\]</span></p>
+<p>Dodatno lahko pretvorimo v</p>
+<p><span class="math display">\[ \frac{\hat{x}_{n + 1} - \hat{x}_n}{T} =
+\frac{\left( \Phi_n - 1 \right)}{T} \hat{x}_n + \frac{c_n}{T} +
+\frac{P_{n + 1}}{\sigma ^2 T} \left( z _{n + 1} - \bar{x}_{n + 1}
+\right).
+\]</span></p>
+<p>V limiti <span class="math inline">\( T \to 0 \)</span> dobimo
+enačbo</p>
+<p><span class="math display">\[ \dot{\hat{x}} = A(t) \hat{x}(t) + c(t)
++ \frac{P(t)}{R} \left( z(t) - \hat{x}(t) \right),
+\]</span></p>
+<p>kjer je <span class="math inline">\( \frac{\Phi_n - 1}{T} = A(t)
+\)</span> in <span class="math inline">\( \sigma ^2 T = R \)</span>.
+Upoštevali smo, da v limiti <span class="math inline">\( \hat{x}_n =
+\bar{x}_n = \hat{x}(t) \)</span> in napoved kovariance <span
+class="math inline">\( M_{n + 1} \)</span> je <span
+class="math inline">\( P(t) \)</span> (prav tako je v limiti <span
+class="math inline">\( P_{n + 1} = P(t) \)</span>).</p>
+<p>Na podoben način želimo preiti v zvezno sliko tudi pri kovarianci
+izostrene ocene</p>
+<p><span class="math display">\[ P_{n + 1} = M_{n + 1} - \frac{M_{n + 1}
+^2}{M_{n + 1} + \sigma ^2} = \Phi_n ^2 P_n + \Gamma_n Q_n - \frac{\left(
+\Phi_n ^2 P_n + \Gamma_n  ^2 Q_n \right) ^2}{M_{n + 1} + \sigma ^2}.
+\]</span></p>
+<p>Za postopanje do odvoda zapišemo</p>
+<p><span class="math display">\[ \frac{P_{n + 1} - P_n}{T}= \frac{\left(
+\Phi_n ^2 - 1 \right)P_n}{T} + \frac{\Gamma_n ^2 Q_n}{T} - \frac{\Phi_n
+^2 P_n ^2 + 2 \Phi_n ^2 P_n \Gamma_n ^2 Q_n + \Gamma_n ^4 Q_n ^2}{TM_{n
++ 1} + \sigma ^2 T} .
+\]</span></p>
+<p>V limiti <span class="math inline">\( T \to 0 \)</span> gre <span
+class="math inline">\( \Phi_n \to 1 \)</span>, hkrati pa upoštevamo
+identiteto od prej in lahko prvi člen zapišemo</p>
+<p><span class="math display">\[ \frac{\left( \Phi_n ^2 - 1
+\right)P_n}{T} = \left( \Phi_n - 1 \right)\frac{\left( \Phi_n - 1
+\right) }{T} P_n = 2 A P(t).
+\]</span></p>
+<p>Povejmo še nekaj limit. Po definicije nekorelacije velja <span
+class="math inline">\( \left\langle w_k w_{k&#39;} \right\rangle =
+\delta_{k k&#39;} Q_n \)</span>, iz česar sledijo limite</p>
+<span class="math display">\[\begin{align*}
+  \lim_{T \to 0} \left( Q_n T \right) &amp;= Q(t)\\
+\lim_{T \to 0} \left( \sigma ^2 T \right) &amp;= R(t) \\
+\lim_{T \to 0} \left( \frac{\Gamma_n}{T} \right) &amp;= T(t)
+\end{align*}
+\]</span>
+<p>Drugi člen moramo pomnožiti s <span class="math inline">\(
+\frac{T}{T} \)</span>, da lahko zapišemo limito</p>
+<p><span class="math display">\[ \frac{\Gamma_n ^2 Q T}{T ^2} = \Gamma
+^2 Q.
+\]</span></p>
+<p>Pri zadnjem členu pa je v limiti</p>
+<p><span class="math display">\[ \frac{\Phi_n ^2 P_n ^2 + 2 \Phi_n ^2
+P_n \Gamma_n ^2 Q_n + \Gamma_n ^4 Q_n ^2}{TM_{n + 1} + \sigma ^2 T}
+=  \frac{1}{T M(t) + R} \left[ P ^2(t) + \frac{2 P \Gamma Q T}{T} +
+\Gamma ^2 (t) Q(t) T ^2 \right].
+\]</span></p>
+<p>Zadnje dva člena smo razširili s <span class="math inline">\( T
+\)</span> in v limiti sta potem ničelna. Končna enačba je torej</p>
+<p><span class="math display">\[ \dot{P} = 2 A P(t) + \Gamma ^2 Q -
+\frac{P ^2}{R}.
+\]</span></p>
+<p>Prvi člen nam pove dinamiko, drugi člen nam povečuje kovarianco
+zaradi dinamičnega šuma, tretji člen pa zmanjša kovarianco zaradi dotoka
+novih meritev.</p>
+<h1 id="vektorske-spremenljivke">Vektorske spremenljivke</h1>
+<p>V sistemu <span class="math inline">\( S \)</span> popišemo več
+spremenljivk <span class="math inline">\( \mathbf{r} = [x,y]^T = [x,
+v]^T \)</span>.</p>
+<p>Včasih nam dinamika narekuje, da bi morali opazovati spremenljivk
+višjega reda, je Newtonov zakon <span class="math inline">\( \sum_{}^{}
+F = m a = m \ddot{x} \)</span>. Pri njem imamo 2. red spremenljivke
+<span class="math inline">\( x(t) \)</span>. Namesto tega prevedemo
+opazovanje na več spremenljivk <span class="math inline">\( \dot{x} = v
+\)</span> in <span class="math inline">\( \dot{v} = \sum\limits_{}^{}
+\frac{F}{m} \)</span> nižjega reda.</p>
+<p>Potem bo opazovani sistem</p>
+<p><span class="math display">\[ \frac{\mathrm{d} }{\mathrm{d} t}
+\begin{bmatrix} x \\ v \end{bmatrix} = \begin{bmatrix}
+                                                                           0
+&amp; 1 \\
+                                                                           0
+&amp; 0
+                                                                            \end{bmatrix}
+\begin{bmatrix} x \\ v \end{bmatrix} + \mathbf{c}.
+\]</span></p>
+<p>Sedaj imamo sistem diferencialnih enačb.</p>
+<p>Imamo torej spremenljivke</p>
+<p><span class="math display">\[ \mathbf{x} = \begin{bmatrix} x_{1} \\
+x_{2} \\ x_{3} \\ \vdots \\ x_{n} \end{bmatrix}.
+\]</span></p>
+<p>Ocene v sistemu <span class="math inline">\( M \)</span> s
+pripadajočimi disperzijami pa so</p>
+<p><span class="math display">\[ \hat{\mathbf{x}} = \begin{bmatrix}
+\hat{x}_{1} \\ \hat{x}_{2} \\ \vdots \\ \hat{x}_{n} \end{bmatrix}.
+\]</span></p>
+<p>Ker so disperzije lahko medseboj korelirane</p>
+<p><span class="math display">\[ \left\langle \left( \hat{x}_i - x_i
+\right) ^2 \right\rangle = \hat{\sigma}_{x_i} ^2 \quad \text{ in } \quad
+\left\langle \left( \hat{x}_i - x_i \right) \left( \hat{x}_j - x_j
+\right) \right\rangle = \hat{\sigma}_{x_i, x_j}.
+\]</span></p>
+<p>Zapišemo jih v kovariančno matriko <span class="math inline">\( P
+\)</span> za <span class="math inline">\( \dot{\mathbf{x}} \)</span></p>
+<p><span class="math display">\[ P = \begin{bmatrix}
+       \hat{\sigma}_{1} ^2 &amp; &amp; &amp; &amp; &amp;  \\
+        &amp; \hat{\sigma}_2 ^2 &amp; &amp; &amp; &amp;  \\
+        &amp;  &amp; \ddots &amp; &amp; &amp; \\
+        &amp; &amp; \hat{\sigma}_{ij} &amp; \hat{\sigma}_{ii} ^2 &amp;
+&amp; \\
+        &amp; &amp; &amp; &amp; \ddots &amp; \\
+        &amp; &amp; &amp; &amp; &amp; \hat{\sigma}_n ^2
+       \end{bmatrix},
+\]</span></p>
+<p>kjer so diagonalni komponenti variance, izvendiagonalne komponente pa
+korelacije.</p>
+<div class="problem">
+<p>Imejmo sistem <span class="math inline">\( S \)</span> s
+spremenljivkama <span class="math inline">\( \mathbf{x} = [x, v]^T
+\)</span>. Zajemamo meritve oblike <span class="math inline">\( z = x +
+r \)</span>, kjer je <span class="math inline">\( \left\langle r ^2
+\right\rangle = \sigma_r ^2\)</span>. Ocene v merilnem sistemu <span
+class="math inline">\( M \)</span> so</p>
+<p><span class="math display">\[ \hat{\mathbf{x}} = \begin{bmatrix}
+\hat{x} \\ \hat{v} \end{bmatrix} = \begin{bmatrix} x + p_{x} \\ v +
+p_{v} \end{bmatrix}.
+\]</span></p>
+<p>Povprečje ocene je potem</p>
+<p><span class="math display">\[ \bar{\mathbf{x}} = \begin{bmatrix}
+\bar{x} \\ \bar{p} \end{bmatrix} = \begin{bmatrix} x + m_{x} \\ v +
+m_{v} \end{bmatrix}
+\]</span></p>
+<p>Veljajo nekorelacije</p>
+<p><span class="math display">\[ \left\langle r m_x \right\rangle =
+\left\langle r p_x \right\rangle = \left\langle r m_v \right\rangle = 0.
+\]</span></p>
+<p>Poskusimo izostriti z linearno superpozicijo</p>
+<span class="math display">\[\begin{align*}
+  \hat{x} &amp;= x + p_x = a_{xx } \bar{x} + a_{xv} \bar{v} + b_x z \\
+\hat{v} &amp;= v + p_v = a_{vx } \bar{x} + a_{vv } \bar{v} + b_v z
+\end{align*}
+\]</span>
+<p>Zapišemo torej</p>
+<p><span class="math display">\[ \hat{x} = a_{xx } (x + m_x) +
+a_{xv}  (v + m_v) + b_x (x + r).
+\]</span></p>
+<p>In ker je</p>
+<p><span class="math display">\[ x + p_x = x (a _{xx } + b_x) + a_{xv} v
++ a_{xv} m_v + a_{xx } m_x + b_x r,
+\]</span></p>
+<p>na levi strani nimamo nobenega člena z <span class="math inline">\( v
+\)</span>, zaključimo <span class="math inline">\( a_{xv} = 0 \)</span>.
+Hkrati pa dobimo tudi pogoj <span class="math inline">\( a_{xx } + b_x =
+1 \)</span>. Potem je</p>
+<p><span class="math display">\[ p_x = a_{xx } m_x + b_x r = a_{xx } m_x
++ (1 - a_{xx }) r.
+\]</span></p>
+<p>Pričakovane vrednosti so ničelne, zato bomo gledali variance</p>
+<span class="math display">\[\begin{align*}
+  \left\langle p_x ^2 \right\rangle &amp;= a_{xx } ^2 \left\langle m_x
+\right\rangle ^2 + (1 - a_{xx }) ^2 \left\langle r ^2 \right\rangle +
+a_{xx } (1 - a_{xx }) \left\langle w_x r \right\rangle \\
+&amp;= a_{xx } ^2 \sigma_x ^2 + (1 - a_{xx }) ^2 \sigma_r ^2.
+\end{align*}
+\]</span>
+<p>Upoštevali smo nekoreliranost. Optimalna ocena je potem pri</p>
+<p><span class="math display">\[ \frac{\mathrm{d} }{\mathrm{d} a_{xx }}
+\left\langle p_x ^2 \right\rangle  = 0,
+\]</span></p>
+<p>kar je pri</p>
+<p><span class="math display">\[ a_{xx } \frac{\sigma_r ^2}{\sigma_r ^2
++ \sigma_x ^2}.
+\]</span></p>
+<p>Na podoben način pridemo tudi pri <span class="math inline">\(
+\hat{v} \)</span></p>
+<p><span class="math display">\[ v + p_v = (a_{vx} + b_v) x + a_{vx} m_x
++ a_{vv} v + a_{vv} m_v + b_v.
+\]</span></p>
+<p>Zaključimo, da je <span class="math inline">\( a_{vv} = 1 \)</span>
+ter <span class="math inline">\( a_{vx} + b_v = 0 \)</span>.</p>
+<p>Torej</p>
+<p><span class="math display">\[ p_v = a_{vx} m_x + m_r + b_v r = \left(
+a_{vx} (m_x - r) + m_r \right) ^2.
+\]</span></p>
+<p>Izračunamo kvadrat in varianco</p>
+<p><span class="math display">\[ \left\langle p_v ^2 \right\rangle =
+a_{vx} ^2 \left[ \left\langle m_x ^2 \right\rangle + \left\langle r ^2
+\right\rangle \right] + \left\langle m_v ^2 \right\rangle + 2 a_{vx}
+\left\langle m_x m_v \right\rangle.
+\]</span></p>
+<p>Po odvodu</p>
+<p><span class="math display">\[ \frac{\mathrm{d} }{\mathrm{d} a_{vx}}
+\left\langle p_v ^2 \right\rangle = 0,
+\]</span></p>
+<p>dobimo</p>
+<p><span class="math display">\[ a_{vx} = -\frac{\left\langle m_x m_v
+\right\rangle}{\sigma_x ^2 + \sigma_r ^2}.
+\]</span></p>
+<p>Ocena bo torej, ko nadomestimo vse izpeljane člene</p>
+<p><span class="math display">\[ \hat{x} = \bar{x} + \frac{\sigma_x
+^2}{\sigma_x ^2 + \sigma_r ^2} \left( z - \bar{x} \right)
+\]</span></p>
+<p>in</p>
+<p><span class="math display">\[ \hat{v} = \bar{v} + \frac{\left\langle
+m_x m_v \right\rangle}{\sigma_x ^2 + \sigma_r ^2} \left( z - \bar{x}
+\right).
+\]</span></p>
+<p>Zaključimo, da z meritvijo lege in korelacije hkrati ostrimo tudi
+komponento hitrosti, čeprav je nismo direktno merili.</p>
+</div>
+<h2
+id="disperzija-in-korelacija-med-komponentami-vektorskih-količin">Disperzija
+in korelacija med komponentami vektorskih količin</h2>
+<p>Kovariančna matrika je definirana kot</p>
+<p><span class="math display">\[ M = \left\langle \left(
+\bar{\mathbf{x}} - \mathbf{x} \right) \left( \bar{\mathbf{x}} -
+\mathbf{x} \right)^T \right\rangle.
+\]</span></p>
+<p>Kovariančna matrika izostrenih ocen pa je</p>
+<p><span class="math display">\[ P = \left\langle \left(
+\hat{\mathbf{x}} - \mathbf{x} \right) \left( \hat{\mathbf{x}} -
+\mathbf{x} \right)^T \right\rangle .
+\]</span></p>
+<p>Obe matriki sta pozitivno definitni in simetrični, kar pomeni, da
+velja</p>
+<p><span class="math display">\[ P = P^T \quad \text{ in } \quad M =
+M^T.
+\]</span></p>
+<p>Zanima nas verjetnostna gostota <span class="math inline">\(
+P(\bar{x}) \)</span>.</p>
+<p><span class="math display">\[ P(\bar{x}) = \frac{1}{\sqrt{\left( 2
+\pi \right) ^2} \det M} \exp \left[ - \frac{1}{2} \left( \bar{x} - x
+\right)^T M^{-1} \left( \bar{x} - x \right) \right].
+\]</span></p>
+<p>Za <span class="math inline">\( \mathbf{x} = [x, y] \)</span> bo
+potem verjetnostna gostota</p>
+<p><span class="math display">\[ P(\bar{x}, \bar{y}) = \frac{1}{2 \pi}
+\frac{1}{\sigma_x \sigma_y \sqrt{1 - \rho ^2}} \exp \left[ - \frac{1}{2
+(1 - \rho ^2)} \left( \frac{(\bar{x} - x) ^2}{\sigma_x ^2} +
+\frac{(\bar{y} - y) ^2}{\sigma_y ^2} - \frac{2 \rho (\bar{x} - x)
+(\bar{y} -y)}{\sigma_x \sigma_y} \right) \right].
+\]</span></p>
+<p>Označimo korelacijo</p>
+<p><span class="math display">\[ \left\langle (\bar{x} - x) (\bar{y} -
+y) \right\rangle = \rho \sigma_x \sigma_y
+\]</span></p>
+<h2 id="senzor-več-spremenljivk">Senzor več spremenljivk</h2>
+<p>Imamo sistem <span class="math inline">\( S \)</span> s
+spremenljivkami <span class="math inline">\( \mathbf{x} = [x_1, x_2,
+x_3, \ldots, x_n] \)</span> in zajemamo podatke preko večih senzorjev z
+meritvami <span class="math inline">\( \mathbf{z} = [z_1, z_2, z_3,
+\ldots, z_s] \)</span>. Okno <span class="math inline">\( H \)</span> je
+matrika <span class="math inline">\( s \times n \)</span>, ki preslika
+meritve v spremenljivke. Signali iz senzorjev so</p>
+<p><span class="math display">\[ \mathbf{z} = H \mathbf{x} + \mathbf{r}.
+\]</span></p>
+<p>Na vsako komponento deluje nek šum in imamo vektor merilnega šuma
+<span class="math inline">\( \mathbf{r} = [r_1, r_2, r_3, \ldots, r_s]
+\)</span>. Vsak šum ima pripadajoče odstopanje <span
+class="math inline">\( \sigma_i ^2, \ i = 1, 2, 3, \ldots, s
+\)</span>.</p>
+<p>Pri kanalih, ki merijo, lahko pride do t.i. <em>cross-talking</em>. V
+mejah našega predmeta to pomeni, da pride do korelacije. Vse skupaj
+sestavljamo kovariančno matriko merilnega šuma</p>
+<p><span class="math display">\[ R = \left\langle \mathbf{r}
+\mathbf{r}^T \right\rangle.
+\]</span></p>
+<div class="my_example">
+<p>Na primeru si poglejmo okno <span class="math inline">\( H \)</span>.
+Imejmo spremenljivki <span class="math inline">\( \mathbf{x} = [\phi_1,
+\phi_2] \)</span>, kjer merimo kot.</p>
+<p>Meritev prvega nihala je</p>
+<p><span class="math display">\[ z = \alpha_1  + r_{\alpha}.
+\]</span></p>
+<p>Vektorski sistem je potem</p>
+<p><span class="math display">\[ \mathbf{z} = H \mathbf{x} + \mathbf{r}.
+\]</span></p>
+<p>V tem primeru je okno <span class="math inline">\( H = [1, 0]
+\)</span> in produkt</p>
+<p><span class="math display">\[ H \mathbf{x} = [1, 0] \begin{bmatrix}
+\phi_{1} \\ \phi_{2} \end{bmatrix}.
+\]</span></p>
+<p>Okno oblike</p>
+<p><span class="math display">\[ H = \begin{bmatrix}
+       1 &amp; 2 \\
+       0 &amp; 1
+        \end{bmatrix}
+\]</span></p>
+<p>ni dobro, saj prvi senzor meša kota prvega in drugega nihala.</p>
+</div>
+<h2 id="ostrenje-z-vektorskimi-meritvami">Ostrenje z vektorskimi
+meritvami</h2>
+<p>Imamo torej sistem <span class="math inline">\( S \)</span> s
+spremenljivkami <span class="math inline">\( \mathbf{x}(t) \)</span>,
+meritvami <span class="math inline">\( \mathbf{z} = H \mathbf{x} +
+\mathbf{r} \)</span> in ocenami <span class="math inline">\(
+\bar{\mathbf{x}} = \mathbf{x} + \mathbf{m} \)</span>. Prav tako imamo
+kovariančno matriko <span class="math inline">\( M = \left\langle
+\mathbf{m} \mathbf{m}^T \right\rangle \)</span> in pripadajočo
+kovariančno matriko merilnega šuma <span class="math inline">\( R =
+\left\langle \mathbf{r} \mathbf{r}^T \right\rangle \)</span>.</p>
+<p>Izostrena ocena je linearna kombinacija <span class="math inline">\(
+\hat{x} = x + p \)</span> v matrični formi</p>
+<p><span class="math display">\[ \hat{x} = A \bar{x} + B z,
+\]</span></p>
+<p>kjer sta <span class="math inline">\( A \in \mathbb{R}^{n \times n}
+\)</span> in <span class="math inline">\( B \in \mathbb{R}^{n \times s}
+\)</span> matrični uteži. Želimo ju določiti.</p>
+<p><span class="math display">\[ \mathbf{x} + \hat{\mathbf{p}} = A
+(\mathbf{x} + \mathbf{m}) + B(H\mathbf{x} + \mathbf{r}).
+\]</span></p>
+<p>Razrešimo oklepaje in iz enakosti</p>
+<p><span class="math display">\[ \mathbf{x} + \hat{\mathbf{p}} = \left(
+A + B H \right) \mathbf{x} + A \mathbf{m} + B \mathbf{r},
+\]</span></p>
+<p>dobimo enakosti</p>
+<p><span class="math display">\[ A + B H = I \quad \text{ in } \quad A
+\mathbf{m} + B \mathbf{r} = \hat{p},
+\]</span></p>
+<p>kjer je <span class="math inline">\( I \)</span> identiteta.</p>
+<span class="math display">\[\begin{align*}
+  \left\langle p p^T \right\rangle &amp;= \left\langle \left( A
+\mathbf{m} + B \mathbf{r} \right) \left( A \mathbf{m} + B \mathbf{r}
+\right)^T \right\rangle \\
+&amp;= \left\langle \left( A \mathbf{m} + B \mathbf{r} \right) \left(
+\mathbf{m}^T A ^T + \mathbf{r}^T B^T\right) \right\rangle.
+\end{align*}
+\]</span>
+<p>Oklepaje zmnožimo med sabo in dobimo</p>
+<p><span class="math display">\[ \left\langle p p^{T} \right\rangle =
+\left\langle  A \mathbf{m} \mathbf{m}^T A^T + B \mathbf{r} \mathbf{r}
+B^T + A \mathbf{m} \mathbf{r}^T B^T + B \mathbf{r} \mathbf{m}^T A^T
+\right\rangle.
+\]</span></p>
+<p>Ker med <span class="math inline">\( m \)</span> in <span
+class="math inline">\( r \)</span> ni korelacije, zaključimo</p>
+<p><span class="math display">\[ \left\langle p p^T \right\rangle = P  =
+A M A^T + B R B^T, \ A + B H = I
+\]</span></p>
+<p><span class="math inline">\( A + BH = I \)</span> predstavlja
+vez.</p>
+<p>Na naslednjem predavanju bomo to poskusili optimizirati.</p>
+</body>
+</html>

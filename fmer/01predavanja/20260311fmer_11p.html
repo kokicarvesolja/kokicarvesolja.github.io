@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Predavanja iz Fizikalnih merjenj, 11. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Predavanja iz Fizikalnih merjenj, 11. teden v
+letu</h1>
+<p class="subtitle">2026/03/12</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#vektorske-spremenljivke"
+id="toc-vektorske-spremenljivke">Vektorske spremenljivke</a>
+<ul>
+<li><a href="#ostrenje-vektorske-meritve"
+id="toc-ostrenje-vektorske-meritve">Ostrenje vektorske meritve</a></li>
+<li><a href="#prehod-na-zvezno-sliko"
+id="toc-prehod-na-zvezno-sliko">Prehod na zvezno sliko</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>Allegedly smo se zmenili, da bomo izpuščali vektorski znak, torej
+<span class="math inline">\( \mathbf{x} = x \)</span>.</p>
+<h1 id="vektorske-spremenljivke">Vektorske spremenljivke</h1>
+<h2 id="ostrenje-vektorske-meritve">Ostrenje vektorske meritve</h2>
+<p>Prejšnji teden smo za sistem <span class="math inline">\( S \)</span>
+s spremenljivko <span class="math inline">\( x(t) \)</span>, meritev
+<span class="math inline">\( z = H x + r \)</span> in ocenami <span
+class="math inline">\( x = \bar{x} + m \)</span> spoznali, da je
+kovariančna matrika izostrene ocene enaka</p>
+<span class="math display">\[\begin{equation}
+\label{eq:2}
+P = \left\langle \hat{p} \hat{p}^{T} \right\rangle = A M A^T + B RB^T
+\end{equation}
+\]</span>
+<p>z vezjo <span class="math inline">\( A + BH = I \)</span>.</p>
+<p>Za ostrenje bomo uporabili Lagrangeev multiplikator z vezjo</p>
+<p><span class="math display">\[ \tilde{P} = A M A^T + BRB ^T - \lambda
+\left( A + BH - I \right).
+\]</span></p>
+<p>V resnici bomo odvajali <span class="math inline">\( \mathrm{tr} P
+\)</span>, zato je pogoj</p>
+<p><span class="math display">\[ \frac{\partial \tilde{P}}{\partial A} =
+0
+\]</span></p>
+<p>v resnici</p>
+<p><span class="math display">\[ \frac{\partial \mathrm{tr}
+\tilde{P}}{\partial A} = 0.
+\]</span></p>
+<p>Dobimo 3 pogoje</p>
+<span class="math display">\[\begin{align*}
+  \frac{\partial \mathrm{tr} \tilde{P}}{\partial A} &amp;= 0 = 2 Am -
+\lambda ^T \\
+\frac{\partial \mathrm{tr} \tilde{P}}{\partial B} &amp;= 0 = 2B R -
+\left( H \lambda \right)^T \\
+\frac{\partial \mathrm{tr} \tilde{P}}{\partial \lambda} &amp;= 0 =
+\left( A + BH - I \right)^T .
+\end{align*}
+\]</span>
+<p>Iz prvega pogoja lahko ob upoštevanju lastnosti transponiranja
+matrike izrazimo</p>
+<p><span class="math display">\[ A^T = M^{-1} \frac{\lambda}{2}.
+\]</span></p>
+<p>Na podoben način iz drugega pogoja izrazimo</p>
+<p><span class="math display">\[ B^T = R^{-1} H \frac{\lambda}{2}.
+\]</span></p>
+<p>Transponirane vrednosti vstavimo v tretji pogoj</p>
+<p><span class="math display">\[ A^T + H^T B^T = M^{-1}
+\frac{\lambda}{2} + H^T R^{-1} H \frac{\lambda}{2} = \frac{\lambda}{2}
+\left( M^{-1} + H^T R^{-1} H \right) = I.
+\]</span></p>
+<p>Posledično lahko izrazimo</p>
+<span class="math display">\[\begin{equation}
+\label{eq:3}
+\frac{\lambda}{2} = \left( M^{-1} + H^T R^{-1} H \right)^{-1}.
+\end{equation}
+\]</span>
+<p>Izražene vrednosti lahko vstavimo v enačbo <span
+class="math inline">\(\ref{eq:2}\)</span></p>
+<span class="math display">\[\begin{align*}
+  P &amp;= \frac{\lambda^T}{2} M^{-1} M M^{-1} \frac{\lambda}{2} +
+\frac{\lambda}{2} H^T R^{-1} R R^{-1} H \frac{\lambda}{2} \\
+&amp;= \frac{\lambda^T}{2} \left( M^{-1} + H^T R^{-1} H \right)
+\frac{\lambda}{2} = \frac{\lambda}{2}.
+\end{align*}
+\]</span>
+<p>V oklepaju v zadnji vrstici prepoznamo <span
+class="math inline">\(\ref{eq:3}\)</span> in ga nadomestimo z <span
+class="math inline">\( \left( \frac{\lambda}{2} \right)^{-1}
+\)</span>.</p>
+<p>Torej je <span class="math inline">\(\ref{eq:3}\)</span> enako <span
+class="math inline">\( P \)</span> in posledično dobimo</p>
+<span class="math display">\[\begin{equation}
+\label{eq:5}
+P^{-1} = M^{-1} + H^T R^{-1} H,
+\end{equation}
+\]</span>
+<p>kar je vektorski analog</p>
+<p><span class="math display">\[ \frac{1}{\hat{\sigma}_x ^2} +
+\frac{1}{\bar{\sigma}_x ^2} + \frac{1}{\sigma ^2}.
+\]</span></p>
+<p>Po nekaj čaranja, lahko izrazimo tudi</p>
+<p><span class="math display">\[ P = M - M H^T \left( R + H M H^T
+\right)^{-1} HM
+\]</span></p>
+<p>Izostrena ocena je po definiciji</p>
+<p><span class="math display">\[ \hat{x} = A \bar{x} + B z =
+\frac{\lambda^T}{2} M^{-1} \bar{x} + \left( H \frac{\lambda}{2}
+\right)^T R^{-1} z.
+\]</span></p>
+<p>Izraza ne spremenimo, če ga razširimo z <span class="math inline">\(
+H^T R^{-1} H \bar{x} - H^T R^{-1} H \bar{x} \)</span> in dobimo</p>
+<span class="math display">\[\begin{align*}
+  \hat{x} &amp;=  \frac{\lambda^T}{2} M^{-1} \bar{x} + \left( H
+\frac{\lambda}{2} \right)^T R^{-1} z +  H^T R^{-1} H \bar{x} - H^T
+R^{-1} H \bar{x} \\
+&amp;= \frac{\lambda^T}{2} \left[  \left( M^{-1} + H^T R^{-1} H \right)
+\bar{x} + H^T R^{-1} \left( z - H\mathbf{x} \right) \right]
+\end{align*}
+\]</span>
+<p>Od prej vemo <span class="math inline">\( P = \frac{\lambda^T}{2}
+\)</span>, hkrati pa je tudi prvi oklepaj prav tako ravno <span
+class="math inline">\( \left( \frac{\lambda^T}{2} \right)^{-1} \)</span>
+in po množenju je izostrena ocena</p>
+<p><span class="math display">\[ \hat{x} = \bar{x} + P H^T R^{-1} \left(
+z - H \bar{x} \right),
+\]</span></p>
+<p>kjer so <span class="math inline">\( \bar{x} \)</span> napoved, <span
+class="math inline">\( PH^T R^{-1} \)</span> utež in <span
+class="math inline">\( (z - H \bar{x}) \)</span> inovacija.</p>
+<h2 id="prehod-na-zvezno-sliko">Prehod na zvezno sliko</h2>
+<p>Podobno kot v pri skalarni izpeljavi, imamo čas vzorčenja <span
+class="math inline">\( T \)</span>. Nahajamo se v <span
+class="math inline">\( n T \)</span> vzorčenju in zanima nas vzorčenje
+<span class="math inline">\( n + 1 \)</span>.</p>
+<p>V sistemu <span class="math inline">\( S \)</span> imamo</p>
+<p><span class="math display">\[ x _{n + 1} = \phi_n x_n + c_n +
+\Gamma_n w_n,
+\]</span></p>
+<p>kjer je zadnji člen dinamični šum.</p>
+<p>V merilnem sistemu <span class="math inline">\( M \)</span> imamo
+izostreno oceno <span class="math inline">\( \hat{x}_n \)</span> in bo
+ocena za naslednje vzorčenje</p>
+<p><span class="math display">\[ \bar{x}_{n + 1} = \phi_n \hat{x}_n  +
+c_n.
+\]</span></p>
+<p>Kovariančna matrika za naslednje vzorčenje <span
+class="math inline">\( M_{n + 1} \)</span> bo po definiciji</p>
+<p><span class="math display">\[ M_{n + 1} = \left\langle \left(
+\bar{x}_{n + 1} - x_{n + 1} \right) \left( \bar{x}_{n + 1} - x_{n + 1}
+\right)^T \right\rangle.
+\]</span></p>
+<p>Vstavimo vrednosti posameznih spremenljivk in dodatno razpišemo</p>
+<span class="math display">\[\begin{align*}
+  M_{n + 1} &amp;= \left\langle \left( \phi_n \left( \hat{x}_n - x_n
+\right) + \Gamma_n w_n \right) \left( \phi_n \left( \hat{x}_n - x_n
+\right) + \Gamma_n w_n \right)^T  \right\rangle \\
+&amp;= \left\langle \phi_n \left( \hat{x}_n - x_n \right) \left(
+\hat{x}_n - x_n \right)^T \phi_n^T \right\rangle + \Phi \left\langle w_n
+w_n^T \right\rangle \Gamma_n^T + \cancel{\left\langle \ldots
+\right\rangle}
+\end{align*}
+\]</span>
+<p>V prvem členu prepoznamo matriko <span class="math inline">\(
+P_n  \)</span> in drugi člen pa označimo <span class="math inline">\(
+\left\langle w_n w_n^T \right\rangle = Q_n \)</span>.</p>
+<p><span class="math display">\[ M_{n + 1} = \phi_n P_n \phi_n^T +
+\Gamma_n Q_n \Gamma_n^T.
+\]</span></p>
+<p>Kalmanov filter za diskretno vektorsko spremenljivko bo torej</p>
+<p><span class="math display">\[ P_{n + 1} = M_{n + 1} - M_{n + 1} H^T
+\left( H M_{n + 1} ^T + R_{n + 1} \right)^{-1} H M_{n + 1},
+\]</span></p>
+<p>kjer smo upoštevali relacijo <span
+class="math inline">\(\ref{eq:5}\)</span>.</p>
+<p>Pojdimo sedaj v zvezno sliko <span class="math inline">\( \lim_{T \to
+0}  \)</span>. Za meritvi <span class="math inline">\( n \)</span> in
+<span class="math inline">\( n + 1 \)</span> imamo potem</p>
+<p><span class="math display">\[ \frac{\hat{x}_{n + 1} - \hat{x}_n }{T}
+= \dot{\hat{x}} (t) = \frac{\bar{x}_{n + 1} - P_{n + 1} H^T R_{n +
+1}^{-1} \left( z_{n + 1} - H \bar{x}_{n + 1} \right) - \hat{x}_n}{T}
+\]</span></p>
+<p>Upoštevamo prej izpeljane relacije in zapišemo</p>
+<span class="math display">\[\begin{align*}
+  \dot{\hat{x}} (t) &amp;= \frac{\phi_{n + 1} \hat{x}_n - \hat{x}_n +
+c_n + P_{n + 1} H^T R_{n + 1}^{-1} \left( z_{n + 1} - H \bar{x}_{n + 1}
+\right)}{T} \\
+&amp;= \frac{\phi_{n + 1} - 1}{T} \hat{x}_n + \frac{c_n}{T} + P(t) H^T
+R(t) ^{-1} \left( z(t) - H \hat{x}(t) \right)
+\end{align*}
+\]</span>
+<p>Kateri člen je ekvivalent <span class="math inline">\( \sigma T
+\)</span> iz analogne slike?</p>
+<p>Z uvedbo <span class="math inline">\( A(t) = \frac{\phi_{n+ 1} -
+1}{T} \)</span> in <span class="math inline">\( c(t) = \frac{c_n}{T}
+\)</span> dobimo optimalno shemo za sledenje zvezni spremenljivki</p>
+<p><span class="math display">\[ \dot{\hat{x}} (t) = A(t) \hat{x} + c(t)
++ P H^{T} R^{-1} \left( z - H x \right).
+\]</span></p>
+<p>Poglejmo si še <span class="math inline">\( P \)</span> v zvezni
+sliki. Zapišemo razliko in upoštevamo definicijo Kalmanovega filtra za
+zvezno spremenljivko</p>
+<p><span class="math display">\[ P_{n + 1} - P_n =  M_{n + 1} - M_{n +
+1} H^T \left( H M_{n + 1} ^T + R_{n + 1} \right)^{-1} H M_{n + 1} - P_n.
+\]</span></p>
+<p>Upoštevamo še definicijo kovariančne matriko</p>
+<p><span class="math display">\[ P_{n + 1} - P_n = \phi_n P_n \phi_n^T +
+\Gamma_n Q_n \Gamma_n^T - M_{n + 1} H^T \left( H M_{n + 1} ^T + R_{n +
+1} \right)^{-1} H M_{n + 1} - P_n.
+\]</span></p>
+<p>Vemo, da je <span class="math inline">\( \phi_n = \left( 1 + A \cdot
+T \right) \)</span> in po deljenju s <span class="math inline">\( T
+\)</span> dobimo</p>
+<span class="math display">\[\begin{align*}
+\frac{P_{n + 1} - P_n}{T} &amp;= \frac{\left[ P_n + A P_n \cdot T + P_n
+A^T \cdot T + A P_n A T ^2 \right] - P_n}{T} \\
+&amp;\quad- \frac{M_{n + 1} H^T \left( H M_{n + 1} ^T + R_{n + 1}
+\right)^{-1} H M_{n + 1}}{T} + \frac{\Gamma_n Q_n T_n^T}{T}
+\end{align*}
+\]</span>
+<p>Dobimo</p>
+<p><span class="math display">\[ \dot{P} = AP + PA^T + \frac{T_n Q_n
+T_n^T}{T} - \frac{M_{n + 1} H^T \left( H M_{n + 1} ^T + R_{n + 1}
+\right)^{-1} H M_{n + 1}}{T}
+\]</span></p>
+<p>V limiti označimo <span class="math inline">\( \frac{\Gamma_n}{T} =
+T(t) \)</span> in <span class="math inline">\( Q(t) = Q_n T \)</span> in
+potem je</p>
+<p><span class="math display">\[ \dot{P} = A P + PA^T + \Gamma Q
+\Gamma^T - P H^T R^{-1} H P.
+\]</span></p>
+<p>Pri zadnjem členu je bil sledeč razmislek</p>
+<p><span class="math display">\[ \frac{\left( H M_{n + 1}^T + R_{n +
+1}\right)^{-1}}{T} = T HM_{n + 1}^T + R_{n + 1} T
+\]</span></p>
+<p>Kovariančna matrika <span class="math inline">\( M_{n + 1} \)</span>
+gre v limiti proti končni matriki <span class="math inline">\( P(t)
+\)</span>. Posledično bo zmnožek <span class="math inline">\( HM_{n + 1}
+^T T \)</span> ničeln. Drugi člen pa je vektorski ekvivalent limite</p>
+<p><span class="math display">\[ \lim_{T \to 0} \left( T R_{n + 1}
+\right) = T \sigma ^2.
+\]</span></p>
+<p>Zadnji člen zmanjšuje <span class="math inline">\( P(t) \)</span>
+(člen je vedno pozitiven, vendar ima negativen predznak) zaradi dotoka
+novih meritev. <span class="math inline">\( R \)</span> pogojuje
+kovariančno matriko merilnega šuma.</p>
+<div id="Odvod matrične norme po matriki" class="note">
+<div class="title">
+<p>Note</p>
+</div>
+<p>Imejmo dve poljubni matriki <span class="math inline">\( A, \lambda
+\)</span>. Zmnožimo ju v novo matriko <span class="math inline">\( B = A
+\lambda \)</span>.</p>
+<p>Odvod matrične norme po matriki je nova matrika</p>
+<p><span class="math display">\[ C = \frac{\mathrm{d} }{\mathrm{d} A}
+\left( \mathrm{tr} \left( A \lambda \right) \right).
+\]</span></p>
+<p>Člen <span class="math inline">\( b_{jk} \)</span> je po
+definiciji</p>
+<p><span class="math display">\[ b_{jk} = \sum\limits_i^{} a_{ji}
+\lambda_{ik}.
+\]</span></p>
+<p>Sled matrike <span class="math inline">\( B \)</span> je potem</p>
+<p><span class="math display">\[ \mathrm{tr} B = \sum\limits_j^{} b_{ji}
+= \sum\limits_j^{} \sum\limits_i^{} a_{ji} \lambda_{ji}.
+\]</span></p>
+<p>Člen matrike <span class="math inline">\( C \)</span> je potem</p>
+<p><span class="math display">\[ c_{kl} = \frac{\mathrm{d} }{\mathrm{d}
+a_{kl}} \mathrm{tr} \left( A \lambda \right) = \sum\limits_j^{}
+\sum\limits_i^{} \frac{\mathrm{d} }{\mathrm{d} a_{kl}} \left( a_{ji}
+\lambda_{ji} \right).
+\]</span></p>
+<p>To se ujema, samo ko bosta indeksa v odvodu in in <span
+class="math inline">\( a_{ji} \)</span> enaka. Zapišemo lahko s
+Kronekerjevo delot ko</p>
+<p><span class="math display">\[ c_{kl} = \delta_{kj } \delta_{li}
+\lambda_{ij} = \lambda_{ck}.
+\]</span></p>
+<p>Torej</p>
+<p><span class="math display">\[ c_{kl} = \lambda_{ck} = \left(
+\lambda_{kl} \right)^T.
+\]</span></p>
+</div>
+</body>
+</html>

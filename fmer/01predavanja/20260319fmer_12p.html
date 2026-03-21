@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Predavanja iz Fizikalnih merjenj, 12. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Predavanja iz Fizikalnih merjenj, 12. teden v
+letu</h1>
+<p class="subtitle">2026/03/19</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#vektorske-spremenljivke"
+id="toc-vektorske-spremenljivke">Vektorske spremenljivke</a></li>
+<li><a
+href="#optimalna-povratna-zanka-in-poenostavitev-kalmanovega-filtra"
+id="toc-optimalna-povratna-zanka-in-poenostavitev-kalmanovega-filtra">Optimalna
+povratna zanka in poenostavitev Kalmanovega filtra</a>
+<ul>
+<li><a href="#senzor-prvega-reda" id="toc-senzor-prvega-reda">Senzor
+prvega reda</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="vektorske-spremenljivke">Vektorske spremenljivke</h1>
+<p>Prejšnji teden smo izpeljali ostrenje meritve in prehod na zvezno
+sliko vektorskih spremenljivk kot so sta v 60. letih to naredila Kalman
+in Bucy.</p>
+<div class="my_example">
+<p>Obravnavajmo enodimenzionalni primer delca, ki se premika s hitrostjo
+<span class="math inline">\( \dot{x} \)</span>. Na delec vplivajo
+naključne sile, ki jih bomo označili z <span class="math inline">\( F_x
+(t) \)</span> in predstavljajo šum. Na delec prav tako vpliva Stokesov
+izrek upora.</p>
+<p>Dinamiko delca bomo opisali z drugim Newtonovim zakonom, ki je v
+splošnem</p>
+<p><span class="math display">\[ \sum\limits_{}^{} F_i = m \ddot{x}.
+\]</span></p>
+<p>Za naš konkretni primer na delec deluje vsota sil Stokesa in
+naključnih sil</p>
+<p><span class="math display">\[ \ddot{x} = - \frac{6 \pi R \eta}{m}
+\dot{x} + \frac{F_x}{m} (t).
+\]</span></p>
+<p>Za dinamični šum velja</p>
+<p><span class="math display">\[ \left\langle \frac{F_x(t)}{m},
+\frac{F_x(t&#39;)}{m} \right\rangle = \delta(t - t&#39;)\cdot Q.
+\]</span></p>
+<p>Imamo dve spremenljivki, ki ju vektorsko zapišemo <span
+class="math inline">\( \mathbf{x} = [x, v] \)</span>. Za dani
+spremenljivki torej velja dinamika</p>
+<span class="math display">\[\begin{align*}
+  \dot{x} &amp;= v \\
+\dot{v} &amp;= - \frac{1}{\tau} v+ \frac{F_x (t)}{m}.
+\end{align*}
+\]</span>
+<p>Označili smo <span class="math inline">\( \frac{1}{\tau} = \frac{6\pi
+R \eta}{m} \)</span>.</p>
+<p>Gibanje v matrični obliki je tako</p>
+<p><span class="math display">\[ \frac{\mathrm{d} }{\mathrm{d} t}
+\begin{bmatrix} x \\ v \end{bmatrix} = \begin{bmatrix}
+                                                                           0
+&amp; 1 \\
+                                                                           0
+&amp; -\frac{1}{\tau}
+                                                                            \end{bmatrix}
+\begin{bmatrix} x \\ v \end{bmatrix} + \frac{F_x (t)}{m} \begin{bmatrix}
+0 \\ 1 \end{bmatrix}.
+\]</span></p>
+<p>Dobili smo torej sistem, ki ima dinamiko oblike</p>
+<p><span class="math display">\[ \dot{\mathbf{x}} = A \mathbf{x} +
+\Gamma w,
+\]</span></p>
+<p>kjer je <span class="math inline">\( w = F_x \)</span>.</p>
+<p>Ob času <span class="math inline">\( t = 0 \)</span> je meritev leg v
+senzorju prekinjena. Kovariančna matrika ima vrednost <span
+class="math inline">\( P(0) = P_0 \)</span>, izhodišče koordinatnega
+sistema <span class="math inline">\( M \)</span> pa je postavljeno tako,
+da <span class="math inline">\( \bar{x} = 0 \)</span> in <span
+class="math inline">\( \bar{v} = 0 \)</span>.</p>
+<p>Kovariančna matrika ima v odvisnosti od časa obliko</p>
+<p><span class="math display">\[ P(t) = \begin{bmatrix}
+          \left\langle x ^2 \right\rangle (t) &amp; \left\langle xv
+\right\rangle  \\
+        \left\langle xv \right\rangle &amp;  \left\langle v ^2
+\right\rangle (t)
+           \end{bmatrix}
+\]</span></p>
+<p>Za <span class="math inline">\( t &gt; 0 \)</span> pa je naš
+sistem</p>
+<p><span class="math display">\[ \dot{P} = A P + PA^T + \Gamma Q
+\Gamma^T \cancel{- PH^T R^{-1} H P},
+\]</span></p>
+<p>kjer smo rekli <span class="math inline">\( R \to \infty
+\)</span>.</p>
+<p>Matrika <span class="math inline">\( A \)</span> je simetrična, torej
+bo zanjo veljalo <span class="math inline">\( A = A^T \)</span> in
+posledično <span class="math inline">\( PA^T = \left( AP \right)^T
+\)</span>. Sistem torej zapišemo</p>
+<span class="math display">\[\begin{align*}
+  \frac{\mathrm{d} }{\mathrm{d} t} P &amp;= \begin{bmatrix}
+                                       0 &amp; 1 \\
+                                       0 &amp; -\frac{1}{\tau}
+                                        \end{bmatrix}
+\begin{bmatrix}
+\left\langle x ^2 \right\rangle &amp; \left\langle xv \right\rangle \\
+\left\langle xv \right\rangle &amp;  \left\langle v ^2 \right\rangle
+\end{bmatrix}
++\begin{bmatrix}
+  \left\langle x ^2 \right\rangle &amp; \left\langle xv \right\rangle \\
+\left\langle xv \right\rangle   &amp; \left\langle v ^2 \right\rangle
+   \end{bmatrix}
+\begin{bmatrix}
+0 &amp; 0 \\
+1 &amp; -\frac{1}{\tau}
+\end{bmatrix} \\
+&amp; \quad +
+\begin{bmatrix} 0 \\ 1 \end{bmatrix} [0 \quad 1] Q \\
+\frac{\mathrm{d} }{\mathrm{d} t}
+\begin{bmatrix}
+\left\langle x ^2 \right\rangle &amp; \left\langle xv \right\rangle \\
+\left\langle xv \right\rangle &amp;  \left\langle v ^2 \right\rangle
+\end{bmatrix} &amp;=
+\begin{bmatrix}
+\left\langle xv \right\rangle &amp; \left\langle v ^2 \right\rangle \\
+-\frac{1}{\tau}\left\langle xv \right\rangle &amp; - \frac{1}{\tau}
+\left\langle v ^2 \right\rangle
+\end{bmatrix} +
+\begin{bmatrix}
+\left\langle xv \right\rangle &amp; - \frac{1}{\tau} \left\langle xv
+\right\rangle \\
+\left\langle v ^2 \right\rangle &amp; - \frac{1}{\tau} \left\langle v ^2
+\right\rangle
+\end{bmatrix} \\
+&amp; \quad + \begin{bmatrix}
+                 0 &amp; 0 \\
+                 0 &amp; Q
+                  \end{bmatrix}
+\end{align*}
+\]</span>
+<p>Dobimo torej sistem enačb</p>
+<span class="math display">\[\begin{align*}
+  \frac{\mathrm{d} }{\mathrm{d} t} \left\langle x ^2 \right\rangle
+&amp;= 2 \left\langle x v \right\rangle \\
+\frac{\mathrm{d} }{\mathrm{d} t}\left\langle xv \right\rangle &amp;=
+\left\langle v ^2 \right\rangle - \frac{1}{\tau} \left\langle xv
+\right\rangle \\
+\frac{\mathrm{d} }{\mathrm{d} t} \left\langle v ^2 \right\rangle &amp;=
+- \frac{2}{\tau} \left\langle v ^2 \right\rangle + Q.
+\end{align*}
+\]</span>
+<p>Poglejmo si stacionarne rešitve v termodinamskem ravnovesju za <span
+class="math inline">\( \frac{\mathrm{d} }{\mathrm{d} t}\left\langle v ^2
+\right\rangle = 0 \)</span>.</p>
+<p><span class="math display">\[ \left\langle v ^2 \right\rangle
+_{\infty} = \frac{Q \tau}{2}.
+\]</span></p>
+<p>Preko ekviparticijskega izreka jo lahko povežemo s temperaturo <span
+class="math inline">\( T \)</span> tekočine.</p>
+<p><span class="math display">\[ \frac{1}{2} m \left\langle v ^2
+\right\rangle _{\infty} = \left\langle W_t \right\rangle = \frac{k T}{2}
+\]</span></p>
+<p>Nadomestimo izraz disperzije hitrosti in dobimo vrednost dinamičnega
+šuma</p>
+<p><span class="math display">\[ \left\langle v ^2 \right\rangle
+_{\infty} = \frac{k T}{m} = \frac{Q \tau}{2} \implies Q = \frac{2k T}{m
+\tau}.
+\]</span></p>
+<p>Lega delca in njegova hitrost sta korelirani, kakor vidimo iz druge
+enačbe našega sistem. V stacionarnem primeru upoštevamo vrednost <span
+class="math inline">\( \left\langle v ^2 \right\rangle \)</span></p>
+<p><span class="math display">\[ 0 = \left\langle v ^2 \right\rangle
+_{\infty} - \frac{1}{\tau} \left\langle xv \right\rangle_{\infty}
+\implies \frac{Q \tau}{2} = \frac{1}{\tau} \left\langle xv
+\right\rangle_{\infty}.
+\]</span></p>
+<p>Potem dobimo</p>
+<p><span class="math display">\[ \left\langle xv \right\rangle _{\infty}
+= \frac{Q \tau ^2}{2} = \frac{2k T}{m \tau} \implies \left\langle xv
+\right\rangle_{\infty} = \frac{k T \tau}{m}.
+\]</span></p>
+<p>Disperzija lege nima stacionarne rešitve zaradi</p>
+<p><span class="math display">\[ \frac{\mathrm{d} }{\mathrm{d} t}
+\left\langle x ^2 \right\rangle = 2 \left\langle xv
+\right\rangle_{\infty} \ne 0.
+\]</span></p>
+<p>Zato bomo enačbo integrirali.</p>
+<span class="math display">\[\begin{align*}
+  \frac{\mathrm{d} }{\mathrm{d} t} \left\langle x ^2 \right\rangle
+&amp;= 2 \left\langle x v \right\rangle_{\infty} &amp;&amp; \left/
+\int\limits_0^t \, \mathrm{d} t \right. \\
+\left\langle x ^2 (t) \right\rangle - \left\langle x ^2 (0)
+\right\rangle &amp;= \frac{2 k T \tau}{ m} t.
+\end{align*}
+\]</span>
+<p>Označimo <span class="math inline">\( \frac{k T \tau}{m} = D
+\)</span> in dobimo difuzijsko enačbo</p>
+<p><span class="math display">\[ \left\langle x ^2 \right\rangle  =
+\left\langle x ^2 (0) \right\rangle + 2 D t.
+\]</span></p>
+<p>Če ob nekem trenutku prenehamo z meritvami lege delcev, se njihova
+negotovost začne povečevati tako, da disperzija lege raste linearno s
+časom.</p>
+<p>V treh dimenzijah je potem rešitev</p>
+<p><span class="math display">\[ \left\langle r ^2 \right\rangle =
+\left\langle r ^2 (0) \right\rangle + 6 D t.
+\]</span></p>
+</div>
+<div class="my_example">
+<p>Sedaj pa začnemo meriti lego delca. Okno je potem <span
+class="math inline">\( H = [1 0 ] \)</span>. Meritev bo imela obliko
+<span class="math inline">\( z = H \mathbf{x} + r \)</span>.</p>
+<p>Sedaj imamo prej neupoštevan člen <span class="math inline">\( P H^T
+R^{-1} H P \)</span>, kar je</p>
+<p><span class="math display">\[ P H^T R^{-1} HP = \begin{bmatrix}
+                     \left\langle x ^2 \right\rangle &amp; \left\langle
+xv \right\rangle \\
+                     \left\langle xv \right\rangle &amp; \left\langle v
+^2 \right\rangle
+                      \end{bmatrix} \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+\frac{1}{R} [1 0] \begin{bmatrix}
+                      \left\langle x ^2 \right\rangle &amp; \left\langle
+xv \right\rangle \\
+                      \left\langle xv \right\rangle &amp; \left\langle v
+^2 \right\rangle \end{bmatrix}
+\]</span></p>
+<p>Matrike se med seboj zmnožijo v</p>
+<span class="math display">\[\begin{align*}
+P H^T R^{-1} HP &amp;= - \frac{1}{R} \begin{bmatrix} \left\langle x ^2
+\right\rangle \\ \left\langle xv \right\rangle \end{bmatrix}
+\left[\left\langle x ^2 \right\rangle \quad \left\langle xv
+\right\rangle\right] \\
+&amp;= - \frac{1}{R} \begin{bmatrix}
+\left\langle x ^2 \right\rangle &amp; \left\langle x ^2 \right\rangle
+\left\langle xv \right\rangle\\
+\left\langle xv \right\rangle \left\langle x ^2 \right\rangle      &amp;
+\left\langle xv \right\rangle ^2
+\end{bmatrix}
+\end{align*}
+\]</span>
+<p>Potem imamo sistem enačb</p>
+<p><span class="math display">\[ \dot{P} = \begin{bmatrix}
+             2 \left\langle xv \right\rangle - \frac{1}{R} \left\langle
+x ^2 \right\rangle ^2 &amp; \left\langle v ^2 \right\rangle -
+\frac{1}{\tau} \left\langle xv \right\rangle - \frac{1}{R} \left\langle
+x ^2 \right\rangle \left\langle xv \right\rangle \\
+              \left\langle v ^2 \right\rangle - \frac{1}{\tau}
+\left\langle xv \right\rangle - \frac{1}{R} \left\langle x ^2
+\right\rangle \left\langle xv \right\rangle &amp; - \frac{2}{\tau}
+\left\langle v ^2 \right\rangle - \frac{1}{R} \left\langle xv
+\right\rangle ^2 + Q
+              \end{bmatrix}
+\]</span></p>
+<p>V termodinamskem ravnovesju <span class="math inline">\( \dot{P} = 0
+\)</span> iščemo stacionarne rešitve za naslednje tri sisteme enačb</p>
+<span class="math display">\[\begin{align*}
+  2 \left\langle xv \right\rangle - \frac{1}{R} \left\langle x ^2
+\right\rangle ^2 &amp;= 0\\
+\left\langle v ^2 \right\rangle - \frac{1}{\tau} \left\langle xv
+\right\rangle - \frac{1}{R} \left\langle x ^2 \right\rangle \left\langle
+xv \right\rangle &amp;= 0 \\
+-\frac{2}{\tau} \left\langle v ^2 \right\rangle - \frac{1}{R}
+\left\langle xv \right\rangle ^2 + Q &amp;= 0
+\end{align*}
+\]</span>
+<p>Iz prve enačbe dobimo enakost <span class="math inline">\(
+\left\langle xv \right\rangle = \frac{1}{2 R} \left\langle x ^2
+\right\rangle ^2\)</span>, ki jo nesemo v tretjo enačbo</p>
+<span class="math display">\[\begin{align*}
+  \left\langle v ^2 \right\rangle &amp;= \frac{Q \tau}{2} -
+\frac{\tau}{2 R} \left\langle xv \right\rangle ^2  \\
+&amp;= \frac{Q \tau}{2} - \frac{\tau ^4}{2 R} \cdot \frac{1}{\left( 2R
+\right) ^2} \frac{\left\langle x ^2 \right\rangle ^4}{\tau ^3}
+\frac{R}{R}
+\end{align*}
+\]</span>
+<p>V zadnji vrstici smo razširili in sedaj lahko uvedemo brezdimenzijsko
+spremenljivko <span class="math inline">\( Y = \left\langle x ^2
+\right\rangle \frac{\tau}{R} \)</span> in imamo torej</p>
+<p><span class="math display">\[ \left\langle v ^2 \right\rangle =
+\frac{Q \tau}{2} - \frac{Y ^4 R}{8 \tau ^3}.
+\]</span></p>
+<p>Slednje vstavimo v drugo enačbo in dobimo rešitev</p>
+<p><span class="math display">\[ Y ^4 + 4 Y ^3 + 4 Y ^2 = \frac{4 Q T
+^4}{R}.
+\]</span></p>
+<p>Leva stran enačbe je <span class="math inline">\( f(Y) \)</span>.
+Obstaja rešitev, ko ta funkcija seka <span class="math inline">\(
+\frac{4 Q T ^4}{R} \)</span>.</p>
+<p>Recimo, da imamo grobo meritev lege. Potem je <span
+class="math inline">\( R \)</span> velik, saj gre proti <span
+class="math inline">\( \infty \)</span>. Posledično je desna stran
+enačba majhna in velja <span class="math inline">\( Y ^4 \ll Y^2 \ll Y =
+\left\langle x ^2 \right\rangle \frac{\tau}{R} \)</span>.</p>
+<p>Ostane nam</p>
+<p><span class="math display">\[ 4 Y ^4 = \frac{4 Q \tau ^4}{R} \implies
+Y = \sqrt{\frac{Q}{R}} \tau ^2 = \left\langle x ^2 \right\rangle
+\frac{\tau}{R}.
+\]</span></p>
+<p>Nedoločenost lege je torej konstantna</p>
+<p><span class="math display">\[ \left\langle x ^2 \right\rangle =
+\sqrt{Q R} \cdot \tau.
+\]</span></p>
+<p>Zaključimo, da je kakršnakoli meritev dobrodošla, dokler je <span
+class="math inline">\( R &lt; \infty \)</span>.</p>
+</div>
+<div class="my_example">
+<p>Merimo napetost na kondenzatorju s kapaciteto <span
+class="math inline">\( C \)</span>, ki se prazni preko upornika <span
+class="math inline">\( R \)</span> - enostaven RC člen. Meritev
+napetosti <span class="math inline">\( U_C \)</span> označimo z <span
+class="math inline">\( Z \)</span>.</p>
+<p>V sistemu <span class="math inline">\( S \)</span> si poglejmo
+dinamiko. V primeru, da nimamo gonilne napetosti <span
+class="math inline">\( U_g \)</span>, bo veljalo</p>
+<p><span class="math display">\[ \sum\limits_i^{} U_i = U_C + U_R = 0.
+\]</span></p>
+<p>Napetost na kondenzatorju je po definiciji <span
+class="math inline">\( U_C = \frac{e}{C} \)</span>. Po zgornji enačbi
+torej velja</p>
+<p><span class="math display">\[ \frac{e}{C} = - U_R.
+\]</span></p>
+<p>Enačbo sedaj odvajajmo po času</p>
+<span class="math display">\[\begin{equation}
+\label{eq:1}
+\frac{\dot{e}}{C} = - \dot{U}_R.
+\end{equation}
+\]</span>
+<p>Po času odvajamo tudi prvotno enačbo</p>
+<p><span class="math display">\[ \dot{U}_C + \dot{U}_R = 0 \implies
+\dot{U}_C = - \dot{U}_R.
+\]</span></p>
+<p>V enačbo <span class="math inline">\(\ref{eq:1}\)</span> vstavimo
+zgornjo enakosti in upoštevamo definicijo električnega toka <span
+class="math inline">\( I = \frac{\mathrm{d} e}{\mathrm{d} t}
+\)</span></p>
+<p><span class="math display">\[ - \frac{I}{C} = \dot{U}_C.
+\]</span></p>
+<p>Napetost v uporniku je podana preko Ohmovega zakona <span
+class="math inline">\( U_R = - IR \)</span>. Zgornjo enačbo torej lahko
+zapišemo</p>
+<p><span class="math display">\[ \dot{U}_C = - \frac{1}{I RC} U_R =
+\frac{1}{\tau} U_R = - \frac{1}{\tau} U_C
+\]</span></p>
+<p>Dinamika sistema za <span class="math inline">\( U_C \)</span> v
+sistemu <span class="math inline">\( S \)</span> je</p>
+<p><span class="math display">\[ \dot{U}_C + \frac{1}{\tau} U_C = 0.
+\]</span></p>
+<p>Sistem ima lahko seveda tudi naključen šum, torej ima dinamika novo
+komponento</p>
+<span class="math display">\[\begin{equation}
+\label{eq:2}
+\dot{U}_C = - \frac{1}{\tau} U_C + w(t),
+\end{equation}
+\]</span>
+<p>za katerega velja</p>
+<p><span class="math display">\[ \left\langle w(t), w(t&#39;)
+\right\rangle = \delta(t - t&#39;) Q.
+\]</span></p>
+<p>Meritev je oblike <span class="math inline">\( z = U_C + r \)</span>,
+kjer je <span class="math inline">\( \left\langle r ^2 \right\rangle = R
+\)</span>.</p>
+<p>Ocena napetosti je <span class="math inline">\( \hat{U}_C \)</span>
+ima začetno vrednost disperzije</p>
+<p><span class="math display">\[ P_0 = \left\langle \left( \hat{U}_C -
+U_C \right) ^2 \right\rangle .
+\]</span></p>
+<p>Disperzijo v kasnejšem času opisuje enačba</p>
+<p><span class="math display">\[ \dot{P} = 2 A P + Q - \frac{P ^2}{R}.
+\]</span></p>
+<p>Primerjamo enačbo <span class="math inline">\(\ref{eq:2}\)</span> s
+splošno obliko dinamike <span class="math inline">\( \dot{x} = A x +
+\Gamma \)</span>, iz česar zaključimo, da so posamezni koeficienti <span
+class="math inline">\( A = - \frac{1}{\tau} \)</span> in <span
+class="math inline">\( \Gamma = 1 \)</span>. Vstavimo jih v zgornjo
+enačbo in dobimo</p>
+<span class="math display">\[\begin{equation}
+\label{eq:3}
+\dot{P} = - \frac{2}{\tau} P + Q - \frac{P ^2}{R} = 0.
+\end{equation}
+\]</span>
+<p>V limiti <span class="math inline">\( t \to \infty \)</span> bo
+veljalo</p>
+<p><span class="math display">\[ - \frac{2}{\tau} P - \frac{P ^2}{R} + Q
+= 0.
+\]</span></p>
+<p>Želimo najti ničle te kvadratne enačbe, da lahko zapišemo v
+ničelni(?) obliki</p>
+<p><span class="math display">\[ \frac{1}{R} \left( P - P_{1 \infty}
+\right) \left( P - P_{2 \infty} \right) = 0.
+\]</span></p>
+<p>Poiščimo sedaj <span class="math inline">\( P_{1, 2} \)</span>.
+Preoblikujemo kvadratno enačbo</p>
+<p><span class="math display">\[ \frac{2 R}{\tau} P + P ^2 - Q R = 0.
+\]</span></p>
+<p>Rešitvi kvadratne enačbe sta tako</p>
+<p><span class="math display">\[ P_{1, 2} = - \frac{R}{\tau} \pm
+\frac{R}{\tau} \sqrt{1 + \frac{Q R \tau ^2}{R ^2}}.
+\]</span></p>
+<p>Označimo <span class="math inline">\( \alpha = \frac{R}{\tau} \sqrt{1
++ \frac{Q R \tau ^2}{R ^2}}  \)</span> in so ničle <span
+class="math inline">\( P_{1, 2} = - \frac{R}{\tau} \pm \alpha
+\)</span>.</p>
+<p>Za vsak <span class="math inline">\( t \)</span> potem lahko
+diferencialno enačbo <span class="math inline">\(\ref{eq:3}\)</span>
+integriramo</p>
+<p><span class="math display">\[ \int\limits_{}^{} \frac{\mathrm{d}
+P}{\frac{1}{R} \left( P + \frac{R}{\tau} - \alpha \right) \left( P +
+\frac{R}{\tau} + \alpha \right)} = - \int\limits_{}^{} \, \mathrm{d} t.
+\]</span></p>
+<p>Ulomek razcepimo</p>
+<p><span class="math display">\[ \frac{1}{\left( P + \frac{R}{\tau} -
+\alpha \right) \left( P + \frac{R}{\tau} + \alpha \right)} =
+\frac{\frac{1}{2 \alpha}}{\left( P + \frac{R}{\tau} - \alpha \right)} -
+\frac{\frac{1}{2 \alpha}}{\left( P + \frac{R}{\tau} + \alpha \right)}
+\]</span></p>
+<p>Integral torej zapišemo kot</p>
+<p><span class="math display">\[ R \left[ \int\limits_{}^{} \frac{1}{2
+\alpha} \frac{\mathrm{d} P}{\left( P + \frac{R}{\tau} - \alpha \right)}
+- \int\limits_{}^{} \frac{1}{2 \alpha}  \frac{\mathrm{d} P}{\left( P +
+\frac{R}{\tau} + \right)} \right] = - \int\limits_{}^{} \, \mathrm{d} t.
+\]</span></p>
+<p>Integrala sedaj trivialno integriramo</p>
+<p><span class="math display">\[ - \frac{2 \alpha t}{R} = \left. \left[
+\ln \left( P + \frac{R}{\tau} - \alpha \right) - \ln \left( P +
+\frac{R}{\tau} + \alpha \right) \right] \right|_{P_0}^P = \left. \ln
+\left( \frac{P + \frac{R}{\tau} - \alpha}{P + \frac{R}{\tau} + \alpha}
+\right) \right|_{P_0} ^P.
+\]</span></p>
+<p>Preostane nam</p>
+<p><span class="math display">\[ \frac{P + \frac{R}{\tau} - \alpha}{P +
+\frac{R}{\tau} + \alpha} = \frac{P_0 + \frac{R}{\tau} - \alpha}{P_0 +
+\frac{R}{\tau} + \alpha} \exp \left\{ - 2 \alpha t \frac{1}{R} \right\}.
+\]</span></p>
+<p>Še zmeraj istemo stacionarno rešitev <span class="math inline">\(
+\dot{P} = 0 \)</span>. Ob času <span class="math inline">\( t = 0
+\)</span> je <span class="math inline">\( P(0) = P_0 \)</span> in bo
+koeficient pred eksponentom približno <span class="math inline">\( 1
+\)</span>.</p>
+<p>Preostane nam torej</p>
+<p><span class="math display">\[ \left( P + \frac{R}{\tau} - \alpha
+\right) = \left( P + \frac{R}{\tau} + \alpha \right) \exp \left\{ - 2
+\alpha \frac{1}{R} \right\}.
+\]</span></p>
+<p>Izrazimo <span class="math inline">\( P \)</span></p>
+<p><span class="math display">\[ P \left( 1 - \exp \left\{ 2 \alpha t
+\frac{1}{R} \right\} \right) = - \frac{R}{\tau} \left[ 1 - \exp \left\{
+- 2 \alpha t \frac{1}{R}  \right\} \right] + \alpha \left[ 1 + \exp
+\left\{ - 2 \alpha t \frac{1}{R} \right\} \right].
+\]</span></p>
+<p>Torej je</p>
+<p><span class="math display">\[ P = - \frac{R}{\tau} + \alpha \left[
+\frac{1 + \exp \left\{ - 2 \alpha t \frac{1}{R} \right\}}{1 - \exp
+\left\{ -2 \alpha t \frac{1}{R} \right\}} \right].
+\]</span></p>
+<p>Za <span class="math inline">\( t \to \infty \)</span> je potem</p>
+<p><span class="math display">\[ P = - \frac{R}{\tau} + \alpha
+\]</span></p>
+<p>in ob upoštevanju definicije <span class="math inline">\( \alpha
+\)</span> je potem</p>
+<p><span class="math display">\[ P_{\infty} = -\frac{R}{\tau} +
+\sqrt{\left( \frac{R}{\tau} \right) ^2 + R Q}
+\]</span></p>
+<p>V primeru majhnega dinamičnega šuma <span class="math inline">\( Q
+\)</span> je potem</p>
+<p><span class="math display">\[ P_{\infty} = - \frac{R}{\tau} +
+\frac{R}{\tau} \sqrt{1 + \frac{Q \tau ^2}{R}},
+\]</span></p>
+<p>kar lahko razvijemo po Taylorju</p>
+<p><span class="math display">\[ P = - \frac{R}{\tau} + \frac{R}{\tau}
+\left( 1 + \frac{Q \tau ^2}{2 R} \right) = \frac{Q \tau}{\tau}.
+\]</span></p>
+<p>Ocena je v tem primeru po Kalmanu</p>
+<p><span class="math display">\[ \dot{\hat{U}} = - \frac{1}{\tau}
+\hat{U} + K \left( z  - \hat{U} \right)
+\]</span></p>
+<p>oziroma</p>
+<p><span class="math display">\[ \dot{\hat{U}} = - \frac{1}{\tau}
+\hat{U} + \frac{Q \tau}{2 R} \left( z - \hat{U} \right).
+\]</span></p>
+<p>Zaradi dinamičnega šuma se ojačevalni faktor optimalnega filtra
+ustali pri končni vrednosti <span class="math inline">\( K_{\infty}
+\)</span>.</p>
+<p>Dobili smo sedaj novo časovno neodvisno konstanto, ki jo označimo z
+<span class="math inline">\( \frac{1}{\tau_{eff}} \)</span></p>
+<p><span class="math display">\[ \dot{\hat{U}} = - \left( +
+\frac{1}{\tau} + \frac{Q \tau}{2 R} \right) \hat{U} + \frac{Q \tau}{ 2
+R} = \frac{1}{\tau_{eff}} \hat{U}_R + \frac{Q \tau}{2 R}.
+\]</span></p>
+<p>Velja <span class="math inline">\( \tau_{eff} &lt; \tau
+\)</span>.</p>
+<p>V primeru <span class="math inline">\( Q \to \infty \)</span> pa gre
+<span class="math inline">\( \tau_{eff} \to 0 \)</span>. To pomeni, da
+je potem <span class="math inline">\( P \)</span> stacionaren in napaka
+je enaka kakor pri meritvi. Če je <span class="math inline">\( Q = 0
+\)</span>, potem moramo celoten čas <span class="math inline">\( \tau
+\)</span> počakati, da se meritev umiri in je <span
+class="math inline">\( P \)</span> konstanten. Za vse vrednosti vmes je
+toliko manj časa potrebno, da lahko zaupamo meritvi.</p>
+</div>
+<h1
+id="optimalna-povratna-zanka-in-poenostavitev-kalmanovega-filtra">Optimalna
+povratna zanka in poenostavitev Kalmanovega filtra</h1>
+<p>Opazovalni sistem <span class="math inline">\( S \)</span> in merilni
+sistem <span class="math inline">\( M \)</span> sta povezana preko
+senzorjev, ki sinhronizirajo med sistem. Povedali smo že, da je linearna
+diferencialna enačba prvega reda dinamika za optimalni filter, ki ima
+člen <span class="math inline">\( K(z - H \hat{x}) \)</span> z
+ojačevalnim faktorje <span class="math inline">\( K(t) \)</span>.</p>
+<p>Kalmanov filter podan v enačbi</p>
+<p><span class="math display">\[ \dot{\hat{x}} = A \hat{x} + c + K
+\left( z - H \hat{x} \right),
+\]</span></p>
+<p>kjer zadnji člen meri stopnjo sinhronizacije. V primeru, da sta
+sistema <span class="math inline">\( S \)</span> in <span
+class="math inline">\( M \)</span> usklajena, potem je <span
+class="math inline">\( \left( z - H\hat{x} \right) \)</span> samo bel
+šum. Posledično je v tem primeru pričakovana vrednost inovacije <span
+class="math inline">\( \left\langle \left( z - H \hat{x} \right)
+\right\rangle = 0 \)</span>.</p>
+<p>Po integriranju</p>
+<p><span class="math display">\[ K \int\limits_{}^{} \left( z - H
+\hat{x} \right) \, \mathrm{d} t = 0.
+\]</span></p>
+<p>To nam sporoča, da pomembnost ojačevalnega faktorja časovno pada, kar
+pomeni, da lahko namesto časovno spremenljivega <span
+class="math inline">\( K(t) \)</span> izberemo nek konstanten ojačevalni
+faktor <span class="math inline">\( K_{\infty} = PH^T R^{-1}
+\)</span>.</p>
+<p>Težave lahko nastopijo le v prestopnem/tranzientnem režimu.</p>
+<p>Zanima nas, ali lahko najprej naredimo senzor in potem gledamo za
+kakšne dinamike je dober? Do sedaj smo postopali tako, da smo si izbrali
+dinamiko in naredili senzor.</p>
+<p>Zanima nas red senzorja glede na dinamiko. V senzor prihaja meritev
+<span class="math inline">\( z \)</span> in njegov izhod nam da oceno
+<span class="math inline">\( \hat{x} \)</span>. Senzor rešuje
+diferencialno enačbo in red te enačbe bomo označili z <span
+class="math inline">\( n \)</span> za oceno <span class="math inline">\(
+\hat{x} \)</span>.</p>
+<p>Red senzorja je direktno koreliran z redom dinamike spremenljivke, ki
+jo merimo. Senzor <span class="math inline">\( n \)</span>-tega reda
+obravnavamo kot optimalen sledilni sistem za spremenljivke <span
+class="math inline">\( \mathbf{x}(t) \)</span>, katerih dnamika se
+spreminja kvečjemu kot</p>
+<p><span class="math display">\[ \frac{\mathrm{d} ^{(n)} }{\mathrm{d}
+x^{(n)}} x = 0 + w.
+\]</span></p>
+<h2 id="senzor-prvega-reda">Senzor prvega reda</h2>
+<p>Senzor prvega reda je optimalen za sledenje</p>
+<span class="math display">\[\begin{equation}
+\label{eq:4}
+\dot{x} = 0 + w,
+\end{equation}
+\]</span>
+<p>kjer za šum velja</p>
+<p><span class="math display">\[ \left\langle w(t) w(t&#39;)
+\right\rangle  = Q \delta(t - t&#39;).
+\]</span></p>
+<p>Meritev ima obliko <span class="math inline">\( z = x + r \)</span>,
+kjer ima merilni šum <span class="math inline">\( \left\langle r ^2
+\right\rangle  = R\)</span>.</p>
+<p>Sestavimo sedaj Kalmanov filter za sistem <span
+class="math inline">\( S \)</span>, ki je oblike</p>
+<p><span class="math display">\[ \dot{x} = A x + c + \Gamma w.
+\]</span></p>
+<p>Primerjamo z <span class="math inline">\(\ref{eq:4}\)</span> in
+izluščimo vrednosti koeficientov</p>
+<p><span class="math display">\[ A = 0, \quad, C = 0, \quad, H = 1,
+\quad \text{ in } \quad \Gamma = 1.
+\]</span></p>
+<p>V merilnem sistemu <span class="math inline">\( M \)</span> je torej
+ocena</p>
+<p><span class="math display">\[ \dot{\hat{x}} = \cancel{A \dot{x}} +
+\cancel{c} + K \left( z - H \hat{x} \right) = K \left( z - \hat{x}
+\right).
+\]</span></p>
+<p>Disperzija je</p>
+<p><span class="math display">\[ \dot{P} = \cancel{2 AP} + \Gamma ^2 Q -
+\frac{P ^2}{R} = Q - \frac{P ^2}{R}.
+\]</span></p>
+<p>Ob konstantnem ojačevalnem faktorju <span class="math inline">\(
+K_{\infty} \)</span> je <span class="math inline">\( \dot{P} = 0
+\)</span> in dobimo enakost <span class="math inline">\( Q =
+\frac{P_{\infty} ^2}{R} \)</span> iz česar zaključimo</p>
+<p><span class="math display">\[ P_{\infty} = \sqrt{Q R}.
+\]</span></p>
+<p>Ojačevalni faktor je potem</p>
+<p><span class="math display">\[ K_{\infty} = \frac{P_{\infty}}{R} =
+\sqrt{\frac{Q}{R}}.
+\]</span></p>
+<p>Torej bo napoved ocene</p>
+<p><span class="math display">\[ \dot{\hat{x}}  K_{\infty} \left( z -
+\hat{x} \right) = \sqrt{\frac{Q}{R}} \left( z - \hat{x} \right).
+\]</span></p>
+<p>Izrazimo meritev</p>
+<p><span class="math display">\[ z = \frac{1}{K_{\infty}} \dot{\hat{x}}
++ \hat{x}
+\]</span></p>
+<p>in označimo <span class="math inline">\( \tau = \frac{1}{K_{\infty}}
+\)</span>. Senzor prvega reda ima potem obliko</p>
+<p><span class="math display">\[ \tau \dot{\hat{x}} + \hat{x} = z,
+\]</span></p>
+<p>kar je optimalen indikator za sledenje konstanti.</p>
+<p>Veliko merilcev so senzor 1. reda - termometer, merilnik hitrosti v
+avtu, itd. Nobeden od njih nam ne bi koristil, če bi imeli odvod. Senzor
+v peči je primer senzorja, ki ni prvega reda, saj spremlja temperaturo
+in njen odvod, da ve, kdaj se mora peč prižgati.</p>
+<div class="my_example">
+<p>Poglejmo si primer termometra v kavi. Alkohol/živo srebro ima neko
+temperaturo <span class="math inline">\( T(t) \)</span>, ki se razteza.
+Kava ima temperaturo <span class="math inline">\( T_z \)</span> in
+predstavlja zunanjo temperaturo. <span class="math inline">\( T(t)
+\)</span> in <span class="math inline">\( T_z \)</span> nista isti, saj
+ima termometer stekleno steno površine <span class="math inline">\( S
+\)</span> z debelino <span class="math inline">\( d \)</span>, skozi
+katero gre toplotni tok <span class="math inline">\( \mathbf{j}
+\)</span>.</p>
+<p>Toplotni tok je potem</p>
+<p><span class="math display">\[ \mathbf{j} = - \lambda \nabla T
+\]</span></p>
+<p>Toplotni tok je potem</p>
+<p><span class="math display">\[ P = - \lambda \left( \frac{T_z - T}{d -
+0} \right) S = - \frac{\lambda S}{d} \left( T_z - T \right).
+\]</span></p>
+<p>Hkrati je torej ta toplotni tok tudi po definiciji spremembi
+toplote</p>
+<p><span class="math display">\[ P = \frac{\mathrm{d} Q}{\mathrm{d} t} =
+- mc_P \frac{\mathrm{d} T}{\mathrm{d} t}.
+\]</span></p>
+<p>Enačimo in dobimo</p>
+<p><span class="math display">\[ \dot{T} = \frac{\lambda S}{m c_P d}
+\left( T_z - T \right).
+\]</span></p>
+<p>Konstante označimo z <span class="math inline">\( \Lambda =
+\frac{\lambda S}{m c_p d} \)</span> in enačba za senzor prvega reda je
+potem</p>
+<p><span class="math display">\[ \frac{1}{\Lambda} \dot{T} + T = T_z.
+\]</span></p>
+<p>V senzor vstopi <span class="math inline">\( T_z \)</span> izstopi pa
+<span class="math inline">\( T \)</span>.</p>
+</div>
+<p>Kaj se zgodi v primeru, če s senzorjem prvega reda merimo dinamike
+višjih redov? Obstajajo tri možnosti, o katerih bomo več povedali
+naslednji teden na predavanjih.</p>
+</body>
+</html>

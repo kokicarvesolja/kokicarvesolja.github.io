@@ -1,5 +1,13 @@
 #+title: Fizikalna merjenja
 * Predavanja
+
+Tukaj so zbrani zapiski predavanj pri prof. Dean Cvetku.
+
+- [[file:01predavanja/20260219fmer_08p.html][predavanje 1, 2026/02/19:]] snov predmeta, uvod v meritve, optimalno filtriranje
+- [[file:01predavanja/20260226fmer_09p.html][predavanje 2, 2026/02/26:]] optimalno filtriranje: merilni šum, povprečevanje, disperzija optimalno združene ocene, korelacija in kovarianca, združevanje koreliranih meritev. Sledenje konstantnim skalarnim količinam.
+- [[file:01predavanja/20260305fmer_10p.html][predavanje 3, 2026/03/05:]] Merjenje skalarnih spremenljivk: dinamični šum. Vektorske spremenljivke: disperzija in korelacija med komponentami vektorskih količin, senzor več spremenljivk, ostrenje z vektorskimi meritvami.
+- [[file:01predavanja/20260311fmer_11p.html][predavanje 4, 2026/03/12:]] Vektorske spremenljivke: ostrenje vektorske spremenljivke, prehod na zvezno sliko.
+- [[file:01predavanja/20260319fmer_12p.html][predavanje 5, 2026/03/19:]] Vektorske spremenljivke - primera: Brownovo gibanje in praznenje RC člena. Senzorji: senzor prvega reda.
 * Vaje
 
 Tukaj so zbrani zapiski vaj pri prof. Gregor Kladniku.
@@ -13,7 +21,6 @@ Tukaj so zbrani zapiski vaj pri prof. Gregor Kladniku.
 For faster export, evaluate
 
 #+begin_src bash
-pandoc fmer/fmer_indeks.org -s -o fmer_indeks.html -c ../stylesBW.css --include-in-header=../preamble.html --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --toc=true
+pandoc fmer_indeks.org -s -o fmer_indeks.html -c ../stylesBW.css --include-in-header=../preamble.html --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML --toc=true
 #+end_src
 
-#+RESULTS:

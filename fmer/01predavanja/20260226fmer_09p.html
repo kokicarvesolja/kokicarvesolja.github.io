@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Predavanja iz Fizikalnih merjenj, 8. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Predavanja iz Fizikalnih merjenj, 8. teden v letu</h1>
+<p class="subtitle">2026/02/26</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#optimalno-filtriranje"
+id="toc-optimalno-filtriranje">Optimalno filtriranje</a>
+<ul>
+<li><a href="#merilni-šum" id="toc-merilni-šum">Merilni šum</a></li>
+<li><a href="#povprečevanje" id="toc-povprečevanje">Povprečevanje</a>
+<ul>
+<li><a href="#združevanje-ocen-z-različnima-disperzijama"
+id="toc-združevanje-ocen-z-različnima-disperzijama">Združevanje ocen z
+različnima disperzijama</a></li>
+<li><a href="#kvadratna-forma" id="toc-kvadratna-forma">Kvadratna
+forma</a></li>
+</ul></li>
+<li><a href="#disperzija-optimalno-združene-ocene"
+id="toc-disperzija-optimalno-združene-ocene">Disperzija optimalno
+združene ocene</a></li>
+<li><a href="#korelacija-in-kovarianca"
+id="toc-korelacija-in-kovarianca">Korelacija in kovarianca</a></li>
+<li><a href="#združevanje-koreliranih-meritev"
+id="toc-združevanje-koreliranih-meritev">Združevanje koreliranih
+meritev</a></li>
+</ul></li>
+<li><a href="#on-line-sledenje-konstantnim-skalarnim-količinam"
+id="toc-on-line-sledenje-konstantnim-skalarnim-količinam">On-line
+sledenje konstantnim skalarnim količinam</a></li>
+</ul>
+</nav>
+<h1 id="optimalno-filtriranje">Optimalno filtriranje</h1>
+<h2 id="merilni-šum">Merilni šum</h2>
+<p>Spomnimo: izmerek je definiran kot</p>
+<p><span class="math display">\[ z = x + r,
+\]</span></p>
+<p>kjer je <span class="math inline">\( x \)</span> prava vrednosti,
+<span class="math inline">\( r \)</span> pa šum porazdeljen po normalni
+porazdelitvi <span class="math inline">\( N(0, \sigma) \)</span>.</p>
+<p>Pričakovana vrednost šuma je</p>
+<p><span class="math display">\[ \left\langle r \right\rangle =
+\int\limits_{- \infty}^{\infty} \frac{\mathrm{d} P}{\mathrm{d} r} \cdot
+r \, \mathrm{d} r = 0,
+\]</span></p>
+<p>saj je <span class="math inline">\( r \)</span> liha funkcija na
+sodem intervalu.</p>
+<p>To pomeni, da bo varianca - odstopanje od pričakovane vrednosti</p>
+<p><span class="math display">\[ \left\langle \left( r - \left\langle r
+\right\rangle \right) ^2 \right\rangle = \left\langle r ^2
+\right\rangle.
+\]</span></p>
+<p>Pričakovana vrednost kvadrata pa je</p>
+<span class="math display">\[\begin{align*}
+  \left\langle r ^2 \right\rangle &amp;= \int\limits_{}^{}
+\frac{\mathrm{d} P}{\mathrm{d} r} \cdot r ^2 \, \mathrm{d} r \\
+&amp;= \int\limits_{}^{} \frac{1}{\sqrt{2 \pi}} \frac{1}{\sigma} r ^2
+e^{- \frac{r ^2}{2 \sigma ^2}} \, \mathrm{d} r.
+\end{align*}
+\]</span>
+<p>Uvedemo novo spremenljivko <span class="math inline">\( \frac{r ^2}{2
+\sigma ^2} = u ^2 \)</span> in <span class="math inline">\( \mathrm{d} r
+= \sqrt{2 \sigma} \mathrm{d} u \)</span> in vrednost integrala je</p>
+<p><span class="math display">\[ \left\langle r ^2 \right\rangle = 2
+\sigma ^2 \frac{1}{ \sqrt{\pi}} \int\limits_{}^{} u ^2 e^{- u ^2} \,
+\mathrm{d} u = \sigma ^2,
+\]</span></p>
+<p>saj je vrednost integrala <span class="math inline">\( \frac{\pi}{2}
+\)</span>.</p>
+<p>V primeru uvedbe spremenljivke <span class="math inline">\( u =
+\frac{r}{\sigma} \)</span> je <span class="math inline">\( u \)</span>
+porazdeljen po <span class="math inline">\( N (0, 1) \)</span>, kar je
+standardizirana normalna porazdelitev.</p>
+<h2 id="povprečevanje">Povprečevanje</h2>
+<p>Imamo izmerke <span class="math inline">\( z_i \)</span> za <span
+class="math inline">\( i = 1,2, \ldots, N \)</span>, ki so porazdeljeni
+po <span class="math inline">\( N(x, \sigma) \)</span>. Povprečje teh
+izmerkov je potem</p>
+<p><span class="math display">\[ \bar{z} = \frac{1}{N} \sum\limits_{i =
+1}^N z_i.
+\]</span></p>
+<p>Zanima nas, kakšna je porazdelitev povprečne vrednosti <span
+class="math inline">\( \frac{\mathrm{d} P}{\mathrm{d} \mathbf{z}}
+\)</span>.</p>
+<p>Povprečna vrednost odstopanja za <span class="math inline">\( i \to
+\infty \)</span> je ničeln</p>
+<p><span class="math display">\[ \overline{\left( z_i - x \right)} =
+\bar{r} = 0.
+\]</span></p>
+<p>Iz tega razloga je tudi</p>
+<p><span class="math display">\[ \overline{\left( \bar{z} - x\right)} =
+0,
+\]</span></p>
+<p>saj je <span class="math inline">\( \bar{z} \)</span> definirana z
+<span class="math inline">\( z_i \)</span>.</p>
+<p>Izračunati moramo še</p>
+<span class="math display">\[\begin{align*}
+  \overline{\left( \bar{z} - z \right) ^2} &amp;= \overline{\left(
+\frac{1}{N} \sum\limits_{i=1}^N z_i - x \right) ^2} \\
+&amp;= \frac{1}{N ^2} \overline{\left( \sum\limits_{i = 1}^N z_i - N x
+\right) ^2} \\
+&amp;= \frac{1}{N ^2} \overline{\left( \sum\limits_{i = 1}^N (z_i - x)
+\right) ^2} \\
+&amp;= \frac{1}{N ^2} \left( \overline{\sum\limits_{i = 1}^N \left( z_i
+- x \right) ^2} + \overline{\sum\limits_{i = 1}^N \sum\limits_{j = 1}^N
+\left( z_i - x \right) \left( z_j - x \right)} \right) \\
+&amp;= \frac{1}{N ^2} \left( \overline{\sum\limits_{i = 1}^N \left( z_i
+- x \right) ^2} + \overline{\sum\limits_{i = 1}^N \sum\limits_{j = 1}^N
+r_i r_j}  \right) \\
+&amp;= \frac{1}{N ^2} \sum\limits_{i = 1}^N \overline{\left( z_i - x
+\right) ^2} = \frac{\sigma}{N}
+\end{align*}
+\]</span>
+<p>Zaključimo torej, da je povprečna vrednost porazdeljena po ožji
+normalni porazdelitvi</p>
+<p><span class="math display">\[ \frac{\mathrm{d} P}{\mathrm{d} \bar{z}}
+= N\left(x, \frac{\sigma}{\sqrt{\pi}}\right).
+\]</span></p>
+<p>To je tudi smisel ponavljanja in povprečevanja vrednosti.</p>
+<h3 id="združevanje-ocen-z-različnima-disperzijama">Združevanje ocen z
+različnima disperzijama</h3>
+<p>Imejmo dve oceni</p>
+<p><span class="math display">\[ \bar{z}_1 = \frac{1}{n} \sum\limits_{i
+= 1}^n z_i, \ \sigma_1 ^2 = \frac{\sigma ^2}{n} \quad \text{ in } \quad
+\bar{z}_2 = \frac{1}{m} \sum\limits_{i = 1}^m z_i, \ \sigma_2 ^2 =
+\frac{\sigma ^2}{m}
+\]</span></p>
+<p>Oceni želimo združiti v oceno <span class="math inline">\( z_3
+\)</span> z disperzijo <span class="math inline">\( \sigma_3 \)</span>.
+Po definiciji bo povprečje te ocene</p>
+<p><span class="math display">\[ \bar{z}_3 = \frac{1}{n + m}
+\sum\limits_{i = 1}^{n + m} z_i, \ \sigma_3 ^2 = \frac{\sigma}{n + m}.
+\]</span></p>
+<p>Razdelimo vsoto na dva dela</p>
+<p><span class="math display">\[ \bar{z}_3 = \frac{n}{n + m} \left(
+\frac{1}{n} \sum\limits_{i = 1}^n z_i \right) + \frac{m}{n + m} \left(
+\frac{1}{m} \sum\limits_{i = 1}^m  z_i \right),
+\]</span></p>
+<p>kjer sta faktorja <span class="math inline">\( \frac{n}{n + m}
+\)</span> in <span class="math inline">\( \frac{m}{ n + m}  \)</span>
+uteži, ki ju lahko zapišemo tudi z disperzijo</p>
+<p><span class="math display">\[ \frac{n}{n + m} = \frac{\sigma ^2
+\sigma_3 ^2}{\sigma_1 ^2  \sigma ^2} = \frac{\sigma_3 ^2}{\sigma_1 ^2}
+\quad \text{ in } \quad \frac{m}{n + m} = \frac{\sigma_3 ^2}{\sigma_2
+^2}.
+\]</span></p>
+<p>Hkrati velja še</p>
+<p><span class="math display">\[ \sigma_3 ^{-2} = \frac{n + m}{\sigma
+^2} = \sigma_1 ^2 + \sigma_2 ^2,
+\]</span></p>
+<p>iz česar sledi</p>
+<p><span class="math display">\[ \frac{1}{\sigma_3 ^2} =
+\frac{1}{\sigma_1 ^2} + \frac{1}{\sigma_2 ^2} \quad \text{ in } \quad
+\sigma_3 ^2 = \frac{\sigma_1 ^2 \sigma_2 ^2}{\sigma_1 ^2 + \sigma_2 ^2}.
+\]</span></p>
+<p>Združeno oceno torej zapišemo kot</p>
+<p><span class="math display">\[ \bar{z}_3 = \frac{\sigma_3 ^2}{\sigma_1
+^2} \bar{z}_1 + \frac{\sigma_3 ^2}{\sigma_2 ^2} \bar{z}_2
+\]</span></p>
+<p>Sledi</p>
+<p><span class="math display">\[ \bar{z}_3 = \frac{\sigma_2 ^2}{\sigma_1
+^2 + \sigma_2 ^2} \bar{z}_1 + \frac{\sigma_1 ^2}{\sigma_1 ^2 + \sigma_2
+^2} \bar{z}_2,
+\]</span></p>
+<p>kar lahko zapišemo tudi kot</p>
+<span class="math display">\[\begin{equation}
+\label{eq:1}
+\bar{z}_3 = \bar{z}_1 + \frac{\sigma_1 ^2}{\sigma_1 ^2 + \sigma_2 ^2}
+\left( \bar{z}_2 - \bar{z}_1 \right),
+\end{equation}
+\]</span>
+<p>kjer je <span class="math inline">\( \bar{z}_3 \)</span> nova ocena,
+<span class="math inline">\( \bar{z}_1 \)</span> stara ocena, faktor
+pred oklepajem utež in razlika v oklepaju je inovacija.</p>
+<p><span class="math inline">\( \sigma_1 \ll \sigma_2 \)</span> nam
+pove, da ima bolj natančna ocena večjo utež. Enačba <span
+class="math inline">\(\ref{eq:1}\)</span> je optimalno združena
+ocena.</p>
+<h3 id="kvadratna-forma">Kvadratna forma</h3>
+<p>S kvadratno formo <span class="math inline">\( 2 \dot{J}(x) \)</span>
+bomo prišli do podobnega zaključka kot v prejšnjem poglavju. Imejmo dve
+meritvi</p>
+<p><span class="math display">\[ z_1 = \mathcal{N}(x, \sigma_1) \quad
+\text{ in } \quad z_2 = \mathcal{N}(x, \sigma_2).
+\]</span></p>
+<p>Meritvi lahko pretvorimo v standardno normalno Gaussovo porazdelitev
+<span class="math inline">\( \mathcal{N}(0, 1) \)</span></p>
+<p><span class="math display">\[ \mathcal{N}(0, 1) = \frac{\left( z_1 -
+x \right)}{\sigma_1} = \frac{\left( z_2 - x \right)}{\sigma_2}.
+\]</span></p>
+<p>Kvadratno forma je potem</p>
+<p><span class="math display">\[ 2 J(x) =   \frac{\left( z_1 - x \right)
+^2}{\sigma_1 ^2} + \frac{\left( z_2 - x \right) ^2}{\sigma_2 ^2}.
+\]</span></p>
+<p>Cilj je dobiti optimalno združitev, zato minimiziramo zgornji
+seštevek in zahtevamo</p>
+<span class="math display">\[\begin{align*}
+  0 &amp;= \frac{\mathrm{d} }{\mathrm{d} x} \left( 2 J(x) \right) \\
+&amp;= - \frac{2 \left( z_1 - x \right)}{\sigma_1 ^2} - \frac{2 \left(
+z_2 - x \right)}{\sigma_2 ^2}
+\end{align*}
+\]</span>
+<p>Izpostavimo lahko sprmemenljivko <span class="math inline">\( x
+\)</span></p>
+<p><span class="math display">\[ x \left[ \frac{1}{\sigma_1 ^2} +
+\frac{1}{\sigma_2 ^2} \right] = \frac{z_1}{\sigma_1 ^2} +
+\frac{z_2}{\sigma_2 ^2}
+\]</span></p>
+<p>in optimalno združevanje je potem</p>
+<p><span class="math display">\[ x = z_3 = \left( \frac{1}{\sigma_1 ^2}
++ \frac{1}{\sigma_2 ^2} \right) ^{-1} \left[ \frac{z_1}{\sigma_1 ^2} +
+\frac{z_2}{\sigma_2 ^2} \right]
+\]</span></p>
+<h2 id="disperzija-optimalno-združene-ocene">Disperzija optimalno
+združene ocene</h2>
+<p>Imamo dva izmerka</p>
+<p><span class="math display">\[ z_1 = x + r_1, \ \left\langle r_1 ^2
+\right\rangle = \sigma_1 ^2 \quad \text{ in } \quad z_2 = x + r_2, \
+\left\langle r_2 ^2 \right\rangle = \sigma_2 ^2.
+\]</span></p>
+<p>Združena ocena bo linearna kombinacija obeh</p>
+<p><span class="math display">\[ z_3 = x + r_3 = \alpha z_1 + \beta z_2,
+\]</span></p>
+<p>iz česar sledi</p>
+<p><span class="math display">\[ x + r_3 =  \left( \alpha + \beta
+\right) x + \alpha r_1 + \beta r_2.
+\]</span></p>
+<p>Dobimo pogoj <span class="math inline">\( \alpha + \beta = 1
+\)</span> in posledično velja <span class="math inline">\( \alpha r_1 +
+\beta r_2 = r_3 \)</span>.</p>
+<p>Pričakovana vrednost <span class="math inline">\( r_3 \)</span> je 0,
+saj sta pričakovani vrednosti posameznih komponent <span
+class="math inline">\( 0 \)</span>.</p>
+<p>Pričakovana vrednost kvadrata pa je</p>
+<span class="math display">\[\begin{align*}
+  \left\langle r_3 ^2 \right\rangle &amp;= \left\langle \left( \alpha
+r_1 + \left( 1 - \alpha \right) r_2 \right) ^2 \right\rangle \\
+&amp;= \left\langle \alpha ^2 r_1 ^2 + \left( 1 - \alpha \right) ^2 r_2
+^2  + 2 \alpha \left( 1 - \alpha \right)r_1 r_2\right\rangle
+\end{align*}
+\]</span>
+<p>Disperzija združene meritve je torej</p>
+<p><span class="math display">\[ \sigma_3 ^2 = \alpha ^2 \left\langle
+r_1 ^2 \right\rangle + \left( 1 - \alpha \right) ^2 \left\langle r_2 ^2
+\right\rangle + 2 \alpha \left( 1 - \alpha \right) \left\langle r_1 r_2
+\right\rangle
+\]</span></p>
+<p>Šuma sta nekorelirana, zato je njuna pričakovana vrednost <span
+class="math inline">\( 0 \)</span>. Z odvajanjem po parametru <span
+class="math inline">\( \alpha \)</span> lahko določimo optimalno
+vrednost disperzijo</p>
+<p><span class="math display">\[ \frac{\mathrm{d} }{\mathrm{d} \alpha}
+\left( \sigma_3 ^2 \right) = 2 \alpha \sigma_1 ^2 + 2 \left( 1- \alpha
+\right) (-1) \sigma_2 ^2 = 0.
+\]</span></p>
+<p>Dobimo potrditev, da je to dejansko optimalno združena meritev, saj
+sta enaka rezultata kvadratni formi</p>
+<p><span class="math display">\[ \alpha = \frac{\sigma_2 ^2}{\alpha_1 ^2
++ \sigma_2 ^2} \quad \text{ in } \quad \beta = 1 - \alpha =
+\frac{\sigma_1 ^2}{\sigma_1 ^2 + \sigma_2 ^2}
+\]</span></p>
+<h2 id="korelacija-in-kovarianca">Korelacija in kovarianca</h2>
+<p>Imamo 2 seta meritev <span class="math inline">\( \left\{ x_i
+\right\} \)</span> in <span class="math inline">\( \left\{ y_i \right\}
+\)</span> za <span class="math inline">\( i = 1, 2, \ldots, N
+\)</span>.</p>
+<p>Naj obstaja povezava med šumom prve in druge meritve</p>
+<p><span class="math display">\[ w_x = x_i - \bar{x} \quad \text{ in }
+\quad w_y = y_i - \bar{y},
+\]</span></p>
+<p>kjer je <span class="math inline">\( \left\langle w_x \right\rangle =
+\left\langle w_y \right\rangle =0 \)</span> in <span
+class="math inline">\( \left\langle w_x ^2 \right\rangle = \sigma_x ^2
+\)</span> in <span class="math inline">\( \left\langle w_y ^2
+\right\rangle = \sigma_y ^2 \)</span>.</p>
+<p>Definicija kovariance je</p>
+<p><span class="math display">\[ \sigma_{xy} = \rho_{xy} \sigma_x
+\sigma_y = \left\langle w_x w_y \right\rangle
+\]</span></p>
+<p>kjer je <span class="math inline">\( \rho_{xy} \)</span> korelacijski
+koeficient in zaseda vrednosti <span class="math inline">\( \left|
+\rho_{xy} \right| \le 1\)</span>.</p>
+<p>Dokazujemo, da je</p>
+<p><span class="math display">\[ \sigma_{xy} = \overline{xy} - \bar{x}
+\bar{y}.
+\]</span></p>
+<p>Upoštevamo defincije</p>
+<span class="math display">\[\begin{align*}
+  \sigma_{xy} &amp;= \overline{xy} - \bar{x} \bar{y} \\
+&amp;= \frac{1}{N} \sum\limits_{}^{}\left( x_i - \bar{x} \right) \left(
+y_i - \bar{y} \right) \\
+&amp;= \frac{1}{N} \sum\limits_{}^{} \left( x_i y_i - x_i \bar{y} -
+\bar{x} y_i + \bar{x} \bar{y} \right) \\
+&amp;= \frac{1}{N} \left( \sum\limits_{}^{} x_i y_i - \bar{y}
+\sum\limits_{}^{} x_i - \bar{x} \sum\limits_{}^{} y_i + \bar{x} \bar{y}
+\sum\limits_{}^{} i \right) \\
+&amp;= \left( \frac{1}{N} \sum\limits_{}^{} x_i y_i - \bar{x} \bar{y} -
+\bar{x} \bar{y} + \bar{x} \bar{y} \frac{N}{N} \right) \\
+&amp;= \overline{xy} - \bar{x} \bar{y}
+\end{align*}
+\]</span>
+<p>Za nekolerirane ocene velja <span class="math inline">\( \rho = 0
+\)</span>, za popolnoma (anti)korelirane <span class="math inline">\( x
+= (-)y \)</span> velja <span class="math inline">\( \rho = (-) 1
+\)</span>.</p>
+<h2 id="združevanje-koreliranih-meritev">Združevanje koreliranih
+meritev</h2>
+<p>Imejmo dva izmerka <span class="math inline">\( z_1, \sigma_1
+\)</span> in <span class="math inline">\( z_2, \sigma_2 \)</span>, ki
+imata korelacijski koeficient <span class="math inline">\( \rho
+\)</span>.</p>
+<p>Posamezne izmerka sta definirana kot</p>
+<p><span class="math display">\[ z_1 = x + w_1, \ \left\langle w_1 ^2
+\right\rangle  = \sigma_1 ^2 \quad \text{ in } \quad z_2 = x + w_2 , \
+\left\langle w_2 ^2 \right\rangle  = \sigma_2 ^2
+\]</span></p>
+<p>in velja <span class="math inline">\(  \left\langle w_1 w_2
+\right\rangle \ne 0 \)</span>.</p>
+<p>Po definiciji bo korelacija</p>
+<p><span class="math display">\[ \sigma_{12} = \rho \sigma_1 \sigma_2 =
+\left\langle \left( z_1 - x \right) \left( z_2 - x \right) \right\rangle
+= \left\langle w_1 w_2 \right\rangle.
+\]</span></p>
+<p>Šuma nista neodvisna, torej ga lahko zapišemo kot linearno
+kombinacijo druge meritve in neodvisnega dela <span
+class="math inline">\( w_1 = \alpha w_2 + w \)</span>, kjer velja <span
+class="math inline">\( \left\langle w_2 w \right\rangle = 0\)</span>,
+kar je ekvivalentno</p>
+<p><span class="math display">\[ (z_1 - x) = \alpha (z_2 - x) + w, \
+\left\langle w (z_2 - x) \right\rangle  = 0.
+\]</span></p>
+<p>To linearno odvisnost upoštevamo v korelaciji</p>
+<span class="math display">\[\begin{align*}
+  \rho \sigma_1 \sigma_2 &amp;= \left\langle \left( \alpha w_2 + w
+\right) \right\rangle \\
+&amp;= \alpha \sigma_1 ^2
+\end{align*}
+\]</span>
+<p>Iz tega sledi, da je koeficient linearne odvisnosti enak</p>
+<p><span class="math display">\[ \alpha = \rho
+\frac{\sigma_1}{\sigma_2}.
+\]</span></p>
+<p>Zapišimo še varianco neodvisnega šuma</p>
+<span class="math display">\[\begin{align*}
+  \sigma_1 ^2 = \left\langle w_1 ^2 \right\rangle &amp;= \left\langle
+\left( \alpha w_2 + w \right) ^2 \right\rangle \\
+&amp;= \left\langle \alpha ^2 w_2 ^2 + w ^2 + 2\alpha w_2
+w  \right\rangle\\
+&amp;= \alpha ^2 \sigma_2 ^2 + \sigma_w ^2
+\end{align*}
+\]</span>
+<p>Varianco neodvisnega šuma ob upoštevanju vrednosti <span
+class="math inline">\( \alpha \)</span> potem zapišemo</p>
+<p><span class="math display">\[ \sigma_w ^2 = \sigma_1 ^2 \left( 1 -
+\rho ^2 \right)
+\]</span></p>
+<p>Optimalno združevanje ocen poteka preko kvadratov nekoreliranih
+šumov</p>
+<p><span class="math display">\[ 2J(x) = \frac{w_2 ^2}{\sigma_2 ^2} +
+\frac{w ^2}{\sigma_w ^2} = \frac{w_2 ^2}{\sigma_2 ^2} + \frac{\left( w_1
+- \alpha w_2 \right) ^2}{\sigma_w ^2}.
+\]</span></p>
+<p>Razdelimo na vsoto ulomkov in upoštevamo definicijo <span
+class="math inline">\( \alpha \)</span> in dobimo</p>
+<p><span class="math display">\[ 2 J(x) = \frac{w_2 ^2}{\sigma_2 ^2} +
+\frac{\rho ^2}{\sigma_2 ^2} \frac{w_2 ^2}{\left( 1 - \rho ^2 \right)} +
+\frac{w_1 ^2}{\sigma_1 ^2 \left( 1 - \rho ^2 \right)} - \frac{2 \rho w_1
+w_2}{\sigma_1 \sigma_2 \left( 1 - \rho ^2 \right)}.
+\]</span></p>
+<p>V prvih dveh členih izpostavimo skupne lastnosti, ter upoštevamo
+definicijo šuma <span class="math inline">\( w = z - x \)</span></p>
+<p><span class="math display">\[ 2J(x) = \left( 1 + \frac{\rho ^2}{1 -
+\rho ^2} \right) \frac{\left( z_2 - x \right) ^2}{\sigma_2 ^2} +
+\frac{\left( z_1 - x \right) ^2}{\sigma_1 ^2 \left( 1 - \rho ^2 \right)
+} - \frac{2 \rho \left( z_1 - x \right) \left( z_2 - x \right)}{\sigma_1
+\sigma_2 \left( 1 - \rho ^2 \right)}
+\]</span></p>
+<p>Prvi oklepaj se razreši in iščemo optimum za funkcijo</p>
+<p><span class="math display">\[ 2J(x) = \frac{\left( z_2 - x \right)
+^2}{\left( 1 - \rho ^2 \right)\sigma_2 ^2} + \frac{\left( z_1 - x
+\right) ^2}{\left( 1 - \rho ^2 \right) \sigma_1 ^2} - \frac{2 \sigma
+\left( z_1 z_2 - x (z_1 + z_2) + x ^2 \right)}{\sigma_1 \sigma_2 \left(
+1 - \rho ^2 \right)}
+\]</span></p>
+<p>Minimum te funkcije je</p>
+<p><span class="math display">\[ \frac{\mathrm{d} }{\mathrm{d} x}
+(2J(x)) = \frac{z_2 - x}{\sigma_1 ^2} + \frac{z_1 - x}{\sigma_1 ^2} +
+\frac{\rho \left( - (z_1 + z_2) + 2x \right)}{\sigma_1 \sigma_2}.
+\]</span></p>
+<p>Izrazimo <span class="math inline">\( x \)</span></p>
+<p><span class="math display">\[ x \left[ \frac{1}{\sigma_2 ^2} +
+\frac{1}{\sigma_1 ^2} - \frac{2 \rho}{\sigma_1 \sigma_2} \right] =
+\frac{z_2}{\sigma_2 ^2} + \frac{z_1}{\sigma_1} - \frac{\rho(z_1 +
+z_2)}{\sigma_1 \sigma_2},
+\]</span></p>
+<p>iz česar sledi, da je optimalno meritev pri</p>
+<p><span class="math display">\[ x_{opt} = \left[  \frac{1}{\sigma_2 ^2}
++ \frac{1}{\sigma_1 ^2} - \frac{2 \rho}{\sigma_1 \sigma_2} \right]
+^{-1}\left[ \frac{z_2}{\sigma_2 ^2} + \frac{z_1}{\sigma_1} -
+\frac{\rho(z_1 + z_2)}{\sigma_1 \sigma_2} \right].
+\]</span></p>
+<p>Pri <span class="math inline">\( \rho = 0 \)</span> imamo potem</p>
+<p><span class="math display">\[ x_{opt} = \left( \frac{1}{\sigma_1 ^2}
+= \frac{1}{\sigma_2 ^2} \right) ^{-1} \left[ \frac{z_1}{\sigma_1 ^2} +
+\frac{z_2}{\sigma_2 ^2} \right].
+\]</span></p>
+<p>Za <span class="math inline">\( \rho = 1 \)</span> imamo potem</p>
+<p><span class="math display">\[ x = z_3 = z_2 = z_1.
+\]</span></p>
+<p>Če je <span class="math inline">\( \rho \)</span> poljuben, potem je
+<span class="math inline">\( \sigma_1 = \sigma_2 \)</span>, potem je</p>
+<p><span class="math display">\[ x = \left( \frac{1 + 1 - 2 \rho}{\sigma
+^2} \right)^{-1} \left( \frac{\left( z_1 + z_2 \right) - \rho (z_1 -
+z_2)}{\sigma ^2} \right) = \frac{z_1 + z_2}{2} .
+\]</span></p>
+<h1 id="on-line-sledenje-konstantnim-skalarnim-količinam">On-line
+sledenje konstantnim skalarnim količinam</h1>
+<p>Imamo sistem <span class="math inline">\( S \)</span> s
+spremenljivkami <span class="math inline">\( x \)</span> in merilni
+sistem <span class="math inline">\( M \)</span>, ki ju povezuje senzor z
+izmerki <span class="math inline">\( z_j \)</span>. Merilni sistem <span
+class="math inline">\( M \)</span> ima ocene <span
+class="math inline">\( \hat{x} \)</span>. S časom <span
+class="math inline">\( T \)</span> vzorčimo - merimo. Dobimo rezultate
+oblike</p>
+<p><span class="math display">\[ z_j = x + r_j,
+\]</span></p>
+<p>kjer je <span class="math inline">\( x \)</span> prava vrednosti in
+<span class="math inline">\( r_j \)</span> normalni Gaussov šum.</p>
+<p>Merilni šum je nekoreliran, kar matematično zapišemo</p>
+<p><span class="math display">\[ \left\langle r_i r_j \right\rangle  =
+\delta_{ij} \sigma ^2.
+\]</span></p>
+<p>Idealizacija bi bila, da je tudi ob manjšanju <span
+class="math inline">\( T \to 0 \)</span> šum še vedno nekoreliran.</p>
+<p>Opravili smo že <span class="math inline">\( n \)</span> meritev,
+torej smo ob času <span class="math inline">\( t = n T \)</span>.
+Optimalna ocena ob <span class="math inline">\( n \)</span>-ti meritvi
+je tudi že znana</p>
+<p><span class="math display">\[ \hat{x}_n = \frac{1}{n} \sum\limits_{i
+= 1}^n z_i, \quad \hat{\sigma}_n = \frac{\sigma ^2}{n}.
+\]</span></p>
+<p>Izmerimo <span class="math inline">\( n + 1 \)</span>-to meritev. Za
+to meritev prav tako lahko zapišemo</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \frac{1}{n + 1}
+\sum\limits_{i = 1}^{n + 1} z_i, \quad \hat{\sigma}_{n + 1 } =
+\frac{\sigma ^2}{n + 1}.
+\]</span></p>
+<p><span class="math inline">\( n + 1 \)</span> meritev lahko razbijemo
+na</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \frac{1}{n + 1}
+\left( \sum\limits_{i = 1}^n z_i + z_{n + 1} \right)  = \frac{n}{n + 1}
+\left( \sum\limits_{i = 1}^n \frac{1}{n} z_i \right) + \frac{1}{n + 1}
+z_{n + 1}.
+\]</span></p>
+<p>Prepoznamo meritev iz <span class="math inline">\( n \)</span>-tega
+koraka in dodamo števcu prvega ulomka <span class="math inline">\( 1 - 1
+\)</span> in dobimo</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \frac{n + 1 - 1}{n +
+1} \hat{x}_n + \frac{1}{n + 1} z_{n + 1}.
+\]</span></p>
+<p>Izrazimo lahko torej optimalno oceno</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \hat{x}_n \frac{1}{n
++ 1} \left( z_{n + 1} - \hat{x}_n \right).
+\]</span></p>
+<p>Za varianco velja</p>
+<p><span class="math display">\[ \hat{\sigma}_{n + 1} ^{-2} =
+\hat{\sigma}_n ^{-2} + \hat{\sigma}^{-2}.
+\]</span></p>
+<p>Novo oceno torej lahko zapišemo kot</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \hat{x}_n +
+\frac{\hat{\sigma}_{n + 1} ^2}{\sigma ^2} \left( z_{n + 1} - \hat{x}_n
+\right),
+\]</span></p>
+<p>kjer je <span class="math inline">\( \hat{x}_n \)</span> stara ocena,
+faktor z variancami je utež, in kakor od prej <span
+class="math inline">\( (z_{n + 1} - \hat{x}_n) \)</span> je inovacija.
+To je primer principa povratne zanke.</p>
+<p>Utež označimo s</p>
+<p><span class="math display">\[ K_{n + 1} = \frac{\hat{\sigma}_{n + 1}
+^2}{\sigma ^2},
+\]</span></p>
+<p>in pridobljena shema je filter s spremenljivim ojačevalnim faktorjem
+<span class="math inline">\( K_n \)</span>.</p>
+<p>V limiti <span class="math inline">\( T \to 0 \)</span> gre razlika
+ocene</p>
+<p><span class="math display">\[ \lim_{T \to 0} = \frac{\hat{x}_{n + 1}
+- \hat{x}_n}{T} = \dot{\hat{x}} (t) = \frac{\hat{\sigma}_{n + 1}
+^2}{\sigma ^2 T} \left( z_{n + 1} - \hat{x}_n \right).
+\]</span></p>
+<p>V tej limiti gredo naše diskretne spremenljivke v zvezen spekter
+<span class="math inline">\( \hat{x}_n \to \hat{x}, \ \hat{\sigma}_n ^2
+\to \hat{\sigma}_x ^2 \)</span> in <span class="math inline">\( z_n \to
+z(t) \)</span>. There's some discussion to be had, ali je meritev
+dejansko lahko zvezna.</p>
+<p>Zapišemo zvezno meritev</p>
+<p><span class="math display">\[ z(t) = x + r(t),
+\]</span></p>
+<p>potem je koreliranost</p>
+<p><span class="math display">\[ \left\langle r(t) r(t&#39;)
+\right\rangle  = \delta(t - t&#39;) R
+\]</span></p>
+<p>Definiramo <span class="math inline">\( \tau \)</span> kot končen
+(minimalen) čas fluktuacij.</p>
+<p>Ločimo dva primera za časovne intervale <span class="math inline">\(
+t \)</span>, s katerimi merimo</p>
+<ul>
+<li><span class="math inline">\( t \ll \tau \)</span>, meritev je
+korelirana</li>
+<li><span class="math inline">\( t \gg \tau \)</span>, meritev je
+nekorelirana</li>
+</ul>
+<p>Če zahtevamo</p>
+<span class="math display">\[\begin{equation}
+\label{eq:2}
+\lim_{T \to 0} \left( \sigma ^2 T \right) = R &gt; 0
+\end{equation}
+\]</span>
+<p>potem lahko ohranimo nekoreliranost čez vse čase. Z drugimi besedami
+meritve v limiti <span class="math inline">\( T \to 0 \)</span>
+obravnavamo kot nekorelirane, vendar se ustrezno povečuje napaka
+meritev, da se produkt v enačbi <span
+class="math inline">\(\ref{eq:2}\)</span> ohranja.</p>
+<p>Drugačen način, da pridemo do istega spoznanja. Če ima diskreten
+spekter korelacija</p>
+<p><span class="math display">\[ \left\langle r_i r_j \right\rangle  =
+\delta_{ij} \sigma ^2.
+\]</span></p>
+<p>Za vse čase je potem korelacija</p>
+<p><span class="math display">\[ \sum\limits_{}^{} \left\langle r_i r_j
+\right\rangle T = \sum\limits_{}^{} \delta_{ij} \sigma ^2 T = \sigma ^2
+T.
+\]</span></p>
+<p>V zveznem spektru pa je korelacija</p>
+<p><span class="math display">\[ \left\langle r(t) r(t&#39;)
+\right\rangle = \delta (t - t&#39;) R,
+\]</span></p>
+<p>in je potem</p>
+<p><span class="math display">\[ \int\limits_{}^{} \delta(t - t&#39;) R
+\, \mathrm{d} t = R.
+\]</span></p>
+<p>V limiti <span class="math inline">\( T \to 0 \)</span> dobimo enak
+pogoj <span class="math inline">\(\ref{eq:2}\)</span>.</p>
+<p>Vrnimo se nazaj k odvodu</p>
+<p><span class="math display">\[ \dot{\hat{x}} (t) =
+\frac{\hat{\sigma}_x ^2}{R} \left( z - \hat{x} \right).
+\]</span></p>
+<p>Sedaj nas zanima še, kako se disperzija v zvezni sliki spreminja.
+Spomnimo, da velja</p>
+<p><span class="math display">\[ \frac{1}{\hat{\sigma}_{n + 1} ^2} =
+\frac{1}{\hat{\sigma} _n  ^2} + \frac{1}{\sigma ^2}  = \frac{\sigma ^2 +
+\hat{\sigma}_n ^2}{\hat{\sigma}_n ^2 \sigma ^2}.
+\]</span></p>
+<p>Potem zapišemo</p>
+<p><span class="math display">\[ \dot{\hat{\sigma}}_x ^2 (t) =
+\frac{\hat{\sigma}_{n + 1} ^2 - \hat{\sigma}_n ^2}{T}.
+\]</span></p>
+<p>Upoštevamo identiteto in zapišemo</p>
+<span class="math display">\[\begin{align*}
+\dot{\hat{\sigma}} _x ^2 (t) &amp;=  \frac{1}{T}\left(
+\frac{\hat{\sigma}_n ^2 \sigma ^2}{\hat{\sigma}_n ^2 + \sigma ^2} -
+\frac{\hat{\sigma}_n ^2 \left( \hat{\sigma}_n ^2 + \sigma ^2
+\right)}{\hat{\sigma}_n ^2 + \sigma ^2} \right) \\
+&amp;= - \frac{\left[ \hat{\sigma}_n ^2 (t) \right]
+^2}{\cancel{\hat{\sigma}_n ^2 T} + \sigma ^2 T} = - \frac{\left(
+\hat{\sigma}_n ^2 \right) ^2}{R},
+\end{align*}
+\]</span>
+<p>kjer smo upoštevali, da imamo limito <span class="math inline">\( T
+\to  0 \)</span>.</p>
+<p>Dobili smo način, kako deluje naš filter. Sproti rešuje diferencialno
+enačbo in popravlja odstopanja(?)</p>
+<p><span class="math display">\[ \dot{\hat{x}} = \frac{\hat{\sigma}_x
+^2}{R} \left( z - \hat{x} \right) \quad \text{ in } \quad
+\dot{\hat{\sigma}} = - \frac{\left( \hat{\sigma}_x ^2 \right) ^2}{R}
+\]</span></p>
+<p><img src="figures/09p_Kalman.png" /></p>
+</body>
+</html>
