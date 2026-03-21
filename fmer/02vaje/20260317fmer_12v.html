@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vaje iz Fizikalnih merjenj, 12. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vaje iz Fizikalnih merjenj, 12. teden v letu</h1>
+<p class="subtitle">2026/03/17</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#naloga-kalmanov-filter-prožnega-trka-dveh-teles---nadaljevanje"
+id="toc-naloga-kalmanov-filter-prožnega-trka-dveh-teles---nadaljevanje">Naloga:
+Kalmanov filter prožnega trka dveh teles - nadaljevanje</a></li>
+<li><a href="#naloga-geometrijska-optika"
+id="toc-naloga-geometrijska-optika">Naloga: geometrijska optika</a>
+<ul>
+<li><a href="#teorija-geometrijska-optika"
+id="toc-teorija-geometrijska-optika">Teorija: geometrijska
+optika</a></li>
+<li><a href="#rešitev-naloge" id="toc-rešitev-naloge">Rešitev
+naloge</a></li>
+</ul></li>
+<li><a href="#teorija-kalmanov-filter-z-linearnimi-vezmi"
+id="toc-teorija-kalmanov-filter-z-linearnimi-vezmi">Teorija: Kalmanov
+filter z linearnimi vezmi</a></li>
+<li><a
+href="#teorija-ostrenje-s-kalmanovim-filtrom-z-upoštevanjem-linearnih-vezi"
+id="toc-teorija-ostrenje-s-kalmanovim-filtrom-z-upoštevanjem-linearnih-vezi">Teorija:
+ostrenje s Kalmanovim filtrom z upoštevanjem linearnih vezi</a></li>
+</ul>
+</nav>
+<h1
+id="naloga-kalmanov-filter-prožnega-trka-dveh-teles---nadaljevanje">Naloga:
+Kalmanov filter prožnega trka dveh teles - nadaljevanje</h1>
+<p>Nadaljujemo s problemom od zadnjič. Iskali smo dinamiko oblike</p>
+<p><span class="math display">\[ \mathbf{v}&#39; = \Phi \mathbf{v} +
+\mathbf{c} + \Gamma \mathbf{w}.
+\]</span></p>
+<p>Preko težiščnega sistema smo prišli do vrednosti hitrosti po trku za
+obe telesi</p>
+<p><span class="math display">\[ v_1 &#39; = - v_1 + 2 v_T \quad \text{
+in } \quad v_2 &#39; = - v_2 + 2 v_T,
+\]</span></p>
+<p>kjer je <span class="math inline">\( v_T = \frac{m_1 v_1 + m_2 v_2}{m
+_1 + m_2} \)</span> težiščna hitrost.</p>
+<p>V dobljenih hitrostih posameznega telesa razpišemo težiščno
+hitrost</p>
+<span class="math display">\[\begin{align*}
+  v_1 &#39; &amp;= \frac{-m_1 v_1 - m_2 v_1 + 2m_1 v_2 + 2m_2 v_2}{m_1 +
+m_2} \\
+&amp;= \frac{m_1 v_1 - m_2 v_1 + 2 m_2 v_2}{m_1 + m_2} \\
+&amp;= \frac{1 - \mu}{1 + \mu} v_1 + \frac{2 \mu}{1 + \mu} v_2,
+\end{align*}
+\]</span>
+<p>kjer smo označili razmerje <span class="math inline">\( \mu =
+\frac{m_2}{m_1} \)</span>. Analogno lahko naredimo z drugo hitrostjo po
+trku</p>
+<p><span class="math display">\[ v_2 &#39; = \frac{\mu - 1}{1 + \mu} v_2
++ \frac{2 \mu}{1 + \mu}.
+\]</span></p>
+<p>Dobljeno lahko sedaj zapišemo v vektorski obliki</p>
+<p><span class="math display">\[ \mathbf{v}&#39; = \begin{bmatrix}
+v_{1}&#39; \\ v_{2}&#39; \end{bmatrix} = \frac{1}{1 + \mu}
+\begin{bmatrix}
+                                                                                    1
+- \mu &amp; 2\mu \\
+                                                                                    2
+&amp; \mu - 1
+                                                                                     \end{bmatrix}
+\begin{bmatrix} v_{1} \\ v_{2} \end{bmatrix} + 0 + 0.
+\]</span></p>
+<p>Prepoznamo torej matriko <span class="math inline">\( \Phi \)</span>,
+hkrati pa vidimo, da sta <span class="math inline">\( \mathbf{c} =
+\Gamma \mathbf{w} = 0 \)</span>. Ker ni meritev, je kovariančna matrika
+izostrene ocene <span class="math inline">\( P \)</span> kar kovariančna
+matrika <span class="math inline">\( M \)</span>. Dinamičnega šuma ni in
+torej imamo samo zapis</p>
+<p><span class="math display">\[ P&#39; = M&#39; = \Phi P \Phi^T +
+\cancel{\Gamma Q \Gamma^T},
+\]</span></p>
+<p>kjer je <span class="math inline">\( P \)</span> kovariančna matrika
+pred trkom.</p>
+<p>Definiramo nove oznake <span class="math inline">\( A = \frac{1}{1 +
+\mu} \)</span> in <span class="math inline">\( a = 1- \mu \)</span> in
+matrika</p>
+<p><span class="math display">\[ \Phi = A \begin{bmatrix}
+            a &amp; 2\mu \\
+            2 &amp; -a
+             \end{bmatrix}.
+\]</span></p>
+<p>Sedaj lahko izračunamo matriko <span class="math inline">\( P&#39;
+\)</span></p>
+<span class="math display">\[\begin{align*}
+P&#39; &amp;= A ^2 \begin{bmatrix}
+            a &amp; 2\mu \\
+            2 &amp; -a
+             \end{bmatrix} \begin{bmatrix}
+                           \sigma_{1}^{2} &amp; 0 \\
+                           0 &amp; \sigma_{2}^{2}
+                            \end{bmatrix}
+\begin{bmatrix}
+a &amp; 2 \\
+2\mu &amp; -a
+\end{bmatrix} \\
+&amp;= A ^2 \begin{bmatrix}
+        a &amp; 2\mu \\
+        2 &amp; -a
+         \end{bmatrix}
+\begin{bmatrix}
+a \sigma_{1}^{2} &amp; 2 \sigma_{1}^{2} \\
+2 \mu \sigma^{2}_2 &amp; -a \sigma_2 ^2
+\end{bmatrix}\\
+&amp;= A ^2 \begin{bmatrix}
+        a ^2 \sigma_1 ^2 + 4 \mu ^2 \sigma_2 ^2 &amp; 2 a \sigma_1 ^2 -
+2 a \mu \sigma_2 ^2 \\
+        2a \sigma_1 ^2 - 2 a \mu \sigma_2 ^2 &amp; 4 \sigma_1 ^2 +
+\left( 1 - \mu \right) ^2 \sigma_2 ^2
+         \end{bmatrix}
+\end{align*}
+\]</span>
+<p>Kovariančna matrika izostrene ocene je po trku torej</p>
+<p><span class="math display">\[ P&#39; = \frac{1}{\left( 1 + \mu
+\right) ^2} \begin{bmatrix}
+                                            \left( 1 - \mu \right) ^2
+\sigma_1 ^2 + 4 \mu ^2 \sigma_2 ^2 &amp; 2 \left( 1 - \mu  \right)
+\left( \sigma_1 ^2 - \mu \sigma_2 ^2 \right) \\
+                                            2 \left( 1 - \mu \right)
+\left( \sigma_1 ^2 - \mu \sigma_2 ^2 \right) &amp; 4 \sigma_1 ^2 +
+\left( 1 - \mu \right) ^2 \sigma_2 ^2
+                                             \end{bmatrix}
+\]</span></p>
+<p>Navkljub temu da je bila pred trkom <span class="math inline">\( P
+\)</span> diagonalna in torej začetni hitrosti nista bili korelirani, po
+trku očitno sta. V primeru, da je <span class="math inline">\( m_1 = m_2
+\)</span>, potem je <span class="math inline">\( \mu = 1 \)</span>
+in</p>
+<p><span class="math display">\[ P&#39; = \begin{bmatrix}
+        \sigma_{2} ^2 &amp; 0 \\
+         0&amp; \sigma_1 ^2
+         \end{bmatrix}
+\]</span></p>
+<p>V tem primeru se nedoločenosti po trku ravno zamenjata.</p>
+<h1 id="naloga-geometrijska-optika">Naloga: geometrijska optika</h1>
+<div class="problem">
+<p>Žarek svetlobe z začetno kovariančno matriko</p>
+<p><span class="math display">\[ P = \begin{bmatrix}
+       \sigma_y ^2 &amp; 0 \\
+        0 &amp; \sigma_{\phi} ^2
+        \end{bmatrix}
+\]</span></p>
+<p>s lomi na konveksni meji. Kako se spremeni kovariančna matrika <span
+class="math inline">\( P&#39; \)</span> na prehodu?</p>
+<p>Pri računih upoštevaj obosno aproksimacijo (ang. <em>paraxial
+approximation</em>), kjer je kot med žarkom in optično osjo majhen <span
+class="math inline">\( \tan \phi = \phi \)</span>.</p>
+<p><img src="figures/v12_optika1.png" /></p>
+</div>
+<h2 id="teorija-geometrijska-optika">Teorija: geometrijska optika</h2>
+<p>Žarek bomo predstvili z dvema parametroma <span
+class="math inline">\( y \)</span> in <span class="math inline">\( \phi
+\)</span>, ki je v vektorski obliki</p>
+<p><span class="math display">\[ \mathbf{y} = \begin{bmatrix} y_0 \\
+\tan \phi \end{bmatrix} \approx \begin{bmatrix} y_0 \\ \phi
+\end{bmatrix}.
+\]</span></p>
+<p>Žarek po lomljenju pa je</p>
+<p><span class="math display">\[ \mathbf{y}&#39; = \begin{bmatrix} y_{0}
+\\ \phi&#39; \end{bmatrix}.
+\]</span></p>
+<p>Lomljenje žarka bomo predstavili z matriko prehoda (ang. <em>transfer
+matrix</em>) <span class="math inline">\( A \)</span>.</p>
+<p>Za naš specifičen primer, ki ga prikazuje slika v navodilih naloge je
+prehodna matrika</p>
+<p><span class="math display">\[ A_{conv} = \begin{bmatrix}
+              1 &amp; 0 \\
+              \frac{1}{R} \left( 1 - \frac{n_1}{n_2} \right) &amp;
+\frac{n_1}{n_2}
+               \end{bmatrix},
+\]</span></p>
+<p>kjer je <span class="math inline">\( R \)</span> polmer konveksne
+leče.</p>
+<p>Spodnja slika prikazuje ostale možnosti prehoda</p>
+<p><img src="figures/v12_optika3.png" /></p>
+<p>s pripadajočimi matrikami:</p>
+<p>a) konveksna meja b) konkavna meja</p>
+<p><span class="math display">\[ A_{conc} = \begin{bmatrix}
+                 1 &amp; 0 \\
+                \frac{1}{R} \left( \frac{n_1}{n_2} - 1 \right)  &amp;
+\frac{n_1}{n_2}
+                  \end{bmatrix}
+   \]</span> c) ravna meja <span class="math inline">\( R \to \infty
+\)</span></p>
+<p><span class="math display">\[ A_{flat} = \begin{bmatrix}
+                 1 &amp; 0 \\
+                 0 &amp; - \frac{n_1}{n_2}
+                  \end{bmatrix}
+   \]</span> d) prehodi skozi območje dolžine <span
+class="math inline">\( \alpha \)</span></p>
+<p><span class="math display">\[ A_{\alpha} = \begin{bmatrix}
+            1 &amp; \alpha \\
+            0 &amp; 1
+             \end{bmatrix}
+   \]</span></p>
+<p>Prehod je lahko tudi sestavljen, kakor prikazuje spodnja slika.</p>
+<p><img src="figures/v12_optika2.png" /></p>
+<p>Prehod v tem primeru dobimo tako, da množimo matrike. Specifično za
+dano sliko prehod na konveksno območje označuje prehodna matrika</p>
+<p><span class="math display">\[ \mathbf{y}_1 = A_{konv} \mathbf{y}.
+\]</span></p>
+<p>Sledi prehod skozi območje dolžine <span class="math inline">\(
+\alpha \)</span>, ki ga potem opišemo z</p>
+<p><span class="math display">\[ \mathbf{y}_2 = A_{\alpha} \mathbf{y}_1
+= A_{\alpha} A_{konv} \mathbf{y}.
+\]</span></p>
+<p>Prehod skozi ravno meja pa potem opisuje</p>
+<p><span class="math display">\[ \mathbf{y}_3 = \mathbf{y}&#39; =
+A_{flat} A_{\alpha} A_{konv} \mathbf{y}.
+\]</span></p>
+<h2 id="rešitev-naloge">Rešitev naloge</h2>
+<p>Hitro lahko prepoznamo dinamiko, saj je matrika <span
+class="math inline">\( \Phi \)</span> kar prehodna matrika</p>
+<p><span class="math display">\[ \Phi = A_{konv} = \begin{bmatrix}
+                     1 &amp; 0 \\
+                     \frac{1}{R} \left( 1 - \frac{n_1}{n_2}
+\right)   &amp; \frac{n_1}{n_2}
+                      \end{bmatrix}.
+\]</span></p>
+<p>Pri prehodu ni vmesnih merjenj, torej bo kovariančna matrika
+izostrene matrike <span class="math inline">\( P&#39; \)</span> kar
+kovariančna matrika <span class="math inline">\( M&#39; \)</span>.</p>
+<p>Podobno kot pri prejšnji nalogi izhajamo iz dinamike Kalmanovega
+filtra, za katerega velja</p>
+<p><span class="math display">\[ P&#39; = M&#39; = \Phi P \Phi^T.
+\]</span></p>
+<p>Postopek množenja matrik je sledeč</p>
+<span class="math display">\[\begin{align*}
+  P&#39; &amp;= \begin{bmatrix}
+        1 &amp; 0 \\
+        a &amp; \frac{n_1}{n_2}
+         \end{bmatrix}
+\begin{bmatrix}
+\sigma_y ^2 &amp; 0 \\
+0 &amp; \sigma_{\phi} ^2
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; a \\
+0 &amp; \frac{n_1}{n_2}
+\end{bmatrix} \\
+&amp;= \begin{bmatrix}
+   1 &amp; 0 \\
+   a &amp; \frac{n_1}{n_2}
+    \end{bmatrix}
+\begin{bmatrix}
+\sigma_y ^2 &amp; a \sigma_y ^2 \\
+0 &amp; \frac{n_1}{n_2} \sigma_{\phi} ^2
+\end{bmatrix} \\
+&amp;=
+\begin{bmatrix}
+\sigma_y ^2 &amp; a \sigma_y ^2 \\
+a \sigma_y ^2 &amp; a ^2 \sigma_y ^2 + \left( \frac{n_1}{n_2} \right) ^2
+\sigma_{\phi} ^2
+\end{bmatrix},
+\end{align*}
+\]</span>
+<p>kjer smo za lažjo aritmetiko označili <span class="math inline">\( a
+= \frac{1}{R}\left( 1 - \frac{n_1}{n_2} \right) \)</span>.</p>
+<p>Matrika <span class="math inline">\( P&#39; \)</span> je torej</p>
+<p><span class="math display">\[ P&#39; = \begin{bmatrix}
+        \sigma_y ^2 &amp; \frac{1}{R} \left( 1 - \frac{n_1}{n_2} \right)
+\sigma_y ^2 \\
+         \frac{1}{R} \left( 1 - \frac{n_1}{n_2} \right) \sigma_y ^2
+&amp; \frac{1}{R ^2} \left( 1 - \frac{n_1}{n_2} \right) ^2 \sigma_y ^2 +
+\left( \frac{n_1}{n_2} \right) ^2 \sigma_{\phi} ^2
+         \end{bmatrix}
+\]</span></p>
+<p>Opazimo lahko, da se varianca <span class="math inline">\( y
+\)</span> pri prehodu ni spremenila, saj se <span class="math inline">\(
+y \)</span> sam ni spremenil. Po drugi strani pa se je varianca <span
+class="math inline">\( \phi \)</span> spremenila, saj se je pri prehodu
+spremenil kot <span class="math inline">\( \phi \)</span>.</p>
+<h1 id="teorija-kalmanov-filter-z-linearnimi-vezmi">Teorija: Kalmanov
+filter z linearnimi vezmi</h1>
+<div class="my_example">
+<p>Merimo notranje kote v trikotniku.</p>
+<p>Prvi način je, da opravimo meritev</p>
+<p><span class="math display">\[ \mathbf{z} = \begin{bmatrix} z_{\alpha}
+\\ z_{\beta} \\ z_{\gamma} \end{bmatrix}.
+\]</span></p>
+<p>Negotovosti teh kotov bodo enake in nekolinearne</p>
+<p><span class="math display">\[ R = \begin{bmatrix}
+       \sigma ^{2} &amp; 0 &amp; 0 \\
+       0 &amp; \sigma ^{2} &amp; 0 \\
+       0 &amp; 0 &amp; \sigma^{2}
+       \end{bmatrix} = \sigma ^2 I,
+\]</span></p>
+<p>kjer je <span class="math inline">\( I \)</span> identiteta.
+Najboljša začetna ocena <span class="math inline">\( \hat{\mathbf{x}}
+\)</span> je torej kar prva meritev</p>
+<p><span class="math display">\[ \hat{\mathbf{x}} = \begin{bmatrix}
+\alpha \\ \beta \\ \gamma \end{bmatrix} = \mathbf{z} = \begin{bmatrix}
+z_{\alpha} \\ z_{\beta} \\ z_{\gamma} \end{bmatrix}.
+\]</span></p>
+<p>Zgornja trditev bi bila resnična, vendar ima trikotnik eno vez -
+vsota kotov trikotnika je ravno <span class="math inline">\( \pi
+\)</span>. Torej je vez</p>
+<p><span class="math display">\[ \gamma = \pi - \alpha  - \beta.
+\]</span></p>
+<p>Ob upoštevanju vezi bo najboljša ocena boljša od meritve same.</p>
+<p>Parametra sta v primeru vezi samo dva</p>
+<p><span class="math display">\[ \mathbf{x} = \begin{bmatrix} \alpha \\
+\beta \end{bmatrix},
+\]</span></p>
+<p>in njuna ocena je</p>
+<p><span class="math display">\[ \hat{\mathbf{x}} = \begin{bmatrix}
+\hat{\alpha} \\ \mathbf{\beta} \end{bmatrix}.
+\]</span></p>
+<p>Poleg tega pa imamo še meritev <span class="math inline">\(
+\mathbf{z} = (z_{\alpha}, z_{\beta}, z_{\gamma}) \)</span>.</p>
+<p>Ocena bo torej</p>
+<p><span class="math display">\[ \hat{\mathbf{x}} = \bar{\mathbf{x}} + K
+\left( \mathbf{z} - H \bar{ \mathbf{x}} \right),
+\]</span></p>
+<p>kjer je <span class="math inline">\( K = P H^T R^{-1} \)</span>
+ojačevalni faktor in matrika <span class="math inline">\( P^{-1} =
+M^{-1} + H^T R^{-1} H \)</span>. V primeru, da gre kovariančna matrika
+<span class="math inline">\( M \to \infty \)</span>, potem nam ostane
+samo</p>
+<p><span class="math display">\[ P^{-1} = H^T R^{-1} H.
+\]</span></p>
+<p>Ocena je v tem primeru</p>
+<span class="math display">\[\begin{align*}
+  \hat{\mathbf{x}} &amp;= \bar{\mathbf{x}} + PH^T R^{-1} \mathbf{z} - P
+\underbrace{H^T R^{-1} H}_{P^{-1}} \bar{\mathbf{x}} \\
+&amp;= P H^T R^{-1}.
+\end{align*}
+\]</span>
+<p>Matriki <span class="math inline">\( H \)</span> pravimo <em>okenska
+matrika</em> oziroma matrika senzorja.</p>
+<p>Meritev <span class="math inline">\( \mathbf{z} \)</span> definiramo
+z okensko matriko <span class="math inline">\( H \)</span> in vektorjem
+šuma <span class="math inline">\( \mathbf{r} \)</span>, torej</p>
+<p><span class="math display">\[ \mathbf{z} = H \mathbf{x} + \mathbf{r}
+= \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \\ -1 &amp; -1
+\end{bmatrix}\begin{bmatrix} \alpha \\ \beta \end{bmatrix} +
+\begin{bmatrix} r_{\alpha} \\ r_{\beta} \\ r_{\gamma} \end{bmatrix} +
+\begin{bmatrix} 0 \\ 0 \\ \pi \end{bmatrix}.
+\]</span></p>
+<p>Z zadnjo vrstico matrike <span class="math inline">\( H \)</span> in
+zadnjim vektorjem smo opisali vez <span class="math inline">\( \gamma =
+\pi - \alpha \beta \)</span>. Meritev z vezjo je torej</p>
+<p><span class="math display">\[ \mathbf{z}&#39; = \begin{bmatrix}
+z_{\alpha} \\ z_{\beta} \\ z_{\gamma} - \pi \end{bmatrix} =
+\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \\ -1 &amp; -1 \end{bmatrix}
+\begin{bmatrix} \alpha \\ \beta \end{bmatrix} + \mathbf{r}.
+\]</span></p>
+<p>Sedaj lahko izračunamo inverz kovariančne matrike izostrene ocene,
+saj imamo okensko matriko <span class="math inline">\( H \)</span> ter
+<span class="math inline">\( R \)</span></p>
+<span class="math display">\[\begin{align*}
+  P^{-1} &amp;= H^T R^{-1} H \\
+&amp;= \begin{bmatrix} 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; -1
+\end{bmatrix} \sigma^{-2} I \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \\ -1
+&amp; -1 \end{bmatrix} \\
+&amp;= \sigma^{-2} \begin{bmatrix}
+               2 &amp; 1 \\
+               1 &amp; 2
+                \end{bmatrix}
+\end{align*}
+\]</span>
+<p>Trivialno opravimo inverz <span class="math inline">\( 2 \times 2
+\)</span> matrike in dobimo</p>
+<p><span class="math display">\[ P = \sigma ^2 \frac{1}{3}
+\begin{bmatrix}
+                             2 &amp; -1 \\
+                             -1 &amp; 2
+                              \end{bmatrix}.
+\]</span></p>
+<p>Sedaj lahko primerjamo rezultata. Brez vezi je bila najboljša
+ocena</p>
+<p><span class="math display">\[ P = \sigma ^2 \begin{bmatrix}
+                 1 &amp; 0 &amp; 0 \\
+                 0 &amp; 1 &amp; 0 \\
+                 0 &amp; 0 &amp; 1
+                 \end{bmatrix}.
+\]</span></p>
+<p>Z vezjo pa imamo</p>
+<p><span class="math display">\[ P = \frac{\sigma ^2}{3} \begin{bmatrix}
+                           2 &amp; -1 &amp; -1 \\
+                           -1 &amp; 2 &amp; -1 \\
+                           -1 &amp; -1 &amp; 2
+                           \end{bmatrix}.
+\]</span></p>
+<p>Matriko smo razširili na <span class="math inline">\( 3 \times 3
+\)</span> z razmislekom, da ima vez tri možnosti zapisa</p>
+<span class="math display">\[\begin{align*}
+  \gamma &amp;= \pi - \alpha -\beta \\
+\beta &amp;= \pi - \alpha - \gamma \\
+\alpha &amp;= \pi - \gamma - \beta.
+\end{align*}
+\]</span>
+<p>in se koti torej obnašajo simetrično glede na vez. Naša ocena je
+boljša saj <span class="math inline">\( \frac{2}{3} \sigma ^2 &lt;
+\sigma ^2 \)</span>.</p>
+<p>Izostrena ocena je potem</p>
+<p><span class="math display">\[ \hat{\mathbf{x}} = P H^T R^{-1}
+\mathbf{z}.
+\]</span></p>
+<p>Upoštevamo definicije posameznih matrik in dobimo</p>
+<span class="math display">\[\begin{align*}
+  \hat{\mathbf{x}} &amp;= \frac{\sigma ^2}{3} \begin{bmatrix}
+                                          2 &amp; -1 \\
+                                          -1 &amp; 2
+                                           \end{bmatrix} \begin{bmatrix}
+1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; -1 \end{bmatrix} \sigma ^2 I
+\begin{bmatrix} z_{\alpha} \\ z_{\beta} \\ z_{\gamma - \pi}
+\end{bmatrix} \\
+&amp;= \frac{1}{3} \begin{bmatrix} 2 &amp; -1 &amp; -1 \\ -1 &amp; 2
+&amp; -1 \end{bmatrix}
+\begin{bmatrix} z_{\alpha} \\ z_{\beta} \\ z_{\gamma} - \pi
+\end{bmatrix} .
+\end{align*}
+\]</span>
+<p>Posamezne izostrene ocene so potem</p>
+<span class="math display">\[\begin{align*}
+  \hat{\alpha} &amp;= \frac{1}{3} \left( 2 z_{\alpha} - z_{\beta} -
+z_{\gamma} + \pi \right) \\
+\hat{\beta} &amp;= \frac{1}{3} \left( - z_{\alpha} + 2 z_{\beta} -
+z_{\gamma} + \pi \right) \\
+\hat{\gamma} &amp;= \pi - \hat{\alpha} - \hat{\beta} = \frac{1}{3}
+\left( - z_{\alpha} - z_{\beta} + 2 z_{\gamma} + \pi \right).
+\end{align*}
+\]</span>
+</div>
+<h1
+id="teorija-ostrenje-s-kalmanovim-filtrom-z-upoštevanjem-linearnih-vezi">Teorija:
+ostrenje s Kalmanovim filtrom z upoštevanjem linearnih vezi</h1>
+<p>Do sedaj je Kalmanov filter vključeval tri korake</p>
+<ol>
+<li>ocena</li>
+<li>meritev</li>
+<li>ostrenje.</li>
+</ol>
+<p>Sedaj dodamo nov korak - upoštevanje vezi.</p>
+<p>Linearno vez v splošnem zapišemo kot</p>
+<p><span class="math display">\[ A \mathbf{x} = \mathbf{b}.
+\]</span></p>
+<p>Oceno izostreno z vezjo bomo označevali z <span
+class="math inline">\( \tilde{\mathbf{x}} \)</span> in zanjo velja</p>
+<p><span class="math display">\[ \tilde{\mathbf{x}} = \hat{\mathbf{x}} -
+G \left( A \hat{\mathbf{x}} - \mathbf{b} \right), \quad G = A^T \left(
+AA^T \right)^{-1}.
+\]</span></p>
+<div class="my_example">
+<p>Ponovno se vrnimo na primer merjenja kotov. Spremenljivke v vektorski
+obliki so</p>
+<p><span class="math display">\[ \mathbf{x} = \begin{bmatrix} \alpha \\
+\beta \\ \gamma \end{bmatrix},
+\]</span></p>
+<p>in vez <span class="math inline">\( \alpha + \beta + \gamma = \pi
+\)</span> bo, da zadostimo splošni definiciji <span
+class="math inline">\( A \mathbf{x} = \mathbf{b} \)</span> potem</p>
+<p><span class="math display">\[ [1, 1, 1] \begin{bmatrix} \alpha \\
+\beta \\ \gamma \end{bmatrix} = \pi.
+\]</span></p>
+<p>Ocena <span class="math inline">\( \tilde{\mathbf{x}} \)</span> bo
+potem po definiciji</p>
+<p><span class="math display">\[ \tilde{\mathbf{x}} = \left( I - G A
+\right) \hat{\mathbf{x}} + G \mathbf{b}.
+\]</span></p>
+<p>Upoštevamo, da je izostrena ocena brez vezi kar enaka meritvi</p>
+<p><span class="math display">\[ \hat{\mathbf{x}} = \mathbf{z} =
+\begin{bmatrix} z_{\alpha} \\ z_{\beta} \\ z_{\gamma} \end{bmatrix}.
+\]</span></p>
+<p>Hitro lahko poračunamo matriko <span class="math inline">\( GA
+\)</span></p>
+<span class="math display">\[\begin{align*}
+  GA &amp;= A^T \left( AA^T \right)^{-1} A \\
+&amp;= \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \left( [1, 1, 1]
+\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \right)^{-1} [1, 1, 1] \\
+&amp;= \frac{1}{3} \begin{bmatrix}
+               1 &amp; 1 &amp; 1 \\
+               1 &amp; 1 &amp; 1 \\
+               1 &amp; 1 &amp; 1
+               \end{bmatrix}.
+\end{align*}
+\]</span>
+<p>S tem lahko nadalje računamo člene v oceni <span
+class="math inline">\( \tilde{\mathbf{x}} \)</span></p>
+<p><span class="math display">\[ I - GA = \frac{1}{3} \begin{bmatrix}
+                        2 &amp; -1 &amp; -1 \\
+                        -1 &amp; 2 &amp; -1 \\
+                        -1 &amp; -1 &amp; 2
+                         \end{bmatrix}.
+\]</span></p>
+<p>ter</p>
+<p><span class="math display">\[ G \mathbf{b} = \pi A^T \left( A A^T
+\right)^{-1} = \frac{\pi}{3} \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}.
+\]</span></p>
+<p>Preostane nam torej</p>
+<p><span class="math display">\[ \tilde{\mathbf{x}} = \frac{1}{3}
+\begin{bmatrix}
+                                    2 &amp; -1 &amp; -1 \\
+                                    -1 &amp; 2 &amp; -1 \\
+                                    -1 &amp; -1 &amp; 2
+                                    \end{bmatrix} \begin{bmatrix}
+z_{\alpha} \\ z_{\beta} \\ z_{\gamma} \end{bmatrix} + \frac{\pi}{3}
+\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}.
+\]</span></p>
+<p>Dobili smo</p>
+<span class="math display">\[\begin{align*}
+  \hat{\alpha} &amp;= \frac{1}{3} \left( 2 z_{\alpha} - z_{\beta} -
+z_{\gamma} + \pi \right) \\
+\hat{\beta} &amp;= \frac{1}{3} \left( - z_{\alpha} + 2 z_{\beta} -
+z_{\gamma} + \pi \right) \\
+\hat{\gamma} &amp;= \pi - \hat{\alpha} - \hat{\beta} = \frac{1}{3}
+\left( - z_{\alpha} - z_{\beta} + 2 z_{\gamma} + \pi \right),
+\end{align*}
+\]</span>
+<p>kar je identično rezultatu od prej. Za razliko od prej pa smo šli po
+splošnem postopku, ki ni specifičen za ta problem.</p>
+<p>Izračunajmo še kovariančno matriko izostrene ocene z vezjo</p>
+<p><span class="math display">\[ \tilde{P} = \left( I - GA \right) P
+\left( I - GA \right)^T,
+\]</span></p>
+<p>kjer je začeten <span class="math inline">\( P = R = \sigma^2 I
+\)</span>. Razpišemo torej</p>
+<p><span class="math display">\[ \tilde{P} = \sigma ^2 \left( I - GA
+\right) \left( 1 - GA \right)^T.
+\]</span></p>
+<p>Matrika <span class="math inline">\( GA \)</span> je simetrična, saj
+velja</p>
+<span class="math display">\[\begin{align*}
+  \left( GA \right)^T &amp;= \left( A^T \left( A A^T \right)^{-1} A
+\right)^T \\
+&amp;= A^T \left( A A^T \right)^{-1} A = GA.
+\end{align*}
+\]</span>
+<p>Posledično lahko zapišemo</p>
+<p><span class="math display">\[ \left( I - GA \right)^T = I - \left( GA
+\right)^T = I - GA.
+\]</span></p>
+<p>Definiramo novo matriko <span class="math inline">\( D = GA = A^T
+\left( A A^T \right) ^{-1} A \)</span>. Kvadrat te matrike bo</p>
+<span class="math display">\[\begin{align*}
+  D ^2 &amp;= GAGA \\
+&amp;=  A^T \left( A A^T \right)^{-1} A  A^T \left( A A^T \right)^{-1}
+A  \\
+&amp;= A^T \left( AA^T \right)^{-1} A = \\
+&amp;= GA = D.
+\end{align*}
+\]</span>
+<p>Opravka imamo torej z idempotentno matriko <span
+class="math inline">\( D ^2 = D \)</span>. Upoštevamo to lastnost in
+zapišemo</p>
+<span class="math display">\[\begin{align*}
+  \left( I - GA \right) \left( I - GA \right) &amp;= I - GA - GA + D ^2
+\\
+&amp;= I - GA.
+\end{align*}
+\]</span>
+<p>Sledi, da je torej kovariančna matrika</p>
+<p><span class="math display">\[ \tilde{P} = \sigma ^2 \left(  I - GA
+\right) = \frac{\sigma ^2}{3} \begin{bmatrix}
+                                                                      2
+&amp; -1 &amp; -1 \\
+                                                                      -1
+&amp; 2 &amp; -1 \\
+                                                                      -1
+&amp; -1 &amp; 2
+                                                                       \end{bmatrix}.
+\]</span></p>
+<p>Ponovno smo dobili enak rezultat kot prej, vendar je bila izpeljava
+splošnejša in hitrejša.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vaje iz Fizikalnih merjenj, 8. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vaje iz Fizikalnih merjenj, 8. teden v letu</h1>
+<p class="subtitle">2026/02/17</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#meritve" id="toc-meritve">Meritve</a></li>
+<li><a href="#teorija-gaussova-metoda-na-funkciji-dveh-spremenljivk"
+id="toc-teorija-gaussova-metoda-na-funkciji-dveh-spremenljivk">Teorija:
+Gaussova metoda na funkciji dveh spremenljivk</a>
+<ul>
+<li><a href="#širjenje-napak-po-gaussovi-metodi"
+id="toc-širjenje-napak-po-gaussovi-metodi">Širjenje napak po Gaussovi
+metodi</a></li>
+</ul></li>
+<li><a href="#širjenje-napak-po-gaussu-1.-kolokvij-2022"
+id="toc-širjenje-napak-po-gaussu-1.-kolokvij-2022">Širjenje napak po
+Gaussu (1. kolokvij 2022)</a>
+<ul>
+<li><a href="#naloga-b" id="toc-naloga-b">Naloga b)</a>
+<ul>
+<li><a href="#rešitev-naloge" id="toc-rešitev-naloge">Rešitev
+naloge</a></li>
+</ul></li>
+</ul></li>
+<li><a
+href="#merjenje-časa-preleta-ang.-time-of-flight-or-tof-1.-kolokvij-2019"
+id="toc-merjenje-časa-preleta-ang.-time-of-flight-or-tof-1.-kolokvij-2019">Merjenje
+časa preleta (ang. <em>time-of-flight</em> or <em>TOF</em>) (1. kolokvij
+2019)</a></li>
+</ul>
+</nav>
+<h1 id="meritve">Meritve</h1>
+<p>Imamo neznano količino, ki jo označimo z <span class="math inline">\(
+x \)</span>. Izmerke meritev bomo označili z <span
+class="math inline">\( z \)</span>, ki sledijo normalni (Gaussovi)
+porazdelitvi</p>
+<p><span class="math display">\[ \frac{\mathrm{d} P}{\mathrm{d} z} =
+\frac{1}{\sqrt{2 \pi} \sigma} \exp \left\{ - \frac{(z - \mu) ^2}{2
+\sigma ^2} \right\} = \mathcal{N} \left( \mu, \sigma ^2 \right)
+\]</span></p>
+<div class="note">
+<div class="title">
+<p>Note</p>
+</div>
+<p>Asistent na vajah uporablja varianco <span class="math inline">\(
+\sigma ^2 \)</span>, kakor je tudi v literaturi, medtem ko profesor na
+predavanjih uporabljam samo <span class="math inline">\( \sigma
+\)</span>.</p>
+</div>
+<p>Oznaka <span class="math inline">\( \mathcal{N} (\mu, \sigma ^2)
+\)</span> označuje normalno porazdelitev in je odvisna od dveh
+parametrov:</p>
+<ul>
+<li><p><span class="math inline">\( \mu \)</span> je pričakovana
+vrednost. Ostali možni zapisi so tudi</p>
+<p><span class="math display">\[ \mu = \left\langle z \right\rangle = E
+[z]
+\]</span></p></li>
+<li><p><span class="math inline">\( \sigma ^2 \)</span> je varianca</p>
+<p><span class="math display">\[ \sigma ^2 = \left\langle \left( z -
+\left\langle z \right\rangle \right) ^2 \right\rangle = E ^2 \left[ z -
+E ^2[ z] \right] = \left\langle \sigma ^2 - \mu ^2 \right\rangle
+\]</span></p></li>
+</ul>
+<h1 id="teorija-gaussova-metoda-na-funkciji-dveh-spremenljivk">Teorija:
+Gaussova metoda na funkciji dveh spremenljivk</h1>
+<p>Imamo dve spremenljivki <span class="math inline">\( x \)</span> in
+<span class="math inline">\( y \)</span>. Oceni posamezne spremenljivke
+označimo z <span class="math inline">\( \bar{x} \)</span> in <span
+class="math inline">\( \bar{y} \)</span>, njuna negotovost pa je <span
+class="math inline">\( \sigma_{\bar{x}} \)</span> in <span
+class="math inline">\( \sigma_{\bar{y}} \)</span>. Imamo funkcijo <span
+class="math inline">\( u \)</span>, ki je funkcija obeh spremenljivk
+<span class="math inline">\( u = f(x, y) \)</span>.</p>
+<p>Nedoločenost funkcije <span class="math inline">\( u \)</span> je po
+definiciji</p>
+<p><span class="math display">\[ \sigma_{\bar{u}} ^2 = \left\langle
+\left( \bar{u} - u \right) ^2 \right\rangle.
+\]</span></p>
+<p>Problem je v tem, da poznamo samo ocene vrednosti spremenljivk, zato
+funkcijo <span class="math inline">\( u \)</span> razvijemo do prvega
+reda okoli ocen, ki pa jih poznamo.</p>
+<p>Torej</p>
+<p><span class="math display">\[ u = f(x, y) = f(\bar{x}, \bar{y}) +
+\left( \frac{\partial f}{\partial x}  \right)_{(\bar{x}, \bar{y})}
+\left( x - \bar{x} \right) + \left( \frac{\partial f}{\partial
+y}  \right)_{(\bar{x}, \bar{y})} (y - \bar{y}) + o \left( 2 \right)
+\]</span></p>
+<p>Povprečje vrednosti <span class="math inline">\( u \)</span> pa
+pridobimo s povprečenjem zgornjega izraza. Upoštevali smo, da je
+velja</p>
+<p><span class="math display">\[ \overline{\left( x - \bar{x} \right)} =
+\left( \bar{x} - \bar{\bar{x}} \right) = \left( \bar{x} - \bar{x}
+\right) = 0.
+\]</span></p>
+<p>Kako to ubesedim?</p>
+<p>Povprečje funkcije <span class="math inline">\( u \)</span> je
+potem</p>
+<p><span class="math display">\[ \bar{u} = f \left( \bar{x}, \bar{y}
+\right) + o \left( 2 \right).
+\]</span></p>
+<p>Dobljeni vrednosti nesemo v varianco in dobimo</p>
+<span class="math display">\[\begin{align*}
+  \sigma_{\bar{u}} ^2 &amp;= \left\langle \left( f(\bar{x}, \bar{y}) -
+\left[ f(\bar{x}, \bar{y}) + \partial_x f (x - \bar{x}) + \partial_{y} f
+(y - \bar{y}) \right] \right) \right\rangle \\
+&amp;= \left\langle \left( \partial_x f (x - \bar{x}) + \partial_y f
+(\bar{y} - y) \right) \right\rangle \\
+&amp;= \left\langle \left( \partial_x f \right) ^2 \left( \bar{x} - x
+\right) ^2 + \left( \partial_y f \right) ^2 \left( \bar{y} - y \right)
+^2 + 2 \partial_x f \partial_y f \left( \bar{x} - x \right) \left(
+\bar{y} - y \right) \right\rangle
+\end{align*}
+\]</span>
+<p>Upoštevamo definicijo variance za spremenljivki <span
+class="math inline">\( x \)</span> in <span class="math inline">\( y
+\)</span>. Poleg tega se zadnjemu členu reče kovarianca, ki nam pove,
+kako odvisni sta spremenljivki <span class="math inline">\( x \)</span>
+in <span class="math inline">\( y \)</span> medseboj.</p>
+<p><span class="math display">\[ \sigma_{\bar{x} \bar{y}} = \left\langle
+\left( \bar{x} - x \right) \left( \bar{y} - y \right) \right\rangle =
+\begin{cases}
+                                                                                                                 0
+&amp;; \bar{x}, \bar{y} \text{ neodvisni} \\
+                                                                                                                 \rho_{\bar{x}
+\bar{y}} \sigma_{\bar{x}} \sigma_{\bar{y}} &amp;; \text{ odvisni }
+                                                                                                                 \end{cases}
+\]</span></p>
+<p><span class="math inline">\( \rho_{\bar{x}\bar{y}} \)</span> pravimo
+korelacijski koeficient in velja <span class="math inline">\( \left|
+\rho_{\bar{x} \bar{y}} \right| \le 1 \)</span></p>
+<p>Varianca je tako</p>
+<p><span class="math display">\[ \sigma_{\bar{u}} ^2 = \left(
+\frac{\partial f}{\partial x}  \right) ^2 \sigma_{\bar{x}} ^2  + \left(
+\frac{\partial f}{\partial y}  \right) ^2 \sigma_{\bar{y}} ^2 + 2 \left(
+\frac{\partial f}{\partial x}  \right) \left( \frac{\partial f}{\partial
+y}  \right) \sigma_{\bar{x} \bar{y}}
+\]</span></p>
+<p>Z novimi spremenljivkami samo dodamo dodatne člene.</p>
+<h2 id="širjenje-napak-po-gaussovi-metodi">Širjenje napak po Gaussovi
+metodi</h2>
+<p>Imejmo spremenljivko</p>
+<p><span class="math display">\[ u = f(x, y) = a x + by,
+\]</span></p>
+<p>kjer sta <span class="math inline">\( a = \frac{\partial f}{\partial
+x}  \)</span> in <span class="math inline">\( b = \frac{\partial
+f}{\partial y}  \)</span>. Varianca je v primeru nedovisnosti
+spremenljivk</p>
+<p><span class="math display">\[ \sigma_{\bar{u}} ^2 = a ^2
+\sigma_{\bar{x}} ^2 + b ^2 \sigma_{\bar{y}} ^2,
+\]</span></p>
+<p>in če sta <span class="math inline">\( a = b = 1 \)</span>, potem
+dobimo</p>
+<p><span class="math display">\[ \sigma_{\bar{u}} ^2 = \sigma_{\bar{x}}
+^2 + \sigma_{\bar{y}} ^2,
+\]</span></p>
+<p>kar je znan rezultat seštevanja napak iz srednje šole(?).</p>
+<h1 id="širjenje-napak-po-gaussu-1.-kolokvij-2022">Širjenje napak po
+Gaussu (1. kolokvij 2022)</h1>
+<div class="problem">
+<p>Pri poševnem metu kamna z začetno hitrostjo <span
+class="math inline">\( v_0 = 10 \frac{\mathrm{m}}{\mathrm{s}} \)</span>
+in kotom <span class="math inline">\( \alpha = 30 ^{\degree} \)</span>
+glede na vodoravnico imamo podano nedoločenost začetne hitrosti <span
+class="math inline">\( \sigma_{v_0} = 1 \frac{\mathrm{m}}{\mathrm{s}}
+\)</span> in nedoločenost kota <span class="math inline">\(
+\sigma_{\alpha} = 50 \mathrm{mrad} \)</span>. Hitrost <span
+class="math inline">\( v_0 \)</span> in kot <span class="math inline">\(
+\alpha \)</span> sta neodvisna.</p>
+<p>Izrazi doseg <span class="math inline">\( d \)</span> kamna kot
+funkciji začetne hitrosti <span class="math inline">\( v_0 \)</span> in
+dvižnega kota <span class="math inline">\( \alpha \)</span> ter
+izračunaj nedoločenost dosega <span class="math inline">\( d
+\)</span>.</p>
+</div>
+<p>Pri računanju vodoravne lege upoštevamo, da imamo enakomerno premo
+gibanje. Enačba za vodoravno koordinato bo torej</p>
+<p><span class="math display">\[ x(t) = v_{0x} t = v_0 t \cos \alpha.
+\]</span></p>
+<p>Kamen bo dosegel najvišjo vrednost ob <span class="math inline">\( t
+= t_{\frac{1}{2}} \)</span>, kjer je <span class="math inline">\(
+t_{\frac{1}{2}} \)</span> polovični čas leta. Navpična komponenta
+hitrosti <span class="math inline">\( v_y \)</span> bo v tistem trenutku
+ničelna.</p>
+<p><span class="math display">\[ v_y = v_{0y} - g t_{\frac{1}{2}}
+\implies T = 2 t_{\frac{1}{2}} = \frac{2 v_0}{g} \sin \alpha
+\]</span></p>
+<p>Za domet smo tako dobili funkcijo dveh spremenljivk</p>
+<p><span class="math display">\[ d = f(v_0, \alpha) = x (T) = \frac{v_0
+^2}{g} \sin (2 \alpha).
+\]</span></p>
+<p>Odvodi posameznih komponent bodo</p>
+<span class="math display">\[\begin{align*}
+  \frac{\partial f}{\partial v_{0}} &amp;= \frac{2 v_0}{g} \sin
+(2\alpha) = 1.73 \mathrm{s}\\
+\frac{\partial f}{\partial \alpha}  &amp;= 2 \frac{v_0 ^2}{g} \cos
+(2\alpha) = 10 m
+\end{align*}
+\]</span>
+<p>Varianca dometa je tako</p>
+<span class="math display">\[\begin{align*}
+  \sigma_{\bar{d}} ^2 &amp;= \left( \frac{\partial f}{\partial
+v_{0}}  \right) ^2 \sigma_{v_0} ^2 + \left( \frac{\partial f}{\partial
+\alpha}  \right) ^2 \sigma_{\bar{\alpha}} ^2 \\
+&amp;= \left( 1.73 \mathrm{s} \right) ^2 \left( 1 \frac{m}{s} \right) ^2
++ \left( 10 \mathrm{m} \right) ^2 \left( 50 \mathrm{mrad} \right) ^2 \\
+&amp;= 3.24 \mathrm{m} ^2.
+\end{align*}
+\]</span>
+<p>Nedoločenost dometa je tako <span class="math inline">\(
+\sigma_{\bar{d}} = 1.8 \mathrm{m} \)</span>.</p>
+<h2 id="naloga-b">Naloga b)</h2>
+<div class="problem">
+<p>Izračunaj verjetnost <span class="math inline">\( P \)</span>, da
+najdemo kamen v območju <span class="math inline">\( \pm 2 \)</span>
+okoli pričakovane (povprečne) lege padca.</p>
+</div>
+<p>V splošnem bomo označili iskano verjetnost z</p>
+<p><span class="math display">\[ P \left( a &lt; d &lt; b \right) = P (d
+&lt; b) - P (d &lt; a).
+\]</span></p>
+<p>Tukaj smo upoštevali, da je verjenost, da najdemo vrednost na
+določenem intervalu ravno razlika med verjetnostjo, da najdemo vrednost
+manjšo od <span class="math inline">\( b \)</span> in verjetnostjo, da
+najdemo meritev manjšo od <span class="math inline">\( a \)</span>.</p>
+<p>Verjetnost, da najdemo meritev manjšo od <span class="math inline">\(
+b \)</span> je po definiciji</p>
+<p><span class="math display">\[ P(d &lt; b) = \int\limits_{- \infty}^b
+\frac{\mathrm{d} P}{\mathrm{d} z} \, \mathrm{d} z = \int\limits_{-
+\infty}^b \mathcal{N}(\mu, \sigma ^2) \, \mathrm{d} z = \tilde{F} (b,
+\mu, \sigma ^2).
+\]</span></p>
+<p>Slednje vrednosti integralov so težko izračunljive, zato se v večini
+primerov tabelirane. Označili smo</p>
+<p><span class="math display">\[ \tilde{F} (x, \mu, \sigma ^2) =
+\int\limits_{- \infty}^x \frac{\mathrm{d} P}{\mathrm{d} z} \, \mathrm{d}
+z = \int\limits_{- \infty}^x \mathcal{N} (\mu, \sigma ^2) \, \mathrm{d}
+z,
+\]</span></p>
+<p>kar je kumulativna porazdelitev funkcije normalne porazdelitve.
+<strong>Ta vrednost ni tabelirana, saj je odvisna od parametra <span
+class="math inline">\( x \)</span></strong>!</p>
+<p>Namesto tega je tabelirana druga funkcija.</p>
+<p>Normalna porazdelitev je po definiciji</p>
+<p><span class="math display">\[ \frac{\mathrm{d} P}{\mathrm{d} z} =
+\frac{1}{\sqrt{2 \pi} \sigma} \exp \left\{ - \frac{\left( z - \mu
+\right) ^2}{2 \sigma ^2} \right\} = \mathcal{N} (\mu, \sigma ^2).
+\]</span></p>
+<p>Uvedemo novo spremenljivko <span class="math inline">\( u = \frac{z
+-  \mu}{\sigma} \)</span> in posledično je <span class="math inline">\(
+\frac{\mathrm{d} z}{\mathrm{d} u} = \sigma \)</span>.</p>
+<p>Ponovno dobimo normalno distribucijo</p>
+<p><span class="math display">\[ \frac{\mathrm{d} P}{\mathrm{d} u} =
+\frac{\mathrm{d} P}{\mathrm{d} z} \left| \frac{\mathrm{d} z}{\mathrm{d}
+u} \right|  = \frac{1}{\sqrt{2 \pi}} \exp \left\{- \frac{u ^2}{2}
+\right\} = \mathcal{N} (0, 1),
+\]</span></p>
+<p>kar je standardizirana normalna porazdelitev. Kumulativna funkcija
+standardizirane normalne porazdelitve</p>
+<p><span class="math display">\[ F(x) = \int\limits_{- \infty}^x
+\frac{\mathrm{d} P}{\mathrm{d} u} \, \mathrm{d} u = \int\limits_{-
+\infty}^x \mathcal{N}(0, 1) \, \mathrm{d} u,
+\]</span></p>
+<p>pa je tabelirana za <span class="math inline">\( x &gt; 0
+\)</span>.</p>
+<p>Nekatere lastnosti te funkcije so:</p>
+<span class="math display">\[\begin{align*}
+  F(0) &amp;= \frac{1}{2} \\
+F(- \infty) &amp;= 0 \\
+F(\infty) &amp;= 1
+\end{align*}
+\]</span>
+<p>Velja</p>
+<p><span class="math display">\[ F(-x) = 1 - F(x),
+\]</span></p>
+<p>kar nam olajša težave, saj so tabelirane vrednosti <span
+class="math inline">\( x &gt; 0 \)</span>.</p>
+<p>Vrnimo se nazaj k naši verjetnosti <span class="math inline">\( P(d
+&lt; b) \)</span>. Po definiciji je</p>
+<p><span class="math display">\[ P(d &lt; b) = \int\limits_{- \infty}^b
+\frac{\mathrm{d} P}{\mathrm{d} z} \, \mathrm{d} z.
+\]</span></p>
+<p>Z uvedbo nove spremenljivke <span class="math inline">\( u = \frac{z
+- \mu}{\sigma} \)</span> postane</p>
+<p><span class="math display">\[ P(d &lt; b) = \int\limits_{- \infty}^{
+\frac{b - \mu}{\sigma}} \frac{\mathrm{d} P}{\mathrm{d} u} \, \mathrm{d}
+u = F \left( \frac{b - \mu}{\sigma} \right).
+\]</span></p>
+<p>Verjetnost, da torej najdemo meritev na intervalu <span
+class="math inline">\( a &lt; d &lt; b \)</span>, izražena s kumulativno
+funkcijo standardizirane normalne porazdelitve je</p>
+<p><span class="math display">\[ P(a &lt; d &lt; b) = F \left( \frac{b -
+\mu}{\sigma} \right) - F \left( \frac{a - \mu}{\sigma} \right)
+\]</span></p>
+<p>Zanima nas, kakšna je verjetnost, da najdemo meritev, ki leži na
+intervalu <span class="math inline">\( \mu \pm N \sigma \)</span>, kjer
+je <span class="math inline">\( N = 1, 2, 3, \ldots \)</span>. Pomagali
+so bomo z zgornjo enačbo in dobimo</p>
+<span class="math display">\[\begin{align*}
+  P(\mu - N \delta &lt; d &lt; \mu + N \sigma) &amp;= \left( \frac{\mu +
+N \sigma - \mu}{\sigma} \right) - F \left( \frac{\mu - N \sigma -
+\mu}{\sigma} \right) \\
+&amp;= F(N) - F(-N) = F(N) - (1 - F(N)) = 2 F(N) - 1
+\end{align*}
+\]</span>
+<p>Oglejmo si nekatere pomembnejše rezultate za <span
+class="math inline">\( N = 1, 2 \)</span> in <span
+class="math inline">\( 3 \)</span>.</p>
+<p>Za <span class="math inline">\( \pm \sigma \)</span> in <span
+class="math inline">\( N = 1 \)</span> imamo</p>
+<p><span class="math display">\[ P_1 = 2 F(1) - 1 = 2 \cdot 0.8413 - 1 =
+0.6826 \approx 68 \% \approx \frac{2}{3}
+\]</span></p>
+<p>Za <span class="math inline">\( N = 2 \)</span> in <span
+class="math inline">\( \pm 2 \sigma \)</span> je</p>
+<p><span class="math display">\[ P_2 = 2 F(2) - 1 = 2 \cdot 0.9772 - 1
+\approx 95 \%.
+\]</span></p>
+<p>Za <span class="math inline">\( N = 3 \)</span> in <span
+class="math inline">\( \pm 3 \sigma \)</span> je</p>
+<p><span class="math display">\[ P_3 = 2 \cdot F(3) - 1 = 2 \cdot 0.9987
+- 1 \approx 99.7 \%
+\]</span></p>
+<h3 id="rešitev-naloge">Rešitev naloge</h3>
+<p>Verjetnost za interval <span class="math inline">\( \pm 2m \)</span>
+je torej</p>
+<p><span class="math display">\[ P = F \left( \frac{2m + \bar{d} -
+\bar{d}}{1.8 \mathrm{m}} \right) - F \left( \frac{\bar{d} - 2m -
+\bar{d}}{1.8 \mathrm{m}} \right) = F(1.11) - F(-1.11) = 2\cdot F(1.11) -
+1 = 2\cdot 0.8665 - 1 \approx 73 \%
+\]</span></p>
+<h1
+id="merjenje-časa-preleta-ang.-time-of-flight-or-tof-1.-kolokvij-2019">Merjenje
+časa preleta (ang. <em>time-of-flight</em> or <em>TOF</em>) (1. kolokvij
+2019)</h1>
+<div class="problem">
+<p>Pri sekcijskem merjenju hitrosti dva senzorja (vstopni in izstopni)
+na medsebojni razdalji <span class="math inline">\( l_0 = 1 \mathrm{km}
+\)</span> zaznata avtomobil in čas <span class="math inline">\( \Delta t
+\)</span> med obema detekcijama. Kolikšen delež voznikov s hitrostjo
+<span class="math inline">\( v_0 = 115 \frac{\mathrm{km}}{\mathrm{h}}
+\)</span> bodo "ujeli", če je toleranca hitrosti <span
+class="math inline">\( v_{tol} = 110 \frac{\mathrm{km}}{\mathrm{h}}
+\)</span>, nedoločenost lege avtomobila pri vstopnem senzorju <span
+class="math inline">\( \sigma_1 = 10 \mathrm{m} \)</span>, pri izstopnem
+senzorju <span class="math inline">\( \sigma_2 = 20 \mathrm{m}
+\)</span>, njun korelacijski koeficient <span class="math inline">\(
+\rho_{12} = -0.6 \)</span>?</p>
+</div>
+<p>Povprečna hitrost je definirana kot</p>
+<p><span class="math display">\[ v = \frac{x_2 - x_1}{\Delta t}
+\]</span></p>
+<p>in sledi Gaussovi porazdelitvi. Verjetnost, da je meritev nad
+toleranco</p>
+<p><span class="math display">\[ P(v &gt; v_{tol}) = 1 - F \left(
+\frac{v_{tol} - v_0}{\sigma_v} \right),
+\]</span></p>
+<p>kjer je <span class="math inline">\( \sigma_v \)</span> nedoločenost
+hitrosti, ki jo izračunamo po Gaussovi metodi širjenja napak. Meritev
+hitrosti je funkcija spremenljivk <span class="math inline">\( x_1
+\)</span> in <span class="math inline">\( x_2 \)</span>. Varianca je z
+upoštevanjem kovariance</p>
+<p><span class="math display">\[ \sigma_v ^2 = \left( \frac{\partial
+f}{\partial x_{1}}  \right) ^2 \sigma_{1} ^2 + \left( \frac{\partial
+f}{\partial x_{2}}  \right) ^2 \sigma_2 ^2 + 2 \left( \frac{\partial
+f}{\partial x_{1}}  \right) \left( \frac{\partial f}{\partial
+x_{2}}  \right) \sigma_{12},
+\]</span></p>
+<p>kjer je <span class="math inline">\( \sigma_{12} = \rho_{12} \sigma_1
+\sigma_2 \)</span>.</p>
+</body>
+</html>

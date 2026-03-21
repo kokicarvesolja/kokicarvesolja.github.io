@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vaje iz Fizikalnih merjenj, 10. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vaje iz Fizikalnih merjenj, 10. teden v letu</h1>
+<p class="subtitle">2026/03/03</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#uvod-v-združevanje-odvisnih-meritev"
+id="toc-uvod-v-združevanje-odvisnih-meritev">Uvod v združevanje odvisnih
+meritev</a>
+<ul>
+<li><a href="#varianca-povprečja-odvisnih-meritev"
+id="toc-varianca-povprečja-odvisnih-meritev">Varianca povprečja odvisnih
+meritev</a></li>
+</ul></li>
+<li><a href="#naloga-meritev-višina"
+id="toc-naloga-meritev-višina">Naloga: meritev višina</a></li>
+<li><a href="#optimalno-združevanje-neodvisnih-meritev"
+id="toc-optimalno-združevanje-neodvisnih-meritev">Optimalno združevanje
+neodvisnih meritev</a></li>
+<li><a href="#naloga-meritev-hitrosti-zvoka"
+id="toc-naloga-meritev-hitrosti-zvoka">Naloga: meritev hitrosti
+(zvoka)</a></li>
+<li><a href="#naloga-uteženo-povprečje-in-kalmanov-filter"
+id="toc-naloga-uteženo-povprečje-in-kalmanov-filter">Naloga: Uteženo
+povprečje in Kalmanov filter</a></li>
+</ul>
+</nav>
+<h1 id="uvod-v-združevanje-odvisnih-meritev">Uvod v združevanje odvisnih
+meritev</h1>
+<p>Prejšnji teden smo na vajah povedali, da za dve meritvi <span
+class="math inline">\( z_1, z_2 \)</span> s pripadajočima variancama
+<span class="math inline">\( \sigma_1, \sigma_2 \)</span>, ki sta med
+seboj odvisni <span class="math inline">\( \sigma_{12} \ne 0 \)</span>,
+velja enačba za optimalno oceno</p>
+<p><span class="math display">\[ \hat{x}_{(12)} = z_1 + \frac{\sigma_1
+^2 - \sigma_{12}}{\sigma_1 ^2 + \sigma_2 ^2 - 2 \sigma_{12}} \left( z_2
+- z_1 \right).
+\]</span></p>
+<p>Optimalni oceni pripada tudi svoja varianca, ki je določena z
+oceno</p>
+<p><span class="math display">\[ \hat{\sigma}_{(12)} ^2 = \left( 1 -
+\rho_{12} ^2 \right) \left( \frac{1}{\sigma_1 ^2} + \frac{1}{\sigma_2
+^2} - \frac{2 \rho_{12}}{\sigma_1 \sigma_2} \right) ^{-1},
+\]</span></p>
+<p>kjer je <span class="math inline">\( \rho_{12} \)</span> korelacijski
+faktor.</p>
+<p>Predpostavimo sedaj, da imamo še tretjo meritev <span
+class="math inline">\( x_3 \)</span> in pripadajočo varianco <span
+class="math inline">\( \sigma_3 \)</span>. Kako bi sedaj združili vse
+tri meritve skupaj?</p>
+<p>To storimo tako, da združimo optimalno oceno <span
+class="math inline">\( \hat{x}_{(12)} \)</span> ter <span
+class="math inline">\( x_3 \)</span>. Njuno korelacijo potem izračunamo
+po definiciji</p>
+<p><span class="math display">\[ \sigma_{x_{(12)}, 3} = \left\langle
+\left( \hat{x}_{(12)} - x \right) \left( z_3 - x \right) \right\rangle.
+\]</span></p>
+<p>Naše naloge bodo vse vsebovale samo po dve meritvi.</p>
+<h2 id="varianca-povprečja-odvisnih-meritev">Varianca povprečja odvisnih
+meritev</h2>
+<p>Imejmo vzorec <span class="math inline">\( \left\{ z_i \right\}_N
+\)</span>, ki ima Gaussovo porazdelitev. Vse meritve naj majo isto
+povprečje <span class="math inline">\( \left\langle z_i \right\rangle =
+\mu \)</span>, vendar ima lahko vsaka meritev svojo varianco</p>
+<p><span class="math display">\[ \left\langle \left( z_i - \mu \right)
+^2 \right\rangle = \sigma_i ^2.
+\]</span></p>
+<p>Hkrati so lahko med seboj posamezne meritve tudi korelirane</p>
+<p><span class="math display">\[ \left\langle \left( z_i - \mu \right)
+\left( z_j - \mu \right) \right\rangle = \sigma_{ij}\ne 0.
+\]</span></p>
+<p>Povprečje meritev je po definiciji</p>
+<span class="math display">\[\begin{equation}
+\label{eq:2}
+\bar{z} = \frac{1}{N} \sum\limits_{i = 1}^N z_i,
+\end{equation}
+\]</span>
+<p>pričakovana vrednost povprečja pa je</p>
+<p><span class="math display">\[ \left\langle \bar{z} \right\rangle  =
+\frac{1}{N} \sum\limits_{i = 1}^N \left\langle z_i \right\rangle =
+\frac{1}{N} \sum\limits_{i = 1}^N \frac{1}{N} N \mu = \mu.
+\]</span></p>
+<p>Varianco povprečja</p>
+<p><span class="math display">\[ \sigma_M ^2 = \left\langle \left(
+\bar{z} - \mu \right) ^2 \right\rangle,
+\]</span></p>
+<p>kjer indeks <span class="math inline">\( M \)</span> označuje ang.
+<em>mean</em> želimo izraziti s poznanimi variancami <span
+class="math inline">\( \sigma_i ^2 \)</span> in kovariancami <span
+class="math inline">\( \sigma_{ij} \)</span>.</p>
+<p>Za začetek v varianci povprečja upoštevamo definicijo povprečja</p>
+<span class="math display">\[\begin{align*}
+   \sigma_M ^2 &amp;= \left\langle \left( \frac{1}{N} \sum\limits_{i =
+1}^N z_i - \mu \right) ^2  \right\rangle\\
+&amp;= \frac{1}{N ^2} \left\langle \left( \sum\limits_{i = 1}^N z_i - N
+\mu \right) ^2 \right\rangle = \frac{1}{N ^2} \left\langle \left(
+\sum\limits_{i = 1}^N \left[ z_i - \mu \right] \right) ^2 \right\rangle
+\end{align*}
+\]</span>
+<p>V drugi vrstici smo iz oklepaja izpostavili <span
+class="math inline">\( \frac{1}{N} \)</span> ter oba člena v vsoti
+zapisali s pomočjo vsote. V vsoti prepoznamo razliko kvadratov, kar
+pomeni, da lahko razstavimo na dva dela</p>
+<p><span class="math display">\[ \sigma_M ^2 = \frac{1}{N ^2}
+\left\langle \sum\limits_{i = 1}^N \left( z_i - \mu \right)
+\sum\limits_{j = 1}^N \left( z_j - \mu \right)  \right\rangle.
+\]</span></p>
+<p>Na izraz sedaj apliciramo pričakovano vrednost in prepoznamo izraza
+za varianco in kovarianco</p>
+<span class="math display">\[\begin{align*}
+   \sigma_M ^2 &amp;= \frac{1}{N ^2} \left( \left\langle \sum\limits_{i
+= 1}^N \left( z_i - \mu \right) ^2 \right\rangle + \left\langle
+\sum\limits_{i, j = 1, \ i \ne j}^N \left( z_i - \mu \right) \left( z_j
+- \mu \right) \right\rangle \right) \\
+&amp;= \frac{1}{N ^2} \sum\limits_{i, j = 1}^N \sigma_{ij}
+\end{align*}
+\]</span>
+<p>Varianca posamezne meritve je tako zajeta znotraj vsote, saj <span
+class="math inline">\( \sigma_{ii} = \sigma_i ^2 \)</span>.</p>
+<p>Zapišemo lahko tudi drugače</p>
+<span class="math display">\[\begin{align*}
+  \sigma_m ^2 &amp;= \frac{1}{N ^2} \left( \sum\limits_{i = 1}^N
+\sigma_i ^2 + \sum\limits_{i, j = 1, \ i \ne j}^N \sigma_{ij} \right) \\
+&amp;= \frac{1}{N ^2} \left( \sum\limits_{i = 1}^N \sigma_i ^2 + 2
+\sum\limits_{i &gt; j = 2}^N \sigma_{ij} \right),
+\end{align*}
+\]</span>
+<p>saj je kovarianca simetrična <span class="math inline">\( \sigma_{ij}
+= \sigma_{ji} \)</span>.</p>
+<p>V primeru neodvisnih izmerkov je kovarianca <span
+class="math inline">\( \sigma_{ij} = 0 \)</span> za vsak <span
+class="math inline">\( i, j \)</span>, in dobimo</p>
+<span class="math display">\[\begin{equation}
+\label{eq:1}
+\sigma_M ^2 = \frac{1}{N ^2} \sum\limits_{i = 1}^N \sigma_i ^2.
+\end{equation}
+\]</span>
+<p>Če so variance enake, npr. če merimo z istim inštrumentom, <span
+class="math inline">\( \sigma_i = \sigma \)</span> za vsak <span
+class="math inline">\( i \)</span>, potem je varianca povprečja odvisnih
+meritev</p>
+<p><span class="math display">\[ \sigma_M ^2 = \frac{N}{N ^2} \sigma ^2
+= \frac{1}{N} \sigma ^2
+\]</span></p>
+<p>Povprečna vrednost je v obeh zgornji primerih porazdeljen po normalni
+porazdelitvi</p>
+<p><span class="math display">\[ \bar{z} \sim \mathcal{N} \left( \mu,
+\frac{\sigma ^2}{N} \right).
+\]</span></p>
+<h1 id="naloga-meritev-višina">Naloga: meritev višina</h1>
+<div class="problem">
+<p>Imamo dve neodvisni meritvi višine. Prva meritev je <span
+class="math inline">\( h_1 = 2139 \mathrm{m} \)</span> z varianco <span
+class="math inline">\( \sigma_1 = 12 \mathrm{m} \)</span>, druga meritev
+pa je <span class="math inline">\( h_2 = 2130 \mathrm{m} \)</span> z
+varianco <span class="math inline">\( \sigma_2 = 6 \mathrm{m} \)</span>.
+Izračunaj povprečje ter optimalno združevanje.</p>
+</div>
+<p>Meritvi sta neodvisni, torej bo <span class="math inline">\(
+\sigma_{12} = 0 \)</span> in <span class="math inline">\( \rho_{12} = 0
+\)</span>. Povprečje bomo izračunali po enačbi <span
+class="math inline">\(\ref{eq:2}\)</span>, ki smo jo izpeljali v
+teoretičnem delu. Varianco povprečja pa bomo izračunali po enačbi <span
+class="math inline">\(\ref{eq:1}\)</span>.</p>
+<p>Torej</p>
+<p><span class="math display">\[ \mathbf{h} = \frac{1}{2} \left( h_1 +
+h_2 \right) = 2134.5 \mathrm{m}.
+\]</span></p>
+<p>Kvadrat variance povprečja je</p>
+<p><span class="math display">\[ \sigma_M = \frac{1}{N ^2}
+\sum\limits_{i = 1}^2 \sigma_i ^2 = \frac{1}{4} \left( \sigma_1 ^2 +
+\sigma_2 ^2 \right) = 45 \mathrm{m} ^2.
+\]</span></p>
+<p>Varianca je potem <span class="math inline">\( \sigma_M = 6.7
+\mathrm{m} \)</span>. Opazimo, da je napaka večja kot najmanjša napaka
+od meritev, kar nam pove, da v danem primeru povprečje ni optimalno
+združevanje.</p>
+<p>Oglejmo si še optimalno združevanje. Poslužili se bomo dveh enačb, ki
+sta bili izpeljani na prejšnjih vajah in sicer enačba za optimalno oceno
+je</p>
+<p><span class="math display">\[ \hat{x} =  z_1 + \frac{\sigma_1 ^2 -
+\sigma_{12}}{\sigma_1 ^2 + \sigma_2 ^2 - 2 \sigma_{12}} \left( z_2 - z_1
+\right),
+\]</span></p>
+<p>varianca optimalne ocene pa je</p>
+<p><span class="math display">\[ \hat{\sigma} ^2 = \frac{\sigma_1 ^2
+\sigma_2 ^2 - \sigma_{12} ^2}{\sigma_1 ^2 + \sigma_2 ^2 - 2
+\sigma_{12}}.
+\]</span></p>
+<p>Upoštevamo, da za naš primer <span class="math inline">\( \sigma_{12}
+= 0 \)</span> in optimalna ocena je tako</p>
+<p><span class="math display">\[ \hat{h} = h_1 + \frac{\sigma_1
+^2}{\sigma_1 ^2 + \sigma_2 ^2} \left( h_2 - h_1 \right) = h_1 + K \left(
+h_2 - h_1 \right),
+\]</span></p>
+<p>kjer smo s <span class="math inline">\( K = \frac{\sigma_1
+^2}{\sigma_1 ^2 + \sigma_2 ^2} \)</span> označili ojačevalni faktor.
+Meritev z manjšo napako dobi večjo utež pri optimalnem združevanju.</p>
+<p>Vrednost optimalne ocene je tako <span class="math inline">\( \hat{h}
+= 2131.8 \mathrm{m} \)</span>. Izračunajmo še optimalno varianco, ki jo
+prav tako lahko zapišemo z ojačevalnim faktorjem <span
+class="math inline">\( K \)</span></p>
+<p><span class="math display">\[ \hat{\sigma} ^2 = K \sigma_2 ^2 =
+\sigma_2 ^2 - \frac{\sigma_2 ^2}{\sigma_1 ^2 + \sigma_2 ^2}.
+\]</span></p>
+<p>Člen <span class="math inline">\( \frac{\sigma_2 ^2}{\sigma_1 ^2 +
+\sigma_2 ^2} \)</span> je večji od <span class="math inline">\( 0
+\)</span>, kar pomeni, da bo izostril/zmanjšal varianco. Posledično bo
+varianca optimalne ocene manjša od obeh meritev. Vstavimo podatke v
+enačbo in dobimo</p>
+<p><span class="math display">\[ \hat{\sigma} ^2 = K \sigma_2 ^2 =
+\frac{144}{180} \cdot 36 \mathrm{m} ^2 = 28.8 m ^2.
+\]</span></p>
+<p>Varianca je tako <span class="math inline">\( \hat{\sigma} = 5.4
+\)</span>, kar je res manj od najmanjše variance posamezne meritve.</p>
+<h1 id="optimalno-združevanje-neodvisnih-meritev">Optimalno združevanje
+neodvisnih meritev</h1>
+<p>Za neodvisne meritve velja <span class="math inline">\( \sigma_{12} =
+0 \)</span> in <span class="math inline">\( \rho_{12} = 0 \)</span>. Če
+imamo dve neodvisni meritvi, bo njuna optimalna ocena</p>
+<p><span class="math display">\[ \hat{x} = z_1 + \frac{\sigma_1
+^2}{\sigma_1 ^2 + \sigma_2 ^2} \left( z_2 - z_1 \right)
+\]</span></p>
+<p>ter varianca</p>
+<p><span class="math display">\[ \hat{\sigma} ^2 = \frac{\sigma_1 ^2
+\sigma_2 ^2}{\sigma_1 ^2 + \sigma_2 ^2} = \left( \sigma_1 ^{-2} +
+\sigma_2 ^{-2} \right)^{-1}.
+\]</span></p>
+<p>V primeru več kot dveh neodvisnih rešitev, zapišemo rekurzivno
+obliko. To lahko naredimo zaradi neodvisnosti meritevi n bodo njihove
+kovariance ničelne. Po <span class="math inline">\( n \)</span>
+združenih meritvah imamo tako oceno <span class="math inline">\(
+\hat{x}_n \)</span> z varianco <span class="math inline">\( \sigma_n ^2
+\)</span>. Dodamo še eno meritev <span class="math inline">\( z_{n + 1}
+\)</span> z varianco <span class="math inline">\( \sigma_{n + 1} ^2
+\)</span>, ki ju združimo z že obstoječo oceno. Enačbi sta tako</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \hat{x}_n +
+\frac{\sigma_n ^2 }{\hat{\sigma}_n ^2 + \sigma_{n + 1} ^2} \left( z_{n +
+1} - \hat{x}_n \right) \quad \text{ in } \quad \hat{\sigma}_{n + 1}
+^{-2} = \hat{\sigma}_n^{-2} + \sigma_{n + 1}^{-2} \implies
+\hat{\sigma}_{n + 1} ^2 = \frac{\hat{\sigma}_n ^2 \sigma_{n + 1}
+^2}{\hat{\sigma}_n ^2 + \sigma_{n + 1} ^2}.
+\]</span></p>
+<p>Danemu setu enačb pravimo <em>Kalmanov filter za združevanje
+neodvisnih meritev konstante</em> in se uporablja za sprotno združevanje
+meritev.</p>
+<p>[vstavi grafiko filtra?]</p>
+<p>Za <span class="math inline">\( n = 0 \)</span> je optimalna
+ocena</p>
+<p><span class="math display">\[ \hat{x} = \hat{x}_0 +
+\frac{\hat{\sigma}_0 ^2}{\hat{\sigma}_0 ^2 + \sigma_1 ^2} \left( z_1 -
+\hat{x}_2 \right) \quad \text{ in } \quad \hat{\sigma}_1 ^{-2} =
+\hat{\sigma}_0^{-2} + \sigma_0 ^{-2}.
+\]</span></p>
+<p><span class="math inline">\( \hat{x}_0 \)</span> je izostrena ocena
+brez opravljenih meritev in zaseda poljubno vrednost, saj je pred
+meritvijo ne poznamo. Hkrati mora še vedno imeti Gaussovo porazdelitev,
+vendar bo varianca <span class="math inline">\( \hat{\sigma}_0 = \infty
+\)</span>, saj lahko izostrena ocena zaseda katerokoli vrednost.</p>
+<p>Posledično je</p>
+<p><span class="math display">\[ \hat{x} = \hat{x}_0.
+\]</span></p>
+<p>Za <span class="math inline">\( n = 1 \)</span> je izostrena
+ocena</p>
+<p><span class="math display">\[ \hat{x}_1 = z_1 \quad \text{ in }
+\sigma_1 ^2 = \sigma_1 ^2.
+\]</span></p>
+<p>Kalmanov filter <strong>ni primeren</strong>, če imamo podatke že
+vnaprej tabelirane, ker moramo po nepotrebnem izračunavati vmesne
+rezultate. Namesto tega takrat uporabimo uteženo povprečevanje. Slednje
+je bolj računsko ugodno, ker ne računamo vseh vmesnih rezultatov.</p>
+<p>Enačbi za uteženo povprečje sta</p>
+<p><span class="math display">\[ \hat{x}_n = \frac{\sum\limits_{i = 1}^n
+\frac{z_i}{\sigma_i ^2}}{\sum\limits_{i = 1}^n \frac{1}{\sigma_i ^2}}
+\quad \text{ in } \quad \hat{\sigma}_n ^2 = \frac{1}{\sum\limits_{i =
+1}^n \frac{1}{\sigma_i ^2}}
+\]</span></p>
+<p>oziroma</p>
+<p><span class="math display">\[ \frac{\hat{x}_n ^2}{\hat{\sigma}_n ^2}
+= \sum\limits_{i = 1}^n \frac{z_i}{\sigma_i ^2}.
+\]</span></p>
+<p>Zgornje enačbe predstavljajo enak postopek, kakor če bi šli
+rekurzivno čez vse meritve s Kalmanovim filtrom.</p>
+<h1 id="naloga-meritev-hitrosti-zvoka">Naloga: meritev hitrosti
+(zvoka)</h1>
+<div class="problem">
+<p>Imamo set treh meritev s pripadajočimi variancami</p>
+<span class="math display">\[\begin{align*}
+  c_1 &amp;= 342 \frac{\mathrm{m}}{\mathrm{s}} \quad \sigma_1 = 2
+\frac{\mathrm{m}}{s} \\
+  c_2 &amp;= 343 \frac{\mathrm{m}}{\mathrm{s}} \quad \sigma_2 = 4
+\frac{\mathrm{m}}{s} \\
+  c_1 &amp;= 346 \frac{\mathrm{m}}{\mathrm{s}} \quad \sigma_3 = 6
+\frac{\mathrm{m}}{s} \\
+\end{align*}
+\]</span>
+<p>Zanima nas optimalna ocena <span class="math inline">\( \hat{c}
+\)</span> ter njena varianca <span class="math inline">\( \hat{\sigma}
+^2 \)</span>. Izračunaj preko uteženega povprečja, za domačo nalogo pa
+lahko ponoviš postopek še s Kalmanovih filtrom.</p>
+</div>
+<p>Varianca bo po enači iz teoretičnega uvoda</p>
+<span class="math display">\[\begin{align*}
+  \hat{\sigma} ^2 &amp;= \left( \frac{1}{2 ^2} + \frac{1}{4 ^2} +
+\frac{1}{6 ^2} \right)^{-1} \\
+&amp;= \frac{144}{49} \left( \frac{\mathrm{m}}{\mathrm{s}} \right) ^2
+\sim 2.9 \left( \frac{\mathrm{m}}{\mathrm{s}} \right) ^2
+\end{align*}
+\]</span>
+<p>Napaka optimalne ocene je torej <span class="math inline">\(
+\hat{\sigma} = 1.7 \frac{\mathrm{m}}{\mathrm{s}} \)</span>.</p>
+<p>Optimalna ocena pa bo potem</p>
+<p><span class="math display">\[ \hat{c} = 2.9 \left( \frac{342}{4} +
+\frac{343}{16} + \frac{346}{36} \right) \frac{\mathrm{m}}{\mathrm{s}} =
+342.5 \frac{\mathrm{m}}{s}.
+\]</span></p>
+<p>V primeru povprečenja bi dobili</p>
+<p><span class="math display">\[ \bar{c} = 343.7
+\frac{\mathrm{m}}{\mathrm{s}} \quad \text{ in } \quad  \sigma_M = 2.5
+\frac{\mathrm{m}}{\mathrm{s}}.
+\]</span></p>
+<h1 id="naloga-uteženo-povprečje-in-kalmanov-filter">Naloga: Uteženo
+povprečje in Kalmanov filter</h1>
+<div class="problem">
+<p>Pokaži, da je uteženo povprečje</p>
+<p><span class="math display">\[  \hat{x}_n = \frac{\sum\limits_{i =
+1}^n \frac{z_i}{\sigma_i ^2}}{\sum\limits_{i = 1}^n \frac{1}{\sigma_i
+^2}} \quad \text{ in } \quad \hat{\sigma}_n ^2 = \frac{1}{\sum\limits_{i
+= 1}^n \frac{1}{\sigma_i ^2}}
+\]</span></p>
+<p>ekvivalentno Kalmanovem filtru</p>
+<p><span class="math display">\[  \hat{x} = z_1 + \frac{\sigma_1
+^2}{\sigma_1 ^2 + \sigma_2 ^2} \left( z_2 - z_1 \right)  \quad \text{ in
+} \quad  \hat{\sigma} ^2 = \frac{\sigma_1 ^2 \sigma_2 ^2}{\sigma_1 ^2 +
+\sigma_2 ^2} = \left( \sigma_1 ^{-2} + \sigma_2 ^{-2} \right)^{-1}.
+\]</span></p>
+</div>
+<p>Za <span class="math inline">\( n \)</span>-to meritev v Kalmanovem
+filtru bo veljala enakost</p>
+<p><span class="math display">\[ \hat{\sigma}_n ^{-2} = \sum\limits_{i =
+1}^n \sigma_i ^{-2}.
+\]</span></p>
+<p>Za <span class="math inline">\( n + 1 \)</span> meritev potem
+velja</p>
+<p><span class="math display">\[ \hat{\sigma}_{n + 1}^{-2} =
+\sum\limits_{i = 1}^{n + 1} \sigma_i ^{-2} = \sum\limits_{i = 1}^n
+\sigma_i^{-2} + \sigma_{n + 1} ^{-2}.
+\]</span></p>
+<p>To lahko zapišemo tudi z <span class="math inline">\( n \)</span>-to
+meritvijo kot</p>
+<span class="math display">\[\begin{equation}
+\label{eq:3}
+\hat{\sigma}_{n + 1}^{-2} = \hat{\sigma}_n ^{-2} + \sigma_{n + 1}^{-2}.
+\end{equation}
+\]</span>
+<p>Razmerje ocen in variance za <span class="math inline">\( n
+\)</span>-to meritev je</p>
+<p><span class="math display">\[ \frac{\hat{x}_n}{\hat{\sigma}_n ^2} =
+\sum\limits_{i = 1}^n \frac{z_i}{\sigma_i ^2}.
+\]</span></p>
+<p>Za <span class="math inline">\( n + 1 \)</span> meritev pa je</p>
+<p><span class="math display">\[ \frac{\hat{x}_{n + 1}}{\sigma_{n +1}
+^2} = \sum\limits_{i = 1}^{n + 1} \frac{z_i}{\sigma_i ^2} =
+\sum\limits_{i = 1}^n \frac{z_i}{\sigma_i ^2} + \frac{z_{n +
+1}}{\sigma_{n + 1} ^2}.
+\]</span></p>
+<p>Ponovno lahko to zapišemo z <span class="math inline">\( n
+\)</span>-to meritvijo</p>
+<p><span class="math display">\[ \frac{\hat{x}_{n + 1}}{\sigma_{n + 1}
+^2} = \frac{\hat{x}_n}{\hat{\sigma}_n ^2} + \frac{z_{n + 1}}{\sigma_{n +
+1} ^2}.
+\]</span></p>
+<p>Enačbo lahko sedaj pomnožimo z <span class="math inline">\(
+\hat{\sigma}_{n + 1} \)</span>, iz česar sledi</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \frac{\hat{\sigma}_{n
++ 1} ^2}{\hat{\sigma}_n ^2} \hat{x}_n + \frac{\hat{\sigma}_{n + 1}
+^2}{\sigma_{n + 1} ^2} z_{n + 1}
+\]</span></p>
+<p>Upoštevajoč <span class="math inline">\(\ref{eq:3}\)</span> veljata
+identiteti</p>
+<p><span class="math display">\[ \frac{\hat{\sigma}_{n + 1}
+^2}{\hat{\sigma}_n ^2} = \frac{\sigma_{n + 1} ^2}{\hat{\sigma}_n ^2 +
+\sigma_{n + 1} ^2} \quad \text{ in } \quad \frac{\hat{\sigma}_{n + 1}
+^2}{\sigma_{n + 1} ^2} = \frac{\hat{\sigma}_n ^2}{\hat{\sigma}_n ^2 +
+\sigma_{n + 1} ^2}
+\]</span></p>
+<p>kar zgornji izraz pretvori v</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} =  \frac{\sigma_{n + 1}
+^2}{\hat{\sigma}_n ^2 + \sigma_{n + 1} ^2} \hat{x}_n +
+\frac{\hat{\sigma}_n ^2}{\hat{\sigma}_n ^2 + \sigma_{n + 1} ^2} z_{n +
+1}.
+\]</span></p>
+<p>Ponovno upoštevamo izraz <span
+class="math inline">\(\ref{eq:3}\)</span>, vendar tokrat izrazimo <span
+class="math inline">\( \sigma_{n + 1} ^2 \)</span> in dobimo ven ravno
+Kalmanov filter</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \hat{x}_n -
+\frac{\hat{\sigma}_n ^2}{\hat{\sigma}_n ^2 + \sigma_{n + 1} ^2}
+\hat{x}_n + \frac{\hat{\sigma}_n ^2}{\hat{\sigma}_n ^2 + \sigma_{n + 1}
+^2} z_{n + 1} = \hat{x}_n + \frac{\hat{\sigma}_n ^2}{\hat{\sigma}_n ^2 +
+\sigma_{n + 1} ^2} \left( z_{n + 1} - \hat{x}_n \right).
+\]</span></p>
+</body>
+</html>

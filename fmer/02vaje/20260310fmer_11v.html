@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vaje iz Fizikalnih merjenj, 11. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vaje iz Fizikalnih merjenj, 11. teden v letu</h1>
+<p class="subtitle">2026/03/10</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#teorija-kalmanov-filter-za-sledenje-spremenljivki-xt-v-diskretni-sliki"
+id="toc-teorija-kalmanov-filter-za-sledenje-spremenljivki-xt-v-diskretni-sliki">Teorija:
+Kalmanov filter za sledenje spremenljivki <span class="math inline">\(
+x(t) \)</span> v diskretni sliki</a></li>
+<li><a href="#naloga-kroglica-na-stopnicah"
+id="toc-naloga-kroglica-na-stopnicah">Naloga: kroglica na stopnicah</a>
+<ul>
+<li><a href="#dinamični-šum" id="toc-dinamični-šum">Dinamični
+šum</a></li>
+</ul></li>
+<li><a
+href="#kalmanov-filter-za-sledenje-vektorski-spremenljivki-v-diskretni-sliki"
+id="toc-kalmanov-filter-za-sledenje-vektorski-spremenljivki-v-diskretni-sliki">Kalmanov
+filter za sledenje vektorski spremenljivki v diskretni sliki</a></li>
+<li><a href="#naloga-kalmanov-filter-prožnega-trka-dveh-teles"
+id="toc-naloga-kalmanov-filter-prožnega-trka-dveh-teles">Naloga:
+Kalmanov filter prožnega trka dveh teles</a></li>
+</ul>
+</nav>
+<h1
+id="teorija-kalmanov-filter-za-sledenje-spremenljivki-xt-v-diskretni-sliki">Teorija:
+Kalmanov filter za sledenje spremenljivki <span class="math inline">\(
+x(t) \)</span> v diskretni sliki</h1>
+<p>Dinamični zakon spremenljivke nam pove, kako se količina spreminja in
+ga podamo v obliki diferencialne enačbe. Za naš sistem <span
+class="math inline">\( S \)</span> bo diferenčna enačba, ki služi kot
+približek diferencialne enačbe</p>
+<p><span class="math display">\[ \dot{x} = A(t) x + C(t).
+\]</span></p>
+<p>V diskretni sliki lahko majhne <span class="math inline">\( \dot{x}
+\)</span> zapišemo kot</p>
+<p><span class="math display">\[ \frac{x((n + 1)T) - x(nT)}{T} = A(nT) x
+(nT) - C (nT),
+\]</span></p>
+<p>kjer je <span class="math inline">\( T \)</span> čas vzorčenja.
+Slednje lahko dodatno preobrazimo v</p>
+<p><span class="math display">\[ x_{n + 1} = \left( 1 + A(n T) T \right)
+x_n + C(n T) T.
+\]</span></p>
+<p>Dobili smo zvezi med koeficienti diferenčne in diferencialne
+enačbe</p>
+<p><span class="math display">\[ \Phi_n = 1 + A(nT) T \quad \text{ in }
+\quad c_n = C(nT).
+\]</span></p>
+<p>Dinamični zakon v diferenčni obliki je potemtakem</p>
+<span class="math display">\[\begin{equation}
+\label{eq:1}
+x_{n + 1} = \Phi_n x_n + c_n \left( + \Gamma_n w_n \right),
+\end{equation}
+\]</span>
+<p>kjer zadnji člen predstavlja dinamični šum. Vzrok za ta šum je, če ne
+poznamo dobro dinamike sistema. Členi <span class="math inline">\( w_n
+\)</span> so normalno porazdeljeni s povprečjem <span
+class="math inline">\( 0 \)</span> in varianco dinamičnega šuma <span
+class="math inline">\( Q_n \)</span></p>
+<p><span class="math display">\[ \left\langle w_n w_{n&#39;}
+\right\rangle = Q_n \delta_{n n&#39;}.
+\]</span></p>
+<p>Ob času <span class="math inline">\( t = n T \)</span> poznamo
+optimalno oceno <span class="math inline">\( \hat{x}_n \)</span> in
+njeno disperzijo <span class="math inline">\( \hat{\sigma}_n ^2
+\)</span>. Ob času <span class="math inline">\( (n + 1)T \)</span>
+izmerimo <span class="math inline">\( z_{n + 1} \)</span>. Ocena ob času
+<span class="math inline">\( t = (n + 1)T \)</span> se bo premaknila
+glede na <span class="math inline">\(\ref{eq:1}\)</span> in bo enaka</p>
+<p><span class="math display">\[ \bar{x}_{n + 1} = \Phi_n \hat{x}_n +
+c_n.
+\]</span></p>
+<p>Disperzija ob tem času pa bo</p>
+<p><span class="math display">\[ \bar{\sigma}_{n + 1} ^2 = \Phi_n ^2
+\hat{\sigma}_n ^2 + \Gamma_n ^2 Q_n.
+\]</span></p>
+<p>Z meritvijo <span class="math inline">\( z_{n + 1} \)</span> lahko
+sedaj izostrimo oceno, kakor smo to naredili v poglavju optimalnega
+združevanja meritev</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \bar{x}_{n + 1} +
+\frac{\bar{\sigma}_{n + 1} ^2}{\bar{\sigma}_{n + 1} ^2 + \sigma_{n + 1}}
+\left( z_{n + 1} - \bar{x}_{n + 1} \right).
+\]</span></p>
+<p>Njena disperzija je</p>
+<p><span class="math display">\[ \bar{\sigma}_{n + 1} ^2 =
+\frac{\bar{\sigma}_{n + 1} ^2 \sigma_{n + 1} ^2}{\bar{\sigma}_{n + 1} ^2
++ \sigma_{n + 1} ^2} = \bar{\sigma}_{n + 1} ^2 - \frac{\bar{\sigma}_{n +
+1} ^4}{\bar{\sigma}_{n+1}^2 + \sigma_{n + 1} ^2}.
+\]</span></p>
+<p>Uvedemo nove spremenljivke in sicer</p>
+<span class="math display">\[\begin{array}{|c|c|} \hline
+\sigma_{n + 1} ^2 &amp; R_{n + 1} \\
+\bar{\sigma}_{n + 1} ^2 &amp; M_{n + 1} \\
+\hat{\sigma}_{n + 1} ^2 &amp; P_{n + 1} \\ \hline
+\end{array}
+\]</span>
+<p>V primeru, da ne merimo, potem ni drugega koraka - ostrenja ocene.
+Napoved je najboljša ocena</p>
+<p><span class="math display">\[ \hat{x}_{n + 1} = \bar{x}_{n + 1} \quad
+\text{ in } \quad P_{n + 1} = M_{n + 1}.
+\]</span></p>
+<h1 id="naloga-kroglica-na-stopnicah">Naloga: kroglica na stopnicah</h1>
+<div class="problem">
+<p>Kroglica se zakotali od vrha petih stopnic do dna. Vse stopnice so
+natančno enako visoke <span class="math inline">\( \bar{H} = 30
+\mathrm{cm} \)</span> in imajo enako ničelno negotovost višine <span
+class="math inline">\( \sigma_H ^2 = 0 \)</span>. Kroglica se na vsaki
+stopnici odbije natančno enkrat in ob vsakem odboju izgubi polovico
+svoje kinetične energije v vertikalni smeri.</p>
+<p>Izračunaj največjo višino zadnjega, 5., odboja in določi njegovo
+disperzijo. Med odboji po stopnicah ne merimo višine. Začetna višina
+kroglice je <span class="math inline">\( 0 \)</span> in je znana samo do
+variance <span class="math inline">\( \sigma_0 \)</span>. Zanemari
+dinamični šum.</p>
+</div>
+<p>Za začetek reševanja te naloge moramo najprej poiskati rekurzivno
+zvezo, ki nam bo določila dinamiko. Želimo imeti rekurzivno zvezo oblike
+Kalmanovega filtra</p>
+<p><span class="math display">\[ h_{n + 1} = \Phi_n h_n + c_n + \Gamma_n
+w_n,
+\]</span></p>
+<p>kjer je <span class="math inline">\( h \)</span> spremenljivka, ki
+nas zanima - višina. Označimo izgubo energije po vsakem odboju z <span
+class="math inline">\( \delta = \frac{1}{2} \)</span>. <span
+class="math inline">\( h_0 \)</span> bo začetna višina žoge, ki je v
+našem primeru <span class="math inline">\( h_0 = 0 \)</span>.</p>
+<p>Potencialna energije kroglice po prvem odboju mora biti enaka
+polovici potencialne energije pred odbojem, torej <span
+class="math inline">\( U_1 = \delta U_0 \)</span>. Ob upoštevanju
+definicije potencialne energije dobimo zvezo</p>
+<p><span class="math display">\[ mg h_1 = \delta mg \left( H + h_0
+\right) \implies h_1 = \delta h_0 + \delta H.
+\]</span></p>
+<p>Zaradi ničelne negotovosti velja zapis <span class="math inline">\(
+\bar{H} = H \)</span>. Po drugem odboju <span class="math inline">\( U_2
+= \delta U_1 \)</span> pridemo do podobne zveze</p>
+<p><span class="math display">\[ h_2 = \delta h_1 + \delta H.
+\]</span></p>
+<p>Po <span class="math inline">\( n \)</span>-tem odboju bo torej
+višina</p>
+<p><span class="math display">\[ h_{n + 1} = \delta h_n + \delta H.
+\]</span></p>
+<p>Sedaj lahko odčitamo vrednosti koeficientov iz diferenčne enačbe. To
+so <span class="math inline">\( \Phi_n = \delta \)</span> in <span
+class="math inline">\( c_n = \delta H \)</span>. Hkrati je <span
+class="math inline">\( \Gamma_n = 0 \)</span>, saj smo zanemarili
+dinamični šum.</p>
+<p>Sedaj želimo izraziti višin <span class="math inline">\( n + 1
+\)</span> odboja s <span class="math inline">\( h_0 \)</span>. Za <span
+class="math inline">\( n = 2 \)</span> to pomeni</p>
+<p><span class="math display">\[ \hat{h}_2 = \bar{h}_2 = \delta
+\hat{h}_1 + \delta H = \delta \left( \delta \hat{h}_0 + \delta H \right)
++ \delta H = \delta ^2 \hat{h}_0 + \left( \delta ^2 + \delta \right) H.
+\]</span></p>
+<p>Tukaj smo upoštevali, da ker ni vmesnih meritev, je napoved <span
+class="math inline">\( \bar{h} \)</span> najboljša ocena <span
+class="math inline">\( \hat{h} \)</span>. Nadalje</p>
+<p><span class="math display">\[ \hat{h}_3 = \delta \hat{h}_2 + \delta H
+= \delta ^3 \hat{h}_0 + H \left( \delta + \delta ^2 + \delta ^3 \right).
+\]</span></p>
+<p>Torej bo splošna zveza</p>
+<p><span class="math display">\[ h_n = \delta^n h_0 + H \sum\limits_{i =
+1}^n \delta^i.
+\]</span></p>
+<p>Vsoto lahko tudi poenostavimo</p>
+<p><span class="math display">\[ S_n = \sum\limits_{i = 1}^n \delta^i =
+\delta \left( 1 + S_n - \delta^n \right) \implies S_n = \delta \frac{1 -
+\delta^n}{1 - \delta}.
+\]</span></p>
+<p>Izostrena ocena po <span class="math inline">\( n \)</span>-odbojih
+bo torej</p>
+<p><span class="math display">\[ \hat{h}_n = \delta^n \hat{h}_0 + H
+\delta \frac{1 - \delta^n}{1 - \delta}.
+\]</span></p>
+<p>V našem primeru za <span class="math inline">\( n = 5 \)</span> in
+<span class="math inline">\( \delta = \frac{1}{2} \)</span> je to
+enako</p>
+<p><span class="math display">\[ \hat{h}_5 = H \left( 1 - \frac{1}{2^5}
+\right) = \frac{31}{32} H.
+\]</span></p>
+<p>Sedaj pa lahko preko Kalmanovega filtra določimo še varianco petega
+odboja. Ker nimamo vmesnih meritev, pomeni da ne moremo izostriti
+vmesnih ocen. Posledično bomo pri dinamiki</p>
+<p><span class="math display">\[ M_{n + 1} = \Phi_n ^2 P_n +
+\underbrace{\Gamma_n ^2 Q_n}_{= 0}
+\]</span></p>
+<p>označili <span class="math inline">\( P_{n + 1} = M_{n + 1}
+\)</span>. Torej bo veljalo</p>
+<p><span class="math display">\[ P_{n + 1} = \Phi_n ^2 P_n = \delta ^2
+P_n.
+\]</span></p>
+<p>Izraženo s <span class="math inline">\( P_0 \)</span> potem velja</p>
+<p><span class="math display">\[ P_n = \left( \delta ^2 \right)^n P_0.
+\]</span></p>
+<p>Začetna varianca je <span class="math inline">\( P_0 = \sigma_0 ^2
+\)</span>, torej bo <span class="math inline">\( n \)</span>-ti
+odboj</p>
+<p><span class="math display">\[ P_n = \delta^{2n} \hat{\sigma}_0 ^2.
+\]</span></p>
+<p>Zanima nas disperzija, ki je</p>
+<p><span class="math display">\[ \hat{\sigma}_n = \sqrt{P_{n}} =
+\delta^n \sigma^2_0.
+\]</span></p>
+<p>Disperzija 5. odboja bo tako</p>
+<p><span class="math display">\[ \hat{\sigma}_5 = \delta ^5
+\hat{\sigma}_0 = \frac{1}{32} \hat{\sigma}_0.
+\]</span></p>
+<p>Kapico smo dali disperziji, saj je to naša optimalna ocena.
+Disperzijo pa bi lahko še znižali, če bi dodatno poznali meritve med
+posameznimi odboji, vendar se disperzija manjša od začetne vrednost že
+zaradi dinamike sistema</p>
+<p><span class="math display">\[ \lim_{n \to \infty} \hat{\sigma}_n =0.
+\]</span></p>
+<h2 id="dinamični-šum">Dinamični šum</h2>
+<div class="problem">
+<p>Prejšnji nalogi dodamo dinamični šum <span class="math inline">\(
+\delta_H \ne 0 \)</span>. To pomeni, da smo višini stopnic dodali
+disperzijo.</p>
+</div>
+<p>V tem primeru zapišemo višino stopnice kot</p>
+<p><span class="math display">\[ H = \bar{H} + \eta,
+\]</span></p>
+<p>kjer je <span class="math inline">\( \left\langle \eta \right\rangle
+= 0 \)</span> in <span class="math inline">\( \left\langle \eta ^2
+\right\rangle = \delta_H ^2 \)</span>.</p>
+<p>V povprečju so stopnice enako visoke <span class="math inline">\(
+\bar{H} \)</span>.</p>
+<p>Nova dinamika, Kalmanov filter pa je sedaj</p>
+<p><span class="math display">\[ h_{n + 1} = \delta h_n + \delta \left(
+\bar{H} + \eta \right) = \delta h_n + \delta \bar{H} + \delta \eta.
+\]</span></p>
+<p>Posamezni koeficienti enačbe <span
+class="math inline">\(\ref{eq:1}\)</span> so sedaj</p>
+<p><span class="math display">\[ \Phi_n = \delta,\qquad c_n = \delta
+\bar{H} \quad \text{ in } \quad \Gamma_n w_n = \delta \eta
+\]</span></p>
+<p>Slednji člen predstavlja dinamični šum.</p>
+<p>Ocena višine odboja še zmeraj ostane ista zaradi <span
+class="math inline">\( \left\langle \eta \right\rangle = 0 \)</span></p>
+<p><span class="math display">\[ \bar{h}_{n + 1} = \hat{h}_{n + 1} =
+\delta \hat{h}_n + \delta \bar{H}.
+\]</span></p>
+<p>Do spremembe zaradi dinamičnega šuma pride pri varianci. Po izpeljavi
+v teoretičnem delu je</p>
+<p><span class="math display">\[ P_{n + 1} = M_{n + 1} = \Phi_{n + 1} ^2
+P_n + \Gamma_n ^2 Q_n.
+\]</span></p>
+<p>Spomnimo, da je varianca dinamičnega šuma</p>
+<p><span class="math display">\[ \left\langle \left( \Gamma_n w_n
+\right) ^2 \right\rangle = \Gamma_n ^2 \left\langle w_n ^2 \right\rangle
+= \Gamma_n ^2 Q_n.
+\]</span></p>
+<p>Varianco dinamičnega šuma z našo disperzijo zapišemo</p>
+<p><span class="math display">\[ \Gamma_n ^2 Q_n = \left\langle \left(
+\delta \eta \right) ^2 \right\rangle = \delta ^2 \left\langle \eta ^2
+\right\rangle = \delta ^2 \sigma_H ^2,
+\]</span></p>
+<p>kjer smo upoštevali navodila naloge.</p>
+<p>Disperzija izostrene ocene po prvem odboju je torej</p>
+<p><span class="math display">\[ P_1 = \delta ^2 \hat{\sigma}_0 ^2.
+\]</span></p>
+<p>Po drugem odboju je disperzija</p>
+<p><span class="math display">\[ P_2 = \delta ^2 \left( \delta ^2 P_0 +
+\delta ^2 \sigma_H ^2 \right) + \sigma_H ^2 = \delta ^4 P_0 + \delta_H
+^2 \left( \delta ^2 + \delta ^4 \right).
+\]</span></p>
+<p>Po <span class="math inline">\( n \)</span>-tem odboju velja
+zveza</p>
+<p><span class="math display">\[ P_n = \delta^{2n} \hat{\sigma}_0 ^2 +
+\sigma_H ^2 \sum\limits_{i = 1}^n \delta^{2i}.
+\]</span></p>
+<p>Podobno kakor prej lahko zgornjo vsoto pretvorimo na zvezo</p>
+<p><span class="math display">\[ S_n = \sum\limits_{i = 1}^n \delta^{2i}
+= \delta ^2 \left( 1 + S_n - \delta^{2n} \right) \implies S_n = \delta
+^2 \frac{1 - \delta^{2n}}{1 - \delta ^2}.
+\]</span></p>
+<p>Disperzija izostrene ocene glede na Kalmanov filter po dveh odbojih
+je torej</p>
+<p><span class="math display">\[ P_2 = \delta ^4 \hat{\sigma}_0 ^2 +
+\delta_H ^2 \left( \delta ^2 + \delta ^4\right)
+\]</span></p>
+<p>Napoved višine je po drugem odboju</p>
+<p><span class="math display">\[ h_2 = \delta ^2 h_0 + H \left( \delta +
+\delta ^2 \right) = f(h_0, H),
+\]</span></p>
+<p>kar je funkcija dveh spremenljivk. Vsaka spremenljivka <span
+class="math inline">\( h_0 \)</span> in <span class="math inline">\( H
+\)</span> ima svojo napako in negotovost lahko izračunamo s širjenjem
+napake po Gaussovi porazdelitvi.</p>
+<p><span class="math display">\[ \hat{\sigma}_2 ^2 = \delta ^4 + \left(
+\delta + \delta ^2 \right) ^2 \sigma_H ^2 = \delta ^4 \hat{\sigma}_0 ^2
++ \left( \delta ^2 + \delta ^4 + 2 \delta ^3 \right) \sigma_H ^2
+\]</span></p>
+<p>Po Kalmanovem filtru dodatnega člena <span class="math inline">\( 2
+\delta ^3 \)</span> ni! Pri širjenju napake po Gaussu smo se
+pretvarjali, da je vsaka stopnica meritev iste naključne spremenljivke.
+<span class="math inline">\( 2 \delta ^3 \)</span> je korelacija med
+meritvami <span class="math inline">\( H \)</span>.</p>
+<p>Širjenje napake po Gaussu bi bilo pravilno, če bi bila vsaka meritev
+posamezne stopnice svoje spremenljivke <span class="math inline">\( H_1,
+H_2, \ldots \)</span>.</p>
+<p>Višina po <span class="math inline">\( n \)</span>-tem odboju je
+potem funkcija <span class="math inline">\( n + 1 \)</span>
+spremenljivk</p>
+<p><span class="math display">\[ h_n = f \left( h_0, H_1, H_2, \ldots,
+H_n \right).
+\]</span></p>
+<p>V tem primeru dobimo pravilno rešitev, saj so meritve med seboj
+nekorelirane.</p>
+<h1
+id="kalmanov-filter-za-sledenje-vektorski-spremenljivki-v-diskretni-sliki">Kalmanov
+filter za sledenje vektorski spremenljivki v diskretni sliki</h1>
+<p>Imamo <span class="math inline">\( k \)</span> spremenljivk <span
+class="math inline">\( x_1, x_2, \ldots, x_k \)</span>, ki jih zapišemo
+v vektorski obliki kot</p>
+<p><span class="math display">\[ \mathbf{x} = \begin{bmatrix} x_{1} \\
+x_{2} \\ \vdots \\ x_{k} \end{bmatrix}.
+\]</span></p>
+<p>Ocena in izostrena ocena pa bosta v vektorski obliki</p>
+<p><span class="math display">\[ \bar{\mathbf{x}} = \begin{bmatrix}
+\bar{x}_{1} \\ \bar{x}_2 \\ \vdots \\ \bar{x}_k \end{bmatrix} \quad
+\text{ in } \quad \hat{\mathbf{x}} = \begin{bmatrix} \hat{x}_{1} \\
+\hat{x}_{2} \\ \vdots \\ \hat{x}_k \end{bmatrix}.
+\]</span></p>
+<p>Za vektorske spremenljivke moramo tako kot skalarnih zapisati
+dinamiko, ki bo ponovno oblike</p>
+<p><span class="math display">\[ \mathbf{x}_{n + 1} = \Phi_n
+\mathbf{x}_n + \mathbf{c}_n + \Gamma_n \mathbf{w}_n.
+\]</span></p>
+<p>Razlika je sedaj v tem, da je <span class="math inline">\( \Phi_n
+\)</span> sedaj matrika.</p>
+<p>Za vzorčni čas <span class="math inline">\( T \)</span> in čas <span
+class="math inline">\( t = n T \)</span> želimo narediti napoved za čas
+<span class="math inline">\( t = (n + 1)T \)</span>. Ob času <span
+class="math inline">\( nT \)</span> imamo izostreno oceno <span
+class="math inline">\( \hat{\mathbf{x}} \)</span> ter pripadajočo
+kovariančno matriko izostrene ocene <span class="math inline">\( P_n
+\)</span>. Napoved ocene za novi čas je zaradi dinamike</p>
+<p><span class="math display">\[ \bar{\mathbf{x}}_{n + 1} = \Phi_n
+\hat{\mathbf{x}}_n + \mathbf{c}_n
+\]</span></p>
+<p>s pripadajočo kovariančno matriko</p>
+<p><span class="math display">\[ M_{n + 1} = \left\langle \left(
+\bar{\mathbf{x}}_{n + 1} - \mathbf{x}_{n + 1} \right) \left(
+\bar{\mathbf{x}}_{n + 1} - \mathbf{x}_{n + 1} \right)^T \right\rangle.
+\]</span></p>
+<p>Razliko napovedi ocene in spremenljvke, ki sledi diferenčni enačbi
+je</p>
+<p><span class="math display">\[ \bar{\mathbf{x}}_{n + 1} -
+\mathbf{x}_{n + 1} = \Phi_n \hat{\mathbf{x}}_n + c_n - \left( \Phi_n
+\mathbf{x}_n + \mathbf{c}_n + \Gamma_n \mathbf{w}_n \right) = \Phi_n
+(\hat{\mathbf{x}}_n - \mathbf{x}_n) - \Gamma_n \mathbf{w}_n.
+\]</span></p>
+<p>Kovariančna matrika npovedi ocene je zato</p>
+<span class="math display">\[\begin{align*}
+  M_{n + 1} &amp;= \left\langle \left( \Phi_n \left( \hat{\mathbf{x}}_n
+- \mathbf{x}_n \right) - \Gamma_n \mathbf{w}_n \right) \left( \Phi_n
+\left( \hat{\mathbf{x}}_n - \mathbf{x}_n \right) - \Gamma_n
+\mathbf{w}_n\right)^T \right\rangle \\
+&amp;= \Phi_n P_n \Phi_n^T + \Gamma_n Q_n \Gamma_n ^T,
+\end{align*}
+\]</span>
+<p>kjer je</p>
+<p><span class="math display">\[ P_n = \left\langle \left(
+\hat{\mathbf{x}}_n - \mathbf{x} \right)\left( \hat{\mathbf{x}}_n -
+\mathbf{x} \right)^T \right\rangle \quad \text{ in } \quad \left\langle
+\mathbf{w}_n \mathbf{w}_n^T \right\rangle = Q_n.
+\]</span></p>
+<p>Matriki <span class="math inline">\( Q_n \)</span> pravimo
+kovariančna matrika dinamičnih šumov.</p>
+<p>Brez dodatnih meritev velja <span class="math inline">\( P_{n + 1} =
+M_{n + 1} \)</span> in <span class="math inline">\( \hat{\mathbf{x}}_{n
++ 1} = \bar{\mathbf{x}}_{n + 1} \)</span>.</p>
+<h1 id="naloga-kalmanov-filter-prožnega-trka-dveh-teles">Naloga:
+Kalmanov filter prožnega trka dveh teles</h1>
+<div class="problem">
+<p>Dve kladi z masama <span class="math inline">\( m_1 \)</span> in
+<span class="math inline">\( m_2 \)</span> s pripadajočima hitrostima
+<span class="math inline">\( v_1 \)</span> ter <span
+class="math inline">\( v_2 \)</span> prožno trčita. Hitrosti imata vsaka
+svojo nedoločenost <span class="math inline">\( \sigma_1 \)</span> in
+<span class="math inline">\( \sigma_2 \)</span>. Izračunaj kovariančno
+matriko po trku za vektor <span class="math inline">\( \mathbf{v} = [v_1
+&#39;, v_2 &#39;]^T \)</span>, kjer sta to hitrosti teles po trku.
+Predpostavi, da sta začetni hitrosti nekorelirani in telesni dinamiki
+popolnoma poznani.</p>
+</div>
+<p>Pred trkom imamo vektor</p>
+<p><span class="math display">\[ \mathbf{v} = \begin{bmatrix} v_{1} \\
+v_{2} \end{bmatrix}
+\]</span></p>
+<p>s pripadajočo kovariančno matriko</p>
+<p><span class="math display">\[ P = \begin{bmatrix}
+       \sigma_{1} ^2 &amp; 0 \\
+        0 &amp; \sigma_2 ^2
+        \end{bmatrix}.
+\]</span></p>
+<p>Išcemo dinamiko oblike</p>
+<p><span class="math display">\[ \mathbf{v}&#39; = \Phi \mathbf{v} +
+\mathbf{c} + \Gamma \mathbf{w}.
+\]</span></p>
+<p>V navodilih naloge piše, da imamo popolnoma prožni trk, zato bomo
+nalogo reševali v težiščnem sistemu (CMS). Hitrost posamezne klade
+označimo z</p>
+<p><span class="math display">\[ u_1 = v_1 - v_T \quad \text{ in } \quad
+u_2 = v_2 - v_T,
+\]</span></p>
+<p>kjer je <span class="math inline">\( v_T \)</span> hitrost težišča
+sistema definirana kot</p>
+<p><span class="math display">\[ v_T = \frac{m_1 v_1 + m_2 v_2}{m_1 +
+m_2}.
+\]</span></p>
+<p>Iz zakona o ohranitvi gibalne količine <span class="math inline">\(
+\sum\limits_{}^{} p_i = 0 \)</span> dobimo dve enačbi za pred in po
+trku</p>
+<span class="math display">\[\begin{align*}
+  0 &amp;= m_1 u_1 + m_2 u_2 \\
+0 &amp;= m_1 u_1 &#39; + m_2 u_2 &#39;.
+\end{align*}
+\]</span>
+<p>Iz danih enačb lahko izrazimo hitrost druge klade glede na hitrost
+prve klade</p>
+<span class="math display">\[\begin{align*}
+  u_2 &amp;= - \frac{m_1}{m_2} u_1 \\
+u_2 &#39; &amp;= - \frac{m_1}{m_2} u_1 &#39;.
+\end{align*}
+\]</span>
+<p>Upoštevati moramo tudi zakon o ohranitvi kinetične energije <span
+class="math inline">\( \sum\limits_i^{} T_i = \sum\limits_i^{} T_i &#39;
+\)</span>. Dobimo enačbo</p>
+<p><span class="math display">\[ m_1 u_1 ^2 + m_2 u_2 ^2 = m_1 u_1 &#39;
+^2 + m_2 u_2 &#39; ^2.
+\]</span></p>
+<p>Upoštevamo identitete dobljene iz zakona o gibalni količini in
+zapišemo</p>
+<p><span class="math display">\[ u_1 ^2 \left( m_1 + \frac{m_1 ^2}{m_2}
+\right) = u_1&#39; ^2 \left( m_1 + \frac{m_1 ^2}{m_2} \right),
+\]</span></p>
+<p>iz česar dobimo</p>
+<p><span class="math display">\[ u_1 &#39; = \pm u_1.
+\]</span></p>
+<p>Za hitrost po trku si bomo izbrali negativen predznak hitrost, saj
+drugače do trka ni prišlo! Analogno pridemo tudi do <span
+class="math inline">\( u_2 &#39; = - u_2 \)</span>.</p>
+<p>Po dobljenih identitetah lahko ponovno preidemo iz težiščnega sistema
+nazaj v normalen sistem. Za <span class="math inline">\( i = 1, 2
+\)</span> dobimo izraza</p>
+<span class="math display">\[\begin{align*}
+  u_i &#39; &amp;= - u_i \\
+\left( v_i &#39; - v_T \right) &amp;= - \left( v_i - v_T \right) \\
+v_i &#39; &amp;= - v_i + 2 v_T.
+\end{align*}
+\]</span>
+</body>
+</html>
