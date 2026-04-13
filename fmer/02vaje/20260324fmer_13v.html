@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vaje iz Fizikalnih merjenj, 13. teden v letu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../stylesBW.css" />
+      <div id="preamble" class="preamble">
+        <nav class="menu">
+          <ul>
+            <li><a href="https://kokicarvesolja.github.io/">Domov</a></li>
+            <li><a href="">About [link ne dela]</a></li>
+            <li><a href="">Kontakt [tko kot tvoja mami]</a></li>
+          </ul>
+          </nav>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "ams"} } });
+        </script>
+      </div>
+  <script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Vaje iz Fizikalnih merjenj, 13. teden v letu</h1>
+<p class="subtitle">2026/03/24</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a
+href="#teorija-kalmanov-filter-za-vektorske-spremenljivke-v-zvezni-sliki"
+id="toc-teorija-kalmanov-filter-za-vektorske-spremenljivke-v-zvezni-sliki">Teorija:
+Kalmanov filter za vektorske spremenljivke v zvezni sliki</a></li>
+<li><a href="#naloga" id="toc-naloga">Naloga:</a>
+<ul>
+<li><a href="#dinamika---gibalna-enačba"
+id="toc-dinamika---gibalna-enačba">Dinamika - gibalna enačba</a></li>
+<li><a href="#kovariančna-matrika"
+id="toc-kovariančna-matrika">Kovariančna matrika</a></li>
+</ul></li>
+<li><a href="#naloga-jašek" id="toc-naloga-jašek">Naloga: jašek</a>
+<ul>
+<li><a href="#dinamika---gibalna-enačba-1"
+id="toc-dinamika---gibalna-enačba-1">Dinamika - gibalna enačba</a></li>
+<li><a href="#točka-b" id="toc-točka-b">Točka b</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="teorija-kalmanov-filter-za-vektorske-spremenljivke-v-zvezni-sliki">Teorija:
+Kalmanov filter za vektorske spremenljivke v zvezni sliki</h1>
+<p>Dinamiko sistema opisuje enačba</p>
+<p><span class="math display">\[ \dot{\mathbf{x}} = A(t) \mathbf{x} +
+\mathbf{c}(t) + \Gamma \mathbf{w}(t),
+\]</span></p>
+<p>kjer je <span class="math inline">\( \mathbf{w} \)</span> vektor
+dinamičnega šuma. Za tako dinamiko lahko uporabimo Kalmanov filter za
+kovariančno matriko</p>
+<p><span class="math display">\[ \mathbf{P} = AP + PA^T + \Gamma Q
+\Gamma^T - PH^TR^{-1} HP.
+\]</span></p>
+<p>Zadnji člen ostri kovariančno matriko, <span class="math inline">\( H
+\)</span> je okenska matrika, <span class="math inline">\( \mathbf{R}
+\)</span> pa je kovariančna matrika meritev. V večini primerov bomo
+uporabljali samo</p>
+<p><span class="math display">\[ \mathbf{P} = AP + PA^T + \Gamma Q
+\Gamma^T.
+\]</span></p>
+<h1 id="naloga">Naloga:</h1>
+<div class="problem">
+<p>Kroglice z maso <span class="math inline">\( m \)</span> spuščamo
+skozi dvojna svetlobna vrata. V prečni smeri med padanjem kroglic
+delujejo naključne sile <span class="math inline">\( F(t) \)</span>, za
+katere velja <span class="math inline">\( \left\langle F(t)
+\right\rangle = 0 \)</span>. Imamo dvoja svetlobna vrata enakih
+dimenzij. Vsaka vrata imajo polmer <span class="math inline">\( R
+\)</span> in medsebojna razdalja je <span class="math inline">\( h
+\)</span>. Iz višine <span class="math inline">\( h \)</span> nad prvimi
+svetlobnimi vrati spuščamo kroglice mase <span class="math inline">\( m
+\)</span>.</p>
+<p>Skozi prva vrata pade <span class="math inline">\( \frac{2}{3}
+\)</span> vseh kroglic. Kolikšen delež kroglic pade skozi druga vrata?
+Nedoločenost lege in hitrosti ob času <span class="math inline">\( t = 0
+\)</span> oziroma na izhodišču je <span class="math inline">\( \sigma_x
+(t = 0) = 0 \)</span> in <span class="math inline">\( \sigma_v(t = 0) =
+0. \)</span></p>
+</div>
+<p>Sile bomo opisali kot dinamični šum. Čas ob prehodu skozi prva vrata
+bomo označili s <span class="math inline">\( t_1 \)</span>, skozi druga
+vrata pa s <span class="math inline">\( t_2 \)</span>.</p>
+<p>Trajektorije v prečni smeri ne moremo izračunati, saj na kroglice
+delujejo samo naključne sile.</p>
+<p>S padanjem kroglice se bo širina Gaussove porazdelitve širila zaradi
+naključnih sil. Začetna Gaussova porazdelitev je zaradi nedoločenosti
+lege <span class="math inline">\( \sigma_x (t = 0) = 0 \)</span> kar
+<span class="math inline">\( \delta \)</span> funkcija.</p>
+<p>Zanima na torej verjetnost</p>
+<p><span class="math display">\[ P \left( - R &lt; x(t_2) &lt; R \right)
+= P \left( x(t_2) &lt; R \right) - P \left( x(t_2) &lt; -R \right).
+\]</span></p>
+<p>Središče Gaussovih porazdelitev se ne bo premikalo. Premikalo bi se v
+primeru, če bi <span class="math inline">\( \left\langle F(t)
+\right\rangle  = F_0 \)</span>. Če bi to držalo, bi naključne sile
+opisali kot <span class="math inline">\( F(t) = F_0 + f(t) \)</span>,
+kjer je <span class="math inline">\( \left\langle f(t) \right\rangle =
+0\)</span>.</p>
+<p>Verjetnost bomo zapisali s kumulativnimi funkcijami</p>
+<p><span class="math display">\[ P  \left( - R &lt; x(t_2) &lt; R
+\right) = F \left( \frac{R - 0}{\sigma_x (t_2)} \right) - F\left(
+\frac{- R + 0}{\sigma_x (t_2)} \right).
+\]</span></p>
+<p>Upoštevamo lastnost kumulativnih funkcij <span class="math inline">\(
+F(-u) = 1- F(u) \)</span>. Verjetnost je tako</p>
+<p><span class="math display">\[  P  \left( - R &lt; x(t_2) &lt; R
+\right) = 2 F \left( \frac{R}{\sigma_x (t_2)} \right) - 1.
+\]</span></p>
+<h2 id="dinamika---gibalna-enačba">Dinamika - gibalna enačba</h2>
+<p>Poiščimo dinamiko našega sistema, izhajali pa bomo iz drugega
+Newtonovega zakona.</p>
+<p><span class="math display">\[ \sum\limits_i^{} F_i = ma_x = m
+\ddot{x} = F(t).
+\]</span></p>
+<p>Pospeške potem označimo kot</p>
+<p><span class="math display">\[ \ddot{x} = \frac{F(t)}{m} = a(t) =
+w(t).
+\]</span></p>
+<p>Pospešek v prečni smeri bo torej dinamični šum. Ker Kalmanov filter
+deluje samo za LDE 1. reda, moramo preiti na vektorsko sliko, kjer sta
+spremenljivki in enačbi <span class="math inline">\( \dot{x} = v
+\)</span> in <span class="math inline">\( \dot{v} = \ddot{x} = w
+\)</span>. V vektorskem zapisu</p>
+<p><span class="math display">\[ \mathbf{x} = \begin{bmatrix} \dot{x} \\
+\dot{v} \end{bmatrix}.
+\]</span></p>
+<p>Dinamiko lahko sedaj zapišemo kot</p>
+<p><span class="math display">\[ \begin{bmatrix} \dot{x} \\ \dot{v}
+\end{bmatrix} = \begin{bmatrix}
+                                                      0 &amp; 1 \\
+                                                      0 &amp; 0
+                                                       \end{bmatrix}
+\begin{bmatrix} x \\ v \end{bmatrix} + \begin{bmatrix} 0 \\ 0
+\end{bmatrix} + \begin{bmatrix} 0 \\ w \end{bmatrix}.
+\]</span></p>
+<p>Kovariančna matrika bo imela obliko</p>
+<p><span class="math display">\[ P = \begin{bmatrix}
+       \sigma_{x} ^{2} &amp; \sigma_{xv} \\
+       \sigma_{vx} &amp; \sigma_{v} ^2
+        \end{bmatrix} = \begin{bmatrix}
+                        p_{11} &amp; p_{12} \\
+                        p_{21} &amp; p_{22}
+                         \end{bmatrix}.
+\]</span></p>
+<p>Mi pa iščemo z novo oznako <span class="math inline">\( \sigma_x (t)
+= \sqrt{p_{11}} \)</span>.</p>
+<h2 id="kovariančna-matrika">Kovariančna matrika</h2>
+<p>Uporabili bomo enačbo povedano v teoretičnem delu</p>
+<p><span class="math display">\[ \dot{P} = AP + PA^T + \Gamma Q
+\Gamma^T.
+\]</span></p>
+<p>Vrednosti elementov v matriki <span class="math inline">\( P
+\)</span> ne poznamo in to niso začetne vrednosti,</p>
+<p><span class="math display">\[ P = \begin{bmatrix}
+       p_{11} &amp; p_{12} \\
+       p_{21} &amp; p_{22}
+        \end{bmatrix}.
+\]</span></p>
+<p>Ob času <span class="math inline">\( t = 0 \)</span> je kovariančna
+matrika</p>
+<p><span class="math display">\[ P(t = 0) = \begin{bmatrix}
+              0 &amp; 0 \\
+              0 &amp; 0
+               \end{bmatrix}.
+\]</span></p>
+<p>Ni potrebe po računanju členov <span class="math inline">\( AP
+\)</span> in <span class="math inline">\( PA^T \)</span>, saj velja, da
+je matrika simetrična <span class="math inline">\( \left( AP \right)^T =
+P^T A^T = PA^T \)</span>.</p>
+<p>Torej zapišemo</p>
+<p><span class="math display">\[ AP = \begin{bmatrix}
+        0 &amp; 1 \\
+        0 &amp; 0
+         \end{bmatrix} \begin{bmatrix}
+                       p_{11} &amp; p_{12} \\
+                       p_{12} &amp; p_{22}
+                        \end{bmatrix} = \begin{bmatrix}
+                                        p_{12} &amp; p_{22} \\
+                                       0  &amp; 0
+                                         \end{bmatrix},
+\]</span></p>
+<p>kjer smo upoštevali simetričnost matrike <span class="math inline">\(
+p_{12} = p_{21} \)</span>. Nadalje</p>
+<p><span class="math display">\[ PA^T = \begin{bmatrix}
+          p_{12} &amp; 0 \\
+          p_{22} &amp; 0
+           \end{bmatrix}.
+\]</span></p>
+<p>Poglejmo si še dinamičen šum, ki je definiran</p>
+<p><span class="math display">\[ \Gamma Q \Gamma^T = \left\langle \Gamma
+\mathbf{w} \left( \Gamma \mathbf{w} \right)^T \right\rangle.
+\]</span></p>
+<p>Vemo, da spremenljivka <span class="math inline">\( \dot{x} \)</span>
+nima dinamičnega šuma in bo element <span class="math inline">\( q_{11}
+= 0 \)</span>. Poznamo pa dinamičen šum <span class="math inline">\(
+q_{22} = Q \)</span>, kjer je <span class="math inline">\( Q \)</span>
+varianca dinamičnega šuma in je neznana. Hkrati pa so te matrike
+ponavadi diagonalne, torej</p>
+<p><span class="math display">\[ \Gamma Q \Gamma^T = \begin{bmatrix}
+                       0 &amp; 0 \\
+                       0 &amp; Q
+                        \end{bmatrix}.
+\]</span></p>
+<p>Kovariančna matrika je torej</p>
+<p><span class="math display">\[ \dot{P} = \begin{bmatrix}
+             2p_{12} &amp; p_{22} \\
+             p_{22} &amp;  Q
+              \end{bmatrix}.
+\]</span></p>
+<p>Sedaj lahko iz matričnega sistema preberemo sistem parcialnih
+enačb</p>
+<span class="math display">\[\begin{align*}
+  \dot{p}_{11} &amp;= 2p_{12} \\
+\dot{p}_{12} &amp;= p_{22} \\
+\dot{p}_{22} &amp;= Q.
+\end{align*}
+\]</span>
+<p>Privzamemo <span class="math inline">\( Q \ne Q(t) \)</span>.
+Postopek rešévanja bo sledeč: rešili bomo spodnjo, potem srednjo in na
+koncu rezultat vstavili v prvo enačbo.</p>
+<p>Integriranje spodnje enačbe nam poda rezultat</p>
+<p><span class="math display">\[ p_{22} (t) = Q t + p_{22} (0).
+\]</span></p>
+<p>Integriramo še srednjo enačbo ob upoštevanju rezultata spodnje
+enačbe</p>
+<p><span class="math display">\[ p_{12} (t) = \frac{1}{2} Q ^2 + p_{22}
+(0)t + p_{12} (0).
+\]</span></p>
+<p>Podobno, vstavimo enačbo v zadnjo enačbo in integriramo</p>
+<p><span class="math display">\[ p_{11} (t) = \frac{1}{3} Q t ^3 +
+p_{22} (0) t ^2 + 2 p_{12 } (0) t + p_{11} (0).
+\]</span></p>
+<p>Upoštevamo iz začetnih pogojev <span class="math inline">\( p_{22} =
+p_{12} = p_{11} = 0 \)</span>. Ostale nam enačba</p>
+<p><span class="math display">\[ p_{11} (t) = \frac{1}{3} Q t ^3.
+\]</span></p>
+<p>Varianca lege je torej</p>
+<span class="math display">\[\begin{equation}
+\label{eq:1}
+\sigma_x ^2 (t_2) = p_{11} (t_2) = \frac{1}{3} Q t_2 ^3.
+\end{equation}
+\]</span>
+<p>Še zmeraj moramo določiti varianco dinamičnega šuma, kar bomo
+naredili s pomočjo zadnjega neupoštevanega dejstva <span
+class="math inline">\( P \left( - R &lt; x(t_1) &lt; R \right) =
+\frac{2}{3} \)</span>.</p>
+<p>Pomagali si bomo z dejstvom, da</p>
+<p><span class="math display">\[ P \left( \sigma_1 (t_1) &lt; x (t_1)
+&lt; \sigma_x (t_1) \right) = 68 \%.
+\]</span></p>
+<p>Ko primerjamo parametre, razberemo <span class="math inline">\(
+\sigma_x (t_1) = R \)</span>.</p>
+<p>Pri prehodu skozi prva svetlobna vrata torej velja enačba</p>
+<p><span class="math display">\[ \sigma_x ^2 (t_1) \cdot R ^2 =
+\frac{1}{3} Q ^3 t_1 ^3 \implies Q = \frac{3 R ^2}{t_1 ^3}.
+\]</span></p>
+<p>Vstavimo vrednost <span class="math inline">\( Q \)</span> v enačbo
+<span class="math inline">\(\ref{eq:1}\)</span> in dobimo, da je
+varianca lege torej</p>
+<p><span class="math display">\[ \sigma_x ^2 (t_2) = R ^2 \left(
+\frac{t_2}{t_1} \right) ^3
+\]</span></p>
+<p>Sedaj izračunajmo še časa <span class="math inline">\( t_1 \)</span>
+in <span class="math inline">\( t_2 \)</span></p>
+<span class="math display">\[\begin{align*}
+  h &amp;= \frac{1}{2} g t_1 ^2
+2h &amp;= \frac{1}{2} g t_2 ^2,
+\end{align*}
+\]</span>
+<p>kar dobimo</p>
+<p><span class="math display">\[ t_1 = \sqrt{\frac{2 h}{g}} \quad \text{
+in } \quad t_2 = \sqrt{\frac{4h}{g}}.
+\]</span></p>
+<p>Variance lege ob času <span class="math inline">\( t_2 \)</span> je
+potem</p>
+<p><span class="math display">\[ \sigma_x ^2 (t_2) = R ^2 \cdot
+*^{\frac{1}{2}} \implies \sigma_x (t_2) = R \cdot 8^{\frac{1}{4}}.
+\]</span></p>
+<p>Vrnimo se nazaj k verjetnosti</p>
+<p><span class="math display">\[ P \left( - R &lt; x(t_2) &lt; R \right)
+= 2 F \left( \frac{R}{\sigma_x (t_2)} \right) - 1 = 2 F \left( 8^{-
+\frac{1}{4}} \right) -1 = 2 F \left( 0.595 \right) = 45\%.
+\]</span></p>
+<p>Vrednost <span class="math inline">\( F(0.595) \)</span> smo prebrali
+iz tabele.</p>
+<div class="note">
+<div class="title">
+<p>Note</p>
+</div>
+<p>Po prehodu skozi prva svetlobna vrata lahko opravimo meritev <span
+class="math inline">\( z_1 \)</span> in opravimo izostreno oceno <span
+class="math inline">\( \hat{x} \)</span>. Na vratih torej uporabimo
+diskreten Kalmanov filter. Dobljene rezultate lahko potem propagiramo
+preko zveznega Kalmanovega filtra do drugih vrat.</p>
+</div>
+<h1 id="naloga-jašek">Naloga: jašek</h1>
+<div class="problem">
+<p>Imamo globok jašek napolnjen z vodo. Po sredini jaška spuščamo
+kroglice z maso <span class="math inline">\( m \)</span>.</p>
+<p>Kroglico spustimo v vodo. Po dolgem času je varianca hitrosti enaka
+<span class="math inline">\( \frac{1}{4} \)</span> začetne variance
+hitrosti.</p>
+<p>a) Zapiši Kalmanov filter za vektor <span class="math inline">\(
+\mathbf{x} = [y, v]^T \)</span> b) Poišči varianco hitrosti ob času
+<span class="math inline">\( \tilde{t} \)</span>, kjer je <span
+class="math inline">\( \beta \tilde{t} = 1 \)</span>. <span
+class="math inline">\( \beta \)</span> je definiran s silo upora</p>
+<p><span class="math display">\[ \mathbf{F}_u = - m \beta \mathbf{v}.
+   \]</span></p>
+<p>Upoštevaj tudi vpliv naključnih sil (aka dinamičen šum).</p>
+</div>
+<p>Uskladimo za začetek koordinatni sistem. Naj bo os <span
+class="math inline">\( y \)</span> usmerjena navzdol v pozitivni smeri,
+vzporedno z jaškom. Kroglice spuščamo iz koordinate <span
+class="math inline">\( y = 0  \)</span>.</p>
+<h2 id="dinamika---gibalna-enačba-1">Dinamika - gibalna enačba</h2>
+<p>Podobno kot v prejšnji nalogi zapišemo 2. Newtonov zakon</p>
+<p><span class="math display">\[ \sum\limits_i^{} F_i = m a_y = m
+\ddot{y}.
+\]</span></p>
+<p>Na kroglico deluje sila teže v vzporedni smeri <span
+class="math inline">\( \mathbf{F} = m \mathbf{g} \)</span>, v negativni
+smeri pa še sila vzgona <span class="math inline">\( \mathbf{F}_{vzg}
+\)</span> in sila upora <span class="math inline">\( \mathbf{F}_u
+\)</span>. V poljubni navpični smeri deluje pa še dinamičen šum <span
+class="math inline">\( F(t) \)</span>.</p>
+<p>Drugi Newtonov zakon je za naš specifičen primer</p>
+<p><span class="math display">\[ m \ddot{y} = mg - F_{vzg} - m \beta v +
+F(t).
+\]</span></p>
+<p>Vsoto sile teže in sile vzgona bomo definirali kot efektivni težnosti
+pospešek</p>
+<p><span class="math display">\[ F_{eff} = F_g - F_{vzg} = mg - F_{vzg}
+= m g_{eff}.
+\]</span></p>
+<p>Preostane nam LDE 2. reda</p>
+<p><span class="math display">\[ \ddot{y} = g_{eff} - \beta v +
+\frac{F(t)}{m}.
+\]</span></p>
+<p>Ponovno želimo zapisati v vektorski obliki, da bomo lahko uporabili
+Kalmanov filter</p>
+<p><span class="math display">\[ \dot{\mathbf{x}} = \begin{bmatrix}
+\dot{x} \\ \dot{v} \end{bmatrix} = \begin{bmatrix}
+                                                                         0
+&amp; 1 \\
+                                                                         0
+&amp; - \beta
+                                                                          \end{bmatrix}
+\begin{bmatrix}
+                                                                          y
+\\ v \end{bmatrix} + \begin{bmatrix}
+                                                                          0
+\\ g_{eff} \end{bmatrix} + \begin{bmatrix} 0 \\ w \end{bmatrix}.
+\]</span>.</p>
+<p>Matrika <span class="math inline">\( AP \)</span> je</p>
+<p><span class="math display">\[ AP = \begin{bmatrix}
+        0 &amp; 1 \\
+        0 &amp; -\beta
+         \end{bmatrix}
+         \begin{bmatrix}
+         p_{11} &amp; p_{12} \\
+         p_{21} &amp; p_{22}
+          \end{bmatrix} = \begin{bmatrix}
+                          p_{12} &amp; p_{22} \\
+                          -\beta p_{12} &amp; -\beta p_{22}
+                           \end{bmatrix}.
+\]</span></p>
+<p>Transponiramo, da dobimo</p>
+<p><span class="math display">\[ PA^T = \begin{bmatrix}
+          p_{12} &amp; - \beta p_{12} \\
+          p_{22} &amp;  - \beta p_{22}
+           \end{bmatrix}.
+\]</span></p>
+<p>Podobno kakor prej ima matrika dinamičnega šuma obliko</p>
+<p><span class="math display">\[ \Gamma Q \Gamma^T = \begin{bmatrix}
+                       0 &amp; 0 \\
+                       0 &amp; Q
+                        \end{bmatrix}.
+\]</span></p>
+<p>Imamo torej matrično enačbo</p>
+<p><span class="math display">\[ \mathbf{P} = \begin{bmatrix}
+                2 p_{12} &amp; p_{22} - \beta p_{12} \\
+                p_{22} - \beta p_{12} &amp; Q - 2 \beta p_{22}
+                 \end{bmatrix}.
+\]</span></p>
+<h2 id="točka-b">Točka b</h2>
+<p>Iščemo <span class="math inline">\( \sigma_v ^2 (\tilde{t}) = p_{22}
+(\tilde{t}) \)</span>.</p>
+<p>Za razliko od prejšnjega primera tokrat ne rabimo reševati celotnega
+sistema, ampak rešimo samo</p>
+<p><span class="math display">\[ \dot{p}_{22} = Q - 2 \beta p_{22}.
+\]</span></p>
+<p>V enačbi ne poznamo dinamičnega šuma <span class="math inline">\( Q
+\)</span>.</p>
+<p>Zgornjo nehomogeno LDE lahko rešimo z uvedbo nove spremenljivke</p>
+<p><span class="math display">\[ u = Q - 2 \beta p_{22}.
+\]</span></p>
+<p>Novo spremenljivko odvajamo</p>
+<p><span class="math display">\[ \dot{u} = - 2 \beta \dot{p}_{22}.
+\]</span></p>
+<p>Namesto <span class="math inline">\( \dot{p}_{22} \)</span> pa
+vstavimo <span class="math inline">\( u \)</span> in rešujemo torej</p>
+<p><span class="math display">\[ \frac{\dot{u}}{2 \beta} = - u \implies
+u(t) = C e^{- 2 \beta t}
+\]</span></p>
+<p>z začetnim pogojem <span class="math inline">\( u(0) = C
+\)</span>.</p>
+<p>Zapišemo</p>
+<p><span class="math display">\[ u(t) = u(0) e^{- 2 \beta t},
+\]</span></p>
+<p>in upoštevamo definicijo</p>
+<span class="math display">\[\begin{equation}
+\label{eq:2}
+Q - 2 \beta p_{22} (t) = \left( Q - 2 B p_{22} (0) \right) e^{- \beta
+t}.
+\end{equation}
+\]</span>
+<p>Po dolgem času <span class="math inline">\( t \to \infty \)</span>,
+dobimo vrednost</p>
+<p><span class="math display">\[ Q - 2 \beta p_{22} (\infty) = 0
+\implies Q = 2 \beta p_{22} (\infty).
+\]</span></p>
+<p>Dobljeno vrednosti vstavimo v enačbo <span
+class="math inline">\(\ref{eq:2}\)</span></p>
+<p><span class="math display">\[ 2 \beta p_{22} (\infty) - 2 \beta
+p_{22} (t) = \left( 2 \beta p_{22}(\infty) - 2 \beta p_{22} (0) \right)
+e^{- 2 \beta t}.
+\]</span></p>
+<p>Pokrajšamo člene in nam preostane</p>
+<p><span class="math display">\[ p_{22} (t) = p_{22}(\infty) - \left(
+p_{22} (\infty) - p_{22} (0) \right) e^{- 2 \beta t}.
+\]</span></p>
+<p>Poznamo podatek <span class="math inline">\( p_{22} (\infty) =
+\frac{1}{4} p_{22} (0) \)</span> in ga upoštevamo</p>
+<p><span class="math display">\[ p_{22} (t) = \frac{1}{4} p_{22} (0) t
+\frac{3}{4} p_{22} (0) e^{- 2 \beta t} = \frac{p_{22} (0)}{4} \left( 1 +
+3 e^{- 2 \beta t} \right).
+\]</span></p>
+<p>Ob času <span class="math inline">\( \tilde{t} \)</span> je potem</p>
+<span class="math display">\[\begin{align*}
+  p_{22} (\tilde{t}) &amp;= \frac{p_{22} (0)}{4} \left( 1 + 3 e^{- 2
+\beta \tilde{t}} \right) \\
+&amp;= \frac{p_{22} (0)}{4} \left( 1 + 3 e^{-2} \right) = \frac{p_{22}
+(0)}{3} = 0.35 \cdot p_{22} (0).
+\end{align*}
+\]</span>
+</body>
+</html>
